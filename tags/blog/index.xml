@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>blog on YosysHQ Blog</title>
+    <link>https://yosyshq-gmbh.github.io/tags/blog/</link>
+    <description>Recent content in blog on YosysHQ Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 01 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://yosyshq-gmbh.github.io/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Press Release</title>
+      <link>https://yosyshq-gmbh.github.io/p/press-release/</link>
+      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://yosyshq-gmbh.github.io/p/press-release/</guid>
+      <description>YosysHQ.com is the new home for the team maintaining Yosys and the related Open Source EDA projects, and the commercial products and services we offer.
+Our team is led by N. Engelhardt as CEO, Claire Wolf as CTO, and Matt Venn as CSO. We are looking to work with more people, so feel free to contact us: contact@yosyshq.com
+Tabby CAD Suite is a bundle of our well-known Open Source EDA software packages, combined with additional components that allow seamless integration of our tools in typical industrial digital design environments.</description>
+    </item>
+    
+  </channel>
+</rss>

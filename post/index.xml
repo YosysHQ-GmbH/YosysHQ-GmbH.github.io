@@ -6,14 +6,28 @@
     <description>Recent content in Posts on YosysHQ Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 11 Mar 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://yosyshq-gmbh.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 20 May 2021 14:04:45 +0200</lastBuildDate><atom:link href="https://yosyshq-gmbh.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Markdown Syntax Guide</title>
-      <link>https://yosyshq-gmbh.github.io/p/markdown-syntax-guide/</link>
-      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
+      <title>App Note 120</title>
+      <link>https://yosyshq-gmbh.github.io/p/app-note-120/</link>
+      <pubDate>Thu, 20 May 2021 14:04:45 +0200</pubDate>
       
-      <guid>https://yosyshq-gmbh.github.io/p/markdown-syntax-guide/</guid>
-      <description>&lt;p&gt;This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p&gt;</description>
+      <guid>https://yosyshq-gmbh.github.io/p/app-note-120/</guid>
+      <description>For a long time people have asked us for quality long form content that shows how to get the best from our formal tools.
+We have started a series of app notes, with the first being about cover and witness for SVA properties. Otherwise known as &amp;lsquo;Am I testing what I think I&amp;rsquo;m testing&amp;rsquo;!
+What You will learn in this app note:
+ Default clocking and default disable declarations Sequences and cycle delays Overlapping and non-overlapping implication syntax and semantic Weak precondition cover and witness How to apply that to a practical HDL code example  https://yosyshq-subprj-doc.</description>
+    </item>
+    
+    <item>
+      <title>Press Release</title>
+      <link>https://yosyshq-gmbh.github.io/p/press-release/</link>
+      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://yosyshq-gmbh.github.io/p/press-release/</guid>
+      <description>YosysHQ.com is the new home for the team maintaining Yosys and the related Open Source EDA projects, and the commercial products and services we offer.
+Our team is led by N. Engelhardt as CEO, Claire Wolf as CTO, and Matt Venn as CSO. We are looking to work with more people, so feel free to contact us: contact@yosyshq.com
+Tabby CAD Suite is a bundle of our well-known Open Source EDA software packages, combined with additional components that allow seamless integration of our tools in typical industrial digital design environments.</description>
     </item>
     
   </channel>
