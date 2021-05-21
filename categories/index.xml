@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on YosysHQ Blog</title>
-    <link>https://yosyshq-gmbh.github.io/categories/</link>
+    <link>http://blog.yosyshq.com/categories/</link>
     <description>Recent content in Categories on YosysHQ Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://yosyshq-gmbh.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="http://blog.yosyshq.com/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

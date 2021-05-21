@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on YosysHQ Blog</title>
-    <link>https://yosyshq-gmbh.github.io/tags/</link>
+    <link>http://blog.yosyshq.com/tags/</link>
     <description>Recent content in Tags on YosysHQ Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 20 May 2021 14:04:45 +0200</lastBuildDate><atom:link href="https://yosyshq-gmbh.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 20 May 2021 14:04:45 +0200</lastBuildDate><atom:link href="http://blog.yosyshq.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>app note</title>
-      <link>https://yosyshq-gmbh.github.io/tags/app-note/</link>
+      <link>http://blog.yosyshq.com/tags/app-note/</link>
       <pubDate>Thu, 20 May 2021 14:04:45 +0200</pubDate>
       
-      <guid>https://yosyshq-gmbh.github.io/tags/app-note/</guid>
+      <guid>http://blog.yosyshq.com/tags/app-note/</guid>
       <description></description>
     </item>
     
     <item>
       <title>blog</title>
-      <link>https://yosyshq-gmbh.github.io/tags/blog/</link>
+      <link>http://blog.yosyshq.com/tags/blog/</link>
       <pubDate>Mon, 08 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://yosyshq-gmbh.github.io/tags/blog/</guid>
+      <guid>http://blog.yosyshq.com/tags/blog/</guid>
       <description></description>
     </item>
     
