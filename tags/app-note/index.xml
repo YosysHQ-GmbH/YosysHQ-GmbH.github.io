@@ -6,7 +6,17 @@
     <description>Recent content in app note on YosysHQ Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 20 May 2021 14:04:45 +0200</lastBuildDate><atom:link href="http://blog.yosyshq.com/tags/app-note/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 07 Jul 2021 12:37:04 +0200</lastBuildDate><atom:link href="http://blog.yosyshq.com/tags/app-note/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>App Note 109</title>
+      <link>http://blog.yosyshq.com/p/ap109/</link>
+      <pubDate>Wed, 07 Jul 2021 12:37:04 +0200</pubDate>
+      
+      <guid>http://blog.yosyshq.com/p/ap109/</guid>
+      <description>This Application Note was written with the intention of showing a brief introduction to SVA, and is definitely not a substitute for extensive training. To learn more about formal verification and SVA, it is recommended to book the course given by the FPV specialists at YosysHQ.
+ A brief history of SystemVerilog Assertions SVA layers definition and examples Assertion types, sequential property operators A short description of liveness and safety properties Practical examples using the sequence builder module written by our CTO Claire Xen.</description>
+    </item>
+    
     <item>
       <title>App Note 120</title>
       <link>http://blog.yosyshq.com/p/ap120/</link>

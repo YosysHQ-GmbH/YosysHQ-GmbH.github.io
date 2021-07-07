@@ -6,7 +6,25 @@
         <description>Recent content on YosysHQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Thu, 20 May 2021 14:04:45 +0200</lastBuildDate><atom:link href="http://blog.yosyshq.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 07 Jul 2021 12:37:04 +0200</lastBuildDate><atom:link href="http://blog.yosyshq.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>App Note 109</title>
+        <link>http://blog.yosyshq.com/p/ap109/</link>
+        <pubDate>Wed, 07 Jul 2021 12:37:04 +0200</pubDate>
+        
+        <guid>http://blog.yosyshq.com/p/ap109/</guid>
+        <description>&lt;p&gt;This Application Note was written with the intention of showing a brief introduction to SVA, and is definitely not a substitute for extensive training. To learn more about formal verification and SVA, it is recommended to book the course given by the FPV specialists at YosysHQ.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A brief history of SystemVerilog Assertions&lt;/li&gt;
+&lt;li&gt;SVA layers definition and examples&lt;/li&gt;
+&lt;li&gt;Assertion types, sequential property operators&lt;/li&gt;
+&lt;li&gt;A short description of liveness and safety properties&lt;/li&gt;
+&lt;li&gt;Practical examples using the sequence builder module written by our CTO Claire Xen.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://yosyshq.readthedocs.io/projects/ap109&#34;&gt;https://yosyshq.readthedocs.io/projects/ap109&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Feel free to give us feedback and suggest new topics.&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>App Note 120</title>
         <link>http://blog.yosyshq.com/p/ap120/</link>
         <pubDate>Thu, 20 May 2021 14:04:45 +0200</pubDate>
