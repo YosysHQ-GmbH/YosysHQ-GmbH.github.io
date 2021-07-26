@@ -6,7 +6,18 @@
     <description>Recent content in Posts on YosysHQ Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 07 Jul 2021 12:37:04 +0200</lastBuildDate><atom:link href="http://blog.yosyshq.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 26 Jul 2021 15:35:40 +0200</lastBuildDate><atom:link href="http://blog.yosyshq.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>New pricing for small companies</title>
+      <link>http://blog.yosyshq.com/p/pricing-for-small-companies/</link>
+      <pubDate>Mon, 26 Jul 2021 15:35:40 +0200</pubDate>
+      
+      <guid>http://blog.yosyshq.com/p/pricing-for-small-companies/</guid>
+      <description>YosysHQ are pleased to announce a new pricing option for small companies with one full time engineer.
+For just €500 per month (excl. VAT), you can get our ‘Solo bundle’:
+ 2 nodes of TabbyCAD Suite, offering industry compatible language support and our formal verification tools and verification IP. Unlimited number of users/processes per node. (Up to 32 CPUs per node.) Not time limited, use in your continuous integration systems. Support that includes potential for custom work and access to our technical team.</description>
+    </item>
+    
     <item>
       <title>App Note 109</title>
       <link>http://blog.yosyshq.com/p/ap109/</link>
