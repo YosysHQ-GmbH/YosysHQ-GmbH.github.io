@@ -6,7 +6,18 @@
     <description>Recent content in Posts on YosysHQ Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 26 Jul 2021 15:35:40 +0200</lastBuildDate><atom:link href="http://blog.yosyshq.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 30 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://blog.yosyshq.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Why Asynchronous Load Flip-Flops Should Be Avoided</title>
+      <link>http://blog.yosyshq.com/p/async-load-ff/</link>
+      <pubDate>Tue, 30 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.yosyshq.com/p/async-load-ff/</guid>
+      <description>Code: https://github.com/YosysHQ-Docs/Blog-Async-Load-FFs
+Part 1: The Bad News We have recently added support for asynchronous load flip-flops to Yosys for a customer project. However, we consider this a problematic feature in a (System-)Verilog synthesis tool, and thus I’d like to take this opportunity to explain why one should avoid using asynchronous load flip-flops in new (System-)Verilog designs.
+What are asynchronous load flip-flops An asynchronous load flip-flop is a type of flip-flop with asynchronous reset for which the reset value is not a compile-time / synthesis-time constant.</description>
+    </item>
+    
     <item>
       <title>New pricing for small companies</title>
       <link>http://blog.yosyshq.com/p/pricing-for-small-companies/</link>
