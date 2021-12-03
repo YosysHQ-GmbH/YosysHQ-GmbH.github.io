@@ -340,7 +340,7 @@ iverilog -g2012 -o sim1 -s tb -DDOUBLE_ARST tb.sv dut.sv
 <h3 id="simulation-model-using-verilog-udp">Simulation model using Verilog UDP</h3>
 <p>Verilog UDP primitives can be used to correctly model the behavior of asynchronous load flip-flops. But UDPs are not synthesizable, so we need to also provide a synthesizable implementation of an asynchronous load flip-flop (<a class="link" href="https://github.com/YosysHQ-Docs/Blog-Async-Load-FFs/blob/main/myff_udp.sv"  target="_blank" rel="noopener"
     >myff_udp.sv</a>):</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-SystemVerilog" data-lang="SystemVerilog"><span class="no">`ifdef</span> <span class="n">SYNTHESES</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-SystemVerilog" data-lang="SystemVerilog"><span class="no">`ifdef</span> <span class="n">SYNTHESIS</span>
     <span class="k">module</span> <span class="n">myff</span> <span class="p">(</span>
         <span class="k">output</span> <span class="k">reg</span> <span class="n">q</span><span class="p">,</span>
         <span class="k">input</span> <span class="n">d</span><span class="p">,</span> <span class="n">clk</span><span class="p">,</span> <span class="n">arst</span><span class="p">,</span> <span class="n">rval</span>
@@ -386,7 +386,7 @@ iverilog -g2012 -o sim2 -s tb tb.sv dut_myff.sv myff_udp.sv
     <span class="k">always_ff</span> <span class="p">@(</span><span class="k">posedge</span> <span class="n">clk</span> <span class="k">or</span> <span class="k">posedge</span> <span class="n">arst</span><span class="p">)</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">arst</span><span class="p">)</span> <span class="n">q</span> <span class="o">&lt;=</span> <span class="n">rval</span><span class="p">;</span>
         <span class="k">else</span>      <span class="n">q</span> <span class="o">&lt;=</span> <span class="n">d</span><span class="p">;</span>
-<span class="no">`ifndef</span> <span class="n">SYNTHESES</span>
+<span class="no">`ifndef</span> <span class="n">SYNTHESIS</span>
     <span class="k">always</span> <span class="p">@(</span><span class="n">arst</span><span class="p">)</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">arst</span><span class="p">)</span> <span class="k">assign</span> <span class="n">q</span> <span class="o">=</span> <span class="n">rval</span><span class="p">;</span>
         <span class="k">else</span>    <span class="k">deassign</span> <span class="n">q</span><span class="p">;</span>
