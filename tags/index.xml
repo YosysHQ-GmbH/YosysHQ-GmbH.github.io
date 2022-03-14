@@ -6,22 +6,22 @@
     <description>Recent content in Tags on YosysHQ Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 07 Jul 2021 12:37:04 +0200</lastBuildDate><atom:link href="http://blog.yosyshq.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 28 Feb 2022 11:23:54 +0100</lastBuildDate><atom:link href="http://blog.yosyshq.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>blog</title>
+      <link>http://blog.yosyshq.com/tags/blog/</link>
+      <pubDate>Mon, 28 Feb 2022 11:23:54 +0100</pubDate>
+      
+      <guid>http://blog.yosyshq.com/tags/blog/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>app note</title>
       <link>http://blog.yosyshq.com/tags/app-note/</link>
       <pubDate>Wed, 07 Jul 2021 12:37:04 +0200</pubDate>
       
       <guid>http://blog.yosyshq.com/tags/app-note/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>blog</title>
-      <link>http://blog.yosyshq.com/tags/blog/</link>
-      <pubDate>Mon, 08 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.yosyshq.com/tags/blog/</guid>
       <description></description>
     </item>
     

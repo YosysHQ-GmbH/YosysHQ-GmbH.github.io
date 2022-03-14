@@ -6,7 +6,27 @@
         <description>Recent content on YosysHQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Tue, 30 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://blog.yosyshq.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 28 Feb 2022 11:23:54 +0100</lastBuildDate><atom:link href="http://blog.yosyshq.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Open Source Silicon with Yosys</title>
+        <link>http://blog.yosyshq.com/p/open-source-silicon-with-yosys/</link>
+        <pubDate>Mon, 28 Feb 2022 11:23:54 +0100</pubDate>
+        
+        <guid>http://blog.yosyshq.com/p/open-source-silicon-with-yosys/</guid>
+        <description>&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;&#34; &gt;Yosys&lt;/a&gt; is probably best known for providing synthesis for FPGA targets, but it&amp;rsquo;s a very flexible tool capable of a lot more.&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://openlane-docs.readthedocs.io/en/rtd-develop/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;OpenLane&lt;/a&gt;, &lt;a class=&#34;link&#34; href=&#34;https://www.siliconcompiler.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;SiliconCompiler&lt;/a&gt; and &lt;a class=&#34;link&#34; href=&#34;http://coriolis.lip6.fr/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Coriolis2&lt;/a&gt; are 3 examples of open source ASIC flows, which has been an active field of development over the last year.&lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;re very happy to see our tools get used in the first Google sponsored tapeouts, helping to make the world&amp;rsquo;s first chips made with an open source PDK, and open source all the way down to the designs.&lt;/p&gt;
+&lt;p&gt;If you want to find out more about what happened in the world of open source silicon in 2021, you can see our CSO Matt Venn&amp;rsquo;s recent presentation for Hackaday Remoticon here:&lt;/p&gt;
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe loading=&#34;lazy&#34; src=&#34;https://www.youtube.com/embed/iK2yGvFety4&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+</description>
+        </item>
+        <item>
         <title>Why Asynchronous Load Flip-Flops Should Be Avoided</title>
         <link>http://blog.yosyshq.com/p/async-load-ff/</link>
         <pubDate>Tue, 30 Nov 2021 00:00:00 +0000</pubDate>
