@@ -224,73 +224,73 @@
 <p>We have recently added support for asynchronous load flip-flops to Yosys for a customer project. However, we consider this a problematic feature in a (System-)Verilog synthesis tool, and thus I’d like to take this opportunity to explain why one should avoid using asynchronous load flip-flops in new (System-)Verilog designs.</p>
 <h3 id="what-are-asynchronous-load-flip-flops">What are asynchronous load flip-flops</h3>
 <p>An asynchronous load flip-flop is a type of flip-flop with asynchronous reset for which the reset value is not a compile-time / synthesis-time constant.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-SystemVerilog" data-lang="SystemVerilog"><span class="k">reg</span> <span class="n">async_load_ff_q</span><span class="p">;</span>
-<span class="k">wire</span> <span class="n">async_load_ff_reset_val</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">dynamic_expression</span><span class="o">&gt;</span><span class="p">;</span>
-
-<span class="k">always_ff</span> <span class="p">@(</span><span class="k">posedge</span> <span class="n">clock</span><span class="p">,</span> <span class="k">posedge</span> <span class="n">load</span><span class="p">)</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">load</span><span class="p">)</span> <span class="n">async_load_ff_q</span> <span class="o">&lt;=</span> <span class="n">async_load_ff_reset_val</span><span class="p">;</span>
-    <span class="k">else</span>      <span class="n">async_load_ff_q</span> <span class="o">&lt;=</span> <span class="p">...;</span>
-</code></pre></div><p>This distinguishes them from the more common asynchronous set (reset) flip-flops, for which the reset value is a compile-time (synthesis-time) constant.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-SystemVerilog" data-lang="SystemVerilog"><span class="k">reg</span> <span class="n">async_reset_ff_q</span><span class="p">;</span>
-<span class="k">localparam</span> <span class="n">async_reset_ff_reset_val</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">constant_expression</span><span class="o">&gt;</span><span class="p">;</span>
-
-<span class="k">always_ff</span> <span class="p">@(</span><span class="k">posedge</span> <span class="n">clock</span><span class="p">,</span> <span class="k">posedge</span> <span class="n">reset</span><span class="p">)</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">reset</span><span class="p">)</span> <span class="n">async_reset_ff_q</span> <span class="o">&lt;=</span> <span class="n">async_reset_ff_reset_val</span><span class="p">;</span>
-    <span class="k">else</span>       <span class="n">async_reset_ff_q</span> <span class="o">&lt;=</span> <span class="p">...;</span>
-</code></pre></div><p>IEEE Std 1364.1-2002, the IEEE Standard for Verilog Register Transfer Level Synthesis, does allow such asynchronous load flip-flops in synthesis, but states that the synthesis results will only match the behavior of the original Verilog code under certain conditions.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-SystemVerilog" data-lang="SystemVerilog"><span class="line"><span class="cl"><span class="k">reg</span> <span class="n">async_load_ff_q</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">wire</span> <span class="n">async_load_ff_reset_val</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">dynamic_expression</span><span class="o">&gt;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">always_ff</span> <span class="p">@(</span><span class="k">posedge</span> <span class="n">clock</span><span class="p">,</span> <span class="k">posedge</span> <span class="n">load</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">load</span><span class="p">)</span> <span class="n">async_load_ff_q</span> <span class="o">&lt;=</span> <span class="n">async_load_ff_reset_val</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span>      <span class="n">async_load_ff_q</span> <span class="o">&lt;=</span> <span class="p">...;</span>
+</span></span></code></pre></div><p>This distinguishes them from the more common asynchronous set (reset) flip-flops, for which the reset value is a compile-time (synthesis-time) constant.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-SystemVerilog" data-lang="SystemVerilog"><span class="line"><span class="cl"><span class="k">reg</span> <span class="n">async_reset_ff_q</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">localparam</span> <span class="n">async_reset_ff_reset_val</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">constant_expression</span><span class="o">&gt;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">always_ff</span> <span class="p">@(</span><span class="k">posedge</span> <span class="n">clock</span><span class="p">,</span> <span class="k">posedge</span> <span class="n">reset</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">reset</span><span class="p">)</span> <span class="n">async_reset_ff_q</span> <span class="o">&lt;=</span> <span class="n">async_reset_ff_reset_val</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span>       <span class="n">async_reset_ff_q</span> <span class="o">&lt;=</span> <span class="p">...;</span>
+</span></span></code></pre></div><p>IEEE Std 1364.1-2002, the IEEE Standard for Verilog Register Transfer Level Synthesis, does allow such asynchronous load flip-flops in synthesis, but states that the synthesis results will only match the behavior of the original Verilog code under certain conditions.</p>
 <h3 id="the-problem-with-verilog-and-asynchronous-load-flip-flops">The problem with Verilog and asynchronous load flip-flops</h3>
 <p>The key insight is that the way an asynchronous reset is modelled using Verilog always blocks is not sensitive to the data signals providing the asynchronous load value. Thus, if the data signals are changing while the asynchronous reset is active, the new data is not loaded into the flip-flop when neither clock nor the asynchronous reset is toggling.</p>
 <p>Consider the following SystemVerilog design (<a class="link" href="https://github.com/YosysHQ-Docs/Blog-Async-Load-FFs/blob/main/dut.sv"  target="_blank" rel="noopener"
     >dut.sv</a>):</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-SystemVerilog" data-lang="SystemVerilog"><span class="k">module</span> <span class="n">dut</span> <span class="p">(</span>
-    <span class="k">input</span> <span class="n">clk1</span><span class="p">,</span> <span class="n">clk2</span><span class="p">,</span> <span class="n">arst</span><span class="p">,</span>
-    <span class="k">output</span> <span class="k">reg</span> <span class="p">[</span><span class="mh">7</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">cnt1</span><span class="p">,</span> <span class="n">cnt2</span>
-<span class="p">);</span>
-    <span class="k">always_ff</span> <span class="p">@(</span><span class="k">posedge</span> <span class="n">clk1</span> <span class="k">or</span> <span class="k">posedge</span> <span class="n">arst</span><span class="p">)</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">arst</span><span class="p">)</span>
-            <span class="n">cnt1</span> <span class="o">&lt;=</span> <span class="mh">0</span><span class="p">;</span>  <span class="c1">// constant expression (async reset)
-</span><span class="c1"></span>        <span class="k">else</span>
-            <span class="n">cnt1</span> <span class="o">&lt;=</span> <span class="n">cnt1</span> <span class="o">+</span> <span class="mh">7</span><span class="p">;</span>
-    
-    <span class="k">always_ff</span> <span class="p">@(</span><span class="k">posedge</span> <span class="n">clk2</span> <span class="k">or</span> <span class="k">posedge</span> <span class="n">arst</span><span class="p">)</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">arst</span><span class="p">)</span>
-            <span class="n">cnt2</span> <span class="o">&lt;=</span> <span class="n">cnt1</span><span class="p">;</span>  <span class="c1">// dynamic expression (async load)
-</span><span class="c1"></span>        <span class="k">else</span>
-            <span class="n">cnt2</span> <span class="o">&lt;=</span> <span class="n">cnt2</span> <span class="o">+</span> <span class="mh">11</span><span class="p">;</span>
-<span class="k">endmodule</span>
-</code></pre></div><p>And the following test bench (<a class="link" href="https://github.com/YosysHQ-Docs/Blog-Async-Load-FFs/blob/main/tb.sv"  target="_blank" rel="noopener"
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-SystemVerilog" data-lang="SystemVerilog"><span class="line"><span class="cl"><span class="k">module</span> <span class="n">dut</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="k">input</span> <span class="n">clk1</span><span class="p">,</span> <span class="n">clk2</span><span class="p">,</span> <span class="n">arst</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="k">output</span> <span class="k">reg</span> <span class="p">[</span><span class="mh">7</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">cnt1</span><span class="p">,</span> <span class="n">cnt2</span>
+</span></span><span class="line"><span class="cl"><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">always_ff</span> <span class="p">@(</span><span class="k">posedge</span> <span class="n">clk1</span> <span class="k">or</span> <span class="k">posedge</span> <span class="n">arst</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">arst</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">cnt1</span> <span class="o">&lt;=</span> <span class="mh">0</span><span class="p">;</span>  <span class="c1">// constant expression (async reset)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">else</span>
+</span></span><span class="line"><span class="cl">            <span class="n">cnt1</span> <span class="o">&lt;=</span> <span class="n">cnt1</span> <span class="o">+</span> <span class="mh">7</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">always_ff</span> <span class="p">@(</span><span class="k">posedge</span> <span class="n">clk2</span> <span class="k">or</span> <span class="k">posedge</span> <span class="n">arst</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">arst</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">cnt2</span> <span class="o">&lt;=</span> <span class="n">cnt1</span><span class="p">;</span>  <span class="c1">// dynamic expression (async load)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">else</span>
+</span></span><span class="line"><span class="cl">            <span class="n">cnt2</span> <span class="o">&lt;=</span> <span class="n">cnt2</span> <span class="o">+</span> <span class="mh">11</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">endmodule</span>
+</span></span></code></pre></div><p>And the following test bench (<a class="link" href="https://github.com/YosysHQ-Docs/Blog-Async-Load-FFs/blob/main/tb.sv"  target="_blank" rel="noopener"
     >tb.sv</a>):</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-SystemVerilog" data-lang="SystemVerilog"><span class="k">module</span> <span class="n">tb</span><span class="p">;</span>
-    <span class="k">reg</span> <span class="n">clk1</span> <span class="o">=</span> <span class="mh">0</span><span class="p">,</span> <span class="n">clk2</span> <span class="o">=</span> <span class="mh">0</span><span class="p">,</span> <span class="n">arst</span> <span class="o">=</span> <span class="mh">0</span><span class="p">;</span>
-    <span class="k">wire</span> <span class="p">[</span><span class="mh">7</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">cnt1</span><span class="p">,</span> <span class="n">cnt2</span><span class="p">;</span>
-
-    <span class="n">dut</span> <span class="n">dut</span> <span class="p">(</span><span class="n">clk1</span><span class="p">,</span> <span class="n">clk2</span><span class="p">,</span> <span class="n">arst</span><span class="p">,</span> <span class="n">cnt1</span><span class="p">,</span> <span class="n">cnt2</span><span class="p">);</span>
-
-    <span class="k">task</span> <span class="n">do_clk1</span><span class="p">;</span>
-        <span class="n">clk1</span> <span class="o">=</span> <span class="mh">1</span><span class="p">;</span> <span class="p">#</span><span class="mh">5</span><span class="p">;</span> <span class="n">clk1</span> <span class="o">=</span> <span class="mh">0</span><span class="p">;</span> <span class="p">#</span><span class="mh">5</span><span class="p">;</span>
-    <span class="k">endtask</span>
-
-    <span class="k">task</span> <span class="n">do_clk2</span><span class="p">;</span>
-        <span class="n">clk2</span> <span class="o">=</span> <span class="mh">1</span><span class="p">;</span> <span class="p">#</span><span class="mh">5</span><span class="p">;</span> <span class="n">clk2</span> <span class="o">=</span> <span class="mh">0</span><span class="p">;</span> <span class="p">#</span><span class="mh">5</span><span class="p">;</span>
-    <span class="k">endtask</span>
-
-    <span class="k">task</span> <span class="n">do_arst</span><span class="p">;</span>
-        <span class="n">arst</span> <span class="o">=</span> <span class="mh">1</span><span class="p">;</span> <span class="p">#</span><span class="mh">5</span><span class="p">;</span> <span class="n">arst</span> <span class="o">=</span> <span class="mh">0</span><span class="p">;</span> <span class="p">#</span><span class="mh">5</span><span class="p">;</span>
-<span class="no">`ifdef</span> <span class="n">DOUBLE_ARST</span>
-        <span class="n">arst</span> <span class="o">=</span> <span class="mh">1</span><span class="p">;</span> <span class="p">#</span><span class="mh">5</span><span class="p">;</span> <span class="n">arst</span> <span class="o">=</span> <span class="mh">0</span><span class="p">;</span> <span class="p">#</span><span class="mh">5</span><span class="p">;</span>
-<span class="no">`endif</span>
-    <span class="k">endtask</span>
-
-    <span class="k">initial</span> <span class="k">begin</span>
-        <span class="p">#</span><span class="mh">10</span><span class="p">;</span>
-        <span class="n">do_arst</span><span class="p">;</span>              <span class="nb">$display</span><span class="p">(</span><span class="n">cnt1</span><span class="p">,</span> <span class="n">cnt2</span><span class="p">);</span>
-        <span class="k">repeat</span> <span class="p">(</span><span class="mh">5</span><span class="p">)</span> <span class="n">do_clk1</span><span class="p">;</span>   <span class="nb">$display</span><span class="p">(</span><span class="n">cnt1</span><span class="p">,</span> <span class="n">cnt2</span><span class="p">);</span>
-        <span class="n">do_arst</span><span class="p">;</span>              <span class="nb">$display</span><span class="p">(</span><span class="n">cnt1</span><span class="p">,</span> <span class="n">cnt2</span><span class="p">,</span> <span class="s">&#34; &lt;--&#34;</span><span class="p">);</span>
-        <span class="k">repeat</span> <span class="p">(</span><span class="mh">5</span><span class="p">)</span> <span class="n">do_clk2</span><span class="p">;</span>   <span class="nb">$display</span><span class="p">(</span><span class="n">cnt1</span><span class="p">,</span> <span class="n">cnt2</span><span class="p">);</span>
-        <span class="n">do_arst</span><span class="p">;</span>              <span class="nb">$display</span><span class="p">(</span><span class="n">cnt1</span><span class="p">,</span> <span class="n">cnt2</span><span class="p">);</span>
-    <span class="k">end</span>
-<span class="k">endmodule</span>
-</code></pre></div><p>Running it without and with <code>-DDOUBLE_ARST</code> produces the following output:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-SystemVerilog" data-lang="SystemVerilog"><span class="line"><span class="cl"><span class="k">module</span> <span class="n">tb</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">reg</span> <span class="n">clk1</span> <span class="o">=</span> <span class="mh">0</span><span class="p">,</span> <span class="n">clk2</span> <span class="o">=</span> <span class="mh">0</span><span class="p">,</span> <span class="n">arst</span> <span class="o">=</span> <span class="mh">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">wire</span> <span class="p">[</span><span class="mh">7</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">cnt1</span><span class="p">,</span> <span class="n">cnt2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">dut</span> <span class="n">dut</span> <span class="p">(</span><span class="n">clk1</span><span class="p">,</span> <span class="n">clk2</span><span class="p">,</span> <span class="n">arst</span><span class="p">,</span> <span class="n">cnt1</span><span class="p">,</span> <span class="n">cnt2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">task</span> <span class="n">do_clk1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">clk1</span> <span class="o">=</span> <span class="mh">1</span><span class="p">;</span> <span class="p">#</span><span class="mh">5</span><span class="p">;</span> <span class="n">clk1</span> <span class="o">=</span> <span class="mh">0</span><span class="p">;</span> <span class="p">#</span><span class="mh">5</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">endtask</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">task</span> <span class="n">do_clk2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">clk2</span> <span class="o">=</span> <span class="mh">1</span><span class="p">;</span> <span class="p">#</span><span class="mh">5</span><span class="p">;</span> <span class="n">clk2</span> <span class="o">=</span> <span class="mh">0</span><span class="p">;</span> <span class="p">#</span><span class="mh">5</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">endtask</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">task</span> <span class="n">do_arst</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">arst</span> <span class="o">=</span> <span class="mh">1</span><span class="p">;</span> <span class="p">#</span><span class="mh">5</span><span class="p">;</span> <span class="n">arst</span> <span class="o">=</span> <span class="mh">0</span><span class="p">;</span> <span class="p">#</span><span class="mh">5</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="no">`ifdef</span> <span class="n">DOUBLE_ARST</span>
+</span></span><span class="line"><span class="cl">        <span class="n">arst</span> <span class="o">=</span> <span class="mh">1</span><span class="p">;</span> <span class="p">#</span><span class="mh">5</span><span class="p">;</span> <span class="n">arst</span> <span class="o">=</span> <span class="mh">0</span><span class="p">;</span> <span class="p">#</span><span class="mh">5</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="no">`endif</span>
+</span></span><span class="line"><span class="cl">    <span class="k">endtask</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">initial</span> <span class="k">begin</span>
+</span></span><span class="line"><span class="cl">        <span class="p">#</span><span class="mh">10</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">do_arst</span><span class="p">;</span>              <span class="nb">$display</span><span class="p">(</span><span class="n">cnt1</span><span class="p">,</span> <span class="n">cnt2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">repeat</span> <span class="p">(</span><span class="mh">5</span><span class="p">)</span> <span class="n">do_clk1</span><span class="p">;</span>   <span class="nb">$display</span><span class="p">(</span><span class="n">cnt1</span><span class="p">,</span> <span class="n">cnt2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">do_arst</span><span class="p">;</span>              <span class="nb">$display</span><span class="p">(</span><span class="n">cnt1</span><span class="p">,</span> <span class="n">cnt2</span><span class="p">,</span> <span class="s">&#34; &lt;--&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">repeat</span> <span class="p">(</span><span class="mh">5</span><span class="p">)</span> <span class="n">do_clk2</span><span class="p">;</span>   <span class="nb">$display</span><span class="p">(</span><span class="n">cnt1</span><span class="p">,</span> <span class="n">cnt2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">do_arst</span><span class="p">;</span>              <span class="nb">$display</span><span class="p">(</span><span class="n">cnt1</span><span class="p">,</span> <span class="n">cnt2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">end</span>
+</span></span><span class="line"><span class="cl"><span class="k">endmodule</span>
+</span></span></code></pre></div><p>Running it without and with <code>-DDOUBLE_ARST</code> produces the following output:</p>
 <pre tabindex="0"><code>$ make run0
 iverilog -g2012 -o sim0 -s tb tb.sv dut.sv
 ./sim0
@@ -329,45 +329,45 @@ iverilog -g2012 -o sim1 -s tb -DDOUBLE_ARST tb.sv dut.sv
 <p>The best and easiest way of dealing with this issue is to instantiate FF primitives directly. This can either be vendor cells, or a user-defined module for which we chose different implementations for simulation and synthesis, one with correct simulation behavior, and one that is synthesizable, respectively.</p>
 <p>The new DUT would look something like this (<a class="link" href="https://github.com/YosysHQ-Docs/Blog-Async-Load-FFs/blob/main/dut_myff.sv"  target="_blank" rel="noopener"
     >dut_myff.sv</a>):</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-SystemVerilog" data-lang="SystemVerilog"><span class="k">module</span> <span class="n">dut</span> <span class="p">(</span>
-    <span class="k">input</span> <span class="n">clk1</span><span class="p">,</span> <span class="n">clk2</span><span class="p">,</span> <span class="n">arst</span><span class="p">,</span>
-    <span class="k">output</span> <span class="k">reg</span> <span class="p">[</span><span class="mh">7</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">cnt1</span><span class="p">,</span> <span class="n">cnt2</span>
-<span class="p">);</span>
-    <span class="n">myff</span> <span class="n">ff1</span><span class="p">[</span><span class="mh">7</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="p">(</span><span class="n">cnt1</span><span class="p">,</span> <span class="n">cnt1</span> <span class="o">+</span> <span class="mh">8</span><span class="p">&#39;</span><span class="n">d</span>  <span class="mh">7</span><span class="p">,</span> <span class="n">clk1</span><span class="p">,</span> <span class="n">arst</span><span class="p">,</span> <span class="mh">8</span><span class="p">&#39;</span><span class="n">h</span> <span class="mh">00</span><span class="p">),</span>
-         <span class="n">ff2</span><span class="p">[</span><span class="mh">7</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="p">(</span><span class="n">cnt2</span><span class="p">,</span> <span class="n">cnt2</span> <span class="o">+</span> <span class="mh">8</span><span class="p">&#39;</span><span class="n">d</span> <span class="mh">11</span><span class="p">,</span> <span class="n">clk2</span><span class="p">,</span> <span class="n">arst</span><span class="p">,</span>   <span class="n">cnt1</span><span class="p">);</span>
-<span class="k">endmodule</span>
-</code></pre></div><p>When instantiating a Vendor primitive one should always double-check that the vendor simulation library does model asynchronous loads correctly, for example using the techniques described in the next two sections.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-SystemVerilog" data-lang="SystemVerilog"><span class="line"><span class="cl"><span class="k">module</span> <span class="n">dut</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="k">input</span> <span class="n">clk1</span><span class="p">,</span> <span class="n">clk2</span><span class="p">,</span> <span class="n">arst</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="k">output</span> <span class="k">reg</span> <span class="p">[</span><span class="mh">7</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">cnt1</span><span class="p">,</span> <span class="n">cnt2</span>
+</span></span><span class="line"><span class="cl"><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">myff</span> <span class="n">ff1</span><span class="p">[</span><span class="mh">7</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="p">(</span><span class="n">cnt1</span><span class="p">,</span> <span class="n">cnt1</span> <span class="o">+</span> <span class="mh">8</span><span class="p">&#39;</span><span class="n">d</span>  <span class="mh">7</span><span class="p">,</span> <span class="n">clk1</span><span class="p">,</span> <span class="n">arst</span><span class="p">,</span> <span class="mh">8</span><span class="p">&#39;</span><span class="n">h</span> <span class="mh">00</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">         <span class="n">ff2</span><span class="p">[</span><span class="mh">7</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="p">(</span><span class="n">cnt2</span><span class="p">,</span> <span class="n">cnt2</span> <span class="o">+</span> <span class="mh">8</span><span class="p">&#39;</span><span class="n">d</span> <span class="mh">11</span><span class="p">,</span> <span class="n">clk2</span><span class="p">,</span> <span class="n">arst</span><span class="p">,</span>   <span class="n">cnt1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">endmodule</span>
+</span></span></code></pre></div><p>When instantiating a Vendor primitive one should always double-check that the vendor simulation library does model asynchronous loads correctly, for example using the techniques described in the next two sections.</p>
 <h3 id="simulation-model-using-verilog-udp">Simulation model using Verilog UDP</h3>
 <p>Verilog UDP primitives can be used to correctly model the behavior of asynchronous load flip-flops. But UDPs are not synthesizable, so we need to also provide a synthesizable implementation of an asynchronous load flip-flop (<a class="link" href="https://github.com/YosysHQ-Docs/Blog-Async-Load-FFs/blob/main/myff_udp.sv"  target="_blank" rel="noopener"
     >myff_udp.sv</a>):</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-SystemVerilog" data-lang="SystemVerilog"><span class="no">`ifdef</span> <span class="n">SYNTHESIS</span>
-    <span class="k">module</span> <span class="n">myff</span> <span class="p">(</span>
-        <span class="k">output</span> <span class="k">reg</span> <span class="n">q</span><span class="p">,</span>
-        <span class="k">input</span> <span class="n">d</span><span class="p">,</span> <span class="n">clk</span><span class="p">,</span> <span class="n">arst</span><span class="p">,</span> <span class="n">rval</span>
-    <span class="p">);</span>
-        <span class="k">always</span> <span class="p">@(</span><span class="k">posedge</span> <span class="n">clk</span> <span class="k">or</span> <span class="k">posedge</span> <span class="n">arst</span><span class="p">)</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">arst</span><span class="p">)</span> <span class="n">q</span> <span class="o">&lt;=</span> <span class="n">rval</span><span class="p">;</span>
-            <span class="k">else</span>      <span class="n">q</span> <span class="o">&lt;=</span> <span class="n">d</span><span class="p">;</span>
-    <span class="k">endmodule</span>
-<span class="no">`else</span>
-    <span class="k">primitive</span> <span class="n">myff</span> <span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">clk</span><span class="p">,</span> <span class="n">arst</span><span class="p">,</span> <span class="n">rval</span><span class="p">);</span>
-        <span class="k">input</span> <span class="n">d</span><span class="p">,</span> <span class="n">clk</span><span class="p">,</span> <span class="n">arst</span><span class="p">,</span> <span class="n">rval</span><span class="p">;</span>
-        <span class="k">reg</span> <span class="n">q</span><span class="p">;</span>
-        <span class="k">output</span> <span class="n">q</span><span class="p">;</span>
-        <span class="k">table</span>
-        <span class="c1">// D C R V : Q : Q&#39;
-</span><span class="c1"></span>           <span class="o">?</span> <span class="o">?</span> <span class="mh">1</span> <span class="mh">0</span> <span class="o">:</span> <span class="o">?</span> <span class="o">:</span> <span class="mh">0</span> <span class="p">;</span> <span class="c1">// async reset
-</span><span class="c1"></span>           <span class="o">?</span> <span class="o">?</span> <span class="mh">1</span> <span class="mh">1</span> <span class="o">:</span> <span class="o">?</span> <span class="o">:</span> <span class="mh">1</span> <span class="p">;</span> <span class="c1">// async set
-</span><span class="c1"></span>           <span class="mh">0</span> <span class="n">p</span> <span class="mh">0</span> <span class="o">?</span> <span class="o">:</span> <span class="o">?</span> <span class="o">:</span> <span class="mh">0</span> <span class="p">;</span> <span class="c1">// posedge clock, d=0
-</span><span class="c1"></span>           <span class="mh">1</span> <span class="n">p</span> <span class="mh">0</span> <span class="o">?</span> <span class="o">:</span> <span class="o">?</span> <span class="o">:</span> <span class="mh">1</span> <span class="p">;</span> <span class="c1">// posedge clock, d=1
-</span><span class="c1"></span>           <span class="o">?</span> <span class="n">n</span> <span class="mh">0</span> <span class="o">?</span> <span class="o">:</span> <span class="o">?</span> <span class="o">:</span> <span class="o">-</span> <span class="p">;</span> <span class="c1">// negedge clock
-</span><span class="c1"></span>           <span class="o">*</span> <span class="o">?</span> <span class="o">?</span> <span class="o">?</span> <span class="o">:</span> <span class="o">?</span> <span class="o">:</span> <span class="o">-</span> <span class="p">;</span> <span class="c1">// any data edge
-</span><span class="c1"></span>           <span class="o">?</span> <span class="o">?</span> <span class="o">*</span> <span class="o">?</span> <span class="o">:</span> <span class="o">?</span> <span class="o">:</span> <span class="o">-</span> <span class="p">;</span> <span class="c1">// any arst edge
-</span><span class="c1"></span>           <span class="o">?</span> <span class="o">?</span> <span class="o">?</span> <span class="o">*</span> <span class="o">:</span> <span class="o">?</span> <span class="o">:</span> <span class="o">-</span> <span class="p">;</span> <span class="c1">// any rval edge
-</span><span class="c1"></span>        <span class="k">endtable</span>
-    <span class="k">endprimitive</span>
-<span class="no">`endif</span>
-</code></pre></div><p>Running our test-bench now yields the expected result, even when we pulse the asynchronous load signal only once:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-SystemVerilog" data-lang="SystemVerilog"><span class="line"><span class="cl"><span class="no">`ifdef</span> <span class="n">SYNTHESIS</span>
+</span></span><span class="line"><span class="cl">    <span class="k">module</span> <span class="n">myff</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="k">output</span> <span class="k">reg</span> <span class="n">q</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="k">input</span> <span class="n">d</span><span class="p">,</span> <span class="n">clk</span><span class="p">,</span> <span class="n">arst</span><span class="p">,</span> <span class="n">rval</span>
+</span></span><span class="line"><span class="cl">    <span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">always</span> <span class="p">@(</span><span class="k">posedge</span> <span class="n">clk</span> <span class="k">or</span> <span class="k">posedge</span> <span class="n">arst</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">arst</span><span class="p">)</span> <span class="n">q</span> <span class="o">&lt;=</span> <span class="n">rval</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">else</span>      <span class="n">q</span> <span class="o">&lt;=</span> <span class="n">d</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">endmodule</span>
+</span></span><span class="line"><span class="cl"><span class="no">`else</span>
+</span></span><span class="line"><span class="cl">    <span class="k">primitive</span> <span class="n">myff</span> <span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">clk</span><span class="p">,</span> <span class="n">arst</span><span class="p">,</span> <span class="n">rval</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">input</span> <span class="n">d</span><span class="p">,</span> <span class="n">clk</span><span class="p">,</span> <span class="n">arst</span><span class="p">,</span> <span class="n">rval</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">reg</span> <span class="n">q</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">output</span> <span class="n">q</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">table</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// D C R V : Q : Q&#39;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>           <span class="o">?</span> <span class="o">?</span> <span class="mh">1</span> <span class="mh">0</span> <span class="o">:</span> <span class="o">?</span> <span class="o">:</span> <span class="mh">0</span> <span class="p">;</span> <span class="c1">// async reset
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>           <span class="o">?</span> <span class="o">?</span> <span class="mh">1</span> <span class="mh">1</span> <span class="o">:</span> <span class="o">?</span> <span class="o">:</span> <span class="mh">1</span> <span class="p">;</span> <span class="c1">// async set
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>           <span class="mh">0</span> <span class="n">p</span> <span class="mh">0</span> <span class="o">?</span> <span class="o">:</span> <span class="o">?</span> <span class="o">:</span> <span class="mh">0</span> <span class="p">;</span> <span class="c1">// posedge clock, d=0
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>           <span class="mh">1</span> <span class="n">p</span> <span class="mh">0</span> <span class="o">?</span> <span class="o">:</span> <span class="o">?</span> <span class="o">:</span> <span class="mh">1</span> <span class="p">;</span> <span class="c1">// posedge clock, d=1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>           <span class="o">?</span> <span class="n">n</span> <span class="mh">0</span> <span class="o">?</span> <span class="o">:</span> <span class="o">?</span> <span class="o">:</span> <span class="o">-</span> <span class="p">;</span> <span class="c1">// negedge clock
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>           <span class="o">*</span> <span class="o">?</span> <span class="o">?</span> <span class="o">?</span> <span class="o">:</span> <span class="o">?</span> <span class="o">:</span> <span class="o">-</span> <span class="p">;</span> <span class="c1">// any data edge
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>           <span class="o">?</span> <span class="o">?</span> <span class="o">*</span> <span class="o">?</span> <span class="o">:</span> <span class="o">?</span> <span class="o">:</span> <span class="o">-</span> <span class="p">;</span> <span class="c1">// any arst edge
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>           <span class="o">?</span> <span class="o">?</span> <span class="o">?</span> <span class="o">*</span> <span class="o">:</span> <span class="o">?</span> <span class="o">:</span> <span class="o">-</span> <span class="p">;</span> <span class="c1">// any rval edge
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">endtable</span>
+</span></span><span class="line"><span class="cl">    <span class="k">endprimitive</span>
+</span></span><span class="line"><span class="cl"><span class="no">`endif</span>
+</span></span></code></pre></div><p>Running our test-bench now yields the expected result, even when we pulse the asynchronous load signal only once:</p>
 <pre tabindex="0"><code>$ make run2
 iverilog -g2012 -o sim2 -s tb tb.sv dut_myff.sv myff_udp.sv
 ./sim2
@@ -379,20 +379,20 @@ iverilog -g2012 -o sim2 -s tb tb.sv dut_myff.sv myff_udp.sv
 </code></pre><h3 id="simulation-model-using-procedural-assign-and-deassign">Simulation model using procedural assign and deassign</h3>
 <p>Another approach is to “fix up” the asynchronous load using procedural assign and deassign (<a class="link" href="https://github.com/YosysHQ-Docs/Blog-Async-Load-FFs/blob/main/myff_ada.sv"  target="_blank" rel="noopener"
     >myff_ada.sv</a>):</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-SystemVerilog" data-lang="SystemVerilog"><span class="k">module</span> <span class="n">myff</span> <span class="p">(</span>
-    <span class="k">output</span> <span class="k">reg</span> <span class="n">q</span><span class="p">,</span>
-    <span class="k">input</span> <span class="n">d</span><span class="p">,</span> <span class="n">clk</span><span class="p">,</span> <span class="n">arst</span><span class="p">,</span> <span class="n">rval</span>
-<span class="p">);</span>
-    <span class="k">always_ff</span> <span class="p">@(</span><span class="k">posedge</span> <span class="n">clk</span> <span class="k">or</span> <span class="k">posedge</span> <span class="n">arst</span><span class="p">)</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">arst</span><span class="p">)</span> <span class="n">q</span> <span class="o">&lt;=</span> <span class="n">rval</span><span class="p">;</span>
-        <span class="k">else</span>      <span class="n">q</span> <span class="o">&lt;=</span> <span class="n">d</span><span class="p">;</span>
-<span class="no">`ifndef</span> <span class="n">SYNTHESIS</span>
-    <span class="k">always</span> <span class="p">@(</span><span class="n">arst</span><span class="p">)</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">arst</span><span class="p">)</span> <span class="k">assign</span> <span class="n">q</span> <span class="o">=</span> <span class="n">rval</span><span class="p">;</span>
-        <span class="k">else</span>    <span class="k">deassign</span> <span class="n">q</span><span class="p">;</span>
-<span class="no">`endif</span>
-<span class="k">endmodule</span>
-</code></pre></div><p>Running our test-bench on this version also yields the expected result:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-SystemVerilog" data-lang="SystemVerilog"><span class="line"><span class="cl"><span class="k">module</span> <span class="n">myff</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="k">output</span> <span class="k">reg</span> <span class="n">q</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="k">input</span> <span class="n">d</span><span class="p">,</span> <span class="n">clk</span><span class="p">,</span> <span class="n">arst</span><span class="p">,</span> <span class="n">rval</span>
+</span></span><span class="line"><span class="cl"><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">always_ff</span> <span class="p">@(</span><span class="k">posedge</span> <span class="n">clk</span> <span class="k">or</span> <span class="k">posedge</span> <span class="n">arst</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">arst</span><span class="p">)</span> <span class="n">q</span> <span class="o">&lt;=</span> <span class="n">rval</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span>      <span class="n">q</span> <span class="o">&lt;=</span> <span class="n">d</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="no">`ifndef</span> <span class="n">SYNTHESIS</span>
+</span></span><span class="line"><span class="cl">    <span class="k">always</span> <span class="p">@(</span><span class="n">arst</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">arst</span><span class="p">)</span> <span class="k">assign</span> <span class="n">q</span> <span class="o">=</span> <span class="n">rval</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span>    <span class="k">deassign</span> <span class="n">q</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="no">`endif</span>
+</span></span><span class="line"><span class="cl"><span class="k">endmodule</span>
+</span></span></code></pre></div><p>Running our test-bench on this version also yields the expected result:</p>
 <pre tabindex="0"><code>iverilog -g2012 -o sim3 -s tb tb.sv dut_myff.sv myff_ada.sv
 ./sim3
   0  0
@@ -402,56 +402,56 @@ iverilog -g2012 -o sim2 -s tb tb.sv dut_myff.sv myff_udp.sv
   0  0
 </code></pre><p>Of course it’s also possible to use procedural assign and deassign directly in the design to “fix up” the behavior of asynchronous load flip-flops (<a class="link" href="https://github.com/YosysHQ-Docs/Blog-Async-Load-FFs/blob/main/dut_ada.sv"  target="_blank" rel="noopener"
     >dut_ada.sv</a>):</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-SystemVerilog" data-lang="SystemVerilog"><span class="k">module</span> <span class="n">dut</span> <span class="p">(</span>
-    <span class="k">input</span> <span class="n">clk1</span><span class="p">,</span> <span class="n">clk2</span><span class="p">,</span> <span class="n">arst</span><span class="p">,</span>
-    <span class="k">output</span> <span class="k">reg</span> <span class="p">[</span><span class="mh">7</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">cnt1</span><span class="p">,</span> <span class="n">cnt2</span>
-<span class="p">);</span>
-    <span class="k">always_ff</span> <span class="p">@(</span><span class="k">posedge</span> <span class="n">clk1</span> <span class="k">or</span> <span class="k">posedge</span> <span class="n">arst</span><span class="p">)</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">arst</span><span class="p">)</span>
-            <span class="n">cnt1</span> <span class="o">&lt;=</span> <span class="mh">0</span><span class="p">;</span>
-        <span class="k">else</span>
-            <span class="n">cnt1</span> <span class="o">&lt;=</span> <span class="n">cnt1</span> <span class="o">+</span> <span class="mh">7</span><span class="p">;</span>
-    
-    <span class="k">always_ff</span> <span class="p">@(</span><span class="k">posedge</span> <span class="n">clk2</span> <span class="k">or</span> <span class="k">posedge</span> <span class="n">arst</span><span class="p">)</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">arst</span><span class="p">)</span>
-            <span class="n">cnt2</span> <span class="o">&lt;=</span> <span class="n">cnt1</span><span class="p">;</span>
-        <span class="k">else</span>
-            <span class="n">cnt2</span> <span class="o">&lt;=</span> <span class="n">cnt2</span> <span class="o">+</span> <span class="mh">11</span><span class="p">;</span>
-    
-<span class="no">`ifndef</span> <span class="n">SYNTHESIS</span>
-    <span class="k">always</span> <span class="p">@(</span><span class="n">arst</span><span class="p">)</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">arst</span><span class="p">)</span> <span class="k">assign</span> <span class="n">cnt2</span> <span class="o">=</span> <span class="n">cnt1</span><span class="p">;</span>
-        <span class="k">else</span>    <span class="k">deassign</span> <span class="n">cnt2</span><span class="p">;</span>
-<span class="no">`endif</span>
-<span class="k">endmodule</span>
-</code></pre></div><p>However, sprinkling procedural assign and deassign statements and ifndef-SYNTHESIS-blocks all over the design is much more error prone than implementing this work-around only once in a custom cell type that can then be instantiated wherever needed.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-SystemVerilog" data-lang="SystemVerilog"><span class="line"><span class="cl"><span class="k">module</span> <span class="n">dut</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="k">input</span> <span class="n">clk1</span><span class="p">,</span> <span class="n">clk2</span><span class="p">,</span> <span class="n">arst</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="k">output</span> <span class="k">reg</span> <span class="p">[</span><span class="mh">7</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">cnt1</span><span class="p">,</span> <span class="n">cnt2</span>
+</span></span><span class="line"><span class="cl"><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">always_ff</span> <span class="p">@(</span><span class="k">posedge</span> <span class="n">clk1</span> <span class="k">or</span> <span class="k">posedge</span> <span class="n">arst</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">arst</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">cnt1</span> <span class="o">&lt;=</span> <span class="mh">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span>
+</span></span><span class="line"><span class="cl">            <span class="n">cnt1</span> <span class="o">&lt;=</span> <span class="n">cnt1</span> <span class="o">+</span> <span class="mh">7</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">always_ff</span> <span class="p">@(</span><span class="k">posedge</span> <span class="n">clk2</span> <span class="k">or</span> <span class="k">posedge</span> <span class="n">arst</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">arst</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">cnt2</span> <span class="o">&lt;=</span> <span class="n">cnt1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span>
+</span></span><span class="line"><span class="cl">            <span class="n">cnt2</span> <span class="o">&lt;=</span> <span class="n">cnt2</span> <span class="o">+</span> <span class="mh">11</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="no">`ifndef</span> <span class="n">SYNTHESIS</span>
+</span></span><span class="line"><span class="cl">    <span class="k">always</span> <span class="p">@(</span><span class="n">arst</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">arst</span><span class="p">)</span> <span class="k">assign</span> <span class="n">cnt2</span> <span class="o">=</span> <span class="n">cnt1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span>    <span class="k">deassign</span> <span class="n">cnt2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="no">`endif</span>
+</span></span><span class="line"><span class="cl"><span class="k">endmodule</span>
+</span></span></code></pre></div><p>However, sprinkling procedural assign and deassign statements and ifndef-SYNTHESIS-blocks all over the design is much more error prone than implementing this work-around only once in a custom cell type that can then be instantiated wherever needed.</p>
 <h3 id="the-latchflip-flop-trick">The latch+flip-flop trick</h3>
 <p>The following technique is used on some FPGA architectures to emulate asynchronous-load flip-flops using latches and asynchronous-reset flip-flops only. It can be used to completely avoid asynchronous-load FFs while preserving the semantic of such elements (<a class="link" href="https://github.com/YosysHQ-Docs/Blog-Async-Load-FFs/blob/main/myff_hack.sv"  target="_blank" rel="noopener"
     >myff_hack.sv</a>):</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-SystemVerilog" data-lang="SystemVerilog"><span class="k">module</span> <span class="n">myff</span> <span class="p">(</span>
-    <span class="k">output</span> <span class="n">q</span><span class="p">,</span>
-    <span class="k">input</span> <span class="n">d</span><span class="p">,</span> <span class="n">clk</span><span class="p">,</span> <span class="n">arst</span><span class="p">,</span> <span class="n">rval</span>
-<span class="p">);</span>
-    <span class="c1">// a latch to store the async-load value
-</span><span class="c1"></span>    <span class="k">reg</span> <span class="n">latched_rval</span><span class="p">;</span>
-    <span class="k">always</span> <span class="p">@</span><span class="o">*</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">arst</span><span class="p">)</span> <span class="n">latched_rval</span> <span class="o">=</span> <span class="n">rval</span><span class="p">;</span>
-
-    <span class="c1">// a regular FF to store the clocked data value
-</span><span class="c1"></span>    <span class="k">reg</span> <span class="n">q_without_reset</span><span class="p">;</span>
-    <span class="k">always</span> <span class="p">@(</span><span class="k">posedge</span> <span class="n">clk</span><span class="p">)</span>
-        <span class="n">q_without_reset</span> <span class="o">&lt;=</span> <span class="n">d</span><span class="p">;</span>
-
-    <span class="c1">// an asynchronous-reset flip-flop to remember last event
-</span><span class="c1"></span>    <span class="k">reg</span> <span class="n">last_event_was_clock</span><span class="p">;</span>
-    <span class="k">always</span> <span class="p">@(</span><span class="k">posedge</span> <span class="n">clk</span> <span class="k">or</span> <span class="k">posedge</span> <span class="n">arst</span><span class="p">)</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">arst</span><span class="p">)</span> <span class="n">last_event_was_clock</span> <span class="o">&lt;=</span> <span class="mh">0</span><span class="p">;</span>
-        <span class="k">else</span>      <span class="n">last_event_was_clock</span> <span class="o">&lt;=</span> <span class="mh">1</span><span class="p">;</span>
-    
-    <span class="c1">// output either the latched reset value or clocked data value
-</span><span class="c1"></span>    <span class="k">assign</span> <span class="n">q</span> <span class="o">=</span> <span class="n">last_event_was_clock</span> <span class="o">?</span> <span class="n">q_without_reset</span> <span class="o">:</span> <span class="n">latched_rval</span><span class="p">;</span>
-<span class="k">endmodule</span>
-</code></pre></div><p>Running our test-bench a last time gives the expected result for this solution as well:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-SystemVerilog" data-lang="SystemVerilog"><span class="line"><span class="cl"><span class="k">module</span> <span class="n">myff</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="k">output</span> <span class="n">q</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="k">input</span> <span class="n">d</span><span class="p">,</span> <span class="n">clk</span><span class="p">,</span> <span class="n">arst</span><span class="p">,</span> <span class="n">rval</span>
+</span></span><span class="line"><span class="cl"><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// a latch to store the async-load value
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">reg</span> <span class="n">latched_rval</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">always</span> <span class="p">@</span><span class="o">*</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">arst</span><span class="p">)</span> <span class="n">latched_rval</span> <span class="o">=</span> <span class="n">rval</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// a regular FF to store the clocked data value
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">reg</span> <span class="n">q_without_reset</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">always</span> <span class="p">@(</span><span class="k">posedge</span> <span class="n">clk</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">q_without_reset</span> <span class="o">&lt;=</span> <span class="n">d</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// an asynchronous-reset flip-flop to remember last event
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">reg</span> <span class="n">last_event_was_clock</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">always</span> <span class="p">@(</span><span class="k">posedge</span> <span class="n">clk</span> <span class="k">or</span> <span class="k">posedge</span> <span class="n">arst</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">arst</span><span class="p">)</span> <span class="n">last_event_was_clock</span> <span class="o">&lt;=</span> <span class="mh">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span>      <span class="n">last_event_was_clock</span> <span class="o">&lt;=</span> <span class="mh">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// output either the latched reset value or clocked data value
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">assign</span> <span class="n">q</span> <span class="o">=</span> <span class="n">last_event_was_clock</span> <span class="o">?</span> <span class="n">q_without_reset</span> <span class="o">:</span> <span class="n">latched_rval</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">endmodule</span>
+</span></span></code></pre></div><p>Running our test-bench a last time gives the expected result for this solution as well:</p>
 <pre tabindex="0"><code>iverilog -g2012 -o sim5 -s tb tb.sv dut_myff.sv myff_hack.sv
 ./sim5
   0  0
