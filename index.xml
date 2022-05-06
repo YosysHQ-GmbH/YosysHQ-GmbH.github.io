@@ -6,7 +6,29 @@
         <description>Recent content on YosysHQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Mon, 28 Feb 2022 11:23:54 +0100</lastBuildDate><atom:link href="http://blog.yosyshq.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 06 May 2022 09:38:52 +0200</lastBuildDate><atom:link href="http://blog.yosyshq.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Teodor-Dumitru and the Complexity of Adder Implementations in Hardware</title>
+        <link>http://blog.yosyshq.com/p/optimising-adders/</link>
+        <pubDate>Fri, 06 May 2022 09:38:52 +0200</pubDate>
+        
+        <guid>http://blog.yosyshq.com/p/optimising-adders/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2022/adders.jpg" alt="Featured image of post Teodor-Dumitru and the Complexity of Adder Implementations in Hardware" /&gt;&lt;p&gt;Teodor-Dumitru Ene will be presenting his work on adder optimisations, he&amp;rsquo;ll be covering:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Prefix sums&lt;/li&gt;
+&lt;li&gt;His research&lt;/li&gt;
+&lt;li&gt;Adder-specific quirks and optimizations&lt;/li&gt;
+&lt;li&gt;Future goals&lt;/li&gt;
+&lt;li&gt;Questions!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Please join us:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Tuesday, 10 May · 17:30 – 18:30 CEST&lt;/li&gt;
+&lt;li&gt;Video call link: &lt;a class=&#34;link&#34; href=&#34;https://meet.google.com/shx-qnnn-jph&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://meet.google.com/shx-qnnn-jph&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>Open Source Silicon with Yosys</title>
         <link>http://blog.yosyshq.com/p/open-source-silicon-with-yosys/</link>
         <pubDate>Mon, 28 Feb 2022 11:23:54 +0100</pubDate>
