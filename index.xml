@@ -6,7 +6,25 @@
         <description>Recent content on YosysHQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Fri, 17 Jun 2022 17:28:17 +0200</lastBuildDate><atom:link href="http://blog.yosyshq.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 27 Jul 2022 14:41:35 +0200</lastBuildDate><atom:link href="http://blog.yosyshq.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Autotune</title>
+        <link>http://blog.yosyshq.com/p/sby-autotune/</link>
+        <pubDate>Wed, 27 Jul 2022 14:41:35 +0200</pubDate>
+        
+        <guid>http://blog.yosyshq.com/p/sby-autotune/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2022/autotune.png" alt="Featured image of post Autotune" /&gt;&lt;p&gt;Sby, our frontend for formal verification, makes it easy to use Yosys with the various open source verification tools that are included in our CAD suites. Sby integrates these tools as engines and provides a unified interface. Additionally, many of the verification tools internally use lower-level tools like SAT and SMT solvers and allow the user to select between different supported solvers.&lt;/p&gt;
+&lt;p&gt;Most verification tasks can be performed by several of the supported engines and solvers. Depending on the specific verification task at hand, there can be large performance differences between them. Thus, it makes sense to try several engines and solvers to pick the best performing one.&lt;/p&gt;
+&lt;p&gt;With Sby, switching the engine or solver only requires changing a single line in the “[engines]” section of the .sby file. Still, the large number of engine and solver configurations made it impractical to manually try all of them for every verification task, so it was easy to leave performance on the table by sticking with a worse performing configuration.&lt;/p&gt;
+&lt;p&gt;To help you get the best performance out of Sby, we now introduced the &amp;ndash;autotune option. If you add this option to your usual Sby invocation, it will go ahead and automatically try all recommended engine and solver combinations, producing a report that lists the best performing configurations. You can then copy a configuration from this report into your .sby file to use a faster engine for future sby invocations. From time to time, when updating the CAD suite, or making significant changes to your design, you can run autotune again to see if you are still using the best performing engine.&lt;/p&gt;
+&lt;p&gt;Sby  &amp;ndash;autotune is also a lot smarter than just trying every configuration in sequence. It runs in parallel and knows how to use timeouts and retries so that a single slow engine that would take hours doesn’t keep Sby from quickly discovering a better configuration that finishes in seconds. When selecting the recommended engines and solvers, it also takes into account the design and settings in your .sby file to avoid known incompatibilities or performance issues.&lt;/p&gt;
+&lt;p&gt;More details on how to use and configure the automatic engine selection can be found in the &lt;a class=&#34;link&#34; href=&#34;https://symbiyosys.readthedocs.io/en/latest/autotune.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;corresponding section of the Sby documentation&lt;/a&gt;. If you want to try out the new autotune feature yourself, but don’t have a suitable Sby project at hand, you can try it on the &lt;a class=&#34;link&#34; href=&#34;https://github.com/YosysHQ/sby/tree/master/docs/examples/autotune&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;small example project we prepared&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;As always, we&amp;rsquo;re &lt;a class=&#34;link&#34; href=&#34;https://www.yosyshq.com/contact&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;interested to hear how you get on with our tools&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Formal Tristate Support</title>
         <link>http://blog.yosyshq.com/p/formal-trisate-support/</link>
         <pubDate>Fri, 17 Jun 2022 17:28:17 +0200</pubDate>

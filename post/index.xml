@@ -6,7 +6,17 @@
     <description>Recent content in Posts on YosysHQ Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 17 Jun 2022 17:28:17 +0200</lastBuildDate><atom:link href="http://blog.yosyshq.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 27 Jul 2022 14:41:35 +0200</lastBuildDate><atom:link href="http://blog.yosyshq.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Autotune</title>
+      <link>http://blog.yosyshq.com/p/sby-autotune/</link>
+      <pubDate>Wed, 27 Jul 2022 14:41:35 +0200</pubDate>
+      
+      <guid>http://blog.yosyshq.com/p/sby-autotune/</guid>
+      <description>Sby, our frontend for formal verification, makes it easy to use Yosys with the various open source verification tools that are included in our CAD suites. Sby integrates these tools as engines and provides a unified interface. Additionally, many of the verification tools internally use lower-level tools like SAT and SMT solvers and allow the user to select between different supported solvers.
+Most verification tasks can be performed by several of the supported engines and solvers.</description>
+    </item>
+    
     <item>
       <title>Formal Tristate Support</title>
       <link>http://blog.yosyshq.com/p/formal-trisate-support/</link>
@@ -23,8 +33,8 @@
       
       <guid>http://blog.yosyshq.com/p/optimising-adders/</guid>
       <description>Teodor-Dumitru Ene will be presenting his work on adder optimisations, he&amp;rsquo;ll be covering:
- Prefix sums His research Adder-specific quirks and optimizations Future goals Questions!  Please join us:
- Tuesday, 10 May · 17:30 – 18:30 CEST Streaming on youtube  </description>
+Prefix sums His research Adder-specific quirks and optimizations Future goals Questions! Please join us:
+Tuesday, 10 May · 17:30 – 18:30 CEST Streaming on youtube </description>
     </item>
     
     <item>
@@ -57,7 +67,7 @@ What are asynchronous load flip-flops An asynchronous load flip-flop is a type o
       <guid>http://blog.yosyshq.com/p/pricing-for-small-companies/</guid>
       <description>YosysHQ are pleased to announce a new pricing option for small companies with one full time engineer.
 For just €500 per month (excl. VAT), you can get our ‘Solo bundle’:
- 2 nodes of TabbyCAD Suite, offering industry compatible language support and our formal verification tools and verification IP. Unlimited number of users/processes per node. (Up to 32 CPUs per node.) Not time limited, use in your continuous integration systems. Support that includes potential for custom work and access to our technical team.</description>
+2 nodes of TabbyCAD Suite, offering industry compatible language support and our formal verification tools and verification IP. Unlimited number of users/processes per node. (Up to 32 CPUs per node.) Not time limited, use in your continuous integration systems. Support that includes potential for custom work and access to our technical team.</description>
     </item>
     
     <item>
@@ -67,7 +77,7 @@ For just €500 per month (excl. VAT), you can get our ‘Solo bundle’:
       
       <guid>http://blog.yosyshq.com/p/ap109/</guid>
       <description>This Application Note was written with the intention of showing a brief introduction to SVA, and is definitely not a substitute for extensive training. To learn more about formal verification and SVA, it is recommended to book the course given by the FPV specialists at YosysHQ.
- A brief history of SystemVerilog Assertions SVA layers definition and examples Assertion types, sequential property operators A short description of liveness and safety properties Practical examples using the sequence builder module written by our CTO Claire Xen.</description>
+A brief history of SystemVerilog Assertions SVA layers definition and examples Assertion types, sequential property operators A short description of liveness and safety properties Practical examples using the sequence builder module written by our CTO Claire Xen.</description>
     </item>
     
     <item>
@@ -79,7 +89,7 @@ For just €500 per month (excl. VAT), you can get our ‘Solo bundle’:
       <description>For a long time people have asked us for quality long form content that shows how to get the best from our formal tools.
 We have started a series of app notes, with the first being about cover and witness for SVA properties. Otherwise known as &amp;lsquo;Am I testing what I think I&amp;rsquo;m testing&amp;rsquo;!
 What You will learn in this app note:
- Default clocking and default disable declarations Sequences and cycle delays Overlapping and non-overlapping implication syntax and semantic Weak precondition cover and witness How to apply that to a practical HDL code example  https://yosyshq.</description>
+Default clocking and default disable declarations Sequences and cycle delays Overlapping and non-overlapping implication syntax and semantic Weak precondition cover and witness How to apply that to a practical HDL code example https://yosyshq.</description>
     </item>
     
     <item>
