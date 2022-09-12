@@ -2,25 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://blog.yosyshq.com/post/</loc>
+    <lastmod>2022-09-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://blog.yosyshq.com/tags/release-notes/</loc>
+    <lastmod>2022-09-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://blog.yosyshq.com/p/september-tabbycad-update/</loc>
+    <lastmod>2022-09-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://blog.yosyshq.com/tags/</loc>
+    <lastmod>2022-09-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://blog.yosyshq.com/</loc>
+    <lastmod>2022-09-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://blog.yosyshq.com/p/august-tabbycad-update/</loc>
+    <lastmod>2022-08-01T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://blog.yosyshq.com/p/sby-autotune/</loc>
     <lastmod>2022-07-27T14:41:35+02:00</lastmod>
   </url><url>
     <loc>http://blog.yosyshq.com/tags/blog/</loc>
     <lastmod>2022-07-27T14:41:35+02:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/post/</loc>
-    <lastmod>2022-07-27T14:41:35+02:00</lastmod>
-  </url><url>
-    <loc>http://blog.yosyshq.com/tags/</loc>
-    <lastmod>2022-07-27T14:41:35+02:00</lastmod>
-  </url><url>
-    <loc>http://blog.yosyshq.com/</loc>
-    <lastmod>2022-07-27T14:41:35+02:00</lastmod>
-  </url><url>
     <loc>http://blog.yosyshq.com/p/july-tabbycad-update/</loc>
-    <lastmod>2022-07-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://blog.yosyshq.com/tags/release-notes/</loc>
     <lastmod>2022-07-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://blog.yosyshq.com/p/formal-trisate-support/</loc>

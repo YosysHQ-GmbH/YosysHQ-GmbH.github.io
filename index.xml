@@ -6,7 +6,42 @@
         <description>Recent content on YosysHQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Wed, 27 Jul 2022 14:41:35 +0200</lastBuildDate><atom:link href="http://blog.yosyshq.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 01 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://blog.yosyshq.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>September TabbyCAD update</title>
+        <link>http://blog.yosyshq.com/p/september-tabbycad-update/</link>
+        <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
+        
+        <guid>http://blog.yosyshq.com/p/september-tabbycad-update/</guid>
+        <description>&lt;h2 id=&#34;sby&#34;&gt;SBY&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;SBY now runs multiple tasks in parallel. Additionally it now limits the number of concurrently running subprocesses to the available number of cores. The &amp;ndash;sequential command line option allows you to opt out of running tasks in parallel and the -j N option sets the limit of concurrent subprocesses to N instead of the default. All this is optionally integrated with the make jobserver protocol to enforce the concurrent process limit across other processes launched by make.&lt;/li&gt;
+&lt;li&gt;There is a new SBY option vcd to enable or disable the generation of VCD traces. It defaults to on, but can be set to off when no traces are required to save runtime and disk space. VCD trace generation performance for the smtbmc engine is also improved in this release, so we recommend re-evaluating the performance before turning VCD trace generation off.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;in-other-yosyshq-news&#34;&gt;In other YosysHQ news&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;We have recently overhauled the &lt;a class=&#34;link&#34; href=&#34;https://symbiyosys.readthedocs.io/en/latest/quickstart.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;SBY getting started guide&lt;/a&gt;. Have a look if you need to onboard someone for SVA property checking!&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>August TabbyCAD update</title>
+        <link>http://blog.yosyshq.com/p/august-tabbycad-update/</link>
+        <pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate>
+        
+        <guid>http://blog.yosyshq.com/p/august-tabbycad-update/</guid>
+        <description>&lt;h2 id=&#34;sby&#34;&gt;SBY&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;SBY now uses a more precise logic loop analysis, removing the need to run simplemap on coarse-grain cells that re-use parts of a signal.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;in-other-yosyshq-news&#34;&gt;In other YosysHQ news&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Since we introduced the new autotune option, we’ve now written up a &lt;a class=&#34;link&#34; href=&#34;https://blog.yosyshq.com/p/sby-autotune/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;blogpost&lt;/a&gt; with an example on how to get started.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>Autotune</title>
         <link>http://blog.yosyshq.com/p/sby-autotune/</link>
         <pubDate>Wed, 27 Jul 2022 14:41:35 +0200</pubDate>
