@@ -25,6 +25,25 @@
 </description>
         </item>
         <item>
+        <title>July TabbyCAD update</title>
+        <link>http://blog.yosyshq.com/p/july-tabbycad-update/</link>
+        <pubDate>Fri, 01 Jul 2022 00:00:00 +0000</pubDate>
+        
+        <guid>http://blog.yosyshq.com/p/july-tabbycad-update/</guid>
+        <description>&lt;h2 id=&#34;sby&#34;&gt;SBY&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;An autotune function! This won’t fix your singing, but we hope it will help you to choose a good solver for your application. Please check the &lt;a class=&#34;link&#34; href=&#34;https://symbiyosys.readthedocs.io/en/latest/autotune.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;new documentation&lt;/a&gt; here to get started. Please let us know if you try the new feature. We will write a blogpost about it for the next newsletter.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;in-other-yosyshq-news&#34;&gt;In other YosysHQ news&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Since tribuf support was added in May, we wrote a &lt;a class=&#34;link&#34; href=&#34;https://blog.yosyshq.com/p/formal-trisate-support/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;short blogpost&lt;/a&gt; about Matt’s use of it for his latest ASIC submission. We also added an example to the &lt;a class=&#34;link&#34; href=&#34;https://github.com/YosysHQ/sby/tree/master/docs/examples/tristate&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;sby examples&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>Formal Tristate Support</title>
         <link>http://blog.yosyshq.com/p/formal-trisate-support/</link>
         <pubDate>Fri, 17 Jun 2022 17:28:17 +0200</pubDate>
@@ -71,6 +90,19 @@ The sby file makes use of 2 different task sections.&lt;/p&gt;
 </description>
         </item>
         <item>
+        <title>June TabbyCAD update</title>
+        <link>http://blog.yosyshq.com/p/june-tabbycad-update/</link>
+        <pubDate>Wed, 01 Jun 2022 00:00:00 +0000</pubDate>
+        
+        <guid>http://blog.yosyshq.com/p/june-tabbycad-update/</guid>
+        <description>&lt;h2 id=&#34;yosys&#34;&gt;Yosys&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;A big overhaul of memory inference in Yosys. The new pass memory_libmap supports a wider variety of memory patterns, such as single-port memories or asymmetric memories. It will also strictly respect verilog semantics in cases of address collision, adding emulation circuitry to ensure the synthesized behavior matches simulation.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;To omit the emulation circuitry even in cases where it is required for correctness, you can add the (* no_rw_check *) attribute to the array declaration of the memory. To disable collision handling globally, calling memory with the -no-rw-check option is also possible (and the corresponding option has been added to all synth passes using the new memory_libmap pass).&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Teodor-Dumitru and the Complexity of Adder Implementations in Hardware</title>
         <link>http://blog.yosyshq.com/p/optimising-adders/</link>
         <pubDate>Fri, 06 May 2022 09:38:52 +0200</pubDate>
@@ -89,6 +121,59 @@ The sby file makes use of 2 different task sections.&lt;/p&gt;
 &lt;li&gt;Tuesday, 10 May · 17:30 – 18:30 CEST&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.youtube.com/watch?v=P7wjB2DKAIA&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Streaming on youtube&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>May TabbyCAD update</title>
+        <link>http://blog.yosyshq.com/p/may-tabbycad-update/</link>
+        <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>
+        
+        <guid>http://blog.yosyshq.com/p/may-tabbycad-update/</guid>
+        <description>&lt;h2 id=&#34;sby&#34;&gt;SBY&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;The tribuf pass now supports a -formal option that converts inferred tri-state buffers within a module into equivalent non-tri-state logic for formal verification. It automatically adds assertions that detect multiple drivers driving the same net simultaneously. (When using tri-state I/O across modules, tribuf -formal should be preceded by a flatten pass.)&lt;/li&gt;
+&lt;li&gt;Several changes in the handling of x values during formal verification.  In particular, when using the Verific frontend, during the initial time step, value change expressions ($rose, $fell, $changed, $stable) are now always computed as if the argument changed from x to its initial value. This follows the SystemVerilog standard and ensures that any high (or low) signal starts at a step where $rose (or $fell) is true.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;in-other-yosyshq-news&#34;&gt;In other YosysHQ news&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Teodor-Dumitru Ene &lt;a class=&#34;link&#34; href=&#34;https://blog.yosyshq.com/p/optimising-adders/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;recently spoke about Open-Source Hardware Addition on SKY130&lt;/a&gt;. He has made a Yosys plugin that allows the designer to choose what algorithm to use.&lt;/li&gt;
+&lt;li&gt;We are very happy to announce that &lt;a class=&#34;link&#34; href=&#34;https://mullvad.net/en/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Mullvad&lt;/a&gt; are sponsoring the development of the open source tools. Thanks Mullvad, and if you need a VPN, be sure to check them out!&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>April TabbyCAD update</title>
+        <link>http://blog.yosyshq.com/p/april-tabbycad-update/</link>
+        <pubDate>Fri, 01 Apr 2022 00:00:00 +0000</pubDate>
+        
+        <guid>http://blog.yosyshq.com/p/april-tabbycad-update/</guid>
+        <description>&lt;h2 id=&#34;yosys&#34;&gt;Yosys&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;The sim command now allows co-simulation with stimulus values from aiger and btor2 witness files as well as traces in VCD or FST format.&lt;/li&gt;
+&lt;li&gt;Co-simulation of designs with multiple clock domains was improved.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;sby&#34;&gt;SBY&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;The &amp;ndash;keep-going option was added to the smtbmc engine. With this option, the solver will continue to check the remaining properties even after an assertion fails. To use it, add the option between the engine and the solver in the .sby file:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;  [engines]
+  smtbmc --keep-going boolector
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The JUnit report produced by sby will now list the status individually for each property when the engine supports it (currently only with smtbmc).&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;in-other-yosyshq-news&#34;&gt;In other YosysHQ news&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;We just welcomed 3 new people to the team; Jannis, Lofty and Krystine. They’ll be helping us to improve the formal and FPGA tooling, and improve our documentation.&lt;/li&gt;
+&lt;li&gt;If you don’t already follow us on twitter - we post as &lt;a class=&#34;link&#34; href=&#34;https://twitter.com/YosysHQ&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;YosysHQ&lt;/a&gt;. Whitequark just had a &lt;a class=&#34;link&#34; href=&#34;https://twitter.com/whitequark/status/1510525555191558150&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;great ‘ask me anything’ on digital logic&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;As a small company, we really appreciate being recommended to people - please let us know if you have any leads!&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         </item>

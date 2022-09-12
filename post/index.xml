@@ -18,12 +18,30 @@ Most verification tasks can be performed by several of the supported engines and
     </item>
     
     <item>
+      <title>July TabbyCAD update</title>
+      <link>http://blog.yosyshq.com/p/july-tabbycad-update/</link>
+      <pubDate>Fri, 01 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.yosyshq.com/p/july-tabbycad-update/</guid>
+      <description>SBY An autotune function! This won’t fix your singing, but we hope it will help you to choose a good solver for your application. Please check the new documentation here to get started. Please let us know if you try the new feature. We will write a blogpost about it for the next newsletter. In other YosysHQ news Since tribuf support was added in May, we wrote a short blogpost about Matt’s use of it for his latest ASIC submission.</description>
+    </item>
+    
+    <item>
       <title>Formal Tristate Support</title>
       <link>http://blog.yosyshq.com/p/formal-trisate-support/</link>
       <pubDate>Fri, 17 Jun 2022 17:28:17 +0200</pubDate>
       
       <guid>http://blog.yosyshq.com/p/formal-trisate-support/</guid>
       <description>Sby, our formal verification tool has recently got better support for tristate circuits. A tristate output is one that can either drive the connected wire to a high or low logic level or be in a high impedance state where it does not drive the output. This allows directly connecting multiple tristate outputs as long as no two are driving the output simultaneously. With tribuf (tristate buffer) support turned on, sby will automatically create assertions for any tristate signals that can be driven via multiples outputs.</description>
+    </item>
+    
+    <item>
+      <title>June TabbyCAD update</title>
+      <link>http://blog.yosyshq.com/p/june-tabbycad-update/</link>
+      <pubDate>Wed, 01 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.yosyshq.com/p/june-tabbycad-update/</guid>
+      <description>Yosys A big overhaul of memory inference in Yosys. The new pass memory_libmap supports a wider variety of memory patterns, such as single-port memories or asymmetric memories. It will also strictly respect verilog semantics in cases of address collision, adding emulation circuitry to ensure the synthesized behavior matches simulation. To omit the emulation circuitry even in cases where it is required for correctness, you can add the (* no_rw_check *) attribute to the array declaration of the memory.</description>
     </item>
     
     <item>
@@ -35,6 +53,24 @@ Most verification tasks can be performed by several of the supported engines and
       <description>Teodor-Dumitru Ene will be presenting his work on adder optimisations, he&amp;rsquo;ll be covering:
 Prefix sums His research Adder-specific quirks and optimizations Future goals Questions! Please join us:
 Tuesday, 10 May · 17:30 – 18:30 CEST Streaming on youtube </description>
+    </item>
+    
+    <item>
+      <title>May TabbyCAD update</title>
+      <link>http://blog.yosyshq.com/p/may-tabbycad-update/</link>
+      <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.yosyshq.com/p/may-tabbycad-update/</guid>
+      <description>SBY The tribuf pass now supports a -formal option that converts inferred tri-state buffers within a module into equivalent non-tri-state logic for formal verification. It automatically adds assertions that detect multiple drivers driving the same net simultaneously. (When using tri-state I/O across modules, tribuf -formal should be preceded by a flatten pass.) Several changes in the handling of x values during formal verification. In particular, when using the Verific frontend, during the initial time step, value change expressions ($rose, $fell, $changed, $stable) are now always computed as if the argument changed from x to its initial value.</description>
+    </item>
+    
+    <item>
+      <title>April TabbyCAD update</title>
+      <link>http://blog.yosyshq.com/p/april-tabbycad-update/</link>
+      <pubDate>Fri, 01 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.yosyshq.com/p/april-tabbycad-update/</guid>
+      <description>Yosys The sim command now allows co-simulation with stimulus values from aiger and btor2 witness files as well as traces in VCD or FST format. Co-simulation of designs with multiple clock domains was improved. SBY The &amp;ndash;keep-going option was added to the smtbmc engine. With this option, the solver will continue to check the remaining properties even after an assertion fails. To use it, add the option between the engine and the solver in the .</description>
     </item>
     
     <item>
