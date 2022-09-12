@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en-us">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='what&#39;s new in TabbyCAD'><title>June TabbyCAD update</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Formal tristate support, x handling, optimising adders.'><title>Tabby CAD Suite version 20220512 released!</title>
 
-<link rel='canonical' href='http://blog.yosyshq.com/p/june-tabbycad-update/'>
+<link rel='canonical' href='http://blog.yosyshq.com/p/tabby-cad-suite-version-20220512-released/'>
 
-<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='June TabbyCAD update'>
-<meta property='og:description' content='what&#39;s new in TabbyCAD'>
-<meta property='og:url' content='http://blog.yosyshq.com/p/june-tabbycad-update/'>
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Tabby CAD Suite version 20220512 released!'>
+<meta property='og:description' content='Formal tristate support, x handling, optimising adders.'>
+<meta property='og:url' content='http://blog.yosyshq.com/p/tabby-cad-suite-version-20220512-released/'>
 <meta property='og:site_name' content='YosysHQ Blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='release notes' /><meta property='article:published_time' content='2022-06-01T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2022-06-01T00:00:00&#43;00:00'/>
-<meta name="twitter:site" content="@YosysHQ"><meta name="twitter:title" content="June TabbyCAD update">
-<meta name="twitter:description" content="what&#39;s new in TabbyCAD">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='release notes' /><meta property='article:published_time' content='2022-05-12T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2022-05-12T00:00:00&#43;00:00'/><meta property='og:image' content='http://blog.yosyshq.com/static-2022/YOS_horiz.png' />
+<meta name="twitter:site" content="@YosysHQ"><meta name="twitter:title" content="Tabby CAD Suite version 20220512 released!">
+<meta name="twitter:description" content="Formal tristate support, x handling, optimising adders."><meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content='http://blog.yosyshq.com/static-2022/YOS_horiz.png' />
     <link rel="shortcut icon" href="/favicon.png" />
 
     </head>
@@ -181,19 +182,27 @@
         </a>
     </div>
 
-    <article class="main-article">
+    <article class="has-image main-article">
     <header class="article-header">
+        <div class="article-image">
+            <a href="/p/tabby-cad-suite-version-20220512-released/">
+                
+                    <img src="/static-2022/YOS_horiz.png" loading="lazy" alt="Featured image of post Tabby CAD Suite version 20220512 released!" />
+                
+            </a>
+        </div>
+    
 
     <div class="article-details">
     
 
     <h2 class="article-title">
-        <a href="/p/june-tabbycad-update/">June TabbyCAD update</a>
+        <a href="/p/tabby-cad-suite-version-20220512-released/">Tabby CAD Suite version 20220512 released!</a>
     </h2>
 
     
     <h3 class="article-subtitle">
-        what&#39;s new in TabbyCAD
+        Formal tristate support, x handling, optimising adders.
     </h3>
     <footer class="article-time">
         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -204,16 +213,24 @@
 
 
 
-        <time class="article-time--published">Jun 01, 2022</time>
+        <time class="article-time--published">May 12, 2022</time>
     </footer></div>
 </header>
 
     <section class="article-content">
-    <h2 id="yosys">Yosys</h2>
+    <p>The May release of Tabby CAD Suite is now available for download.</p>
+<h2 id="sby">SBY</h2>
 <ul>
-<li>A big overhaul of memory inference in Yosys. The new pass memory_libmap supports a wider variety of memory patterns, such as single-port memories or asymmetric memories. It will also strictly respect verilog semantics in cases of address collision, adding emulation circuitry to ensure the synthesized behavior matches simulation.</li>
+<li>The <code>tribuf</code> pass now supports a <code>-formal</code> option that converts inferred tri-state buffers within a module into equivalent non-tri-state logic for formal verification. It automatically adds assertions that detect multiple drivers driving the same net simultaneously. (When using tri-state I/O across modules, <code>tribuf -formal</code> should be preceded by a <code>flatten</code> pass).</li>
+<li>Several changes in the handling of <code>x</code> values during formal verification.  In particular, when using the Verific frontend, during the initial time step, value change expressions (<code>$rose</code>, <code>$fell</code>, <code>$changed</code>, <code>$stable</code>) are now always computed as if the argument changed from <code>x</code> to its initial value. This follows the SystemVerilog standard and ensures that any high (or low) signal starts at a step where <code>$rose</code> (or <code>$fell</code>) is true.</li>
 </ul>
-<p>To omit the emulation circuitry even in cases where it is required for correctness, you can add the (* no_rw_check *) attribute to the array declaration of the memory. To disable collision handling globally, calling memory with the -no-rw-check option is also possible (and the corresponding option has been added to all synth passes using the new memory_libmap pass).</p>
+<h2 id="in-other-yosyshq-news">In other YosysHQ news</h2>
+<ul>
+<li>Teodor-Dumitru Ene <a class="link" href="https://blog.yosyshq.com/p/optimising-adders/"  target="_blank" rel="noopener"
+    >recently spoke about Open-Source Hardware Addition on SKY130</a>. He has made a Yosys plugin that allows the designer to choose what algorithm to use.</li>
+<li>We are very happy to announce that <a class="link" href="https://mullvad.net/en/"  target="_blank" rel="noopener"
+    >Mullvad</a> are sponsoring the development of the open source tools. Thanks Mullvad, and if you need a VPN, be sure to check them out!</li>
+</ul>
 
 </section>
 

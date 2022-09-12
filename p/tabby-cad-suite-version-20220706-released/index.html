@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en-us">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='what&#39;s new in TabbyCAD'><title>September TabbyCAD update</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Autotuning formal verification engine selection, tribuf blogpost.'><title>Tabby CAD Suite version 20220706 released!</title>
 
-<link rel='canonical' href='http://blog.yosyshq.com/p/september-tabbycad-update/'>
+<link rel='canonical' href='http://blog.yosyshq.com/p/tabby-cad-suite-version-20220706-released/'>
 
-<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='September TabbyCAD update'>
-<meta property='og:description' content='what&#39;s new in TabbyCAD'>
-<meta property='og:url' content='http://blog.yosyshq.com/p/september-tabbycad-update/'>
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Tabby CAD Suite version 20220706 released!'>
+<meta property='og:description' content='Autotuning formal verification engine selection, tribuf blogpost.'>
+<meta property='og:url' content='http://blog.yosyshq.com/p/tabby-cad-suite-version-20220706-released/'>
 <meta property='og:site_name' content='YosysHQ Blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='release notes' /><meta property='article:published_time' content='2022-09-01T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2022-09-01T00:00:00&#43;00:00'/>
-<meta name="twitter:site" content="@YosysHQ"><meta name="twitter:title" content="September TabbyCAD update">
-<meta name="twitter:description" content="what&#39;s new in TabbyCAD">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='release notes' /><meta property='article:published_time' content='2022-07-06T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2022-07-06T00:00:00&#43;00:00'/><meta property='og:image' content='http://blog.yosyshq.com/static-2022/YOS_horiz.png' />
+<meta name="twitter:site" content="@YosysHQ"><meta name="twitter:title" content="Tabby CAD Suite version 20220706 released!">
+<meta name="twitter:description" content="Autotuning formal verification engine selection, tribuf blogpost."><meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content='http://blog.yosyshq.com/static-2022/YOS_horiz.png' />
     <link rel="shortcut icon" href="/favicon.png" />
 
     </head>
@@ -181,19 +182,27 @@
         </a>
     </div>
 
-    <article class="main-article">
+    <article class="has-image main-article">
     <header class="article-header">
+        <div class="article-image">
+            <a href="/p/tabby-cad-suite-version-20220706-released/">
+                
+                    <img src="/static-2022/YOS_horiz.png" loading="lazy" alt="Featured image of post Tabby CAD Suite version 20220706 released!" />
+                
+            </a>
+        </div>
+    
 
     <div class="article-details">
     
 
     <h2 class="article-title">
-        <a href="/p/september-tabbycad-update/">September TabbyCAD update</a>
+        <a href="/p/tabby-cad-suite-version-20220706-released/">Tabby CAD Suite version 20220706 released!</a>
     </h2>
 
     
     <h3 class="article-subtitle">
-        what&#39;s new in TabbyCAD
+        Autotuning formal verification engine selection, tribuf blogpost.
     </h3>
     <footer class="article-time">
         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -204,20 +213,22 @@
 
 
 
-        <time class="article-time--published">Sep 01, 2022</time>
+        <time class="article-time--published">Jul 06, 2022</time>
     </footer></div>
 </header>
 
     <section class="article-content">
-    <h2 id="sby">SBY</h2>
+    <p>The July release of Tabby CAD Suite is now available for download.</p>
+<h2 id="sby">SBY</h2>
 <ul>
-<li>SBY now runs multiple tasks in parallel. Additionally it now limits the number of concurrently running subprocesses to the available number of cores. The &ndash;sequential command line option allows you to opt out of running tasks in parallel and the -j N option sets the limit of concurrent subprocesses to N instead of the default. All this is optionally integrated with the make jobserver protocol to enforce the concurrent process limit across other processes launched by make.</li>
-<li>There is a new SBY option vcd to enable or disable the generation of VCD traces. It defaults to on, but can be set to off when no traces are required to save runtime and disk space. VCD trace generation performance for the smtbmc engine is also improved in this release, so we recommend re-evaluating the performance before turning VCD trace generation off.</li>
+<li>An autotune function! This won’t fix your singing, but we hope it will help you to choose a good solver for your application. Please check the <a class="link" href="https://symbiyosys.readthedocs.io/en/latest/autotune.html"  target="_blank" rel="noopener"
+    >new documentation</a> here to get started. Please let us know if you try the new feature. We will write a blogpost about it for the next newsletter.</li>
 </ul>
 <h2 id="in-other-yosyshq-news">In other YosysHQ news</h2>
 <ul>
-<li>We have recently overhauled the <a class="link" href="https://symbiyosys.readthedocs.io/en/latest/quickstart.html"  target="_blank" rel="noopener"
-    >SBY getting started guide</a>. Have a look if you need to onboard someone for SVA property checking!</li>
+<li>Since tribuf support was added in May, we wrote a <a class="link" href="https://blog.yosyshq.com/p/formal-trisate-support/"  target="_blank" rel="noopener"
+    >short blogpost</a> about Matt’s use of it for his latest ASIC submission. We also added an example to the <a class="link" href="https://github.com/YosysHQ/sby/tree/master/docs/examples/tristate"  target="_blank" rel="noopener"
+    >sby examples</a>.</li>
 </ul>
 
 </section>

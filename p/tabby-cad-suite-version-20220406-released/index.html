@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en-us">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='what&#39;s new in TabbyCAD'><title>April TabbyCAD update</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Co-simulation, new options for SBY, YosysHQ team is growing.'><title>Tabby CAD Suite version 20220406 released!</title>
 
-<link rel='canonical' href='http://blog.yosyshq.com/p/april-tabbycad-update/'>
+<link rel='canonical' href='http://blog.yosyshq.com/p/tabby-cad-suite-version-20220406-released/'>
 
-<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='April TabbyCAD update'>
-<meta property='og:description' content='what&#39;s new in TabbyCAD'>
-<meta property='og:url' content='http://blog.yosyshq.com/p/april-tabbycad-update/'>
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Tabby CAD Suite version 20220406 released!'>
+<meta property='og:description' content='Co-simulation, new options for SBY, YosysHQ team is growing.'>
+<meta property='og:url' content='http://blog.yosyshq.com/p/tabby-cad-suite-version-20220406-released/'>
 <meta property='og:site_name' content='YosysHQ Blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='release notes' /><meta property='article:published_time' content='2022-04-01T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2022-04-01T00:00:00&#43;00:00'/>
-<meta name="twitter:site" content="@YosysHQ"><meta name="twitter:title" content="April TabbyCAD update">
-<meta name="twitter:description" content="what&#39;s new in TabbyCAD">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='release notes' /><meta property='article:published_time' content='2022-04-06T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2022-04-06T00:00:00&#43;00:00'/><meta property='og:image' content='http://blog.yosyshq.com/static-2022/YOS_horiz.png' />
+<meta name="twitter:site" content="@YosysHQ"><meta name="twitter:title" content="Tabby CAD Suite version 20220406 released!">
+<meta name="twitter:description" content="Co-simulation, new options for SBY, YosysHQ team is growing."><meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content='http://blog.yosyshq.com/static-2022/YOS_horiz.png' />
     <link rel="shortcut icon" href="/favicon.png" />
 
     </head>
@@ -181,19 +182,27 @@
         </a>
     </div>
 
-    <article class="main-article">
+    <article class="has-image main-article">
     <header class="article-header">
+        <div class="article-image">
+            <a href="/p/tabby-cad-suite-version-20220406-released/">
+                
+                    <img src="/static-2022/YOS_horiz.png" loading="lazy" alt="Featured image of post Tabby CAD Suite version 20220406 released!" />
+                
+            </a>
+        </div>
+    
 
     <div class="article-details">
     
 
     <h2 class="article-title">
-        <a href="/p/april-tabbycad-update/">April TabbyCAD update</a>
+        <a href="/p/tabby-cad-suite-version-20220406-released/">Tabby CAD Suite version 20220406 released!</a>
     </h2>
 
     
     <h3 class="article-subtitle">
-        what&#39;s new in TabbyCAD
+        Co-simulation, new options for SBY, YosysHQ team is growing.
     </h3>
     <footer class="article-time">
         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -204,20 +213,21 @@
 
 
 
-        <time class="article-time--published">Apr 01, 2022</time>
+        <time class="article-time--published">Apr 06, 2022</time>
     </footer></div>
 </header>
 
     <section class="article-content">
-    <h2 id="yosys">Yosys</h2>
+    <p>The April release of Tabby CAD Suite is now available for download.</p>
+<h2 id="yosys">Yosys</h2>
 <ul>
-<li>The sim command now allows co-simulation with stimulus values from aiger and btor2 witness files as well as traces in VCD or FST format.</li>
+<li>The <code>sim</code> command now allows co-simulation with stimulus values from aiger and btor2 witness files as well as traces in VCD or FST format.</li>
 <li>Co-simulation of designs with multiple clock domains was improved.</li>
 </ul>
 <h2 id="sby">SBY</h2>
 <ul>
 <li>
-<p>The &ndash;keep-going option was added to the smtbmc engine. With this option, the solver will continue to check the remaining properties even after an assertion fails. To use it, add the option between the engine and the solver in the .sby file:</p>
+<p>The <code>--keep-going</code> option was added to the smtbmc engine. With this option, the solver will continue to check the remaining properties even after an assertion fails. To use it, add the option between the engine and the solver in the <code>.sby</code> file:</p>
 <pre><code>  [engines]
   smtbmc --keep-going boolector
 </code></pre>

@@ -6,13 +6,14 @@
         <description>Recent content on YosysHQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Thu, 01 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://blog.yosyshq.com/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>September TabbyCAD update</title>
-        <link>http://blog.yosyshq.com/p/september-tabbycad-update/</link>
-        <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
+        <lastBuildDate>Tue, 06 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://blog.yosyshq.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Tabby CAD Suite version 20220906 released!</title>
+        <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220906-released/</link>
+        <pubDate>Tue, 06 Sep 2022 00:00:00 +0000</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/september-tabbycad-update/</guid>
-        <description>&lt;h2 id=&#34;sby&#34;&gt;SBY&lt;/h2&gt;
+        <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220906-released/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2022/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20220906 released!" /&gt;&lt;p&gt;The September release of Tabby CAD Suite is now available for download.&lt;/p&gt;
+&lt;h2 id=&#34;sby&#34;&gt;SBY&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;SBY now runs multiple tasks in parallel. Additionally it now limits the number of concurrently running subprocesses to the available number of cores. The &amp;ndash;sequential command line option allows you to opt out of running tasks in parallel and the -j N option sets the limit of concurrent subprocesses to N instead of the default. All this is optionally integrated with the make jobserver protocol to enforce the concurrent process limit across other processes launched by make.&lt;/li&gt;
 &lt;li&gt;There is a new SBY option vcd to enable or disable the generation of VCD traces. It defaults to on, but can be set to off when no traces are required to save runtime and disk space. VCD trace generation performance for the smtbmc engine is also improved in this release, so we recommend re-evaluating the performance before turning VCD trace generation off.&lt;/li&gt;
@@ -25,12 +26,13 @@
 </description>
         </item>
         <item>
-        <title>August TabbyCAD update</title>
-        <link>http://blog.yosyshq.com/p/august-tabbycad-update/</link>
-        <pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate>
+        <title>Tabby CAD Suite version 20220805 released!</title>
+        <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220805-released/</link>
+        <pubDate>Fri, 05 Aug 2022 00:00:00 +0000</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/august-tabbycad-update/</guid>
-        <description>&lt;h2 id=&#34;sby&#34;&gt;SBY&lt;/h2&gt;
+        <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220805-released/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2022/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20220805 released!" /&gt;&lt;p&gt;The August release of Tabby CAD Suite is now available for download.&lt;/p&gt;
+&lt;h2 id=&#34;sby&#34;&gt;SBY&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;SBY now uses a more precise logic loop analysis, removing the need to run simplemap on coarse-grain cells that re-use parts of a signal.&lt;/li&gt;
 &lt;/ul&gt;
@@ -60,12 +62,13 @@
 </description>
         </item>
         <item>
-        <title>July TabbyCAD update</title>
-        <link>http://blog.yosyshq.com/p/july-tabbycad-update/</link>
-        <pubDate>Fri, 01 Jul 2022 00:00:00 +0000</pubDate>
+        <title>Tabby CAD Suite version 20220706 released!</title>
+        <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220706-released/</link>
+        <pubDate>Wed, 06 Jul 2022 00:00:00 +0000</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/july-tabbycad-update/</guid>
-        <description>&lt;h2 id=&#34;sby&#34;&gt;SBY&lt;/h2&gt;
+        <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220706-released/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2022/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20220706 released!" /&gt;&lt;p&gt;The July release of Tabby CAD Suite is now available for download.&lt;/p&gt;
+&lt;h2 id=&#34;sby&#34;&gt;SBY&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;An autotune function! This won’t fix your singing, but we hope it will help you to choose a good solver for your application. Please check the &lt;a class=&#34;link&#34; href=&#34;https://symbiyosys.readthedocs.io/en/latest/autotune.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;new documentation&lt;/a&gt; here to get started. Please let us know if you try the new feature. We will write a blogpost about it for the next newsletter.&lt;/li&gt;
@@ -125,16 +128,38 @@ The sby file makes use of 2 different task sections.&lt;/p&gt;
 </description>
         </item>
         <item>
-        <title>June TabbyCAD update</title>
-        <link>http://blog.yosyshq.com/p/june-tabbycad-update/</link>
-        <pubDate>Wed, 01 Jun 2022 00:00:00 +0000</pubDate>
+        <title>Tabby CAD Suite version 20220610 released!</title>
+        <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220610-released/</link>
+        <pubDate>Fri, 10 Jun 2022 00:00:00 +0000</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/june-tabbycad-update/</guid>
-        <description>&lt;h2 id=&#34;yosys&#34;&gt;Yosys&lt;/h2&gt;
+        <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220610-released/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2022/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20220610 released!" /&gt;&lt;p&gt;The June release of Tabby CAD Suite is now available for download.&lt;/p&gt;
+&lt;h2 id=&#34;yosys&#34;&gt;Yosys&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;A big overhaul of memory inference in Yosys. The new pass memory_libmap supports a wider variety of memory patterns, such as single-port memories or asymmetric memories. It will also strictly respect verilog semantics in cases of address collision, adding emulation circuitry to ensure the synthesized behavior matches simulation.&lt;/li&gt;
+&lt;li&gt;A big overhaul of memory inference in Yosys. The new pass &lt;code&gt;memory_libmap&lt;/code&gt; supports a wider variety of memory patterns, such as single-port memories or asymmetric memories. It will also strictly respect verilog semantics in cases of address collision, adding emulation circuitry to ensure the synthesized behavior matches simulation.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;To omit the emulation circuitry even in cases where it is required for correctness, you can add the (* no_rw_check *) attribute to the array declaration of the memory. To disable collision handling globally, calling memory with the -no-rw-check option is also possible (and the corresponding option has been added to all synth passes using the new memory_libmap pass).&lt;/p&gt;
+&lt;p&gt;To omit the emulation circuitry even in cases where it is required for correctness, you can add the &lt;code&gt;(* no_rw_check *)&lt;/code&gt; attribute to the array declaration of the memory. To disable collision handling globally, calling memory with the &lt;code&gt;-no-rw-check&lt;/code&gt; option is also possible (and the corresponding option has been added to all &lt;code&gt;synth&lt;/code&gt; passes using the new &lt;code&gt;memory_libmap&lt;/code&gt; pass).&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Tabby CAD Suite version 20220512 released!</title>
+        <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220512-released/</link>
+        <pubDate>Thu, 12 May 2022 00:00:00 +0000</pubDate>
+        
+        <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220512-released/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2022/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20220512 released!" /&gt;&lt;p&gt;The May release of Tabby CAD Suite is now available for download.&lt;/p&gt;
+&lt;h2 id=&#34;sby&#34;&gt;SBY&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;The &lt;code&gt;tribuf&lt;/code&gt; pass now supports a &lt;code&gt;-formal&lt;/code&gt; option that converts inferred tri-state buffers within a module into equivalent non-tri-state logic for formal verification. It automatically adds assertions that detect multiple drivers driving the same net simultaneously. (When using tri-state I/O across modules, &lt;code&gt;tribuf -formal&lt;/code&gt; should be preceded by a &lt;code&gt;flatten&lt;/code&gt; pass).&lt;/li&gt;
+&lt;li&gt;Several changes in the handling of &lt;code&gt;x&lt;/code&gt; values during formal verification.  In particular, when using the Verific frontend, during the initial time step, value change expressions (&lt;code&gt;$rose&lt;/code&gt;, &lt;code&gt;$fell&lt;/code&gt;, &lt;code&gt;$changed&lt;/code&gt;, &lt;code&gt;$stable&lt;/code&gt;) are now always computed as if the argument changed from &lt;code&gt;x&lt;/code&gt; to its initial value. This follows the SystemVerilog standard and ensures that any high (or low) signal starts at a step where &lt;code&gt;$rose&lt;/code&gt; (or &lt;code&gt;$fell&lt;/code&gt;) is true.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;in-other-yosyshq-news&#34;&gt;In other YosysHQ news&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Teodor-Dumitru Ene &lt;a class=&#34;link&#34; href=&#34;https://blog.yosyshq.com/p/optimising-adders/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;recently spoke about Open-Source Hardware Addition on SKY130&lt;/a&gt;. He has made a Yosys plugin that allows the designer to choose what algorithm to use.&lt;/li&gt;
+&lt;li&gt;We are very happy to announce that &lt;a class=&#34;link&#34; href=&#34;https://mullvad.net/en/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Mullvad&lt;/a&gt; are sponsoring the development of the open source tools. Thanks Mullvad, and if you need a VPN, be sure to check them out!&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         </item>
         <item>
@@ -160,40 +185,21 @@ The sby file makes use of 2 different task sections.&lt;/p&gt;
 </description>
         </item>
         <item>
-        <title>May TabbyCAD update</title>
-        <link>http://blog.yosyshq.com/p/may-tabbycad-update/</link>
-        <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>
+        <title>Tabby CAD Suite version 20220406 released!</title>
+        <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220406-released/</link>
+        <pubDate>Wed, 06 Apr 2022 00:00:00 +0000</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/may-tabbycad-update/</guid>
-        <description>&lt;h2 id=&#34;sby&#34;&gt;SBY&lt;/h2&gt;
+        <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220406-released/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2022/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20220406 released!" /&gt;&lt;p&gt;The April release of Tabby CAD Suite is now available for download.&lt;/p&gt;
+&lt;h2 id=&#34;yosys&#34;&gt;Yosys&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;The tribuf pass now supports a -formal option that converts inferred tri-state buffers within a module into equivalent non-tri-state logic for formal verification. It automatically adds assertions that detect multiple drivers driving the same net simultaneously. (When using tri-state I/O across modules, tribuf -formal should be preceded by a flatten pass.)&lt;/li&gt;
-&lt;li&gt;Several changes in the handling of x values during formal verification.  In particular, when using the Verific frontend, during the initial time step, value change expressions ($rose, $fell, $changed, $stable) are now always computed as if the argument changed from x to its initial value. This follows the SystemVerilog standard and ensures that any high (or low) signal starts at a step where $rose (or $fell) is true.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;in-other-yosyshq-news&#34;&gt;In other YosysHQ news&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Teodor-Dumitru Ene &lt;a class=&#34;link&#34; href=&#34;https://blog.yosyshq.com/p/optimising-adders/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;recently spoke about Open-Source Hardware Addition on SKY130&lt;/a&gt;. He has made a Yosys plugin that allows the designer to choose what algorithm to use.&lt;/li&gt;
-&lt;li&gt;We are very happy to announce that &lt;a class=&#34;link&#34; href=&#34;https://mullvad.net/en/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Mullvad&lt;/a&gt; are sponsoring the development of the open source tools. Thanks Mullvad, and if you need a VPN, be sure to check them out!&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        </item>
-        <item>
-        <title>April TabbyCAD update</title>
-        <link>http://blog.yosyshq.com/p/april-tabbycad-update/</link>
-        <pubDate>Fri, 01 Apr 2022 00:00:00 +0000</pubDate>
-        
-        <guid>http://blog.yosyshq.com/p/april-tabbycad-update/</guid>
-        <description>&lt;h2 id=&#34;yosys&#34;&gt;Yosys&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;The sim command now allows co-simulation with stimulus values from aiger and btor2 witness files as well as traces in VCD or FST format.&lt;/li&gt;
+&lt;li&gt;The &lt;code&gt;sim&lt;/code&gt; command now allows co-simulation with stimulus values from aiger and btor2 witness files as well as traces in VCD or FST format.&lt;/li&gt;
 &lt;li&gt;Co-simulation of designs with multiple clock domains was improved.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;sby&#34;&gt;SBY&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;The &amp;ndash;keep-going option was added to the smtbmc engine. With this option, the solver will continue to check the remaining properties even after an assertion fails. To use it, add the option between the engine and the solver in the .sby file:&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;--keep-going&lt;/code&gt; option was added to the smtbmc engine. With this option, the solver will continue to check the remaining properties even after an assertion fails. To use it, add the option between the engine and the solver in the &lt;code&gt;.sby&lt;/code&gt; file:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;  [engines]
   smtbmc --keep-going boolector
 &lt;/code&gt;&lt;/pre&gt;
