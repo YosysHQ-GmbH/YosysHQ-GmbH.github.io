@@ -6,7 +6,28 @@
         <description>Recent content on YosysHQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Sun, 16 Oct 2022 18:17:00 +0200</lastBuildDate><atom:link href="http://blog.yosyshq.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 17 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://blog.yosyshq.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Tabby CAD Suite version 20221011 released!</title>
+        <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20221011-released/</link>
+        <pubDate>Mon, 17 Oct 2022 00:00:00 +0000</pubDate>
+        
+        <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20221011-released/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2022/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20221011 released!" /&gt;&lt;p&gt;The October release of Tabby CAD Suite is now available for download.&lt;/p&gt;
+&lt;p&gt;The read and verific commands now support here-documents in scripts, the same way as read_verilog. This is useful e.g. to have small self-contained tests in a single file such as:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;read -sv &amp;lt;&amp;lt;EOT
+module top(input clk, output reg [1:0] q);
+    wire [1:0] x = 2&#39;b10;
+    always @(posedge clk)
+        q &amp;lt;= x &amp;amp; 2&#39;b11;
+endmodule
+EOT
+prep -top top
+sim -clock clk -n 1 -w top
+select -assert-count 1 a:init=2&#39;b10 top/q %i
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+        </item>
+        <item>
         <title>Introducing the Colorlight 5A-75B board</title>
         <link>http://blog.yosyshq.com/p/colorlight-part-1/</link>
         <pubDate>Sun, 16 Oct 2022 18:17:00 +0200</pubDate>

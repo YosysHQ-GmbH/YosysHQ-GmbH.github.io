@@ -2,19 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://blog.yosyshq.com/post/</loc>
+    <lastmod>2022-10-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://blog.yosyshq.com/tags/release-notes/</loc>
+    <lastmod>2022-10-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://blog.yosyshq.com/p/tabby-cad-suite-version-20221011-released/</loc>
+    <lastmod>2022-10-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://blog.yosyshq.com/tags/</loc>
+    <lastmod>2022-10-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://blog.yosyshq.com/</loc>
+    <lastmod>2022-10-17T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://blog.yosyshq.com/tags/blog/</loc>
     <lastmod>2022-10-16T18:17:00+02:00</lastmod>
   </url><url>
     <loc>http://blog.yosyshq.com/p/colorlight-part-1/</loc>
-    <lastmod>2022-10-16T18:17:00+02:00</lastmod>
-  </url><url>
-    <loc>http://blog.yosyshq.com/post/</loc>
-    <lastmod>2022-10-16T18:17:00+02:00</lastmod>
-  </url><url>
-    <loc>http://blog.yosyshq.com/tags/</loc>
-    <lastmod>2022-10-16T18:17:00+02:00</lastmod>
-  </url><url>
-    <loc>http://blog.yosyshq.com/</loc>
     <lastmod>2022-10-16T18:17:00+02:00</lastmod>
   </url><url>
     <loc>http://blog.yosyshq.com/yosys-blog-entry/colorlight-part-1/</loc>
@@ -22,9 +28,6 @@
   </url><url>
     <loc>http://blog.yosyshq.com/yosys-blog-entry/</loc>
     <lastmod>2022-10-03T18:17:00+02:00</lastmod>
-  </url><url>
-    <loc>http://blog.yosyshq.com/tags/release-notes/</loc>
-    <lastmod>2022-09-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220906-released/</loc>
     <lastmod>2022-09-06T00:00:00+00:00</lastmod>
