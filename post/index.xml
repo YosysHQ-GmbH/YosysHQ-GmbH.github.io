@@ -6,7 +6,17 @@
     <description>Recent content in Posts on YosysHQ Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 06 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://blog.yosyshq.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 03 Oct 2022 18:17:00 +0200</lastBuildDate><atom:link href="http://blog.yosyshq.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introducing the Colorlight 5A-75B board</title>
+      <link>http://blog.yosyshq.com/p/colorlight-part-1/</link>
+      <pubDate>Mon, 03 Oct 2022 18:17:00 +0200</pubDate>
+      
+      <guid>http://blog.yosyshq.com/p/colorlight-part-1/</guid>
+      <description>It seems that it was an accident - a generic part of a LED display has become a low cost FPGA development board. The board in question is the Colorlight 5A-75B, which is a so-called receiver card. Featuring a Lattice ECP5 FPGA, supported by Yosys, it allows you to leverage a fully open-source FPGA development toolchain. Priced on average at 20-25 USD, it is a very accessible board.
+The Colorlight 5A-75B was originally a part of a modular LED display standard.</description>
+    </item>
+    
     <item>
       <title>Tabby CAD Suite version 20220906 released!</title>
       <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220906-released/</link>
