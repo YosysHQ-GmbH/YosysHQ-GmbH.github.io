@@ -33,7 +33,8 @@ select -assert-count 1 a:init=2&#39;b10 top/q %i
         <pubDate>Sun, 16 Oct 2022 18:17:00 +0200</pubDate>
         
         <guid>http://blog.yosyshq.com/p/colorlight-part-1/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2022/colorlight_5a75b.jpg" alt="Featured image of post Introducing the Colorlight 5A-75B board" /&gt;&lt;p&gt;It seems that it was an accident - a generic part of a LED display has
+        <description>&lt;img src="http://blog.yosyshq.com/static-2022/colorlight_5a75b.jpg" alt="Featured image of post Introducing the Colorlight 5A-75B board" /&gt;&lt;p&gt;&lt;em&gt;This is the first in a 2 part guest blog post by Chris Lasocki.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;It seems that it was an accident - a generic part of a LED display has
 become a low cost FPGA development board. The board in question is the
 Colorlight 5A-75B, which is a so-called receiver card. Featuring a
 Lattice ECP5 FPGA, supported by Yosys, it allows you to leverage a
