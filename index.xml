@@ -6,7 +6,20 @@
         <description>Recent content on YosysHQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Mon, 17 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://blog.yosyshq.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 24 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://blog.yosyshq.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Tabby CAD Suite version 20221108 released!</title>
+        <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20221108-released/</link>
+        <pubDate>Thu, 24 Nov 2022 00:00:00 +0000</pubDate>
+        
+        <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20221108-released/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2022/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20221108 released!" /&gt;&lt;p&gt;The November release of Tabby CAD Suite is now available for download. Notable changes in this version include:&lt;/p&gt;
+&lt;p&gt;We have experimentally added support for EDIF and Liberty verific parsers. They can be used either with the verific [-liberty|-edif] or the read [-liberty|-edif] command. We are evaluating whether it is of interest for us to keep these long-term, so please let us know if you use them and what your experience is!&lt;/p&gt;
+&lt;h2 id=&#34;in-other-yosyshq-news&#34;&gt;In other YosysHQ news&lt;/h2&gt;
+&lt;p&gt;TinyTapeout is an educational project that makes it easier and cheaper than ever to get your digital designs manufactured on an ASIC. By leveraging open source tools like Yosys, the files required for manufacture are run in the cloud. &lt;a class=&#34;link&#34; href=&#34;https://github.com/TinyTapeout/tt02-test-7seg/actions/runs/3452666592&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Scroll to the bottom of the build results&lt;/a&gt; to see a cool interactive 3d viewer.&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Tabby CAD Suite version 20221011 released!</title>
         <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20221011-released/</link>
         <pubDate>Mon, 17 Oct 2022 00:00:00 +0000</pubDate>
