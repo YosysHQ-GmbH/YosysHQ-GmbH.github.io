@@ -6,7 +6,18 @@
     <description>Recent content in blog on YosysHQ Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 16 Oct 2022 18:17:00 +0200</lastBuildDate><atom:link href="http://blog.yosyshq.com/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 24 Nov 2022 09:38:52 +0200</lastBuildDate><atom:link href="http://blog.yosyshq.com/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Logic Primitive Transformations with Yosys Techmap</title>
+      <link>http://blog.yosyshq.com/p/logic-primitive-transformations-with-yosys-techmap/</link>
+      <pubDate>Thu, 24 Nov 2022 09:38:52 +0200</pubDate>
+      
+      <guid>http://blog.yosyshq.com/p/logic-primitive-transformations-with-yosys-techmap/</guid>
+      <description>This guest post is by Tom Verbeure.
+Introduction If you&amp;rsquo;re reading this you probably already know that Yosys is an open source logic synthesis tool. You may also know that it&amp;rsquo;s much more than that: in my earlier blog post about CXXRTL I call it the swiss army knife of digital logic manipulation.
+In most cases, using Yosys means running pre-made scripts that contain Yosys commands: when I&amp;rsquo;m synthesizing RTL for an FPGA of the Lattice iCE40 family, the synth_ice40 command is usually sufficient to convert my RTL into a netlist that can be sent straight to nextpnr for place, route, and bitstream creation.</description>
+    </item>
+    
     <item>
       <title>Introducing the Colorlight 5A-75B board</title>
       <link>http://blog.yosyshq.com/p/colorlight-part-1/</link>
@@ -15,16 +26,6 @@
       <guid>http://blog.yosyshq.com/p/colorlight-part-1/</guid>
       <description>This guest post is the first in a two part series by Chris Lasocki.
 It seems that it was an accident - a generic part of a LED display has become a low cost FPGA development board. The board in question is the Colorlight 5A-75B, which is a so-called receiver card. Featuring a Lattice ECP5 FPGA, supported by Yosys, it allows you to leverage a fully open-source FPGA development toolchain. Priced on average at 20-25 USD, it is a very accessible board.</description>
-    </item>
-    
-    <item>
-      <title>Introducing the Colorlight 5A-75B board</title>
-      <link>http://blog.yosyshq.com/yosys-blog-entry/colorlight-part-1/</link>
-      <pubDate>Mon, 03 Oct 2022 18:17:00 +0200</pubDate>
-      
-      <guid>http://blog.yosyshq.com/yosys-blog-entry/colorlight-part-1/</guid>
-      <description>It seems that it was an accident - a generic part of a LED display has become a low cost FPGA development board. The board in question is the Colorlight 5A-75B, which is a so-called receiver card. Featuring a Lattice ECP5 FPGA, supported by Yosys, it allows you to leverage a fully open-source FPGA development toolchain. Priced on average at 20-25 USD, it is a very accessible board.
-The Colorlight 5A-75B was originally a part of a modular LED display standard.</description>
     </item>
     
     <item>

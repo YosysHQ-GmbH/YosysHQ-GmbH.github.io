@@ -6,7 +6,18 @@
     <description>Recent content in Posts on YosysHQ Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 24 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://blog.yosyshq.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 24 Nov 2022 09:38:52 +0200</lastBuildDate><atom:link href="http://blog.yosyshq.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Logic Primitive Transformations with Yosys Techmap</title>
+      <link>http://blog.yosyshq.com/p/logic-primitive-transformations-with-yosys-techmap/</link>
+      <pubDate>Thu, 24 Nov 2022 09:38:52 +0200</pubDate>
+      
+      <guid>http://blog.yosyshq.com/p/logic-primitive-transformations-with-yosys-techmap/</guid>
+      <description>This guest post is by Tom Verbeure.
+Introduction If you&amp;rsquo;re reading this you probably already know that Yosys is an open source logic synthesis tool. You may also know that it&amp;rsquo;s much more than that: in my earlier blog post about CXXRTL I call it the swiss army knife of digital logic manipulation.
+In most cases, using Yosys means running pre-made scripts that contain Yosys commands: when I&amp;rsquo;m synthesizing RTL for an FPGA of the Lattice iCE40 family, the synth_ice40 command is usually sufficient to convert my RTL into a netlist that can be sent straight to nextpnr for place, route, and bitstream creation.</description>
+    </item>
+    
     <item>
       <title>Tabby CAD Suite version 20221108 released!</title>
       <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20221108-released/</link>

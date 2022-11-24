@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Yosys Techmap'><title>Logic Primitive Transformations with Yosys Techmap</title>
+
+<link rel='canonical' href='http://blog.yosyshq.com/p/logic-primitive-transformations-with-yosys-techmap/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Logic Primitive Transformations with Yosys Techmap'>
+<meta property='og:description' content='Yosys Techmap'>
+<meta property='og:url' content='http://blog.yosyshq.com/p/logic-primitive-transformations-with-yosys-techmap/'>
+<meta property='og:site_name' content='YosysHQ Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='blog' /><meta property='article:published_time' content='2022-11-24T09:38:52&#43;02:00'/><meta property='article:modified_time' content='2022-11-24T09:38:52&#43;02:00'/><meta property='og:image' content='http://blog.yosyshq.com/static-2022/yosys_techmap/SB_MAC16_block_diagram.png' />
+<meta name="twitter:site" content="@YosysHQ"><meta name="twitter:title" content="Logic Primitive Transformations with Yosys Techmap">
+<meta name="twitter:description" content="Yosys Techmap"><meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content='http://blog.yosyshq.com/static-2022/yosys_techmap/SB_MAC16_block_diagram.png' />
+    <link rel="shortcut icon" href="/favicon.png" />
+
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script><div class="container main-container flex on-phone--column extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/logos/YOS_mark_square_hu6bb8cbdbd2526742846cc00545eb2d90_33709_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="http://blog.yosyshq.com/">YosysHQ Blog</a></h1>
+        <h2 class="site-description"></h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/about'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>Dark Mode</span>
+            </li>
+        
+    </ol>
+</aside>
+
+            <main class="main full-width">
+    <div id="article-toolbar">
+        <a href="http://blog.yosyshq.com/" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>Back</span>
+        </a>
+    </div>
+
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/logic-primitive-transformations-with-yosys-techmap/">
+                
+                    <img src="/static-2022/yosys_techmap/SB_MAC16_block_diagram.png" loading="lazy" alt="Featured image of post Logic Primitive Transformations with Yosys Techmap" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+
+    <h2 class="article-title">
+        <a href="/p/logic-primitive-transformations-with-yosys-techmap/">Logic Primitive Transformations with Yosys Techmap</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+        Yosys Techmap
+    </h3>
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">Nov 24, 2022</time>
+    </footer></div>
+</header>
+
+    <section class="article-content">
+    <p><em>This guest post is by <a class="link" href="https://tomverbeure.github.io/"  target="_blank" rel="noopener"
+    >Tom Verbeure</a>.</em></p>
+<h1 id="introduction">Introduction</h1>
+<p>If you&rsquo;re reading this you probably already know that <a class="link" href="https://github.com/YosysHQ/yosys"  target="_blank" rel="noopener"
+    >Yosys</a>
+is an open source logic synthesis tool. You may also know that it&rsquo;s much more than that: in
+my <a class="link" href="https://tomverbeure.github.io/2020/08/08/CXXRTL-the-New-Yosys-Simulation-Backend.html"  target="_blank" rel="noopener"
+    >earlier blog post about CXXRTL</a>
+I call it the <em>swiss army knife of digital logic manipulation</em>.</p>
+<p>In most cases, using Yosys
+means running pre-made scripts that contain Yosys commands: when I&rsquo;m synthesizing RTL for an FPGA of the
+Lattice iCE40 family, the <a class="link" href="http://yosyshq.net/yosys/cmd_synth_ice40.html"  target="_blank" rel="noopener"
+    ><code>synth_ice40</code> command</a> is
+usually sufficient to convert my RTL into a netlist that can be sent straight to
+<a class="link" href="https://github.com/YosysHQ/nextpnr"  target="_blank" rel="noopener"
+    >nextpnr</a>
+for place, route, and bitstream creation.</p>
+<p>My current version of Yosys has 232 commands, and many of these commands have an impressive list
+of additional options, but sometimes you want to perform very particular logic operations that
+don&rsquo;t come standard with the tool.</p>
+<p>In this blog post, I&rsquo;ll talk about the <a class="link" href="http://yosyshq.net/yosys/cmd_techmap.html"  target="_blank" rel="noopener"
+    ><code>techmap</code> command</a>,
+a particularly powerful command that allows one to make custom logic transformations by replacing a
+logic cell instance of a given type to one or more different ones.</p>
+<h1 id="mapping-a-multiplication-to-an-fpga-dsp-cell">Mapping a multiplication to an FPGA DSP Cell</h1>
+<p><em>There is a companion <a class="link" href="https://github.com/tomverbeure/yosys_techmap_blog"  target="_blank" rel="noopener"
+    >yosys_techmap_blog project on GitHub</a>
+that contains the Verilog source files and the scripts to generate the graphics and Yosys results
+of this blog post.</em></p>
+<p>A good example of a <code>techmap</code> operation is one where a generic multipication
+is converted into a DSP block of an FPGA. For those who are unfamiliar with the technology,
+FPGAs usually have only a few core logic primitives: lookup-table cells (LUTs) are used to construct
+any kind of random logic circuit, RAM cells are, well, RAMs, and DSPs are larger cells that contain one
+or more hardware multipliers, often in combination with an accumulator.</p>
+<p>Let&rsquo;s look at this Verilog module, <a class="link" href="https://github.com/tomverbeure/yosys_techmap_blog/blob/main/mul.v"  target="_blank" rel="noopener"
+    ><code>mul.v</code></a>,
+that multiplies two 10-bit values into a 20-bit result:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-verilog" data-lang="verilog"><span class="line"><span class="cl"><span class="k">module</span> <span class="n">top</span><span class="p">(</span><span class="k">input</span> <span class="p">[</span><span class="mh">9</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">op0</span><span class="p">,</span> <span class="k">input</span> <span class="p">[</span><span class="mh">9</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">op1</span><span class="p">,</span> <span class="k">output</span> <span class="p">[</span><span class="mh">19</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">result</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">assign</span> <span class="n">result</span> <span class="o">=</span> <span class="n">op0</span> <span class="o">*</span> <span class="n">op1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">endmodule</span>
+</span></span></code></pre></div><p>When reading in the Verilog file, Yosys translates it into RTLIL (RTL Internal Language),
+the internal representation of the design. The multiplication operation becomes a <code>$mul</code> primitive,
+and the whole design looks like this:</p>
+<pre tabindex="0"><code>module \top
+  wire width 10 input 1 \op0
+  wire width 10 input 2 \op1
+  wire width 20 output 3 \result
+  cell $mul $mul$mul.v:3$1
+    parameter \A_SIGNED 0
+    parameter \A_WIDTH 10
+    parameter \B_SIGNED 0
+    parameter \B_WIDTH 10
+    parameter \Y_WIDTH 20
+    connect \A \op0
+    connect \B \op1
+    connect \Y \result
+  end
+</code></pre><p>Yosys has the super useful <a class="link" href="http://yosyshq.net/yosys/cmd_show.html"  target="_blank" rel="noopener"
+    ><code>show</code> command</a>
+that renders an RTLIL representation as a graph. I usually add the <code>-width -signed</code> options to
+annotate signals with their size and to show which cell ports are signed:</p>
+<p><img src="/static-2022/yosys_techmap/mul_rtlil.png" alt="top module as a graph with $mul instance"  /></p>
+<p>This primitive must be converted into cells of the target technology. Most FPGAs from the
+iCE40 family have a handful of DSPs. When you synthesize this module to the iCE40 technology with
+<code>synth_ice40 -dsp</code>, the <code>$mul</code> primitive gets converted to an <code>SB_MAC16</code> cell which is the DSP
+primitive of the iCE40 family.</p>
+<p><a class="link" href="/static-2022/yosys_techmap/SB_MAC16_block_diagram.png" ><img src="/static-2022/yosys_techmap/SB_MAC16_block_diagram.png" alt="SB_MAC16 internal block diagram"  /></a></p>
+<p>The <code>SB_MAC16</code> DSP has a ton of data path and configuration signals, and the multiplier inputs and
+output can be up to 16 and 32-bits wide respectively. It&rsquo;s up to a <code>techmap</code> step to assign all the right
+values to the configuration signals, and to correctly tie down unused input data bits or ignore excess
+output bits so that the DSP performs the desired 10-bit x 10-bit multiplication.</p>
+<p>After cleaning up some irrelevant cruft, the post-synthesis RTLIL looks like this:</p>
+<pre tabindex="0"><code>module \top
+  wire width 10 input 1 \op0
+  wire width 10 input 2 \op1
+  wire width 20 output 3 \result
+  wire \result_SB_MAC16_O_ACCUMCO
+  wire \result_SB_MAC16_O_CO
+  wire width 12 \result_SB_MAC16_O_O
+  wire \result_SB_MAC16_O_SIGNEXTOUT
+  cell \SB_MAC16 \result_SB_MAC16_O
+    parameter \A_REG 1&#39;0
+    parameter \A_SIGNED 0
+    parameter \BOTADDSUB_CARRYSELECT 2&#39;00
+    parameter \BOTADDSUB_LOWERINPUT 2&#39;10
+    parameter \BOTADDSUB_UPPERINPUT 1&#39;1
+    parameter \BOTOUTPUT_SELECT 2&#39;11
+    parameter \BOT_8x8_MULT_REG 1&#39;0
+    parameter \B_REG 1&#39;0
+    parameter \B_SIGNED 0
+    parameter \C_REG 1&#39;0
+    parameter \D_REG 1&#39;0
+    parameter \MODE_8x8 1&#39;0
+    parameter \NEG_TRIGGER 1&#39;0
+    parameter \PIPELINE_16x16_MULT_REG1 1&#39;0
+    parameter \PIPELINE_16x16_MULT_REG2 1&#39;0
+    parameter \TOPADDSUB_CARRYSELECT 2&#39;11
+    parameter \TOPADDSUB_LOWERINPUT 2&#39;10
+    parameter \TOPADDSUB_UPPERINPUT 1&#39;1
+    parameter \TOPOUTPUT_SELECT 2&#39;11
+    parameter \TOP_8x8_MULT_REG 1&#39;0
+    connect \A { 6&#39;000000 \op0 }
+    connect \ACCUMCI 1&#39;x
+    connect \ACCUMCO \result_SB_MAC16_O_ACCUMCO
+    connect \ADDSUBBOT 1&#39;0
+    connect \ADDSUBTOP 1&#39;0
+    connect \AHOLD 1&#39;0
+    connect \B { 6&#39;000000 \op1 }
+    connect \BHOLD 1&#39;0
+    connect \C 16&#39;0000000000000000
+    connect \CE 1&#39;0
+    connect \CHOLD 1&#39;0
+    connect \CI 1&#39;x
+    connect \CLK 1&#39;0
+    connect \CO \result_SB_MAC16_O_CO
+    connect \D 16&#39;0000000000000000
+    connect \DHOLD 1&#39;0
+    connect \IRSTBOT 1&#39;0
+    connect \IRSTTOP 1&#39;0
+    connect \O { \result_SB_MAC16_O_O \result }
+    connect \OHOLDBOT 1&#39;0
+    connect \OHOLDTOP 1&#39;0
+    connect \OLOADBOT 1&#39;0
+    connect \OLOADTOP 1&#39;0
+    connect \ORSTBOT 1&#39;0
+    connect \ORSTTOP 1&#39;0
+    connect \SIGNEXTIN 1&#39;x
+    connect \SIGNEXTOUT \result_SB_MAC16_O_SIGNEXTOUT
+  end
+end
+</code></pre><p>And here&rsquo;s the equivalent graphical representation. (<em>Click to enlarge</em>)</p>
+<p><a class="link" href="/static-2022/yosys_techmap/mul_ice40.png" ><img src="/static-2022/yosys_techmap/mul_ice40.png" alt="top module as a graph after synthesis"  /></a></p>
+<p>All Yosys commands are written in C++, but in the case of <code>techmap</code> the specific mapping
+operations are described in&hellip; Verilog! It&rsquo;s a very neat system that makes it possible for
+anyone to create their own custom mapping operations without the need to touch a line of C++.</p>
+<p>Let&rsquo;s see exactly how that works for our example, and look at the source code of the <code>synth_ice40</code> command.</p>
+<p>Yosys places all the technology-specific operations under the <a class="link" href="https://github.com/YosysHQ/yosys/tree/master/techlibs"  target="_blank" rel="noopener"
+    ><code>techlibs</code></a>
+directory. The code for <code>synth_ice40</code> can be found in
+<a class="link" href="https://github.com/YosysHQ/yosys/blob/master/techlibs/ice40/synth_ice40.cc"  target="_blank" rel="noopener"
+    ><code>techlibs/ice40/synth_ice40.cc</code></a>.
+<code>synth_ice40</code> doesn&rsquo;t really have any smarts by itself: it&rsquo;s a macro command, a series of lower level
+Yosys commands strung together into a recipe.</p>
+<p>When you run <code>help synth_ice40</code> in Yosys, you&rsquo;ll see the following command line option:</p>
+<pre tabindex="0"><code>    -dsp
+        use iCE40 UltraPlus DSP cells for large arithmetic
+</code></pre><p>It&rsquo;s easy to see <a class="link" href="https://github.com/YosysHQ/yosys/blob/853f4bb3c695d9f5183ef5064ec4cf9cdd8b5300/techlibs/ice40/synth_ice40.cc#L329-L341"  target="_blank" rel="noopener"
+    >which steps are activated in the source code</a> when DSP mapping is enabled:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">run</span><span class="p">(</span><span class="s">&#34;memory_dff&#34;</span> <span class="o">+</span> <span class="n">no_rw_check_opt</span><span class="p">);</span> <span class="c1">// ice40_dsp will merge registers, reserve memory port registers first
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">run</span><span class="p">(</span><span class="s">&#34;wreduce t:$mul&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">run</span><span class="p">(</span><span class="s">&#34;techmap -map +/mul2dsp.v -map +/ice40/dsp_map.v -D DSP_A_MAXWIDTH=16 -D DSP_B_MAXWIDTH=16 &#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="s">&#34;-D DSP_A_MINWIDTH=2 -D DSP_B_MINWIDTH=2 -D DSP_Y_MINWIDTH=11 &#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="s">&#34;-D DSP_NAME=$__MUL16X16&#34;</span><span class="p">,</span> <span class="s">&#34;(if -dsp)&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">run</span><span class="p">(</span><span class="s">&#34;select a:mul2dsp&#34;</span><span class="p">,</span> <span class="s">&#34;              (if -dsp)&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">run</span><span class="p">(</span><span class="s">&#34;setattr -unset mul2dsp&#34;</span><span class="p">,</span> <span class="s">&#34;        (if -dsp)&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">run</span><span class="p">(</span><span class="s">&#34;opt_expr -fine&#34;</span><span class="p">,</span> <span class="s">&#34;                (if -dsp)&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">run</span><span class="p">(</span><span class="s">&#34;wreduce&#34;</span><span class="p">,</span> <span class="s">&#34;                       (if -dsp)&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">run</span><span class="p">(</span><span class="s">&#34;select -clear&#34;</span><span class="p">,</span> <span class="s">&#34;                 (if -dsp)&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">run</span><span class="p">(</span><span class="s">&#34;ice40_dsp&#34;</span><span class="p">,</span> <span class="s">&#34;                     (if -dsp)&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">run</span><span class="p">(</span><span class="s">&#34;chtype -set $mul t:$__soft_mul&#34;</span><span class="p">,</span> <span class="s">&#34;(if -dsp)&#34;</span><span class="p">);</span>
+</span></span></code></pre></div><p>There&rsquo;s quite a bit going on here, but the most interesting command is this one:</p>
+<pre tabindex="0"><code>    techmap -map +/mul2dsp.v -map +/ice40/dsp_map.v 
+        -D DSP_A_MAXWIDTH=16 -D DSP_B_MAXWIDTH=16
+        -D DSP_A_MINWIDTH=2 -D DSP_B_MINWIDTH=2 -D DSP_Y_MINWIDTH=11
+        -D DSP_NAME=$__MUL16X16
+</code></pre><p>What we see here is that <code>techmap</code> is performing the <code>$mul</code> to <code>SB_MAC16</code> conversion in two steps:</p>
+<ol>
+<li>convert <code>$mul</code> to a generic, technology independent DSP multiplier cell.</li>
+<li>convert the generic multiplier DSP cell to an iCE40 DSP cell.</li>
+</ol>
+<p><strong>Step 1: mul2dsp.v</strong></p>
+<p>Step 1 is done by <a class="link" href="https://github.com/YosysHQ/yosys/blob/master/techlibs/common/mul2dsp.v"  target="_blank" rel="noopener"
+    ><code>mul2dsp.v</code></a>.
+The code is a bit convoluted, but it has the answer as to why there&rsquo;s this intermediate step:</p>
+<ul>
+<li>
+<p>it deals with cases where a single <code>$mul</code> operation requires more than one DSP.</p>
+<p>For example, a 32-bit x 32-bit to 64-bit multiplication is split into 4
+16x16=32 multiplications and some additions.</p>
+</li>
+<li>
+<p>it doesn&rsquo;t do the conversion when the inputs of the multiplication are too small</p>
+<p>This avoids wasting precious DSP resources on something that can be implemented with core logic.</p>
+</li>
+</ul>
+<p>The <code>-D ...</code> arguments of the <code>techmap</code> command specify Verilog defines that are passed to the techmap
+file. It&rsquo;s used to parameterize the conversion process:</p>
+<ul>
+<li><code>-D DSP_A_MAXWIDTH=16 -D DSP_B_MAXWIDTH=16</code> informs <code>mul2dsp</code> that the maximum input size of
+the DSP is 16 bits.</li>
+<li><code>-D DSP_A_MINWIDTH=2 -D DSP_B_MINWIDTH=2 -D DSP_Y_MINWIDTH=11</code> provides the minimum requirements
+that must be satisfied to do the conversion.</li>
+<li><code>-D DSP_NAME=$__MUL16X16</code> provides the name of the generic multiplier cells that should be created.</li>
+</ul>
+<p>We can run that first step by ourselves and check the result:</p>
+<pre tabindex="0"><code>read_verilog mul.v
+clean -purge
+techmap -map +/mul2dsp.v -D DSP_A_MAXWIDTH=16 -D DSP_B_MAXWIDTH=16 -D DSP_A_MINWIDTH=2 -D DSP_B_MINWIDTH=2 -D DSP_Y_MINWIDTH=11 -D DSP_NAME=$__MUL16X16
+clean -purge
+show -width -signed -format png -prefix mul_mul2dsp
+</code></pre><p><img src="/static-2022/yosys_techmap/mul_mul2dsp.png" alt="top module after mul2dsp phase"  /></p>
+<p>In case you were wondering, here&rsquo;s what this first step looks like for a 20-bit x 20-bit to 40-bit multiplier:</p>
+<p><a class="link" href="/static-2022/yosys_techmap/large_mul_techmap.png" ><img src="/static-2022/yosys_techmap/large_mul_techmap.png" alt="top module for $mul 20x20=40 after mul2dsp phase"  /></a>
+<em>(Click to enlarge)</em></p>
+<p>Yosys can often create very long internal labels that stretch the graphical representation, so
+I zoomed the image to the part that counts. The 3 red rectangles are the <code>$__MUL16X16</code> cells that will be converted
+to iCE40 DSPs. The blue rectangle is a <code>$__soft_mul</code> cell that will be converted into random logic
+at a large stage, and the 3 green rectangles are <code>$add</code> cells to bring the results of the different multipliers
+together.</p>
+<p><strong>Step 2: ice40/dsp_map.v</strong></p>
+<p>Step 2 of the <code>techmap</code> process, <a class="link" href="https://github.com/YosysHQ/yosys/blob/master/techlibs/ice40/dsp_map.v"  target="_blank" rel="noopener"
+    ><code>ice40/dsp_map.v</code></a>
+is trivial: it converts the generic <code>$__MUL16X16</code> multiplier cell into an <code>SB_MAC16</code> cell, wires up the data path inputs and output,
+and straps all the other configuration inputs so that the cell is configured as a straight
+multiplier.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-verilog" data-lang="verilog"><span class="line"><span class="cl"><span class="k">module</span> <span class="err">\</span><span class="n">$__MUL16X16</span> <span class="p">(</span><span class="k">input</span> <span class="p">[</span><span class="mh">15</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">A</span><span class="p">,</span> <span class="k">input</span> <span class="p">[</span><span class="mh">15</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">B</span><span class="p">,</span> <span class="k">output</span> <span class="p">[</span><span class="mh">31</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">Y</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="k">parameter</span> <span class="n">A_SIGNED</span> <span class="o">=</span> <span class="mh">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">parameter</span> <span class="n">B_SIGNED</span> <span class="o">=</span> <span class="mh">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">parameter</span> <span class="n">A_WIDTH</span> <span class="o">=</span> <span class="mh">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">parameter</span> <span class="n">B_WIDTH</span> <span class="o">=</span> <span class="mh">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">parameter</span> <span class="n">Y_WIDTH</span> <span class="o">=</span> <span class="mh">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="n">SB_MAC16</span> <span class="p">#(</span>
+</span></span><span class="line"><span class="cl">		<span class="p">.</span><span class="n">NEG_TRIGGER</span><span class="p">(</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">		<span class="p">.</span><span class="n">C_REG</span><span class="p">(</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">		<span class="p">.</span><span class="n">A_REG</span><span class="p">(</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">		<span class="p">.</span><span class="n">B_REG</span><span class="p">(</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">		<span class="p">.</span><span class="n">D_REG</span><span class="p">(</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">		<span class="p">.</span><span class="n">TOP_8x8_MULT_REG</span><span class="p">(</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">		<span class="p">.</span><span class="n">BOT_8x8_MULT_REG</span><span class="p">(</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">		<span class="p">.</span><span class="n">PIPELINE_16x16_MULT_REG1</span><span class="p">(</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">		<span class="p">.</span><span class="n">PIPELINE_16x16_MULT_REG2</span><span class="p">(</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">		<span class="p">.</span><span class="n">TOPOUTPUT_SELECT</span><span class="p">(</span><span class="mh">2</span><span class="mb">&#39;b11</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">		<span class="p">.</span><span class="n">TOPADDSUB_LOWERINPUT</span><span class="p">(</span><span class="mh">2</span><span class="mb">&#39;b0</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">		<span class="p">.</span><span class="n">TOPADDSUB_UPPERINPUT</span><span class="p">(</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">		<span class="p">.</span><span class="n">TOPADDSUB_CARRYSELECT</span><span class="p">(</span><span class="mh">2</span><span class="mb">&#39;b0</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">		<span class="p">.</span><span class="n">BOTOUTPUT_SELECT</span><span class="p">(</span><span class="mh">2</span><span class="mb">&#39;b11</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">		<span class="p">.</span><span class="n">BOTADDSUB_LOWERINPUT</span><span class="p">(</span><span class="mh">2</span><span class="mb">&#39;b0</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">		<span class="p">.</span><span class="n">BOTADDSUB_UPPERINPUT</span><span class="p">(</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">		<span class="p">.</span><span class="n">BOTADDSUB_CARRYSELECT</span><span class="p">(</span><span class="mh">2</span><span class="mb">&#39;b0</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">		<span class="p">.</span><span class="n">MODE_8x8</span><span class="p">(</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">		<span class="p">.</span><span class="n">A_SIGNED</span><span class="p">(</span><span class="n">A_SIGNED</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">		<span class="p">.</span><span class="n">B_SIGNED</span><span class="p">(</span><span class="n">B_SIGNED</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">)</span> <span class="n">_TECHMAP_REPLACE_</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">		<span class="p">.</span><span class="n">A</span><span class="p">(</span><span class="n">A</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">		<span class="p">.</span><span class="n">B</span><span class="p">(</span><span class="n">B</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">		<span class="p">.</span><span class="n">O</span><span class="p">(</span><span class="n">Y</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">	<span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">endmodule</span>
+</span></span></code></pre></div><h1 id="a-horribly-contrived-example-problem">A Horribly Contrived Example Problem</h1>
+<p>Have a look at the following Verilog example code:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-verilog" data-lang="verilog"><span class="line"><span class="cl"><span class="k">module</span> <span class="n">top_unsigned</span><span class="p">(</span><span class="k">input</span> <span class="p">[</span><span class="mh">5</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">op0</span><span class="p">,</span> <span class="k">input</span> <span class="p">[</span><span class="mh">6</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">op1</span><span class="p">,</span> <span class="k">output</span> <span class="p">[</span><span class="mh">63</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">sum</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">assign</span> <span class="n">sum</span> <span class="o">=</span> <span class="n">op0</span> <span class="o">+</span> <span class="n">op1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">endmodule</span>
+</span></span></code></pre></div><p>The graphical representation is as expected:</p>
+<p><img src="/static-2022/yosys_techmap/add_orig.png" alt="top_unsigned original version"  /></p>
+<p>I sometimes use <a class="link" href="https://tomverbeure.github.io/2020/08/08/CXXRTL-the-New-Yosys-Simulation-Backend.html"  target="_blank" rel="noopener"
+    >CXXRTL</a> to simulate my designs.
+When I run <code>write_cxxrtl</code>, the generated file contains the following:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">bool</span> <span class="n">p_top__unsigned</span><span class="o">::</span><span class="n">eval</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">bool</span> <span class="n">converged</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">p_sum0</span> <span class="o">=</span> <span class="n">add_uu</span><span class="o">&lt;</span><span class="mi">64</span><span class="o">&gt;</span><span class="p">(</span><span class="n">p_op0</span><span class="p">,</span> <span class="n">p_op1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="n">converged</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>This is exactly as expected, and there&rsquo;s nothing wrong with it. But one thing that bothers me is that CXXRTL
+uses 32-bit integer values (&ldquo;chunks&rdquo;) for all its operations. In the code above, there&rsquo;s a 64-bit addition, and
+CXXRTL implements those by
+<a class="link" href="https://github.com/YosysHQ/yosys/blob/853f4bb3c695d9f5183ef5064ec4cf9cdd8b5300/backends/cxxrtl/cxxrtl.h#L521-L532"  target="_blank" rel="noopener"
+    >splitting things up into multiple 32-bit additions</a>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl">   <span class="n">template</span><span class="o">&lt;</span><span class="kt">bool</span> <span class="n">Invert</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">CarryIn</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">   <span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="n">value</span><span class="o">&lt;</span><span class="n">Bits</span><span class="o">&gt;</span><span class="p">,</span> <span class="kt">bool</span> <span class="cm">/*CarryOut*/</span><span class="o">&gt;</span> <span class="n">alu</span><span class="p">(</span><span class="k">const</span> <span class="n">value</span><span class="o">&lt;</span><span class="n">Bits</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">other</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="n">value</span><span class="o">&lt;</span><span class="n">Bits</span><span class="o">&gt;</span> <span class="n">result</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="kt">bool</span> <span class="n">carry</span> <span class="o">=</span> <span class="n">CarryIn</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="k">for</span> <span class="p">(</span><span class="n">size_t</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="n">result</span><span class="p">.</span><span class="n">chunks</span><span class="p">;</span> <span class="n">n</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">         <span class="n">result</span><span class="p">.</span><span class="n">data</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="n">Invert</span> <span class="o">?</span> <span class="o">~</span><span class="n">other</span><span class="p">.</span><span class="n">data</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">:</span> <span class="n">other</span><span class="p">.</span><span class="n">data</span><span class="p">[</span><span class="n">n</span><span class="p">])</span> <span class="o">+</span> <span class="n">carry</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">         <span class="k">if</span> <span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">chunks</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">==</span> <span class="n">n</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">result</span><span class="p">.</span><span class="n">data</span><span class="p">[</span><span class="n">result</span><span class="p">.</span><span class="n">chunks</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">&amp;=</span> <span class="n">result</span><span class="p">.</span><span class="n">msb_mask</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">         <span class="n">carry</span> <span class="o">=</span> <span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">data</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">&lt;</span>  <span class="n">data</span><span class="p">[</span><span class="n">n</span><span class="p">])</span> <span class="o">||</span>
+</span></span><span class="line"><span class="cl">                 <span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">data</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">==</span> <span class="n">data</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">carry</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="p">{</span><span class="n">result</span><span class="p">,</span> <span class="n">carry</span><span class="p">};</span>
+</span></span><span class="line"><span class="cl">   <span class="p">}</span>
+</span></span></code></pre></div><p>It&rsquo;s a hand-crafted carry-ripple adder. Now, don&rsquo;t worry, things are really not as bad as it seems,
+because all the variables that are used for the <code>if</code> conditionals and the <code>for</code> loop are constants. Any
+good C++ compiler will optimize the addition above into only a few assembler instructions.</p>
+<p>If you know your binary adder basics, you see that the addition of a 7-bit and a 6 bit operand will result
+at most in an 8-bit result. All higher bits will always be 0. It&rsquo;s overkill to have a 64-bit adder.</p>
+<p>Yosys already has the <a class="link" href="http://yosyshq.net/yosys/cmd_wreduce.html"  target="_blank" rel="noopener"
+    ><code>wreduce</code> command</a> that reduces logic
+operations to just the number of bits that are really needed.</p>
+<p>We can see this when we run the following commands:</p>
+<pre tabindex="0"><code>read_verilog add.v
+hierarchy -top top_unsigned
+wreduce
+clean -purge
+</code></pre><p><img src="/static-2022/yosys_techmap/add_wreduce.png" alt="top_unsigned after wreduce"  /></p>
+<p>And here&rsquo;s the relevant CXXRTL generated code:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">bool</span> <span class="n">p_top__unsigned</span><span class="o">::</span><span class="n">eval</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">bool</span> <span class="n">converged</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p_sum0</span><span class="p">.</span><span class="n">slice</span><span class="o">&lt;</span><span class="mi">7</span><span class="p">,</span><span class="mi">0</span><span class="o">&gt;</span><span class="p">()</span> <span class="o">=</span> <span class="n">add_uu</span><span class="o">&lt;</span><span class="mi">8</span><span class="o">&gt;</span><span class="p">(</span><span class="n">p_op0</span><span class="p">,</span> <span class="n">p_op1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p_sum0</span><span class="p">.</span><span class="n">slice</span><span class="o">&lt;</span><span class="mi">63</span><span class="p">,</span><span class="mi">8</span><span class="o">&gt;</span><span class="p">()</span> <span class="o">=</span> <span class="n">value</span><span class="o">&lt;</span><span class="mi">56</span><span class="o">&gt;</span><span class="p">{</span><span class="mi">0u</span><span class="p">,</span><span class="mi">0u</span><span class="p">};</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">converged</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>That looks better, but is that really true? The addition returns an 8-bit value, but since
+the smallest chunk is 32-bits, the <code>slice&lt;7,0&gt;</code> command now requires a read-modify-write
+operation.</p>
+<p>What I really want is this:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">bool</span> <span class="n">p_top__unsigned</span><span class="o">::</span><span class="n">eval</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">bool</span> <span class="n">converged</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p_sum0</span><span class="p">.</span><span class="n">slice</span><span class="o">&lt;</span><span class="mi">31</span><span class="p">,</span><span class="mi">0</span><span class="o">&gt;</span><span class="p">()</span> <span class="o">=</span> <span class="n">add_uu</span><span class="o">&lt;</span><span class="mi">32</span><span class="o">&gt;</span><span class="p">(</span><span class="n">p_op0</span><span class="p">,</span> <span class="n">p_op1</span><span class="p">);</span>    <span class="o">&lt;&lt;&lt;&lt;&lt;</span> <span class="mi">32</span> <span class="n">bits</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p_sum0</span><span class="p">.</span><span class="n">slice</span><span class="o">&lt;</span><span class="mi">63</span><span class="p">,</span><span class="mi">32</span><span class="o">&gt;</span><span class="p">()</span> <span class="o">=</span> <span class="n">value</span><span class="o">&lt;</span><span class="mi">32</span><span class="o">&gt;</span><span class="p">{</span><span class="mi">0u</span><span class="p">,</span><span class="mi">0u</span><span class="p">};</span>		<span class="o">&lt;&lt;&lt;&lt;&lt;</span> <span class="mi">32</span> <span class="n">bits</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">converged</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Unfortunately, Yosys doesn&rsquo;t have a command that does this for me, and I really don&rsquo;t
+want to modify the <a class="link" href="https://github.com/YosysHQ/yosys/blob/master/passes/opt/wreduce.cc"  target="_blank" rel="noopener"
+    >C++ code of the <code>wreduce</code> command</a>
+to make it so.</p>
+<h1 id="a-custom-techmap-transformation-to-the-rescue">A Custom Techmap Transformation to the Rescue!</h1>
+<p>If you start Yosys, running <code>help techmap</code> will give you an exhaustive list of all the features that
+you might ever need. But instead of repeating everything in there, let&rsquo;s create an <code>add_reduce</code> techmap
+transformation to solve the problem of the previous section.</p>
+<p>Here are some of the basics of a techmap transformation Verilog module:</p>
+<ul>
+<li>
+<p>a techmap transformation only operates on a single design cell.</p>
+<p>You can not use <code>techmap</code> to perform multi-cell optimizations such mapping a <code>$mul</code> followed
+by an <code>$add</code> onto an FPGA DSP has multiply-accumulator support.</p>
+</li>
+<li>
+<p>a design cell that is transformed by a techmap is selected by a string that contains a list of cell
+types that are specified with the <code>(* techmap_celltype &quot;...&quot;)</code> attribute. If the techmap module doesn&rsquo;t have
+such an attribute, then it&rsquo;s determined by the name of the Verilog module.</p>
+</li>
+<li>
+<p>by default, a techmap operation will iterate on itself until there&rsquo;s nothing left that matches.</p>
+<p>If a techmap operation replaces an <code>$add</code> primitive by a new <code>$add</code> primitive, techmap will run again
+on the second one. Without some kind of abort mechanism, this will result in an endless loop!</p>
+<p>There are multiple ways to avoid such an endless loop though. I&rsquo;ll get to that later.</p>
+</li>
+<li>
+<p>it&rsquo;s always a good idea to normalize the configuration on which you want to do the main transformation.</p>
+<p>Here&rsquo;s a good example of what I mean by that: we want to reduce the size of an adder
+based on the size of its inputs. But an adder has 2 inputs, and if these inputs have a different
+size, then the transformation will have a different code path depending on which input is largest.</p>
+<p>However, an addition is commutative: the order of the inputs doesn&rsquo;t matter.</p>
+<p>It&rsquo;s easier first do a normalization where the A input is guaranteed to be larger or equal than
+the B input by swapping the inputs, so that actual reduction transformation only has to deal with one case.</p>
+<p>The earlier discussed <code>mul2dsp</code> techmap module
+<a class="link" href="https://github.com/YosysHQ/yosys/blob/master/techlibs/common/mul2dsp.v#L97-L108"  target="_blank" rel="noopener"
+    >does the same thing</a>.</p>
+</li>
+</ul>
+<p><strong>The add_reduce techmap module declaration</strong></p>
+<p>In this example, I want a transformation that only works on an <code>$add</code> instance, so I could
+create a techmap Verilog module like this:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-verilog" data-lang="verilog"><span class="line"><span class="cl"><span class="k">module</span> <span class="err">\</span><span class="n">$add</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">Y</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span></code></pre></div><p>But I prefer to use a descriptive name for the module and use the <code>(* techmap_celltype ...)</code> option to select
+the cell types on which the module operates:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-verilog" data-lang="verilog"><span class="line"><span class="cl"><span class="p">(</span><span class="o">*</span> <span class="n">techmap_celltype</span> <span class="s">&#34;$add&#34;</span> <span class="o">*</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">module</span> <span class="n">add_reduce</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">Y</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span></code></pre></div><p><strong>The add_reduce techmap module interface</strong></p>
+<p>The techmap module interface should be the same as the cell on which it operates. Both the
+input/output signals and the parameters must be the same. Yosys has a Verilog file called
+<a class="link" href="https://github.com/YosysHQ/yosys/blob/master/techlibs/common/simlib.v"  target="_blank" rel="noopener"
+    ><code>simlib.v</code></a> that
+contains the reference simulation modules of all its internal primitives. You can use
+this to check out the interface details of particular primitive.</p>
+<p>Here&rsquo;s <a class="link" href="https://github.com/YosysHQ/yosys/blob/master/techlibs/common/simlib.v#L834-L844"  target="_blank" rel="noopener"
+    >the one for the <code>$add</code> primitive</a></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-verilog" data-lang="verilog"><span class="line"><span class="cl"><span class="k">module</span> <span class="err">\</span><span class="n">$add</span> <span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">Y</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">parameter</span> <span class="n">A_SIGNED</span> <span class="o">=</span> <span class="mh">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">parameter</span> <span class="n">B_SIGNED</span> <span class="o">=</span> <span class="mh">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">parameter</span> <span class="n">A_WIDTH</span> <span class="o">=</span> <span class="mh">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">parameter</span> <span class="n">B_WIDTH</span> <span class="o">=</span> <span class="mh">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">parameter</span> <span class="n">Y_WIDTH</span> <span class="o">=</span> <span class="mh">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">input</span> <span class="p">[</span><span class="n">A_WIDTH</span><span class="o">-</span><span class="mh">1</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">A</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">input</span> <span class="p">[</span><span class="n">B_WIDTH</span><span class="o">-</span><span class="mh">1</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">B</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">output</span> <span class="p">[</span><span class="n">Y_WIDTH</span><span class="o">-</span><span class="mh">1</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">Y</span><span class="p">;</span>
+</span></span></code></pre></div><p>The <code>add_reduce</code> techmap module has the same interface:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-verilog" data-lang="verilog"><span class="line"><span class="cl"><span class="p">(</span><span class="o">*</span> <span class="n">techmap_celltype</span> <span class="o">=</span> <span class="s">&#34;$add&#34;</span> <span class="o">*</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">module</span> <span class="n">add_reduce</span> <span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">Y</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="k">parameter</span> <span class="n">A_SIGNED</span> <span class="o">=</span> <span class="mh">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">parameter</span> <span class="n">B_SIGNED</span> <span class="o">=</span> <span class="mh">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">parameter</span> <span class="n">A_WIDTH</span> <span class="o">=</span> <span class="mh">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">parameter</span> <span class="n">B_WIDTH</span> <span class="o">=</span> <span class="mh">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">parameter</span> <span class="n">Y_WIDTH</span> <span class="o">=</span> <span class="mh">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="p">(</span><span class="o">*</span> <span class="n">force_downto</span> <span class="o">*</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">input</span> <span class="p">[</span><span class="n">A_WIDTH</span><span class="o">-</span><span class="mh">1</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">A</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">(</span><span class="o">*</span> <span class="n">force_downto</span> <span class="o">*</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">input</span> <span class="p">[</span><span class="n">B_WIDTH</span><span class="o">-</span><span class="mh">1</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">B</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">(</span><span class="o">*</span> <span class="n">force_downto</span> <span class="o">*</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">output</span> <span class="p">[</span><span class="n">Y_WIDTH</span><span class="o">-</span><span class="mh">1</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">Y</span><span class="p">;</span>
+</span></span></code></pre></div><p>The <code>force_downto</code> attribute ensures that the highest numbered bit of each signal is
+the MSB. When this attribute is present, Yosys will automatically swap around the bits of connected
+wires so that you don&rsquo;t need to worry about wackos who use bit 0 as MSB.</p>
+<p><strong>add_reduce stop conditions</strong></p>
+<p>Since we&rsquo;re replacing an <code>$add</code> primitive with another <code>$add</code> primitive, we need to make sure that
+there are special conditions to prevent the <code>techmap</code> operation to run forever.</p>
+<p>We can tell the <code>techmap</code> command to stop transforming the current cell instance
+by assigning a non-zero value to the <code>_TECHMAP_FAIL_</code> wire:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-verilog" data-lang="verilog"><span class="line"><span class="cl">    <span class="kt">wire</span> <span class="n">_TECHMAP_FAIL_</span> <span class="o">=</span> <span class="mh">1</span><span class="p">;</span>    
+</span></span></code></pre></div><p>For this operation, we want stop transforming an <code>$add</code> primitive for a number of conditions:</p>
+<ul>
+<li>
+<p>when the size of the adder is already equal or smaller than the minimal desired adder.</p>
+<p>We can set the minimum size with the `Y_MIN_WIDTH define.</p>
+</li>
+<li>
+<p>When the size of the adder can&rsquo;t be reduced because it would change the result of the calculation.</p>
+</li>
+<li>
+<p>When it&rsquo;s a signed addition and we only want to transform unsigned additions.</p>
+<p>The `REDUCE_SIGNED define must be set to allow signed adder transformation.</p>
+</li>
+</ul>
+<p>This translates into the following code:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-verilog" data-lang="verilog"><span class="line"><span class="cl">    <span class="k">localparam</span> <span class="n">SIGNED_ADDER</span> <span class="o">=</span> <span class="p">(</span><span class="n">A_SIGNED</span> <span class="o">==</span> <span class="mh">1</span> <span class="o">&amp;&amp;</span> <span class="n">B_SIGNED</span> <span class="o">==</span> <span class="mh">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">generate</span> 
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">Y_WIDTH</span> <span class="o">&lt;=</span> <span class="no">`Y_MIN_WIDTH</span><span class="p">)</span> <span class="k">begin</span>
+</span></span><span class="line"><span class="cl">            <span class="kt">wire</span> <span class="n">_TECHMAP_FAIL_</span> <span class="o">=</span> <span class="mh">1</span><span class="p">;</span>    
+</span></span><span class="line"><span class="cl">        <span class="k">end</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">Y_WIDTH</span> <span class="o">&lt;=</span> <span class="n">A_WIDTH</span><span class="o">+</span><span class="mh">1</span><span class="p">)</span> <span class="k">begin</span>
+</span></span><span class="line"><span class="cl">            <span class="kt">wire</span> <span class="n">_TECHMAP_FAIL_</span> <span class="o">=</span> <span class="mh">1</span><span class="p">;</span>    
+</span></span><span class="line"><span class="cl">        <span class="k">end</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">SIGNED_ADDER</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="no">`REDUCE_SIGNED</span><span class="p">)</span> <span class="k">begin</span>
+</span></span><span class="line"><span class="cl">            <span class="kt">wire</span> <span class="n">_TECHMAP_FAIL_</span> <span class="o">=</span> <span class="mh">1</span><span class="p">;</span>    
+</span></span><span class="line"><span class="cl">        <span class="k">end</span>
+</span></span><span class="line"><span class="cl">        <span class="p">...</span>
+</span></span></code></pre></div><p>There are other ways to prevent <code>techmap</code> to run forever.  For example, in the <code>mul2dsp.v</code> code,
+a <code>$__soft_mul</code> cell used instead of a <code>$mul</code> primitive. Yosys has no such primitive, but
+in a later step, after <code>techmap</code> has been completed, this <code>$__soft_mul</code> cell is converted
+back to a <code>$mul$</code> cell:</p>
+<pre tabindex="0"><code>chtype -set $mul t:$__soft_mul
+</code></pre><p><strong>add_reduce normalization</strong></p>
+<p>The normalization code of <code>add_reduce</code> is pretty much a straight copy of the one
+from <code>mul2dsp</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-verilog" data-lang="verilog"><span class="line"><span class="cl">    <span class="k">generate</span> 
+</span></span><span class="line"><span class="cl">	<span class="p">...</span>
+</span></span><span class="line"><span class="cl">	<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">B_WIDTH</span> <span class="o">&gt;</span> <span class="n">A_WIDTH</span><span class="p">)</span> <span class="k">begin</span>
+</span></span><span class="line"><span class="cl">            <span class="err">\</span><span class="n">$add</span> <span class="p">#(</span>
+</span></span><span class="line"><span class="cl">                <span class="p">.</span><span class="n">A_SIGNED</span><span class="p">(</span><span class="n">B_SIGNED</span><span class="p">),</span> <span class="o">&lt;&lt;&lt;</span> <span class="n">A</span> <span class="k">and</span> <span class="n">B</span> <span class="n">are</span> <span class="n">swapped</span>
+</span></span><span class="line"><span class="cl">                <span class="p">.</span><span class="n">B_SIGNED</span><span class="p">(</span><span class="n">A_SIGNED</span><span class="p">),</span> <span class="o">&lt;&lt;&lt;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">.</span><span class="n">A_WIDTH</span><span class="p">(</span><span class="n">B_WIDTH</span><span class="p">),</span>   <span class="o">&lt;&lt;&lt;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">.</span><span class="n">B_WIDTH</span><span class="p">(</span><span class="n">A_WIDTH</span><span class="p">),</span>   <span class="o">&lt;&lt;&lt;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">.</span><span class="n">Y_WIDTH</span><span class="p">(</span><span class="n">Y_WIDTH</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="p">)</span> <span class="n">_TECHMAP_REPLACE_</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">                <span class="p">.</span><span class="n">A</span><span class="p">(</span><span class="n">B</span><span class="p">),</span>               <span class="o">&lt;&lt;&lt;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">.</span><span class="n">B</span><span class="p">(</span><span class="n">A</span><span class="p">),</span>               <span class="o">&lt;&lt;&lt;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">.</span><span class="n">Y</span><span class="p">(</span><span class="n">Y</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="k">end</span>
+</span></span><span class="line"><span class="cl">	<span class="k">else</span> <span class="k">if</span> <span class="p">...</span>
+</span></span></code></pre></div><p>When using <code>_TECHMAP_REPLACE_</code> as instance name of the swapped <code>$add</code> primitive, it
+will inherit the instance name of the original instance. This is one of the
+many predefined variables that are explained by running <code>help techmap</code> in Yosys.</p>
+<p>Since we replace <code>$add</code> with <code>$add</code>, running <code>techmap</code> will result in the
+<code>$add</code> cell being transformed twice times if B is larger than A: the first time
+to swap the inputs, and the second time for the actual reduction.</p>
+<p>If <code>techmap</code> needs to transform the same cell multiple times, it can
+be hard to debug. You can use the <code>-max_iter &lt;number&gt;</code> option to limit
+the number of transformations.</p>
+<p>For example, here&rsquo;s what the design originally looked like:</p>
+<p><img src="/static-2022/yosys_techmap/add_orig.png" alt="top_unsigned original version"  /></p>
+<p>And here&rsquo;s how things look when stopping the <code>add_reduce</code> operation after the
+first iteration:</p>
+<pre tabindex="0"><code>techmap -map add_reduce.v -max_iter 1
+clean -purge
+</code></pre><p><img src="/static-2022/yosys_techmap/add_swap_clean.png" alt="top_unsigned after swapping inputs"  /></p>
+<p><code>op1</code> with the largest input size of 7 is now connected to A!</p>
+<p><strong>The actual add_reduce transformation</strong></p>
+<p>Now that all preliminary formalities are behind use, the actual reduction
+code is pretty straightfoward:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-verilog" data-lang="verilog"><span class="line"><span class="cl"><span class="k">else</span> <span class="k">begin</span>
+</span></span><span class="line"><span class="cl">    <span class="k">localparam</span> <span class="n">ADDER_WIDTH</span>  <span class="o">=</span> <span class="no">`MAX</span><span class="p">(</span><span class="no">`Y_MIN_WIDTH</span><span class="p">,</span> <span class="n">A_WIDTH</span><span class="o">+</span><span class="mh">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="err">\</span><span class="n">$add</span> <span class="p">#(</span>
+</span></span><span class="line"><span class="cl">        <span class="p">.</span><span class="n">A_SIGNED</span><span class="p">(</span><span class="n">A_SIGNED</span><span class="p">),</span> 
+</span></span><span class="line"><span class="cl">        <span class="p">.</span><span class="n">B_SIGNED</span><span class="p">(</span><span class="n">B_SIGNED</span><span class="p">),</span> 
+</span></span><span class="line"><span class="cl">        <span class="p">.</span><span class="n">A_WIDTH</span><span class="p">(</span><span class="n">A_WIDTH</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">        <span class="p">.</span><span class="n">B_WIDTH</span><span class="p">(</span><span class="n">B_WIDTH</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">        <span class="p">.</span><span class="n">Y_WIDTH</span><span class="p">(</span><span class="n">ADDER_WIDTH</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span> <span class="n">_TECHMAP_REPLACE_</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="p">.</span><span class="n">A</span><span class="p">(</span><span class="n">A</span><span class="p">),</span> 
+</span></span><span class="line"><span class="cl">        <span class="p">.</span><span class="n">B</span><span class="p">(</span><span class="n">B</span><span class="p">),</span> 
+</span></span><span class="line"><span class="cl">        <span class="p">.</span><span class="n">Y</span><span class="p">(</span><span class="n">Y</span><span class="p">[</span><span class="n">ADDER_WIDTH</span><span class="o">-</span><span class="mh">1</span><span class="o">:</span><span class="mh">0</span><span class="p">])</span> 	<span class="c1">// Reduced output size
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Higher bits are 0 or sign extension
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">assign</span> <span class="n">Y</span><span class="p">[</span><span class="n">Y_WIDTH</span><span class="o">-</span><span class="mh">1</span><span class="o">:</span><span class="n">ADDER_WIDTH</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="p">(</span><span class="n">Y_WIDTH</span><span class="o">-</span><span class="n">ADDER_WIDTH</span><span class="p">){</span><span class="n">SIGNED_ADDER</span> <span class="o">?</span> <span class="n">Y</span><span class="p">[</span><span class="n">ADDER_WIDTH</span><span class="o">-</span><span class="mh">1</span><span class="p">]</span> <span class="o">:</span> <span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">}</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span></code></pre></div><p>The final <code>add_reduce.v</code> code can be found <a class="link" href="https://github.com/tomverbeure/yosys_techmap_blog/blob/main/add_reduce.v"  target="_blank" rel="noopener"
+    >here</a>.
+We can run the whole thing with:</p>
+<pre tabindex="0"><code>techmap -map add_reduce.v -D Y_MIN_WIDTH=32
+clean -purge
+</code></pre><p>The result is exactly what we wanted, as shown in the graphical diagram&hellip;</p>
+<p><img src="/static-2022/yosys_techmap/add_reduce.png" alt="top_unsigned after custom reduce"  /></p>
+<p>&hellip;and in the CXXRTL-generated code:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">bool</span> <span class="n">p_top__unsigned</span><span class="o">::</span><span class="n">eval</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">bool</span> <span class="n">converged</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">p_sum0</span><span class="p">.</span><span class="n">slice</span><span class="o">&lt;</span><span class="mi">31</span><span class="p">,</span><span class="mi">0</span><span class="o">&gt;</span><span class="p">()</span> <span class="o">=</span> <span class="n">add_uu</span><span class="o">&lt;</span><span class="mi">32</span><span class="o">&gt;</span><span class="p">(</span><span class="n">p_op1</span><span class="p">,</span> <span class="n">p_op0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="n">p_sum0</span><span class="p">.</span><span class="n">slice</span><span class="o">&lt;</span><span class="mi">63</span><span class="p">,</span><span class="mi">32</span><span class="o">&gt;</span><span class="p">()</span> <span class="o">=</span> <span class="n">value</span><span class="o">&lt;</span><span class="mi">32</span><span class="o">&gt;</span><span class="p">{</span><span class="mi">0u</span><span class="p">};</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="n">converged</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h1 id="formal-equivalence-check">Formal Equivalence Check</h1>
+<p>Whenever you do logic transformations, it&rsquo;s not a bad idea to check that the pre- and
+post-transformation logic behaves exactly the same. Yosys has a basic built-in equivalence
+checker. It&rsquo;s not a performance monster, but it&rsquo;s good enough for this kind of use case.</p>
+<p>In the example below, I&rsquo;m verifying the <code>add_reduce</code> techmap on a design with an adder that
+has an output that&rsquo;s 10 instead of 64 bits, and the minimum size is set to 8.
+This makes the size of the graphs more managable.</p>
+<pre tabindex="0"><code># Load the original design
+read_verilog add.v
+hierarchy -top top_unsigned10
+rename top_unsigned10 top_unsigned
+
+# Make a golden reference copy of the unmodified design
+copy top_unsigned top_unsigned_gold
+
+# Select the original version to do the techmap
+select top_unsigned
+
+# Do the techmap on top_unsigned
+techmap -map add_reduce.v -D Y_MIN_WIDTH=8 
+clean -purge
+</code></pre><p>So far, so good: Yosys now has 2 designs. <code>top_unsigned_gold</code> is the original one:</p>
+<p><img src="/static-2022/yosys_techmap/add10_gold.png" alt="top_unsigned10 golden"  /></p>
+<p>And <code>top_unsigned</code> has been transformed with the techmap:</p>
+<p><img src="/static-2022/yosys_techmap/add10_reduce.png" alt="top_unsigned10 reduce"  /></p>
+<p>Let&rsquo;s compare them:</p>
+<pre tabindex="0"><code>equiv_make top_unsigned_gold top_unsigned top_equiv
+select top_equiv
+</code></pre><p>The <code>equiv_make</code> has the golden and the transformed design as input and creates a new
+design with <code>$equiv</code> primitive cells inserted at the output of both designs. These cells
+will tell the equivalence checker which nets to check for formal equivalence. The
+new design <code>top_equiv</code> looks like this:</p>
+<p><a class="link" href="/static-2022/yosys_techmap/add10_equiv_make.png" ><img src="/static-2022/yosys_techmap/add10_equiv_make.png" alt="top_unsigned10 equiv_make"  /></a>
+<em>(Click to enlarge)</em></p>
+<p>As you can see, the new design has both the golden and the transformed logic on the left,
+driven by the same inputs. For there are 10 <code>$equiv</code> cells, one for each bit of the output.</p>
+<p>We can now run the equivalence check:</p>
+<pre tabindex="0"><code>equiv_simple
+</code></pre><p>You&rsquo;ll see something like this:</p>
+<pre tabindex="0"><code>8. Executing EQUIV_SIMPLE pass.
+Found 10 unproven $equiv cells (1 groups) in top_equiv:
+ Grouping SAT models for \sum0:
+  Trying to prove $equiv for \sum0 [0]: success!
+  Trying to prove $equiv for \sum0 [1]: success!
+  Trying to prove $equiv for \sum0 [2]: success!
+  Trying to prove $equiv for \sum0 [3]: success!
+  Trying to prove $equiv for \sum0 [4]: success!
+  Trying to prove $equiv for \sum0 [5]: success!
+  Trying to prove $equiv for \sum0 [6]: success!
+  Trying to prove $equiv for \sum0 [7]: success!
+  Trying to prove $equiv for \sum0 [8]: success!
+  Trying to prove $equiv for \sum0 [9]: success!
+Proved 10 previously unproven $equiv cells.
+</code></pre><p>Each individual bit has been proven to be correct.</p>
+<p>We can make Yosys fail if there were any unproven <code>$equiv</code> cells, like this:</p>
+<pre tabindex="0"><code>equiv_status -assert
+</code></pre><p>However, in our case, all is well:</p>
+<pre tabindex="0"><code>9. Executing EQUIV_STATUS pass.
+Found 10 $equiv cells in top_equiv:
+  Of those cells 10 are proven and 0 are unproven.
+  Equivalence successfully proven!
+</code></pre><p>We&rsquo;ve now proven that our <code>add_reduce</code> techmap is correct, but that doesn&rsquo;t mean
+it&rsquo;s guaranteed bug free: we&rsquo;ve only tested one combination of input and output
+signal sizes. To be absolutely sure, you&rsquo;d need more variety of test cases.</p>
+<p>This is only a quick example of what Yosys can do, there&rsquo;s a variety of additional
+equivalence and logic proof features, most of which I don&rsquo;t know much about! You
+could start by checking out the help information for the <code>equiv_*</code>, <code>miter</code>, and <code>sat</code>
+commands to learn more.</p>
+<h1 id="cleaning-up">Cleaning Up</h1>
+<p>When Yosys creates new cells and reconnects wires, it won&rsquo;t immediately delete older cells and wires
+that aren&rsquo;t used anymore. You need to expliclity tell Yosys to do so with the <code>clean -purge</code>
+command that you can see in some of the command sequences above.</p>
+<p>Here&rsquo;s what the reduced adder looks like without first running a clean:</p>
+<p><img src="/static-2022/yosys_techmap/add_reduce_unclean.png" alt="top_unsigned after custom reduce without clean"  /></p>
+<p>That&rsquo;s why you see a <code>clean -purge</code> statement all over the place
+<a class="link" href="https://github.com/tomverbeure/yosys_techmap_blog/blob/main/add_reduce.yosys"  target="_blank" rel="noopener"
+    >in the script</a>
+generates all the pretty pictures of this blog post.</p>
+<h1 id="conclusion">Conclusion</h1>
+<p>Techmap is a very nice tool to have to transform single cells into something that better maps to
+your chosen target. The example that I&rsquo;ve given here is a bit dumb (I&rsquo;m not even sure if it would
+actually result in better compiled CXXRTL code!), but it shows some of the potential of what
+can be achieved.</p>
+<p>I have only scratched the surface of what can be done with it: there are ways to make a <code>techmap</code>
+module behave differently based on whether or not certain input bits are constant, you can
+instruct Yosys to run another  Yosys command after performing a <code>techmap</code> iteration, and
+so forth.</p>
+<p>If you want to go deeper, you should definitely start by checking out the help instructions, not
+only of <code>techmap</code> command, but also some of the other ones.</p>
+<h1 id="references">References</h1>
+<ul>
+<li>
+<p><a class="link" href="https://github.com/YosysHQ/yosys"  target="_blank" rel="noopener"
+    >Main Yosys repo on GitHub</a></p>
+</li>
+<li>
+<p><a class="link" href="https://github.com/tomverbeure/yosys_techmap_blog"  target="_blank" rel="noopener"
+    >yosys_techmap_blog repo on GitHub</a></p>
+<p>Contains the Verilog code and the Yosys scripts to generate all the graphs of this blog post.</p>
+</li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/blog/">blog</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+</aside>
+
+
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2022 YosysHQ Blog
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.2.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
