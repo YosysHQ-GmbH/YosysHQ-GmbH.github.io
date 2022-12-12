@@ -46,7 +46,7 @@ my &lt;a class=&#34;link&#34; href=&#34;https://tomverbeure.github.io/2020/08/08
 I call it the &lt;em&gt;swiss army knife of digital logic manipulation&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;In most cases, using Yosys
 means running pre-made scripts that contain Yosys commands: when I&amp;rsquo;m synthesizing RTL for an FPGA of the
-Lattice iCE40 family, the &lt;a class=&#34;link&#34; href=&#34;http://yosyshq.net/yosys/cmd_synth_ice40.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+Lattice iCE40 family, the &lt;a class=&#34;link&#34; href=&#34;https://yosyshq.readthedocs.io/projects/yosys/en/latest/cmd/synth_ice40.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;&lt;code&gt;synth_ice40&lt;/code&gt; command&lt;/a&gt; is
 usually sufficient to convert my RTL into a netlist that can be sent straight to
 &lt;a class=&#34;link&#34; href=&#34;https://github.com/YosysHQ/nextpnr&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -55,7 +55,7 @@ for place, route, and bitstream creation.&lt;/p&gt;
 &lt;p&gt;My current version of Yosys has 232 commands, and many of these commands have an impressive list
 of additional options, but sometimes you want to perform very particular logic operations that
 don&amp;rsquo;t come standard with the tool.&lt;/p&gt;
-&lt;p&gt;In this blog post, I&amp;rsquo;ll talk about the &lt;a class=&#34;link&#34; href=&#34;http://yosyshq.net/yosys/cmd_techmap.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&lt;p&gt;In this blog post, I&amp;rsquo;ll talk about the &lt;a class=&#34;link&#34; href=&#34;https://yosyshq.readthedocs.io/projects/yosys/en/latest/cmd/techmap.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;&lt;code&gt;techmap&lt;/code&gt; command&lt;/a&gt;,
 a particularly powerful command that allows one to make custom logic transformations by replacing a
 logic cell instance of a given type to one or more different ones.&lt;/p&gt;
@@ -92,7 +92,7 @@ and the whole design looks like this:&lt;/p&gt;
     connect \B \op1
     connect \Y \result
   end
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Yosys has the super useful &lt;a class=&#34;link&#34; href=&#34;http://yosyshq.net/yosys/cmd_show.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Yosys has the super useful &lt;a class=&#34;link&#34; href=&#34;https://yosyshq.readthedocs.io/projects/yosys/en/latest/cmd/show.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;&lt;code&gt;show&lt;/code&gt; command&lt;/a&gt;
 that renders an RTLIL representation as a graph. I usually add the &lt;code&gt;-width -signed&lt;/code&gt; options to
 annotate signals with their size and to show which cell ports are signed:&lt;/p&gt;
@@ -322,7 +322,7 @@ because all the variables that are used for the &lt;code&gt;if&lt;/code&gt; cond
 good C++ compiler will optimize the addition above into only a few assembler instructions.&lt;/p&gt;
 &lt;p&gt;If you know your binary adder basics, you see that the addition of a 7-bit and a 6 bit operand will result
 at most in an 8-bit result. All higher bits will always be 0. It&amp;rsquo;s overkill to have a 64-bit adder.&lt;/p&gt;
-&lt;p&gt;Yosys already has the &lt;a class=&#34;link&#34; href=&#34;http://yosyshq.net/yosys/cmd_wreduce.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&lt;p&gt;Yosys already has the &lt;a class=&#34;link&#34; href=&#34;https://yosyshq.readthedocs.io/projects/yosys/en/latest/cmd/wreduce.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;&lt;code&gt;wreduce&lt;/code&gt; command&lt;/a&gt; that reduces logic
 operations to just the number of bits that are really needed.&lt;/p&gt;
 &lt;p&gt;We can see this when we run the following commands:&lt;/p&gt;

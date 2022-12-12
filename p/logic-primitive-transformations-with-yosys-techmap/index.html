@@ -229,7 +229,7 @@ my <a class="link" href="https://tomverbeure.github.io/2020/08/08/CXXRTL-the-New
 I call it the <em>swiss army knife of digital logic manipulation</em>.</p>
 <p>In most cases, using Yosys
 means running pre-made scripts that contain Yosys commands: when I&rsquo;m synthesizing RTL for an FPGA of the
-Lattice iCE40 family, the <a class="link" href="http://yosyshq.net/yosys/cmd_synth_ice40.html"  target="_blank" rel="noopener"
+Lattice iCE40 family, the <a class="link" href="https://yosyshq.readthedocs.io/projects/yosys/en/latest/cmd/synth_ice40.html"  target="_blank" rel="noopener"
     ><code>synth_ice40</code> command</a> is
 usually sufficient to convert my RTL into a netlist that can be sent straight to
 <a class="link" href="https://github.com/YosysHQ/nextpnr"  target="_blank" rel="noopener"
@@ -238,7 +238,7 @@ for place, route, and bitstream creation.</p>
 <p>My current version of Yosys has 232 commands, and many of these commands have an impressive list
 of additional options, but sometimes you want to perform very particular logic operations that
 don&rsquo;t come standard with the tool.</p>
-<p>In this blog post, I&rsquo;ll talk about the <a class="link" href="http://yosyshq.net/yosys/cmd_techmap.html"  target="_blank" rel="noopener"
+<p>In this blog post, I&rsquo;ll talk about the <a class="link" href="https://yosyshq.readthedocs.io/projects/yosys/en/latest/cmd/techmap.html"  target="_blank" rel="noopener"
     ><code>techmap</code> command</a>,
 a particularly powerful command that allows one to make custom logic transformations by replacing a
 logic cell instance of a given type to one or more different ones.</p>
@@ -275,7 +275,7 @@ and the whole design looks like this:</p>
     connect \B \op1
     connect \Y \result
   end
-</code></pre><p>Yosys has the super useful <a class="link" href="http://yosyshq.net/yosys/cmd_show.html"  target="_blank" rel="noopener"
+</code></pre><p>Yosys has the super useful <a class="link" href="https://yosyshq.readthedocs.io/projects/yosys/en/latest/cmd/show.html"  target="_blank" rel="noopener"
     ><code>show</code> command</a>
 that renders an RTLIL representation as a graph. I usually add the <code>-width -signed</code> options to
 annotate signals with their size and to show which cell ports are signed:</p>
@@ -505,7 +505,7 @@ because all the variables that are used for the <code>if</code> conditionals and
 good C++ compiler will optimize the addition above into only a few assembler instructions.</p>
 <p>If you know your binary adder basics, you see that the addition of a 7-bit and a 6 bit operand will result
 at most in an 8-bit result. All higher bits will always be 0. It&rsquo;s overkill to have a 64-bit adder.</p>
-<p>Yosys already has the <a class="link" href="http://yosyshq.net/yosys/cmd_wreduce.html"  target="_blank" rel="noopener"
+<p>Yosys already has the <a class="link" href="https://yosyshq.readthedocs.io/projects/yosys/en/latest/cmd/wreduce.html"  target="_blank" rel="noopener"
     ><code>wreduce</code> command</a> that reduces logic
 operations to just the number of bits that are really needed.</p>
 <p>We can see this when we run the following commands:</p>
