@@ -6,7 +6,17 @@
     <description>Recent content in Posts on YosysHQ Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 24 Nov 2022 09:38:52 +0200</lastBuildDate><atom:link href="http://blog.yosyshq.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 12 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://blog.yosyshq.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tabby CAD Suite version 20221205 released!</title>
+      <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20221205-released/</link>
+      <pubDate>Mon, 12 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20221205-released/</guid>
+      <description>The December release of Tabby CAD Suite is now available for download. Notable changes in this version include:
+We have improved support for SystemVerilog config elements. You can now have multiple configurations defined, and select which configuration to elaborate with verific -import &amp;amp;lt;configname&amp;gt;. We are working on improving the TCL integration in Yosys. There is now an interactive TCL shell mode: use yosys -C to enter the TCL shell. You can now also use the following command to get the output of a command returned to TCL without the use of an intermediate file: set command_output [yosys tee -s result.</description>
+    </item>
+    
     <item>
       <title>Logic Primitive Transformations with Yosys Techmap</title>
       <link>http://blog.yosyshq.com/p/logic-primitive-transformations-with-yosys-techmap/</link>
