@@ -14,8 +14,8 @@
         <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20221205-released/</guid>
         <description>&lt;img src="http://blog.yosyshq.com/static-2022/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20221205 released!" /&gt;&lt;p&gt;The December release of Tabby CAD Suite is now available for download. Notable changes in this version include:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;We have improved support for SystemVerilog &lt;code&gt;config&lt;/code&gt; elements. You can now have multiple configurations defined, and select which configuration to elaborate with &lt;code&gt;verific -import &amp;amp;lt;configname&amp;gt;&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;We are working on improving the TCL integration in Yosys. There is now an interactive TCL shell mode: use &lt;code&gt;yosys -C&lt;/code&gt; to enter the TCL shell. You can now also use the following command to get the output of a command returned to TCL without the use of an intermediate file: &lt;code&gt;set command_output [yosys tee -s result.string &amp;amp;lt;command&amp;gt;]&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;We have improved support for SystemVerilog &lt;code&gt;config&lt;/code&gt; elements. You can now have multiple configurations defined, and select which configuration to elaborate with &lt;code&gt;verific -import &amp;lt;configname&amp;gt;&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;We are working on improving the TCL integration in Yosys. There is now an interactive TCL shell mode: use &lt;code&gt;yosys -C&lt;/code&gt; to enter the TCL shell. You can now also use the following command to get the output of a command returned to TCL without the use of an intermediate file: &lt;code&gt;set command_output [yosys tee -s result.string &amp;lt;command&amp;gt;]&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;in-other-yosyshq-news&#34;&gt;In other YosysHQ news&lt;/h1&gt;
 &lt;ul&gt;
