@@ -6,7 +6,43 @@
         <description>Recent content on YosysHQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Mon, 12 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://blog.yosyshq.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 14 Dec 2022 10:23:57 +0100</lastBuildDate><atom:link href="http://blog.yosyshq.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Community Spotlight - Tbengy</title>
+        <link>http://blog.yosyshq.com/p/community-spotlight-tbengy/</link>
+        <pubDate>Wed, 14 Dec 2022 10:23:57 +0100</pubDate>
+        
+        <guid>http://blog.yosyshq.com/p/community-spotlight-tbengy/</guid>
+        <description>&lt;h1 id=&#34;tbengy&#34;&gt;Tbengy&lt;/h1&gt;
+&lt;p&gt;Welcome to the first in a series of short articles where we shine the light on open source EDA projects. If you want to &lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSdIEgu6FJZam0-V3PMTjw-eDebJdg_JuIlN4MkLNDr4vs-a5A/viewform?usp=sf_link&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;submit a project, please do so here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Tbengy is a Python Tool for SV/UVM Testbench Generation and RTL Synthesis. The tool uses newly available capability of the Vivado tool by Xilinx to compile and run SV/UVM Testbench and syntheize RTL for Digilent FPGA Boards.&lt;/p&gt;
+&lt;p&gt;The project is hosted on Github under an MIT License:&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/prasadp4009/tbengy&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/prasadp4009/tbengy&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;bio&#34;&gt;Bio&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2022/spotlight/prasad.jpg&#34; alt=&#34;prasad&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;I am a Hardware Engineer by profession which is my hobby as well. I enjoy tinkering with FPGAs, Arduinos and building IoT devices to make my life more easy. My interest revolves around making chips and building things with 3D printers.&lt;/p&gt;
+&lt;h1 id=&#34;motivation-to-make-tbengy&#34;&gt;Motivation to make tbengy:&lt;/h1&gt;
+&lt;p&gt;I have been developing and using small python scripts for personal use. During the pandemic, as we all know many people lost their jobs including engineers from the Semiconductor Industry. In the same time period, I got a chance to tinker with my FPGAs and was working on developing a tool that can help me create a project skeleton as well as scripts to test my design and verify them. When it comes to design compilation, whether it&amp;rsquo;s VHDL, Verilog or Systemverilog we have a lot of open-source as well as commercial tools, problem comes when we want to compile UVM for verification. There isn&amp;rsquo;t much scope for people other than using EDAPlayground or use Commercial tools which are not easily available. Also maintaining projects on EDAPlayground in a structured way is not supported.&lt;/p&gt;
+&lt;p&gt;While updating my Vivado, I read the release notes and found that the Webpack version (free version) now supports complete UVM 1.2 compilation and simulations. This gave me the idea to build a python tool &amp;ldquo;tbengy&amp;rdquo;, which can run on any OS (Windows or Linux) and generates an easily editable and compilable UVM testbench in a structured manner and scripts which will help engineers interested in UVM verification to hone their skills on their machine. I also added support for a Blinky project which generates design, DV and synthesis scripts for all Digilent boards.&lt;/p&gt;
+&lt;h1 id=&#34;why-open-source&#34;&gt;Why open source?&lt;/h1&gt;
+&lt;p&gt;I believe in open collaboration. Linux is the best example of what open source can bring to this world and that inspired me to be a part of this community. The Open source tools like MAGIC and OpenROAD which today makes it possible for anyone to design ASICs right from their own machine, this is another motivation for me to give more to this community.&lt;/p&gt;
+&lt;h1 id=&#34;what-are-the-challenges&#34;&gt;What are the challenges?&lt;/h1&gt;
+&lt;p&gt;Being a hardware engineer, software is not my expertise. This became more evident to me when I created string templates in python where after some research I figured there are template libraries like Jinja2, which if used will help a lot in bringing the knowledge of hardware with use of more structured and efficient software in making better tools.&lt;/p&gt;
+&lt;h1 id=&#34;what-could-the-community-do-to-support-you&#34;&gt;What could the community do to support you?&lt;/h1&gt;
+&lt;p&gt;I found out that it&amp;rsquo;s difficult to get your work reviewed in open source and tapping the right audience. I will be glad if experienced users both from hardware and software domain can review the tool and provide better direction as well as requirements will help in taking the tool to the next level.&lt;/p&gt;
+&lt;h1 id=&#34;connect-with-prasad&#34;&gt;Connect with Prasad&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;LinkedIn: &lt;a class=&#34;link&#34; href=&#34;https://www.linkedin.com/in/panditprasad/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.linkedin.com/in/panditprasad/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;YouTube: &lt;a class=&#34;link&#34; href=&#34;https://www.youtube.com/@PrasadPandit&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.youtube.com/@PrasadPandit&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Twitter: &lt;a class=&#34;link&#34; href=&#34;https://twitter.com/@tonystark_hdl&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://twitter.com/@tonystark_hdl&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>Tabby CAD Suite version 20221205 released!</title>
         <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20221205-released/</link>
         <pubDate>Mon, 12 Dec 2022 00:00:00 +0000</pubDate>
