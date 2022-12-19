@@ -14,8 +14,7 @@
       
       <guid>http://blog.yosyshq.com/p/community-spotlight-tbengy/</guid>
       <description>Tbengy Welcome to the first in a series of short articles where we shine the light on open source EDA projects. If you want to submit a project, please do so here.
-Tbengy is a Python Tool for SV/UVM Testbench Generation and RTL Synthesis. The tool uses newly available capability of the Vivado tool by Xilinx to compile and run SV/UVM Testbench and syntheize RTL for Digilent FPGA Boards.
-The project is hosted on Github under an MIT License:</description>
+Tbengy by Prasad Pandit is a Python Tool for SV/UVM Testbench Generation and RTL Synthesis. The tool uses newly available capability of the Vivado tool by Xilinx to compile and run SV/UVM Testbench and syntheize RTL for Digilent FPGA Boards.</description>
     </item>
     
     <item>
