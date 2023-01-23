@@ -6,7 +6,27 @@
         <description>Recent content on YosysHQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Wed, 14 Dec 2022 10:23:57 +0100</lastBuildDate><atom:link href="http://blog.yosyshq.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 04 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://blog.yosyshq.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Tabby CAD Suite version 20220104 released!</title>
+        <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220104-released/</link>
+        <pubDate>Wed, 04 Jan 2023 00:00:00 +0000</pubDate>
+        
+        <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220104-released/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2023/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20220104 released!" /&gt;&lt;p&gt;Subject: Tabby CAD Suite version 20230104 released!&lt;/p&gt;
+&lt;p&gt;The January release of Tabby CAD Suite is now available for download. With the holidays there have been only a few changes, of note:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;SBY output is now in color.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;in-other-yosyshq-news&#34;&gt;In other YosysHQ news:&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;We have reformatted our service table to clarify some points we&amp;rsquo;ve seen cause confusion. Don&amp;rsquo;t worry, our prices remain the same as they&amp;rsquo;ve always been!&lt;/li&gt;
+&lt;li&gt;Our first &lt;a class=&#34;link&#34; href=&#34;http://blog.yosyshq.com/p/community-spotlight-tbengy/&#34; &gt;community spotlight article is about Tbengy&lt;/a&gt;, which is a Python Tool for SV/UVM Testbench Generation and RTL Synthesis.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Happy New Year!
+The YosysHQ Team&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Community Spotlight - Tbengy</title>
         <link>http://blog.yosyshq.com/p/community-spotlight-tbengy/</link>
         <pubDate>Wed, 14 Dec 2022 10:23:57 +0100</pubDate>
