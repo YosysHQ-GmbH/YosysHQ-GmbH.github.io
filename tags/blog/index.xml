@@ -6,7 +6,18 @@
     <description>Recent content in blog on YosysHQ Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 24 Nov 2022 09:38:52 +0200</lastBuildDate><atom:link href="http://blog.yosyshq.com/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 03 Feb 2023 12:00:00 +0200</lastBuildDate><atom:link href="http://blog.yosyshq.com/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>3D raytraced game with open source C to FPGA toolchain</title>
+      <link>http://blog.yosyshq.com/p/3d-raytracing/</link>
+      <pubDate>Fri, 03 Feb 2023 12:00:00 +0200</pubDate>
+      
+      <guid>http://blog.yosyshq.com/p/3d-raytracing/</guid>
+      <description>This guest post is by Victor Suarez Rovere.
+3D raytraced game using fully open source “C to FPGA” toolchain Sphery vs. Shapes is the world&amp;rsquo;s first 3D raytraced game implemented completely as digital logic. This is all made possible by combining the OSS CAD Suite with CFlexHDL and PipelineC.
+Summary In this article we present a tool flow that takes C++ code describing a raytraced game, and produces digital logic that can be implemented in off-the-shelf FPGAs (with no hard or soft CPU used).</description>
+    </item>
+    
     <item>
       <title>Logic Primitive Transformations with Yosys Techmap</title>
       <link>http://blog.yosyshq.com/p/logic-primitive-transformations-with-yosys-techmap/</link>

@@ -2,19 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://blog.yosyshq.com/p/3d-raytracing/</loc>
+    <lastmod>2023-02-03T12:00:00+02:00</lastmod>
+  </url><url>
+    <loc>http://blog.yosyshq.com/tags/blog/</loc>
+    <lastmod>2023-02-03T12:00:00+02:00</lastmod>
+  </url><url>
     <loc>http://blog.yosyshq.com/post/</loc>
-    <lastmod>2023-01-04T00:00:00+00:00</lastmod>
+    <lastmod>2023-02-03T12:00:00+02:00</lastmod>
+  </url><url>
+    <loc>http://blog.yosyshq.com/tags/</loc>
+    <lastmod>2023-02-03T12:00:00+02:00</lastmod>
+  </url><url>
+    <loc>http://blog.yosyshq.com/</loc>
+    <lastmod>2023-02-03T12:00:00+02:00</lastmod>
   </url><url>
     <loc>http://blog.yosyshq.com/tags/release-notes/</loc>
     <lastmod>2023-01-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220104-released/</loc>
-    <lastmod>2023-01-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://blog.yosyshq.com/tags/</loc>
-    <lastmod>2023-01-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://blog.yosyshq.com/</loc>
     <lastmod>2023-01-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://blog.yosyshq.com/tags/community-spotlight/</loc>
@@ -25,9 +31,6 @@
   </url><url>
     <loc>http://blog.yosyshq.com/p/tabby-cad-suite-version-20221205-released/</loc>
     <lastmod>2022-12-12T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://blog.yosyshq.com/tags/blog/</loc>
-    <lastmod>2022-11-24T09:38:52+02:00</lastmod>
   </url><url>
     <loc>http://blog.yosyshq.com/p/logic-primitive-transformations-with-yosys-techmap/</loc>
     <lastmod>2022-11-24T09:38:52+02:00</lastmod>

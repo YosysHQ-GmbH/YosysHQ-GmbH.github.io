@@ -6,7 +6,18 @@
     <description>Recent content in Posts on YosysHQ Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 04 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://blog.yosyshq.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 03 Feb 2023 12:00:00 +0200</lastBuildDate><atom:link href="http://blog.yosyshq.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>3D raytraced game with open source C to FPGA toolchain</title>
+      <link>http://blog.yosyshq.com/p/3d-raytracing/</link>
+      <pubDate>Fri, 03 Feb 2023 12:00:00 +0200</pubDate>
+      
+      <guid>http://blog.yosyshq.com/p/3d-raytracing/</guid>
+      <description>This guest post is by Victor Suarez Rovere.
+3D raytraced game using fully open source “C to FPGA” toolchain Sphery vs. Shapes is the world&amp;rsquo;s first 3D raytraced game implemented completely as digital logic. This is all made possible by combining the OSS CAD Suite with CFlexHDL and PipelineC.
+Summary In this article we present a tool flow that takes C++ code describing a raytraced game, and produces digital logic that can be implemented in off-the-shelf FPGAs (with no hard or soft CPU used).</description>
+    </item>
+    
     <item>
       <title>Tabby CAD Suite version 20220104 released!</title>
       <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220104-released/</link>
