@@ -6,7 +6,19 @@
     <description>Recent content in blog on YosysHQ Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 03 Feb 2023 12:00:00 +0200</lastBuildDate><atom:link href="http://blog.yosyshq.com/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 06 Feb 2023 11:56:24 +0100</lastBuildDate><atom:link href="http://blog.yosyshq.com/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tillitis and YosysHQ</title>
+      <link>http://blog.yosyshq.com/p/tillitis-and-yosyshq/</link>
+      <pubDate>Mon, 06 Feb 2023 11:56:24 +0100</pubDate>
+      
+      <guid>http://blog.yosyshq.com/p/tillitis-and-yosyshq/</guid>
+      <description>We are happy to announce that we are working with Tillitis on their next generation of USB security key.
+Their current model TKey™ is open source hardware and software. It uses a Lattice iCE40, chosen due to it being supported by our open source FPGA tools.
+The new version includes an upgraded FPGA with more security features. YosysHQ will be working to add support for this FPGA to NextPNR.
+The best news is that the work will be open sourced so you will soon have a new family of FPGAs to experiment with!</description>
+    </item>
+    
     <item>
       <title>3D raytraced game with open source C to FPGA toolchain</title>
       <link>http://blog.yosyshq.com/p/3d-raytracing/</link>

@@ -6,7 +6,24 @@
         <description>Recent content on YosysHQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Fri, 03 Feb 2023 12:00:00 +0200</lastBuildDate><atom:link href="http://blog.yosyshq.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 06 Feb 2023 11:56:24 +0100</lastBuildDate><atom:link href="http://blog.yosyshq.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Tillitis and YosysHQ</title>
+        <link>http://blog.yosyshq.com/p/tillitis-and-yosyshq/</link>
+        <pubDate>Mon, 06 Feb 2023 11:56:24 +0100</pubDate>
+        
+        <guid>http://blog.yosyshq.com/p/tillitis-and-yosyshq/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2023/tillitis.jpg" alt="Featured image of post Tillitis and YosysHQ" /&gt;&lt;p&gt;We are happy to announce that we are working with &lt;a class=&#34;link&#34; href=&#34;https://tillitis.se/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Tillitis&lt;/a&gt; on their next generation of USB security key.&lt;/p&gt;
+&lt;p&gt;Their current model TKey™ is &lt;a class=&#34;link&#34; href=&#34;https://github.com/tillitis&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;open source hardware and software&lt;/a&gt;. It uses a Lattice iCE40, chosen due to it being supported by our open source FPGA tools.&lt;/p&gt;
+&lt;p&gt;The new version includes an upgraded FPGA with more security features. YosysHQ will be working to add support for this FPGA to NextPNR.&lt;/p&gt;
+&lt;p&gt;The best news is that the work will be open sourced so you will soon have a new family of FPGAs to experiment with!&lt;/p&gt;
+&lt;p&gt;Follow Tillitis on &lt;a class=&#34;link&#34; href=&#34;https://www.linkedin.com/company/tillitis-ab/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Linkedin&lt;/a&gt; or &lt;a class=&#34;link&#34; href=&#34;https://twitter.com/TillitisAB&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Twitter&lt;/a&gt;.&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>3D raytraced game with open source C to FPGA toolchain</title>
         <link>http://blog.yosyshq.com/p/3d-raytracing/</link>
         <pubDate>Fri, 03 Feb 2023 12:00:00 +0200</pubDate>
