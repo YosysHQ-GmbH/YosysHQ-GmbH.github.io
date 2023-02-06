@@ -218,7 +218,7 @@
 </header>
 
     <section class="article-content">
-    <p><em>This guest post is by Victor Suarez Rovere.</em></p>
+    <p><em>This guest post is by Victor Suarez Rovere and Juilan Kemmerer.</em></p>
 <h1 id="3d-raytraced-game-using-fully-open-source-c-to-fpga-toolchain">3D raytraced game using fully open source “C to FPGA” toolchain</h1>
 <p>Sphery vs. Shapes is the world&rsquo;s first 3D raytraced game implemented completely as digital logic. This is all made possible by combining the OSS CAD Suite with CFlexHDL and PipelineC.</p>
 <h2 id="summary">Summary</h2>
@@ -302,7 +302,7 @@
 <td>4 stages</td>
 </tr>
 <tr>
-<td>Float 3D Vector Dot Produc</td>
+<td>Float 3D Vector Dot Product</td>
 <td>5 stages</td>
 </tr>
 <tr>
@@ -320,8 +320,8 @@
 </tbody>
 </table>
 <p>Float types use a 14 bit mantissa instead of the typical 23 bits, and fixed point values are represented with a total of 22 bits: 12 for integer portion, 10 for the fractional bits. Those types are provided by CflexHDL types and can the effects of reduced precision can be readily appreciated with the provided graphical simulation tool, so the optimal size is easy to determine by performing the fast simulations.</p>
-<p><img src="https://user-images.githubusercontent.com/8551129/215368154-a9abd122-1308-4c15-b39b-7b19be07082d.png" alt="image"  />
-<!-- raw HTML omitted --><em>Full precision vs. reduced precision in simulator window</em></p>
+<p><img src="https://user-images.githubusercontent.com/8551129/215368154-a9abd122-1308-4c15-b39b-7b19be07082d.png" alt="image"  /><br>
+<em>Full precision vs. reduced precision in simulator window</em></p>
 <p>Typical times for development/test cycles are as follows:</p>
 <table>
 <thead>
