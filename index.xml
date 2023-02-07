@@ -130,7 +130,7 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;Float types use a 14 bit mantissa instead of the typical 23 bits, and fixed point values are represented with a total of 22 bits: 12 for integer portion, 10 for the fractional bits. Those types are provided by CflexHDL types and can the effects of reduced precision can be readily appreciated with the provided graphical simulation tool, so the optimal size is easy to determine by performing the fast simulations.&lt;/p&gt;
+&lt;p&gt;Float types use a 14 bit mantissa instead of the typical 23 bits, and fixed point values are represented with a total of 22 bits: 12 for integer portion, 10 for the fractional bits. Those types are provided by CflexHDL types and the effects of reduced precision can be readily appreciated with the provided graphical simulation tool, so the optimal size is easy to determine by performing the fast simulations.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/8551129/215368154-a9abd122-1308-4c15-b39b-7b19be07082d.png&#34; alt=&#34;image&#34;  /&gt;&lt;br&gt;
 &lt;em&gt;Full precision vs. reduced precision in simulator window&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Typical times for development/test cycles are as follows:&lt;/p&gt;
