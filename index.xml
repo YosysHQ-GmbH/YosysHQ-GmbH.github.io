@@ -15,7 +15,7 @@
         <description>&lt;img src="http://blog.yosyshq.com/static-2022/spotlight/spotlight.png" alt="Featured image of post Community Spotlight - sv2v" /&gt;&lt;h1 id=&#34;sv2v&#34;&gt;sv2v&lt;/h1&gt;
 &lt;p&gt;Welcome to another &lt;a class=&#34;link&#34; href=&#34;http://blog.yosyshq.com/tags/community-spotlight/&#34; &gt;community spotlight&lt;/a&gt; article where we shine a light on open source EDA projects. If you want to &lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSdIEgu6FJZam0-V3PMTjw-eDebJdg_JuIlN4MkLNDr4vs-a5A/viewform?usp=sf_link&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;submit a project, please do so here&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;sv2v by converts SystemVerilog (IEEE 1800-2017) to Verilog (IEEE 1364-2005), with an emphasis on supporting synthesizable language constructs.&lt;/p&gt;
+&lt;p&gt;sv2v converts SystemVerilog (IEEE 1800-2017) to Verilog (IEEE 1364-2005), with an emphasis on supporting synthesizable language constructs.&lt;/p&gt;
 &lt;h1 id=&#34;zachary-snows-bio&#34;&gt;Zachary Snow&amp;rsquo;s Bio&lt;/h1&gt;
 &lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2023/spotlight/zachary.png&#34; alt=&#34;zachary snow&#34;  /&gt;&lt;/p&gt;
 &lt;p&gt;I received my B.S. in computer science from Carnegie Mellon University in 2019. After graduating, I began working full-time as a software engineer in systematic trading. Since May, I have worked in systematic futures trading at the D. E. Shaw group.&lt;/p&gt;

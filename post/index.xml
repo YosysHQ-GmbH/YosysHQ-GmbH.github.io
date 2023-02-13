@@ -14,7 +14,7 @@
       
       <guid>http://blog.yosyshq.com/p/community-spotlight-sv2v/</guid>
       <description>sv2v Welcome to another community spotlight article where we shine a light on open source EDA projects. If you want to submit a project, please do so here.
-sv2v by converts SystemVerilog (IEEE 1800-2017) to Verilog (IEEE 1364-2005), with an emphasis on supporting synthesizable language constructs.
+sv2v converts SystemVerilog (IEEE 1800-2017) to Verilog (IEEE 1364-2005), with an emphasis on supporting synthesizable language constructs.
 Zachary Snow&amp;rsquo;s Bio I received my B.S. in computer science from Carnegie Mellon University in 2019. After graduating, I began working full-time as a software engineer in systematic trading.</description>
     </item>
     
