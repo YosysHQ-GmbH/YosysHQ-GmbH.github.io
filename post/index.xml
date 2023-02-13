@@ -6,7 +6,18 @@
     <description>Recent content in Posts on YosysHQ Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 06 Feb 2023 11:56:24 +0100</lastBuildDate><atom:link href="http://blog.yosyshq.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 13 Feb 2023 13:26:31 +0100</lastBuildDate><atom:link href="http://blog.yosyshq.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Community Spotlight - sv2v</title>
+      <link>http://blog.yosyshq.com/p/community-spotlight-sv2v/</link>
+      <pubDate>Mon, 13 Feb 2023 13:26:31 +0100</pubDate>
+      
+      <guid>http://blog.yosyshq.com/p/community-spotlight-sv2v/</guid>
+      <description>sv2v Welcome to another community spotlight article where we shine a light on open source EDA projects. If you want to submit a project, please do so here.
+sv2v by converts SystemVerilog (IEEE 1800-2017) to Verilog (IEEE 1364-2005), with an emphasis on supporting synthesizable language constructs.
+Zachary Snow&amp;rsquo;s Bio I received my B.S. in computer science from Carnegie Mellon University in 2019. After graduating, I began working full-time as a software engineer in systematic trading.</description>
+    </item>
+    
     <item>
       <title>Tillitis and YosysHQ</title>
       <link>http://blog.yosyshq.com/p/tillitis-and-yosyshq/</link>

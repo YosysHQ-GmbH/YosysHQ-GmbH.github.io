@@ -6,7 +6,44 @@
         <description>Recent content on YosysHQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Mon, 06 Feb 2023 11:56:24 +0100</lastBuildDate><atom:link href="http://blog.yosyshq.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 13 Feb 2023 13:26:31 +0100</lastBuildDate><atom:link href="http://blog.yosyshq.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Community Spotlight - sv2v</title>
+        <link>http://blog.yosyshq.com/p/community-spotlight-sv2v/</link>
+        <pubDate>Mon, 13 Feb 2023 13:26:31 +0100</pubDate>
+        
+        <guid>http://blog.yosyshq.com/p/community-spotlight-sv2v/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2022/spotlight/spotlight.png" alt="Featured image of post Community Spotlight - sv2v" /&gt;&lt;h1 id=&#34;sv2v&#34;&gt;sv2v&lt;/h1&gt;
+&lt;p&gt;Welcome to another &lt;a class=&#34;link&#34; href=&#34;http://blog.yosyshq.com/tags/community-spotlight/&#34; &gt;community spotlight&lt;/a&gt; article where we shine a light on open source EDA projects. If you want to &lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSdIEgu6FJZam0-V3PMTjw-eDebJdg_JuIlN4MkLNDr4vs-a5A/viewform?usp=sf_link&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;submit a project, please do so here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;sv2v by converts SystemVerilog (IEEE 1800-2017) to Verilog (IEEE 1364-2005), with an emphasis on supporting synthesizable language constructs.&lt;/p&gt;
+&lt;h1 id=&#34;zachary-snows-bio&#34;&gt;Zachary Snow&amp;rsquo;s Bio&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2023/spotlight/zachary.png&#34; alt=&#34;zachary snow&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;I received my B.S. in computer science from Carnegie Mellon University in 2019. After graduating, I began working full-time as a software engineer in systematic trading. Since May, I have worked in systematic futures trading at the D. E. Shaw group.&lt;/p&gt;
+&lt;h1 id=&#34;what-was-your-motivation-in-making-sv2v&#34;&gt;What was your motivation in making sv2v?&lt;/h1&gt;
+&lt;p&gt;While working as an undergraduate teaching assistant, Professor &lt;a class=&#34;link&#34; href=&#34;https://www.cs.cmu.edu/~davide/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Dave Eckhardt&lt;/a&gt; introduced me to an open hardware research group that includes himself and Professor &lt;a class=&#34;link&#34; href=&#34;https://users.ece.cmu.edu/~kenmai/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Ken Mai&lt;/a&gt;. Leveraging my prior studies in compilers, I was tasked with developing a tool to convert a RISC-V core written in SystemVerilog to Yosys-compatible Verilog. With help from others on the research team, we accomplished this goal prior to my graduation. Since then, I have continued to develop sv2v on a volunteer basis with the support of CMU and the larger open hardware community.&lt;/p&gt;
+&lt;h1 id=&#34;why-do-you-develop-open-source-tools&#34;&gt;Why do you develop open source tools?&lt;/h1&gt;
+&lt;p&gt;While I enjoy programming projects in general, I find working on open source tools especially rewarding. I appreciate that each improvement can benefit many users. I hope that my contributions can expand the viability of completely free and open source development in a space that is dominated by proprietary tools.&lt;/p&gt;
+&lt;h1 id=&#34;what-are-some-of-the-challenges-you-face&#34;&gt;What are some of the challenges you face?&lt;/h1&gt;
+&lt;p&gt;I have no formal training in electrical engineering or hardware development. Although I have gained experience since starting the project, I still depend on insight and advice from those who actually work on hardware and synthesis flows.&lt;/p&gt;
+&lt;p&gt;SystemVerilog is also a difficult language to work with due to its complexities and ambiguities. Even commercial toolchains vary in terms of feature support, strictness, and behavior. This can make it challenging to decide what language features to implement and how to translate them correctly.&lt;/p&gt;
+&lt;h1 id=&#34;what-could-the-community-do-to-support-you&#34;&gt;What could the community do to support you?&lt;/h1&gt;
+&lt;p&gt;I am always eager to receive more feedback. It is difficult to gauge interest in features or discover issues without users sharing their thoughts. The feedback I’ve received to date has been essential in making sv2v what it is today.&lt;/p&gt;
+&lt;p&gt;For those with experience with functional programming or compilers and an interest in SystemVerilog, there are a number of features and improvements that may be suitable for an outside collaborator. If you’re interested, please reach out!&lt;/p&gt;
+&lt;h1 id=&#34;what-is-the-best-link-for-the-project&#34;&gt;What is the best link for the project?&lt;/h1&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/zachjs/sv2v&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/zachjs/sv2v&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;what-is-the-best-way-for-people-to-contact-you&#34;&gt;What is the best way for people to contact you?&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;GitHub: &lt;a class=&#34;link&#34; href=&#34;https://github.com/zachjs&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/zachjs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Website: &lt;a class=&#34;link&#34; href=&#34;https://zachjs.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://zachjs.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>Tillitis and YosysHQ</title>
         <link>http://blog.yosyshq.com/p/tillitis-and-yosyshq/</link>
         <pubDate>Mon, 06 Feb 2023 11:56:24 +0100</pubDate>
