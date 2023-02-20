@@ -6,7 +6,27 @@
         <description>Recent content on YosysHQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Mon, 13 Feb 2023 13:26:31 +0100</lastBuildDate><atom:link href="http://blog.yosyshq.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 20 Feb 2023 11:48:40 +0100</lastBuildDate><atom:link href="http://blog.yosyshq.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>OSS CAD Suite Github Action Update</title>
+        <link>http://blog.yosyshq.com/p/oss-cad-suite-github-action-update/</link>
+        <pubDate>Mon, 20 Feb 2023 11:48:40 +0100</pubDate>
+        
+        <guid>http://blog.yosyshq.com/p/oss-cad-suite-github-action-update/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2023/githubaction.png" alt="Featured image of post OSS CAD Suite Github Action Update" /&gt;&lt;p&gt;The OSS CAD suite setup GitHub action &lt;a class=&#34;link&#34; href=&#34;https://github.com/YosysHQ/setup-oss-cad-suite#use-github_token-to-prevent-api-rate-limiting&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;just had an update&lt;/a&gt;, fixing an issue where sometimes the install would fail due to rate limiting.&lt;/p&gt;
+&lt;p&gt;The &lt;a class=&#34;link&#34; href=&#34;https://github.com/YosysHQ/oss-cad-suite-build&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;OSS CAD suite&lt;/a&gt; makes it simple to install a whole set of tools at once, and the GitHub action makes it just as simple to get the tools available for a CI job.&lt;/p&gt;
+&lt;p&gt;Tools are included for:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Synthesis&lt;/li&gt;
+&lt;li&gt;Formal verification&lt;/li&gt;
+&lt;li&gt;FPGA place and route&lt;/li&gt;
+&lt;li&gt;FPGA board programming&lt;/li&gt;
+&lt;li&gt;Simulation and testing&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>Community Spotlight - sv2v</title>
         <link>http://blog.yosyshq.com/p/community-spotlight-sv2v/</link>
         <pubDate>Mon, 13 Feb 2023 13:26:31 +0100</pubDate>

@@ -2,19 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://blog.yosyshq.com/p/oss-cad-suite-github-action-update/</loc>
+    <lastmod>2023-02-20T11:48:40+01:00</lastmod>
+  </url><url>
+    <loc>http://blog.yosyshq.com/post/</loc>
+    <lastmod>2023-02-20T11:48:40+01:00</lastmod>
+  </url><url>
+    <loc>http://blog.yosyshq.com/</loc>
+    <lastmod>2023-02-20T11:48:40+01:00</lastmod>
+  </url><url>
     <loc>http://blog.yosyshq.com/tags/community-spotlight/</loc>
     <lastmod>2023-02-13T13:26:31+01:00</lastmod>
   </url><url>
     <loc>http://blog.yosyshq.com/p/community-spotlight-sv2v/</loc>
     <lastmod>2023-02-13T13:26:31+01:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/post/</loc>
-    <lastmod>2023-02-13T13:26:31+01:00</lastmod>
-  </url><url>
     <loc>http://blog.yosyshq.com/tags/</loc>
-    <lastmod>2023-02-13T13:26:31+01:00</lastmod>
-  </url><url>
-    <loc>http://blog.yosyshq.com/</loc>
     <lastmod>2023-02-13T13:26:31+01:00</lastmod>
   </url><url>
     <loc>http://blog.yosyshq.com/tags/blog/</loc>

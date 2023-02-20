@@ -6,7 +6,19 @@
     <description>Recent content in Posts on YosysHQ Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 13 Feb 2023 13:26:31 +0100</lastBuildDate><atom:link href="http://blog.yosyshq.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Feb 2023 11:48:40 +0100</lastBuildDate><atom:link href="http://blog.yosyshq.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OSS CAD Suite Github Action Update</title>
+      <link>http://blog.yosyshq.com/p/oss-cad-suite-github-action-update/</link>
+      <pubDate>Mon, 20 Feb 2023 11:48:40 +0100</pubDate>
+      
+      <guid>http://blog.yosyshq.com/p/oss-cad-suite-github-action-update/</guid>
+      <description>The OSS CAD suite setup GitHub action just had an update, fixing an issue where sometimes the install would fail due to rate limiting.
+The OSS CAD suite makes it simple to install a whole set of tools at once, and the GitHub action makes it just as simple to get the tools available for a CI job.
+Tools are included for:
+Synthesis Formal verification FPGA place and route FPGA board programming Simulation and testing </description>
+    </item>
+    
     <item>
       <title>Community Spotlight - sv2v</title>
       <link>http://blog.yosyshq.com/p/community-spotlight-sv2v/</link>
