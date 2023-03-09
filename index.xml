@@ -6,7 +6,29 @@
         <description>Recent content on YosysHQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Mon, 20 Feb 2023 11:48:40 +0100</lastBuildDate><atom:link href="http://blog.yosyshq.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 06 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://blog.yosyshq.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Tabby CAD Suite version 20230306 released!</title>
+        <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230306-released/</link>
+        <pubDate>Mon, 06 Mar 2023 00:00:00 +0000</pubDate>
+        
+        <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230306-released/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2023/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20230306 released!" /&gt;&lt;p&gt;Tabby CAD Suite version 20230306 released!&lt;/p&gt;
+&lt;p&gt;The March release of Tabby CAD Suite is now available for download. Notable changes in this version include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;There is now support for tying licenses to Google Cloud Instance ID and to GitLab groups or repositories.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In other YosysHQ news:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;We have a &lt;a class=&#34;link&#34; href=&#34;https://blog.yosyshq.com/p/community-spotlight-sv2v/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;new community spotlight article about sv2v&lt;/a&gt;. sv2v converts SystemVerilog (IEEE 1800-2017) to Verilog (IEEE 1364-2005), with an emphasis on supporting synthesizable language constructs.&lt;/li&gt;
+&lt;li&gt;Our GitHub action that &lt;a class=&#34;link&#34; href=&#34;https://blog.yosyshq.com/p/oss-cad-suite-github-action-update/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;installs the oss-cad-suite has had an update&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Happy March,
+The YosysHQ Team&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>OSS CAD Suite Github Action Update</title>
         <link>http://blog.yosyshq.com/p/oss-cad-suite-github-action-update/</link>
         <pubDate>Mon, 20 Feb 2023 11:48:40 +0100</pubDate>
@@ -61,6 +83,29 @@
 &lt;li&gt;Website: &lt;a class=&#34;link&#34; href=&#34;https://zachjs.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://zachjs.com&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>Tabby CAD Suite version 20230208 released!</title>
+        <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230208-released/</link>
+        <pubDate>Wed, 08 Feb 2023 00:00:00 +0000</pubDate>
+        
+        <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230208-released/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2023/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20230208 released!" /&gt;&lt;p&gt;Tabby CAD Suite version 20230208 released!&lt;/p&gt;
+&lt;p&gt;The February release of Tabby CAD Suite is now available for download. Notable changes in this version include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;SBY can now use Yosys’s builtin simulation command “sim” to generate counter-example traces. This can be enabled with the “vcd_sim on” option and will become the default in a later release.&lt;/li&gt;
+&lt;li&gt;Using Yosys’s “sim” command, SBY now supports writing traces in gtkwave’s FST format in addition to the VCD format. FST files offer improved handling of signal names containing special characters, native compression and faster load times. This can be enabled with the “fst on” option&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In other YosysHQ news:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;We have a new guest blog post from Victor Suarez Rovere and Juilan Kemmerer about a &lt;a class=&#34;link&#34; href=&#34;https://blog.yosyshq.com/p/3d-raytracing/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;fully open source “C to FPGA” toolchain&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;YosysHQ is working with Tillitis in the &lt;a class=&#34;link&#34; href=&#34;https://blog.yosyshq.com/p/tillitis-and-yosyshq/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;development of their next FPGA based product&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Happy February,
+The YosysHQ Team&lt;/p&gt;
 </description>
         </item>
         <item>
@@ -266,12 +311,12 @@
 </description>
         </item>
         <item>
-        <title>Tabby CAD Suite version 20220104 released!</title>
-        <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220104-released/</link>
+        <title>Tabby CAD Suite version 20230104 released!</title>
+        <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230104-released/</link>
         <pubDate>Wed, 04 Jan 2023 00:00:00 +0000</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220104-released/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2023/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20220104 released!" /&gt;&lt;p&gt;Subject: Tabby CAD Suite version 20230104 released!&lt;/p&gt;
+        <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230104-released/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2023/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20230104 released!" /&gt;&lt;p&gt;Tabby CAD Suite version 20230104 released!&lt;/p&gt;
 &lt;p&gt;The January release of Tabby CAD Suite is now available for download. With the holidays there have been only a few changes, of note:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;SBY output is now in color.&lt;/li&gt;
