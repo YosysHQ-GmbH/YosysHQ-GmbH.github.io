@@ -131,7 +131,7 @@ The YosysHQ Team&lt;/p&gt;
         <pubDate>Fri, 03 Feb 2023 12:00:00 +0200</pubDate>
         
         <guid>http://blog.yosyshq.com/p/3d-raytracing/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2023/sphery.png" alt="Featured image of post 3D raytraced game with open source C to FPGA toolchain" /&gt;&lt;p&gt;&lt;em&gt;This guest post is by Victor Suarez Rovere and Juilan Kemmerer.&lt;/em&gt;&lt;/p&gt;
+        <description>&lt;img src="http://blog.yosyshq.com/static-2023/sphery.png" alt="Featured image of post 3D raytraced game with open source C to FPGA toolchain" /&gt;&lt;p&gt;&lt;em&gt;This guest post is by Victor Suarez Rovere and Julian Kemmerer.&lt;/em&gt;&lt;/p&gt;
 &lt;h1 id=&#34;3d-raytraced-game-using-fully-open-source-c-to-fpga-toolchain&#34;&gt;3D raytraced game using fully open source “C to FPGA” toolchain&lt;/h1&gt;
 &lt;p&gt;Sphery vs. Shapes is the world&amp;rsquo;s first 3D raytraced game implemented completely as digital logic. This is all made possible by combining the OSS CAD Suite with CFlexHDL and PipelineC.&lt;/p&gt;
 &lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;

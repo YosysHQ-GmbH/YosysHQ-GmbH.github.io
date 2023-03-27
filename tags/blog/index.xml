@@ -25,7 +25,7 @@ The best news is that the work will be open sourced so you will soon have a new 
       <pubDate>Fri, 03 Feb 2023 12:00:00 +0200</pubDate>
       
       <guid>http://blog.yosyshq.com/p/3d-raytracing/</guid>
-      <description>This guest post is by Victor Suarez Rovere and Juilan Kemmerer.
+      <description>This guest post is by Victor Suarez Rovere and Julian Kemmerer.
 3D raytraced game using fully open source “C to FPGA” toolchain Sphery vs. Shapes is the world&amp;rsquo;s first 3D raytraced game implemented completely as digital logic. This is all made possible by combining the OSS CAD Suite with CFlexHDL and PipelineC.
 Summary In this article we present a tool flow that takes C++ code describing a raytraced game, and produces digital logic that can be implemented in off-the-shelf FPGAs (with no hard or soft CPU used).</description>
     </item>
