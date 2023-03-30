@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en-us">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='A dive into a popular low-cost ECP5 development board by Chris Lasocki'><title>Introducing the Colorlight 5A-75B board</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='A dive into a popular low-cost ECP5 development board by Chris Lasocki - part 2'><title>First gateware on the Colorlight 5A-75B board </title>
 
-<link rel='canonical' href='http://blog.yosyshq.com/p/colorlight-part-1/'>
+<link rel='canonical' href='http://blog.yosyshq.com/p/colorlight-part-2/'>
 
-<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Introducing the Colorlight 5A-75B board'>
-<meta property='og:description' content='A dive into a popular low-cost ECP5 development board by Chris Lasocki'>
-<meta property='og:url' content='http://blog.yosyshq.com/p/colorlight-part-1/'>
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='First gateware on the Colorlight 5A-75B board '>
+<meta property='og:description' content='A dive into a popular low-cost ECP5 development board by Chris Lasocki - part 2'>
+<meta property='og:url' content='http://blog.yosyshq.com/p/colorlight-part-2/'>
 <meta property='og:site_name' content='YosysHQ Blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='blog' /><meta property='article:published_time' content='2022-10-16T18:17:00&#43;02:00'/><meta property='article:modified_time' content='2022-10-16T18:17:00&#43;02:00'/><meta property='og:image' content='http://blog.yosyshq.com/static-2022/colorlight_5a75b.jpg' />
-<meta name="twitter:site" content="@YosysHQ"><meta name="twitter:title" content="Introducing the Colorlight 5A-75B board">
-<meta name="twitter:description" content="A dive into a popular low-cost ECP5 development board by Chris Lasocki"><meta name="twitter:card" content="summary">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='blog' /><meta property='article:published_time' content='2023-03-28T18:17:00&#43;02:00'/><meta property='article:modified_time' content='2023-03-28T18:17:00&#43;02:00'/><meta property='og:image' content='http://blog.yosyshq.com/static-2022/colorlight_5a75b.jpg' />
+<meta name="twitter:site" content="@YosysHQ"><meta name="twitter:title" content="First gateware on the Colorlight 5A-75B board ">
+<meta name="twitter:description" content="A dive into a popular low-cost ECP5 development board by Chris Lasocki - part 2"><meta name="twitter:card" content="summary">
     <meta name="twitter:image" content='http://blog.yosyshq.com/static-2022/colorlight_5a75b.jpg' />
     <link rel="shortcut icon" href="/favicon.png" />
 
@@ -185,9 +185,9 @@
     <article class="has-image main-article">
     <header class="article-header">
         <div class="article-image">
-            <a href="/p/colorlight-part-1/">
+            <a href="/p/colorlight-part-2/">
                 
-                    <img src="/static-2022/colorlight_5a75b.jpg" loading="lazy" alt="Featured image of post Introducing the Colorlight 5A-75B board" />
+                    <img src="/static-2022/colorlight_5a75b.jpg" loading="lazy" alt="Featured image of post First gateware on the Colorlight 5A-75B board " />
                 
             </a>
         </div>
@@ -197,12 +197,12 @@
     
 
     <h2 class="article-title">
-        <a href="/p/colorlight-part-1/">Introducing the Colorlight 5A-75B board</a>
+        <a href="/p/colorlight-part-2/">First gateware on the Colorlight 5A-75B board </a>
     </h2>
 
     
     <h3 class="article-subtitle">
-        A dive into a popular low-cost ECP5 development board by Chris Lasocki
+        A dive into a popular low-cost ECP5 development board by Chris Lasocki - part 2
     </h3>
     <footer class="article-time">
         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -213,71 +213,113 @@
 
 
 
-        <time class="article-time--published">Oct 16, 2022</time>
+        <time class="article-time--published">Mar 28, 2023</time>
     </footer></div>
 </header>
 
     <section class="article-content">
-    <p><em>This guest post is the first in a two part series by Chris Lasocki.
-Part 2 is <a class="link" href="/p/colorlight-part-2/" >now available here</a>.</em></p>
-<p>It seems that it was an accident - a generic part of a LED display has
-become a low cost FPGA development board. The board in question is the
-Colorlight 5A-75B, which is a so-called receiver card. Featuring a
-Lattice ECP5 FPGA, supported by Yosys, it allows you to leverage a
-fully open-source FPGA development toolchain. Priced on average at
-20-25 USD, it is a very accessible board.</p>
-<p>The Colorlight 5A-75B was originally a part of a modular LED display
-standard. It&rsquo;s a receiver card, which means that it sits between the
-computer controlling the show, and the LED panels themselves. It fulfills a
-basic but crucial task of receiving the video signal and driving the
-RGB panels accordingly. This takes a lot of bandwidth, so it is
-equipped with a moderately fast ECP5 LFE5U25-F FPGA and two Gigabit
-Ethernet interfaces. There is also a 16Mbit SDRAM for temporary
-storage and a Flash memory of the same size for storing the
-bitstream. It features 8 output ports of a known pinout (HUB75) and 5V
-outputs. The board has caught attention of hardware hackers and
-soon after was fully <a class="link" href="https://github.com/q3k/chubby75"  target="_blank" rel="noopener"
-    >reverse
-engineered</a> by q3k and others. A
-schematic with pinouts is available, as well as other
-documentation. A great amount of work has been done here and this is
-what enables the Colorlight board to be used in the hacker spirit way.</p>
-<p>Accidentally, this board design happens to be a great compromise
-between feature-rich and IO-rich. The only on-board peripherals are the
-basic or high speed ones, which would be hard to connect over the 0.1&quot;
-pin headers. It is also the only development board with a dual Gigabit
-Ethernet interface in its price range. Since it&rsquo;s just an FPGA, the
-16MBit SDRAM should be enough for most applications, while being easy
-to implement a controller for.</p>
-<h2 id="hacking-the-board">Hacking the board</h2>
-<p>With the on-board JTAG port, you just need to solder on
-a 4 pin header and you are ready to upload your own bitstreams to the
-ECP5 FPGA. This FPGA is fully supported by the <a class="link" href="https://github.com/YosysHQ/oss-cad-suite-build"  target="_blank" rel="noopener"
-    >Yosys toolchain</a>, from
-the verilog compiler through place and route engine to the bitstream
-generator, and along with an open source JTAG adapter like the Bus
-Pirate (or anything else, really) it only takes a moment to send the
-bitstream down and see your code run. There is a
-great deal of user accessible IO broken out on the HUB75 headers.</p>
-<p>The FPGA has a 25MHz clock directed to it, as well as one onboard LED
-and a button, which is plenty enough for a Verilog &ldquo;Hello, world!&rdquo;
-project - blinking the LED.</p>
-<p>The only downside of this board is lack of inputs by default - You
-need to replace the 74HC245 output drivers with bidirectional level
-shifters. However there exists a pin compatible level shifter IC,
-SN74CBT3245A which can replace the default output driver providing 3v3
-bidirectional IO. Other options, such as fabricating tiny PCBs that
-replace the shifters with wires, or connecting the direction pin of the
-output drivers to an IO pin are also a possibility.</p>
-<h2 id="summary">Summary</h2>
-<p>The Colorlight 5A-75B is a good choice for those who want to try
-open-source FPGA programming but do not wish to spend a significant
-amount of money for a classic development board. The on-board
-peripherals are enough for a first project to get acquainted with the
-toolchain. Gigabit Ethernet and SDRAM could also come in handy in
-future more advanced projects.</p>
-<p>In the next post I will describe how to write, compile and upload a
-Verilog project that will blink the onboard led of the 5A-75B board.</p>
+    <p><em>Welcome to the second part of the Colorlight 5A-75B article. You can find the <a class="link" href="/p/colorlight-part-1/" >first part here</a>.</em></p>
+<p>In this blogpost I will show you how to set up, synthesize and program your first Verilog program on the ECP5 FPGA using the Yosys suite.</p>
+<h2 id="the-fpga-toolchain">The FPGA toolchain</h2>
+<p>The FPGA workflow consists of a few more steps compared to the usual software toolchain workflow.</p>
+<p>The Verilog source, which is a description of the logic that makes up the FPGA design, first needs to be synthesized.
+The synthesis process scans through all the source files and libraries to find out the hierarchy of the modules, starting with the specified top module.
+The result of this process is a low level logical representation of all the abstract components that will make up the final design.
+In the FPGA flow, this step is done by the <code>yosys</code> program, and results in a JSON file.</p>
+<p>The next step in the toolchain is place-and-route.
+This is where the process becomes specific to the target FPGA family, because it takes the abstract components and maps it to physical parts that make up the FPGA.
+The logical design is translated into configuration data for all the switches, lookup tables and registers in the FPGA&rsquo;s macroblocks.
+Yosys suite includes the Nextpnr tool which does this step.
+For our board, which runs on the Lattice ECP5 fpga, we will have to use the <code>nextpnr-ecp5</code> program.
+This will give us a <code>.config</code> file which represents the configuration of the fpga.</p>
+<p>The last step is to upload the configuration data to the target FPGA.
+This step can have many forms, but in Yosys it has two parts: packing and uploading.
+First, the configuration data needs to be packed into a format that is recognized by the FPGA controller.
+This is done with the <code>ecppack</code> executable. We will use <code>ecppack</code> to create an SVF (Serial Vector Format).
+The SVF is a pretty ingenious hack - the file contains plain JTAG commands that need to be sent to the target, which makes it independent from the JTAG adapter.
+Using SVF, in principle, you can program any JTAG device with any JTAG adapter.
+The second part is the actual upload of the SVF to the device.
+We will use <code>openocd</code> to communicate with our JTAG adapter and upload the SVF file with configuration data to it. After the upload is complete, the FPGA will start running.</p>
+<h2 id="hello-blink">Hello, blink!</h2>
+<p>For our journey into getting the board to blink, we will use the following Verilog.
+It&rsquo;s a simple clock divisor module whose output is connected to an IO pin on the FPGA that is connected to the onboard LED.</p>
+<pre><code>module top(input clk_i, output led_o);
+   reg  led_reg;
+   wire baseclk;
+
+   clkdiv #(.DIV(2000000)) slowclk (clk_i, baseclk);
+
+   always @(posedge baseclk) begin;
+      led_reg &lt;= !led_reg;
+   end
+
+   assign led_o = led_reg;
+endmodule
+
+
+module clkdiv #(parameter DIV = 24'd5000)(
+    input wire clk_i,
+    output wire clk_o
+    );
+
+    reg [24:0] count = 25'b0;
+    reg clk_o_internal = 1;
+    //on this board we have a 25MHz clock
+
+    always @(posedge clk_i) begin
+        count &lt;= count + 25'b1;
+        if(count == DIV) begin
+            count &lt;= 25'b0;
+            clk_o_internal &lt;= ~clk_o_internal;
+        end
+    end
+    assign clk_o = clk_o_internal;
+endmodule
+</code></pre>
+<p>This piece of Verilog will take the clock input from the onboard oscillator, divide it by 500 thousand and output the divided clock to output led_o.</p>
+<p>I&rsquo;ve called the file <code>blink.v</code>. Now we need to synthesize it using <code>yosys</code>:</p>
+<pre><code>yosys -p &quot;synth_ecp5 -top top -json blink.json&quot; blink.v
+</code></pre>
+<p>It is important to specify the top module by name using the <code>-top &lt;name&gt;</code> option.
+Otherwise yosys may pick the wrong module as the top and later cause an error due to unconstrained IOs.</p>
+<p>The next step is to assign the logic IOs from the verilog modules to physical pins on the FPGA.
+This is necesary for the Place and Route step and is done by a constraints file.
+Looking up <a class="link" href="https://github.com/q3k/chubby75/blob/master/5a-75b/hardware_V8.0.md"  target="_blank" rel="noopener"
+    >q3k&rsquo;s repository</a> on the 5A-75B board we can find out that the clock is connected to FPGA pin P6, and the onboard led is connected to T6.
+Here is how the LPF file looks like. I saved it as blink.lpf:</p>
+<pre><code>LOCATE COMP &quot;clk_i&quot; SITE &quot;P6&quot;;
+IOBUF PORT &quot;clk_i&quot; IO_TYPE=LVCMOS33;
+
+LOCATE COMP &quot;led_o&quot; SITE &quot;T6&quot;;
+IOBUF PORT &quot;led_o&quot; IO_TYPE=LVCMOS25;
+</code></pre>
+<p>Now we can run the Place and Route program, <code>nextpnr-ecp5</code>:</p>
+<pre><code>nextpnr-ecp5 --json blink.json --textcfg blink_out.config --25k --package CABGA256 --lpf blink.lpf
+</code></pre>
+<p>We specify the parameters of the ECP5 FPGA: device type <code>LFE5U-25F</code> (<code>--25k</code>) and the package type.</p>
+<p>With the output config file all we need to do is to pack the bitstream into an SVF file:</p>
+<pre><code>ecppack --svf blink.svf blink_out.config blink.bit
+</code></pre>
+<p>With the SVF file it&rsquo;s time to program the bitstream into the FPGA. Connect it to your JTAG adapter and power.</p>
+<pre><code>openocd -f colorlight_5a75b.cfg -c &quot;svf -quiet -progress blink.svf; exit&quot;
+</code></pre>
+<p>The file colorlight_5a75b.cfg contains my openocd configuration:</p>
+<pre><code>source [find interface/jlink.cfg]
+adapter_khz 500
+transport select jtag
+
+jtag newtap ecp5 tap -irlen 8 -expected-id 0x41111043
+
+init
+scan_chain
+targets
+
+svf -tap ecp5.tap -quiet -progress blink.svf
+exit
+</code></pre>
+<p>the <code>jtag newtap ...</code> line defines a new Test Access Port that corresponds to the FPGA&rsquo;s TAP. The first line configures openocd to use a JLink as the adapter. If you have a different adapter, then modify this file to your needs.</p>
+<p>The example project, along with a Makefile is <a class="link" href="https://github.com/polprog/colorlight_hello"  target="_blank" rel="noopener"
+    >available on GitHub</a></p>
 <h2 id="about-the-author">About the author</h2>
 <p>Chris &ldquo;polprog&rdquo; Lasocki (<a class="link" href="https://twitter.com/polprogpl"  target="_blank" rel="noopener"
     >@polprogpl</a>)

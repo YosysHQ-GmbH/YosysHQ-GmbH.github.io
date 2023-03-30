@@ -6,7 +6,125 @@
         <description>Recent content on YosysHQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Mon, 06 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://blog.yosyshq.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 28 Mar 2023 18:17:00 +0200</lastBuildDate><atom:link href="http://blog.yosyshq.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>First gateware on the Colorlight 5A-75B board </title>
+        <link>http://blog.yosyshq.com/p/colorlight-part-2/</link>
+        <pubDate>Tue, 28 Mar 2023 18:17:00 +0200</pubDate>
+        
+        <guid>http://blog.yosyshq.com/p/colorlight-part-2/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2022/colorlight_5a75b.jpg" alt="Featured image of post First gateware on the Colorlight 5A-75B board " /&gt;&lt;p&gt;&lt;em&gt;Welcome to the second part of the Colorlight 5A-75B article. You can find the &lt;a class=&#34;link&#34; href=&#34;http://blog.yosyshq.com/p/colorlight-part-1/&#34; &gt;first part here&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;In this blogpost I will show you how to set up, synthesize and program your first Verilog program on the ECP5 FPGA using the Yosys suite.&lt;/p&gt;
+&lt;h2 id=&#34;the-fpga-toolchain&#34;&gt;The FPGA toolchain&lt;/h2&gt;
+&lt;p&gt;The FPGA workflow consists of a few more steps compared to the usual software toolchain workflow.&lt;/p&gt;
+&lt;p&gt;The Verilog source, which is a description of the logic that makes up the FPGA design, first needs to be synthesized.
+The synthesis process scans through all the source files and libraries to find out the hierarchy of the modules, starting with the specified top module.
+The result of this process is a low level logical representation of all the abstract components that will make up the final design.
+In the FPGA flow, this step is done by the &lt;code&gt;yosys&lt;/code&gt; program, and results in a JSON file.&lt;/p&gt;
+&lt;p&gt;The next step in the toolchain is place-and-route.
+This is where the process becomes specific to the target FPGA family, because it takes the abstract components and maps it to physical parts that make up the FPGA.
+The logical design is translated into configuration data for all the switches, lookup tables and registers in the FPGA&amp;rsquo;s macroblocks.
+Yosys suite includes the Nextpnr tool which does this step.
+For our board, which runs on the Lattice ECP5 fpga, we will have to use the &lt;code&gt;nextpnr-ecp5&lt;/code&gt; program.
+This will give us a &lt;code&gt;.config&lt;/code&gt; file which represents the configuration of the fpga.&lt;/p&gt;
+&lt;p&gt;The last step is to upload the configuration data to the target FPGA.
+This step can have many forms, but in Yosys it has two parts: packing and uploading.
+First, the configuration data needs to be packed into a format that is recognized by the FPGA controller.
+This is done with the &lt;code&gt;ecppack&lt;/code&gt; executable. We will use &lt;code&gt;ecppack&lt;/code&gt; to create an SVF (Serial Vector Format).
+The SVF is a pretty ingenious hack - the file contains plain JTAG commands that need to be sent to the target, which makes it independent from the JTAG adapter.
+Using SVF, in principle, you can program any JTAG device with any JTAG adapter.
+The second part is the actual upload of the SVF to the device.
+We will use &lt;code&gt;openocd&lt;/code&gt; to communicate with our JTAG adapter and upload the SVF file with configuration data to it. After the upload is complete, the FPGA will start running.&lt;/p&gt;
+&lt;h2 id=&#34;hello-blink&#34;&gt;Hello, blink!&lt;/h2&gt;
+&lt;p&gt;For our journey into getting the board to blink, we will use the following Verilog.
+It&amp;rsquo;s a simple clock divisor module whose output is connected to an IO pin on the FPGA that is connected to the onboard LED.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;module top(input clk_i, output led_o);
+   reg  led_reg;
+   wire baseclk;
+
+   clkdiv #(.DIV(2000000)) slowclk (clk_i, baseclk);
+
+   always @(posedge baseclk) begin;
+      led_reg &amp;lt;= !led_reg;
+   end
+
+   assign led_o = led_reg;
+endmodule
+
+
+module clkdiv #(parameter DIV = 24&#39;d5000)(
+    input wire clk_i,
+    output wire clk_o
+    );
+
+    reg [24:0] count = 25&#39;b0;
+    reg clk_o_internal = 1;
+    //on this board we have a 25MHz clock
+
+    always @(posedge clk_i) begin
+        count &amp;lt;= count + 25&#39;b1;
+        if(count == DIV) begin
+            count &amp;lt;= 25&#39;b0;
+            clk_o_internal &amp;lt;= ~clk_o_internal;
+        end
+    end
+    assign clk_o = clk_o_internal;
+endmodule
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This piece of Verilog will take the clock input from the onboard oscillator, divide it by 500 thousand and output the divided clock to output led_o.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;ve called the file &lt;code&gt;blink.v&lt;/code&gt;. Now we need to synthesize it using &lt;code&gt;yosys&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;yosys -p &amp;quot;synth_ecp5 -top top -json blink.json&amp;quot; blink.v
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;It is important to specify the top module by name using the &lt;code&gt;-top &amp;lt;name&amp;gt;&lt;/code&gt; option.
+Otherwise yosys may pick the wrong module as the top and later cause an error due to unconstrained IOs.&lt;/p&gt;
+&lt;p&gt;The next step is to assign the logic IOs from the verilog modules to physical pins on the FPGA.
+This is necesary for the Place and Route step and is done by a constraints file.
+Looking up &lt;a class=&#34;link&#34; href=&#34;https://github.com/q3k/chubby75/blob/master/5a-75b/hardware_V8.0.md&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;q3k&amp;rsquo;s repository&lt;/a&gt; on the 5A-75B board we can find out that the clock is connected to FPGA pin P6, and the onboard led is connected to T6.
+Here is how the LPF file looks like. I saved it as blink.lpf:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;LOCATE COMP &amp;quot;clk_i&amp;quot; SITE &amp;quot;P6&amp;quot;;
+IOBUF PORT &amp;quot;clk_i&amp;quot; IO_TYPE=LVCMOS33;
+
+LOCATE COMP &amp;quot;led_o&amp;quot; SITE &amp;quot;T6&amp;quot;;
+IOBUF PORT &amp;quot;led_o&amp;quot; IO_TYPE=LVCMOS25;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now we can run the Place and Route program, &lt;code&gt;nextpnr-ecp5&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;nextpnr-ecp5 --json blink.json --textcfg blink_out.config --25k --package CABGA256 --lpf blink.lpf
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We specify the parameters of the ECP5 FPGA: device type &lt;code&gt;LFE5U-25F&lt;/code&gt; (&lt;code&gt;--25k&lt;/code&gt;) and the package type.&lt;/p&gt;
+&lt;p&gt;With the output config file all we need to do is to pack the bitstream into an SVF file:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ecppack --svf blink.svf blink_out.config blink.bit
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;With the SVF file it&amp;rsquo;s time to program the bitstream into the FPGA. Connect it to your JTAG adapter and power.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;openocd -f colorlight_5a75b.cfg -c &amp;quot;svf -quiet -progress blink.svf; exit&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The file colorlight_5a75b.cfg contains my openocd configuration:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;source [find interface/jlink.cfg]
+adapter_khz 500
+transport select jtag
+
+jtag newtap ecp5 tap -irlen 8 -expected-id 0x41111043
+
+init
+scan_chain
+targets
+
+svf -tap ecp5.tap -quiet -progress blink.svf
+exit
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;the &lt;code&gt;jtag newtap ...&lt;/code&gt; line defines a new Test Access Port that corresponds to the FPGA&amp;rsquo;s TAP. The first line configures openocd to use a JLink as the adapter. If you have a different adapter, then modify this file to your needs.&lt;/p&gt;
+&lt;p&gt;The example project, along with a Makefile is &lt;a class=&#34;link&#34; href=&#34;https://github.com/polprog/colorlight_hello&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;available on GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;about-the-author&#34;&gt;About the author&lt;/h2&gt;
+&lt;p&gt;Chris &amp;ldquo;polprog&amp;rdquo; Lasocki (&lt;a class=&#34;link&#34; href=&#34;https://twitter.com/polprogpl&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;@polprogpl&lt;/a&gt;)
+is a long time electronics hacker and an aspiring physicist. FPGAs are
+one of his hobbies and he is currently writing a thesis in that field.
+His other interests include laser physics as well as embedded programming
+projects. He runs a blog at &lt;a class=&#34;link&#34; href=&#34;https://polprog.net&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;polprog.net&lt;/a&gt;.&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Tabby CAD Suite version 20230306 released!</title>
         <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230306-released/</link>
         <pubDate>Mon, 06 Mar 2023 00:00:00 +0000</pubDate>
@@ -1047,7 +1165,8 @@ select -assert-count 1 a:init=2&#39;b10 top/q %i
         <pubDate>Sun, 16 Oct 2022 18:17:00 +0200</pubDate>
         
         <guid>http://blog.yosyshq.com/p/colorlight-part-1/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2022/colorlight_5a75b.jpg" alt="Featured image of post Introducing the Colorlight 5A-75B board" /&gt;&lt;p&gt;&lt;em&gt;This guest post is the first in a two part series by Chris Lasocki.&lt;/em&gt;&lt;/p&gt;
+        <description>&lt;img src="http://blog.yosyshq.com/static-2022/colorlight_5a75b.jpg" alt="Featured image of post Introducing the Colorlight 5A-75B board" /&gt;&lt;p&gt;&lt;em&gt;This guest post is the first in a two part series by Chris Lasocki.
+Part 2 is &lt;a class=&#34;link&#34; href=&#34;http://blog.yosyshq.com/p/colorlight-part-2/&#34; &gt;now available here&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;It seems that it was an accident - a generic part of a LED display has
 become a low cost FPGA development board. The board in question is the
 Colorlight 5A-75B, which is a so-called receiver card. Featuring a
