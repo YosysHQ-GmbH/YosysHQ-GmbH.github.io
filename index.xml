@@ -23,6 +23,27 @@
 </description>
         </item>
         <item>
+        <title>Tabby CAD Suite version 20230414 released!</title>
+        <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230414-released/</link>
+        <pubDate>Fri, 14 Apr 2023 00:00:00 +0000</pubDate>
+        
+        <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230414-released/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2023/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20230414 released!" /&gt;&lt;p&gt;Tabby CAD Suite version 20230414 released!&lt;/p&gt;
+&lt;p&gt;The April release of Tabby CAD Suite is now available for download. Notable changes in this version include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The initial release of our new equivalence checking tool EQY is now available. Try out some of the &lt;a class=&#34;link&#34; href=&#34;https://yosyshq.readthedocs.io/projects/eqy/en/latest/quickstart.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;examples&lt;/a&gt;!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In other YosysHQ news:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;We have started a new series called ‘&lt;a class=&#34;link&#34; href=&#34;https://blog.yosyshq.com/p/yosys-one-liners-axi/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Yosys One Liners&lt;/a&gt;’ where we share some useful one liners. The first one shows how to show there are no combinatorial paths between input and output signals - useful for verifying correct AXI behaviour.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Happy April,
+The YosysHQ Team&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>First gateware on the Colorlight 5A-75B board </title>
         <link>http://blog.yosyshq.com/p/colorlight-part-2/</link>
         <pubDate>Tue, 28 Mar 2023 18:17:00 +0200</pubDate>

@@ -18,6 +18,18 @@ flatten; select -assert-none i:*axi_* %coe* o:*axi_* %cie* %i If that fails we c
     </item>
     
     <item>
+      <title>Tabby CAD Suite version 20230414 released!</title>
+      <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230414-released/</link>
+      <pubDate>Fri, 14 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230414-released/</guid>
+      <description>Tabby CAD Suite version 20230414 released!
+The April release of Tabby CAD Suite is now available for download. Notable changes in this version include:
+The initial release of our new equivalence checking tool EQY is now available. Try out some of the examples! In other YosysHQ news:
+We have started a new series called ‘Yosys One Liners’ where we share some useful one liners. The first one shows how to show there are no combinatorial paths between input and output signals - useful for verifying correct AXI behaviour.</description>
+    </item>
+    
+    <item>
       <title>First gateware on the Colorlight 5A-75B board </title>
       <link>http://blog.yosyshq.com/p/colorlight-part-2/</link>
       <pubDate>Tue, 28 Mar 2023 18:17:00 +0200</pubDate>
