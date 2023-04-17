@@ -2,19 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://blog.yosyshq.com/tags/one-liners/</loc>
+    <lastmod>2023-04-17T13:25:38+02:00</lastmod>
+  </url><url>
+    <loc>http://blog.yosyshq.com/post/</loc>
+    <lastmod>2023-04-17T13:25:38+02:00</lastmod>
+  </url><url>
+    <loc>http://blog.yosyshq.com/tags/</loc>
+    <lastmod>2023-04-17T13:25:38+02:00</lastmod>
+  </url><url>
+    <loc>http://blog.yosyshq.com/p/yosys-one-liners-axi/</loc>
+    <lastmod>2023-04-17T13:25:38+02:00</lastmod>
+  </url><url>
+    <loc>http://blog.yosyshq.com/</loc>
+    <lastmod>2023-04-17T13:25:38+02:00</lastmod>
+  </url><url>
     <loc>http://blog.yosyshq.com/tags/blog/</loc>
     <lastmod>2023-03-28T18:17:00+02:00</lastmod>
   </url><url>
     <loc>http://blog.yosyshq.com/p/colorlight-part-2/</loc>
-    <lastmod>2023-03-28T18:17:00+02:00</lastmod>
-  </url><url>
-    <loc>http://blog.yosyshq.com/post/</loc>
-    <lastmod>2023-03-28T18:17:00+02:00</lastmod>
-  </url><url>
-    <loc>http://blog.yosyshq.com/tags/</loc>
-    <lastmod>2023-03-28T18:17:00+02:00</lastmod>
-  </url><url>
-    <loc>http://blog.yosyshq.com/</loc>
     <lastmod>2023-03-28T18:17:00+02:00</lastmod>
   </url><url>
     <loc>http://blog.yosyshq.com/tags/release-notes/</loc>

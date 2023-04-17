@@ -1,24 +1,21 @@
 <!DOCTYPE html>
 <html lang="en-us">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Subject: Tabby CAD Suite version 20230104 released!
-The January release of Tabby CAD Suite is now available for download. With the holidays there have been only a few changes, of note:
-SBY output is now in color. In other YosysHQ news: We have reformatted our service table to clarify some points we&amp;rsquo;ve seen cause confusion. Don&amp;rsquo;t worry, our prices remain the same as they&amp;rsquo;ve always been! Our first community spotlight article is about Tbengy, which is a Python Tool for SV/UVM Testbench Generation and RTL Synthesis.'><title>Tabby CAD Suite version 20220104 released!</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='The AXI spec says &amp;ldquo;On Manager and Subordinate interfaces, there must be no combinatorial paths between input and output signals.&amp;rdquo; If we have a design containing an AXI Manager or Subordinate as netlist (i.e. post proc) and the AXI ports contain axi_ we can check this automatically using this Yosys one liner:
+flatten; select -assert-none i:*axi_* %coe* o:*axi_* %cie* %i If that fails we can use show i:*axi_* %coe* o:*axi_* %cie* %i to then see the combinational path (or using dump/printattrs/select -list instead of show when the design is too large for show).'><title>Yosys One Liners - AXI</title>
 
-<link rel='canonical' href='http://blog.yosyshq.com/p/tabby-cad-suite-version-20220104-released/'>
+<link rel='canonical' href='http://blog.yosyshq.com/p/yosys-one-liners-axi/'>
 
-<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Tabby CAD Suite version 20220104 released!'>
-<meta property='og:description' content='Subject: Tabby CAD Suite version 20230104 released!
-The January release of Tabby CAD Suite is now available for download. With the holidays there have been only a few changes, of note:
-SBY output is now in color. In other YosysHQ news: We have reformatted our service table to clarify some points we&amp;rsquo;ve seen cause confusion. Don&amp;rsquo;t worry, our prices remain the same as they&amp;rsquo;ve always been! Our first community spotlight article is about Tbengy, which is a Python Tool for SV/UVM Testbench Generation and RTL Synthesis.'>
-<meta property='og:url' content='http://blog.yosyshq.com/p/tabby-cad-suite-version-20220104-released/'>
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Yosys One Liners - AXI'>
+<meta property='og:description' content='The AXI spec says &amp;ldquo;On Manager and Subordinate interfaces, there must be no combinatorial paths between input and output signals.&amp;rdquo; If we have a design containing an AXI Manager or Subordinate as netlist (i.e. post proc) and the AXI ports contain axi_ we can check this automatically using this Yosys one liner:
+flatten; select -assert-none i:*axi_* %coe* o:*axi_* %cie* %i If that fails we can use show i:*axi_* %coe* o:*axi_* %cie* %i to then see the combinational path (or using dump/printattrs/select -list instead of show when the design is too large for show).'>
+<meta property='og:url' content='http://blog.yosyshq.com/p/yosys-one-liners-axi/'>
 <meta property='og:site_name' content='YosysHQ Blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='release notes' /><meta property='article:published_time' content='2023-01-04T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2023-01-04T00:00:00&#43;00:00'/><meta property='og:image' content='http://blog.yosyshq.com/static-2023/YOS_horiz.png' />
-<meta name="twitter:site" content="@YosysHQ"><meta name="twitter:title" content="Tabby CAD Suite version 20220104 released!">
-<meta name="twitter:description" content="Subject: Tabby CAD Suite version 20230104 released!
-The January release of Tabby CAD Suite is now available for download. With the holidays there have been only a few changes, of note:
-SBY output is now in color. In other YosysHQ news: We have reformatted our service table to clarify some points we&amp;rsquo;ve seen cause confusion. Don&amp;rsquo;t worry, our prices remain the same as they&amp;rsquo;ve always been! Our first community spotlight article is about Tbengy, which is a Python Tool for SV/UVM Testbench Generation and RTL Synthesis."><meta name="twitter:card" content="summary">
-    <meta name="twitter:image" content='http://blog.yosyshq.com/static-2023/YOS_horiz.png' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='one liners' /><meta property='article:published_time' content='2023-04-17T13:25:38&#43;02:00'/><meta property='article:modified_time' content='2023-04-17T13:25:38&#43;02:00'/><meta property='og:image' content='http://blog.yosyshq.com/static-2023/oneliners.jpeg' />
+<meta name="twitter:site" content="@YosysHQ"><meta name="twitter:title" content="Yosys One Liners - AXI">
+<meta name="twitter:description" content="The AXI spec says &amp;ldquo;On Manager and Subordinate interfaces, there must be no combinatorial paths between input and output signals.&amp;rdquo; If we have a design containing an AXI Manager or Subordinate as netlist (i.e. post proc) and the AXI ports contain axi_ we can check this automatically using this Yosys one liner:
+flatten; select -assert-none i:*axi_* %coe* o:*axi_* %cie* %i If that fails we can use show i:*axi_* %coe* o:*axi_* %cie* %i to then see the combinational path (or using dump/printattrs/select -list instead of show when the design is too large for show)."><meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content='http://blog.yosyshq.com/static-2023/oneliners.jpeg' />
     <link rel="shortcut icon" href="/favicon.png" />
 
     </head>
@@ -191,9 +188,9 @@ SBY output is now in color. In other YosysHQ news: We have reformatted our servi
     <article class="has-image main-article">
     <header class="article-header">
         <div class="article-image">
-            <a href="/p/tabby-cad-suite-version-20220104-released/">
+            <a href="/p/yosys-one-liners-axi/">
                 
-                    <img src="/static-2023/YOS_horiz.png" loading="lazy" alt="Featured image of post Tabby CAD Suite version 20220104 released!" />
+                    <img src="/static-2023/oneliners.jpeg" loading="lazy" alt="Featured image of post Yosys One Liners - AXI" />
                 
             </a>
         </div>
@@ -203,7 +200,7 @@ SBY output is now in color. In other YosysHQ news: We have reformatted our servi
     
 
     <h2 class="article-title">
-        <a href="/p/tabby-cad-suite-version-20220104-released/">Tabby CAD Suite version 20220104 released!</a>
+        <a href="/p/yosys-one-liners-axi/">Yosys One Liners - AXI</a>
     </h2>
 
     <footer class="article-time">
@@ -215,23 +212,19 @@ SBY output is now in color. In other YosysHQ news: We have reformatted our servi
 
 
 
-        <time class="article-time--published">Jan 04, 2023</time>
+        <time class="article-time--published">Apr 17, 2023</time>
     </footer></div>
 </header>
 
     <section class="article-content">
-    <p>Subject: Tabby CAD Suite version 20230104 released!</p>
-<p>The January release of Tabby CAD Suite is now available for download. With the holidays there have been only a few changes, of note:</p>
-<ul>
-<li>SBY output is now in color.</li>
-</ul>
-<h1 id="in-other-yosyshq-news">In other YosysHQ news:</h1>
-<ul>
-<li>We have reformatted our service table to clarify some points we&rsquo;ve seen cause confusion. Don&rsquo;t worry, our prices remain the same as they&rsquo;ve always been!</li>
-<li>Our first <a class="link" href="/p/community-spotlight-tbengy/" >community spotlight article is about Tbengy</a>, which is a Python Tool for SV/UVM Testbench Generation and RTL Synthesis.</li>
-</ul>
-<p>Happy New Year!
-The YosysHQ Team</p>
+    <p>The AXI spec says &ldquo;On Manager and Subordinate interfaces, there must be no combinatorial paths between input and output signals.&rdquo; If we have a design containing an AXI Manager or Subordinate as netlist (i.e. post <code>proc</code>) and the AXI ports contain <code>axi_</code> we can check this automatically using this Yosys one liner:</p>
+<pre><code>flatten; select -assert-none i:*axi_* %coe* o:*axi_* %cie* %i
+</code></pre>
+<p>If that fails we can use <code>show i:*axi_* %coe* o:*axi_* %cie* %i</code> to then see the combinational path (or using dump/printattrs/select -list instead of show when the design is too large for show).</p>
+<p>Here <code>i:*axi_* %coe</code> selects the combinational output cone of all input ports containing <code>axi_</code> and <code>o:*axi_* %cie*</code> selects the combinational input cone of all output ports containing <code>axi_</code> and <code>%i</code> takes the intersection of those two selections, leaving you with only the combinational paths that start and end in such an input/output.</p>
+<p>We also flatten the design, as selecting input/output cones doesn’t work across submodules.</p>
+<p>If you want to find out more about the Yosys select command, <a class="link" href="https://yosyshq.readthedocs.io/projects/yosys/en/latest/cmd/select.html"  target="_blank" rel="noopener"
+    >please read the documentation here</a>.</p>
 
 </section>
 
@@ -240,7 +233,7 @@ The YosysHQ Team</p>
     
     <section class="article-tags">
         
-            <a href="/tags/release-notes/">release notes</a>
+            <a href="/tags/one-liners/">one liners</a>
         
     </section>
 

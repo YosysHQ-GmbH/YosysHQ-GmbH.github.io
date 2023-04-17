@@ -6,7 +6,23 @@
         <description>Recent content on YosysHQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Tue, 28 Mar 2023 18:17:00 +0200</lastBuildDate><atom:link href="http://blog.yosyshq.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 17 Apr 2023 13:25:38 +0200</lastBuildDate><atom:link href="http://blog.yosyshq.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Yosys One Liners - AXI</title>
+        <link>http://blog.yosyshq.com/p/yosys-one-liners-axi/</link>
+        <pubDate>Mon, 17 Apr 2023 13:25:38 +0200</pubDate>
+        
+        <guid>http://blog.yosyshq.com/p/yosys-one-liners-axi/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2023/oneliners.jpeg" alt="Featured image of post Yosys One Liners - AXI" /&gt;&lt;p&gt;The AXI spec says &amp;ldquo;On Manager and Subordinate interfaces, there must be no combinatorial paths between input and output signals.&amp;rdquo; If we have a design containing an AXI Manager or Subordinate as netlist (i.e. post &lt;code&gt;proc&lt;/code&gt;) and the AXI ports contain &lt;code&gt;axi_&lt;/code&gt; we can check this automatically using this Yosys one liner:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;flatten; select -assert-none i:*axi_* %coe* o:*axi_* %cie* %i
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If that fails we can use &lt;code&gt;show i:*axi_* %coe* o:*axi_* %cie* %i&lt;/code&gt; to then see the combinational path (or using dump/printattrs/select -list instead of show when the design is too large for show).&lt;/p&gt;
+&lt;p&gt;Here &lt;code&gt;i:*axi_* %coe&lt;/code&gt; selects the combinational output cone of all input ports containing &lt;code&gt;axi_&lt;/code&gt; and &lt;code&gt;o:*axi_* %cie*&lt;/code&gt; selects the combinational input cone of all output ports containing &lt;code&gt;axi_&lt;/code&gt; and &lt;code&gt;%i&lt;/code&gt; takes the intersection of those two selections, leaving you with only the combinational paths that start and end in such an input/output.&lt;/p&gt;
+&lt;p&gt;We also flatten the design, as selecting input/output cones doesn’t work across submodules.&lt;/p&gt;
+&lt;p&gt;If you want to find out more about the Yosys select command, &lt;a class=&#34;link&#34; href=&#34;https://yosyshq.readthedocs.io/projects/yosys/en/latest/cmd/select.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;please read the documentation here&lt;/a&gt;.&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>First gateware on the Colorlight 5A-75B board </title>
         <link>http://blog.yosyshq.com/p/colorlight-part-2/</link>
         <pubDate>Tue, 28 Mar 2023 18:17:00 +0200</pubDate>
