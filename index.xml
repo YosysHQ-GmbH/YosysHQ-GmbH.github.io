@@ -16,7 +16,7 @@
 &lt;p&gt;Welcome to another &lt;a class=&#34;link&#34; href=&#34;http://blog.yosyshq.com/tags/community-spotlight/&#34; &gt;community spotlight&lt;/a&gt; article where we shine a light on open source EDA projects. If you want to &lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSdIEgu6FJZam0-V3PMTjw-eDebJdg_JuIlN4MkLNDr4vs-a5A/viewform?usp=sf_link&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;submit a project, please do so here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;AutoSVA makes Formal Property Verification (FPV) more accesible for hardware designers.&lt;/p&gt;
-&lt;h1 id=&#34;zachary-snows-bio&#34;&gt;Zachary Snow&amp;rsquo;s Bio&lt;/h1&gt;
+&lt;h1 id=&#34;marcelo-veras-bio&#34;&gt;Marcelo Vera&amp;rsquo;s Bio&lt;/h1&gt;
 &lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2023/spotlight/marcelo.jpeg&#34; alt=&#34;Marcelo Vera&#34;  /&gt;&lt;/p&gt;
 &lt;p&gt;Marcelo is a PhD candidate in the Department of Computer Science at Princeton University advised by Margaret Martonosi and David Wentzlaff. He received his BSE from University of Murcia. Marcelo is interested in hardware innovations that are modular, to make SoC integration practical. His research focuses on Computer Architecture, from hardware RTL design and verification to software programming models of novel architectures.
 He has previously worked in the hardware industry at Arm, contributing to the design and verification of three GPU projects, and at Cerebras Systems, creating High-Performance Computing kernels.
