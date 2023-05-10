@@ -6,7 +6,43 @@
         <description>Recent content on YosysHQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Mon, 17 Apr 2023 13:25:38 +0200</lastBuildDate><atom:link href="http://blog.yosyshq.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 10 May 2023 13:26:31 +0100</lastBuildDate><atom:link href="http://blog.yosyshq.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Community Spotlight - AutoSVA</title>
+        <link>http://blog.yosyshq.com/p/community-spotlight-autosva/</link>
+        <pubDate>Wed, 10 May 2023 13:26:31 +0100</pubDate>
+        
+        <guid>http://blog.yosyshq.com/p/community-spotlight-autosva/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2022/spotlight/spotlight.png" alt="Featured image of post Community Spotlight - AutoSVA" /&gt;&lt;h1 id=&#34;autosva&#34;&gt;AutoSVA&lt;/h1&gt;
+&lt;p&gt;Welcome to another &lt;a class=&#34;link&#34; href=&#34;http://blog.yosyshq.com/tags/community-spotlight/&#34; &gt;community spotlight&lt;/a&gt; article where we shine a light on open source EDA projects. If you want to &lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSdIEgu6FJZam0-V3PMTjw-eDebJdg_JuIlN4MkLNDr4vs-a5A/viewform?usp=sf_link&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;submit a project, please do so here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;AutoSVA makes Formal Property Verification (FPV) more accesible for hardware designers.&lt;/p&gt;
+&lt;h1 id=&#34;zachary-snows-bio&#34;&gt;Zachary Snow&amp;rsquo;s Bio&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2023/spotlight/marcelo.jpeg&#34; alt=&#34;Marcelo Vera&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;Marcelo is a PhD candidate in the Department of Computer Science at Princeton University advised by Margaret Martonosi and David Wentzlaff. He received his BSE from University of Murcia. Marcelo is interested in hardware innovations that are modular, to make SoC integration practical. His research focuses on Computer Architecture, from hardware RTL design and verification to software programming models of novel architectures.
+He has previously worked in the hardware industry at Arm, contributing to the design and verification of three GPU projects, and at Cerebras Systems, creating High-Performance Computing kernels.
+At Princeton, he has contributed in two academic chip tapeouts that aims to improve the performance, power and programmability of several emerging workflows in the broad areas of Machine Learning and Graph Analytics.&lt;/p&gt;
+&lt;h1 id=&#34;what-was-your-motivation-in-making-autosva&#34;&gt;What was your motivation in making AutoSVA?&lt;/h1&gt;
+&lt;p&gt;AutoSVA was build with the goal of making Formal Property Verification (FPV) more accesible for hardware designers. AutoSVA brings a simple language to make annotations in the signal declaration section of a module interface. This enables us to generate FPV testbenches that check that transactions between hardware RTL modules follow their interface specifications. It does not check full correctness of the design but it automatically generate liveness properties (prevent duplicated responses, prevent requests being dropped) and some safety-relate properties of transactions, like data integrity, transaction invariants, uniqueness, stability&amp;hellip;&lt;/p&gt;
+&lt;h1 id=&#34;why-do-you-develop-open-source-tools&#34;&gt;Why do you develop open source tools?&lt;/h1&gt;
+&lt;p&gt;As the title of our paper suggests &amp;ldquo;Democratizing Formal Verification of RTL Module Interactions”
+the motivation on making the tool was to make FPV more accesible for hardware designers without much prior knowledge in formal methods.
+Thus, open-sourcing makes the most sense when the goal is to get people to use your tool.&lt;/p&gt;
+&lt;h1 id=&#34;what-are-some-of-the-challenges-you-face&#34;&gt;What are some of the challenges you face?&lt;/h1&gt;
+&lt;p&gt;Hardware RTL projects can be very heterogeneous, I made the language and tool pretty flexible to take any Verilog or SystemVerilog, but I wouldn’t be surprise it the tool complained about some syntax or some include files. The tool also has a way to set inlcude paths on the tool command line, but you never know!&lt;/p&gt;
+&lt;h1 id=&#34;what-could-the-community-do-to-support-you&#34;&gt;What could the community do to support you?&lt;/h1&gt;
+&lt;p&gt;I would be happy if the community would keep using it, find limitations, and extend the tool. There are plenty of opportunities to add functionality. I’m working myself on an extension to automatically find timing channels via hardware state left unflushed between context switches. Stay tuned for updates, Use the tool and contribute back, I’m happy to take pull requests!&lt;/p&gt;
+&lt;h1 id=&#34;what-is-the-best-link-for-the-project&#34;&gt;What is the best link for the project?&lt;/h1&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/PrincetonUniversity/AutoSVA&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/PrincetonUniversity/AutoSVA&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;what-is-the-best-way-for-people-to-contact-you&#34;&gt;What is the best way for people to contact you?&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Email: &lt;a class=&#34;link&#34; href=&#34;mailto:movera@princeton.edu&#34; &gt;movera@princeton.edu&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;LinkedIn: &lt;a class=&#34;link&#34; href=&#34;https://www.linkedin.com/in/marcelo-orenes-vera-391390b8/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.linkedin.com/in/marcelo-orenes-vera-391390b8/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>Yosys One Liners - AXI</title>
         <link>http://blog.yosyshq.com/p/yosys-one-liners-axi/</link>
         <pubDate>Mon, 17 Apr 2023 13:25:38 +0200</pubDate>
