@@ -6,7 +6,18 @@
     <description>Recent content in Posts on YosysHQ Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 10 May 2023 13:26:31 +0100</lastBuildDate><atom:link href="http://blog.yosyshq.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 15 May 2023 12:00:00 +0200</lastBuildDate><atom:link href="http://blog.yosyshq.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How I went from blinker to RSIC-V in 3 months</title>
+      <link>http://blog.yosyshq.com/p/blinker-to-risc-v/</link>
+      <pubDate>Mon, 15 May 2023 12:00:00 +0200</pubDate>
+      
+      <guid>http://blog.yosyshq.com/p/blinker-to-risc-v/</guid>
+      <description>This guest post is by Bastian Löher.
+How I went from blinker to RSIC-V in 3 months How does one get started with programming FPGAs (field-programmable gate arrays)? Where does one even begin? Also, if you&amp;rsquo;ve ever wondered how a CPU works and how you can build your own, keep reading!
+TL;DR: Getting into FPGA programming nowadays isn&amp;rsquo;t hard anymore. Get a cheap board with at least one LED that is supported by an open toolchain, search for a tutorial, and get that LED blinking!</description>
+    </item>
+    
     <item>
       <title>Community Spotlight - AutoSVA</title>
       <link>http://blog.yosyshq.com/p/community-spotlight-autosva/</link>
