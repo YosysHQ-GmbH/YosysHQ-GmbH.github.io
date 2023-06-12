@@ -6,7 +6,63 @@
         <description>Recent content on YosysHQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Mon, 15 May 2023 12:00:00 +0200</lastBuildDate><atom:link href="http://blog.yosyshq.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 12 Jun 2023 16:52:39 +0200</lastBuildDate><atom:link href="http://blog.yosyshq.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Yosys One Liners - Rename</title>
+        <link>http://blog.yosyshq.com/p/yosys-one-liners-rename/</link>
+        <pubDate>Mon, 12 Jun 2023 16:52:39 +0200</pubDate>
+        
+        <guid>http://blog.yosyshq.com/p/yosys-one-liners-rename/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2023/oneliners.jpeg" alt="Featured image of post Yosys One Liners - Rename" /&gt;&lt;p&gt;Scenario: you&amp;rsquo;re developing some Verilog RTL and after synthesis the ASIC tools you&amp;rsquo;re using fail on the design! It won&amp;rsquo;t accept square brackets in the input!&lt;/p&gt;
+&lt;p&gt;Here&amp;rsquo;s the DUT:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;module test(
+    input   wire [7:0] a,
+    input   wire [7:0] b,
+    output  wire [8:0] sum
+);
+
+    assign sum = a + b;
+
+endmodule
+
+module gen(
+    input   wire [23:0] a,
+    input   wire [23:0] b,
+    output  wire [26:0] c,
+);
+    genvar i;
+    generate
+    for (i=0; i&amp;lt;=2; i=i+1) begin
+        test test (
+            .a      (a[i*8+:8]),
+            .b      (b[i*8+:8]),
+            .sum    (c[i*9+:9])
+        );
+    end
+    endgenerate
+endmodule
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And here we see the square brackets in the output:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;yosys -qp &#39;read_verilog generate.v; prep -top gen; write_verilog out.v&#39;
+
+grep test out.v
+    test \genblk1[0].test  (
+    test \genblk1[1].test  (
+    test \genblk1[2].test  (
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Your challenge is to write a yosys one liner that renames the generated module names so they no longer contain square brackets.&lt;/p&gt;
+&lt;p&gt;Our solution is:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;yosys -p &#39;read_verilog generate.v; prep -top gen; rename -hide */c:*[*; rename -enumerate -pattern bracket_% */c:$auto$rename*; write_verilog out.v&#39;
+
+grep test out.v 
+    test bracket_0 (
+    test bracket_1 (
+    test bracket_2 (
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If you want to find out more about the Yosys rename command, &lt;a class=&#34;link&#34; href=&#34;https://yosyshq.readthedocs.io/projects/yosys/en/latest/cmd/rename.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;please read the documentation here&lt;/a&gt;.&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>How I went from blinker to RSIC-V in 3 months</title>
         <link>http://blog.yosyshq.com/p/blinker-to-risc-v/</link>
         <pubDate>Mon, 15 May 2023 12:00:00 +0200</pubDate>

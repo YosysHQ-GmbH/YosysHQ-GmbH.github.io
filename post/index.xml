@@ -6,7 +6,18 @@
     <description>Recent content in Posts on YosysHQ Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 15 May 2023 12:00:00 +0200</lastBuildDate><atom:link href="http://blog.yosyshq.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 12 Jun 2023 16:52:39 +0200</lastBuildDate><atom:link href="http://blog.yosyshq.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Yosys One Liners - Rename</title>
+      <link>http://blog.yosyshq.com/p/yosys-one-liners-rename/</link>
+      <pubDate>Mon, 12 Jun 2023 16:52:39 +0200</pubDate>
+      
+      <guid>http://blog.yosyshq.com/p/yosys-one-liners-rename/</guid>
+      <description>Scenario: you&amp;rsquo;re developing some Verilog RTL and after synthesis the ASIC tools you&amp;rsquo;re using fail on the design! It won&amp;rsquo;t accept square brackets in the input!
+Here&amp;rsquo;s the DUT:
+module test( input wire [7:0] a, input wire [7:0] b, output wire [8:0] sum ); assign sum = a + b; endmodule module gen( input wire [23:0] a, input wire [23:0] b, output wire [26:0] c, ); genvar i; generate for (i=0; i&amp;lt;=2; i=i+1) begin test test ( .</description>
+    </item>
+    
     <item>
       <title>How I went from blinker to RSIC-V in 3 months</title>
       <link>http://blog.yosyshq.com/p/blinker-to-risc-v/</link>

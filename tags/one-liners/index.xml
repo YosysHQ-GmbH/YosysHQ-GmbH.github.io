@@ -6,7 +6,18 @@
     <description>Recent content in one liners on YosysHQ Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 17 Apr 2023 13:25:38 +0200</lastBuildDate><atom:link href="http://blog.yosyshq.com/tags/one-liners/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 12 Jun 2023 16:52:39 +0200</lastBuildDate><atom:link href="http://blog.yosyshq.com/tags/one-liners/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Yosys One Liners - Rename</title>
+      <link>http://blog.yosyshq.com/p/yosys-one-liners-rename/</link>
+      <pubDate>Mon, 12 Jun 2023 16:52:39 +0200</pubDate>
+      
+      <guid>http://blog.yosyshq.com/p/yosys-one-liners-rename/</guid>
+      <description>Scenario: you&amp;rsquo;re developing some Verilog RTL and after synthesis the ASIC tools you&amp;rsquo;re using fail on the design! It won&amp;rsquo;t accept square brackets in the input!
+Here&amp;rsquo;s the DUT:
+module test( input wire [7:0] a, input wire [7:0] b, output wire [8:0] sum ); assign sum = a + b; endmodule module gen( input wire [23:0] a, input wire [23:0] b, output wire [26:0] c, ); genvar i; generate for (i=0; i&amp;lt;=2; i=i+1) begin test test ( .</description>
+    </item>
+    
     <item>
       <title>Yosys One Liners - AXI</title>
       <link>http://blog.yosyshq.com/p/yosys-one-liners-axi/</link>
