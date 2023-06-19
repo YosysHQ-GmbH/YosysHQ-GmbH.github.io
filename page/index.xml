@@ -13,7 +13,16 @@
       <pubDate>Fri, 26 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>http://blog.yosyshq.com/about/</guid>
-      <description>YosysHQ Blog site.</description>
+      <description>YosysHQ Blog site. For more information about YosysHQ, see our website.</description>
+    </item>
+    
+    <item>
+      <title>Newsletter</title>
+      <link>http://blog.yosyshq.com/newsletter/</link>
+      <pubDate>Fri, 26 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.yosyshq.com/newsletter/</guid>
+      <description> Subscribe * indicates required Email Address * </description>
     </item>
     
     <item>
