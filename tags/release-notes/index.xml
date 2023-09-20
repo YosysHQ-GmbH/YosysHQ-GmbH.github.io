@@ -6,7 +6,50 @@
     <description>Recent content in release notes on YosysHQ Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 14 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://blog.yosyshq.com/tags/release-notes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 05 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://blog.yosyshq.com/tags/release-notes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tabby CAD Suite version 20230905 released!</title>
+      <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230905-released/</link>
+      <pubDate>Tue, 05 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230905-released/</guid>
+      <description>The September release of Tabby CAD Suite is now available for download. Notable changes in this version include:
+Tabby CAD Suite now optionally supports floating licenses via FlexLM. Floating licenses are priced at 600€/month (double the price of node-locked licenses). Existing customers may exchange two node-locked licenses for one floating license - please contact us if this would be of interest to you. In other YosysHQ news:
+YosysHQ&amp;rsquo;s Matt Venn will be at ORConf 2023 in Munich next week (September 15th to 17th).</description>
+    </item>
+    
+    <item>
+      <title>Tabby CAD Suite version 20230807 released!</title>
+      <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230807-released/</link>
+      <pubDate>Mon, 07 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230807-released/</guid>
+      <description>The August release of Tabby CAD Suite is now available for download. Notable changes in this version include:
+The verific command now has a new option -lib to load all modules from the specified files as blackbox modules, disregarding their contents. This is useful especially for loading primitives from a simulation library, e.g.: verific -sv -lib cells_sim.v verific -work unisim -vhdl -lib unisim_VCOMP.vhd The files still need to be parseable by verific, so some limitations remain on the contents of the blackboxed modules, but it is possible to ignore some errors by first calling verific -set-warning VERI-XXXX for the corresponding error code.</description>
+    </item>
+    
+    <item>
+      <title>Tabby CAD Suite version 20230606 released!</title>
+      <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230606-released/</link>
+      <pubDate>Tue, 06 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230606-released/</guid>
+      <description>The June release of Tabby CAD Suite is now available for download. Notable changes in this version include:
+The RISC-V Formal Verification Toolbox has gained a bus interface for checking that instructions relating to memory result in matching bus transactions, as well as some checks for the machine-mode CSRs required by the RISC-V privileged specification. In other YosysHQ news:
+You might have seen Bruno Levy’s excellent introduction to RISCV on an FPGA.</description>
+    </item>
+    
+    <item>
+      <title>Tabby CAD Suite version 20230509 released!</title>
+      <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230509-released/</link>
+      <pubDate>Tue, 09 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230509-released/</guid>
+      <description>The May release of Tabby CAD Suite is now available for download. Notable changes in this version include:
+The synthprop pass was added, which converts SVA assert properties into module outputs that flag assertion violations. See help synthprop for details! In other YosysHQ news:
+We just published the 3rd in our series of ‘community spotlight’ blog posts. This time we’re featuring AutoSVA by Marcelo Vera which aims to make Formal Property Verification more accessible to hardware designers.</description>
+    </item>
+    
     <item>
       <title>Tabby CAD Suite version 20230414 released!</title>
       <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230414-released/</link>

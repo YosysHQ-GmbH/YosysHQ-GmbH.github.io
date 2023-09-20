@@ -6,7 +6,16 @@
     <description>Recent content in Tags on YosysHQ Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 12 Jun 2023 16:52:39 +0200</lastBuildDate><atom:link href="http://blog.yosyshq.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 05 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://blog.yosyshq.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>release notes</title>
+      <link>http://blog.yosyshq.com/tags/release-notes/</link>
+      <pubDate>Tue, 05 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.yosyshq.com/tags/release-notes/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>one liners</title>
       <link>http://blog.yosyshq.com/tags/one-liners/</link>
@@ -35,20 +44,20 @@
     </item>
     
     <item>
-      <title>release notes</title>
-      <link>http://blog.yosyshq.com/tags/release-notes/</link>
-      <pubDate>Fri, 14 Apr 2023 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.yosyshq.com/tags/release-notes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>app note</title>
       <link>http://blog.yosyshq.com/tags/app-note/</link>
       <pubDate>Wed, 07 Jul 2021 12:37:04 +0200</pubDate>
       
       <guid>http://blog.yosyshq.com/tags/app-note/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>yug</title>
+      <link>http://blog.yosyshq.com/tags/yug/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.yosyshq.com/tags/yug/</guid>
       <description></description>
     </item>
     

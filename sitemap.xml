@@ -2,20 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://blog.yosyshq.com/tags/one-liners/</loc>
-    <lastmod>2023-06-12T16:52:39+02:00</lastmod>
-  </url><url>
     <loc>http://blog.yosyshq.com/post/</loc>
-    <lastmod>2023-06-12T16:52:39+02:00</lastmod>
+    <lastmod>2023-09-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://blog.yosyshq.com/tags/release-notes/</loc>
+    <lastmod>2023-09-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230905-released/</loc>
+    <lastmod>2023-09-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://blog.yosyshq.com/tags/</loc>
+    <lastmod>2023-09-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://blog.yosyshq.com/</loc>
+    <lastmod>2023-09-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230807-released/</loc>
+    <lastmod>2023-08-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://blog.yosyshq.com/tags/one-liners/</loc>
     <lastmod>2023-06-12T16:52:39+02:00</lastmod>
   </url><url>
     <loc>http://blog.yosyshq.com/p/yosys-one-liners-rename/</loc>
     <lastmod>2023-06-12T16:52:39+02:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/</loc>
-    <lastmod>2023-06-12T16:52:39+02:00</lastmod>
+    <loc>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230606-released/</loc>
+    <lastmod>2023-06-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://blog.yosyshq.com/tags/blog/</loc>
     <lastmod>2023-05-15T12:00:00+02:00</lastmod>
@@ -29,11 +41,11 @@
     <loc>http://blog.yosyshq.com/p/community-spotlight-autosva/</loc>
     <lastmod>2023-05-10T13:26:31+01:00</lastmod>
   </url><url>
+    <loc>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230509-released/</loc>
+    <lastmod>2023-05-09T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://blog.yosyshq.com/p/yosys-one-liners-axi/</loc>
     <lastmod>2023-04-17T13:25:38+02:00</lastmod>
-  </url><url>
-    <loc>http://blog.yosyshq.com/tags/release-notes/</loc>
-    <lastmod>2023-04-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230414-released/</loc>
     <lastmod>2023-04-14T00:00:00+00:00</lastmod>
@@ -143,5 +155,9 @@
     <loc>http://blog.yosyshq.com/categories/</loc>
   </url><url>
     <loc>http://blog.yosyshq.com/search/</loc>
+  </url><url>
+    <loc>http://blog.yosyshq.com/p/yosys-users-group/</loc>
+  </url><url>
+    <loc>http://blog.yosyshq.com/tags/yug/</loc>
   </url>
 </urlset>
