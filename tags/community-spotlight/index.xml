@@ -6,7 +6,18 @@
     <description>Recent content in community spotlight on YosysHQ Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 10 May 2023 13:26:31 +0100</lastBuildDate><atom:link href="http://blog.yosyshq.com/tags/community-spotlight/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 25 Sep 2023 13:26:31 +0100</lastBuildDate><atom:link href="http://blog.yosyshq.com/tags/community-spotlight/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Community Spotlight - WAL</title>
+      <link>http://blog.yosyshq.com/p/community-spotlight-wal/</link>
+      <pubDate>Mon, 25 Sep 2023 13:26:31 +0100</pubDate>
+      
+      <guid>http://blog.yosyshq.com/p/community-spotlight-wal/</guid>
+      <description>WAL Welcome to another community spotlight article where we shine a light on open source EDA projects. If you want to submit a project, please do so here.
+Waveform Analysis Language (WAL) is a programming language for complex waveform analysis and EDA tool development.
+Lucas Klemmer&amp;rsquo;s Bio I&amp;rsquo;m a PhD student at the Institute for Complex Systems at the Johannes Kepler University in Linz, Austria. I received my Master’s degree in computer science from the University of Bremen in Germany.</description>
+    </item>
+    
     <item>
       <title>Community Spotlight - AutoSVA</title>
       <link>http://blog.yosyshq.com/p/community-spotlight-autosva/</link>

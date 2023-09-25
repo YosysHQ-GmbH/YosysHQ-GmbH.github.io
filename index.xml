@@ -6,7 +6,40 @@
         <description>Recent content on YosysHQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Tue, 05 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://blog.yosyshq.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 25 Sep 2023 13:26:31 +0100</lastBuildDate><atom:link href="http://blog.yosyshq.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Community Spotlight - WAL</title>
+        <link>http://blog.yosyshq.com/p/community-spotlight-wal/</link>
+        <pubDate>Mon, 25 Sep 2023 13:26:31 +0100</pubDate>
+        
+        <guid>http://blog.yosyshq.com/p/community-spotlight-wal/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2023/spotlight/wal-pipeline.png" alt="Featured image of post Community Spotlight - WAL" /&gt;&lt;h1 id=&#34;wal&#34;&gt;WAL&lt;/h1&gt;
+&lt;p&gt;Welcome to another &lt;a class=&#34;link&#34; href=&#34;http://blog.yosyshq.com/tags/community-spotlight/&#34; &gt;community spotlight&lt;/a&gt; article where we shine a light on open source EDA projects. If you want to &lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSdIEgu6FJZam0-V3PMTjw-eDebJdg_JuIlN4MkLNDr4vs-a5A/viewform?usp=sf_link&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;submit a project, please do so here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Waveform Analysis Language (WAL) is a programming language for complex waveform analysis and EDA tool development.&lt;/p&gt;
+&lt;h1 id=&#34;lucas-klemmers-bio&#34;&gt;Lucas Klemmer&amp;rsquo;s Bio&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2023/spotlight/lucas.png&#34; alt=&#34;lucas_klemmer&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m a PhD student at the Institute for Complex Systems at the Johannes Kepler University in Linz, Austria. I received my Master’s degree in computer science from the University of Bremen in Germany. My interests include RISC-V, HW verification and analysis, kayaking, and learning (natural) languages.&lt;/p&gt;
+&lt;h1 id=&#34;what-motivated-you-to-make-wal&#34;&gt;What motivated you to make WAL?&lt;/h1&gt;
+&lt;p&gt;Waveforms contain so much interesting information; however, this information is “buried” in enormous amounts of data. Using general purpose languages can quickly become challenging to analyze waveforms because these languages have no concepts of time, design structure, and other things we in hardware care about. With WAL, we want to make it easy to analyze waveforms by integrating those concepts into the language to make it “hardware aware”. Simply speaking, a WAL program runs on your waveform, and you can use the waveform signals just like you use variables.&lt;/p&gt;
+&lt;h1 id=&#34;why-do-you-make-open-source-tools&#34;&gt;Why do you make open source tools?&lt;/h1&gt;
+&lt;p&gt;As a computer scientist coming to the hardware world, it was quite a culture shock when I had to use closed-source toolchains. However, in the last few years, this feeling changed from being shocked to being amazed by all the open-source hardware and EDA projects that emerged.
+With WAL, I hope that I can add my small contribution to this change!&lt;/p&gt;
+&lt;h1 id=&#34;what-are-some-challenges&#34;&gt;What are some challenges?&lt;/h1&gt;
+&lt;p&gt;Handling very large waveforms with WAL is possible, but more work on performance and optimizations is required.
+Moreover, the hardware domain requires a bit more work to win people for new ideas than in the software world.&lt;/p&gt;
+&lt;h1 id=&#34;what-could-the-community-do-to-support-you&#34;&gt;What could the community do to support you?&lt;/h1&gt;
+&lt;p&gt;I&amp;rsquo;m constantly looking for interesting new applications. So if you have a waveform and would like to know more about it, then feel to contact me, I&amp;rsquo;m happy to help!&lt;/p&gt;
+&lt;h1 id=&#34;what-is-the-best-link-to-give-for-the-project&#34;&gt;What is the best link to give for the project?&lt;/h1&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://wal-lang.org/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://wal-lang.org/&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;what-is-the-best-way-for-people-to-contact-you&#34;&gt;What is the best way for people to contact you?&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Email: &lt;a class=&#34;link&#34; href=&#34;mailto:lucas.klemmer@jku.at&#34; &gt;lucas.klemmer@jku.at&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Mastodon: @lcsklmmr@fosstodon.org&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>Tabby CAD Suite version 20230905 released!</title>
         <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230905-released/</link>
         <pubDate>Tue, 05 Sep 2023 00:00:00 +0000</pubDate>
