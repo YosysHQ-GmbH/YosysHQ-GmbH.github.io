@@ -158,13 +158,13 @@ The YosysHQ Team&lt;/p&gt;
 </description>
         </item>
         <item>
-        <title>How I went from blinker to RSIC-V in 3 months</title>
+        <title>How I went from blinker to RISC-V in 3 months</title>
         <link>http://blog.yosyshq.com/p/blinker-to-risc-v/</link>
         <pubDate>Mon, 15 May 2023 12:00:00 +0200</pubDate>
         
         <guid>http://blog.yosyshq.com/p/blinker-to-risc-v/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2023/blinker-to-riscv.jpg" alt="Featured image of post How I went from blinker to RSIC-V in 3 months" /&gt;&lt;p&gt;&lt;em&gt;This guest post is by Bastian Löher.&lt;/em&gt;&lt;/p&gt;
-&lt;h1 id=&#34;how-i-went-from-blinker-to-rsic-v-in-3-months&#34;&gt;How I went from blinker to RSIC-V in 3 months&lt;/h1&gt;
+        <description>&lt;img src="http://blog.yosyshq.com/static-2023/blinker-to-riscv.jpg" alt="Featured image of post How I went from blinker to RISC-V in 3 months" /&gt;&lt;p&gt;&lt;em&gt;This guest post is by Bastian Löher.&lt;/em&gt;&lt;/p&gt;
+&lt;h1 id=&#34;how-i-went-from-blinker-to-risc-v-in-3-months&#34;&gt;How I went from blinker to RISC-V in 3 months&lt;/h1&gt;
 &lt;p&gt;How does one get started with programming &lt;a class=&#34;link&#34; href=&#34;https://en.wikipedia.org/wiki/Field-programmable_gate_array&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;FPGAs&lt;/a&gt; (field-programmable gate arrays)? Where does one even begin? Also, if you&amp;rsquo;ve ever wondered how a &lt;a class=&#34;link&#34; href=&#34;https://en.wikipedia.org/wiki/Central_processing_unit&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;CPU&lt;/a&gt; works and how you can build your own, keep reading!&lt;/p&gt;
