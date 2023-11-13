@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Repurposing SBY to solve a Sudoku&#34;'><title>Solving a Sudoku with SBY and Formal Verification</title>
+
+<link rel='canonical' href='http://blog.yosyshq.com/p/solving-sudoku-with-sby/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Solving a Sudoku with SBY and Formal Verification'>
+<meta property='og:description' content='Repurposing SBY to solve a Sudoku&#34;'>
+<meta property='og:url' content='http://blog.yosyshq.com/p/solving-sudoku-with-sby/'>
+<meta property='og:site_name' content='YosysHQ Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='blog' /><meta property='article:published_time' content='2023-11-06T12:00:00&#43;02:00'/><meta property='article:modified_time' content='2023-11-06T12:00:00&#43;02:00'/><meta property='og:image' content='http://blog.yosyshq.com/static-2023/cover_sby_sudoku.png' />
+<meta name="twitter:site" content="@YosysHQ"><meta name="twitter:title" content="Solving a Sudoku with SBY and Formal Verification">
+<meta name="twitter:description" content="Repurposing SBY to solve a Sudoku&#34;"><meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content='http://blog.yosyshq.com/static-2023/cover_sby_sudoku.png' />
+    <link rel="shortcut icon" href="/favicon.png" />
+
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script><div class="container main-container flex on-phone--column extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/logos/YOS_mark_square_hu6bb8cbdbd2526742846cc00545eb2d90_33709_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="http://blog.yosyshq.com/">YosysHQ Blog</a></h1>
+        <h2 class="site-description"></h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/about'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/newsletter'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>Newsletter</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>Dark Mode</span>
+            </li>
+        
+    </ol>
+</aside>
+
+            <main class="main full-width">
+    <div id="article-toolbar">
+        <a href="http://blog.yosyshq.com/" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>Back</span>
+        </a>
+    </div>
+
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/solving-sudoku-with-sby/">
+                
+                    <img src="/static-2023/cover_sby_sudoku.png" loading="lazy" alt="Featured image of post Solving a Sudoku with SBY and Formal Verification" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+
+    <h2 class="article-title">
+        <a href="/p/solving-sudoku-with-sby/">Solving a Sudoku with SBY and Formal Verification</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+        Repurposing SBY to solve a Sudoku&#34;
+    </h3>
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">Nov 06, 2023</time>
+    </footer></div>
+</header>
+
+    <section class="article-content">
+    <p><em>This guest post is by Theophile Loubiere.</em></p>
+<h1 id="solving-a-sudoku-with-sby-and-formal-verification">Solving a Sudoku with SBY and Formal Verification</h1>
+<p>Recently, I began using SBY to formally verify my designs. You can check out my first attempt on my blog <a class="link" href="https://learn-fpga-easily.com/trying-formal-verification-with-SBY-and-chisel/"  target="_blank" rel="noopener"
+    >learn-fpga-easily</a>. Formal Verification helps ensure that certain properties of your design always remain true, such as:</p>
+<ul>
+<li><strong>Bus arbitration</strong>: &ldquo;Only one master can receive the bus grant at any given time.&rdquo;</li>
+<li><strong>Overflow and Underflow</strong>: &ldquo;The FIFO buffer will never overflow or underflow.&rdquo;</li>
+<li><strong>State Machine Reachability</strong>: &ldquo;The state machine can never transition from state_1 to state_3.&rdquo;</li>
+</ul>
+<p>These kinds of properties would normally require an extensive functional testbench for coverage. However, with formal verification and SBY, they can be easily addressed with just a few assertions and assumptions.</p>
+<p>Given my newfound knowledge, it seemed completely natural that after embarrassingly failing to solve a Sudoku puzzle with my grandfather – a hit to my pride – I decided to repurpose the use of SBY just to figure out a Sudoku solution.</p>
+<p>Today, I am excited to share with you my overkill attempt to solve a simple Sudoku puzzle with SBY and Formal Verification.</p>
+<h2 id="modeling-the-sudoku">Modeling the Sudoku</h2>
+<p>In Verilog, we can represent a Sudoku grid straightforwardly: a two-dimensional register encompassing 9 rows and 9 columns, where each cell occupies 4 bits:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-verilog" data-lang="verilog"><span class="line"><span class="cl"><span class="k">module</span> <span class="n">sudoku</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">	<span class="k">input</span> <span class="n">clk</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Internal 9x9 grid to make operations more intuitive
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">(</span><span class="o">*</span> <span class="n">keep</span> <span class="o">*</span><span class="p">)</span> <span class="kt">reg</span> <span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">sudoku_grid</span><span class="p">[</span><span class="mh">8</span><span class="o">:</span><span class="mh">0</span><span class="p">][</span><span class="mh">8</span><span class="o">:</span><span class="mh">0</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="no">`ifdef</span> <span class="n">FORMAL</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// see next section
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="no">`endif</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">endmodule</span>
+</span></span></code></pre></div><p>Using the (* keep *) attribute ensures our register won&rsquo;t be discarded during synthesis, even if it isn&rsquo;t used anywhere.</p>
+<p>And that&rsquo;s it! Now, let&rsquo;s dive into the interesting part: Formal Verification.</p>
+<h2 id="how-to-solve-a-sudoku-with-formal-verification-">How to solve a sudoku with Formal Verification ?</h2>
+<p>Formal verification involves setting specific properties that your design must always satisfy. The formal solver then evaluates a vast array of mathematically choosen scenarios. If a property doesn&rsquo;t always hold true, the solver will tell you: &ldquo;Nope, your property does not hold true in this counter-example.&rdquo;</p>
+<p>But here&rsquo;s the catch: If we lay down just one property, the solver might churn out a completely irrelevant solution. Take Sudoku: Every row in a correctly solved grid has every digits from 1 to 9. One obvious property is the sum of digits in a row totaling 45 (because 1+2+3+&hellip;+9=45). Yet, with just this, the solver might suggest a row like: 0,0,0,0,0,0,0,0,45. Clearly flawed, given illegal numbers and the repetition.</p>
+<p>We must assume additional properties to narrow down the solution space and obtain relevant counterproofs:</p>
+<ul>
+<li>In digital design, we assume valid input behavior, focusing assertions on internal and output signals.</li>
+<li>For this Sudoku escapade, where we&rsquo;re playfully repurposing the tool, assumptions will lean on the sudoku_grid register (typically a target for assertions).</li>
+</ul>
+<p>So, what assumptions should we make for Sudoku? The basic rules.</p>
+<h3 id="assuming-the-basic-rules">Assuming the Basic Rules</h3>
+<ol>
+<li><strong>All digits should be between 1 and 9</strong>. Which translates to:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-verilog" data-lang="verilog"><span class="line"><span class="cl"><span class="no">`ifdef</span> <span class="n">FORMAL</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// variables declaration for all forloops
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">genvar</span> <span class="n">box_row</span><span class="p">,</span> <span class="n">box_col</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// assume all the digits are between 1 and 9
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">generate</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mh">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mh">9</span><span class="p">;</span> <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mh">1</span><span class="p">)</span> <span class="k">begin</span> <span class="o">:</span> <span class="n">digit_assumption_i</span>
+</span></span><span class="line"><span class="cl">		<span class="k">for</span><span class="p">(</span><span class="n">j</span> <span class="o">=</span> <span class="mh">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="mh">9</span><span class="p">;</span> <span class="n">j</span> <span class="o">=</span> <span class="n">j</span> <span class="o">+</span> <span class="mh">1</span><span class="p">)</span> <span class="k">begin</span><span class="o">:</span> <span class="n">digit_assumption_j</span>
+</span></span><span class="line"><span class="cl">			<span class="k">always</span> <span class="p">@(</span><span class="k">posedge</span> <span class="n">clk</span><span class="p">)</span> <span class="k">begin</span>
+</span></span><span class="line"><span class="cl">				<span class="n">assume</span><span class="p">(</span><span class="n">sudoku_grid</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mh">4</span><span class="mi">&#39;d9</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">				<span class="n">assume</span><span class="p">(</span><span class="n">sudoku_grid</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mh">4</span><span class="mi">&#39;d1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">			<span class="k">end</span>
+</span></span><span class="line"><span class="cl">		<span class="k">end</span>
+</span></span><span class="line"><span class="cl">	<span class="k">end</span>
+</span></span><span class="line"><span class="cl"><span class="k">endgenerate</span>
+</span></span></code></pre></div><p>With these assumptions, the solver won&rsquo;t try any numbers that are outside of this range.</p>
+<ol start="2">
+<li><strong>All digits in a row are all different</strong></li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-verilog" data-lang="verilog"><span class="line"><span class="cl"><span class="k">generate</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mh">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mh">9</span><span class="p">;</span> <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mh">1</span><span class="p">)</span> <span class="k">begin</span><span class="o">:</span> <span class="n">row_check</span>
+</span></span><span class="line"><span class="cl">		<span class="k">for</span><span class="p">(</span><span class="n">j</span> <span class="o">=</span> <span class="mh">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="mh">9</span><span class="p">;</span> <span class="n">j</span> <span class="o">=</span> <span class="n">j</span> <span class="o">+</span> <span class="mh">1</span><span class="p">)</span> <span class="k">begin</span><span class="o">:</span> <span class="n">column_j</span>
+</span></span><span class="line"><span class="cl">			<span class="k">for</span><span class="p">(</span><span class="n">k</span> <span class="o">=</span> <span class="n">j</span> <span class="o">+</span> <span class="mh">1</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="mh">9</span><span class="p">;</span> <span class="n">k</span> <span class="o">=</span> <span class="n">k</span> <span class="o">+</span> <span class="mh">1</span><span class="p">)</span> <span class="k">begin</span><span class="o">:</span> <span class="n">column_k</span>
+</span></span><span class="line"><span class="cl">				<span class="k">always</span> <span class="p">@(</span><span class="k">posedge</span> <span class="n">clk</span><span class="p">)</span> <span class="k">begin</span>
+</span></span><span class="line"><span class="cl">					<span class="n">assume</span><span class="p">(</span><span class="n">sudoku_grid</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">!==</span> <span class="n">sudoku_grid</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">				<span class="k">end</span>
+</span></span><span class="line"><span class="cl">			<span class="k">end</span>
+</span></span><span class="line"><span class="cl">		<span class="k">end</span>
+</span></span><span class="line"><span class="cl">	<span class="k">end</span>
+</span></span><span class="line"><span class="cl"><span class="k">endgenerate</span>
+</span></span></code></pre></div><ol start="3">
+<li><strong>All digits in a column are all different</strong></li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-verilog" data-lang="verilog"><span class="line"><span class="cl"><span class="k">generate</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mh">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mh">9</span><span class="p">;</span> <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mh">1</span><span class="p">)</span> <span class="k">begin</span><span class="o">:</span> <span class="n">column_check</span>
+</span></span><span class="line"><span class="cl">		<span class="k">for</span><span class="p">(</span><span class="n">j</span> <span class="o">=</span> <span class="mh">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="mh">9</span><span class="p">;</span> <span class="n">j</span> <span class="o">=</span> <span class="n">j</span> <span class="o">+</span> <span class="mh">1</span><span class="p">)</span> <span class="k">begin</span><span class="o">:</span> <span class="n">row_j</span>
+</span></span><span class="line"><span class="cl">			<span class="k">for</span><span class="p">(</span><span class="n">k</span> <span class="o">=</span> <span class="n">j</span> <span class="o">+</span> <span class="mh">1</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="mh">9</span><span class="p">;</span> <span class="n">k</span> <span class="o">=</span> <span class="n">k</span> <span class="o">+</span> <span class="mh">1</span><span class="p">)</span> <span class="k">begin</span><span class="o">:</span> <span class="n">row_k</span>
+</span></span><span class="line"><span class="cl">				<span class="k">always</span> <span class="p">@(</span><span class="k">posedge</span> <span class="n">clk</span><span class="p">)</span> <span class="k">begin</span>
+</span></span><span class="line"><span class="cl">					<span class="n">assume</span><span class="p">(</span><span class="n">sudoku_grid</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">!==</span> <span class="n">sudoku_grid</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">i</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">				<span class="k">end</span>
+</span></span><span class="line"><span class="cl">			<span class="k">end</span>
+</span></span><span class="line"><span class="cl">		<span class="k">end</span>
+</span></span><span class="line"><span class="cl">	<span class="k">end</span>
+</span></span><span class="line"><span class="cl"><span class="k">endgenerate</span>
+</span></span></code></pre></div><ol start="4">
+<li><strong>All digits in a box are all different</strong></li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-verilog" data-lang="verilog"><span class="line"><span class="cl"><span class="k">generate</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span><span class="p">(</span><span class="n">box_row</span> <span class="o">=</span> <span class="mh">0</span><span class="p">;</span> <span class="n">box_row</span> <span class="o">&lt;</span> <span class="mh">3</span><span class="p">;</span> <span class="n">box_row</span> <span class="o">=</span> <span class="n">box_row</span> <span class="o">+</span> <span class="mh">1</span><span class="p">)</span> <span class="k">begin</span><span class="o">:</span> <span class="n">box_row_check</span>
+</span></span><span class="line"><span class="cl">		<span class="k">for</span><span class="p">(</span><span class="n">box_col</span> <span class="o">=</span> <span class="mh">0</span><span class="p">;</span> <span class="n">box_col</span> <span class="o">&lt;</span> <span class="mh">3</span><span class="p">;</span> <span class="n">box_col</span> <span class="o">=</span> <span class="n">box_col</span> <span class="o">+</span> <span class="mh">1</span><span class="p">)</span> <span class="k">begin</span><span class="o">:</span> <span class="n">box_col_check</span>
+</span></span><span class="line"><span class="cl">			<span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mh">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mh">3</span><span class="p">;</span> <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mh">1</span><span class="p">)</span> <span class="k">begin</span><span class="o">:</span> <span class="n">row_i_check</span>
+</span></span><span class="line"><span class="cl">				<span class="k">for</span><span class="p">(</span><span class="n">j</span> <span class="o">=</span> <span class="mh">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="mh">3</span><span class="p">;</span> <span class="n">j</span> <span class="o">=</span> <span class="n">j</span> <span class="o">+</span> <span class="mh">1</span><span class="p">)</span> <span class="k">begin</span><span class="o">:</span> <span class="n">col_j_check</span>
+</span></span><span class="line"><span class="cl">					<span class="k">for</span><span class="p">(</span><span class="n">m</span> <span class="o">=</span> <span class="mh">0</span><span class="p">;</span> <span class="n">m</span> <span class="o">&lt;</span> <span class="mh">3</span><span class="p">;</span> <span class="n">m</span> <span class="o">=</span> <span class="n">m</span> <span class="o">+</span> <span class="mh">1</span><span class="p">)</span> <span class="k">begin</span><span class="o">:</span> <span class="n">row_m_check</span>
+</span></span><span class="line"><span class="cl">						<span class="k">for</span><span class="p">(</span><span class="n">n</span> <span class="o">=</span> <span class="mh">0</span><span class="p">;</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mh">3</span><span class="p">;</span> <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mh">1</span><span class="p">)</span> <span class="k">begin</span><span class="o">:</span> <span class="n">col_n_check</span>
+</span></span><span class="line"><span class="cl">						<span class="c1">// Make sure we&#39;re not comparing the same cell to itself
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>							<span class="k">if</span><span class="p">(</span><span class="n">i</span> <span class="o">!==</span> <span class="n">m</span> <span class="o">||</span> <span class="n">j</span> <span class="o">!==</span> <span class="n">n</span><span class="p">)</span> <span class="k">begin</span> 
+</span></span><span class="line"><span class="cl">								<span class="k">always</span> <span class="p">@(</span><span class="k">posedge</span> <span class="n">clk</span><span class="p">)</span> <span class="k">begin</span>
+</span></span><span class="line"><span class="cl"><span class="n">assume</span><span class="p">(</span><span class="n">sudoku_grid</span><span class="p">[(</span><span class="mh">3</span><span class="o">*</span><span class="n">box_row</span><span class="p">)</span><span class="o">+</span><span class="n">i</span><span class="p">][(</span><span class="mh">3</span><span class="o">*</span><span class="n">box_col</span><span class="p">)</span><span class="o">+</span><span class="n">j</span><span class="p">]</span> <span class="o">!==</span> <span class="n">sudoku_grid</span><span class="p">[(</span><span class="mh">3</span><span class="o">*</span><span class="n">box_row</span><span class="p">)</span><span class="o">+</span><span class="n">m</span><span class="p">][(</span><span class="mh">3</span><span class="o">*</span><span class="n">box_col</span><span class="p">)</span><span class="o">+</span><span class="n">n</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">								<span class="k">end</span>
+</span></span><span class="line"><span class="cl">							<span class="k">end</span>
+</span></span><span class="line"><span class="cl">						<span class="k">end</span>
+</span></span><span class="line"><span class="cl">					<span class="k">end</span>
+</span></span><span class="line"><span class="cl">				<span class="k">end</span>
+</span></span><span class="line"><span class="cl">			<span class="k">end</span>
+</span></span><span class="line"><span class="cl">		<span class="k">end</span>
+</span></span><span class="line"><span class="cl">	<span class="k">end</span>
+</span></span><span class="line"><span class="cl"><span class="k">endgenerate</span>
+</span></span></code></pre></div><ol start="5">
+<li><strong>The initial grid cannot be changed</strong>.</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-verilog" data-lang="verilog"><span class="line"><span class="cl"><span class="c1">// assume the intial grid
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">always</span> <span class="p">@(</span><span class="k">posedge</span> <span class="n">clk</span><span class="p">)</span> <span class="k">begin</span> <span class="o">:</span> <span class="n">initialization</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//line 1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">assume</span><span class="p">(</span><span class="n">sudoku_grid</span><span class="p">[</span><span class="mh">0</span><span class="p">][</span><span class="mh">0</span><span class="p">]</span><span class="o">==</span><span class="mh">5</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">assume</span><span class="p">(</span><span class="n">sudoku_grid</span><span class="p">[</span><span class="mh">0</span><span class="p">][</span><span class="mh">2</span><span class="p">]</span><span class="o">==</span><span class="mh">7</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">assume</span><span class="p">(</span><span class="n">sudoku_grid</span><span class="p">[</span><span class="mh">0</span><span class="p">][</span><span class="mh">3</span><span class="p">]</span><span class="o">==</span><span class="mh">2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">assume</span><span class="p">(</span><span class="n">sudoku_grid</span><span class="p">[</span><span class="mh">0</span><span class="p">][</span><span class="mh">7</span><span class="p">]</span><span class="o">==</span><span class="mh">9</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//line 2
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">assume</span><span class="p">(</span><span class="n">sudoku_grid</span><span class="p">[</span><span class="mh">1</span><span class="p">][</span><span class="mh">2</span><span class="p">]</span><span class="o">==</span><span class="mh">6</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">assume</span><span class="p">(</span><span class="n">sudoku_grid</span><span class="p">[</span><span class="mh">1</span><span class="p">][</span><span class="mh">5</span><span class="p">]</span><span class="o">==</span><span class="mh">3</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">assume</span><span class="p">(</span><span class="n">sudoku_grid</span><span class="p">[</span><span class="mh">1</span><span class="p">][</span><span class="mh">6</span><span class="p">]</span><span class="o">==</span><span class="mh">7</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">assume</span><span class="p">(</span><span class="n">sudoku_grid</span><span class="p">[</span><span class="mh">1</span><span class="p">][</span><span class="mh">8</span><span class="p">]</span><span class="o">==</span><span class="mh">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//line 3
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">assume</span><span class="p">(</span><span class="n">sudoku_grid</span><span class="p">[</span><span class="mh">2</span><span class="p">][</span><span class="mh">0</span><span class="p">]</span><span class="o">==</span><span class="mh">4</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">assume</span><span class="p">(</span><span class="n">sudoku_grid</span><span class="p">[</span><span class="mh">2</span><span class="p">][</span><span class="mh">7</span><span class="p">]</span><span class="o">==</span><span class="mh">6</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//line 4
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">assume</span><span class="p">(</span><span class="n">sudoku_grid</span><span class="p">[</span><span class="mh">3</span><span class="p">][</span><span class="mh">0</span><span class="p">]</span><span class="o">==</span><span class="mh">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">assume</span><span class="p">(</span><span class="n">sudoku_grid</span><span class="p">[</span><span class="mh">3</span><span class="p">][</span><span class="mh">3</span><span class="p">]</span><span class="o">==</span><span class="mh">4</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">assume</span><span class="p">(</span><span class="n">sudoku_grid</span><span class="p">[</span><span class="mh">3</span><span class="p">][</span><span class="mh">4</span><span class="p">]</span><span class="o">==</span><span class="mh">9</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">assume</span><span class="p">(</span><span class="n">sudoku_grid</span><span class="p">[</span><span class="mh">3</span><span class="p">][</span><span class="mh">8</span><span class="p">]</span><span class="o">==</span><span class="mh">7</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//line 5
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">assume</span><span class="p">(</span><span class="n">sudoku_grid</span><span class="p">[</span><span class="mh">4</span><span class="p">][</span><span class="mh">3</span><span class="p">]</span><span class="o">==</span><span class="mh">5</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">assume</span><span class="p">(</span><span class="n">sudoku_grid</span><span class="p">[</span><span class="mh">4</span><span class="p">][</span><span class="mh">5</span><span class="p">]</span><span class="o">==</span><span class="mh">8</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//line 6
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">assume</span><span class="p">(</span><span class="n">sudoku_grid</span><span class="p">[</span><span class="mh">5</span><span class="p">][</span><span class="mh">0</span><span class="p">]</span><span class="o">==</span><span class="mh">8</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">assume</span><span class="p">(</span><span class="n">sudoku_grid</span><span class="p">[</span><span class="mh">5</span><span class="p">][</span><span class="mh">4</span><span class="p">]</span><span class="o">==</span><span class="mh">2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">assume</span><span class="p">(</span><span class="n">sudoku_grid</span><span class="p">[</span><span class="mh">5</span><span class="p">][</span><span class="mh">5</span><span class="p">]</span><span class="o">==</span><span class="mh">7</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">assume</span><span class="p">(</span><span class="n">sudoku_grid</span><span class="p">[</span><span class="mh">5</span><span class="p">][</span><span class="mh">8</span><span class="p">]</span><span class="o">==</span><span class="mh">5</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//line 7
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">assume</span><span class="p">(</span><span class="n">sudoku_grid</span><span class="p">[</span><span class="mh">6</span><span class="p">][</span><span class="mh">1</span><span class="p">]</span><span class="o">==</span><span class="mh">7</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">assume</span><span class="p">(</span><span class="n">sudoku_grid</span><span class="p">[</span><span class="mh">6</span><span class="p">][</span><span class="mh">8</span><span class="p">]</span><span class="o">==</span><span class="mh">9</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//line 8
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">assume</span><span class="p">(</span><span class="n">sudoku_grid</span><span class="p">[</span><span class="mh">7</span><span class="p">][</span><span class="mh">0</span><span class="p">]</span><span class="o">==</span><span class="mh">2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">assume</span><span class="p">(</span><span class="n">sudoku_grid</span><span class="p">[</span><span class="mh">7</span><span class="p">][</span><span class="mh">2</span><span class="p">]</span><span class="o">==</span><span class="mh">9</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">assume</span><span class="p">(</span><span class="n">sudoku_grid</span><span class="p">[</span><span class="mh">7</span><span class="p">][</span><span class="mh">4</span><span class="p">]</span><span class="o">==</span><span class="mh">8</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">assume</span><span class="p">(</span><span class="n">sudoku_grid</span><span class="p">[</span><span class="mh">7</span><span class="p">][</span><span class="mh">6</span><span class="p">]</span><span class="o">==</span><span class="mh">6</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//line 9
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">assume</span><span class="p">(</span><span class="n">sudoku_grid</span><span class="p">[</span><span class="mh">8</span><span class="p">][</span><span class="mh">1</span><span class="p">]</span><span class="o">==</span><span class="mh">4</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">assume</span><span class="p">(</span><span class="n">sudoku_grid</span><span class="p">[</span><span class="mh">8</span><span class="p">][</span><span class="mh">5</span><span class="p">]</span><span class="o">==</span><span class="mh">9</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">assume</span><span class="p">(</span><span class="n">sudoku_grid</span><span class="p">[</span><span class="mh">8</span><span class="p">][</span><span class="mh">6</span><span class="p">]</span><span class="o">==</span><span class="mh">3</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">assume</span><span class="p">(</span><span class="n">sudoku_grid</span><span class="p">[</span><span class="mh">8</span><span class="p">][</span><span class="mh">8</span><span class="p">]</span><span class="o">==</span><span class="mh">8</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span></code></pre></div><h3 id="using-sby-to-solve-the-grid">Using SBY to solve the Grid</h3>
+<p>With the game rules handed over to our solver, we want it to return the solution now.</p>
+<p>As highlighted before, in a correctly solved Sudoku, every row, column, or box&rsquo;s digit sum is 45. We simply need to request an example where this property holds true. And since there&rsquo;s only one such example, it elegantly unfolds as our desired Sudoku solution.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-verilog" data-lang="verilog"><span class="line"><span class="cl"><span class="c1">// Ask SBY to explicitly cover the (only) case where sum=45s
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">wire</span> <span class="p">[</span><span class="mh">5</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">sum</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">assign</span> <span class="n">sum</span> <span class="o">=</span> <span class="n">sudoku_grid</span><span class="p">[</span><span class="mh">0</span><span class="p">][</span><span class="mh">0</span><span class="p">]</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">			 <span class="n">sudoku_grid</span><span class="p">[</span><span class="mh">0</span><span class="p">][</span><span class="mh">1</span><span class="p">]</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">			 <span class="n">sudoku_grid</span><span class="p">[</span><span class="mh">0</span><span class="p">][</span><span class="mh">2</span><span class="p">]</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">			 <span class="n">sudoku_grid</span><span class="p">[</span><span class="mh">0</span><span class="p">][</span><span class="mh">3</span><span class="p">]</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">			 <span class="n">sudoku_grid</span><span class="p">[</span><span class="mh">0</span><span class="p">][</span><span class="mh">4</span><span class="p">]</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">			 <span class="n">sudoku_grid</span><span class="p">[</span><span class="mh">0</span><span class="p">][</span><span class="mh">5</span><span class="p">]</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">			 <span class="n">sudoku_grid</span><span class="p">[</span><span class="mh">0</span><span class="p">][</span><span class="mh">6</span><span class="p">]</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">			 <span class="n">sudoku_grid</span><span class="p">[</span><span class="mh">0</span><span class="p">][</span><span class="mh">7</span><span class="p">]</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">			 <span class="n">sudoku_grid</span><span class="p">[</span><span class="mh">0</span><span class="p">][</span><span class="mh">8</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">always</span> <span class="p">@(</span><span class="o">*</span><span class="p">)</span> <span class="k">begin</span>
+</span></span><span class="line"><span class="cl">	<span class="n">cover</span><span class="p">(</span><span class="n">sum</span><span class="o">==</span><span class="mh">6</span><span class="mi">&#39;d45</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span><span class="line"><span class="cl"><span class="no">`endif</span> <span class="n">FORMAL</span>
+</span></span><span class="line"><span class="cl"><span class="k">endmodule</span>
+</span></span></code></pre></div><h2 id="lets-run-the-verification">Let&rsquo;s run the verification</h2>
+<p>To install SBY and all the required formal solvers, I recommend following the straightforward installation process provided by <a class="link" href="https://github.com/YosysHQ/oss-cad-suite-build"  target="_blank" rel="noopener"
+    >oss-cad-suite</a>.</p>
+<p>To execute the verification, we&rsquo;ll need our sudoku.v file and a SBY configuration file named sudoku.sby with the content below:</p>
+<pre tabindex="0"><code>[options]
+mode cover
+
+[engines]
+smtbmc
+
+[script]
+read -formal sudoku.v
+prep -top sudoku
+
+[files]
+sudoku.v
+</code></pre><p>All we have to do is run the following command :</p>
+<pre tabindex="0"><code>sby -f sudoku.sby
+</code></pre><p>And as you can see&hellip; it fails&hellip; WAIT! WHAT?</p>
+<p><img src="/static-2023/unreached_cover_statement.png" alt="image"  />
+<em>SBY log</em></p>
+<p>&ldquo;Unreached cover statement&hellip;&rdquo; What does that mean?</p>
+<ul>
+<li>The line assumptions are correct.</li>
+<li>The row assumptions are correct.</li>
+<li>The box assumptions are correct.</li>
+<li>The&hellip; line 2 of the initialization is wrong&hellip;</li>
+</ul>
+<pre tabindex="0"><code>assume(sudoku_grid[1][5]==3); // wrong
+assume(sudoku_grid[1][4]==3); // correct
+</code></pre><p>When I visited my grandfather, I handed him the original and copied it onto a paper to solve it myself&hellip; I made a copying error(deep breath)&hellip; At least we stumble upon a unexpected feature : we now know how to identify an unfeasible grid !</p>
+<p>Now, after correcting my mistake, it works as expected: SBY generates the solution for me!</p>
+<p>Here&rsquo;s the solution viewed through gtkwave (SBY give you the path of the vcd file):
+<img src="/static-2023/unreadable_solution.png" alt="image"  />
+<em>GTKWave screenshot</em></p>
+<p>Hmm&hellip; that&rsquo;s not very user-friendly to interpret.</p>
+<p>Let&rsquo;s take the futility of this exercise a step further and craft a Python script to visualize the solution. I&rsquo;ve employed the pyDigitalWaveTools Python library to convert my VCD file into JSON format and have requested ChatGPT to create a script that reads the JSON and displays the solution in my terminal. All the sources can be accessed my <a class="link" href="https://github.com/LearnFpgaEasily/Solving-Sudoku-with-SBY"  target="_blank" rel="noopener"
+    >github page</a>.</p>
+<p>Now, the moment we&rsquo;ve all been waiting for - the solution:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="m">5</span> <span class="m">1</span> <span class="m">7</span> <span class="p">|</span> <span class="m">2</span> <span class="m">6</span> <span class="m">4</span> <span class="p">|</span> <span class="m">8</span> <span class="m">9</span> <span class="m">3</span> 
+</span></span><span class="line"><span class="cl"><span class="m">9</span> <span class="m">2</span> <span class="m">6</span> <span class="p">|</span> <span class="m">8</span> <span class="m">3</span> <span class="m">5</span> <span class="p">|</span> <span class="m">7</span> <span class="m">4</span> <span class="m">1</span> 
+</span></span><span class="line"><span class="cl"><span class="m">4</span> <span class="m">8</span> <span class="m">3</span> <span class="p">|</span> <span class="m">9</span> <span class="m">7</span> <span class="m">1</span> <span class="p">|</span> <span class="m">5</span> <span class="m">6</span> <span class="m">2</span> 
+</span></span><span class="line"><span class="cl">---------------------
+</span></span><span class="line"><span class="cl"><span class="m">1</span> <span class="m">3</span> <span class="m">5</span> <span class="p">|</span> <span class="m">4</span> <span class="m">9</span> <span class="m">6</span> <span class="p">|</span> <span class="m">2</span> <span class="m">8</span> <span class="m">7</span> 
+</span></span><span class="line"><span class="cl"><span class="m">7</span> <span class="m">9</span> <span class="m">2</span> <span class="p">|</span> <span class="m">5</span> <span class="m">1</span> <span class="m">8</span> <span class="p">|</span> <span class="m">4</span> <span class="m">3</span> <span class="m">6</span> 
+</span></span><span class="line"><span class="cl"><span class="m">8</span> <span class="m">6</span> <span class="m">4</span> <span class="p">|</span> <span class="m">3</span> <span class="m">2</span> <span class="m">7</span> <span class="p">|</span> <span class="m">9</span> <span class="m">1</span> <span class="m">5</span> 
+</span></span><span class="line"><span class="cl">---------------------
+</span></span><span class="line"><span class="cl"><span class="m">3</span> <span class="m">7</span> <span class="m">8</span> <span class="p">|</span> <span class="m">6</span> <span class="m">4</span> <span class="m">2</span> <span class="p">|</span> <span class="m">1</span> <span class="m">5</span> <span class="m">9</span> 
+</span></span><span class="line"><span class="cl"><span class="m">2</span> <span class="m">5</span> <span class="m">9</span> <span class="p">|</span> <span class="m">1</span> <span class="m">8</span> <span class="m">3</span> <span class="p">|</span> <span class="m">6</span> <span class="m">7</span> <span class="m">4</span> 
+</span></span><span class="line"><span class="cl"><span class="m">6</span> <span class="m">4</span> <span class="m">1</span> <span class="p">|</span> <span class="m">7</span> <span class="m">5</span> <span class="m">9</span> <span class="p">|</span> <span class="m">3</span> <span class="m">2</span> <span class="m">8</span> 
+</span></span></code></pre></div><h2 id="conclusion">Conclusion</h2>
+<p>Let&rsquo;s wrap this up. First off, if you&rsquo;re ever stuck on that pesky Sudoku during a lazy Sunday afternoon, you now know there’s a&hellip; let&rsquo;s call it an “alternative” way to crack it. And check it is actually feasible.</p>
+<p>Now, on the real note: diving into techy stuff using simple problems we already know? It&rsquo;s golden! It’s like trying to learn a new dance step with a song you already love. You get the hang of it faster and, more importantly, it&rsquo;s fun. Playing around with SBY in this wild way just shows how cool and flexible these tools can be.</p>
+<p>Big Thanks to YosysHQ for letting me write on their blog. And to you, dear reader, remember: mix things up, try the unexpected, and most importantly, have some fun while you’re at it. Till next time!</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/blog/">blog</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+</aside>
+
+
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2023 YosysHQ Blog
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.2.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

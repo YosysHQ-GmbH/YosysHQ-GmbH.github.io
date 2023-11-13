@@ -6,42 +6,35 @@
     <description>Recent content in Pages on YosysHQ Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 26 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://blog.yosyshq.com/page/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 26 Feb 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://blog.yosyshq.com/page/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About</title>
       <link>http://blog.yosyshq.com/about/</link>
       <pubDate>Fri, 26 Feb 2021 00:00:00 +0000</pubDate>
-      
       <guid>http://blog.yosyshq.com/about/</guid>
       <description>YosysHQ Blog site. For more information about YosysHQ, see our website.</description>
     </item>
-    
     <item>
       <title>Newsletter</title>
       <link>http://blog.yosyshq.com/newsletter/</link>
       <pubDate>Fri, 26 Feb 2021 00:00:00 +0000</pubDate>
-      
       <guid>http://blog.yosyshq.com/newsletter/</guid>
       <description> Subscribe * indicates required Email Address * </description>
     </item>
-    
     <item>
       <title>Archives</title>
       <link>http://blog.yosyshq.com/archives/</link>
       <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
-      
       <guid>http://blog.yosyshq.com/archives/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Search</title>
       <link>http://blog.yosyshq.com/search/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>http://blog.yosyshq.com/search/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

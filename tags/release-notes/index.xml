@@ -6,186 +6,169 @@
     <description>Recent content in release notes on YosysHQ Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 05 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://blog.yosyshq.com/tags/release-notes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 07 Nov 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://blog.yosyshq.com/tags/release-notes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tabby CAD Suite version 20231107 released!</title>
+      <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20231107-released/</link>
+      <pubDate>Tue, 07 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20231107-released/</guid>
+      <description>The November release of Tabby CAD Suite is now available for download. Notable changes in this version include:
+Fixed problems with verific elaboration in VHDL that were introduced in the last release - you should no longer see spurious multiple driver warnings. Memory inference can now recognize (* rom_style = &amp;ldquo;&amp;hellip;&amp;rdquo; *) attributes on data output and address signals (attributes on the data storage register still take precedence, but this allows forcing a style e.</description>
+    </item>
+    <item>
+      <title>Tabby CAD Suite version 20231011 released!</title>
+      <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20231011-released/</link>
+      <pubDate>Wed, 11 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20231011-released/</guid>
+      <description>The October release of Tabby CAD Suite is now available for download. Notable changes in this version include:
+Improved identifier resolution when using bind statements in mixed-language projects Respect memory access order semantics when inferring memories with the verific frontend (for simultaneous read and write operations of the same memory location in the same clock cycle, on the same or a different port) Preview builds of our upcoming formal tools ivy and scy In other YosysHQ news:</description>
+    </item>
     <item>
       <title>Tabby CAD Suite version 20230905 released!</title>
       <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230905-released/</link>
       <pubDate>Tue, 05 Sep 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230905-released/</guid>
       <description>The September release of Tabby CAD Suite is now available for download. Notable changes in this version include:
 Tabby CAD Suite now optionally supports floating licenses via FlexLM. Floating licenses are priced at 600€/month (double the price of node-locked licenses). Existing customers may exchange two node-locked licenses for one floating license - please contact us if this would be of interest to you. In other YosysHQ news:
 YosysHQ&amp;rsquo;s Matt Venn will be at ORConf 2023 in Munich next week (September 15th to 17th).</description>
     </item>
-    
     <item>
       <title>Tabby CAD Suite version 20230807 released!</title>
       <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230807-released/</link>
       <pubDate>Mon, 07 Aug 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230807-released/</guid>
       <description>The August release of Tabby CAD Suite is now available for download. Notable changes in this version include:
 The verific command now has a new option -lib to load all modules from the specified files as blackbox modules, disregarding their contents. This is useful especially for loading primitives from a simulation library, e.g.: verific -sv -lib cells_sim.v verific -work unisim -vhdl -lib unisim_VCOMP.vhd The files still need to be parseable by verific, so some limitations remain on the contents of the blackboxed modules, but it is possible to ignore some errors by first calling verific -set-warning VERI-XXXX for the corresponding error code.</description>
     </item>
-    
     <item>
       <title>Tabby CAD Suite version 20230606 released!</title>
       <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230606-released/</link>
       <pubDate>Tue, 06 Jun 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230606-released/</guid>
       <description>The June release of Tabby CAD Suite is now available for download. Notable changes in this version include:
 The RISC-V Formal Verification Toolbox has gained a bus interface for checking that instructions relating to memory result in matching bus transactions, as well as some checks for the machine-mode CSRs required by the RISC-V privileged specification. In other YosysHQ news:
 You might have seen Bruno Levy’s excellent introduction to RISCV on an FPGA.</description>
     </item>
-    
     <item>
       <title>Tabby CAD Suite version 20230509 released!</title>
       <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230509-released/</link>
       <pubDate>Tue, 09 May 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230509-released/</guid>
       <description>The May release of Tabby CAD Suite is now available for download. Notable changes in this version include:
 The synthprop pass was added, which converts SVA assert properties into module outputs that flag assertion violations. See help synthprop for details! In other YosysHQ news:
 We just published the 3rd in our series of ‘community spotlight’ blog posts. This time we’re featuring AutoSVA by Marcelo Vera which aims to make Formal Property Verification more accessible to hardware designers.</description>
     </item>
-    
     <item>
       <title>Tabby CAD Suite version 20230414 released!</title>
       <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230414-released/</link>
       <pubDate>Fri, 14 Apr 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230414-released/</guid>
       <description>Tabby CAD Suite version 20230414 released!
 The April release of Tabby CAD Suite is now available for download. Notable changes in this version include:
 The initial release of our new equivalence checking tool EQY is now available. Try out some of the examples! In other YosysHQ news:
 We have started a new series called ‘Yosys One Liners’ where we share some useful one liners. The first one shows how to show there are no combinatorial paths between input and output signals - useful for verifying correct AXI behaviour.</description>
     </item>
-    
     <item>
       <title>Tabby CAD Suite version 20230306 released!</title>
       <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230306-released/</link>
       <pubDate>Mon, 06 Mar 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230306-released/</guid>
       <description>Tabby CAD Suite version 20230306 released!
 The March release of Tabby CAD Suite is now available for download. Notable changes in this version include:
 There is now support for tying licenses to Google Cloud Instance ID and to GitLab groups or repositories. In other YosysHQ news:
 We have a new community spotlight article about sv2v. sv2v converts SystemVerilog (IEEE 1800-2017) to Verilog (IEEE 1364-2005), with an emphasis on supporting synthesizable language constructs.</description>
     </item>
-    
     <item>
       <title>Tabby CAD Suite version 20230208 released!</title>
       <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230208-released/</link>
       <pubDate>Wed, 08 Feb 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230208-released/</guid>
       <description>Tabby CAD Suite version 20230208 released!
 The February release of Tabby CAD Suite is now available for download. Notable changes in this version include:
 SBY can now use Yosys’s builtin simulation command “sim” to generate counter-example traces. This can be enabled with the “vcd_sim on” option and will become the default in a later release. Using Yosys’s “sim” command, SBY now supports writing traces in gtkwave’s FST format in addition to the VCD format.</description>
     </item>
-    
     <item>
       <title>Tabby CAD Suite version 20230104 released!</title>
       <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230104-released/</link>
       <pubDate>Wed, 04 Jan 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230104-released/</guid>
       <description>Tabby CAD Suite version 20230104 released!
 The January release of Tabby CAD Suite is now available for download. With the holidays there have been only a few changes, of note:
 SBY output is now in color. In other YosysHQ news: We have reformatted our service table to clarify some points we&amp;rsquo;ve seen cause confusion. Don&amp;rsquo;t worry, our prices remain the same as they&amp;rsquo;ve always been! Our first community spotlight article is about Tbengy, which is a Python Tool for SV/UVM Testbench Generation and RTL Synthesis.</description>
     </item>
-    
     <item>
       <title>Tabby CAD Suite version 20221205 released!</title>
       <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20221205-released/</link>
       <pubDate>Mon, 12 Dec 2022 00:00:00 +0000</pubDate>
-      
       <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20221205-released/</guid>
       <description>The December release of Tabby CAD Suite is now available for download. Notable changes in this version include:
 We have improved support for SystemVerilog config elements. You can now have multiple configurations defined, and select which configuration to elaborate with verific -import &amp;lt;configname&amp;gt;. We are working on improving the TCL integration in Yosys. There is now an interactive TCL shell mode: use yosys -C to enter the TCL shell. You can now also use the following command to get the output of a command returned to TCL without the use of an intermediate file: set command_output [yosys tee -s result.</description>
     </item>
-    
     <item>
       <title>Tabby CAD Suite version 20221108 released!</title>
       <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20221108-released/</link>
       <pubDate>Thu, 24 Nov 2022 00:00:00 +0000</pubDate>
-      
       <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20221108-released/</guid>
       <description>The November release of Tabby CAD Suite is now available for download. Notable changes in this version include:
 We have experimentally added support for EDIF and Liberty verific parsers. They can be used either with the verific [-liberty|-edif] or the read [-liberty|-edif] command. We are evaluating whether it is of interest for us to keep these long-term, so please let us know if you use them and what your experience is!</description>
     </item>
-    
     <item>
       <title>Tabby CAD Suite version 20221011 released!</title>
       <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20221011-released/</link>
       <pubDate>Mon, 17 Oct 2022 00:00:00 +0000</pubDate>
-      
       <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20221011-released/</guid>
       <description>The October release of Tabby CAD Suite is now available for download.
 The read and verific commands now support here-documents in scripts, the same way as read_verilog. This is useful e.g. to have small self-contained tests in a single file such as:
 read -sv &amp;lt;&amp;lt;EOT module top(input clk, output reg [1:0] q); wire [1:0] x = 2&#39;b10; always @(posedge clk) q &amp;lt;= x &amp;amp; 2&#39;b11; endmodule EOT prep -top top sim -clock clk -n 1 -w top select -assert-count 1 a:init=2&#39;b10 top/q %i </description>
     </item>
-    
     <item>
       <title>Tabby CAD Suite version 20220906 released!</title>
       <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220906-released/</link>
       <pubDate>Tue, 06 Sep 2022 00:00:00 +0000</pubDate>
-      
       <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220906-released/</guid>
       <description>The September release of Tabby CAD Suite is now available for download.
 SBY SBY now runs multiple tasks in parallel. Additionally it now limits the number of concurrently running subprocesses to the available number of cores. The &amp;ndash;sequential command line option allows you to opt out of running tasks in parallel and the -j N option sets the limit of concurrent subprocesses to N instead of the default. All this is optionally integrated with the make jobserver protocol to enforce the concurrent process limit across other processes launched by make.</description>
     </item>
-    
     <item>
       <title>Tabby CAD Suite version 20220805 released!</title>
       <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220805-released/</link>
       <pubDate>Fri, 05 Aug 2022 00:00:00 +0000</pubDate>
-      
       <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220805-released/</guid>
       <description>The August release of Tabby CAD Suite is now available for download.
 SBY SBY now uses a more precise logic loop analysis, removing the need to run simplemap on coarse-grain cells that re-use parts of a signal. In other YosysHQ news Since we introduced the new autotune option, we’ve now written up a blogpost with an example on how to get started. </description>
     </item>
-    
     <item>
       <title>Tabby CAD Suite version 20220706 released!</title>
       <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220706-released/</link>
       <pubDate>Wed, 06 Jul 2022 00:00:00 +0000</pubDate>
-      
       <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220706-released/</guid>
       <description>The July release of Tabby CAD Suite is now available for download.
 SBY An autotune function! This won’t fix your singing, but we hope it will help you to choose a good solver for your application. Please check the new documentation here to get started. Please let us know if you try the new feature. We will write a blogpost about it for the next newsletter. In other YosysHQ news Since tribuf support was added in May, we wrote a short blogpost about Matt’s use of it for his latest ASIC submission.</description>
     </item>
-    
     <item>
       <title>Tabby CAD Suite version 20220610 released!</title>
       <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220610-released/</link>
       <pubDate>Fri, 10 Jun 2022 00:00:00 +0000</pubDate>
-      
       <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220610-released/</guid>
       <description>The June release of Tabby CAD Suite is now available for download.
 Yosys A big overhaul of memory inference in Yosys. The new pass memory_libmap supports a wider variety of memory patterns, such as single-port memories or asymmetric memories. It will also strictly respect verilog semantics in cases of address collision, adding emulation circuitry to ensure the synthesized behavior matches simulation. To omit the emulation circuitry even in cases where it is required for correctness, you can add the (* no_rw_check *) attribute to the array declaration of the memory.</description>
     </item>
-    
     <item>
       <title>Tabby CAD Suite version 20220512 released!</title>
       <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220512-released/</link>
       <pubDate>Thu, 12 May 2022 00:00:00 +0000</pubDate>
-      
       <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220512-released/</guid>
       <description>The May release of Tabby CAD Suite is now available for download.
 SBY The tribuf pass now supports a -formal option that converts inferred tri-state buffers within a module into equivalent non-tri-state logic for formal verification. It automatically adds assertions that detect multiple drivers driving the same net simultaneously. (When using tri-state I/O across modules, tribuf -formal should be preceded by a flatten pass). Several changes in the handling of x values during formal verification.</description>
     </item>
-    
     <item>
       <title>Tabby CAD Suite version 20220406 released!</title>
       <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220406-released/</link>
       <pubDate>Wed, 06 Apr 2022 00:00:00 +0000</pubDate>
-      
       <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220406-released/</guid>
       <description>The April release of Tabby CAD Suite is now available for download.
 Yosys The sim command now allows co-simulation with stimulus values from aiger and btor2 witness files as well as traces in VCD or FST format. Co-simulation of designs with multiple clock domains was improved. SBY The --keep-going option was added to the smtbmc engine. With this option, the solver will continue to check the remaining properties even after an assertion fails.</description>
     </item>
-    
   </channel>
 </rss>
