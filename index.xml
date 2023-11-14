@@ -33,7 +33,7 @@ The YosysHQ Team&lt;/p&gt;
         <guid>http://blog.yosyshq.com/p/solving-sudoku-with-sby/</guid>
         <description>&lt;img src="http://blog.yosyshq.com/static-2023/cover_sby_sudoku.png" alt="Featured image of post Solving a Sudoku with SBY and Formal Verification" /&gt;&lt;p&gt;&lt;em&gt;This guest post is by Theophile Loubiere.&lt;/em&gt;&lt;/p&gt;
 &lt;h1 id=&#34;solving-a-sudoku-with-sby-and-formal-verification&#34;&gt;Solving a Sudoku with SBY and Formal Verification&lt;/h1&gt;
-&lt;p&gt;Recently, I began using SBY to formally verify my designs. You can check out my first attempt on my blog &lt;a class=&#34;link&#34; href=&#34;https://learn-fpga-easily.com/trying-formal-verification-with-SBY-and-chisel/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&lt;p&gt;Recently, I began using SBY to formally verify my designs. You can check out my first attempt on my blog &lt;a class=&#34;link&#34; href=&#34;https://learn-fpga-easily.com/trying-formal-verification-with-symbiyosys-and-chisel/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;learn-fpga-easily&lt;/a&gt;. Formal Verification helps ensure that certain properties of your design always remain true, such as:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Bus arbitration&lt;/strong&gt;: &amp;ldquo;Only one master can receive the bus grant at any given time.&amp;rdquo;&lt;/li&gt;
