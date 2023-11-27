@@ -6,8 +6,16 @@
     <description>Recent content in Posts on YosysHQ Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 07 Nov 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 27 Nov 2023 13:26:31 +0100</lastBuildDate>
     <atom:link href="http://blog.yosyshq.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Community Spotlight - Surfer</title>
+      <link>http://blog.yosyshq.com/p/community-spotlight-surfer/</link>
+      <pubDate>Mon, 27 Nov 2023 13:26:31 +0100</pubDate>
+      <guid>http://blog.yosyshq.com/p/community-spotlight-surfer/</guid>
+      <description>Surfer Welcome to another community spotlight article where we shine a light on open source EDA projects. If you want to submit a project, please do so here.
+Surfer is a new waveform viewer with a focus on extensibility and a snappy (optionally keyboard driven UI). It runs both natively and in web-assembly, so you can try it out right here in the browser at https://app.surfer-project.org. The project is written in rust and while it is still in its early stages, it is usable as a day-to-day wave viewer.</description>
+    </item>
     <item>
       <title>Tabby CAD Suite version 20231107 released!</title>
       <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20231107-released/</link>

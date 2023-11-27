@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Surfer Welcome to another community spotlight article where we shine a light on open source EDA projects. If you want to submit a project, please do so here.
+Surfer is a new waveform viewer with a focus on extensibility and a snappy (optionally keyboard driven UI). It runs both natively and in web-assembly, so you can try it out right here in the browser at https://app.surfer-project.org. The project is written in rust and while it is still in its early stages, it is usable as a day-to-day wave viewer.'><title>Community Spotlight - Surfer</title>
+
+<link rel='canonical' href='http://blog.yosyshq.com/p/community-spotlight-surfer/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Community Spotlight - Surfer'>
+<meta property='og:description' content='Surfer Welcome to another community spotlight article where we shine a light on open source EDA projects. If you want to submit a project, please do so here.
+Surfer is a new waveform viewer with a focus on extensibility and a snappy (optionally keyboard driven UI). It runs both natively and in web-assembly, so you can try it out right here in the browser at https://app.surfer-project.org. The project is written in rust and while it is still in its early stages, it is usable as a day-to-day wave viewer.'>
+<meta property='og:url' content='http://blog.yosyshq.com/p/community-spotlight-surfer/'>
+<meta property='og:site_name' content='YosysHQ Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='community spotlight' /><meta property='article:published_time' content='2023-11-27T13:26:31&#43;01:00'/><meta property='article:modified_time' content='2023-11-27T13:26:31&#43;01:00'/><meta property='og:image' content='http://blog.yosyshq.com/static-2023/spotlight/surfer/surfer.png' />
+<meta name="twitter:site" content="@YosysHQ"><meta name="twitter:title" content="Community Spotlight - Surfer">
+<meta name="twitter:description" content="Surfer Welcome to another community spotlight article where we shine a light on open source EDA projects. If you want to submit a project, please do so here.
+Surfer is a new waveform viewer with a focus on extensibility and a snappy (optionally keyboard driven UI). It runs both natively and in web-assembly, so you can try it out right here in the browser at https://app.surfer-project.org. The project is written in rust and while it is still in its early stages, it is usable as a day-to-day wave viewer."><meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content='http://blog.yosyshq.com/static-2023/spotlight/surfer/surfer.png' />
+    <link rel="shortcut icon" href="/favicon.png" />
+
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script><div class="container main-container flex on-phone--column extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/logos/YOS_mark_square_hu6bb8cbdbd2526742846cc00545eb2d90_33709_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="http://blog.yosyshq.com/">YosysHQ Blog</a></h1>
+        <h2 class="site-description"></h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/about'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/newsletter'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>Newsletter</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>Dark Mode</span>
+            </li>
+        
+    </ol>
+</aside>
+
+            <main class="main full-width">
+    <div id="article-toolbar">
+        <a href="http://blog.yosyshq.com/" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>Back</span>
+        </a>
+    </div>
+
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/community-spotlight-surfer/">
+                
+                    <img src="/static-2023/spotlight/surfer/surfer.png" loading="lazy" alt="Featured image of post Community Spotlight - Surfer" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+
+    <h2 class="article-title">
+        <a href="/p/community-spotlight-surfer/">Community Spotlight - Surfer</a>
+    </h2>
+
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">Nov 27, 2023</time>
+    </footer></div>
+</header>
+
+    <section class="article-content">
+    <h1 id="surfer">Surfer</h1>
+<p>Welcome to another <a class="link" href="/tags/community-spotlight/" >community spotlight</a> article where we shine a light on open source EDA projects. If you want to <a class="link" href="https://docs.google.com/forms/d/e/1FAIpQLSdIEgu6FJZam0-V3PMTjw-eDebJdg_JuIlN4MkLNDr4vs-a5A/viewform?usp=sf_link"  target="_blank" rel="noopener"
+    >submit a project, please do so here</a>.</p>
+<p>Surfer is a new waveform viewer with a focus on extensibility and a snappy
+(optionally keyboard driven UI). It runs both natively and in web-assembly, so
+you can try it out right here in the browser at
+<a class="link" href="https://app.surfer-project.org/?load_url=https://app.surfer-project.org/picorv32.vcd&amp;startup_commands=show_quick_start;module_add%20testbench.top"  target="_blank" rel="noopener"
+    >https://app.surfer-project.org</a>.
+The project is written in rust and while it is still in its early stages, it is
+usable as a day-to-day wave viewer.</p>
+<h1 id="frans-skarmans-bio">Frans Skarman&rsquo;s Bio</h1>
+<p>I am a 5th year PhD student at the department of electrical engineering at
+Linköping university in Sweden. I&rsquo;m originally a software person, who started
+off in game development and then descending lower and lower in the tech stack
+until I reached this wonderful world of hardware. The whole time, i&rsquo;ve
+been most interested in writing tools; initially game engines instead of games,
+and now compilers instead of actual hardware design. My main project these days is
+<a class="link" href="https://spade-lang.org/"  target="_blank" rel="noopener"
+    >https://spade-lang.org/</a> a hardware description language inspired by modern
+software languages.</p>
+<p>Outside of programming I enjoy some 3d printing, playing flight simulators, as
+well as sailing or skiing when the weather permits.</p>
+<p><img src="/static-2023/spotlight/surfer/frans.jpg" alt="Frans Skarman"  /></p>
+<p>I also need to give credit to Lucas who was featured in the <a class="link" href="/p/community-spotlight-wal/" >last community
+spotlight</a>, and my PhD advisor Oscar who have
+contributed a ton of features and fixes to the project.</p>
+<h1 id="what-motivated-you-to-make-surfer">What motivated you to make Surfer?</h1>
+<p>When building my HDL, Spade, I ran into a problem. With a powerful type system,
+the bit representation of a signal is often hard to understand, so you need a
+way to automatically translate the values back into their human-readable
+representation to effectively debug your designs. While <code>gtkwave</code> has support
+for custom translation via external programs, it turned out to be quite hard to
+get right and wasn&rsquo;t as powerful as I wanted. For example, I found no way to
+translate a value into a list of expandable sub-fields to, for example, expand
+individual fields of a struct. I was also bothered by small things like how
+zooming and scrolling works in gtkwave.</p>
+<p>Eventually, the question of &ldquo;how hard can it be&rdquo; made me start this project.
+Luckily, it turns out that with the right libraries, the answer to that
+question was that it is easier than I thought it would be.</p>
+<h1 id="what-makes-you-excited-about-surfer">What makes you excited about Surfer?</h1>
+<p>Overall, I&rsquo;m very excited about having a mostly solid waveform viewer where I
+and others can try out new things, both in terms of translations and interface.
+I do have some favorite features I can touch more on though:</p>
+<h2 id="web-assembly">Web assembly</h2>
+<p>Perhaps my favorite thing about Surfer right now is that it works almost
+flawlessly in web assembly. You can see a demo of that at
+<a class="link" href="https://app.surfer-project.org"  target="_blank" rel="noopener"
+    >https://app.surfer-project.org</a>. If you
+have a VCD file to analyse, you can just append that to the URL along with some commands to run when the waveform is loaded, for example
+<a class="link" href="https://app.surfer-project.org/?load_url=https://app.surfer-project.org/picorv32.vcd&amp;startup_commands=module_add%20testbench;divider_add%20.;divider_add%20top;module_add%20testbench.top;show_quick_start"  target="_blank" rel="noopener"
+    >https://app.surfer-project.org/?load_url=https://app.surfer-project.org/picorv32.vcd&startup_commands=module_add%20testbench;divider_add%20.;divider_add%20top;module_add%20testbench.top;show_quick_start</a>.</p>
+<p>Apart from being a cool tech demo, this also enables some cool workflow in
+CI/CD. For example, we can augment the <a class="link" href="https://tinytapeout.com/"  target="_blank" rel="noopener"
+    >tinytapeout</a>
+test action to link to surfer with the
+resulting waveform. No longer will you have to re-run your tests locally, or
+manually download a VCD file to view it in a desktop viewer.</p>
+<p>I&rsquo;m also very happy that going from idea to implementation of the web version
+took less than a day thanks to the rich rust ecosystem around web assembly.</p>
+<h2 id="signal-translation">Signal translation</h2>
+<p>As I mentioned earlier, a big motivator for building surfer was being able to
+get richer translation of Spade types. Even though I had a hacky system for
+doing that in <code>gtkwave</code>, the Surfer version where you can expand or collapse
+<code>struct</code>s, view individual <code>enum</code> variants and translate sub-fields as you please
+is a game changer.</p>
+<p>Below is an image and a quick demo video showing it off
+<img src="/static-2023/spotlight/surfer/surfer.png" alt="Picture showing surfer translating Spade structs opcodes"  /></p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe loading="lazy" src="https://www.youtube.com/embed/58AW1LpNaDM" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<p>Another really cool translator is the RISC-V opcode translator shown below</p>
+<p><img src="/static-2023/spotlight/surfer/riscv_opcode_translation.png" alt="Picture showing surfer translating RISC-V opcodes"  /></p>
+<p>I have also done my best to build this translation system to be decoupled from
+Spade, meaning that anyone could add translation for their own HDLs constructs,
+or perhaps something completely different, like a translator that splits a stereo audio signal into left and right channels. All that
+is needed for that is to implement a <a class="link" href="https://gitlab.com/surfer-project/surfer/-/blob/main/src/translation/mod.rs?ref_type=heads#L290"  target="_blank" rel="noopener"
+    >few methods in a
+trait</a></p>
+<h2 id="keyboard-and-mouse-gesture-based-ui">Keyboard and mouse gesture based UI</h2>
+<p>As a vim user, I hate reaching for my mouse, so we&rsquo;ve put quite a bit of effort
+into making surfer usable with just the keyboard. There are some keybindings
+for normal navigation of course, but most of the happens via a fuzzy matching
+based command palette, similar to ctrl-p in Visual Studio Code. For tasks where
+the mouse is more appropriate, like navigating the waveform there is also a mouse gesture based UI. You can see both in action in the video below.</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe loading="lazy" src="https://www.youtube.com/embed/gASWElSl32k" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h1 id="why-do-you-make-open-source-tools">Why do you make open source tools?</h1>
+<p>Every time I have to use non-open source software I get frustrated, sometimes
+because dealing with licenses but often just because the software is missing
+features or customization options that I want, or because features I rely on get removed in a new version. These frustrations happen less with open source software in my experience. Since I probably wouldn&rsquo;t use a closed
+source tool myself, I&rsquo;m certainly not going to build one.</p>
+<p>For surfer in particular, one of the big advantages of open source is that
+everyone can add their favorite features, whether it is a translator for a new
+signal format, a new way to render waves or some new way to interact with the
+program, things that a closed source developer might not have the interest nor resources to implement.
+After a while, this makes an open source tool feel very complete, because all
+the small features and fixes have been added.</p>
+<h1 id="what-are-some-challenges">What are some challenges?</h1>
+<p>The biggest challenge in my mind is in UI design. I&rsquo;m not a UI designer, I only
+took a single course on it during my bachelor, so most of the time I&rsquo;m just winging
+it. For features I use myself, I at least have some idea of what I want, for
+feature requests by others I might even have that.</p>
+<p>There have also been some technical hurdles, primarily because we offload the
+parsing of wave files to external libraries. For now we only support VCD, but
+we are working on both decoupling surfer from the VCD library, as well as
+adding support for other formats, in particular FST.</p>
+<h1 id="what-could-the-community-do-to-support-you">What could the community do to support you?</h1>
+<p>First, give surfer a try. Let us know what you find nice and what could use
+improvements. Especially as a non-UX person it is invaluable to get feedback
+from users!</p>
+<p>If you want to do more, consider contributing the features you think are
+missing. In particular, small features like a translator for a new bit format, a
+fix for a small bug you find or perhaps some additional way to zoom or navigate the waveforms.
+As I said earlier, people contributing these small things are what gives open source software that
+warm feeling that someone has thought of your particular use case.</p>
+<p>Of course, we&rsquo;re also very happy to accept bigger contributions, like
+support for loading files from other wave formats or big translators for
+translating to the native format from some alt-HDL like Amaranth, Chisel or
+Clash.</p>
+<h1 id="what-is-the-best-link-to-give-for-the-project">What is the best link to give for the project?</h1>
+<p>If you want to learn more, see the <a class="link" href="https://gitlab.com/surfer-project/surfer"  target="_blank" rel="noopener"
+    >git repo</a>. You can also try Surfer right in your browser at <a class="link" href="https://app.surfer-project.org"  target="_blank" rel="noopener"
+    >https://app.surfer-project.org</a></p>
+<h1 id="what-is-the-best-way-for-people-to-contact-you">What is the best way for people to contact you?</h1>
+<ul>
+<li>Email: <a class="link" href="mailto:frans.skarman@liu.se" >frans.skarman@liu.se</a></li>
+<li>Mastodon: <a class="link" href="https://mastodon.social/@thezoq2"  target="_blank" rel="noopener"
+    >TheZoq2@mastodon.social</a></li>
+<li>The Spade discord (with a surfer channel): <a class="link" href="https://discord.gg/hdyGSn8ejw"  target="_blank" rel="noopener"
+    >https://discord.gg/hdyGSn8ejw</a></li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/community-spotlight/">community spotlight</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+</aside>
+
+
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2023 YosysHQ Blog
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.2.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
