@@ -14,7 +14,7 @@
       <pubDate>Mon, 27 Nov 2023 13:26:31 +0100</pubDate>
       <guid>http://blog.yosyshq.com/p/community-spotlight-surfer/</guid>
       <description>Surfer Welcome to another community spotlight article where we shine a light on open source EDA projects. If you want to submit a project, please do so here.
-Surfer is a new waveform viewer with a focus on extensibility and a snappy (optionally keyboard driven UI). It runs both natively and in web-assembly, so you can try it out right here in the browser at https://app.surfer-project.org. The project is written in rust and while it is still in its early stages, it is usable as a day-to-day wave viewer.</description>
+Surfer is a new waveform viewer with a focus on extensibility and a snappy (optionally keyboard driven) UI. It runs both natively and in web-assembly, so you can try it out right here in the browser at https://app.surfer-project.org. The project is written in rust and while it is still in its early stages, it is usable as a day-to-day wave viewer.</description>
     </item>
     <item>
       <title>Community Spotlight - WAL</title>
