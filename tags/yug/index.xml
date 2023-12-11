@@ -6,16 +6,14 @@
     <description>Recent content in yug on YosysHQ Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Mon, 11 Dec 2023 16:52:39 +0200</lastBuildDate>
     <atom:link href="http://blog.yosyshq.com/tags/yug/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Yosys User&#39;s Group</title>
       <link>http://blog.yosyshq.com/p/yosys-users-group/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 11 Dec 2023 16:52:39 +0200</pubDate>
       <guid>http://blog.yosyshq.com/p/yosys-users-group/</guid>
-      <description>We have recently started a Yosys User&amp;rsquo;s Group. You can see the minutes of our first 2 calls here.
-So far we&amp;rsquo;ve talked about:
-What people are using Yosys for, How things can be improved, Introducing our new tools, A demo of our new formal equivalence tool - eqy. If you&amp;rsquo;d like to join, then please sign up to the newsletter or follow us on:
-linkedin, mastodon or twitter. </description>
+      <description>We have recently started a Yosys User&amp;rsquo;s Group. You can see the minutes of our first 4 calls here.&#xA;If you&amp;rsquo;d like to join, then please sign up to the newsletter or follow us on:&#xA;linkedin, mastodon or twitter. YUG 4 - all the plugins! List of all the plugins we know of Gabriel Gouvine talks about how he wrote a logic locking plugin Martin Povišer talks about the Python plugin API YUG 3 - pick your primitives!</description>
     </item>
   </channel>
 </rss>

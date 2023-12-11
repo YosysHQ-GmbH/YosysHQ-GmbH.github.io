@@ -13,43 +13,35 @@
       <link>http://blog.yosyshq.com/p/community-spotlight-surfer/</link>
       <pubDate>Mon, 27 Nov 2023 13:26:31 +0100</pubDate>
       <guid>http://blog.yosyshq.com/p/community-spotlight-surfer/</guid>
-      <description>Surfer Welcome to another community spotlight article where we shine a light on open source EDA projects. If you want to submit a project, please do so here.
-Surfer is a new waveform viewer with a focus on extensibility and a snappy (optionally keyboard driven) UI. It runs both natively and in web-assembly, so you can try it out right here in the browser at https://app.surfer-project.org. The project is written in rust and while it is still in its early stages, it is usable as a day-to-day wave viewer.</description>
+      <description>Surfer Welcome to another community spotlight article where we shine a light on open source EDA projects. If you want to submit a project, please do so here.&#xA;Surfer is a new waveform viewer with a focus on extensibility and a snappy (optionally keyboard driven) UI. It runs both natively and in web-assembly, so you can try it out right here in the browser at https://app.surfer-project.org. The project is written in rust and while it is still in its early stages, it is usable as a day-to-day wave viewer.</description>
     </item>
     <item>
       <title>Community Spotlight - WAL</title>
       <link>http://blog.yosyshq.com/p/community-spotlight-wal/</link>
       <pubDate>Mon, 25 Sep 2023 13:26:31 +0100</pubDate>
       <guid>http://blog.yosyshq.com/p/community-spotlight-wal/</guid>
-      <description>WAL Welcome to another community spotlight article where we shine a light on open source EDA projects. If you want to submit a project, please do so here.
-Waveform Analysis Language (WAL) is a programming language for complex waveform analysis and EDA tool development.
-Lucas Klemmer&amp;rsquo;s Bio I&amp;rsquo;m a PhD student at the Institute for Complex Systems at the Johannes Kepler University in Linz, Austria. I received my Master’s degree in computer science from the University of Bremen in Germany.</description>
+      <description>WAL Welcome to another community spotlight article where we shine a light on open source EDA projects. If you want to submit a project, please do so here.&#xA;Waveform Analysis Language (WAL) is a programming language for complex waveform analysis and EDA tool development.&#xA;Lucas Klemmer&amp;rsquo;s Bio I&amp;rsquo;m a PhD student at the Institute for Complex Systems at the Johannes Kepler University in Linz, Austria. I received my Master’s degree in computer science from the University of Bremen in Germany.</description>
     </item>
     <item>
       <title>Community Spotlight - AutoSVA</title>
       <link>http://blog.yosyshq.com/p/community-spotlight-autosva/</link>
       <pubDate>Wed, 10 May 2023 13:26:31 +0100</pubDate>
       <guid>http://blog.yosyshq.com/p/community-spotlight-autosva/</guid>
-      <description>AutoSVA Welcome to another community spotlight article where we shine a light on open source EDA projects. If you want to submit a project, please do so here.
-AutoSVA makes Formal Property Verification (FPV) more accesible for hardware designers.
-Marcelo Vera&amp;rsquo;s Bio Marcelo is a PhD candidate in the Department of Computer Science at Princeton University advised by Margaret Martonosi and David Wentzlaff. He received his BSE from University of Murcia.</description>
+      <description>AutoSVA Welcome to another community spotlight article where we shine a light on open source EDA projects. If you want to submit a project, please do so here.&#xA;AutoSVA makes Formal Property Verification (FPV) more accesible for hardware designers.&#xA;Marcelo Vera&amp;rsquo;s Bio Marcelo is a PhD candidate in the Department of Computer Science at Princeton University advised by Margaret Martonosi and David Wentzlaff. He received his BSE from University of Murcia.</description>
     </item>
     <item>
       <title>Community Spotlight - sv2v</title>
       <link>http://blog.yosyshq.com/p/community-spotlight-sv2v/</link>
       <pubDate>Mon, 13 Feb 2023 13:26:31 +0100</pubDate>
       <guid>http://blog.yosyshq.com/p/community-spotlight-sv2v/</guid>
-      <description>sv2v Welcome to another community spotlight article where we shine a light on open source EDA projects. If you want to submit a project, please do so here.
-sv2v converts SystemVerilog (IEEE 1800-2017) to Verilog (IEEE 1364-2005), with an emphasis on supporting synthesizable language constructs.
-Zachary Snow&amp;rsquo;s Bio I received my B.S. in computer science from Carnegie Mellon University in 2019. After graduating, I began working full-time as a software engineer in systematic trading.</description>
+      <description>sv2v Welcome to another community spotlight article where we shine a light on open source EDA projects. If you want to submit a project, please do so here.&#xA;sv2v converts SystemVerilog (IEEE 1800-2017) to Verilog (IEEE 1364-2005), with an emphasis on supporting synthesizable language constructs.&#xA;Zachary Snow&amp;rsquo;s Bio I received my B.S. in computer science from Carnegie Mellon University in 2019. After graduating, I began working full-time as a software engineer in systematic trading.</description>
     </item>
     <item>
       <title>Community Spotlight - Tbengy</title>
       <link>http://blog.yosyshq.com/p/community-spotlight-tbengy/</link>
       <pubDate>Wed, 14 Dec 2022 10:23:57 +0100</pubDate>
       <guid>http://blog.yosyshq.com/p/community-spotlight-tbengy/</guid>
-      <description>Tbengy Welcome to the first in a series of short articles where we shine the light on open source EDA projects. If you want to submit a project, please do so here.
-Tbengy by Prasad Pandit is a Python Tool for SV/UVM Testbench Generation and RTL Synthesis. The tool uses newly available capability of the Vivado tool by Xilinx to compile and run SV/UVM Testbench and syntheize RTL for Digilent FPGA Boards.</description>
+      <description>Tbengy Welcome to the first in a series of short articles where we shine the light on open source EDA projects. If you want to submit a project, please do so here.&#xA;Tbengy by Prasad Pandit is a Python Tool for SV/UVM Testbench Generation and RTL Synthesis. The tool uses newly available capability of the Vivado tool by Xilinx to compile and run SV/UVM Testbench and syntheize RTL for Digilent FPGA Boards.</description>
     </item>
   </channel>
 </rss>

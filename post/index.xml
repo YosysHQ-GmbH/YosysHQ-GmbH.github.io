@@ -6,287 +6,238 @@
     <description>Recent content in Posts on YosysHQ Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 27 Nov 2023 13:26:31 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 11 Dec 2023 16:52:39 +0200</lastBuildDate>
     <atom:link href="http://blog.yosyshq.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Yosys User&#39;s Group</title>
+      <link>http://blog.yosyshq.com/p/yosys-users-group/</link>
+      <pubDate>Mon, 11 Dec 2023 16:52:39 +0200</pubDate>
+      <guid>http://blog.yosyshq.com/p/yosys-users-group/</guid>
+      <description>We have recently started a Yosys User&amp;rsquo;s Group. You can see the minutes of our first 4 calls here.&#xA;If you&amp;rsquo;d like to join, then please sign up to the newsletter or follow us on:&#xA;linkedin, mastodon or twitter. YUG 4 - all the plugins! List of all the plugins we know of Gabriel Gouvine talks about how he wrote a logic locking plugin Martin Povišer talks about the Python plugin API YUG 3 - pick your primitives!</description>
+    </item>
     <item>
       <title>Community Spotlight - Surfer</title>
       <link>http://blog.yosyshq.com/p/community-spotlight-surfer/</link>
       <pubDate>Mon, 27 Nov 2023 13:26:31 +0100</pubDate>
       <guid>http://blog.yosyshq.com/p/community-spotlight-surfer/</guid>
-      <description>Surfer Welcome to another community spotlight article where we shine a light on open source EDA projects. If you want to submit a project, please do so here.
-Surfer is a new waveform viewer with a focus on extensibility and a snappy (optionally keyboard driven) UI. It runs both natively and in web-assembly, so you can try it out right here in the browser at https://app.surfer-project.org. The project is written in rust and while it is still in its early stages, it is usable as a day-to-day wave viewer.</description>
+      <description>Surfer Welcome to another community spotlight article where we shine a light on open source EDA projects. If you want to submit a project, please do so here.&#xA;Surfer is a new waveform viewer with a focus on extensibility and a snappy (optionally keyboard driven) UI. It runs both natively and in web-assembly, so you can try it out right here in the browser at https://app.surfer-project.org. The project is written in rust and while it is still in its early stages, it is usable as a day-to-day wave viewer.</description>
     </item>
     <item>
       <title>Tabby CAD Suite version 20231107 released!</title>
       <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20231107-released/</link>
       <pubDate>Tue, 07 Nov 2023 00:00:00 +0000</pubDate>
       <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20231107-released/</guid>
-      <description>The November release of Tabby CAD Suite is now available for download. Notable changes in this version include:
-Fixed problems with verific elaboration in VHDL that were introduced in the last release - you should no longer see spurious multiple driver warnings. Memory inference can now recognize (* rom_style = &amp;ldquo;&amp;hellip;&amp;rdquo; *) attributes on data output and address signals (attributes on the data storage register still take precedence, but this allows forcing a style e.</description>
+      <description>The November release of Tabby CAD Suite is now available for download. Notable changes in this version include:&#xA;Fixed problems with verific elaboration in VHDL that were introduced in the last release - you should no longer see spurious multiple driver warnings. Memory inference can now recognize (* rom_style = &amp;ldquo;&amp;hellip;&amp;rdquo; *) attributes on data output and address signals (attributes on the data storage register still take precedence, but this allows forcing a style e.</description>
     </item>
     <item>
       <title>Solving a Sudoku with SBY and Formal Verification</title>
       <link>http://blog.yosyshq.com/p/solving-sudoku-with-sby/</link>
       <pubDate>Mon, 06 Nov 2023 12:00:00 +0200</pubDate>
       <guid>http://blog.yosyshq.com/p/solving-sudoku-with-sby/</guid>
-      <description>This guest post is by Theophile Loubiere.
-Solving a Sudoku with SBY and Formal Verification Recently, I began using SBY to formally verify my designs. You can check out my first attempt on my blog learn-fpga-easily. Formal Verification helps ensure that certain properties of your design always remain true, such as:
-Bus arbitration: &amp;ldquo;Only one master can receive the bus grant at any given time.&amp;rdquo; Overflow and Underflow: &amp;ldquo;The FIFO buffer will never overflow or underflow.</description>
+      <description>This guest post is by Theophile Loubiere.&#xA;Solving a Sudoku with SBY and Formal Verification Recently, I began using SBY to formally verify my designs. You can check out my first attempt on my blog learn-fpga-easily. Formal Verification helps ensure that certain properties of your design always remain true, such as:&#xA;Bus arbitration: &amp;ldquo;Only one master can receive the bus grant at any given time.&amp;rdquo; Overflow and Underflow: &amp;ldquo;The FIFO buffer will never overflow or underflow.</description>
     </item>
     <item>
       <title>Tabby CAD Suite version 20231011 released!</title>
       <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20231011-released/</link>
       <pubDate>Wed, 11 Oct 2023 00:00:00 +0000</pubDate>
       <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20231011-released/</guid>
-      <description>The October release of Tabby CAD Suite is now available for download. Notable changes in this version include:
-Improved identifier resolution when using bind statements in mixed-language projects Respect memory access order semantics when inferring memories with the verific frontend (for simultaneous read and write operations of the same memory location in the same clock cycle, on the same or a different port) Preview builds of our upcoming formal tools ivy and scy In other YosysHQ news:</description>
+      <description>The October release of Tabby CAD Suite is now available for download. Notable changes in this version include:&#xA;Improved identifier resolution when using bind statements in mixed-language projects Respect memory access order semantics when inferring memories with the verific frontend (for simultaneous read and write operations of the same memory location in the same clock cycle, on the same or a different port) Preview builds of our upcoming formal tools ivy and scy In other YosysHQ news:</description>
     </item>
     <item>
       <title>Community Spotlight - WAL</title>
       <link>http://blog.yosyshq.com/p/community-spotlight-wal/</link>
       <pubDate>Mon, 25 Sep 2023 13:26:31 +0100</pubDate>
       <guid>http://blog.yosyshq.com/p/community-spotlight-wal/</guid>
-      <description>WAL Welcome to another community spotlight article where we shine a light on open source EDA projects. If you want to submit a project, please do so here.
-Waveform Analysis Language (WAL) is a programming language for complex waveform analysis and EDA tool development.
-Lucas Klemmer&amp;rsquo;s Bio I&amp;rsquo;m a PhD student at the Institute for Complex Systems at the Johannes Kepler University in Linz, Austria. I received my Master’s degree in computer science from the University of Bremen in Germany.</description>
+      <description>WAL Welcome to another community spotlight article where we shine a light on open source EDA projects. If you want to submit a project, please do so here.&#xA;Waveform Analysis Language (WAL) is a programming language for complex waveform analysis and EDA tool development.&#xA;Lucas Klemmer&amp;rsquo;s Bio I&amp;rsquo;m a PhD student at the Institute for Complex Systems at the Johannes Kepler University in Linz, Austria. I received my Master’s degree in computer science from the University of Bremen in Germany.</description>
     </item>
     <item>
       <title>Tabby CAD Suite version 20230905 released!</title>
       <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230905-released/</link>
       <pubDate>Tue, 05 Sep 2023 00:00:00 +0000</pubDate>
       <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230905-released/</guid>
-      <description>The September release of Tabby CAD Suite is now available for download. Notable changes in this version include:
-Tabby CAD Suite now optionally supports floating licenses via FlexLM. Floating licenses are priced at 600€/month (double the price of node-locked licenses). Existing customers may exchange two node-locked licenses for one floating license - please contact us if this would be of interest to you. In other YosysHQ news:
-YosysHQ&amp;rsquo;s Matt Venn will be at ORConf 2023 in Munich next week (September 15th to 17th).</description>
+      <description>The September release of Tabby CAD Suite is now available for download. Notable changes in this version include:&#xA;Tabby CAD Suite now optionally supports floating licenses via FlexLM. Floating licenses are priced at 600€/month (double the price of node-locked licenses). Existing customers may exchange two node-locked licenses for one floating license - please contact us if this would be of interest to you. In other YosysHQ news:&#xA;YosysHQ&amp;rsquo;s Matt Venn will be at ORConf 2023 in Munich next week (September 15th to 17th).</description>
     </item>
     <item>
       <title>Tabby CAD Suite version 20230807 released!</title>
       <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230807-released/</link>
       <pubDate>Mon, 07 Aug 2023 00:00:00 +0000</pubDate>
       <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230807-released/</guid>
-      <description>The August release of Tabby CAD Suite is now available for download. Notable changes in this version include:
-The verific command now has a new option -lib to load all modules from the specified files as blackbox modules, disregarding their contents. This is useful especially for loading primitives from a simulation library, e.g.: verific -sv -lib cells_sim.v verific -work unisim -vhdl -lib unisim_VCOMP.vhd The files still need to be parseable by verific, so some limitations remain on the contents of the blackboxed modules, but it is possible to ignore some errors by first calling verific -set-warning VERI-XXXX for the corresponding error code.</description>
+      <description>The August release of Tabby CAD Suite is now available for download. Notable changes in this version include:&#xA;The verific command now has a new option -lib to load all modules from the specified files as blackbox modules, disregarding their contents. This is useful especially for loading primitives from a simulation library, e.g.: verific -sv -lib cells_sim.v verific -work unisim -vhdl -lib unisim_VCOMP.vhd The files still need to be parseable by verific, so some limitations remain on the contents of the blackboxed modules, but it is possible to ignore some errors by first calling verific -set-warning VERI-XXXX for the corresponding error code.</description>
     </item>
     <item>
       <title>Yosys One Liners - Rename</title>
       <link>http://blog.yosyshq.com/p/yosys-one-liners-rename/</link>
       <pubDate>Mon, 12 Jun 2023 16:52:39 +0200</pubDate>
       <guid>http://blog.yosyshq.com/p/yosys-one-liners-rename/</guid>
-      <description>Scenario: you&amp;rsquo;re developing some Verilog RTL and after synthesis the ASIC tools you&amp;rsquo;re using fail on the design! It won&amp;rsquo;t accept square brackets in the input!
-Here&amp;rsquo;s the DUT:
-module test( input wire [7:0] a, input wire [7:0] b, output wire [8:0] sum ); assign sum = a + b; endmodule module gen( input wire [23:0] a, input wire [23:0] b, output wire [26:0] c, ); genvar i; generate for (i=0; i&amp;lt;=2; i=i+1) begin test test ( .</description>
+      <description>Scenario: you&amp;rsquo;re developing some Verilog RTL and after synthesis the ASIC tools you&amp;rsquo;re using fail on the design! It won&amp;rsquo;t accept square brackets in the input!&#xA;Here&amp;rsquo;s the DUT:&#xA;module test( input wire [7:0] a, input wire [7:0] b, output wire [8:0] sum ); assign sum = a + b; endmodule module gen( input wire [23:0] a, input wire [23:0] b, output wire [26:0] c, ); genvar i; generate for (i=0; i&amp;lt;=2; i=i+1) begin test test ( .</description>
     </item>
     <item>
       <title>Tabby CAD Suite version 20230606 released!</title>
       <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230606-released/</link>
       <pubDate>Tue, 06 Jun 2023 00:00:00 +0000</pubDate>
       <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230606-released/</guid>
-      <description>The June release of Tabby CAD Suite is now available for download. Notable changes in this version include:
-The RISC-V Formal Verification Toolbox has gained a bus interface for checking that instructions relating to memory result in matching bus transactions, as well as some checks for the machine-mode CSRs required by the RISC-V privileged specification. In other YosysHQ news:
-You might have seen Bruno Levy’s excellent introduction to RISCV on an FPGA.</description>
+      <description>The June release of Tabby CAD Suite is now available for download. Notable changes in this version include:&#xA;The RISC-V Formal Verification Toolbox has gained a bus interface for checking that instructions relating to memory result in matching bus transactions, as well as some checks for the machine-mode CSRs required by the RISC-V privileged specification. In other YosysHQ news:&#xA;You might have seen Bruno Levy’s excellent introduction to RISCV on an FPGA.</description>
     </item>
     <item>
       <title>How I went from blinker to RISC-V in 3 months</title>
       <link>http://blog.yosyshq.com/p/blinker-to-risc-v/</link>
       <pubDate>Mon, 15 May 2023 12:00:00 +0200</pubDate>
       <guid>http://blog.yosyshq.com/p/blinker-to-risc-v/</guid>
-      <description>This guest post is by Bastian Löher.
-How I went from blinker to RISC-V in 3 months How does one get started with programming FPGAs (field-programmable gate arrays)? Where does one even begin? Also, if you&amp;rsquo;ve ever wondered how a CPU works and how you can build your own, keep reading!
-TL;DR: Getting into FPGA programming nowadays isn&amp;rsquo;t hard anymore. Get a cheap board with at least one LED that is supported by an open toolchain, search for a tutorial, and get that LED blinking!</description>
+      <description>This guest post is by Bastian Löher.&#xA;How I went from blinker to RISC-V in 3 months How does one get started with programming FPGAs (field-programmable gate arrays)? Where does one even begin? Also, if you&amp;rsquo;ve ever wondered how a CPU works and how you can build your own, keep reading!&#xA;TL;DR: Getting into FPGA programming nowadays isn&amp;rsquo;t hard anymore. Get a cheap board with at least one LED that is supported by an open toolchain, search for a tutorial, and get that LED blinking!</description>
     </item>
     <item>
       <title>Community Spotlight - AutoSVA</title>
       <link>http://blog.yosyshq.com/p/community-spotlight-autosva/</link>
       <pubDate>Wed, 10 May 2023 13:26:31 +0100</pubDate>
       <guid>http://blog.yosyshq.com/p/community-spotlight-autosva/</guid>
-      <description>AutoSVA Welcome to another community spotlight article where we shine a light on open source EDA projects. If you want to submit a project, please do so here.
-AutoSVA makes Formal Property Verification (FPV) more accesible for hardware designers.
-Marcelo Vera&amp;rsquo;s Bio Marcelo is a PhD candidate in the Department of Computer Science at Princeton University advised by Margaret Martonosi and David Wentzlaff. He received his BSE from University of Murcia.</description>
+      <description>AutoSVA Welcome to another community spotlight article where we shine a light on open source EDA projects. If you want to submit a project, please do so here.&#xA;AutoSVA makes Formal Property Verification (FPV) more accesible for hardware designers.&#xA;Marcelo Vera&amp;rsquo;s Bio Marcelo is a PhD candidate in the Department of Computer Science at Princeton University advised by Margaret Martonosi and David Wentzlaff. He received his BSE from University of Murcia.</description>
     </item>
     <item>
       <title>Tabby CAD Suite version 20230509 released!</title>
       <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230509-released/</link>
       <pubDate>Tue, 09 May 2023 00:00:00 +0000</pubDate>
       <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230509-released/</guid>
-      <description>The May release of Tabby CAD Suite is now available for download. Notable changes in this version include:
-The synthprop pass was added, which converts SVA assert properties into module outputs that flag assertion violations. See help synthprop for details! In other YosysHQ news:
-We just published the 3rd in our series of ‘community spotlight’ blog posts. This time we’re featuring AutoSVA by Marcelo Vera which aims to make Formal Property Verification more accessible to hardware designers.</description>
+      <description>The May release of Tabby CAD Suite is now available for download. Notable changes in this version include:&#xA;The synthprop pass was added, which converts SVA assert properties into module outputs that flag assertion violations. See help synthprop for details! In other YosysHQ news:&#xA;We just published the 3rd in our series of ‘community spotlight’ blog posts. This time we’re featuring AutoSVA by Marcelo Vera which aims to make Formal Property Verification more accessible to hardware designers.</description>
     </item>
     <item>
       <title>Yosys One Liners - AXI</title>
       <link>http://blog.yosyshq.com/p/yosys-one-liners-axi/</link>
       <pubDate>Mon, 17 Apr 2023 13:25:38 +0200</pubDate>
       <guid>http://blog.yosyshq.com/p/yosys-one-liners-axi/</guid>
-      <description>The AXI spec says &amp;ldquo;On Manager and Subordinate interfaces, there must be no combinatorial paths between input and output signals.&amp;rdquo; If we have a design containing an AXI Manager or Subordinate as netlist (i.e. post proc) and the AXI ports contain axi_ we can check this automatically using this Yosys one liner:
-flatten; select -assert-none i:*axi_* %coe* o:*axi_* %cie* %i If that fails we can use show i:*axi_* %coe* o:*axi_* %cie* %i to then see the combinational path (or using dump/printattrs/select -list instead of show when the design is too large for show).</description>
+      <description>The AXI spec says &amp;ldquo;On Manager and Subordinate interfaces, there must be no combinatorial paths between input and output signals.&amp;rdquo; If we have a design containing an AXI Manager or Subordinate as netlist (i.e. post proc) and the AXI ports contain axi_ we can check this automatically using this Yosys one liner:&#xA;flatten; select -assert-none i:*axi_* %coe* o:*axi_* %cie* %i If that fails we can use show i:*axi_* %coe* o:*axi_* %cie* %i to then see the combinational path (or using dump/printattrs/select -list instead of show when the design is too large for show).</description>
     </item>
     <item>
       <title>Tabby CAD Suite version 20230414 released!</title>
       <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230414-released/</link>
       <pubDate>Fri, 14 Apr 2023 00:00:00 +0000</pubDate>
       <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230414-released/</guid>
-      <description>Tabby CAD Suite version 20230414 released!
-The April release of Tabby CAD Suite is now available for download. Notable changes in this version include:
-The initial release of our new equivalence checking tool EQY is now available. Try out some of the examples! In other YosysHQ news:
-We have started a new series called ‘Yosys One Liners’ where we share some useful one liners. The first one shows how to show there are no combinatorial paths between input and output signals - useful for verifying correct AXI behaviour.</description>
+      <description>Tabby CAD Suite version 20230414 released!&#xA;The April release of Tabby CAD Suite is now available for download. Notable changes in this version include:&#xA;The initial release of our new equivalence checking tool EQY is now available. Try out some of the examples! In other YosysHQ news:&#xA;We have started a new series called ‘Yosys One Liners’ where we share some useful one liners. The first one shows how to show there are no combinatorial paths between input and output signals - useful for verifying correct AXI behaviour.</description>
     </item>
     <item>
       <title>First gateware on the Colorlight 5A-75B board </title>
       <link>http://blog.yosyshq.com/p/colorlight-part-2/</link>
       <pubDate>Tue, 28 Mar 2023 18:17:00 +0200</pubDate>
       <guid>http://blog.yosyshq.com/p/colorlight-part-2/</guid>
-      <description>Welcome to the second part of the Colorlight 5A-75B article. You can find the first part here.
-In this blogpost I will show you how to set up, synthesize and program your first Verilog program on the ECP5 FPGA using the Yosys suite.
-The FPGA toolchain The FPGA workflow consists of a few more steps compared to the usual software toolchain workflow.
-The Verilog source, which is a description of the logic that makes up the FPGA design, first needs to be synthesized.</description>
+      <description>Welcome to the second part of the Colorlight 5A-75B article. You can find the first part here.&#xA;In this blogpost I will show you how to set up, synthesize and program your first Verilog program on the ECP5 FPGA using the Yosys suite.&#xA;The FPGA toolchain The FPGA workflow consists of a few more steps compared to the usual software toolchain workflow.&#xA;The Verilog source, which is a description of the logic that makes up the FPGA design, first needs to be synthesized.</description>
     </item>
     <item>
       <title>Tabby CAD Suite version 20230306 released!</title>
       <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230306-released/</link>
       <pubDate>Mon, 06 Mar 2023 00:00:00 +0000</pubDate>
       <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230306-released/</guid>
-      <description>Tabby CAD Suite version 20230306 released!
-The March release of Tabby CAD Suite is now available for download. Notable changes in this version include:
-There is now support for tying licenses to Google Cloud Instance ID and to GitLab groups or repositories. In other YosysHQ news:
-We have a new community spotlight article about sv2v. sv2v converts SystemVerilog (IEEE 1800-2017) to Verilog (IEEE 1364-2005), with an emphasis on supporting synthesizable language constructs.</description>
+      <description>Tabby CAD Suite version 20230306 released!&#xA;The March release of Tabby CAD Suite is now available for download. Notable changes in this version include:&#xA;There is now support for tying licenses to Google Cloud Instance ID and to GitLab groups or repositories. In other YosysHQ news:&#xA;We have a new community spotlight article about sv2v. sv2v converts SystemVerilog (IEEE 1800-2017) to Verilog (IEEE 1364-2005), with an emphasis on supporting synthesizable language constructs.</description>
     </item>
     <item>
       <title>OSS CAD Suite Github Action Update</title>
       <link>http://blog.yosyshq.com/p/oss-cad-suite-github-action-update/</link>
       <pubDate>Mon, 20 Feb 2023 11:48:40 +0100</pubDate>
       <guid>http://blog.yosyshq.com/p/oss-cad-suite-github-action-update/</guid>
-      <description>The OSS CAD suite setup GitHub action just had an update, fixing an issue where sometimes the install would fail due to rate limiting.
-The OSS CAD suite makes it simple to install a whole set of tools at once, and the GitHub action makes it just as simple to get the tools available for a CI job.
-Tools are included for:
-Synthesis Formal verification FPGA place and route FPGA board programming Simulation and testing </description>
+      <description>The OSS CAD suite setup GitHub action just had an update, fixing an issue where sometimes the install would fail due to rate limiting.&#xA;The OSS CAD suite makes it simple to install a whole set of tools at once, and the GitHub action makes it just as simple to get the tools available for a CI job.&#xA;Tools are included for:&#xA;Synthesis Formal verification FPGA place and route FPGA board programming Simulation and testing </description>
     </item>
     <item>
       <title>Community Spotlight - sv2v</title>
       <link>http://blog.yosyshq.com/p/community-spotlight-sv2v/</link>
       <pubDate>Mon, 13 Feb 2023 13:26:31 +0100</pubDate>
       <guid>http://blog.yosyshq.com/p/community-spotlight-sv2v/</guid>
-      <description>sv2v Welcome to another community spotlight article where we shine a light on open source EDA projects. If you want to submit a project, please do so here.
-sv2v converts SystemVerilog (IEEE 1800-2017) to Verilog (IEEE 1364-2005), with an emphasis on supporting synthesizable language constructs.
-Zachary Snow&amp;rsquo;s Bio I received my B.S. in computer science from Carnegie Mellon University in 2019. After graduating, I began working full-time as a software engineer in systematic trading.</description>
+      <description>sv2v Welcome to another community spotlight article where we shine a light on open source EDA projects. If you want to submit a project, please do so here.&#xA;sv2v converts SystemVerilog (IEEE 1800-2017) to Verilog (IEEE 1364-2005), with an emphasis on supporting synthesizable language constructs.&#xA;Zachary Snow&amp;rsquo;s Bio I received my B.S. in computer science from Carnegie Mellon University in 2019. After graduating, I began working full-time as a software engineer in systematic trading.</description>
     </item>
     <item>
       <title>Tabby CAD Suite version 20230208 released!</title>
       <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230208-released/</link>
       <pubDate>Wed, 08 Feb 2023 00:00:00 +0000</pubDate>
       <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230208-released/</guid>
-      <description>Tabby CAD Suite version 20230208 released!
-The February release of Tabby CAD Suite is now available for download. Notable changes in this version include:
-SBY can now use Yosys’s builtin simulation command “sim” to generate counter-example traces. This can be enabled with the “vcd_sim on” option and will become the default in a later release. Using Yosys’s “sim” command, SBY now supports writing traces in gtkwave’s FST format in addition to the VCD format.</description>
+      <description>Tabby CAD Suite version 20230208 released!&#xA;The February release of Tabby CAD Suite is now available for download. Notable changes in this version include:&#xA;SBY can now use Yosys’s builtin simulation command “sim” to generate counter-example traces. This can be enabled with the “vcd_sim on” option and will become the default in a later release. Using Yosys’s “sim” command, SBY now supports writing traces in gtkwave’s FST format in addition to the VCD format.</description>
     </item>
     <item>
       <title>Tillitis and YosysHQ</title>
       <link>http://blog.yosyshq.com/p/tillitis-and-yosyshq/</link>
       <pubDate>Mon, 06 Feb 2023 11:56:24 +0100</pubDate>
       <guid>http://blog.yosyshq.com/p/tillitis-and-yosyshq/</guid>
-      <description>We are happy to announce that we are working with Tillitis on their next generation of USB security key.
-Their current model TKey™ is open source hardware and software. It uses a Lattice iCE40, chosen due to it being supported by our open source FPGA tools.
-The new version includes an upgraded FPGA with more security features. YosysHQ will be working to add support for this FPGA to NextPNR.
-The best news is that the work will be open sourced so you will soon have a new family of FPGAs to experiment with!</description>
+      <description>We are happy to announce that we are working with Tillitis on their next generation of USB security key.&#xA;Their current model TKey™ is open source hardware and software. It uses a Lattice iCE40, chosen due to it being supported by our open source FPGA tools.&#xA;The new version includes an upgraded FPGA with more security features. YosysHQ will be working to add support for this FPGA to NextPNR.&#xA;The best news is that the work will be open sourced so you will soon have a new family of FPGAs to experiment with!</description>
     </item>
     <item>
       <title>3D raytraced game with open source C to FPGA toolchain</title>
       <link>http://blog.yosyshq.com/p/3d-raytracing/</link>
       <pubDate>Fri, 03 Feb 2023 12:00:00 +0200</pubDate>
       <guid>http://blog.yosyshq.com/p/3d-raytracing/</guid>
-      <description>This guest post is by Victor Suarez Rovere and Julian Kemmerer.
-3D raytraced game using fully open source “C to FPGA” toolchain Sphery vs. Shapes is the world&amp;rsquo;s first 3D raytraced game implemented completely as digital logic. This is all made possible by combining the OSS CAD Suite with CFlexHDL and PipelineC.
-Summary In this article we present a tool flow that takes C++ code describing a raytraced game, and produces digital logic that can be implemented in off-the-shelf FPGAs (with no hard or soft CPU used).</description>
+      <description>This guest post is by Victor Suarez Rovere and Julian Kemmerer.&#xA;3D raytraced game using fully open source “C to FPGA” toolchain Sphery vs. Shapes is the world&amp;rsquo;s first 3D raytraced game implemented completely as digital logic. This is all made possible by combining the OSS CAD Suite with CFlexHDL and PipelineC.&#xA;Summary In this article we present a tool flow that takes C++ code describing a raytraced game, and produces digital logic that can be implemented in off-the-shelf FPGAs (with no hard or soft CPU used).</description>
     </item>
     <item>
       <title>Tabby CAD Suite version 20230104 released!</title>
       <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230104-released/</link>
       <pubDate>Wed, 04 Jan 2023 00:00:00 +0000</pubDate>
       <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230104-released/</guid>
-      <description>Tabby CAD Suite version 20230104 released!
-The January release of Tabby CAD Suite is now available for download. With the holidays there have been only a few changes, of note:
-SBY output is now in color. In other YosysHQ news: We have reformatted our service table to clarify some points we&amp;rsquo;ve seen cause confusion. Don&amp;rsquo;t worry, our prices remain the same as they&amp;rsquo;ve always been! Our first community spotlight article is about Tbengy, which is a Python Tool for SV/UVM Testbench Generation and RTL Synthesis.</description>
+      <description>Tabby CAD Suite version 20230104 released!&#xA;The January release of Tabby CAD Suite is now available for download. With the holidays there have been only a few changes, of note:&#xA;SBY output is now in color. In other YosysHQ news: We have reformatted our service table to clarify some points we&amp;rsquo;ve seen cause confusion. Don&amp;rsquo;t worry, our prices remain the same as they&amp;rsquo;ve always been! Our first community spotlight article is about Tbengy, which is a Python Tool for SV/UVM Testbench Generation and RTL Synthesis.</description>
     </item>
     <item>
       <title>Community Spotlight - Tbengy</title>
       <link>http://blog.yosyshq.com/p/community-spotlight-tbengy/</link>
       <pubDate>Wed, 14 Dec 2022 10:23:57 +0100</pubDate>
       <guid>http://blog.yosyshq.com/p/community-spotlight-tbengy/</guid>
-      <description>Tbengy Welcome to the first in a series of short articles where we shine the light on open source EDA projects. If you want to submit a project, please do so here.
-Tbengy by Prasad Pandit is a Python Tool for SV/UVM Testbench Generation and RTL Synthesis. The tool uses newly available capability of the Vivado tool by Xilinx to compile and run SV/UVM Testbench and syntheize RTL for Digilent FPGA Boards.</description>
+      <description>Tbengy Welcome to the first in a series of short articles where we shine the light on open source EDA projects. If you want to submit a project, please do so here.&#xA;Tbengy by Prasad Pandit is a Python Tool for SV/UVM Testbench Generation and RTL Synthesis. The tool uses newly available capability of the Vivado tool by Xilinx to compile and run SV/UVM Testbench and syntheize RTL for Digilent FPGA Boards.</description>
     </item>
     <item>
       <title>Tabby CAD Suite version 20221205 released!</title>
       <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20221205-released/</link>
       <pubDate>Mon, 12 Dec 2022 00:00:00 +0000</pubDate>
       <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20221205-released/</guid>
-      <description>The December release of Tabby CAD Suite is now available for download. Notable changes in this version include:
-We have improved support for SystemVerilog config elements. You can now have multiple configurations defined, and select which configuration to elaborate with verific -import &amp;lt;configname&amp;gt;. We are working on improving the TCL integration in Yosys. There is now an interactive TCL shell mode: use yosys -C to enter the TCL shell. You can now also use the following command to get the output of a command returned to TCL without the use of an intermediate file: set command_output [yosys tee -s result.</description>
+      <description>The December release of Tabby CAD Suite is now available for download. Notable changes in this version include:&#xA;We have improved support for SystemVerilog config elements. You can now have multiple configurations defined, and select which configuration to elaborate with verific -import &amp;lt;configname&amp;gt;. We are working on improving the TCL integration in Yosys. There is now an interactive TCL shell mode: use yosys -C to enter the TCL shell. You can now also use the following command to get the output of a command returned to TCL without the use of an intermediate file: set command_output [yosys tee -s result.</description>
     </item>
     <item>
       <title>Logic Primitive Transformations with Yosys Techmap</title>
       <link>http://blog.yosyshq.com/p/logic-primitive-transformations-with-yosys-techmap/</link>
       <pubDate>Thu, 24 Nov 2022 09:38:52 +0200</pubDate>
       <guid>http://blog.yosyshq.com/p/logic-primitive-transformations-with-yosys-techmap/</guid>
-      <description>This guest post is by Tom Verbeure.
-Introduction If you&amp;rsquo;re reading this you probably already know that Yosys is an open source logic synthesis tool. You may also know that it&amp;rsquo;s much more than that: in my earlier blog post about CXXRTL I call it the swiss army knife of digital logic manipulation.
-In most cases, using Yosys means running pre-made scripts that contain Yosys commands: when I&amp;rsquo;m synthesizing RTL for an FPGA of the Lattice iCE40 family, the synth_ice40 command is usually sufficient to convert my RTL into a netlist that can be sent straight to nextpnr for place, route, and bitstream creation.</description>
+      <description>This guest post is by Tom Verbeure.&#xA;Introduction If you&amp;rsquo;re reading this you probably already know that Yosys is an open source logic synthesis tool. You may also know that it&amp;rsquo;s much more than that: in my earlier blog post about CXXRTL I call it the swiss army knife of digital logic manipulation.&#xA;In most cases, using Yosys means running pre-made scripts that contain Yosys commands: when I&amp;rsquo;m synthesizing RTL for an FPGA of the Lattice iCE40 family, the synth_ice40 command is usually sufficient to convert my RTL into a netlist that can be sent straight to nextpnr for place, route, and bitstream creation.</description>
     </item>
     <item>
       <title>Tabby CAD Suite version 20221108 released!</title>
       <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20221108-released/</link>
       <pubDate>Thu, 24 Nov 2022 00:00:00 +0000</pubDate>
       <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20221108-released/</guid>
-      <description>The November release of Tabby CAD Suite is now available for download. Notable changes in this version include:
-We have experimentally added support for EDIF and Liberty verific parsers. They can be used either with the verific [-liberty|-edif] or the read [-liberty|-edif] command. We are evaluating whether it is of interest for us to keep these long-term, so please let us know if you use them and what your experience is!</description>
+      <description>The November release of Tabby CAD Suite is now available for download. Notable changes in this version include:&#xA;We have experimentally added support for EDIF and Liberty verific parsers. They can be used either with the verific [-liberty|-edif] or the read [-liberty|-edif] command. We are evaluating whether it is of interest for us to keep these long-term, so please let us know if you use them and what your experience is!</description>
     </item>
     <item>
       <title>Tabby CAD Suite version 20221011 released!</title>
       <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20221011-released/</link>
       <pubDate>Mon, 17 Oct 2022 00:00:00 +0000</pubDate>
       <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20221011-released/</guid>
-      <description>The October release of Tabby CAD Suite is now available for download.
-The read and verific commands now support here-documents in scripts, the same way as read_verilog. This is useful e.g. to have small self-contained tests in a single file such as:
-read -sv &amp;lt;&amp;lt;EOT module top(input clk, output reg [1:0] q); wire [1:0] x = 2&#39;b10; always @(posedge clk) q &amp;lt;= x &amp;amp; 2&#39;b11; endmodule EOT prep -top top sim -clock clk -n 1 -w top select -assert-count 1 a:init=2&#39;b10 top/q %i </description>
+      <description>The October release of Tabby CAD Suite is now available for download.&#xA;The read and verific commands now support here-documents in scripts, the same way as read_verilog. This is useful e.g. to have small self-contained tests in a single file such as:&#xA;read -sv &amp;lt;&amp;lt;EOT module top(input clk, output reg [1:0] q); wire [1:0] x = 2&#39;b10; always @(posedge clk) q &amp;lt;= x &amp;amp; 2&#39;b11; endmodule EOT prep -top top sim -clock clk -n 1 -w top select -assert-count 1 a:init=2&#39;b10 top/q %i </description>
     </item>
     <item>
       <title>Introducing the Colorlight 5A-75B board</title>
       <link>http://blog.yosyshq.com/p/colorlight-part-1/</link>
       <pubDate>Sun, 16 Oct 2022 18:17:00 +0200</pubDate>
       <guid>http://blog.yosyshq.com/p/colorlight-part-1/</guid>
-      <description>This guest post is the first in a two part series by Chris Lasocki. Part 2 is now available here.
-It seems that it was an accident - a generic part of a LED display has become a low cost FPGA development board. The board in question is the Colorlight 5A-75B, which is a so-called receiver card. Featuring a Lattice ECP5 FPGA, supported by Yosys, it allows you to leverage a fully open-source FPGA development toolchain.</description>
+      <description>This guest post is the first in a two part series by Chris Lasocki. Part 2 is now available here.&#xA;It seems that it was an accident - a generic part of a LED display has become a low cost FPGA development board. The board in question is the Colorlight 5A-75B, which is a so-called receiver card. Featuring a Lattice ECP5 FPGA, supported by Yosys, it allows you to leverage a fully open-source FPGA development toolchain.</description>
     </item>
     <item>
       <title>Tabby CAD Suite version 20220906 released!</title>
       <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220906-released/</link>
       <pubDate>Tue, 06 Sep 2022 00:00:00 +0000</pubDate>
       <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220906-released/</guid>
-      <description>The September release of Tabby CAD Suite is now available for download.
-SBY SBY now runs multiple tasks in parallel. Additionally it now limits the number of concurrently running subprocesses to the available number of cores. The &amp;ndash;sequential command line option allows you to opt out of running tasks in parallel and the -j N option sets the limit of concurrent subprocesses to N instead of the default. All this is optionally integrated with the make jobserver protocol to enforce the concurrent process limit across other processes launched by make.</description>
+      <description>The September release of Tabby CAD Suite is now available for download.&#xA;SBY SBY now runs multiple tasks in parallel. Additionally it now limits the number of concurrently running subprocesses to the available number of cores. The &amp;ndash;sequential command line option allows you to opt out of running tasks in parallel and the -j N option sets the limit of concurrent subprocesses to N instead of the default. All this is optionally integrated with the make jobserver protocol to enforce the concurrent process limit across other processes launched by make.</description>
     </item>
     <item>
       <title>Tabby CAD Suite version 20220805 released!</title>
       <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220805-released/</link>
       <pubDate>Fri, 05 Aug 2022 00:00:00 +0000</pubDate>
       <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220805-released/</guid>
-      <description>The August release of Tabby CAD Suite is now available for download.
-SBY SBY now uses a more precise logic loop analysis, removing the need to run simplemap on coarse-grain cells that re-use parts of a signal. In other YosysHQ news Since we introduced the new autotune option, we’ve now written up a blogpost with an example on how to get started. </description>
+      <description>The August release of Tabby CAD Suite is now available for download.&#xA;SBY SBY now uses a more precise logic loop analysis, removing the need to run simplemap on coarse-grain cells that re-use parts of a signal. In other YosysHQ news Since we introduced the new autotune option, we’ve now written up a blogpost with an example on how to get started. </description>
     </item>
     <item>
       <title>Autotune</title>
       <link>http://blog.yosyshq.com/p/sby-autotune/</link>
       <pubDate>Wed, 27 Jul 2022 14:41:35 +0200</pubDate>
       <guid>http://blog.yosyshq.com/p/sby-autotune/</guid>
-      <description>Sby, our frontend for formal verification, makes it easy to use Yosys with the various open source verification tools that are included in our CAD suites. Sby integrates these tools as engines and provides a unified interface. Additionally, many of the verification tools internally use lower-level tools like SAT and SMT solvers and allow the user to select between different supported solvers.
-Most verification tasks can be performed by several of the supported engines and solvers.</description>
+      <description>Sby, our frontend for formal verification, makes it easy to use Yosys with the various open source verification tools that are included in our CAD suites. Sby integrates these tools as engines and provides a unified interface. Additionally, many of the verification tools internally use lower-level tools like SAT and SMT solvers and allow the user to select between different supported solvers.&#xA;Most verification tasks can be performed by several of the supported engines and solvers.</description>
     </item>
     <item>
       <title>Tabby CAD Suite version 20220706 released!</title>
       <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220706-released/</link>
       <pubDate>Wed, 06 Jul 2022 00:00:00 +0000</pubDate>
       <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220706-released/</guid>
-      <description>The July release of Tabby CAD Suite is now available for download.
-SBY An autotune function! This won’t fix your singing, but we hope it will help you to choose a good solver for your application. Please check the new documentation here to get started. Please let us know if you try the new feature. We will write a blogpost about it for the next newsletter. In other YosysHQ news Since tribuf support was added in May, we wrote a short blogpost about Matt’s use of it for his latest ASIC submission.</description>
+      <description>The July release of Tabby CAD Suite is now available for download.&#xA;SBY An autotune function! This won’t fix your singing, but we hope it will help you to choose a good solver for your application. Please check the new documentation here to get started. Please let us know if you try the new feature. We will write a blogpost about it for the next newsletter. In other YosysHQ news Since tribuf support was added in May, we wrote a short blogpost about Matt’s use of it for his latest ASIC submission.</description>
     </item>
     <item>
       <title>Formal Tristate Support</title>
@@ -300,97 +251,70 @@ SBY An autotune function! This won’t fix your singing, but we hope it will hel
       <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220610-released/</link>
       <pubDate>Fri, 10 Jun 2022 00:00:00 +0000</pubDate>
       <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220610-released/</guid>
-      <description>The June release of Tabby CAD Suite is now available for download.
-Yosys A big overhaul of memory inference in Yosys. The new pass memory_libmap supports a wider variety of memory patterns, such as single-port memories or asymmetric memories. It will also strictly respect verilog semantics in cases of address collision, adding emulation circuitry to ensure the synthesized behavior matches simulation. To omit the emulation circuitry even in cases where it is required for correctness, you can add the (* no_rw_check *) attribute to the array declaration of the memory.</description>
+      <description>The June release of Tabby CAD Suite is now available for download.&#xA;Yosys A big overhaul of memory inference in Yosys. The new pass memory_libmap supports a wider variety of memory patterns, such as single-port memories or asymmetric memories. It will also strictly respect verilog semantics in cases of address collision, adding emulation circuitry to ensure the synthesized behavior matches simulation. To omit the emulation circuitry even in cases where it is required for correctness, you can add the (* no_rw_check *) attribute to the array declaration of the memory.</description>
     </item>
     <item>
       <title>Tabby CAD Suite version 20220512 released!</title>
       <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220512-released/</link>
       <pubDate>Thu, 12 May 2022 00:00:00 +0000</pubDate>
       <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220512-released/</guid>
-      <description>The May release of Tabby CAD Suite is now available for download.
-SBY The tribuf pass now supports a -formal option that converts inferred tri-state buffers within a module into equivalent non-tri-state logic for formal verification. It automatically adds assertions that detect multiple drivers driving the same net simultaneously. (When using tri-state I/O across modules, tribuf -formal should be preceded by a flatten pass). Several changes in the handling of x values during formal verification.</description>
+      <description>The May release of Tabby CAD Suite is now available for download.&#xA;SBY The tribuf pass now supports a -formal option that converts inferred tri-state buffers within a module into equivalent non-tri-state logic for formal verification. It automatically adds assertions that detect multiple drivers driving the same net simultaneously. (When using tri-state I/O across modules, tribuf -formal should be preceded by a flatten pass). Several changes in the handling of x values during formal verification.</description>
     </item>
     <item>
       <title>Teodor-Dumitru and the Complexity of Adder Implementations in Hardware</title>
       <link>http://blog.yosyshq.com/p/optimising-adders/</link>
       <pubDate>Fri, 06 May 2022 09:38:52 +0200</pubDate>
       <guid>http://blog.yosyshq.com/p/optimising-adders/</guid>
-      <description>Teodor-Dumitru Ene will be presenting his work on adder optimisations, he&amp;rsquo;ll be covering:
-Prefix sums His research Adder-specific quirks and optimizations Future goals Questions! Please join us:
-Tuesday, 10 May · 17:30 – 18:30 CEST Streaming on youtube </description>
+      <description>Teodor-Dumitru Ene will be presenting his work on adder optimisations, he&amp;rsquo;ll be covering:&#xA;Prefix sums His research Adder-specific quirks and optimizations Future goals Questions! Please join us:&#xA;Tuesday, 10 May · 17:30 – 18:30 CEST Streaming on youtube </description>
     </item>
     <item>
       <title>Tabby CAD Suite version 20220406 released!</title>
       <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220406-released/</link>
       <pubDate>Wed, 06 Apr 2022 00:00:00 +0000</pubDate>
       <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220406-released/</guid>
-      <description>The April release of Tabby CAD Suite is now available for download.
-Yosys The sim command now allows co-simulation with stimulus values from aiger and btor2 witness files as well as traces in VCD or FST format. Co-simulation of designs with multiple clock domains was improved. SBY The --keep-going option was added to the smtbmc engine. With this option, the solver will continue to check the remaining properties even after an assertion fails.</description>
+      <description>The April release of Tabby CAD Suite is now available for download.&#xA;Yosys The sim command now allows co-simulation with stimulus values from aiger and btor2 witness files as well as traces in VCD or FST format. Co-simulation of designs with multiple clock domains was improved. SBY The --keep-going option was added to the smtbmc engine. With this option, the solver will continue to check the remaining properties even after an assertion fails.</description>
     </item>
     <item>
       <title>Open Source Silicon with Yosys</title>
       <link>http://blog.yosyshq.com/p/open-source-silicon-with-yosys/</link>
       <pubDate>Mon, 28 Feb 2022 11:23:54 +0100</pubDate>
       <guid>http://blog.yosyshq.com/p/open-source-silicon-with-yosys/</guid>
-      <description>Yosys is probably best known for providing synthesis for FPGA targets, but it&amp;rsquo;s a very flexible tool capable of a lot more.
-OpenLane, SiliconCompiler and Coriolis2 are 3 examples of open source ASIC flows, which has been an active field of development over the last year.
-We&amp;rsquo;re very happy to see our tools get used in the first Google sponsored tapeouts, helping to make the world&amp;rsquo;s first chips made with an open source PDK, and open source all the way down to the designs.</description>
+      <description>Yosys is probably best known for providing synthesis for FPGA targets, but it&amp;rsquo;s a very flexible tool capable of a lot more.&#xA;OpenLane, SiliconCompiler and Coriolis2 are 3 examples of open source ASIC flows, which has been an active field of development over the last year.&#xA;We&amp;rsquo;re very happy to see our tools get used in the first Google sponsored tapeouts, helping to make the world&amp;rsquo;s first chips made with an open source PDK, and open source all the way down to the designs.</description>
     </item>
     <item>
       <title>Why Asynchronous Load Flip-Flops Should Be Avoided</title>
       <link>http://blog.yosyshq.com/p/async-load-ff/</link>
       <pubDate>Tue, 30 Nov 2021 00:00:00 +0000</pubDate>
       <guid>http://blog.yosyshq.com/p/async-load-ff/</guid>
-      <description>Code: https://github.com/YosysHQ-Docs/Blog-Async-Load-FFs
-Part 1: The Bad News We have recently added support for asynchronous load flip-flops to Yosys for a customer project. However, we consider this a problematic feature in a (System-)Verilog synthesis tool, and thus I’d like to take this opportunity to explain why one should avoid using asynchronous load flip-flops in new (System-)Verilog designs.
-What are asynchronous load flip-flops An asynchronous load flip-flop is a type of flip-flop with asynchronous reset for which the reset value is not a compile-time / synthesis-time constant.</description>
+      <description>Code: https://github.com/YosysHQ-Docs/Blog-Async-Load-FFs&#xA;Part 1: The Bad News We have recently added support for asynchronous load flip-flops to Yosys for a customer project. However, we consider this a problematic feature in a (System-)Verilog synthesis tool, and thus I’d like to take this opportunity to explain why one should avoid using asynchronous load flip-flops in new (System-)Verilog designs.&#xA;What are asynchronous load flip-flops An asynchronous load flip-flop is a type of flip-flop with asynchronous reset for which the reset value is not a compile-time / synthesis-time constant.</description>
     </item>
     <item>
       <title>New pricing for small companies</title>
       <link>http://blog.yosyshq.com/p/pricing-for-small-companies/</link>
       <pubDate>Mon, 26 Jul 2021 15:35:40 +0200</pubDate>
       <guid>http://blog.yosyshq.com/p/pricing-for-small-companies/</guid>
-      <description>YosysHQ are pleased to announce a new pricing option for small companies with one full time engineer.
-For just €500 per month (excl. VAT), you can get our ‘Solo bundle’:
-2 nodes of TabbyCAD Suite, offering industry compatible language support and our formal verification tools and verification IP. Unlimited number of users/processes per node. (Up to 32 CPUs per node.) Not time limited, use in your continuous integration systems. Support that includes potential for custom work and access to our technical team.</description>
+      <description>YosysHQ are pleased to announce a new pricing option for small companies with one full time engineer.&#xA;For just €500 per month (excl. VAT), you can get our ‘Solo bundle’:&#xA;2 nodes of TabbyCAD Suite, offering industry compatible language support and our formal verification tools and verification IP. Unlimited number of users/processes per node. (Up to 32 CPUs per node.) Not time limited, use in your continuous integration systems. Support that includes potential for custom work and access to our technical team.</description>
     </item>
     <item>
       <title>App Note 109</title>
       <link>http://blog.yosyshq.com/p/ap109/</link>
       <pubDate>Wed, 07 Jul 2021 12:37:04 +0200</pubDate>
       <guid>http://blog.yosyshq.com/p/ap109/</guid>
-      <description>This Application Note was written with the intention of showing a brief introduction to SVA, and is definitely not a substitute for extensive training. To learn more about formal verification and SVA, it is recommended to book the course given by the FPV specialists at YosysHQ.
-A brief history of SystemVerilog Assertions SVA layers definition and examples Assertion types, sequential property operators A short description of liveness and safety properties Practical examples using the sequence builder module written by our CTO Claire Xen.</description>
+      <description>This Application Note was written with the intention of showing a brief introduction to SVA, and is definitely not a substitute for extensive training. To learn more about formal verification and SVA, it is recommended to book the course given by the FPV specialists at YosysHQ.&#xA;A brief history of SystemVerilog Assertions SVA layers definition and examples Assertion types, sequential property operators A short description of liveness and safety properties Practical examples using the sequence builder module written by our CTO Claire Xen.</description>
     </item>
     <item>
       <title>App Note 120</title>
       <link>http://blog.yosyshq.com/p/ap120/</link>
       <pubDate>Thu, 20 May 2021 14:04:45 +0200</pubDate>
       <guid>http://blog.yosyshq.com/p/ap120/</guid>
-      <description>For a long time people have asked us for quality long form content that shows how to get the best from our formal tools.
-We have started a series of app notes, with the first being about cover and witness for SVA properties. Otherwise known as &amp;lsquo;Am I testing what I think I&amp;rsquo;m testing&amp;rsquo;!
-What You will learn in this app note:
-Default clocking and default disable declarations Sequences and cycle delays Overlapping and non-overlapping implication syntax and semantic Weak precondition cover and witness How to apply that to a practical HDL code example https://yosyshq.</description>
+      <description>For a long time people have asked us for quality long form content that shows how to get the best from our formal tools.&#xA;We have started a series of app notes, with the first being about cover and witness for SVA properties. Otherwise known as &amp;lsquo;Am I testing what I think I&amp;rsquo;m testing&amp;rsquo;!&#xA;What You will learn in this app note:&#xA;Default clocking and default disable declarations Sequences and cycle delays Overlapping and non-overlapping implication syntax and semantic Weak precondition cover and witness How to apply that to a practical HDL code example https://yosyshq.</description>
     </item>
     <item>
       <title>Hello World!</title>
       <link>http://blog.yosyshq.com/p/hello/</link>
       <pubDate>Mon, 08 Feb 2021 00:00:00 +0000</pubDate>
       <guid>http://blog.yosyshq.com/p/hello/</guid>
-      <description>YosysHQ.com is the new home for the team maintaining Yosys and the related Open Source EDA projects, and the commercial products and services we offer.
-Our team is led by N. Engelhardt as CEO, Claire Wolf as CTO, and Matt Venn as CSO. We are looking to work with more people, so feel free to contact us: contact@yosyshq.com
-Tabby CAD Suite is a bundle of our well-known Open Source EDA software packages, combined with additional components that allow seamless integration of our tools in typical industrial digital design environments.</description>
-    </item>
-    <item>
-      <title>Yosys User&#39;s Group</title>
-      <link>http://blog.yosyshq.com/p/yosys-users-group/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://blog.yosyshq.com/p/yosys-users-group/</guid>
-      <description>We have recently started a Yosys User&amp;rsquo;s Group. You can see the minutes of our first 2 calls here.
-So far we&amp;rsquo;ve talked about:
-What people are using Yosys for, How things can be improved, Introducing our new tools, A demo of our new formal equivalence tool - eqy. If you&amp;rsquo;d like to join, then please sign up to the newsletter or follow us on:
-linkedin, mastodon or twitter. </description>
+      <description>YosysHQ.com is the new home for the team maintaining Yosys and the related Open Source EDA projects, and the commercial products and services we offer.&#xA;Our team is led by N. Engelhardt as CEO, Claire Wolf as CTO, and Matt Venn as CSO. We are looking to work with more people, so feel free to contact us: contact@yosyshq.com&#xA;Tabby CAD Suite is a bundle of our well-known Open Source EDA software packages, combined with additional components that allow seamless integration of our tools in typical industrial digital design environments.</description>
     </item>
   </channel>
 </rss>

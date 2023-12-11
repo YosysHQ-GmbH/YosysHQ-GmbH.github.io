@@ -13,72 +13,56 @@
       <link>http://blog.yosyshq.com/p/solving-sudoku-with-sby/</link>
       <pubDate>Mon, 06 Nov 2023 12:00:00 +0200</pubDate>
       <guid>http://blog.yosyshq.com/p/solving-sudoku-with-sby/</guid>
-      <description>This guest post is by Theophile Loubiere.
-Solving a Sudoku with SBY and Formal Verification Recently, I began using SBY to formally verify my designs. You can check out my first attempt on my blog learn-fpga-easily. Formal Verification helps ensure that certain properties of your design always remain true, such as:
-Bus arbitration: &amp;ldquo;Only one master can receive the bus grant at any given time.&amp;rdquo; Overflow and Underflow: &amp;ldquo;The FIFO buffer will never overflow or underflow.</description>
+      <description>This guest post is by Theophile Loubiere.&#xA;Solving a Sudoku with SBY and Formal Verification Recently, I began using SBY to formally verify my designs. You can check out my first attempt on my blog learn-fpga-easily. Formal Verification helps ensure that certain properties of your design always remain true, such as:&#xA;Bus arbitration: &amp;ldquo;Only one master can receive the bus grant at any given time.&amp;rdquo; Overflow and Underflow: &amp;ldquo;The FIFO buffer will never overflow or underflow.</description>
     </item>
     <item>
       <title>How I went from blinker to RISC-V in 3 months</title>
       <link>http://blog.yosyshq.com/p/blinker-to-risc-v/</link>
       <pubDate>Mon, 15 May 2023 12:00:00 +0200</pubDate>
       <guid>http://blog.yosyshq.com/p/blinker-to-risc-v/</guid>
-      <description>This guest post is by Bastian Löher.
-How I went from blinker to RISC-V in 3 months How does one get started with programming FPGAs (field-programmable gate arrays)? Where does one even begin? Also, if you&amp;rsquo;ve ever wondered how a CPU works and how you can build your own, keep reading!
-TL;DR: Getting into FPGA programming nowadays isn&amp;rsquo;t hard anymore. Get a cheap board with at least one LED that is supported by an open toolchain, search for a tutorial, and get that LED blinking!</description>
+      <description>This guest post is by Bastian Löher.&#xA;How I went from blinker to RISC-V in 3 months How does one get started with programming FPGAs (field-programmable gate arrays)? Where does one even begin? Also, if you&amp;rsquo;ve ever wondered how a CPU works and how you can build your own, keep reading!&#xA;TL;DR: Getting into FPGA programming nowadays isn&amp;rsquo;t hard anymore. Get a cheap board with at least one LED that is supported by an open toolchain, search for a tutorial, and get that LED blinking!</description>
     </item>
     <item>
       <title>First gateware on the Colorlight 5A-75B board </title>
       <link>http://blog.yosyshq.com/p/colorlight-part-2/</link>
       <pubDate>Tue, 28 Mar 2023 18:17:00 +0200</pubDate>
       <guid>http://blog.yosyshq.com/p/colorlight-part-2/</guid>
-      <description>Welcome to the second part of the Colorlight 5A-75B article. You can find the first part here.
-In this blogpost I will show you how to set up, synthesize and program your first Verilog program on the ECP5 FPGA using the Yosys suite.
-The FPGA toolchain The FPGA workflow consists of a few more steps compared to the usual software toolchain workflow.
-The Verilog source, which is a description of the logic that makes up the FPGA design, first needs to be synthesized.</description>
+      <description>Welcome to the second part of the Colorlight 5A-75B article. You can find the first part here.&#xA;In this blogpost I will show you how to set up, synthesize and program your first Verilog program on the ECP5 FPGA using the Yosys suite.&#xA;The FPGA toolchain The FPGA workflow consists of a few more steps compared to the usual software toolchain workflow.&#xA;The Verilog source, which is a description of the logic that makes up the FPGA design, first needs to be synthesized.</description>
     </item>
     <item>
       <title>Tillitis and YosysHQ</title>
       <link>http://blog.yosyshq.com/p/tillitis-and-yosyshq/</link>
       <pubDate>Mon, 06 Feb 2023 11:56:24 +0100</pubDate>
       <guid>http://blog.yosyshq.com/p/tillitis-and-yosyshq/</guid>
-      <description>We are happy to announce that we are working with Tillitis on their next generation of USB security key.
-Their current model TKey™ is open source hardware and software. It uses a Lattice iCE40, chosen due to it being supported by our open source FPGA tools.
-The new version includes an upgraded FPGA with more security features. YosysHQ will be working to add support for this FPGA to NextPNR.
-The best news is that the work will be open sourced so you will soon have a new family of FPGAs to experiment with!</description>
+      <description>We are happy to announce that we are working with Tillitis on their next generation of USB security key.&#xA;Their current model TKey™ is open source hardware and software. It uses a Lattice iCE40, chosen due to it being supported by our open source FPGA tools.&#xA;The new version includes an upgraded FPGA with more security features. YosysHQ will be working to add support for this FPGA to NextPNR.&#xA;The best news is that the work will be open sourced so you will soon have a new family of FPGAs to experiment with!</description>
     </item>
     <item>
       <title>3D raytraced game with open source C to FPGA toolchain</title>
       <link>http://blog.yosyshq.com/p/3d-raytracing/</link>
       <pubDate>Fri, 03 Feb 2023 12:00:00 +0200</pubDate>
       <guid>http://blog.yosyshq.com/p/3d-raytracing/</guid>
-      <description>This guest post is by Victor Suarez Rovere and Julian Kemmerer.
-3D raytraced game using fully open source “C to FPGA” toolchain Sphery vs. Shapes is the world&amp;rsquo;s first 3D raytraced game implemented completely as digital logic. This is all made possible by combining the OSS CAD Suite with CFlexHDL and PipelineC.
-Summary In this article we present a tool flow that takes C++ code describing a raytraced game, and produces digital logic that can be implemented in off-the-shelf FPGAs (with no hard or soft CPU used).</description>
+      <description>This guest post is by Victor Suarez Rovere and Julian Kemmerer.&#xA;3D raytraced game using fully open source “C to FPGA” toolchain Sphery vs. Shapes is the world&amp;rsquo;s first 3D raytraced game implemented completely as digital logic. This is all made possible by combining the OSS CAD Suite with CFlexHDL and PipelineC.&#xA;Summary In this article we present a tool flow that takes C++ code describing a raytraced game, and produces digital logic that can be implemented in off-the-shelf FPGAs (with no hard or soft CPU used).</description>
     </item>
     <item>
       <title>Logic Primitive Transformations with Yosys Techmap</title>
       <link>http://blog.yosyshq.com/p/logic-primitive-transformations-with-yosys-techmap/</link>
       <pubDate>Thu, 24 Nov 2022 09:38:52 +0200</pubDate>
       <guid>http://blog.yosyshq.com/p/logic-primitive-transformations-with-yosys-techmap/</guid>
-      <description>This guest post is by Tom Verbeure.
-Introduction If you&amp;rsquo;re reading this you probably already know that Yosys is an open source logic synthesis tool. You may also know that it&amp;rsquo;s much more than that: in my earlier blog post about CXXRTL I call it the swiss army knife of digital logic manipulation.
-In most cases, using Yosys means running pre-made scripts that contain Yosys commands: when I&amp;rsquo;m synthesizing RTL for an FPGA of the Lattice iCE40 family, the synth_ice40 command is usually sufficient to convert my RTL into a netlist that can be sent straight to nextpnr for place, route, and bitstream creation.</description>
+      <description>This guest post is by Tom Verbeure.&#xA;Introduction If you&amp;rsquo;re reading this you probably already know that Yosys is an open source logic synthesis tool. You may also know that it&amp;rsquo;s much more than that: in my earlier blog post about CXXRTL I call it the swiss army knife of digital logic manipulation.&#xA;In most cases, using Yosys means running pre-made scripts that contain Yosys commands: when I&amp;rsquo;m synthesizing RTL for an FPGA of the Lattice iCE40 family, the synth_ice40 command is usually sufficient to convert my RTL into a netlist that can be sent straight to nextpnr for place, route, and bitstream creation.</description>
     </item>
     <item>
       <title>Introducing the Colorlight 5A-75B board</title>
       <link>http://blog.yosyshq.com/p/colorlight-part-1/</link>
       <pubDate>Sun, 16 Oct 2022 18:17:00 +0200</pubDate>
       <guid>http://blog.yosyshq.com/p/colorlight-part-1/</guid>
-      <description>This guest post is the first in a two part series by Chris Lasocki. Part 2 is now available here.
-It seems that it was an accident - a generic part of a LED display has become a low cost FPGA development board. The board in question is the Colorlight 5A-75B, which is a so-called receiver card. Featuring a Lattice ECP5 FPGA, supported by Yosys, it allows you to leverage a fully open-source FPGA development toolchain.</description>
+      <description>This guest post is the first in a two part series by Chris Lasocki. Part 2 is now available here.&#xA;It seems that it was an accident - a generic part of a LED display has become a low cost FPGA development board. The board in question is the Colorlight 5A-75B, which is a so-called receiver card. Featuring a Lattice ECP5 FPGA, supported by Yosys, it allows you to leverage a fully open-source FPGA development toolchain.</description>
     </item>
     <item>
       <title>Autotune</title>
       <link>http://blog.yosyshq.com/p/sby-autotune/</link>
       <pubDate>Wed, 27 Jul 2022 14:41:35 +0200</pubDate>
       <guid>http://blog.yosyshq.com/p/sby-autotune/</guid>
-      <description>Sby, our frontend for formal verification, makes it easy to use Yosys with the various open source verification tools that are included in our CAD suites. Sby integrates these tools as engines and provides a unified interface. Additionally, many of the verification tools internally use lower-level tools like SAT and SMT solvers and allow the user to select between different supported solvers.
-Most verification tasks can be performed by several of the supported engines and solvers.</description>
+      <description>Sby, our frontend for formal verification, makes it easy to use Yosys with the various open source verification tools that are included in our CAD suites. Sby integrates these tools as engines and provides a unified interface. Additionally, many of the verification tools internally use lower-level tools like SAT and SMT solvers and allow the user to select between different supported solvers.&#xA;Most verification tasks can be performed by several of the supported engines and solvers.</description>
     </item>
     <item>
       <title>Formal Tristate Support</title>
@@ -92,27 +76,21 @@ Most verification tasks can be performed by several of the supported engines and
       <link>http://blog.yosyshq.com/p/optimising-adders/</link>
       <pubDate>Fri, 06 May 2022 09:38:52 +0200</pubDate>
       <guid>http://blog.yosyshq.com/p/optimising-adders/</guid>
-      <description>Teodor-Dumitru Ene will be presenting his work on adder optimisations, he&amp;rsquo;ll be covering:
-Prefix sums His research Adder-specific quirks and optimizations Future goals Questions! Please join us:
-Tuesday, 10 May · 17:30 – 18:30 CEST Streaming on youtube </description>
+      <description>Teodor-Dumitru Ene will be presenting his work on adder optimisations, he&amp;rsquo;ll be covering:&#xA;Prefix sums His research Adder-specific quirks and optimizations Future goals Questions! Please join us:&#xA;Tuesday, 10 May · 17:30 – 18:30 CEST Streaming on youtube </description>
     </item>
     <item>
       <title>Open Source Silicon with Yosys</title>
       <link>http://blog.yosyshq.com/p/open-source-silicon-with-yosys/</link>
       <pubDate>Mon, 28 Feb 2022 11:23:54 +0100</pubDate>
       <guid>http://blog.yosyshq.com/p/open-source-silicon-with-yosys/</guid>
-      <description>Yosys is probably best known for providing synthesis for FPGA targets, but it&amp;rsquo;s a very flexible tool capable of a lot more.
-OpenLane, SiliconCompiler and Coriolis2 are 3 examples of open source ASIC flows, which has been an active field of development over the last year.
-We&amp;rsquo;re very happy to see our tools get used in the first Google sponsored tapeouts, helping to make the world&amp;rsquo;s first chips made with an open source PDK, and open source all the way down to the designs.</description>
+      <description>Yosys is probably best known for providing synthesis for FPGA targets, but it&amp;rsquo;s a very flexible tool capable of a lot more.&#xA;OpenLane, SiliconCompiler and Coriolis2 are 3 examples of open source ASIC flows, which has been an active field of development over the last year.&#xA;We&amp;rsquo;re very happy to see our tools get used in the first Google sponsored tapeouts, helping to make the world&amp;rsquo;s first chips made with an open source PDK, and open source all the way down to the designs.</description>
     </item>
     <item>
       <title>Hello World!</title>
       <link>http://blog.yosyshq.com/p/hello/</link>
       <pubDate>Mon, 08 Feb 2021 00:00:00 +0000</pubDate>
       <guid>http://blog.yosyshq.com/p/hello/</guid>
-      <description>YosysHQ.com is the new home for the team maintaining Yosys and the related Open Source EDA projects, and the commercial products and services we offer.
-Our team is led by N. Engelhardt as CEO, Claire Wolf as CTO, and Matt Venn as CSO. We are looking to work with more people, so feel free to contact us: contact@yosyshq.com
-Tabby CAD Suite is a bundle of our well-known Open Source EDA software packages, combined with additional components that allow seamless integration of our tools in typical industrial digital design environments.</description>
+      <description>YosysHQ.com is the new home for the team maintaining Yosys and the related Open Source EDA projects, and the commercial products and services we offer.&#xA;Our team is led by N. Engelhardt as CEO, Claire Wolf as CTO, and Matt Venn as CSO. We are looking to work with more people, so feel free to contact us: contact@yosyshq.com&#xA;Tabby CAD Suite is a bundle of our well-known Open Source EDA software packages, combined with additional components that allow seamless integration of our tools in typical industrial digital design environments.</description>
     </item>
   </channel>
 </rss>
