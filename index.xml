@@ -96,6 +96,29 @@ Logic locking is an active area of research, and we are happy to provide an open
 </description>
         </item>
         <item>
+        <title>Tabby CAD Suite version 20240116 released!</title>
+        <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20240116-released/</link>
+        <pubDate>Tue, 16 Jan 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20240116-released/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2023/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20240116 released!" /&gt;&lt;p&gt;The January release of Tabby CAD Suite is now available for download. Notable changes in this version include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;You can now pass arguments to tcl scripts from the command line by appending them at the end of the command, separated from the yosys arguments by &amp;ldquo;&amp;ndash;&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;yosys -c script.tcl &amp;ndash; arg1 arg2&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In other YosysHQ news:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;We published a new &lt;a class=&#34;link&#34; href=&#34;http://blog.yosyshq.com/p/community-spotlight-surfer/&#34; &gt;community spotlight by Frans Skarman&lt;/a&gt;. Introducing us to Surfer, which is a new web-based waveform viewer with a focus on extensibility and a snappy user interface.&lt;/li&gt;
+&lt;li&gt;We are hiring! If you know anyone currently looking for a job developing EDA tools, let them know about our &lt;a class=&#34;link&#34; href=&#34;https://www.yosyshq.com/jobs&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;jobs page&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Happy New Year,
+The YosysHQ Team&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Yosys User&#39;s Group</title>
         <link>http://blog.yosyshq.com/p/yosys-users-group/</link>
         <pubDate>Mon, 11 Dec 2023 16:52:39 +0200</pubDate>
