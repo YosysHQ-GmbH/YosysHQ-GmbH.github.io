@@ -2,16 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://blog.yosyshq.com/tags/blog/</loc>
+    <lastmod>2024-01-30T12:00:00+02:00</lastmod>
+  </url><url>
+    <loc>http://blog.yosyshq.com/p/logic-locking-with-moosic/</loc>
+    <lastmod>2024-01-30T12:00:00+02:00</lastmod>
+  </url><url>
     <loc>http://blog.yosyshq.com/post/</loc>
-    <lastmod>2023-12-11T16:52:39+02:00</lastmod>
+    <lastmod>2024-01-30T12:00:00+02:00</lastmod>
   </url><url>
     <loc>http://blog.yosyshq.com/tags/</loc>
-    <lastmod>2023-12-11T16:52:39+02:00</lastmod>
-  </url><url>
-    <loc>http://blog.yosyshq.com/p/yosys-users-group/</loc>
-    <lastmod>2023-12-11T16:52:39+02:00</lastmod>
+    <lastmod>2024-01-30T12:00:00+02:00</lastmod>
   </url><url>
     <loc>http://blog.yosyshq.com/</loc>
+    <lastmod>2024-01-30T12:00:00+02:00</lastmod>
+  </url><url>
+    <loc>http://blog.yosyshq.com/p/yosys-users-group/</loc>
     <lastmod>2023-12-11T16:52:39+02:00</lastmod>
   </url><url>
     <loc>http://blog.yosyshq.com/tags/yug/</loc>
@@ -28,9 +34,6 @@
   </url><url>
     <loc>http://blog.yosyshq.com/p/tabby-cad-suite-version-20231107-released/</loc>
     <lastmod>2023-11-07T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://blog.yosyshq.com/tags/blog/</loc>
-    <lastmod>2023-11-06T12:00:00+02:00</lastmod>
   </url><url>
     <loc>http://blog.yosyshq.com/p/solving-sudoku-with-sby/</loc>
     <lastmod>2023-11-06T12:00:00+02:00</lastmod>

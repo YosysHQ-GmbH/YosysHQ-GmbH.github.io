@@ -6,8 +6,15 @@
     <description>Recent content in Posts on YosysHQ Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 11 Dec 2023 16:52:39 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 30 Jan 2024 12:00:00 +0200</lastBuildDate>
     <atom:link href="http://blog.yosyshq.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Logic Locking with Moosic</title>
+      <link>http://blog.yosyshq.com/p/logic-locking-with-moosic/</link>
+      <pubDate>Tue, 30 Jan 2024 12:00:00 +0200</pubDate>
+      <guid>http://blog.yosyshq.com/p/logic-locking-with-moosic/</guid>
+      <description>This guest post is by Gabriel Gouvine.&#xA;Applying logic locking to a TinyTapeout design with Moosic When creating a design, most of us are not in possession of the lithography and manufacturing tools necessary to actually create the chip: we send our design to a foundry and they make the chip for us.&#xA;This requires a great deal of trust in the toolchain and the foundry: a malicious actor could introduce backdoors, or just steal the design to reuse it themselves.</description>
+    </item>
     <item>
       <title>Yosys User&#39;s Group</title>
       <link>http://blog.yosyshq.com/p/yosys-users-group/</link>
