@@ -23,12 +23,6 @@
     <loc>http://blog.yosyshq.com/p/tabby-cad-suite-version-20240116-released/</loc>
     <lastmod>2024-01-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/p/yosys-users-group/</loc>
-    <lastmod>2023-12-11T16:52:39+02:00</lastmod>
-  </url><url>
-    <loc>http://blog.yosyshq.com/tags/yug/</loc>
-    <lastmod>2023-12-11T16:52:39+02:00</lastmod>
-  </url><url>
     <loc>http://blog.yosyshq.com/tags/community-spotlight/</loc>
     <lastmod>2023-11-27T13:26:31+01:00</lastmod>
   </url><url>
@@ -182,5 +176,9 @@
     <loc>http://blog.yosyshq.com/categories/</loc>
   </url><url>
     <loc>http://blog.yosyshq.com/search/</loc>
+  </url><url>
+    <loc>http://blog.yosyshq.com/p/yosys-users-group/</loc>
+  </url><url>
+    <loc>http://blog.yosyshq.com/tags/yug/</loc>
   </url>
 </urlset>

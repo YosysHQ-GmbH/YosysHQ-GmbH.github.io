@@ -23,13 +23,6 @@
       <description>The January release of Tabby CAD Suite is now available for download. Notable changes in this version include:&#xA;You can now pass arguments to tcl scripts from the command line by appending them at the end of the command, separated from the yosys arguments by &amp;ldquo;&amp;ndash;&amp;rdquo;.&#xA;yosys -c script.tcl &amp;ndash; arg1 arg2&#xA;In other YosysHQ news:&#xA;We published a new community spotlight by Frans Skarman. Introducing us to Surfer, which is a new web-based waveform viewer with a focus on extensibility and a snappy user interface.</description>
     </item>
     <item>
-      <title>Yosys User&#39;s Group</title>
-      <link>http://blog.yosyshq.com/p/yosys-users-group/</link>
-      <pubDate>Mon, 11 Dec 2023 16:52:39 +0200</pubDate>
-      <guid>http://blog.yosyshq.com/p/yosys-users-group/</guid>
-      <description>We have recently started a Yosys User&amp;rsquo;s Group. You can see the minutes of our first 4 calls here.&#xA;If you&amp;rsquo;d like to join, then please sign up to the newsletter or follow us on:&#xA;linkedin, mastodon or twitter. YUG 4 - all the plugins! List of all the plugins we know of Gabriel Gouvine talks about how he wrote a logic locking plugin Martin Povišer talks about the Python plugin API YUG 3 - pick your primitives!</description>
-    </item>
-    <item>
       <title>Community Spotlight - Surfer</title>
       <link>http://blog.yosyshq.com/p/community-spotlight-surfer/</link>
       <pubDate>Mon, 27 Nov 2023 13:26:31 +0100</pubDate>
@@ -329,6 +322,13 @@
       <pubDate>Mon, 08 Feb 2021 00:00:00 +0000</pubDate>
       <guid>http://blog.yosyshq.com/p/hello/</guid>
       <description>YosysHQ.com is the new home for the team maintaining Yosys and the related Open Source EDA projects, and the commercial products and services we offer.&#xA;Our team is led by N. Engelhardt as CEO, Claire Wolf as CTO, and Matt Venn as CSO. We are looking to work with more people, so feel free to contact us: contact@yosyshq.com&#xA;Tabby CAD Suite is a bundle of our well-known Open Source EDA software packages, combined with additional components that allow seamless integration of our tools in typical industrial digital design environments.</description>
+    </item>
+    <item>
+      <title>Yosys User&#39;s Group</title>
+      <link>http://blog.yosyshq.com/p/yosys-users-group/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://blog.yosyshq.com/p/yosys-users-group/</guid>
+      <description>We have recently started a Yosys User&amp;rsquo;s Group. You can see the minutes of our first 4 calls here.&#xA;If you&amp;rsquo;d like to join, then please sign up to the newsletter or follow us on:&#xA;linkedin, mastodon or twitter. YUG 5 - SystemVerilog with Pulp’s SVase An introduction to Bender, Morty and SVase YUG 4 - all the plugins! List of all the plugins we know of Gabriel Gouvine talks about how he wrote a logic locking plugin Martin Povišer talks about the Python plugin API YUG 3 - pick your primitives!</description>
     </item>
   </channel>
 </rss>

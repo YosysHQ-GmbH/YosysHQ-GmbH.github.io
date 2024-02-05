@@ -23,13 +23,6 @@
       <description></description>
     </item>
     <item>
-      <title>yug</title>
-      <link>http://blog.yosyshq.com/tags/yug/</link>
-      <pubDate>Mon, 11 Dec 2023 16:52:39 +0200</pubDate>
-      <guid>http://blog.yosyshq.com/tags/yug/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>community spotlight</title>
       <link>http://blog.yosyshq.com/tags/community-spotlight/</link>
       <pubDate>Mon, 27 Nov 2023 13:26:31 +0100</pubDate>
@@ -48,6 +41,13 @@
       <link>http://blog.yosyshq.com/tags/app-note/</link>
       <pubDate>Wed, 07 Jul 2021 12:37:04 +0200</pubDate>
       <guid>http://blog.yosyshq.com/tags/app-note/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>yug</title>
+      <link>http://blog.yosyshq.com/tags/yug/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://blog.yosyshq.com/tags/yug/</guid>
       <description></description>
     </item>
   </channel>
