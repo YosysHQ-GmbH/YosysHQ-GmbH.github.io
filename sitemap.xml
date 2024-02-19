@@ -185,5 +185,7 @@
     <loc>http://blog.yosyshq.com/categories/</loc>
   </url><url>
     <loc>http://blog.yosyshq.com/search/</loc>
+  </url><url>
+    <loc>http://blog.yosyshq.com/yug/</loc>
   </url>
 </urlset>
