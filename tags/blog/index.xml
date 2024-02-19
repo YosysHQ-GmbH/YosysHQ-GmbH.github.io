@@ -6,8 +6,15 @@
     <description>Recent content in blog on YosysHQ Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 30 Jan 2024 12:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 12 Feb 2024 19:09:55 -0800</lastBuildDate>
     <atom:link href="http://blog.yosyshq.com/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sky130 SPICE, the KiCad way</title>
+      <link>http://blog.yosyshq.com/p/sky130-kicad-spice/</link>
+      <pubDate>Mon, 12 Feb 2024 19:09:55 -0800</pubDate>
+      <guid>http://blog.yosyshq.com/p/sky130-kicad-spice/</guid>
+      <description>This guest post is by Aki Van Ness.&#xA;Sky130 SPICE, the KiCad way Picture this, you&amp;rsquo;re working on a custom layout for Sky130, be it a PLL, or you&amp;rsquo;re just trying your hands at making some basic building blocks. You&amp;rsquo;ve got a plan, and and ready to start laying down some nets, and that&amp;rsquo;s when you must face it, the dreaded xschem!&#xA;All joking aside, xschem is an incredibly powerful schematic capture system, but that power comes at a cost.</description>
+    </item>
     <item>
       <title>Logic Locking with Moosic</title>
       <link>http://blog.yosyshq.com/p/logic-locking-with-moosic/</link>

@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='SPICE your ASIC schematics with KiCad!'><title>Sky130 SPICE, the KiCad way</title>
+
+<link rel='canonical' href='http://blog.yosyshq.com/p/sky130-kicad-spice/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Sky130 SPICE, the KiCad way'>
+<meta property='og:description' content='SPICE your ASIC schematics with KiCad!'>
+<meta property='og:url' content='http://blog.yosyshq.com/p/sky130-kicad-spice/'>
+<meta property='og:site_name' content='YosysHQ Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='blog' /><meta property='article:published_time' content='2024-02-12T19:09:55-08:00'/><meta property='article:modified_time' content='2024-02-12T19:09:55-08:00'/><meta property='og:image' content='http://blog.yosyshq.com/static-2024/sky130-kicad/banner.png' />
+<meta name="twitter:site" content="@YosysHQ"><meta name="twitter:title" content="Sky130 SPICE, the KiCad way">
+<meta name="twitter:description" content="SPICE your ASIC schematics with KiCad!"><meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content='http://blog.yosyshq.com/static-2024/sky130-kicad/banner.png' />
+    <link rel="shortcut icon" href="/favicon.png" />
+
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script><div class="container main-container flex on-phone--column extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/logos/YOS_mark_square_hu6bb8cbdbd2526742846cc00545eb2d90_33709_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="http://blog.yosyshq.com/">YosysHQ Blog</a></h1>
+        <h2 class="site-description"></h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/about'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/newsletter'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>Newsletter</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>Dark Mode</span>
+            </li>
+        
+    </ol>
+</aside>
+
+            <main class="main full-width">
+    <div id="article-toolbar">
+        <a href="http://blog.yosyshq.com/" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>Back</span>
+        </a>
+    </div>
+
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/sky130-kicad-spice/">
+                
+                    <img src="/static-2024/sky130-kicad/banner.png" loading="lazy" alt="Featured image of post Sky130 SPICE, the KiCad way" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+
+    <h2 class="article-title">
+        <a href="/p/sky130-kicad-spice/">Sky130 SPICE, the KiCad way</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+        SPICE your ASIC schematics with KiCad!
+    </h3>
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">Feb 12, 2024</time>
+    </footer></div>
+</header>
+
+    <section class="article-content">
+    <p><em>This guest post is by <a class="link" href="https://chaos.social/@lethalbit"  target="_blank" rel="noopener"
+    >Aki Van Ness</a>.</em></p>
+<h1 id="sky130-spice-the-kicad-way">Sky130 SPICE, the KiCad way</h1>
+<p>Picture this, you&rsquo;re working on a custom layout for <a class="link" href="https://skywater-pdk.readthedocs.io/en/main/"  target="_blank" rel="noopener"
+    >Sky130</a>, be it a PLL, or you&rsquo;re just trying your hands at making some basic building blocks. You&rsquo;ve got a plan, and and ready to start laying down some nets, and that&rsquo;s when you must face it, the dreaded <a class="link" href="https://xschem.sourceforge.io/stefan/index.html"  target="_blank" rel="noopener"
+    >xschem</a>!</p>
+<p>All joking aside, xschem is an incredibly powerful schematic capture system, but that power comes at a cost. xschem is fairly arcane to most, it has some graphical problems, and is just in general really hard to use if you&rsquo;re just starting out which makes rapid iteration difficult.</p>
+<p>Enter <a class="link" href="https://kicad.org/"  target="_blank" rel="noopener"
+    >KiCad</a>, a robust and Open Source EDA software package, while it is mainly used for PCB layout, we can leverage the schematic capture and built-in SPICE simulation, right?</p>
+<h2 id="introducing-kicad-pdk-libs">Introducing kicad-pdk-libs</h2>
+<p>A little while ago I ran into <a class="link" href="https://twitter.com/lethalbit/status/1498345181359321091"  target="_blank" rel="noopener"
+    >that exact problem</a>, and so I set out and made <a class="link" href="https://github.com/lethalbit/kicad-pdk-libs"  target="_blank" rel="noopener"
+    >kicad-pdk-libs</a>, a KiCad symbol library that adds schematic symbols for not only the basic building blocks of the Sky130 <a class="link" href="https://www.zerotoasiccourse.com/terminology/pdk/"  target="_blank" rel="noopener"
+    >PDK</a>, but also SPICE library linkage.</p>
+<p>With this you can do things as simple as just stubbing out a SPICE simulation for some of the primitive gates, or go down to the transistor level and build gates from scratch and simulate their characteristics!</p>
+<p><img src="/static-2024/sky130-kicad/kicad_nfet.png" alt="The KiCad &amp;ldquo;Choose Symbol&amp;rdquo; dialog showing a symbol called &amp;ldquo;sky130_nfet_01v8&amp;rdquo; being selected"  /></p>
+<p>As it stands, <a class="link" href="https://github.com/lethalbit/kicad-pdk-libs"  target="_blank" rel="noopener"
+    >kicad-pdk-libs</a> has almost 100% complete symbols for both the Sky130A and Sky130B PDKs, all the cell libraries as well as the base <code>sky130_fd_pr</code> primitives library. This allows you to not just put transistor level schematics together, but much larger schematics using all of the pre-made gates and cells in the library, including some SRAM blocks.</p>
+<h2 id="quick-n-dirty-inverter">Quick n&rsquo; Dirty Inverter</h2>
+<p>The basic example that almost everyone uses as their first CMOS device is the trusty inverter. As such we will quickly go over it here, if you wish for a more step-by-step guide with additional details, see the kicad-pdk-libs <a class="link" href="https://github.com/lethalbit/kicad-pdk-libs/blob/main/docs/intro.md"  target="_blank" rel="noopener"
+    >intro</a> in the docs.</p>
+<p>All you need to do is to throw a <code>sky130_pfet_01v8</code> and a <code>sky130_nfet_01v8</code> on top of each other with their drains facing each other, hook up <code>VCC</code> and <code>GND</code> and then join the gates and drains, and just like that, you have an inverter using the primitive Sky130 FET models.</p>
+<p><img src="/static-2024/sky130-kicad/inverter_sch.png" alt="The CMOS inverted as described above"  /></p>
+<p>Next set up some way to drive the sim, in my case I did a VDC source and then a VPULSE to drive the inverter, these are built-in to the standard KiCad SPICE library, it should look something like this when done:</p>
+<p><img src="/static-2024/sky130-kicad/schema.png" alt="Full view of the KiCad schematic showing the VDC and VPULSE elements along with the CMOS inverter previously shown"  /></p>
+<p>After that, you can add the following SPICE directives as a text element on the schematic, and make sure to replace <code>${PDK_ROOT}</code> with the path to your local PDK root:</p>
+<pre tabindex="0"><code class="language-spice" data-lang="spice">.tran 100f 100n
+.lib ${PDK_ROOT}/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+</code></pre><p>And finally, we&rsquo;re ready to run the sim! Open up KiCad&rsquo;s simulation utility and simply click the &ldquo;Run/Stop Simulation&rdquo; button, if all goes well, the simulation will run and then we can plot the <code>A</code> and <code>Y</code> signals.</p>
+<p><img src="/static-2024/sky130-kicad/sim_results.png" alt="The simulation results of the simple Sky130 CMOS inverter"  /></p>
+<p>Look at that! It&rsquo;s a working inverter!</p>
+<p>Something important to note, this simulation uses default parameters for the Sky130 transistors, you can get more accurate results by using <a class="link" href="http://opencircuitdesign.com/magic/"  target="_blank" rel="noopener"
+    >magic</a> to extract the transistor parameters from a layout and then attach them to the KiCad symbols by setting the <code>Sim.Params</code> property on the transistor.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>I hope this gives you a brief idea of what the <a class="link" href="https://github.com/lethalbit/kicad-pdk-libs"  target="_blank" rel="noopener"
+    >kicad-pdk-libs</a> is all about, and how you can use it to simulate your schematics for use in ASIC layout.</p>
+<p>While it may not be as powerful and scriptable as something like <a class="link" href="https://xschem.sourceforge.io/stefan/index.html"  target="_blank" rel="noopener"
+    >xschem</a>, especially right out of the box, I hope it is a useful tool for those just starting out, or for people who just need to throw things together quickly. Especially with the promising improvements coming to KiCad 8&rsquo;s simulation workspace, which will allow much more comprehensive and complete analysis.</p>
+<p>If you&rsquo;re interested in <a class="link" href="https://github.com/lethalbit/kicad-pdk-libs"  target="_blank" rel="noopener"
+    >kicad-pdk-libs</a> and what you&rsquo;ve read here, give it an <a class="link" href="https://github.com/lethalbit/kicad-pdk-libs/blob/main/docs/install.md"  target="_blank" rel="noopener"
+    >install</a>, and check out the <a class="link" href="https://github.com/lethalbit/kicad-pdk-libs/blob/main/docs/intro.md"  target="_blank" rel="noopener"
+    >intro</a> and the <a class="link" href="https://github.com/lethalbit/kicad-pdk-libs/tree/main/examples"  target="_blank" rel="noopener"
+    >examples</a> for more detailed information.</p>
+<p>Go have fun and make something cool!</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/blog/">blog</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+</aside>
+
+
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2024 YosysHQ Blog
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.2.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

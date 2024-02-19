@@ -6,7 +6,59 @@
         <description>Recent content on YosysHQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Tue, 30 Jan 2024 12:00:00 +0200</lastBuildDate><atom:link href="http://blog.yosyshq.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 12 Feb 2024 19:09:55 -0800</lastBuildDate><atom:link href="http://blog.yosyshq.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Sky130 SPICE, the KiCad way</title>
+        <link>http://blog.yosyshq.com/p/sky130-kicad-spice/</link>
+        <pubDate>Mon, 12 Feb 2024 19:09:55 -0800</pubDate>
+        
+        <guid>http://blog.yosyshq.com/p/sky130-kicad-spice/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2024/sky130-kicad/banner.png" alt="Featured image of post Sky130 SPICE, the KiCad way" /&gt;&lt;p&gt;&lt;em&gt;This guest post is by &lt;a class=&#34;link&#34; href=&#34;https://chaos.social/@lethalbit&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Aki Van Ness&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+&lt;h1 id=&#34;sky130-spice-the-kicad-way&#34;&gt;Sky130 SPICE, the KiCad way&lt;/h1&gt;
+&lt;p&gt;Picture this, you&amp;rsquo;re working on a custom layout for &lt;a class=&#34;link&#34; href=&#34;https://skywater-pdk.readthedocs.io/en/main/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Sky130&lt;/a&gt;, be it a PLL, or you&amp;rsquo;re just trying your hands at making some basic building blocks. You&amp;rsquo;ve got a plan, and and ready to start laying down some nets, and that&amp;rsquo;s when you must face it, the dreaded &lt;a class=&#34;link&#34; href=&#34;https://xschem.sourceforge.io/stefan/index.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;xschem&lt;/a&gt;!&lt;/p&gt;
+&lt;p&gt;All joking aside, xschem is an incredibly powerful schematic capture system, but that power comes at a cost. xschem is fairly arcane to most, it has some graphical problems, and is just in general really hard to use if you&amp;rsquo;re just starting out which makes rapid iteration difficult.&lt;/p&gt;
+&lt;p&gt;Enter &lt;a class=&#34;link&#34; href=&#34;https://kicad.org/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;KiCad&lt;/a&gt;, a robust and Open Source EDA software package, while it is mainly used for PCB layout, we can leverage the schematic capture and built-in SPICE simulation, right?&lt;/p&gt;
+&lt;h2 id=&#34;introducing-kicad-pdk-libs&#34;&gt;Introducing kicad-pdk-libs&lt;/h2&gt;
+&lt;p&gt;A little while ago I ran into &lt;a class=&#34;link&#34; href=&#34;https://twitter.com/lethalbit/status/1498345181359321091&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;that exact problem&lt;/a&gt;, and so I set out and made &lt;a class=&#34;link&#34; href=&#34;https://github.com/lethalbit/kicad-pdk-libs&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;kicad-pdk-libs&lt;/a&gt;, a KiCad symbol library that adds schematic symbols for not only the basic building blocks of the Sky130 &lt;a class=&#34;link&#34; href=&#34;https://www.zerotoasiccourse.com/terminology/pdk/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDK&lt;/a&gt;, but also SPICE library linkage.&lt;/p&gt;
+&lt;p&gt;With this you can do things as simple as just stubbing out a SPICE simulation for some of the primitive gates, or go down to the transistor level and build gates from scratch and simulate their characteristics!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2024/sky130-kicad/kicad_nfet.png&#34; alt=&#34;The KiCad &amp;amp;ldquo;Choose Symbol&amp;amp;rdquo; dialog showing a symbol called &amp;amp;ldquo;sky130_nfet_01v8&amp;amp;rdquo; being selected&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;As it stands, &lt;a class=&#34;link&#34; href=&#34;https://github.com/lethalbit/kicad-pdk-libs&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;kicad-pdk-libs&lt;/a&gt; has almost 100% complete symbols for both the Sky130A and Sky130B PDKs, all the cell libraries as well as the base &lt;code&gt;sky130_fd_pr&lt;/code&gt; primitives library. This allows you to not just put transistor level schematics together, but much larger schematics using all of the pre-made gates and cells in the library, including some SRAM blocks.&lt;/p&gt;
+&lt;h2 id=&#34;quick-n-dirty-inverter&#34;&gt;Quick n&amp;rsquo; Dirty Inverter&lt;/h2&gt;
+&lt;p&gt;The basic example that almost everyone uses as their first CMOS device is the trusty inverter. As such we will quickly go over it here, if you wish for a more step-by-step guide with additional details, see the kicad-pdk-libs &lt;a class=&#34;link&#34; href=&#34;https://github.com/lethalbit/kicad-pdk-libs/blob/main/docs/intro.md&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;intro&lt;/a&gt; in the docs.&lt;/p&gt;
+&lt;p&gt;All you need to do is to throw a &lt;code&gt;sky130_pfet_01v8&lt;/code&gt; and a &lt;code&gt;sky130_nfet_01v8&lt;/code&gt; on top of each other with their drains facing each other, hook up &lt;code&gt;VCC&lt;/code&gt; and &lt;code&gt;GND&lt;/code&gt; and then join the gates and drains, and just like that, you have an inverter using the primitive Sky130 FET models.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2024/sky130-kicad/inverter_sch.png&#34; alt=&#34;The CMOS inverted as described above&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;Next set up some way to drive the sim, in my case I did a VDC source and then a VPULSE to drive the inverter, these are built-in to the standard KiCad SPICE library, it should look something like this when done:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2024/sky130-kicad/schema.png&#34; alt=&#34;Full view of the KiCad schematic showing the VDC and VPULSE elements along with the CMOS inverter previously shown&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;After that, you can add the following SPICE directives as a text element on the schematic, and make sure to replace &lt;code&gt;${PDK_ROOT}&lt;/code&gt; with the path to your local PDK root:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-spice&#34; data-lang=&#34;spice&#34;&gt;.tran 100f 100n
+.lib ${PDK_ROOT}/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;And finally, we&amp;rsquo;re ready to run the sim! Open up KiCad&amp;rsquo;s simulation utility and simply click the &amp;ldquo;Run/Stop Simulation&amp;rdquo; button, if all goes well, the simulation will run and then we can plot the &lt;code&gt;A&lt;/code&gt; and &lt;code&gt;Y&lt;/code&gt; signals.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2024/sky130-kicad/sim_results.png&#34; alt=&#34;The simulation results of the simple Sky130 CMOS inverter&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;Look at that! It&amp;rsquo;s a working inverter!&lt;/p&gt;
+&lt;p&gt;Something important to note, this simulation uses default parameters for the Sky130 transistors, you can get more accurate results by using &lt;a class=&#34;link&#34; href=&#34;http://opencircuitdesign.com/magic/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;magic&lt;/a&gt; to extract the transistor parameters from a layout and then attach them to the KiCad symbols by setting the &lt;code&gt;Sim.Params&lt;/code&gt; property on the transistor.&lt;/p&gt;
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;I hope this gives you a brief idea of what the &lt;a class=&#34;link&#34; href=&#34;https://github.com/lethalbit/kicad-pdk-libs&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;kicad-pdk-libs&lt;/a&gt; is all about, and how you can use it to simulate your schematics for use in ASIC layout.&lt;/p&gt;
+&lt;p&gt;While it may not be as powerful and scriptable as something like &lt;a class=&#34;link&#34; href=&#34;https://xschem.sourceforge.io/stefan/index.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;xschem&lt;/a&gt;, especially right out of the box, I hope it is a useful tool for those just starting out, or for people who just need to throw things together quickly. Especially with the promising improvements coming to KiCad 8&amp;rsquo;s simulation workspace, which will allow much more comprehensive and complete analysis.&lt;/p&gt;
+&lt;p&gt;If you&amp;rsquo;re interested in &lt;a class=&#34;link&#34; href=&#34;https://github.com/lethalbit/kicad-pdk-libs&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;kicad-pdk-libs&lt;/a&gt; and what you&amp;rsquo;ve read here, give it an &lt;a class=&#34;link&#34; href=&#34;https://github.com/lethalbit/kicad-pdk-libs/blob/main/docs/install.md&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;install&lt;/a&gt;, and check out the &lt;a class=&#34;link&#34; href=&#34;https://github.com/lethalbit/kicad-pdk-libs/blob/main/docs/intro.md&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;intro&lt;/a&gt; and the &lt;a class=&#34;link&#34; href=&#34;https://github.com/lethalbit/kicad-pdk-libs/tree/main/examples&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;examples&lt;/a&gt; for more detailed information.&lt;/p&gt;
+&lt;p&gt;Go have fun and make something cool!&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Logic Locking with Moosic</title>
         <link>http://blog.yosyshq.com/p/logic-locking-with-moosic/</link>
         <pubDate>Tue, 30 Jan 2024 12:00:00 +0200</pubDate>
