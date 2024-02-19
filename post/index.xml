@@ -16,6 +16,13 @@
       <description>This guest post is by Aki Van Ness.&#xA;Sky130 SPICE, the KiCad way Picture this, you&amp;rsquo;re working on a custom layout for Sky130, be it a PLL, or you&amp;rsquo;re just trying your hands at making some basic building blocks. You&amp;rsquo;ve got a plan, and and ready to start laying down some nets, and that&amp;rsquo;s when you must face it, the dreaded xschem!&#xA;All joking aside, xschem is an incredibly powerful schematic capture system, but that power comes at a cost.</description>
     </item>
     <item>
+      <title>Yosys User&#39;s Group</title>
+      <link>http://blog.yosyshq.com/p/yosys-users-group/</link>
+      <pubDate>Sun, 04 Feb 2024 12:00:00 +0000</pubDate>
+      <guid>http://blog.yosyshq.com/p/yosys-users-group/</guid>
+      <description>We have recently started a Yosys User&amp;rsquo;s Group. You can see the minutes of our first 4 calls here.&#xA;If you&amp;rsquo;d like to join, then please sign up to the newsletter or follow us on:&#xA;linkedin, mastodon or twitter. YUG 5 - SystemVerilog with Pulp’s SVase An introduction to Bender, Morty and SVase YUG 4 - all the plugins! List of all the plugins we know of Gabriel Gouvine talks about how he wrote a logic locking plugin Martin Povišer talks about the Python plugin API YUG 3 - pick your primitives!</description>
+    </item>
+    <item>
       <title>Logic Locking with Moosic</title>
       <link>http://blog.yosyshq.com/p/logic-locking-with-moosic/</link>
       <pubDate>Tue, 30 Jan 2024 12:00:00 +0200</pubDate>
@@ -329,13 +336,6 @@
       <pubDate>Mon, 08 Feb 2021 00:00:00 +0000</pubDate>
       <guid>http://blog.yosyshq.com/p/hello/</guid>
       <description>YosysHQ.com is the new home for the team maintaining Yosys and the related Open Source EDA projects, and the commercial products and services we offer.&#xA;Our team is led by N. Engelhardt as CEO, Claire Wolf as CTO, and Matt Venn as CSO. We are looking to work with more people, so feel free to contact us: contact@yosyshq.com&#xA;Tabby CAD Suite is a bundle of our well-known Open Source EDA software packages, combined with additional components that allow seamless integration of our tools in typical industrial digital design environments.</description>
-    </item>
-    <item>
-      <title>Yosys User&#39;s Group</title>
-      <link>http://blog.yosyshq.com/p/yosys-users-group/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://blog.yosyshq.com/p/yosys-users-group/</guid>
-      <description>We have recently started a Yosys User&amp;rsquo;s Group. You can see the minutes of our first 4 calls here.&#xA;If you&amp;rsquo;d like to join, then please sign up to the newsletter or follow us on:&#xA;linkedin, mastodon or twitter. YUG 5 - SystemVerilog with Pulp’s SVase An introduction to Bender, Morty and SVase YUG 4 - all the plugins! List of all the plugins we know of Gabriel Gouvine talks about how he wrote a logic locking plugin Martin Povišer talks about the Python plugin API YUG 3 - pick your primitives!</description>
     </item>
   </channel>
 </rss>
