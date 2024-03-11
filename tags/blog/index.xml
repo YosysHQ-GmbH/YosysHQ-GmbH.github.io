@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>blog on YosysHQ Blog</title>
+    <title>Blog on YosysHQ Blog</title>
     <link>http://blog.yosyshq.com/tags/blog/</link>
-    <description>Recent content in blog on YosysHQ Blog</description>
+    <description>Recent content in Blog on YosysHQ Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 12 Feb 2024 19:09:55 -0800</lastBuildDate>

@@ -6,8 +6,15 @@
     <description>Recent content in Posts on YosysHQ Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 12 Feb 2024 19:09:55 -0800</lastBuildDate>
+    <lastBuildDate>Sun, 10 Mar 2024 20:30:31 +0100</lastBuildDate>
     <atom:link href="http://blog.yosyshq.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Community Spotlight - FazyRV</title>
+      <link>http://blog.yosyshq.com/p/community-spotlight-fazyrv/</link>
+      <pubDate>Sun, 10 Mar 2024 20:30:31 +0100</pubDate>
+      <guid>http://blog.yosyshq.com/p/community-spotlight-fazyrv/</guid>
+      <description>FazyRV Welcome to another community spotlight article where we shine a light on open source EDA-related projects. If you want to submit a project, please do so here.&#xA;FazyRV is a minimal-area RISC-V core that scales with your needs. It allows you to adapt the data path width to process smaller 1, 2, 4, or 8-bit chunks of the 32-bit operands each clock cycle. In addition, each data path width can be combined with FazyRV&amp;rsquo;s manifold variants to trade area with performance and find the best-fitting configuration for your system requirements and used technology.</description>
+    </item>
     <item>
       <title>Sky130 SPICE, the KiCad way</title>
       <link>http://blog.yosyshq.com/p/sky130-kicad-spice/</link>

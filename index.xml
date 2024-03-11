@@ -6,7 +6,48 @@
         <description>Recent content on YosysHQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Mon, 12 Feb 2024 19:09:55 -0800</lastBuildDate><atom:link href="http://blog.yosyshq.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 10 Mar 2024 20:30:31 +0100</lastBuildDate><atom:link href="http://blog.yosyshq.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Community Spotlight - FazyRV</title>
+        <link>http://blog.yosyshq.com/p/community-spotlight-fazyrv/</link>
+        <pubDate>Sun, 10 Mar 2024 20:30:31 +0100</pubDate>
+        
+        <guid>http://blog.yosyshq.com/p/community-spotlight-fazyrv/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2024/spotlight/fazyrv/fazyrv.png" alt="Featured image of post Community Spotlight - FazyRV" /&gt;&lt;h1 id=&#34;fazyrv&#34;&gt;FazyRV&lt;/h1&gt;
+&lt;p&gt;Welcome to another &lt;a class=&#34;link&#34; href=&#34;http://blog.yosyshq.com/tags/community-spotlight/&#34; &gt;community spotlight&lt;/a&gt; article where we shine a light on open source EDA-related projects. If you want to &lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSdIEgu6FJZam0-V3PMTjw-eDebJdg_JuIlN4MkLNDr4vs-a5A/viewform?usp=sf_link&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;submit a project, please do so here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;FazyRV is a minimal-area RISC-V core that scales with your needs. It allows you to adapt the data path width to process smaller 1, 2, 4, or 8-bit &lt;em&gt;chunks&lt;/em&gt; of the 32-bit operands each clock cycle. In addition, each data path width can be combined with FazyRV&amp;rsquo;s manifold variants to trade area with performance and find the best-fitting configuration for your system requirements and used technology. FazyRV avoids hand optimizations at the gate level to increase readability and ease modifications, such as adding custom instruction extensions.&lt;/p&gt;
+&lt;h1 id=&#34;meinhard-kissichs-bio&#34;&gt;Meinhard Kissich&amp;rsquo;s Bio&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2024/spotlight/fazyrv/meinhard.jpg&#34; alt=&#34;Meinhard Kissich&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;I am a Ph.D. student at &lt;a class=&#34;link&#34; href=&#34;https://www.tugraz.at/home&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Graz University of Technology&lt;/a&gt; in Austria. After completing my Master&amp;rsquo;s degree in Information and Computer Engineering in 2022, I joined the &lt;a class=&#34;link&#34; href=&#34;https://iti.tugraz.at/eas&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Embedded Architectures &amp;amp; Systems&lt;/a&gt; (EAS) Group as a university assistant. My main interests and research areas are RISC-V architectures, FPGA CAD tools, and applied formal verification. I enjoy realizing unique ideas outside convention and evaluating these implementations. For me, it is not just about gathering knowledge but also about sharing it and contributing back to the community. I lead the Real-Time Operating Systems Laboratory course and am always up for discussions and exciting projects.&lt;/p&gt;
+&lt;h1 id=&#34;what-motivated-you-to-make-fazyrv&#34;&gt;What motivated you to make FazyRV?&lt;/h1&gt;
+&lt;p&gt;The fascination of getting the most out of a constrained environment and using even small FPGAs for &amp;ldquo;big&amp;rdquo; projects &amp;ndash; it is like the digital design equivalent of &lt;em&gt;Can it run Doom?&lt;/em&gt;. I became captivated by &lt;a class=&#34;link&#34; href=&#34;https://github.com/olofk/serv&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;SERV&lt;/a&gt; and how small a system-on-chip design can be. However, there was a gap between the 1-bit bit-serial SERV and prevalent 32-bit cores.&lt;/p&gt;
+&lt;p&gt;That brings me to a second point: I wanted to explore how a sub-32-bit core scales between a 1-bit bit-serial and a 32-bit core in terms of area and performance. This is where FazyRV started as a scalable RISC-V core.&lt;/p&gt;
+&lt;h1 id=&#34;what-makes-you-excited-about-fazyrv&#34;&gt;What makes you excited about FazyRV?&lt;/h1&gt;
+&lt;p&gt;FazyRV allows scaling the core to the project&amp;rsquo;s needs in a way that was not available to me before. The fine-grained options can be used to explore the design space and find the best area vs. performance trade-off for the system requirements and target technology. Assume the target technology does not have dual-read-port BRAM primitives available without some area overhead. In this case, you can choose an implementation that serially reads the operands at the expense of one additional clock cycle per instruction. Then, you can synthesize the data path to a width that fits your timing requirements. If it is on edge, you may also experiment with a variant that uses a bypass multiplexer and can save one clock cycle on operand loads. All that is done by just playing around with Verilog parameters.&lt;/p&gt;
+&lt;p&gt;Let us delve into a practical implementation by plotting the Mandelbrot set. The comparison below illustrates the performance disparity when using different chunk sizes. While the variant with an 8-bit chunk size delivers the highest performance, it also results in the largest design, as depicted in the plot at the top.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2024/spotlight/fazyrv/mandelbrot.gif&#34; alt=&#34;Meinhard Kissich&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;But there is more to it: FazyRV avoids hand optimization at the gate level. I want to inspect more closely how synthesis tools optimize the current hardware description and map the patterns.&lt;/p&gt;
+&lt;h1 id=&#34;what-are-some-of-the-challenges-you-face&#34;&gt;What are some of the challenges you face?&lt;/h1&gt;
+&lt;p&gt;One was undoubtedly the architecture of shift instructions. The considered designs significantly influence the resulting area and performance. Finding a suitable trade-off is more challenging when the area and performance overhead must fit all data path widths without getting out of balance.&lt;/p&gt;
+&lt;p&gt;Also, when designing a core highly optimized for area, there are some sacrifices to be made here and there. Of course, the area must be minimized, but likewise, the core must remain suitable for most users and applications when defining constraints in the feature set. One example is the decoder: Not all instruction bits are explicitly checked to reduce the area. Assumptions are made that some instructions cannot occur. The drawback, however, is that an illegal instruction may be interpreted as a different legal instruction instead of raising an illegal instruction exception. In this particular case, it was handled by providing the decoder logic in a table-like format that can be adapted by the user and synthesized to Verilog code by a tool. It eases modifications to detect illegal instructions when required or to add custom instructions to the core without digging into the decoder at a low level. However, many more decisions in the INT and CSR variants are yet to be made.&lt;/p&gt;
+&lt;h1 id=&#34;what-could-the-community-do-to-support-you&#34;&gt;What could the community do to support you?&lt;/h1&gt;
+&lt;p&gt;Consider having a play with FazyRV in your next project, either by using the Verilog design directly or exploring FazyRV via LiteX. We are grateful for any opinions, reported issues, or suggestions.&lt;/p&gt;
+&lt;p&gt;If you want to get involved even more, we maintain a list of open topics in the repository. Feel free to use this as a starting point or bring in your own ideas for discussion or a concrete proposed implementation. Even if you are not involved in digital design, well-designed tooling, workflows, and software support are needed to make adopting FazyRV as convenient as possible and verify changes continuously.&lt;/p&gt;
+&lt;h1 id=&#34;what-is-the-best-link-for-the-project&#34;&gt;What is the best link for the project?&lt;/h1&gt;
+&lt;p&gt;The &lt;a class=&#34;link&#34; href=&#34;https://github.com/meiniKi/FazyRV&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub repository&lt;/a&gt; is the best place to start. It is where everything comes together and you will find the latest changes and updates. For example, we will soon publish a research paper with many more evaluations and design insights, which we will reference in the repo.&lt;/p&gt;
+&lt;h1 id=&#34;what-is-the-best-way-for-people-to-contact-you&#34;&gt;What is the best way for people to contact you?&lt;/h1&gt;
+&lt;p&gt;You can find a list of up-to-date contact options on my website.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.meinhard-kissich.at&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;www.meinhard-kissich.at&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>Sky130 SPICE, the KiCad way</title>
         <link>http://blog.yosyshq.com/p/sky130-kicad-spice/</link>
         <pubDate>Mon, 12 Feb 2024 19:09:55 -0800</pubDate>

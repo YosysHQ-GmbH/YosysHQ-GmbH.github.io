@@ -2,19 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://blog.yosyshq.com/tags/community-spotlight/</loc>
+    <lastmod>2024-03-10T20:30:31+01:00</lastmod>
+  </url><url>
+    <loc>http://blog.yosyshq.com/p/community-spotlight-fazyrv/</loc>
+    <lastmod>2024-03-10T20:30:31+01:00</lastmod>
+  </url><url>
+    <loc>http://blog.yosyshq.com/post/</loc>
+    <lastmod>2024-03-10T20:30:31+01:00</lastmod>
+  </url><url>
+    <loc>http://blog.yosyshq.com/tags/</loc>
+    <lastmod>2024-03-10T20:30:31+01:00</lastmod>
+  </url><url>
+    <loc>http://blog.yosyshq.com/</loc>
+    <lastmod>2024-03-10T20:30:31+01:00</lastmod>
+  </url><url>
     <loc>http://blog.yosyshq.com/tags/blog/</loc>
     <lastmod>2024-02-12T19:09:55-08:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/post/</loc>
-    <lastmod>2024-02-12T19:09:55-08:00</lastmod>
-  </url><url>
     <loc>http://blog.yosyshq.com/p/sky130-kicad-spice/</loc>
-    <lastmod>2024-02-12T19:09:55-08:00</lastmod>
-  </url><url>
-    <loc>http://blog.yosyshq.com/tags/</loc>
-    <lastmod>2024-02-12T19:09:55-08:00</lastmod>
-  </url><url>
-    <loc>http://blog.yosyshq.com/</loc>
     <lastmod>2024-02-12T19:09:55-08:00</lastmod>
   </url><url>
     <loc>http://blog.yosyshq.com/p/yosys-users-group/</loc>
@@ -31,9 +37,6 @@
   </url><url>
     <loc>http://blog.yosyshq.com/p/tabby-cad-suite-version-20240116-released/</loc>
     <lastmod>2024-01-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://blog.yosyshq.com/tags/community-spotlight/</loc>
-    <lastmod>2023-11-27T13:26:31+01:00</lastmod>
   </url><url>
     <loc>http://blog.yosyshq.com/p/community-spotlight-surfer/</loc>
     <lastmod>2023-11-27T13:26:31+01:00</lastmod>

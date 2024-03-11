@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>one liners on YosysHQ Blog</title>
+    <title>One Liners on YosysHQ Blog</title>
     <link>http://blog.yosyshq.com/tags/one-liners/</link>
-    <description>Recent content in one liners on YosysHQ Blog</description>
+    <description>Recent content in One Liners on YosysHQ Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 12 Jun 2023 16:52:39 +0200</lastBuildDate>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>app note on YosysHQ Blog</title>
+    <title>App Note on YosysHQ Blog</title>
     <link>http://blog.yosyshq.com/tags/app-note/</link>
-    <description>Recent content in app note on YosysHQ Blog</description>
+    <description>Recent content in App Note on YosysHQ Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 07 Jul 2021 12:37:04 +0200</lastBuildDate>
