@@ -1,22 +1,29 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en-us" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Securing a hardware design with Moosic'><title>Logic Locking with Moosic</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Securing a hardware design with Moosic">
+<title>Logic Locking with Moosic</title>
 
 <link rel='canonical' href='http://blog.yosyshq.com/p/logic-locking-with-moosic/'>
 
-<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Logic Locking with Moosic'>
-<meta property='og:description' content='Securing a hardware design with Moosic'>
+<link rel="stylesheet" href="/scss/style.min.760e3dabc1e140d2e6abd27a8ca0aabb60e568829b29f67d2df12024136eff37.css"><meta property='og:title' content="Logic Locking with Moosic">
+<meta property='og:description' content="Securing a hardware design with Moosic">
 <meta property='og:url' content='http://blog.yosyshq.com/p/logic-locking-with-moosic/'>
 <meta property='og:site_name' content='YosysHQ Blog'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='blog' /><meta property='article:published_time' content='2024-01-30T12:00:00&#43;02:00'/><meta property='article:modified_time' content='2024-01-30T12:00:00&#43;02:00'/><meta property='og:image' content='http://blog.yosyshq.com/static-2024/locking.png' />
-<meta name="twitter:site" content="@YosysHQ"><meta name="twitter:title" content="Logic Locking with Moosic">
+<meta name="twitter:site" content="@@YosysHQ">
+    <meta name="twitter:creator" content="@@YosysHQ"><meta name="twitter:title" content="Logic Locking with Moosic">
 <meta name="twitter:description" content="Securing a hardware design with Moosic"><meta name="twitter:card" content="summary">
     <meta name="twitter:image" content='http://blog.yosyshq.com/static-2024/locking.png' />
     <link rel="shortcut icon" href="/favicon.png" />
 
+  
+
+
     </head>
-    <body class="">
+    <body class="
+    article-page
+    ">
     <script>
         (function() {
             const colorSchemeKey = 'StackColorScheme';
@@ -33,22 +40,24 @@
         if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
             
 
-            document.body.dataset.scheme = 'dark';
+            document.documentElement.dataset.scheme = 'dark';
         } else {
-            document.body.dataset.scheme = 'light';
+            document.documentElement.dataset.scheme = 'light';
         }
     })();
-</script><div class="container main-container flex on-phone--column extended article-page with-toolbar">
-            <aside class="sidebar left-sidebar sticky">
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
     <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
         <span class="hamburger-box">
             <span class="hamburger-inner"></span>
         </span>
     </button>
 
-    <header class="site-info">
+    <header>
         
+            
             <figure class="site-avatar">
+                <a href="/">
                 
                     
                     
@@ -58,21 +67,24 @@
                             height="300" class="site-logo" loading="lazy" alt="Avatar">
                     
                 
-
+                </a>
                 
             </figure>
-        
-        <h1 class="site-name"><a href="http://blog.yosyshq.com/">YosysHQ Blog</a></h1>
-        <h2 class="site-description"></h2>
-    </header>
-
-    <ol class="menu" id="main-menu">
+            
         
         
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">YosysHQ Blog</a></h1>
+            <h2 class="site-description"></h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
         
-
+        
+        
         <li >
-            <a href='/'>
+            <a href='/' >
+                
+                
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -89,9 +101,10 @@
         </li>
         
         
-
         <li >
-            <a href='/about'>
+            <a href='/about' >
+                
+                
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -107,9 +120,10 @@
         </li>
         
         
-
         <li >
-            <a href='/newsletter'>
+            <a href='/newsletter' >
+                
+                
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -125,9 +139,10 @@
         </li>
         
         
-
         <li >
-            <a href='/yug'>
+            <a href='/yug' >
+                
+                
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -143,9 +158,10 @@
         </li>
         
         
-
         <li >
-            <a href='/archives'>
+            <a href='/archives' >
+                
+                
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -162,9 +178,10 @@
         </li>
         
         
-
         <li >
-            <a href='/search'>
+            <a href='/search' >
+                
+                
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -179,10 +196,12 @@
             </a>
         </li>
         
+        <li class="menu-bottom-section">
+            <ol class="menu">
 
-        
-            <li id="dark-mode-toggle">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <circle cx="8" cy="12" r="2" />
   <rect x="2" y="6" width="20" height="12" rx="6" />
@@ -190,7 +209,7 @@
 
 
 
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <circle cx="16" cy="12" r="2" />
   <rect x="2" y="6" width="20" height="12" rx="6" />
@@ -198,26 +217,17 @@
 
 
 
-                <span>Dark Mode</span>
-            </li>
-        
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
     </ol>
 </aside>
 
+    
+
             <main class="main full-width">
-    <div id="article-toolbar">
-        <a href="http://blog.yosyshq.com/" class="back-home">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <polyline points="15 6 9 12 15 18" />
-</svg>
-
-
-
-            <span>Back</span>
-        </a>
-    </div>
-
     <article class="has-image main-article">
     <header class="article-header">
         <div class="article-image">
@@ -232,16 +242,41 @@
     <div class="article-details">
     
 
-    <h2 class="article-title">
-        <a href="/p/logic-locking-with-moosic/">Logic Locking with Moosic</a>
-    </h2>
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/logic-locking-with-moosic/">Logic Locking with Moosic</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            Securing a hardware design with Moosic
+        </h3>
+        
+    </div>
 
     
-    <h3 class="article-subtitle">
-        Securing a hardware design with Moosic
-    </h3>
+    
+    
+    
     <footer class="article-time">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Jan 30, 2024</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <circle cx="12" cy="12" r="9" />
   <polyline points="12 7 12 12 15 15" />
@@ -249,34 +284,67 @@
 
 
 
-        <time class="article-time--published">Jan 30, 2024</time>
-    </footer></div>
+                <time class="article-time--reading">
+                    5 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
 </header>
 
     <section class="article-content">
+    
+    
     <p><em>This guest post is by Gabriel Gouvine.</em></p>
-<h1 id="applying-logic-locking-to-a-tinytapeout-design-with-moosic">Applying logic locking to a TinyTapeout design with Moosic</h1>
-<p>When creating a design, most of us are not in possession of the lithography and manufacturing tools necessary to actually create the chip: we send our design to a foundry and they make the chip for us.</p>
+<h1 id="applying-logic-locking-to-a-tinytapeout-design-with-moosic">
+    <a href="#applying-logic-locking-to-a-tinytapeout-design-with-moosic" class="header-anchor">#</a>
+    Applying logic locking to a TinyTapeout design with Moosic
+</h1><p>When creating a design, most of us are not in possession of the lithography and manufacturing tools necessary to actually create the chip: we send our design to a foundry and they make the chip for us.</p>
 <p>This requires a great deal of trust in the toolchain and the foundry: a malicious actor could introduce backdoors, or just steal the design to reuse it themselves.
 For security-conscious designers, countermeasures are necessary.</p>
 <p>One such countermeasure is logic locking: we are going to lock our design, so that it does not work without a secret key.
 We do it by adding or changing some gates in the design to use the key: if the key is incorrect, the design behaviour will be completely modified.
 This is going to make it harder to reuse the design without authorization (you have to find the key) or to introduce backdoors (you have to understand what it does).</p>
-<p><img src="/static-2024/locking.svg" alt="My Image"  /></p>
+<p><img src="/static-2024/locking.svg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="My Image"
+	
+	
+></p>
 <p>We built a Yosys plugin <a class="link" href="https://github.com/Coloquinte/moosic-yosys-plugin"  target="_blank" rel="noopener"
     >to do just that</a>.
 The plugin provides a <code>logic_locking</code> command that will mangle the design as much as it can.</p>
 <p>To illustrate, let&rsquo;s make a design on <a class="link" href="https://tinytapeout.com/"  target="_blank" rel="noopener"
     >TinyTapeout</a>, lock it and synthesize it all the way to silicon.</p>
-<h2 id="what-is-logic-locking">What is logic locking</h2>
-<p>The goal of logic locking is to make the design unusable without the right key.
+<h2 id="what-is-logic-locking">
+    <a href="#what-is-logic-locking" class="header-anchor">#</a>
+    What is logic locking
+</h2><p>The goal of logic locking is to make the design unusable without the right key.
 Usually, we apply it after synthesis, when the design is already mapped to logic gates.
 Logic locking adds new gates that will change the behaviour of the design unless the right key is provided.
 Our tool does it by adding Xor and Xnor gates, as shown below, but you can imagine a lot of ways to insert or replace gates.
 If a 0 is set for a Xor gate, or a 1 for a Xnor gate, the design works as before.
 It acts as a countermeasure rather than a cryptographic security.
 Much like software countermeasures it will not stop a determined attacker with unlimited resources, but it&rsquo;s one more thing that an attacker will have to break.</p>
-<p><img src="/static-2024/XOR_NXOR_insertion.svg" alt="Xor insertion"  /></p>
+<p><img src="/static-2024/XOR_NXOR_insertion.svg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Xor insertion"
+	
+	
+></p>
 <p>The logic locking tool needs to decide where to insert the gates.
 Its goal is to disrupt the design as much as possible, and ideally make the key hard to guess by running and analyzing the design.
 The tool will analyze the impact of inserting a locking gate, and pick the places that maximize its estimated security, typically signals that have a large impact on the design&rsquo;s behaviour.
@@ -284,9 +352,20 @@ Ultimately, it&rsquo;s a tradeoff between security and performance: for security
 <p>Just a few percents of the gates locked is almost always enough to completely corrupt the design.
 We can explore the tradeoff with the plugin.
 For example, on this benchmark, locking just 13% of the signals breaks all outputs and all testcases:</p>
-<p><img src="/static-2024/pareto_front.png" alt="Corruptibility"  /></p>
-<h2 id="locking-a-design">Locking a design</h2>
-<p>We are going to make a toy design to experiment with logic locking. I wrote a counter, that is incremented at each clock cycle where <code>do_incr</code> is set:</p>
+<p><img src="/static-2024/pareto_front.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Corruptibility"
+	
+	
+></p>
+<h2 id="locking-a-design">
+    <a href="#locking-a-design" class="header-anchor">#</a>
+    Locking a design
+</h2><p>We are going to make a toy design to experiment with logic locking. I wrote a counter, that is incremented at each clock cycle where <code>do_incr</code> is set:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-verilog" data-lang="verilog"><span class="line"><span class="cl"><span class="k">module</span> <span class="n">counter</span> <span class="p">(</span>
 </span></span><span class="line"><span class="cl">    <span class="k">input</span> <span class="kt">wire</span> <span class="n">do_incr</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="k">output</span> <span class="kt">wire</span> <span class="p">[</span><span class="mh">7</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">data_out</span><span class="p">,</span>
@@ -320,8 +399,10 @@ For example, on this benchmark, locking just 13% of the signals breaks all outpu
 </span></span><span class="line"><span class="cl">  <span class="k">input</span> <span class="n">clk</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">  <span class="k">input</span> <span class="n">rst_n</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">  <span class="k">input</span> <span class="p">[</span><span class="mh">5</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">moosic_key</span><span class="p">;</span>
-</span></span></code></pre></div><h2 id="tinytapeout">TinyTapeout</h2>
-<p>With TinyTapeout, we can synthesize this design to silicon.
+</span></span></code></pre></div><h2 id="tinytapeout">
+    <a href="#tinytapeout" class="header-anchor">#</a>
+    TinyTapeout
+</h2><p>With TinyTapeout, we can synthesize this design to silicon.
 We will have to make a wrapper in order to load the key on our design&hellip; and test that our design works as expected when the key is provided.
 The <a class="link" href="https://github.com/Coloquinte/locked-tapeout/blob/main/src/project.v"  target="_blank" rel="noopener"
     >main project file</a> will be responsible for loading the key.
@@ -362,15 +443,15 @@ Logic locking is an active area of research, and we are happy to provide an open
     </section>
     </footer>
 
+
     
 </article>
 
-    <aside class="related-contents--wrapper">
     
+
     
-</aside>
 
-
+     
     
         
     
@@ -386,9 +467,12 @@ Logic locking is an active area of research, and we are happy to provide an open
     
     <section class="powerby">
         Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
-        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.2.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.25.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
     </section>
 </footer>
+
+
+    
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
 
     
@@ -452,24 +536,25 @@ Logic locking is an active area of research, and we are happy to provide an open
 
 </div><script 
                 src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
-                defer="true"
+                defer
                 >
             </script><script 
                 src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
-                defer="true"
+                defer
                 >
             </script><link 
                 rel="stylesheet" 
-                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
             ><link 
                 rel="stylesheet" 
-                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
             >
+
             </main>
         </div>
         <script 
-                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
-                defer="false"
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
                 >
             </script><script type="text/javascript" src="/ts/main.js" defer></script>
 <script>

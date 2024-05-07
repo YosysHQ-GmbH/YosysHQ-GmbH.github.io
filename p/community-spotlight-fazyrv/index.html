@@ -1,25 +1,29 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en-us" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='FazyRV Welcome to another community spotlight article where we shine a light on open source EDA-related projects. If you want to submit a project, please do so here.
-FazyRV is a minimal-area RISC-V core that scales with your needs. It allows you to adapt the data path width to process smaller 1, 2, 4, or 8-bit chunks of the 32-bit operands each clock cycle. In addition, each data path width can be combined with FazyRV&amp;rsquo;s manifold variants to trade area with performance and find the best-fitting configuration for your system requirements and used technology.'><title>Community Spotlight - FazyRV</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="# FazyRV Welcome to another community spotlight article where we shine a light on open source EDA-related projects. If you want to submit a project, please do so here. FazyRV is a minimal-area RISC-V core that scales with your needs. It allows you to adapt the data path width to process smaller 1, 2, 4, or 8-bit chunks of the 32-bit operands each clock cycle. In addition, each data path width can be combined with FazyRV&rsquo;s manifold variants to trade area with performance and find the best-fitting configuration for your system requirements and used technology.">
+<title>Community Spotlight - FazyRV</title>
 
 <link rel='canonical' href='http://blog.yosyshq.com/p/community-spotlight-fazyrv/'>
 
-<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Community Spotlight - FazyRV'>
-<meta property='og:description' content='FazyRV Welcome to another community spotlight article where we shine a light on open source EDA-related projects. If you want to submit a project, please do so here.
-FazyRV is a minimal-area RISC-V core that scales with your needs. It allows you to adapt the data path width to process smaller 1, 2, 4, or 8-bit chunks of the 32-bit operands each clock cycle. In addition, each data path width can be combined with FazyRV&amp;rsquo;s manifold variants to trade area with performance and find the best-fitting configuration for your system requirements and used technology.'>
+<link rel="stylesheet" href="/scss/style.min.760e3dabc1e140d2e6abd27a8ca0aabb60e568829b29f67d2df12024136eff37.css"><meta property='og:title' content="Community Spotlight - FazyRV">
+<meta property='og:description' content="# FazyRV Welcome to another community spotlight article where we shine a light on open source EDA-related projects. If you want to submit a project, please do so here. FazyRV is a minimal-area RISC-V core that scales with your needs. It allows you to adapt the data path width to process smaller 1, 2, 4, or 8-bit chunks of the 32-bit operands each clock cycle. In addition, each data path width can be combined with FazyRV&rsquo;s manifold variants to trade area with performance and find the best-fitting configuration for your system requirements and used technology.">
 <meta property='og:url' content='http://blog.yosyshq.com/p/community-spotlight-fazyrv/'>
 <meta property='og:site_name' content='YosysHQ Blog'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='community spotlight' /><meta property='article:published_time' content='2024-03-10T20:30:31&#43;01:00'/><meta property='article:modified_time' content='2024-03-10T20:30:31&#43;01:00'/><meta property='og:image' content='http://blog.yosyshq.com/static-2024/spotlight/fazyrv/fazyrv.png' />
-<meta name="twitter:site" content="@YosysHQ"><meta name="twitter:title" content="Community Spotlight - FazyRV">
-<meta name="twitter:description" content="FazyRV Welcome to another community spotlight article where we shine a light on open source EDA-related projects. If you want to submit a project, please do so here.
-FazyRV is a minimal-area RISC-V core that scales with your needs. It allows you to adapt the data path width to process smaller 1, 2, 4, or 8-bit chunks of the 32-bit operands each clock cycle. In addition, each data path width can be combined with FazyRV&amp;rsquo;s manifold variants to trade area with performance and find the best-fitting configuration for your system requirements and used technology."><meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@@YosysHQ">
+    <meta name="twitter:creator" content="@@YosysHQ"><meta name="twitter:title" content="Community Spotlight - FazyRV">
+<meta name="twitter:description" content="# FazyRV Welcome to another community spotlight article where we shine a light on open source EDA-related projects. If you want to submit a project, please do so here. FazyRV is a minimal-area RISC-V core that scales with your needs. It allows you to adapt the data path width to process smaller 1, 2, 4, or 8-bit chunks of the 32-bit operands each clock cycle. In addition, each data path width can be combined with FazyRV&rsquo;s manifold variants to trade area with performance and find the best-fitting configuration for your system requirements and used technology."><meta name="twitter:card" content="summary">
     <meta name="twitter:image" content='http://blog.yosyshq.com/static-2024/spotlight/fazyrv/fazyrv.png' />
     <link rel="shortcut icon" href="/favicon.png" />
 
+  
+
+
     </head>
-    <body class="">
+    <body class="
+    article-page
+    ">
     <script>
         (function() {
             const colorSchemeKey = 'StackColorScheme';
@@ -36,22 +40,24 @@ FazyRV is a minimal-area RISC-V core that scales with your needs. It allows you 
         if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
             
 
-            document.body.dataset.scheme = 'dark';
+            document.documentElement.dataset.scheme = 'dark';
         } else {
-            document.body.dataset.scheme = 'light';
+            document.documentElement.dataset.scheme = 'light';
         }
     })();
-</script><div class="container main-container flex on-phone--column extended article-page with-toolbar">
-            <aside class="sidebar left-sidebar sticky">
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
     <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
         <span class="hamburger-box">
             <span class="hamburger-inner"></span>
         </span>
     </button>
 
-    <header class="site-info">
+    <header>
         
+            
             <figure class="site-avatar">
+                <a href="/">
                 
                     
                     
@@ -61,21 +67,24 @@ FazyRV is a minimal-area RISC-V core that scales with your needs. It allows you 
                             height="300" class="site-logo" loading="lazy" alt="Avatar">
                     
                 
-
+                </a>
                 
             </figure>
-        
-        <h1 class="site-name"><a href="http://blog.yosyshq.com/">YosysHQ Blog</a></h1>
-        <h2 class="site-description"></h2>
-    </header>
-
-    <ol class="menu" id="main-menu">
+            
         
         
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">YosysHQ Blog</a></h1>
+            <h2 class="site-description"></h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
         
-
+        
+        
         <li >
-            <a href='/'>
+            <a href='/' >
+                
+                
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -92,9 +101,10 @@ FazyRV is a minimal-area RISC-V core that scales with your needs. It allows you 
         </li>
         
         
-
         <li >
-            <a href='/about'>
+            <a href='/about' >
+                
+                
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -110,9 +120,10 @@ FazyRV is a minimal-area RISC-V core that scales with your needs. It allows you 
         </li>
         
         
-
         <li >
-            <a href='/newsletter'>
+            <a href='/newsletter' >
+                
+                
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -128,9 +139,10 @@ FazyRV is a minimal-area RISC-V core that scales with your needs. It allows you 
         </li>
         
         
-
         <li >
-            <a href='/yug'>
+            <a href='/yug' >
+                
+                
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -146,9 +158,10 @@ FazyRV is a minimal-area RISC-V core that scales with your needs. It allows you 
         </li>
         
         
-
         <li >
-            <a href='/archives'>
+            <a href='/archives' >
+                
+                
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -165,9 +178,10 @@ FazyRV is a minimal-area RISC-V core that scales with your needs. It allows you 
         </li>
         
         
-
         <li >
-            <a href='/search'>
+            <a href='/search' >
+                
+                
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -182,10 +196,12 @@ FazyRV is a minimal-area RISC-V core that scales with your needs. It allows you 
             </a>
         </li>
         
+        <li class="menu-bottom-section">
+            <ol class="menu">
 
-        
-            <li id="dark-mode-toggle">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <circle cx="8" cy="12" r="2" />
   <rect x="2" y="6" width="20" height="12" rx="6" />
@@ -193,7 +209,7 @@ FazyRV is a minimal-area RISC-V core that scales with your needs. It allows you 
 
 
 
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <circle cx="16" cy="12" r="2" />
   <rect x="2" y="6" width="20" height="12" rx="6" />
@@ -201,26 +217,17 @@ FazyRV is a minimal-area RISC-V core that scales with your needs. It allows you 
 
 
 
-                <span>Dark Mode</span>
-            </li>
-        
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
     </ol>
 </aside>
 
+    
+
             <main class="main full-width">
-    <div id="article-toolbar">
-        <a href="http://blog.yosyshq.com/" class="back-home">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <polyline points="15 6 9 12 15 18" />
-</svg>
-
-
-
-            <span>Back</span>
-        </a>
-    </div>
-
     <article class="has-image main-article">
     <header class="article-header">
         <div class="article-image">
@@ -235,12 +242,37 @@ FazyRV is a minimal-area RISC-V core that scales with your needs. It allows you 
     <div class="article-details">
     
 
-    <h2 class="article-title">
-        <a href="/p/community-spotlight-fazyrv/">Community Spotlight - FazyRV</a>
-    </h2>
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/community-spotlight-fazyrv/">Community Spotlight - FazyRV</a>
+        </h2>
+    
+        
+    </div>
 
+    
+    
+    
+    
     <footer class="article-time">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Mar 10, 2024</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <circle cx="12" cy="12" r="9" />
   <polyline points="12 7 12 12 15 15" />
@@ -248,40 +280,85 @@ FazyRV is a minimal-area RISC-V core that scales with your needs. It allows you 
 
 
 
-        <time class="article-time--published">Mar 10, 2024</time>
-    </footer></div>
+                <time class="article-time--reading">
+                    5 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
 </header>
 
     <section class="article-content">
-    <h1 id="fazyrv">FazyRV</h1>
-<p>Welcome to another <a class="link" href="/tags/community-spotlight/" >community spotlight</a> article where we shine a light on open source EDA-related projects. If you want to <a class="link" href="https://docs.google.com/forms/d/e/1FAIpQLSdIEgu6FJZam0-V3PMTjw-eDebJdg_JuIlN4MkLNDr4vs-a5A/viewform?usp=sf_link"  target="_blank" rel="noopener"
+    
+    
+    <h1 id="fazyrv">
+    <a href="#fazyrv" class="header-anchor">#</a>
+    FazyRV
+</h1><p>Welcome to another <a class="link" href="/tags/community-spotlight/" >community spotlight</a> article where we shine a light on open source EDA-related projects. If you want to <a class="link" href="https://docs.google.com/forms/d/e/1FAIpQLSdIEgu6FJZam0-V3PMTjw-eDebJdg_JuIlN4MkLNDr4vs-a5A/viewform?usp=sf_link"  target="_blank" rel="noopener"
     >submit a project, please do so here</a>.</p>
 <p>FazyRV is a minimal-area RISC-V core that scales with your needs. It allows you to adapt the data path width to process smaller 1, 2, 4, or 8-bit <em>chunks</em> of the 32-bit operands each clock cycle. In addition, each data path width can be combined with FazyRV&rsquo;s manifold variants to trade area with performance and find the best-fitting configuration for your system requirements and used technology. FazyRV avoids hand optimizations at the gate level to increase readability and ease modifications, such as adding custom instruction extensions.</p>
-<h1 id="meinhard-kissichs-bio">Meinhard Kissich&rsquo;s Bio</h1>
-<p><img src="/static-2024/spotlight/fazyrv/meinhard.jpg" alt="Meinhard Kissich"  /></p>
+<h1 id="meinhard-kissichs-bio">
+    <a href="#meinhard-kissichs-bio" class="header-anchor">#</a>
+    Meinhard Kissich&rsquo;s Bio
+</h1><p><img src="/static-2024/spotlight/fazyrv/meinhard.jpg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Meinhard Kissich"
+	
+	
+></p>
 <p>I am a Ph.D. student at <a class="link" href="https://www.tugraz.at/home"  target="_blank" rel="noopener"
     >Graz University of Technology</a> in Austria. After completing my Master&rsquo;s degree in Information and Computer Engineering in 2022, I joined the <a class="link" href="https://iti.tugraz.at/eas"  target="_blank" rel="noopener"
     >Embedded Architectures &amp; Systems</a> (EAS) Group as a university assistant. My main interests and research areas are RISC-V architectures, FPGA CAD tools, and applied formal verification. I enjoy realizing unique ideas outside convention and evaluating these implementations. For me, it is not just about gathering knowledge but also about sharing it and contributing back to the community. I lead the Real-Time Operating Systems Laboratory course and am always up for discussions and exciting projects.</p>
-<h1 id="what-motivated-you-to-make-fazyrv">What motivated you to make FazyRV?</h1>
-<p>The fascination of getting the most out of a constrained environment and using even small FPGAs for &ldquo;big&rdquo; projects &ndash; it is like the digital design equivalent of <em>Can it run Doom?</em>. I became captivated by <a class="link" href="https://github.com/olofk/serv"  target="_blank" rel="noopener"
+<h1 id="what-motivated-you-to-make-fazyrv">
+    <a href="#what-motivated-you-to-make-fazyrv" class="header-anchor">#</a>
+    What motivated you to make FazyRV?
+</h1><p>The fascination of getting the most out of a constrained environment and using even small FPGAs for &ldquo;big&rdquo; projects &ndash; it is like the digital design equivalent of <em>Can it run Doom?</em>. I became captivated by <a class="link" href="https://github.com/olofk/serv"  target="_blank" rel="noopener"
     >SERV</a> and how small a system-on-chip design can be. However, there was a gap between the 1-bit bit-serial SERV and prevalent 32-bit cores.</p>
 <p>That brings me to a second point: I wanted to explore how a sub-32-bit core scales between a 1-bit bit-serial and a 32-bit core in terms of area and performance. This is where FazyRV started as a scalable RISC-V core.</p>
-<h1 id="what-makes-you-excited-about-fazyrv">What makes you excited about FazyRV?</h1>
-<p>FazyRV allows scaling the core to the project&rsquo;s needs in a way that was not available to me before. The fine-grained options can be used to explore the design space and find the best area vs. performance trade-off for the system requirements and target technology. Assume the target technology does not have dual-read-port BRAM primitives available without some area overhead. In this case, you can choose an implementation that serially reads the operands at the expense of one additional clock cycle per instruction. Then, you can synthesize the data path to a width that fits your timing requirements. If it is on edge, you may also experiment with a variant that uses a bypass multiplexer and can save one clock cycle on operand loads. All that is done by just playing around with Verilog parameters.</p>
+<h1 id="what-makes-you-excited-about-fazyrv">
+    <a href="#what-makes-you-excited-about-fazyrv" class="header-anchor">#</a>
+    What makes you excited about FazyRV?
+</h1><p>FazyRV allows scaling the core to the project&rsquo;s needs in a way that was not available to me before. The fine-grained options can be used to explore the design space and find the best area vs. performance trade-off for the system requirements and target technology. Assume the target technology does not have dual-read-port BRAM primitives available without some area overhead. In this case, you can choose an implementation that serially reads the operands at the expense of one additional clock cycle per instruction. Then, you can synthesize the data path to a width that fits your timing requirements. If it is on edge, you may also experiment with a variant that uses a bypass multiplexer and can save one clock cycle on operand loads. All that is done by just playing around with Verilog parameters.</p>
 <p>Let us delve into a practical implementation by plotting the Mandelbrot set. The comparison below illustrates the performance disparity when using different chunk sizes. While the variant with an 8-bit chunk size delivers the highest performance, it also results in the largest design, as depicted in the plot at the top.</p>
-<p><img src="/static-2024/spotlight/fazyrv/mandelbrot.gif" alt="Meinhard Kissich"  /></p>
+<p><img src="/static-2024/spotlight/fazyrv/mandelbrot.gif"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Meinhard Kissich"
+	
+	
+></p>
 <p>But there is more to it: FazyRV avoids hand optimization at the gate level. I want to inspect more closely how synthesis tools optimize the current hardware description and map the patterns.</p>
-<h1 id="what-are-some-of-the-challenges-you-face">What are some of the challenges you face?</h1>
-<p>One was undoubtedly the architecture of shift instructions. The considered designs significantly influence the resulting area and performance. Finding a suitable trade-off is more challenging when the area and performance overhead must fit all data path widths without getting out of balance.</p>
+<h1 id="what-are-some-of-the-challenges-you-face">
+    <a href="#what-are-some-of-the-challenges-you-face" class="header-anchor">#</a>
+    What are some of the challenges you face?
+</h1><p>One was undoubtedly the architecture of shift instructions. The considered designs significantly influence the resulting area and performance. Finding a suitable trade-off is more challenging when the area and performance overhead must fit all data path widths without getting out of balance.</p>
 <p>Also, when designing a core highly optimized for area, there are some sacrifices to be made here and there. Of course, the area must be minimized, but likewise, the core must remain suitable for most users and applications when defining constraints in the feature set. One example is the decoder: Not all instruction bits are explicitly checked to reduce the area. Assumptions are made that some instructions cannot occur. The drawback, however, is that an illegal instruction may be interpreted as a different legal instruction instead of raising an illegal instruction exception. In this particular case, it was handled by providing the decoder logic in a table-like format that can be adapted by the user and synthesized to Verilog code by a tool. It eases modifications to detect illegal instructions when required or to add custom instructions to the core without digging into the decoder at a low level. However, many more decisions in the INT and CSR variants are yet to be made.</p>
-<h1 id="what-could-the-community-do-to-support-you">What could the community do to support you?</h1>
-<p>Consider having a play with FazyRV in your next project, either by using the Verilog design directly or exploring FazyRV via LiteX. We are grateful for any opinions, reported issues, or suggestions.</p>
+<h1 id="what-could-the-community-do-to-support-you">
+    <a href="#what-could-the-community-do-to-support-you" class="header-anchor">#</a>
+    What could the community do to support you?
+</h1><p>Consider having a play with FazyRV in your next project, either by using the Verilog design directly or exploring FazyRV via LiteX. We are grateful for any opinions, reported issues, or suggestions.</p>
 <p>If you want to get involved even more, we maintain a list of open topics in the repository. Feel free to use this as a starting point or bring in your own ideas for discussion or a concrete proposed implementation. Even if you are not involved in digital design, well-designed tooling, workflows, and software support are needed to make adopting FazyRV as convenient as possible and verify changes continuously.</p>
-<h1 id="what-is-the-best-link-for-the-project">What is the best link for the project?</h1>
-<p>The <a class="link" href="https://github.com/meiniKi/FazyRV"  target="_blank" rel="noopener"
+<h1 id="what-is-the-best-link-for-the-project">
+    <a href="#what-is-the-best-link-for-the-project" class="header-anchor">#</a>
+    What is the best link for the project?
+</h1><p>The <a class="link" href="https://github.com/meiniKi/FazyRV"  target="_blank" rel="noopener"
     >GitHub repository</a> is the best place to start. It is where everything comes together and you will find the latest changes and updates. For example, we will soon publish a research paper with many more evaluations and design insights, which we will reference in the repo.</p>
-<h1 id="what-is-the-best-way-for-people-to-contact-you">What is the best way for people to contact you?</h1>
-<p>You can find a list of up-to-date contact options on my website.</p>
+<h1 id="what-is-the-best-way-for-people-to-contact-you">
+    <a href="#what-is-the-best-way-for-people-to-contact-you" class="header-anchor">#</a>
+    What is the best way for people to contact you?
+</h1><p>You can find a list of up-to-date contact options on my website.</p>
 <ul>
 <li><a class="link" href="https://www.meinhard-kissich.at"  target="_blank" rel="noopener"
     >www.meinhard-kissich.at</a></li>
@@ -313,15 +390,15 @@ FazyRV is a minimal-area RISC-V core that scales with your needs. It allows you 
     </section>
     </footer>
 
+
     
 </article>
 
-    <aside class="related-contents--wrapper">
     
+
     
-</aside>
 
-
+     
     
         
     
@@ -337,9 +414,12 @@ FazyRV is a minimal-area RISC-V core that scales with your needs. It allows you 
     
     <section class="powerby">
         Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
-        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.2.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.25.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
     </section>
 </footer>
+
+
+    
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
 
     
@@ -403,24 +483,25 @@ FazyRV is a minimal-area RISC-V core that scales with your needs. It allows you 
 
 </div><script 
                 src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
-                defer="true"
+                defer
                 >
             </script><script 
                 src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
-                defer="true"
+                defer
                 >
             </script><link 
                 rel="stylesheet" 
-                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
             ><link 
                 rel="stylesheet" 
-                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
             >
+
             </main>
         </div>
         <script 
-                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
-                defer="false"
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
                 >
             </script><script type="text/javascript" src="/ts/main.js" defer></script>
 <script>

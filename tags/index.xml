@@ -1,54 +1,59 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Tags on YosysHQ Blog</title>
-    <link>http://blog.yosyshq.com/tags/</link>
-    <description>Recent content in Tags on YosysHQ Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sun, 10 Mar 2024 20:30:31 +0100</lastBuildDate>
-    <atom:link href="http://blog.yosyshq.com/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Community Spotlight</title>
-      <link>http://blog.yosyshq.com/tags/community-spotlight/</link>
-      <pubDate>Sun, 10 Mar 2024 20:30:31 +0100</pubDate>
-      <guid>http://blog.yosyshq.com/tags/community-spotlight/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Blog</title>
-      <link>http://blog.yosyshq.com/tags/blog/</link>
-      <pubDate>Mon, 12 Feb 2024 19:09:55 -0800</pubDate>
-      <guid>http://blog.yosyshq.com/tags/blog/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Yug</title>
-      <link>http://blog.yosyshq.com/tags/yug/</link>
-      <pubDate>Sun, 04 Feb 2024 12:00:00 +0000</pubDate>
-      <guid>http://blog.yosyshq.com/tags/yug/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Release Notes</title>
-      <link>http://blog.yosyshq.com/tags/release-notes/</link>
-      <pubDate>Tue, 16 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>http://blog.yosyshq.com/tags/release-notes/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>One Liners</title>
-      <link>http://blog.yosyshq.com/tags/one-liners/</link>
-      <pubDate>Mon, 12 Jun 2023 16:52:39 +0200</pubDate>
-      <guid>http://blog.yosyshq.com/tags/one-liners/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>App Note</title>
-      <link>http://blog.yosyshq.com/tags/app-note/</link>
-      <pubDate>Wed, 07 Jul 2021 12:37:04 +0200</pubDate>
-      <guid>http://blog.yosyshq.com/tags/app-note/</guid>
-      <description></description>
-    </item>
-  </channel>
+    <channel>
+        <title>Tags on YosysHQ Blog</title>
+        <link>http://blog.yosyshq.com/tags/</link>
+        <description>Recent content in Tags on YosysHQ Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Tue, 30 Apr 2024 20:30:31 +0100</lastBuildDate><atom:link href="http://blog.yosyshq.com/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Community Spotlight</title>
+        <link>http://blog.yosyshq.com/tags/community-spotlight/</link>
+        <pubDate>Tue, 30 Apr 2024 20:30:31 +0100</pubDate>
+        
+        <guid>http://blog.yosyshq.com/tags/community-spotlight/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Blog</title>
+        <link>http://blog.yosyshq.com/tags/blog/</link>
+        <pubDate>Mon, 12 Feb 2024 19:09:55 -0800</pubDate>
+        
+        <guid>http://blog.yosyshq.com/tags/blog/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Yug</title>
+        <link>http://blog.yosyshq.com/tags/yug/</link>
+        <pubDate>Sun, 04 Feb 2024 12:00:00 +0000</pubDate>
+        
+        <guid>http://blog.yosyshq.com/tags/yug/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Release Notes</title>
+        <link>http://blog.yosyshq.com/tags/release-notes/</link>
+        <pubDate>Tue, 16 Jan 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://blog.yosyshq.com/tags/release-notes/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>One Liners</title>
+        <link>http://blog.yosyshq.com/tags/one-liners/</link>
+        <pubDate>Mon, 12 Jun 2023 16:52:39 +0200</pubDate>
+        
+        <guid>http://blog.yosyshq.com/tags/one-liners/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>App Note</title>
+        <link>http://blog.yosyshq.com/tags/app-note/</link>
+        <pubDate>Wed, 07 Jul 2021 12:37:04 +0200</pubDate>
+        
+        <guid>http://blog.yosyshq.com/tags/app-note/</guid>
+        <description></description>
+        </item>
+        
+    </channel>
 </rss>

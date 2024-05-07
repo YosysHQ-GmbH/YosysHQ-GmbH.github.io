@@ -1,22 +1,29 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en-us" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Bruno Levy&#39;s FPGA tutorial through Amaranth glasses'><title>How I went from blinker to RISC-V in 3 months</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Bruno Levy's FPGA tutorial through Amaranth glasses">
+<title>How I went from blinker to RISC-V in 3 months</title>
 
 <link rel='canonical' href='http://blog.yosyshq.com/p/blinker-to-risc-v/'>
 
-<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='How I went from blinker to RISC-V in 3 months'>
-<meta property='og:description' content='Bruno Levy&#39;s FPGA tutorial through Amaranth glasses'>
+<link rel="stylesheet" href="/scss/style.min.760e3dabc1e140d2e6abd27a8ca0aabb60e568829b29f67d2df12024136eff37.css"><meta property='og:title' content="How I went from blinker to RISC-V in 3 months">
+<meta property='og:description' content="Bruno Levy's FPGA tutorial through Amaranth glasses">
 <meta property='og:url' content='http://blog.yosyshq.com/p/blinker-to-risc-v/'>
 <meta property='og:site_name' content='YosysHQ Blog'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='blog' /><meta property='article:published_time' content='2023-05-15T12:00:00&#43;02:00'/><meta property='article:modified_time' content='2023-05-15T12:00:00&#43;02:00'/><meta property='og:image' content='http://blog.yosyshq.com/static-2023/blinker-to-riscv.jpg' />
-<meta name="twitter:site" content="@YosysHQ"><meta name="twitter:title" content="How I went from blinker to RISC-V in 3 months">
-<meta name="twitter:description" content="Bruno Levy&#39;s FPGA tutorial through Amaranth glasses"><meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@@YosysHQ">
+    <meta name="twitter:creator" content="@@YosysHQ"><meta name="twitter:title" content="How I went from blinker to RISC-V in 3 months">
+<meta name="twitter:description" content="Bruno Levy's FPGA tutorial through Amaranth glasses"><meta name="twitter:card" content="summary">
     <meta name="twitter:image" content='http://blog.yosyshq.com/static-2023/blinker-to-riscv.jpg' />
     <link rel="shortcut icon" href="/favicon.png" />
 
+  
+
+
     </head>
-    <body class="">
+    <body class="
+    article-page
+    ">
     <script>
         (function() {
             const colorSchemeKey = 'StackColorScheme';
@@ -33,22 +40,24 @@
         if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
             
 
-            document.body.dataset.scheme = 'dark';
+            document.documentElement.dataset.scheme = 'dark';
         } else {
-            document.body.dataset.scheme = 'light';
+            document.documentElement.dataset.scheme = 'light';
         }
     })();
-</script><div class="container main-container flex on-phone--column extended article-page with-toolbar">
-            <aside class="sidebar left-sidebar sticky">
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
     <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
         <span class="hamburger-box">
             <span class="hamburger-inner"></span>
         </span>
     </button>
 
-    <header class="site-info">
+    <header>
         
+            
             <figure class="site-avatar">
+                <a href="/">
                 
                     
                     
@@ -58,21 +67,24 @@
                             height="300" class="site-logo" loading="lazy" alt="Avatar">
                     
                 
-
+                </a>
                 
             </figure>
-        
-        <h1 class="site-name"><a href="http://blog.yosyshq.com/">YosysHQ Blog</a></h1>
-        <h2 class="site-description"></h2>
-    </header>
-
-    <ol class="menu" id="main-menu">
+            
         
         
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">YosysHQ Blog</a></h1>
+            <h2 class="site-description"></h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
         
-
+        
+        
         <li >
-            <a href='/'>
+            <a href='/' >
+                
+                
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -89,9 +101,10 @@
         </li>
         
         
-
         <li >
-            <a href='/about'>
+            <a href='/about' >
+                
+                
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -107,9 +120,10 @@
         </li>
         
         
-
         <li >
-            <a href='/newsletter'>
+            <a href='/newsletter' >
+                
+                
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -125,9 +139,10 @@
         </li>
         
         
-
         <li >
-            <a href='/yug'>
+            <a href='/yug' >
+                
+                
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -143,9 +158,10 @@
         </li>
         
         
-
         <li >
-            <a href='/archives'>
+            <a href='/archives' >
+                
+                
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -162,9 +178,10 @@
         </li>
         
         
-
         <li >
-            <a href='/search'>
+            <a href='/search' >
+                
+                
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -179,10 +196,12 @@
             </a>
         </li>
         
+        <li class="menu-bottom-section">
+            <ol class="menu">
 
-        
-            <li id="dark-mode-toggle">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <circle cx="8" cy="12" r="2" />
   <rect x="2" y="6" width="20" height="12" rx="6" />
@@ -190,7 +209,7 @@
 
 
 
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <circle cx="16" cy="12" r="2" />
   <rect x="2" y="6" width="20" height="12" rx="6" />
@@ -198,26 +217,17 @@
 
 
 
-                <span>Dark Mode</span>
-            </li>
-        
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
     </ol>
 </aside>
 
+    
+
             <main class="main full-width">
-    <div id="article-toolbar">
-        <a href="http://blog.yosyshq.com/" class="back-home">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <polyline points="15 6 9 12 15 18" />
-</svg>
-
-
-
-            <span>Back</span>
-        </a>
-    </div>
-
     <article class="has-image main-article">
     <header class="article-header">
         <div class="article-image">
@@ -232,16 +242,41 @@
     <div class="article-details">
     
 
-    <h2 class="article-title">
-        <a href="/p/blinker-to-risc-v/">How I went from blinker to RISC-V in 3 months</a>
-    </h2>
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/blinker-to-risc-v/">How I went from blinker to RISC-V in 3 months</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            Bruno Levy&#39;s FPGA tutorial through Amaranth glasses
+        </h3>
+        
+    </div>
 
     
-    <h3 class="article-subtitle">
-        Bruno Levy&#39;s FPGA tutorial through Amaranth glasses
-    </h3>
+    
+    
+    
     <footer class="article-time">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">May 15, 2023</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <circle cx="12" cy="12" r="9" />
   <polyline points="12 7 12 12 15 15" />
@@ -249,34 +284,55 @@
 
 
 
-        <time class="article-time--published">May 15, 2023</time>
-    </footer></div>
+                <time class="article-time--reading">
+                    8 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
 </header>
 
     <section class="article-content">
+    
+    
     <p><em>This guest post is by Bastian Löher.</em></p>
-<h1 id="how-i-went-from-blinker-to-risc-v-in-3-months">How I went from blinker to RISC-V in 3 months</h1>
-<p>How does one get started with programming <a class="link" href="https://en.wikipedia.org/wiki/Field-programmable_gate_array"  target="_blank" rel="noopener"
+<h1 id="how-i-went-from-blinker-to-risc-v-in-3-months">
+    <a href="#how-i-went-from-blinker-to-risc-v-in-3-months" class="header-anchor">#</a>
+    How I went from blinker to RISC-V in 3 months
+</h1><p>How does one get started with programming <a class="link" href="https://en.wikipedia.org/wiki/Field-programmable_gate_array"  target="_blank" rel="noopener"
     >FPGAs</a> (field-programmable gate arrays)? Where does one even begin? Also, if you&rsquo;ve ever wondered how a <a class="link" href="https://en.wikipedia.org/wiki/Central_processing_unit"  target="_blank" rel="noopener"
     >CPU</a> works and how you can build your own, keep reading!</p>
 <p><em>TL;DR:</em> Getting into FPGA programming nowadays isn&rsquo;t hard anymore. Get a <a class="link" href="https://www.joelw.id.au/FPGA/CheapFPGADevelopmentBoards"  target="_blank" rel="noopener"
     >cheap board</a> with at least one LED that is supported by an open toolchain,
 <a class="link" href="https://www.startpage.com/sp/search?query=fpga&#43;vhdl&#43;verilog&#43;tutorial"  target="_blank" rel="noopener"
     >search for a tutorial</a>, and get that LED blinking!</p>
-<h2 id="introduction">Introduction</h2>
-<p>As an experimental physicist, I have been working with FPGAs for many years. These versatile devices enable creating customized electronics for all kinds of applications. FPGAs typically contain thousands of mostly simple logic units that can be connected in sophisticated ways using a hardware description language (HDL). I have experience writing efficient software for low-latency embedded processors and have so far only made small adjustments to existing VHDL or Verilog projects. However, only recently have I had the opportunity to take a deeper dive into writing new logic designs from scratch.</p>
+<h2 id="introduction">
+    <a href="#introduction" class="header-anchor">#</a>
+    Introduction
+</h2><p>As an experimental physicist, I have been working with FPGAs for many years. These versatile devices enable creating customized electronics for all kinds of applications. FPGAs typically contain thousands of mostly simple logic units that can be connected in sophisticated ways using a hardware description language (HDL). I have experience writing efficient software for low-latency embedded processors and have so far only made small adjustments to existing VHDL or Verilog projects. However, only recently have I had the opportunity to take a deeper dive into writing new logic designs from scratch.</p>
 <p>It does not feel that long ago that FPGA boards were prohibitively expensive devices, and the tools and IP cores were not accessible to everyone. Starting development for FPGAs used to be a costly investment and close to impossible to do on a small budget. Luckily, this situation has changed. Small FPGA chips now sell for as low as $10, and a lot of development is done on free and open-source toolchains. As it turns out, with enough ambition and a bit of courage, one can achieve reasonable results in FPGA-land today without breaking the bank!</p>
-<h2 id="first-find-a-project">First, find a project</h2>
-<p>For me, it all started with a new project that involved creating a device capable of measuring arrival time and length of logic signals with sub-nanosecond precision. The idea was to create a low-cost spectrometer for measuring high-intensity gamma radiation and replacing the commonly used ADC (analog-to-digital converter) circuit with a TDC (time-to-digital converter) implemented in an FPGA. So, instead of measuring the amplitude of the signal, only the time the signal spends above a certain threshold (<a class="link" href="https://ieeexplore.ieee.org/document/603658"  target="_blank" rel="noopener"
+<h2 id="first-find-a-project">
+    <a href="#first-find-a-project" class="header-anchor">#</a>
+    First, find a project
+</h2><p>For me, it all started with a new project that involved creating a device capable of measuring arrival time and length of logic signals with sub-nanosecond precision. The idea was to create a low-cost spectrometer for measuring high-intensity gamma radiation and replacing the commonly used ADC (analog-to-digital converter) circuit with a TDC (time-to-digital converter) implemented in an FPGA. So, instead of measuring the amplitude of the signal, only the time the signal spends above a certain threshold (<a class="link" href="https://ieeexplore.ieee.org/document/603658"  target="_blank" rel="noopener"
     >time-over-threshold</a>) is measured. This design reduces the system complexity but requires custom logic.</p>
-<h2 id="choose-your-tools">Choose your tools</h2>
-<p>I have seen many projects written in VHDL and Verilog, but for this one, I wanted to try one of the new HDL alternatives. My language of choice happened to be the Python-based <a class="link" href="https://amaranth-lang.org/docs/amaranth/latest/"  target="_blank" rel="noopener"
+<h2 id="choose-your-tools">
+    <a href="#choose-your-tools" class="header-anchor">#</a>
+    Choose your tools
+</h2><p>I have seen many projects written in VHDL and Verilog, but for this one, I wanted to try one of the new HDL alternatives. My language of choice happened to be the Python-based <a class="link" href="https://amaranth-lang.org/docs/amaranth/latest/"  target="_blank" rel="noopener"
     >Amaranth HDL</a> (formerly known as nMigen), primarily because I had in mind to write the accompanying firmware for the device in <a class="link" href="https://micropython.org/"  target="_blank" rel="noopener"
     >MicroPython</a>. I was also intrigued by <a class="link" href="https://clash-lang.org/"  target="_blank" rel="noopener"
     >Clash</a> and <a class="link" href="https://github.com/SpinalHDL/SpinalHDL"  target="_blank" rel="noopener"
     >SpinalHDL</a>, but Amaranth seemed to have an easier learning curve. So, with the clear goal of creating a working TDC, I jumped headfirst into writing Amaranth code. Over the course of the next year (where I spent most of the time on system design and writing software), I became more familiar with the language and successfully finished the project on time for our customer.</p>
-<h2 id="set-priorities">Set priorities</h2>
-<p>While I was working on the project, I encountered <a class="link" href="https://hdl.github.io/awesome/"  target="_blank" rel="noopener"
+<h2 id="set-priorities">
+    <a href="#set-priorities" class="header-anchor">#</a>
+    Set priorities
+</h2><p>While I was working on the project, I encountered <a class="link" href="https://hdl.github.io/awesome/"  target="_blank" rel="noopener"
     >many</a> <a class="link" href="https://www.fpga4fun.com/HDLtutorials.html"  target="_blank" rel="noopener"
     >excellent</a> <a class="link" href="https://nandland.com/"  target="_blank" rel="noopener"
     >resources</a> and <a class="link" href="https://github.com/RobertBaruch/nmigen-tutorial"  target="_blank" rel="noopener"
@@ -284,21 +340,36 @@
     >courses</a> for FPGA programming and logic design, and I read various code examples in different HDLs. I also questioned whether Amaranth was the right choice or if I should have chosen a more conventional language. One tutorial that particularly captured my attention was <a class="link" href="https://github.com/BrunoLevy/learn-fpga/blob/master/FemtoRV/TUTORIALS/FROM_BLINKER_TO_RISCV/README.md"  target="_blank" rel="noopener"
     >Bruno Levy&rsquo;s &ldquo;Blinker to RISC-V&rdquo;</a>. The concept intrigued me; one starts with an innocent and all-too-familiar &lsquo;blinky&rsquo; example but ends up with a fully functional <a class="link" href="https://en.wikipedia.org/wiki/RISC-V"  target="_blank" rel="noopener"
     >RISC-V</a> CPU that can run code written by someone else. Following the tutorial for just 24 steps (the CPU executes the first code after step 7), I was curious to try it out immediately. However, I set it aside during the TDC project and only returned to it afterward.</p>
-<h2 id="define-your-goals">Define your goals</h2>
-<p>At that point, I had enough experience with Amaranth to tackle the tutorial as a practice exercise. Instead of using verilog, I followed Bruno&rsquo;s tutorial in Amaranth HDL, using the open-source <a class="link" href="https://f4pga.org/"  target="_blank" rel="noopener"
+<h2 id="define-your-goals">
+    <a href="#define-your-goals" class="header-anchor">#</a>
+    Define your goals
+</h2><p>At that point, I had enough experience with Amaranth to tackle the tutorial as a practice exercise. Instead of using verilog, I followed Bruno&rsquo;s tutorial in Amaranth HDL, using the open-source <a class="link" href="https://f4pga.org/"  target="_blank" rel="noopener"
     >F4PGA</a> (formerly Symbiflow) toolchain and an FPGA board that was not supported in the tutorial (<a class="link" href="https://digilent.com/reference/programmable-logic/cmod-a7"  target="_blank" rel="noopener"
     >Digilent CMOD A7</a> with <a class="link" href="https://www.xilinx.com/products/silicon-devices/fpga/artix-7.html"  target="_blank" rel="noopener"
     >Xilinx Artix 7</a>). I wanted to see how far I could go and was unaware of the obstacles that lay ahead.</p>
-<p><img src="/static-2023/cmod_board.jpg" alt="image"  /><br>
+<p><img src="/static-2023/cmod_board.jpg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image"
+	
+	
+><br>
 <em>Digilent CMOD A7 FPGA board with Xilinx Artix7. USB-UART dongle in the back.</em></p>
-<h2 id="and-get-going">And get going!</h2>
-<p>I started the course in December 2022 and <a class="link" href="https://github.com/bl0x/learn-fpga-amaranth"  target="_blank" rel="noopener"
+<h2 id="and-get-going">
+    <a href="#and-get-going" class="header-anchor">#</a>
+    And get going!
+</h2><p>I started the course in December 2022 and <a class="link" href="https://github.com/bl0x/learn-fpga-amaranth"  target="_blank" rel="noopener"
     >published the first version</a>, including step 18 (mandelbrot generator), by the end of February 2023. Here are some of the things I learned during these three months: even though I had used Amaranth HDL before, I needed to learn a few more tricks to translate the tutorial code. I learned how valuable instant feedback through test benches and simulations can be. Most of the time, if the simulated logic was working correctly, the hardware implementation was doing the right thing. I had long wondered what makes a CPU a CPU: what are the essential parts, and how do they all work together to execute a set of instructions and manipulate memory and/or pixels on the screen?</p>
 <p>This is the question that the tutorial answered in great detail in the first 18 steps and unraveling the mystic black box that a CPU usually is, contributed to at least half the joy I experienced while putting together my own CPU. Bruno explains the <a class="link" href="https://riscv.org/technical/specifications/"  target="_blank" rel="noopener"
     >RISC-V ISA</a> and <a class="link" href="https://github.com/riscv-non-isa/riscv-elf-psabi-doc/blob/master/riscv-cc.adoc"  target="_blank" rel="noopener"
     >ABI</a>, and together we build a more and more capable version of the processor step-by-step. At the same time, I learned the corresponding assembly language for RISC-V, which is essential for testing and programming the CPU at every step. The later steps focus on compiling third-party code with GCC and how to configure the linker so that code is executed from the correct piece of memory in the FPGA. I also learned a lot about compiled objects and ELF formats, which one usually doesn&rsquo;t have to worry about when compiling for Linux-based systems.</p>
-<h2 id="theres-more-to-it">There&rsquo;s more to it!</h2>
-<p>In addition to the obvious takeaways, there were also several unexpected events that occurred along the way. One significant obstacle was that Bruno&rsquo;s tutorial came with a <a class="link" href="https://github.com/BrunoLevy/learn-fpga/blob/master/FemtoRV/TUTORIALS/FROM_BLINKER_TO_RISCV/riscv_assembly.v"  target="_blank" rel="noopener"
+<h2 id="theres-more-to-it">
+    <a href="#theres-more-to-it" class="header-anchor">#</a>
+    There&rsquo;s more to it!
+</h2><p>In addition to the obvious takeaways, there were also several unexpected events that occurred along the way. One significant obstacle was that Bruno&rsquo;s tutorial came with a <a class="link" href="https://github.com/BrunoLevy/learn-fpga/blob/master/FemtoRV/TUTORIALS/FROM_BLINKER_TO_RISCV/riscv_assembly.v"  target="_blank" rel="noopener"
     >custom RISC-V assembler</a>, written in Verilog, which assembled the instructions while compiling or simulating the logic. This meant that I had to figure out how to seamlessly integrate it with Amaranth. Moreover, I had to fill in jump offsets manually, which is not very convenient. To streamline the process, I went on a longer tangent to implement the <a class="link" href="https://github.com/bl0x/learn-fpga-amaranth/blob/main/tools/riscv_assembler.py"  target="_blank" rel="noopener"
     >assembler in Python</a>. It was a challenging task, but I succeeded in achieving seamless integration with Amaranth, without the need for manual jump offsets. At a later step, Bruno incorporates the <a class="link" href="https://github.com/olofk/corescore/blob/master/rtl/corescore_emitter_uart.v"  target="_blank" rel="noopener"
     >tiny UART sender</a> by Olof Kindgren, I successfully ported it to Amaranth as well, which was a pleasant surprise since it almost worked on the first try.</p>
@@ -310,16 +381,22 @@
     >Verilator</a>, and <a class="link" href="https://github.com/olofk/edalize"  target="_blank" rel="noopener"
     >Edalize</a>.</p>
 <p>I&rsquo;m currently working through the last parts of Bruno&rsquo;s tutorial, and while I still have a few steps to go, I&rsquo;ve already learned a lot. Converting the examples to Amaranth HDL has been challenging, but not impossible. Personally, I enjoy working with Amaranth because its semantics are clear and it offers the full power of Python when needed. While some things are more verbose in Amaranth (such as Mux() and Repl()) than their Verilog counterparts, others can be written more concisely.</p>
-<h2 id="i-could-not-have-done-it-alone">I could not have done it alone</h2>
-<p>During the process, I&rsquo;ve had many questions about Amaranth, the build system, the toolchain, and the hardware. Luckily, the helpful community on IRC (#amaranth-lang on libera.chat) and <a class="link" href="https://github.com/amaranth-lang/amaranth"  target="_blank" rel="noopener"
+<h2 id="i-could-not-have-done-it-alone">
+    <a href="#i-could-not-have-done-it-alone" class="header-anchor">#</a>
+    I could not have done it alone
+</h2><p>During the process, I&rsquo;ve had many questions about Amaranth, the build system, the toolchain, and the hardware. Luckily, the helpful community on IRC (#amaranth-lang on libera.chat) and <a class="link" href="https://github.com/amaranth-lang/amaranth"  target="_blank" rel="noopener"
     >GitHub</a> has always been quick to respond. Additionally, documentation for open toolchains and developing with these tools has greatly improved in the past year.</p>
 <p>Still, some endurance is needed to pull through, when things don&rsquo;t work as expected. For example, my board and one of my chips were not supported by Amaranth, and I encountered issues compiling on an older laptop with an unsupported 32-bit host architecture. I also found myself in <a class="link" href="https://medium.com/knerd/the-nine-circles-of-python-dependency-hell-481d53e3e025"  target="_blank" rel="noopener"
     >python package hell</a> on more than one occasion. And as they say, the devil is in the details, since some seemingly small steps have taken considerably more time than anticipated (&ldquo;proceed after you have a working RISC-V assembler&rdquo;, &ldquo;we&rsquo;ll use this existing UART module&rdquo;, &ldquo;now just convert the ELF to HEX format&rdquo;).</p>
-<h2 id="final-thoughts">Final thoughts</h2>
-<p>Despite these challenges, my plan is to continue with the tutorial and get the SPI interface working. In the meantime, I&rsquo;m also working on getting support for the <a class="link" href="https://github.com/YosysHQ/apicula"  target="_blank" rel="noopener"
+<h2 id="final-thoughts">
+    <a href="#final-thoughts" class="header-anchor">#</a>
+    Final thoughts
+</h2><p>Despite these challenges, my plan is to continue with the tutorial and get the SPI interface working. In the meantime, I&rsquo;m also working on getting support for the <a class="link" href="https://github.com/YosysHQ/apicula"  target="_blank" rel="noopener"
     >free Gowin toolchain</a> (project apicula) into Amaranth&rsquo;s build system. Looking ahead, I&rsquo;m excited to apply the things I&rsquo;ve learned from (not strictly) following Bruno&rsquo;s tutorial to other projects. I&rsquo;d also encourage anyone interested in these concepts to take their favorite HDL and port the tutorial. For me, this has been a great experience, and I&rsquo;m certain that with a growing user base, FPGA design will become even more accessible than it is today!</p>
-<h2 id="about-the-author">About the author</h2>
-<p><strong>Dr. Bastian Löher</strong> (Twitter: <a class="link" href="https://twitter.com/y__"  target="_blank" rel="noopener"
+<h2 id="about-the-author">
+    <a href="#about-the-author" class="header-anchor">#</a>
+    About the author
+</h2><p><strong>Dr. Bastian Löher</strong> (Twitter: <a class="link" href="https://twitter.com/y__"  target="_blank" rel="noopener"
     >@y__</a>, Mastodon: <a class="link" href="https://mastodon.social/@bl0x@mastodon.social"  target="_blank" rel="noopener"
     >@bl0x@mastodon.social</a>) ported <a class="link" href="https://github.com/BrunoLevy/learn-fpga/blob/master/FemtoRV/TUTORIALS/FROM_BLINKER_TO_RISCV/README.md"  target="_blank" rel="noopener"
     >Bruno Levy&rsquo;s FPGA tutorial</a> to <a class="link" href="https://github.com/bl0x/learn-fpga-amaranth"  target="_blank" rel="noopener"
@@ -351,15 +428,15 @@
     </section>
     </footer>
 
+
     
 </article>
 
-    <aside class="related-contents--wrapper">
     
+
     
-</aside>
 
-
+     
     
         
     
@@ -375,9 +452,12 @@
     
     <section class="powerby">
         Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
-        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.2.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.25.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
     </section>
 </footer>
+
+
+    
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
 
     
@@ -441,24 +521,25 @@
 
 </div><script 
                 src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
-                defer="true"
+                defer
                 >
             </script><script 
                 src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
-                defer="true"
+                defer
                 >
             </script><link 
                 rel="stylesheet" 
-                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
             ><link 
                 rel="stylesheet" 
-                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
             >
+
             </main>
         </div>
         <script 
-                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
-                defer="false"
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
                 >
             </script><script type="text/javascript" src="/ts/main.js" defer></script>
 <script>

@@ -1,22 +1,29 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en-us" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='A look at CFlexHDL and PipelineC'><title>3D raytraced game with open source C to FPGA toolchain</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="A look at CFlexHDL and PipelineC">
+<title>3D raytraced game with open source C to FPGA toolchain</title>
 
 <link rel='canonical' href='http://blog.yosyshq.com/p/3d-raytracing/'>
 
-<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='3D raytraced game with open source C to FPGA toolchain'>
-<meta property='og:description' content='A look at CFlexHDL and PipelineC'>
+<link rel="stylesheet" href="/scss/style.min.760e3dabc1e140d2e6abd27a8ca0aabb60e568829b29f67d2df12024136eff37.css"><meta property='og:title' content="3D raytraced game with open source C to FPGA toolchain">
+<meta property='og:description' content="A look at CFlexHDL and PipelineC">
 <meta property='og:url' content='http://blog.yosyshq.com/p/3d-raytracing/'>
 <meta property='og:site_name' content='YosysHQ Blog'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='blog' /><meta property='article:published_time' content='2023-02-03T12:00:00&#43;02:00'/><meta property='article:modified_time' content='2023-02-03T12:00:00&#43;02:00'/><meta property='og:image' content='http://blog.yosyshq.com/static-2023/sphery.png' />
-<meta name="twitter:site" content="@YosysHQ"><meta name="twitter:title" content="3D raytraced game with open source C to FPGA toolchain">
+<meta name="twitter:site" content="@@YosysHQ">
+    <meta name="twitter:creator" content="@@YosysHQ"><meta name="twitter:title" content="3D raytraced game with open source C to FPGA toolchain">
 <meta name="twitter:description" content="A look at CFlexHDL and PipelineC"><meta name="twitter:card" content="summary">
     <meta name="twitter:image" content='http://blog.yosyshq.com/static-2023/sphery.png' />
     <link rel="shortcut icon" href="/favicon.png" />
 
+  
+
+
     </head>
-    <body class="">
+    <body class="
+    article-page
+    ">
     <script>
         (function() {
             const colorSchemeKey = 'StackColorScheme';
@@ -33,22 +40,24 @@
         if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
             
 
-            document.body.dataset.scheme = 'dark';
+            document.documentElement.dataset.scheme = 'dark';
         } else {
-            document.body.dataset.scheme = 'light';
+            document.documentElement.dataset.scheme = 'light';
         }
     })();
-</script><div class="container main-container flex on-phone--column extended article-page with-toolbar">
-            <aside class="sidebar left-sidebar sticky">
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
     <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
         <span class="hamburger-box">
             <span class="hamburger-inner"></span>
         </span>
     </button>
 
-    <header class="site-info">
+    <header>
         
+            
             <figure class="site-avatar">
+                <a href="/">
                 
                     
                     
@@ -58,21 +67,24 @@
                             height="300" class="site-logo" loading="lazy" alt="Avatar">
                     
                 
-
+                </a>
                 
             </figure>
-        
-        <h1 class="site-name"><a href="http://blog.yosyshq.com/">YosysHQ Blog</a></h1>
-        <h2 class="site-description"></h2>
-    </header>
-
-    <ol class="menu" id="main-menu">
+            
         
         
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">YosysHQ Blog</a></h1>
+            <h2 class="site-description"></h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
         
-
+        
+        
         <li >
-            <a href='/'>
+            <a href='/' >
+                
+                
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -89,9 +101,10 @@
         </li>
         
         
-
         <li >
-            <a href='/about'>
+            <a href='/about' >
+                
+                
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -107,9 +120,10 @@
         </li>
         
         
-
         <li >
-            <a href='/newsletter'>
+            <a href='/newsletter' >
+                
+                
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -125,9 +139,10 @@
         </li>
         
         
-
         <li >
-            <a href='/yug'>
+            <a href='/yug' >
+                
+                
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -143,9 +158,10 @@
         </li>
         
         
-
         <li >
-            <a href='/archives'>
+            <a href='/archives' >
+                
+                
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -162,9 +178,10 @@
         </li>
         
         
-
         <li >
-            <a href='/search'>
+            <a href='/search' >
+                
+                
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -179,10 +196,12 @@
             </a>
         </li>
         
+        <li class="menu-bottom-section">
+            <ol class="menu">
 
-        
-            <li id="dark-mode-toggle">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <circle cx="8" cy="12" r="2" />
   <rect x="2" y="6" width="20" height="12" rx="6" />
@@ -190,7 +209,7 @@
 
 
 
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <circle cx="16" cy="12" r="2" />
   <rect x="2" y="6" width="20" height="12" rx="6" />
@@ -198,26 +217,17 @@
 
 
 
-                <span>Dark Mode</span>
-            </li>
-        
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
     </ol>
 </aside>
 
+    
+
             <main class="main full-width">
-    <div id="article-toolbar">
-        <a href="http://blog.yosyshq.com/" class="back-home">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <polyline points="15 6 9 12 15 18" />
-</svg>
-
-
-
-            <span>Back</span>
-        </a>
-    </div>
-
     <article class="has-image main-article">
     <header class="article-header">
         <div class="article-image">
@@ -232,16 +242,41 @@
     <div class="article-details">
     
 
-    <h2 class="article-title">
-        <a href="/p/3d-raytracing/">3D raytraced game with open source C to FPGA toolchain</a>
-    </h2>
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/3d-raytracing/">3D raytraced game with open source C to FPGA toolchain</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            A look at CFlexHDL and PipelineC
+        </h3>
+        
+    </div>
 
     
-    <h3 class="article-subtitle">
-        A look at CFlexHDL and PipelineC
-    </h3>
+    
+    
+    
     <footer class="article-time">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Feb 03, 2023</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <circle cx="12" cy="12" r="9" />
   <polyline points="12 7 12 12 15 15" />
@@ -249,47 +284,122 @@
 
 
 
-        <time class="article-time--published">Feb 03, 2023</time>
-    </footer></div>
+                <time class="article-time--reading">
+                    9 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
 </header>
 
     <section class="article-content">
+    
+    
     <p><em>This guest post is by Victor Suarez Rovere and Julian Kemmerer.</em></p>
-<h1 id="3d-raytraced-game-using-fully-open-source-c-to-fpga-toolchain">3D raytraced game using fully open source “C to FPGA” toolchain</h1>
-<p>Sphery vs. Shapes is the world&rsquo;s first 3D raytraced game implemented completely as digital logic. This is all made possible by combining the OSS CAD Suite with CFlexHDL and PipelineC.</p>
-<h2 id="summary">Summary</h2>
-<p>In this article we present a tool flow that takes C++ code describing a raytraced game, and produces digital logic that can be implemented in off-the-shelf FPGAs (with no hard or soft CPU used). We aim for these tools to achieve a software friendly C-to-FPGA flow, making the development + simulation process exceptionally fast and easy, while providing high performance and low power hardware results.</p>
+<h1 id="3d-raytraced-game-using-fully-open-source-c-to-fpga-toolchain">
+    <a href="#3d-raytraced-game-using-fully-open-source-c-to-fpga-toolchain" class="header-anchor">#</a>
+    3D raytraced game using fully open source “C to FPGA” toolchain
+</h1><p>Sphery vs. Shapes is the world&rsquo;s first 3D raytraced game implemented completely as digital logic. This is all made possible by combining the OSS CAD Suite with CFlexHDL and PipelineC.</p>
+<h2 id="summary">
+    <a href="#summary" class="header-anchor">#</a>
+    Summary
+</h2><p>In this article we present a tool flow that takes C++ code describing a raytraced game, and produces digital logic that can be implemented in off-the-shelf FPGAs (with no hard or soft CPU used). We aim for these tools to achieve a software friendly C-to-FPGA flow, making the development + simulation process exceptionally fast and easy, while providing high performance and low power hardware results.</p>
 <p>Thanks to project Trellis, Yosys and nextpnr can complete an open source synthesis and place and route flow for ECP5 FPGAs. This was the final piece needed to complete our C-&gt;Bitstream workflow based on fully open source tools.</p>
-<p><img src="https://user-images.githubusercontent.com/8551129/215363908-0625eb6e-a3db-485a-89e2-10267fca6b7c.png" alt="image"  />
+<p><img src="https://user-images.githubusercontent.com/8551129/215363908-0625eb6e-a3db-485a-89e2-10267fca6b7c.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image"
+	
+	
+>
 <em>Demo <a class="link" href="https://www.youtube.com/watch?v=hn3sr3VMJQU"  target="_blank" rel="noopener"
     >video</a> and full sources: <a class="link" href="https://github.com/JulianKemmerer/PipelineC-Graphics"  target="_blank" rel="noopener"
     >https://github.com/JulianKemmerer/PipelineC-Graphics</a></em></p>
-<h2 id="fpga-as-a-raytracer">FPGA as a raytracer</h2>
-<p>Interactive ray tracing hardware is novel in FPGA and our work serves as a perfect example that such complex data processing circuits can be developed, tested, and implemented in hardware all from a C language based flow that greatly eases the design process over traditional hardware description languages.</p>
+<h2 id="fpga-as-a-raytracer">
+    <a href="#fpga-as-a-raytracer" class="header-anchor">#</a>
+    FPGA as a raytracer
+</h2><p>Interactive ray tracing hardware is novel in FPGA and our work serves as a perfect example that such complex data processing circuits can be developed, tested, and implemented in hardware all from a C language based flow that greatly eases the design process over traditional hardware description languages.</p>
 <p>Ultra-fast compiled C based emulation and C++ based tools like Verilator allow for fast simulation with realtime debug. This quick workflow is essential, being able to compile-as-C and see the results of code changes executed in realtime is a requirement for developing an interactive game, something not possible with standard FPGA simulators.</p>
 <p>The project generates each video pixel in hard-realtime “chasing the beam”, without a frame buffer and with zero jitter. Medium size Xilinx Artix 7 FPGAs have reached up to 1080p 60FPS (148.5MHz pixel clock). This article describes using an Lattice ECP5 FPGA to reach 480p 60FPS (25MHz pixel clock). Pipelining the entire ray tracer produces a position-to-color latency of a few microseconds at most. 1080p requires about ~400 pipeline stages, 480p requires ~70 stages - in both cases this pipelining is done automatically as part of the tool flow.</p>
 <p>The Xilinx Artix 7 FPGA achieves about 70 GFLOP/s using less than 1 watt, thanks to the pipeline with dozens of hardware resources working in parallel. Using that 28nm Xilinx 7 series FPGA, power reduction was calculated to be about 50X less compared with a modern  7nm CPU running heavily vector optimized instructions.</p>
-<h2 id="workflow">Workflow</h2>
-<p>The workflow allows writing algorithms involving complex types like structures, floating point types and operations on vectors of those, all keeping a clean and familiar syntax.</p>
-<p><img src="https://user-images.githubusercontent.com/8551129/215365602-9d1493ef-e8f1-444e-b794-b9ba7a898a08.png" alt="image"  /></p>
+<h2 id="workflow">
+    <a href="#workflow" class="header-anchor">#</a>
+    Workflow
+</h2><p>The workflow allows writing algorithms involving complex types like structures, floating point types and operations on vectors of those, all keeping a clean and familiar syntax.</p>
+<p><img src="https://user-images.githubusercontent.com/8551129/215365602-9d1493ef-e8f1-444e-b794-b9ba7a898a08.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image"
+	
+	
+></p>
 <p>The source code is first converted by the <a class="link" href="https://github.com/suarezvictor/CflexHDL"  target="_blank" rel="noopener"
     >CflexHDL</a> tool from C++ to C. Then this subset of C can be converted to VHDL by <a class="link" href="https://github.com/JulianKemmerer/PipelineC"  target="_blank" rel="noopener"
     >PipelineC</a> . GHDL and Yosys are used to convert the output VHDL into netlists that nextpnr can use.</p>
 <p>In addition to simple conversion to VHDL, PipelineC is primarily the mechanism for producing pipelined digital logic from the pure combinatorial logic derived from C code. PipelineC is aware of the FPGA timing characteristics of the specific device (by iterating with nextpnr) and adds pipelining as needed to meet timing. This avoids the tedious and error-prone task of manual pipelining that digital designers are familiar with. The flow reports a preliminary estimate of resources prior to synthesis and the amount of pipeline stages required to implement the user’s functionality.</p>
 <p>To produce a final bitstream GHDL+Yosys are used to generate a flattened single Verilog file version of the design that can easily be incorporated into existing build flows for board specific bitstream support, ex. Litex Orange Crab.</p>
 <p>Alternatively, the sources can be compiled and run “as C”, as a kind of  ultra-fast emulation/simulation (the game can be played in FullHD at 60FPS during debug on PC), or the Verilog sources can be processed by Verilator and graphically simulated by another tool we provided.</p>
-<p><img src="https://user-images.githubusercontent.com/8551129/215365530-4c922851-9ad5-431d-b85e-fa4d94d0a197.png" alt="image"  /></p>
+<p><img src="https://user-images.githubusercontent.com/8551129/215365530-4c922851-9ad5-431d-b85e-fa4d94d0a197.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image"
+	
+	
+></p>
 <p>From inside the PipelineC-Graphics repository there is one command to go from C file to the final bitstream generation and load your FPGA board:  <code>make load</code>. See additional instructions on github.</p>
-<h2 id="hardware-architecture">Hardware architecture</h2>
-<p>The project uses a fully open source board based on a Lattice ECP5 FPGA with 85K LUTs (the OrangeCrab board) plus a PMOD-compatible digital video connector for direct connection to a monitor by adapting 3.3V signals to the required CML levels (Machdyne DDMI), they publish schematics as well. For simplicity, only the positive polarity and ground were connected: it works since the differential levels are met, at least on our test setup. The integrated button on the FPGA board is used to play the game.</p>
-<p><img src="https://user-images.githubusercontent.com/8551129/215365509-20f5e573-07dc-49b0-bcbc-73465a991a50.png" alt="image"  /></p>
+<h2 id="hardware-architecture">
+    <a href="#hardware-architecture" class="header-anchor">#</a>
+    Hardware architecture
+</h2><p>The project uses a fully open source board based on a Lattice ECP5 FPGA with 85K LUTs (the OrangeCrab board) plus a PMOD-compatible digital video connector for direct connection to a monitor by adapting 3.3V signals to the required CML levels (Machdyne DDMI), they publish schematics as well. For simplicity, only the positive polarity and ground were connected: it works since the differential levels are met, at least on our test setup. The integrated button on the FPGA board is used to play the game.</p>
+<p><img src="https://user-images.githubusercontent.com/8551129/215365509-20f5e573-07dc-49b0-bcbc-73465a991a50.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image"
+	
+	
+></p>
 <p>This setup allowed 640x480 resolution (25MHz clock) instead of 1920x1080 (148.5MHz clock) as achieved with the original setup using a Xilinx 7 series FPGA device.</p>
 <p>The FPGA design consists of two main blocks: a state machine computing frame-by-frame animation and a long pixel rendering pipeline.</p>
-<p><img src="https://user-images.githubusercontent.com/8551129/215365576-37c2fbdb-069d-4d61-9b17-71be7b165314.png" alt="image"  /></p>
+<p><img src="https://user-images.githubusercontent.com/8551129/215365576-37c2fbdb-069d-4d61-9b17-71be7b165314.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image"
+	
+	
+></p>
 <p>To meet 25MHz timing on the Lattice ECP5 FPGA the PipelineC tool created a pixel rendering pipeline of approximately ~70 stages. Below is a visual breakdown of how many stages each major function takes and roughly where/when in the pipeline it occurs:</p>
-<p><img src="https://user-images.githubusercontent.com/8551129/215365466-eae48ae2-8c27-408c-919a-190692aa10d4.png" alt="image"  /></p>
+<p><img src="https://user-images.githubusercontent.com/8551129/215365466-eae48ae2-8c27-408c-919a-190692aa10d4.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image"
+	
+	
+></p>
 <p>The above pipeline uses operations on custom floating and fixed point types.</p>
-<table>
+<div class="table-wrapper"><table>
 <thead>
 <tr>
 <th>Operation</th>
@@ -354,12 +464,21 @@
 <td>22 stages</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>Float types use a 14 bit mantissa instead of the typical 23 bits, and fixed point values are represented with a total of 22 bits: 12 for integer portion, 10 for the fractional bits. Those types are provided by CflexHDL types and the effects of reduced precision can be readily appreciated with the provided graphical simulation tool, so the optimal size is easy to determine by performing the fast simulations.</p>
-<p><img src="https://user-images.githubusercontent.com/8551129/215368154-a9abd122-1308-4c15-b39b-7b19be07082d.png" alt="image"  /><br>
+<p><img src="https://user-images.githubusercontent.com/8551129/215368154-a9abd122-1308-4c15-b39b-7b19be07082d.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image"
+	
+	
+><br>
 <em>Full precision vs. reduced precision in simulator window</em></p>
 <p>Typical times for development/test cycles are as follows:</p>
-<table>
+<div class="table-wrapper"><table>
 <thead>
 <tr>
 <th></th>
@@ -388,9 +507,11 @@
 <td>50s per frame</td>
 </tr>
 </tbody>
-</table>
-<h2 id="software-architecture-and-components">Software architecture and components</h2>
-<p>All software and tools used in this project are Open Source. We integrated the following components:</p>
+</table></div>
+<h2 id="software-architecture-and-components">
+    <a href="#software-architecture-and-components" class="header-anchor">#</a>
+    Software architecture and components
+</h2><p>All software and tools used in this project are Open Source. We integrated the following components:</p>
 <ul>
 <li><a class="link" href="https://github.com/JulianKemmerer/PipelineC"  target="_blank" rel="noopener"
     >PipelineC</a> for C to VHDL, autopipelining (uses <a class="link" href="https://github.com/eliben/pycparser"  target="_blank" rel="noopener"
@@ -415,17 +536,23 @@
 <li><a class="link" href="https://github.com/enjoy-digital/litex"  target="_blank" rel="noopener"
     >LiteX</a> for Orange Crab SoC design, and its video core with serialized digital outputs (DVI)</li>
 </ul>
-<h2 id="about-oss-cad-suite-integration">About OSS CAD Suite Integration</h2>
-<p>The first version of the project used a commercial FPGA board and closed-source synthesis tools. After Project Trellis reverse-engineered the ECP5 device there were only a few minor workarounds that were needed to complete the chain of “everything open source” with Yosys and nextpnr.</p>
+<h2 id="about-oss-cad-suite-integration">
+    <a href="#about-oss-cad-suite-integration" class="header-anchor">#</a>
+    About OSS CAD Suite Integration
+</h2><p>The first version of the project used a commercial FPGA board and closed-source synthesis tools. After Project Trellis reverse-engineered the ECP5 device there were only a few minor workarounds that were needed to complete the chain of “everything open source” with Yosys and nextpnr.</p>
 <p>Part of PipelineC’s autopipelining iterations involve synthesizing the design purely as combinatorial logic (pre-pipelining). The share pass that Yosys uses by default for synth_ecp5 does not handle the massive combinatorial network that defines the ray tracer design very well. RAM usage (typically ~8GB max) quickly jumps past the 16GB we had on our workstations. Disabling the share pass required editing the Yosys source code to remove the specific ECP5 run step.</p>
 <p>The second issue we ran into was that in early versions of ECP5 place and route support, nextpnr was not able to pack LUTs+FFs into the shared primitive block as effectively as today. As such, early attempts failed to place and route the design while still having relatively plenty of resources remaining. But after the packing support improved, nextpnr began to produce fully placed and routed designs that could be further iterated on for pipelining. Related: often the nextpnr tool would end up in an infinite loop trying to fix a few remaining overused/unrouted wires - but recent changes seem to have reduced that issue as well.</p>
 <p>Since the PipelineC tool generates VHDL, we needed to convert the final generated sources to <a class="link" href="https://github.com/JulianKemmerer/PipelineC-Graphics/blob/main/verilog/top-gsd_orangecrab.v"  target="_blank" rel="noopener"
     >a single</a> Verilog file  (to be used in Verilator simulation and to generate the bitstream). This is done using the GHDL plugin for Yosys and the Yosys write_verilog command. Occasionally Yosys passes like opt and flatten  were needed during the import process in order to avoid spikes in RAM usage.</p>
 <p>None of these issues were blockers for long. We credit success to the fantastic open source community that provided lots of help in forums and discussions.</p>
-<h2 id="conclusions">Conclusions</h2>
-<p>We showed a ready-to-use toolchain for hardware design that greatly accelerates development time by using fast simulators at different stages, based on a known programming language syntax. The code can be translated to a logic circuit or run on a off-the-shelf CPU. A example application requiring complex processing was demonstrated by writing a game that implements the usual math operations for raytracing applications, with a clean syntax for math and all the algorithms. Since we apply an automatically calculated -and possibly long- pipeline, the system is capable of performing very well even compared to powerful modern CPUs, but using smaller and embeddable chips, at low power.</p>
-<h2 id="about-the-authors">About the authors</h2>
-<p>This work is a result of the tight interactions between Julian Kemmerer (@pipelinec_hdl; fosstodon.org/@pipelinec) and Victor Suarez Rovere (Twitter: <a class="link" href="https://twitter.com/suarezvictor"  target="_blank" rel="noopener"
+<h2 id="conclusions">
+    <a href="#conclusions" class="header-anchor">#</a>
+    Conclusions
+</h2><p>We showed a ready-to-use toolchain for hardware design that greatly accelerates development time by using fast simulators at different stages, based on a known programming language syntax. The code can be translated to a logic circuit or run on a off-the-shelf CPU. A example application requiring complex processing was demonstrated by writing a game that implements the usual math operations for raytracing applications, with a clean syntax for math and all the algorithms. Since we apply an automatically calculated -and possibly long- pipeline, the system is capable of performing very well even compared to powerful modern CPUs, but using smaller and embeddable chips, at low power.</p>
+<h2 id="about-the-authors">
+    <a href="#about-the-authors" class="header-anchor">#</a>
+    About the authors
+</h2><p>This work is a result of the tight interactions between Julian Kemmerer (@pipelinec_hdl; fosstodon.org/@pipelinec) and Victor Suarez Rovere (Twitter: <a class="link" href="https://twitter.com/suarezvictor"  target="_blank" rel="noopener"
     >@suarezvictor</a>) during almost a year.</p>
 <p><strong>Victor Suarez Rovere</strong> is the author of <a class="link" href="https://github.com/suarezvictor/CflexHDL"  target="_blank" rel="noopener"
     >CflexHDL</a> tool used in this project (parser/generator and math types library) and of the Sphery vs. Shapes game. He’s a software and hardware developer and consultant experienced in Digital Signal Processing, mainly in the medical ﬁeld. Victor was awarded the ﬁrst prize in the Argentine National Technology contest, a gold medal from WIPO as &ldquo;Best young inventor&rdquo; and some patents related to a multitouch technology based on tomography techniques.</p>
@@ -458,15 +585,15 @@
     </section>
     </footer>
 
+
     
 </article>
 
-    <aside class="related-contents--wrapper">
     
+
     
-</aside>
 
-
+     
     
         
     
@@ -482,9 +609,12 @@
     
     <section class="powerby">
         Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
-        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.2.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.25.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
     </section>
 </footer>
+
+
+    
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
 
     
@@ -548,24 +678,25 @@
 
 </div><script 
                 src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
-                defer="true"
+                defer
                 >
             </script><script 
                 src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
-                defer="true"
+                defer
                 >
             </script><link 
                 rel="stylesheet" 
-                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
             ><link 
                 rel="stylesheet" 
-                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
             >
+
             </main>
         </div>
         <script 
-                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
-                defer="false"
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
                 >
             </script><script type="text/javascript" src="/ts/main.js" defer></script>
 <script>

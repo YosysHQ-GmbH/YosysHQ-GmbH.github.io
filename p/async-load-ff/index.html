@@ -1,22 +1,29 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en-us" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='By Claire Xenia Wolf'><title>Why Asynchronous Load Flip-Flops Should Be Avoided</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="By Claire Xenia Wolf">
+<title>Why Asynchronous Load Flip-Flops Should Be Avoided</title>
 
 <link rel='canonical' href='http://blog.yosyshq.com/p/async-load-ff/'>
 
-<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Why Asynchronous Load Flip-Flops Should Be Avoided'>
-<meta property='og:description' content='By Claire Xenia Wolf'>
+<link rel="stylesheet" href="/scss/style.min.760e3dabc1e140d2e6abd27a8ca0aabb60e568829b29f67d2df12024136eff37.css"><meta property='og:title' content="Why Asynchronous Load Flip-Flops Should Be Avoided">
+<meta property='og:description' content="By Claire Xenia Wolf">
 <meta property='og:url' content='http://blog.yosyshq.com/p/async-load-ff/'>
 <meta property='og:site_name' content='YosysHQ Blog'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2021-11-30T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2021-11-30T00:00:00&#43;00:00'/><meta property='og:image' content='http://blog.yosyshq.com/static-2021/asyncff.png' />
-<meta name="twitter:site" content="@YosysHQ"><meta name="twitter:title" content="Why Asynchronous Load Flip-Flops Should Be Avoided">
+<meta name="twitter:site" content="@@YosysHQ">
+    <meta name="twitter:creator" content="@@YosysHQ"><meta name="twitter:title" content="Why Asynchronous Load Flip-Flops Should Be Avoided">
 <meta name="twitter:description" content="By Claire Xenia Wolf"><meta name="twitter:card" content="summary">
     <meta name="twitter:image" content='http://blog.yosyshq.com/static-2021/asyncff.png' />
     <link rel="shortcut icon" href="/favicon.png" />
 
+  
+
+
     </head>
-    <body class="">
+    <body class="
+    article-page
+    ">
     <script>
         (function() {
             const colorSchemeKey = 'StackColorScheme';
@@ -33,22 +40,24 @@
         if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
             
 
-            document.body.dataset.scheme = 'dark';
+            document.documentElement.dataset.scheme = 'dark';
         } else {
-            document.body.dataset.scheme = 'light';
+            document.documentElement.dataset.scheme = 'light';
         }
     })();
-</script><div class="container main-container flex on-phone--column extended article-page with-toolbar">
-            <aside class="sidebar left-sidebar sticky">
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
     <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
         <span class="hamburger-box">
             <span class="hamburger-inner"></span>
         </span>
     </button>
 
-    <header class="site-info">
+    <header>
         
+            
             <figure class="site-avatar">
+                <a href="/">
                 
                     
                     
@@ -58,21 +67,24 @@
                             height="300" class="site-logo" loading="lazy" alt="Avatar">
                     
                 
-
+                </a>
                 
             </figure>
-        
-        <h1 class="site-name"><a href="http://blog.yosyshq.com/">YosysHQ Blog</a></h1>
-        <h2 class="site-description"></h2>
-    </header>
-
-    <ol class="menu" id="main-menu">
+            
         
         
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">YosysHQ Blog</a></h1>
+            <h2 class="site-description"></h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
         
-
+        
+        
         <li >
-            <a href='/'>
+            <a href='/' >
+                
+                
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -89,9 +101,10 @@
         </li>
         
         
-
         <li >
-            <a href='/about'>
+            <a href='/about' >
+                
+                
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -107,9 +120,10 @@
         </li>
         
         
-
         <li >
-            <a href='/newsletter'>
+            <a href='/newsletter' >
+                
+                
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -125,9 +139,10 @@
         </li>
         
         
-
         <li >
-            <a href='/yug'>
+            <a href='/yug' >
+                
+                
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -143,9 +158,10 @@
         </li>
         
         
-
         <li >
-            <a href='/archives'>
+            <a href='/archives' >
+                
+                
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -162,9 +178,10 @@
         </li>
         
         
-
         <li >
-            <a href='/search'>
+            <a href='/search' >
+                
+                
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -179,10 +196,12 @@
             </a>
         </li>
         
+        <li class="menu-bottom-section">
+            <ol class="menu">
 
-        
-            <li id="dark-mode-toggle">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <circle cx="8" cy="12" r="2" />
   <rect x="2" y="6" width="20" height="12" rx="6" />
@@ -190,7 +209,7 @@
 
 
 
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <circle cx="16" cy="12" r="2" />
   <rect x="2" y="6" width="20" height="12" rx="6" />
@@ -198,26 +217,17 @@
 
 
 
-                <span>Dark Mode</span>
-            </li>
-        
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
     </ol>
 </aside>
 
+    
+
             <main class="main full-width">
-    <div id="article-toolbar">
-        <a href="http://blog.yosyshq.com/" class="back-home">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <polyline points="15 6 9 12 15 18" />
-</svg>
-
-
-
-            <span>Back</span>
-        </a>
-    </div>
-
     <article class="has-image main-article">
     <header class="article-header">
         <div class="article-image">
@@ -232,16 +242,41 @@
     <div class="article-details">
     
 
-    <h2 class="article-title">
-        <a href="/p/async-load-ff/">Why Asynchronous Load Flip-Flops Should Be Avoided</a>
-    </h2>
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/async-load-ff/">Why Asynchronous Load Flip-Flops Should Be Avoided</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            By Claire Xenia Wolf
+        </h3>
+        
+    </div>
 
     
-    <h3 class="article-subtitle">
-        By Claire Xenia Wolf
-    </h3>
+    
+    
+    
     <footer class="article-time">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Nov 30, 2021</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <circle cx="12" cy="12" r="9" />
   <polyline points="12 7 12 12 15 15" />
@@ -249,17 +284,32 @@
 
 
 
-        <time class="article-time--published">Nov 30, 2021</time>
-    </footer></div>
+                <time class="article-time--reading">
+                    8 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
 </header>
 
     <section class="article-content">
+    
+    
     <p>Code: <a class="link" href="https://github.com/YosysHQ-Docs/Blog-Async-Load-FFs"  target="_blank" rel="noopener"
     >https://github.com/YosysHQ-Docs/Blog-Async-Load-FFs</a></p>
-<h2 id="part-1-the-bad-news">Part 1: The Bad News</h2>
-<p>We have recently added support for asynchronous load flip-flops to Yosys for a customer project. However, we consider this a problematic feature in a (System-)Verilog synthesis tool, and thus I’d like to take this opportunity to explain why one should avoid using asynchronous load flip-flops in new (System-)Verilog designs.</p>
-<h3 id="what-are-asynchronous-load-flip-flops">What are asynchronous load flip-flops</h3>
-<p>An asynchronous load flip-flop is a type of flip-flop with asynchronous reset for which the reset value is not a compile-time / synthesis-time constant.</p>
+<h2 id="part-1-the-bad-news">
+    <a href="#part-1-the-bad-news" class="header-anchor">#</a>
+    Part 1: The Bad News
+</h2><p>We have recently added support for asynchronous load flip-flops to Yosys for a customer project. However, we consider this a problematic feature in a (System-)Verilog synthesis tool, and thus I’d like to take this opportunity to explain why one should avoid using asynchronous load flip-flops in new (System-)Verilog designs.</p>
+<h3 id="what-are-asynchronous-load-flip-flops">
+    <a href="#what-are-asynchronous-load-flip-flops" class="header-anchor">#</a>
+    What are asynchronous load flip-flops
+</h3><p>An asynchronous load flip-flop is a type of flip-flop with asynchronous reset for which the reset value is not a compile-time / synthesis-time constant.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-SystemVerilog" data-lang="SystemVerilog"><span class="line"><span class="cl"><span class="k">reg</span> <span class="n">async_load_ff_q</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="k">wire</span> <span class="n">async_load_ff_reset_val</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">dynamic_expression</span><span class="o">&gt;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
@@ -274,8 +324,10 @@
 </span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">reset</span><span class="p">)</span> <span class="n">async_reset_ff_q</span> <span class="o">&lt;=</span> <span class="n">async_reset_ff_reset_val</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="k">else</span>       <span class="n">async_reset_ff_q</span> <span class="o">&lt;=</span> <span class="p">...;</span>
 </span></span></code></pre></div><p>IEEE Std 1364.1-2002, the IEEE Standard for Verilog Register Transfer Level Synthesis, does allow such asynchronous load flip-flops in synthesis, but states that the synthesis results will only match the behavior of the original Verilog code under certain conditions.</p>
-<h3 id="the-problem-with-verilog-and-asynchronous-load-flip-flops">The problem with Verilog and asynchronous load flip-flops</h3>
-<p>The key insight is that the way an asynchronous reset is modelled using Verilog always blocks is not sensitive to the data signals providing the asynchronous load value. Thus, if the data signals are changing while the asynchronous reset is active, the new data is not loaded into the flip-flop when neither clock nor the asynchronous reset is toggling.</p>
+<h3 id="the-problem-with-verilog-and-asynchronous-load-flip-flops">
+    <a href="#the-problem-with-verilog-and-asynchronous-load-flip-flops" class="header-anchor">#</a>
+    The problem with Verilog and asynchronous load flip-flops
+</h3><p>The key insight is that the way an asynchronous reset is modelled using Verilog always blocks is not sensitive to the data signals providing the asynchronous load value. Thus, if the data signals are changing while the asynchronous reset is active, the new data is not loaded into the flip-flop when neither clock nor the asynchronous reset is toggling.</p>
 <p>Consider the following SystemVerilog design (<a class="link" href="https://github.com/YosysHQ-Docs/Blog-Async-Load-FFs/blob/main/dut.sv"  target="_blank" rel="noopener"
     >dut.sv</a>):</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-SystemVerilog" data-lang="SystemVerilog"><span class="line"><span class="cl"><span class="k">module</span> <span class="n">dut</span> <span class="p">(</span>
@@ -346,7 +398,16 @@ iverilog -g2012 -o sim1 -s tb -DDOUBLE_ARST tb.sv dut.sv
   0  0
 </code></pre><p>In the first case with a single pulse on arst, the second counter is reset to the non-zero value of the first counter from before the reset pulse.</p>
 <p>But a real-world asynchronous load flip-flop would of course behave like a transparent latch while the reset pulse is high, propagating the new (zero) value of the first counter to the second counter register. But this only happens in simulation when we pulse the reset signal a second time.</p>
-<p><img src="/static-2021/asyncff.png" alt="Double-Async-Reset Waveform"  /></p>
+<p><img src="/static-2021/asyncff.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Double-Async-Reset Waveform"
+	
+	
+></p>
 <p>This can lead to non-trivial simulation-synthesis mismatches that are hard to debug, and may result in a chip that does not function as expected.</p>
 <p>Thus, asynchronous load flip-flops should be avoided in (System)Verilog designs, or at least it should be formally verified that the asynchronous load value of such a flip-flop can never change while the reset signal is active.</p>
 <p>This is in line with IEEE Std 1364.1-2002 requirements for sequential logic verification:</p>
@@ -359,10 +420,14 @@ iverilog -g2012 -o sim1 -s tb -DDOUBLE_ARST tb.sv dut.sv
 <p>The problem occurs when both reset and preset are asserted at the same time and reset is removed first. When reset is removed (posedge rst_n), the always block is not activated. This means that the output will continue to drive the reset output to ‘0’ until the next rising clock edge. A real flip-flop of this type would immediately drive the output to ‘1’ because the set_n signal is an asynchronous preset. This potentially could cause a mismatch between pre-synthesis and post-synthesis simulations using this model.</p>
 <p><em>IEEE Std 1364.1-2002, Appendix B.6</em></p>
 </blockquote>
-<h2 id="part-2-the-good-news">Part 2: The Good News</h2>
-<p>In this section we discuss different design methods that avoid the use of behavioral Verilog code to model asynchronous load FFs.</p>
-<h3 id="instantiate-vendor-primitives">Instantiate (Vendor) Primitives</h3>
-<p>The best and easiest way of dealing with this issue is to instantiate FF primitives directly. This can either be vendor cells, or a user-defined module for which we chose different implementations for simulation and synthesis, one with correct simulation behavior, and one that is synthesizable, respectively.</p>
+<h2 id="part-2-the-good-news">
+    <a href="#part-2-the-good-news" class="header-anchor">#</a>
+    Part 2: The Good News
+</h2><p>In this section we discuss different design methods that avoid the use of behavioral Verilog code to model asynchronous load FFs.</p>
+<h3 id="instantiate-vendor-primitives">
+    <a href="#instantiate-vendor-primitives" class="header-anchor">#</a>
+    Instantiate (Vendor) Primitives
+</h3><p>The best and easiest way of dealing with this issue is to instantiate FF primitives directly. This can either be vendor cells, or a user-defined module for which we chose different implementations for simulation and synthesis, one with correct simulation behavior, and one that is synthesizable, respectively.</p>
 <p>The new DUT would look something like this (<a class="link" href="https://github.com/YosysHQ-Docs/Blog-Async-Load-FFs/blob/main/dut_myff.sv"  target="_blank" rel="noopener"
     >dut_myff.sv</a>):</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-SystemVerilog" data-lang="SystemVerilog"><span class="line"><span class="cl"><span class="k">module</span> <span class="n">dut</span> <span class="p">(</span>
@@ -373,8 +438,10 @@ iverilog -g2012 -o sim1 -s tb -DDOUBLE_ARST tb.sv dut.sv
 </span></span><span class="line"><span class="cl">         <span class="n">ff2</span><span class="p">[</span><span class="mh">7</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="p">(</span><span class="n">cnt2</span><span class="p">,</span> <span class="n">cnt2</span> <span class="o">+</span> <span class="mh">8</span><span class="p">&#39;</span><span class="n">d</span> <span class="mh">11</span><span class="p">,</span> <span class="n">clk2</span><span class="p">,</span> <span class="n">arst</span><span class="p">,</span>   <span class="n">cnt1</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="k">endmodule</span>
 </span></span></code></pre></div><p>When instantiating a Vendor primitive one should always double-check that the vendor simulation library does model asynchronous loads correctly, for example using the techniques described in the next two sections.</p>
-<h3 id="simulation-model-using-verilog-udp">Simulation model using Verilog UDP</h3>
-<p>Verilog UDP primitives can be used to correctly model the behavior of asynchronous load flip-flops. But UDPs are not synthesizable, so we need to also provide a synthesizable implementation of an asynchronous load flip-flop (<a class="link" href="https://github.com/YosysHQ-Docs/Blog-Async-Load-FFs/blob/main/myff_udp.sv"  target="_blank" rel="noopener"
+<h3 id="simulation-model-using-verilog-udp">
+    <a href="#simulation-model-using-verilog-udp" class="header-anchor">#</a>
+    Simulation model using Verilog UDP
+</h3><p>Verilog UDP primitives can be used to correctly model the behavior of asynchronous load flip-flops. But UDPs are not synthesizable, so we need to also provide a synthesizable implementation of an asynchronous load flip-flop (<a class="link" href="https://github.com/YosysHQ-Docs/Blog-Async-Load-FFs/blob/main/myff_udp.sv"  target="_blank" rel="noopener"
     >myff_udp.sv</a>):</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-SystemVerilog" data-lang="SystemVerilog"><span class="line"><span class="cl"><span class="no">`ifdef</span> <span class="n">SYNTHESIS</span>
 </span></span><span class="line"><span class="cl">    <span class="k">module</span> <span class="n">myff</span> <span class="p">(</span>
@@ -412,8 +479,10 @@ iverilog -g2012 -o sim2 -s tb tb.sv dut_myff.sv myff_udp.sv
   0  0 &lt;--
   0 55
   0  0
-</code></pre><h3 id="simulation-model-using-procedural-assign-and-deassign">Simulation model using procedural assign and deassign</h3>
-<p>Another approach is to “fix up” the asynchronous load using procedural assign and deassign (<a class="link" href="https://github.com/YosysHQ-Docs/Blog-Async-Load-FFs/blob/main/myff_ada.sv"  target="_blank" rel="noopener"
+</code></pre><h3 id="simulation-model-using-procedural-assign-and-deassign">
+    <a href="#simulation-model-using-procedural-assign-and-deassign" class="header-anchor">#</a>
+    Simulation model using procedural assign and deassign
+</h3><p>Another approach is to “fix up” the asynchronous load using procedural assign and deassign (<a class="link" href="https://github.com/YosysHQ-Docs/Blog-Async-Load-FFs/blob/main/myff_ada.sv"  target="_blank" rel="noopener"
     >myff_ada.sv</a>):</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-SystemVerilog" data-lang="SystemVerilog"><span class="line"><span class="cl"><span class="k">module</span> <span class="n">myff</span> <span class="p">(</span>
 </span></span><span class="line"><span class="cl">    <span class="k">output</span> <span class="k">reg</span> <span class="n">q</span><span class="p">,</span>
@@ -461,8 +530,10 @@ iverilog -g2012 -o sim2 -s tb tb.sv dut_myff.sv myff_udp.sv
 </span></span><span class="line"><span class="cl"><span class="no">`endif</span>
 </span></span><span class="line"><span class="cl"><span class="k">endmodule</span>
 </span></span></code></pre></div><p>However, sprinkling procedural assign and deassign statements and ifndef-SYNTHESIS-blocks all over the design is much more error prone than implementing this work-around only once in a custom cell type that can then be instantiated wherever needed.</p>
-<h3 id="the-latchflip-flop-trick">The latch+flip-flop trick</h3>
-<p>The following technique is used on some FPGA architectures to emulate asynchronous-load flip-flops using latches and asynchronous-reset flip-flops only. It can be used to completely avoid asynchronous-load FFs while preserving the semantic of such elements (<a class="link" href="https://github.com/YosysHQ-Docs/Blog-Async-Load-FFs/blob/main/myff_hack.sv"  target="_blank" rel="noopener"
+<h3 id="the-latchflip-flop-trick">
+    <a href="#the-latchflip-flop-trick" class="header-anchor">#</a>
+    The latch+flip-flop trick
+</h3><p>The following technique is used on some FPGA architectures to emulate asynchronous-load flip-flops using latches and asynchronous-reset flip-flops only. It can be used to completely avoid asynchronous-load FFs while preserving the semantic of such elements (<a class="link" href="https://github.com/YosysHQ-Docs/Blog-Async-Load-FFs/blob/main/myff_hack.sv"  target="_blank" rel="noopener"
     >myff_hack.sv</a>):</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-SystemVerilog" data-lang="SystemVerilog"><span class="line"><span class="cl"><span class="k">module</span> <span class="n">myff</span> <span class="p">(</span>
 </span></span><span class="line"><span class="cl">    <span class="k">output</span> <span class="n">q</span><span class="p">,</span>
@@ -517,15 +588,15 @@ iverilog -g2012 -o sim2 -s tb tb.sv dut_myff.sv myff_udp.sv
     </section>
     </footer>
 
+
     
 </article>
 
-    <aside class="related-contents--wrapper">
     
+
     
-</aside>
 
-
+     
     
         
     
@@ -541,9 +612,12 @@ iverilog -g2012 -o sim2 -s tb tb.sv dut_myff.sv myff_udp.sv
     
     <section class="powerby">
         Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
-        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.2.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.25.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
     </section>
 </footer>
+
+
+    
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
 
     
@@ -607,24 +681,25 @@ iverilog -g2012 -o sim2 -s tb tb.sv dut_myff.sv myff_udp.sv
 
 </div><script 
                 src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
-                defer="true"
+                defer
                 >
             </script><script 
                 src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
-                defer="true"
+                defer
                 >
             </script><link 
                 rel="stylesheet" 
-                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
             ><link 
                 rel="stylesheet" 
-                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
             >
+
             </main>
         </div>
         <script 
-                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
-                defer="false"
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
                 >
             </script><script type="text/javascript" src="/ts/main.js" defer></script>
 <script>

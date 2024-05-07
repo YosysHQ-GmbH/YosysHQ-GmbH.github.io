@@ -1,19 +1,70 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Yug on YosysHQ Blog</title>
-    <link>http://blog.yosyshq.com/tags/yug/</link>
-    <description>Recent content in Yug on YosysHQ Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sun, 04 Feb 2024 12:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.yosyshq.com/tags/yug/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Yosys User&#39;s Group</title>
-      <link>http://blog.yosyshq.com/p/yosys-users-group/</link>
-      <pubDate>Sun, 04 Feb 2024 12:00:00 +0000</pubDate>
-      <guid>http://blog.yosyshq.com/p/yosys-users-group/</guid>
-      <description>We have recently started a Yosys User&amp;rsquo;s Group. You can see the minutes of our first 4 calls here.&#xA;If you&amp;rsquo;d like to join, then please sign up to the newsletter or follow us on:&#xA;linkedin, mastodon or twitter. YUG 5 - SystemVerilog with Pulp’s SVase An introduction to Bender, Morty and SVase YUG 4 - all the plugins! List of all the plugins we know of Gabriel Gouvine talks about how he wrote a logic locking plugin Martin Povišer talks about the Python plugin API YUG 3 - pick your primitives!</description>
-    </item>
-  </channel>
+    <channel>
+        <title>Yug on YosysHQ Blog</title>
+        <link>http://blog.yosyshq.com/tags/yug/</link>
+        <description>Recent content in Yug on YosysHQ Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Sun, 04 Feb 2024 12:00:00 +0000</lastBuildDate><atom:link href="http://blog.yosyshq.com/tags/yug/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Yosys User&#39;s Group</title>
+        <link>http://blog.yosyshq.com/p/yosys-users-group/</link>
+        <pubDate>Sun, 04 Feb 2024 12:00:00 +0000</pubDate>
+        
+        <guid>http://blog.yosyshq.com/p/yosys-users-group/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2023/yug.jpg" alt="Featured image of post Yosys User&#39;s Group" /&gt;&lt;p&gt;We have recently started a Yosys User&amp;rsquo;s Group. You can see the &lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/document/d/13e8hERQ_eqLQrdtH1WXnGUXDtgyQ8oa_zZWXPHJCiN0/edit#heading=h.dqkvsnhcju2v&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;minutes of our first 4 calls here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you&amp;rsquo;d like to join, then please &lt;a class=&#34;link&#34; href=&#34;http://blog.yosyshq.com/newsletter&#34; &gt;sign up to the newsletter&lt;/a&gt; or follow us on:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.linkedin.com/company/yosyshq&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;linkedin&lt;/a&gt;,&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://fosstodon.org/@yosyshq&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;mastodon&lt;/a&gt; or&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://twitter.com/YosysHQ&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;twitter&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;yug-5---systemverilog-with-pulps-svase&#34;&gt;
+    &lt;a href=&#34;#yug-5---systemverilog-with-pulps-svase&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    YUG 5 - SystemVerilog with Pulp’s SVase
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;An introduction to &lt;a class=&#34;link&#34; href=&#34;https://github.com/pulp-platform/bender&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Bender&lt;/a&gt;, &lt;a class=&#34;link&#34; href=&#34;https://github.com/pulp-platform/morty&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Morty&lt;/a&gt; and &lt;a class=&#34;link&#34; href=&#34;https://github.com/pulp-platform/svase&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;SVase&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;yug-4---all-the-plugins&#34;&gt;
+    &lt;a href=&#34;#yug-4---all-the-plugins&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    YUG 4 - all the plugins!
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;List of all the plugins we know of&lt;/li&gt;
+&lt;li&gt;Gabriel Gouvine talks about how he wrote a logic locking plugin&lt;/li&gt;
+&lt;li&gt;Martin Povišer talks about the Python plugin API&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;yug-3---pick-your-primitives&#34;&gt;
+    &lt;a href=&#34;#yug-3---pick-your-primitives&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    YUG 3 - pick your primitives!
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Show in the case of multipliers how one would go about instructing Yosys to synthesize chosen primitives a specific way.&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/povik/yug3_demo&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/povik/yug3_demo&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;yug-2---introducing-eqy&#34;&gt;
+    &lt;a href=&#34;#yug-2---introducing-eqy&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    YUG 2 - introducing EQY!
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;A &lt;a class=&#34;link&#34; href=&#34;https://github.com/YosysHQ/eqy&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;demo of our new formal equivalence tool - eqy&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;yug-1---a-new-users-group&#34;&gt;
+    &lt;a href=&#34;#yug-1---a-new-users-group&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    YUG 1 - a new users group!
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;What people are using Yosys for,&lt;/li&gt;
+&lt;li&gt;How things can be improved,&lt;/li&gt;
+&lt;li&gt;Introducing our new tools,&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        
+    </channel>
 </rss>

@@ -1,22 +1,29 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en-us" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Yosys Techmap'><title>Logic Primitive Transformations with Yosys Techmap</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Yosys Techmap">
+<title>Logic Primitive Transformations with Yosys Techmap</title>
 
 <link rel='canonical' href='http://blog.yosyshq.com/p/logic-primitive-transformations-with-yosys-techmap/'>
 
-<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Logic Primitive Transformations with Yosys Techmap'>
-<meta property='og:description' content='Yosys Techmap'>
+<link rel="stylesheet" href="/scss/style.min.760e3dabc1e140d2e6abd27a8ca0aabb60e568829b29f67d2df12024136eff37.css"><meta property='og:title' content="Logic Primitive Transformations with Yosys Techmap">
+<meta property='og:description' content="Yosys Techmap">
 <meta property='og:url' content='http://blog.yosyshq.com/p/logic-primitive-transformations-with-yosys-techmap/'>
 <meta property='og:site_name' content='YosysHQ Blog'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='blog' /><meta property='article:published_time' content='2022-11-24T09:38:52&#43;02:00'/><meta property='article:modified_time' content='2022-11-24T09:38:52&#43;02:00'/><meta property='og:image' content='http://blog.yosyshq.com/static-2022/yosys_techmap/SB_MAC16_block_diagram.png' />
-<meta name="twitter:site" content="@YosysHQ"><meta name="twitter:title" content="Logic Primitive Transformations with Yosys Techmap">
+<meta name="twitter:site" content="@@YosysHQ">
+    <meta name="twitter:creator" content="@@YosysHQ"><meta name="twitter:title" content="Logic Primitive Transformations with Yosys Techmap">
 <meta name="twitter:description" content="Yosys Techmap"><meta name="twitter:card" content="summary">
     <meta name="twitter:image" content='http://blog.yosyshq.com/static-2022/yosys_techmap/SB_MAC16_block_diagram.png' />
     <link rel="shortcut icon" href="/favicon.png" />
 
+  
+
+
     </head>
-    <body class="">
+    <body class="
+    article-page
+    ">
     <script>
         (function() {
             const colorSchemeKey = 'StackColorScheme';
@@ -33,22 +40,24 @@
         if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
             
 
-            document.body.dataset.scheme = 'dark';
+            document.documentElement.dataset.scheme = 'dark';
         } else {
-            document.body.dataset.scheme = 'light';
+            document.documentElement.dataset.scheme = 'light';
         }
     })();
-</script><div class="container main-container flex on-phone--column extended article-page with-toolbar">
-            <aside class="sidebar left-sidebar sticky">
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
     <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
         <span class="hamburger-box">
             <span class="hamburger-inner"></span>
         </span>
     </button>
 
-    <header class="site-info">
+    <header>
         
+            
             <figure class="site-avatar">
+                <a href="/">
                 
                     
                     
@@ -58,21 +67,24 @@
                             height="300" class="site-logo" loading="lazy" alt="Avatar">
                     
                 
-
+                </a>
                 
             </figure>
-        
-        <h1 class="site-name"><a href="http://blog.yosyshq.com/">YosysHQ Blog</a></h1>
-        <h2 class="site-description"></h2>
-    </header>
-
-    <ol class="menu" id="main-menu">
+            
         
         
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">YosysHQ Blog</a></h1>
+            <h2 class="site-description"></h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
         
-
+        
+        
         <li >
-            <a href='/'>
+            <a href='/' >
+                
+                
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -89,9 +101,10 @@
         </li>
         
         
-
         <li >
-            <a href='/about'>
+            <a href='/about' >
+                
+                
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -107,9 +120,10 @@
         </li>
         
         
-
         <li >
-            <a href='/newsletter'>
+            <a href='/newsletter' >
+                
+                
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -125,9 +139,10 @@
         </li>
         
         
-
         <li >
-            <a href='/yug'>
+            <a href='/yug' >
+                
+                
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -143,9 +158,10 @@
         </li>
         
         
-
         <li >
-            <a href='/archives'>
+            <a href='/archives' >
+                
+                
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -162,9 +178,10 @@
         </li>
         
         
-
         <li >
-            <a href='/search'>
+            <a href='/search' >
+                
+                
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -179,10 +196,12 @@
             </a>
         </li>
         
+        <li class="menu-bottom-section">
+            <ol class="menu">
 
-        
-            <li id="dark-mode-toggle">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <circle cx="8" cy="12" r="2" />
   <rect x="2" y="6" width="20" height="12" rx="6" />
@@ -190,7 +209,7 @@
 
 
 
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <circle cx="16" cy="12" r="2" />
   <rect x="2" y="6" width="20" height="12" rx="6" />
@@ -198,26 +217,17 @@
 
 
 
-                <span>Dark Mode</span>
-            </li>
-        
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
     </ol>
 </aside>
 
+    
+
             <main class="main full-width">
-    <div id="article-toolbar">
-        <a href="http://blog.yosyshq.com/" class="back-home">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <polyline points="15 6 9 12 15 18" />
-</svg>
-
-
-
-            <span>Back</span>
-        </a>
-    </div>
-
     <article class="has-image main-article">
     <header class="article-header">
         <div class="article-image">
@@ -232,16 +242,41 @@
     <div class="article-details">
     
 
-    <h2 class="article-title">
-        <a href="/p/logic-primitive-transformations-with-yosys-techmap/">Logic Primitive Transformations with Yosys Techmap</a>
-    </h2>
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/logic-primitive-transformations-with-yosys-techmap/">Logic Primitive Transformations with Yosys Techmap</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            Yosys Techmap
+        </h3>
+        
+    </div>
 
     
-    <h3 class="article-subtitle">
-        Yosys Techmap
-    </h3>
+    
+    
+    
     <footer class="article-time">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Nov 24, 2022</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <circle cx="12" cy="12" r="9" />
   <polyline points="12 7 12 12 15 15" />
@@ -249,15 +284,28 @@
 
 
 
-        <time class="article-time--published">Nov 24, 2022</time>
-    </footer></div>
+                <time class="article-time--reading">
+                    19 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
 </header>
 
     <section class="article-content">
+    
+    
     <p><em>This guest post is by <a class="link" href="https://tomverbeure.github.io/"  target="_blank" rel="noopener"
     >Tom Verbeure</a>.</em></p>
-<h1 id="introduction">Introduction</h1>
-<p>If you&rsquo;re reading this you probably already know that <a class="link" href="https://github.com/YosysHQ/yosys"  target="_blank" rel="noopener"
+<h1 id="introduction">
+    <a href="#introduction" class="header-anchor">#</a>
+    Introduction
+</h1><p>If you&rsquo;re reading this you probably already know that <a class="link" href="https://github.com/YosysHQ/yosys"  target="_blank" rel="noopener"
     >Yosys</a>
 is an open source logic synthesis tool. You may also know that it&rsquo;s much more than that: in
 my <a class="link" href="https://tomverbeure.github.io/2020/08/08/CXXRTL-the-New-Yosys-Simulation-Backend.html"  target="_blank" rel="noopener"
@@ -278,8 +326,10 @@ don&rsquo;t come standard with the tool.</p>
     ><code>techmap</code> command</a>,
 a particularly powerful command that allows one to make custom logic transformations by replacing a
 logic cell instance of a given type to one or more different ones.</p>
-<h1 id="mapping-a-multiplication-to-an-fpga-dsp-cell">Mapping a multiplication to an FPGA DSP Cell</h1>
-<p><em>There is a companion <a class="link" href="https://github.com/tomverbeure/yosys_techmap_blog"  target="_blank" rel="noopener"
+<h1 id="mapping-a-multiplication-to-an-fpga-dsp-cell">
+    <a href="#mapping-a-multiplication-to-an-fpga-dsp-cell" class="header-anchor">#</a>
+    Mapping a multiplication to an FPGA DSP Cell
+</h1><p><em>There is a companion <a class="link" href="https://github.com/tomverbeure/yosys_techmap_blog"  target="_blank" rel="noopener"
     >yosys_techmap_blog project on GitHub</a>
 that contains the Verilog source files and the scripts to generate the graphics and Yosys results
 of this blog post.</em></p>
@@ -315,12 +365,30 @@ and the whole design looks like this:</p>
     ><code>show</code> command</a>
 that renders an RTLIL representation as a graph. I usually add the <code>-width -signed</code> options to
 annotate signals with their size and to show which cell ports are signed:</p>
-<p><img src="/static-2022/yosys_techmap/mul_rtlil.png" alt="top module as a graph with $mul instance"  /></p>
+<p><img src="/static-2022/yosys_techmap/mul_rtlil.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="top module as a graph with $mul instance"
+	
+	
+></p>
 <p>This primitive must be converted into cells of the target technology. Most FPGAs from the
 iCE40 family have a handful of DSPs. When you synthesize this module to the iCE40 technology with
 <code>synth_ice40 -dsp</code>, the <code>$mul</code> primitive gets converted to an <code>SB_MAC16</code> cell which is the DSP
 primitive of the iCE40 family.</p>
-<p><a class="link" href="/static-2022/yosys_techmap/SB_MAC16_block_diagram.png" ><img src="/static-2022/yosys_techmap/SB_MAC16_block_diagram.png" alt="SB_MAC16 internal block diagram"  /></a></p>
+<p><a class="link" href="/static-2022/yosys_techmap/SB_MAC16_block_diagram.png" ><img src="/static-2022/yosys_techmap/SB_MAC16_block_diagram.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="SB_MAC16 internal block diagram"
+	
+	
+></a></p>
 <p>The <code>SB_MAC16</code> DSP has a ton of data path and configuration signals, and the multiplier inputs and
 output can be up to 16 and 32-bits wide respectively. It&rsquo;s up to a <code>techmap</code> step to assign all the right
 values to the configuration signals, and to correctly tie down unused input data bits or ignore excess
@@ -385,7 +453,16 @@ output bits so that the DSP performs the desired 10-bit x 10-bit multiplication.
   end
 end
 </code></pre><p>And here&rsquo;s the equivalent graphical representation. (<em>Click to enlarge</em>)</p>
-<p><a class="link" href="/static-2022/yosys_techmap/mul_ice40.png" ><img src="/static-2022/yosys_techmap/mul_ice40.png" alt="top module as a graph after synthesis"  /></a></p>
+<p><a class="link" href="/static-2022/yosys_techmap/mul_ice40.png" ><img src="/static-2022/yosys_techmap/mul_ice40.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="top module as a graph after synthesis"
+	
+	
+></a></p>
 <p>All Yosys commands are written in C++, but in the case of <code>techmap</code> the specific mapping
 operations are described in&hellip; Verilog! It&rsquo;s a very neat system that makes it possible for
 anyone to create their own custom mapping operations without the need to touch a line of C++.</p>
@@ -454,9 +531,27 @@ clean -purge
 techmap -map +/mul2dsp.v -D DSP_A_MAXWIDTH=16 -D DSP_B_MAXWIDTH=16 -D DSP_A_MINWIDTH=2 -D DSP_B_MINWIDTH=2 -D DSP_Y_MINWIDTH=11 -D DSP_NAME=$__MUL16X16
 clean -purge
 show -width -signed -format png -prefix mul_mul2dsp
-</code></pre><p><img src="/static-2022/yosys_techmap/mul_mul2dsp.png" alt="top module after mul2dsp phase"  /></p>
+</code></pre><p><img src="/static-2022/yosys_techmap/mul_mul2dsp.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="top module after mul2dsp phase"
+	
+	
+></p>
 <p>In case you were wondering, here&rsquo;s what this first step looks like for a 20-bit x 20-bit to 40-bit multiplier:</p>
-<p><a class="link" href="/static-2022/yosys_techmap/large_mul_techmap.png" ><img src="/static-2022/yosys_techmap/large_mul_techmap.png" alt="top module for $mul 20x20=40 after mul2dsp phase"  /></a>
+<p><a class="link" href="/static-2022/yosys_techmap/large_mul_techmap.png" ><img src="/static-2022/yosys_techmap/large_mul_techmap.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="top module for $mul 20x20=40 after mul2dsp phase"
+	
+	
+></a>
 <em>(Click to enlarge)</em></p>
 <p>Yosys can often create very long internal labels that stretch the graphical representation, so
 I zoomed the image to the part that counts. The 3 red rectangles are the <code>$__MUL16X16</code> cells that will be converted
@@ -503,13 +598,24 @@ multiplier.</p>
 </span></span><span class="line"><span class="cl">		<span class="p">.</span><span class="n">O</span><span class="p">(</span><span class="n">Y</span><span class="p">),</span>
 </span></span><span class="line"><span class="cl">	<span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="k">endmodule</span>
-</span></span></code></pre></div><h1 id="a-horribly-contrived-example-problem">A Horribly Contrived Example Problem</h1>
-<p>Have a look at the following Verilog example code:</p>
+</span></span></code></pre></div><h1 id="a-horribly-contrived-example-problem">
+    <a href="#a-horribly-contrived-example-problem" class="header-anchor">#</a>
+    A Horribly Contrived Example Problem
+</h1><p>Have a look at the following Verilog example code:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-verilog" data-lang="verilog"><span class="line"><span class="cl"><span class="k">module</span> <span class="n">top_unsigned</span><span class="p">(</span><span class="k">input</span> <span class="p">[</span><span class="mh">5</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">op0</span><span class="p">,</span> <span class="k">input</span> <span class="p">[</span><span class="mh">6</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">op1</span><span class="p">,</span> <span class="k">output</span> <span class="p">[</span><span class="mh">63</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">sum</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="k">assign</span> <span class="n">sum</span> <span class="o">=</span> <span class="n">op0</span> <span class="o">+</span> <span class="n">op1</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="k">endmodule</span>
 </span></span></code></pre></div><p>The graphical representation is as expected:</p>
-<p><img src="/static-2022/yosys_techmap/add_orig.png" alt="top_unsigned original version"  /></p>
+<p><img src="/static-2022/yosys_techmap/add_orig.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="top_unsigned original version"
+	
+	
+></p>
 <p>I sometimes use <a class="link" href="https://tomverbeure.github.io/2020/08/08/CXXRTL-the-New-Yosys-Simulation-Backend.html"  target="_blank" rel="noopener"
     >CXXRTL</a> to simulate my designs.
 When I run <code>write_cxxrtl</code>, the generated file contains the following:</p>
@@ -549,7 +655,16 @@ operations to just the number of bits that are really needed.</p>
 hierarchy -top top_unsigned
 wreduce
 clean -purge
-</code></pre><p><img src="/static-2022/yosys_techmap/add_wreduce.png" alt="top_unsigned after wreduce"  /></p>
+</code></pre><p><img src="/static-2022/yosys_techmap/add_wreduce.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="top_unsigned after wreduce"
+	
+	
+></p>
 <p>And here&rsquo;s the relevant CXXRTL generated code:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">bool</span> <span class="n">p_top__unsigned</span><span class="o">::</span><span class="nf">eval</span><span class="p">()</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="kt">bool</span> <span class="n">converged</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
@@ -571,8 +686,10 @@ operation.</p>
 want to modify the <a class="link" href="https://github.com/YosysHQ/yosys/blob/master/passes/opt/wreduce.cc"  target="_blank" rel="noopener"
     >C++ code of the <code>wreduce</code> command</a>
 to make it so.</p>
-<h1 id="a-custom-techmap-transformation-to-the-rescue">A Custom Techmap Transformation to the Rescue!</h1>
-<p>If you start Yosys, running <code>help techmap</code> will give you an exhaustive list of all the features that
+<h1 id="a-custom-techmap-transformation-to-the-rescue">
+    <a href="#a-custom-techmap-transformation-to-the-rescue" class="header-anchor">#</a>
+    A Custom Techmap Transformation to the Rescue!
+</h1><p>If you start Yosys, running <code>help techmap</code> will give you an exhaustive list of all the features that
 you might ever need. But instead of repeating everything in there, let&rsquo;s create an <code>add_reduce</code> techmap
 transformation to solve the problem of the previous section.</p>
 <p>Here are some of the basics of a techmap transformation Verilog module:</p>
@@ -722,12 +839,30 @@ to swap the inputs, and the second time for the actual reduction.</p>
 be hard to debug. You can use the <code>-max_iter &lt;number&gt;</code> option to limit
 the number of transformations.</p>
 <p>For example, here&rsquo;s what the design originally looked like:</p>
-<p><img src="/static-2022/yosys_techmap/add_orig.png" alt="top_unsigned original version"  /></p>
+<p><img src="/static-2022/yosys_techmap/add_orig.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="top_unsigned original version"
+	
+	
+></p>
 <p>And here&rsquo;s how things look when stopping the <code>add_reduce</code> operation after the
 first iteration:</p>
 <pre tabindex="0"><code>techmap -map add_reduce.v -max_iter 1
 clean -purge
-</code></pre><p><img src="/static-2022/yosys_techmap/add_swap_clean.png" alt="top_unsigned after swapping inputs"  /></p>
+</code></pre><p><img src="/static-2022/yosys_techmap/add_swap_clean.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="top_unsigned after swapping inputs"
+	
+	
+></p>
 <p><code>op1</code> with the largest input size of 7 is now connected to A!</p>
 <p><strong>The actual add_reduce transformation</strong></p>
 <p>Now that all preliminary formalities are behind use, the actual reduction
@@ -755,7 +890,16 @@ We can run the whole thing with:</p>
 <pre tabindex="0"><code>techmap -map add_reduce.v -D Y_MIN_WIDTH=32
 clean -purge
 </code></pre><p>The result is exactly what we wanted, as shown in the graphical diagram&hellip;</p>
-<p><img src="/static-2022/yosys_techmap/add_reduce.png" alt="top_unsigned after custom reduce"  /></p>
+<p><img src="/static-2022/yosys_techmap/add_reduce.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="top_unsigned after custom reduce"
+	
+	
+></p>
 <p>&hellip;and in the CXXRTL-generated code:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">bool</span> <span class="n">p_top__unsigned</span><span class="o">::</span><span class="nf">eval</span><span class="p">()</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">	<span class="kt">bool</span> <span class="n">converged</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
@@ -763,8 +907,10 @@ clean -purge
 </span></span><span class="line"><span class="cl">	<span class="n">p_sum0</span><span class="p">.</span><span class="n">slice</span><span class="o">&lt;</span><span class="mi">63</span><span class="p">,</span><span class="mi">32</span><span class="o">&gt;</span><span class="p">()</span> <span class="o">=</span> <span class="n">value</span><span class="o">&lt;</span><span class="mi">32</span><span class="o">&gt;</span><span class="p">{</span><span class="mi">0u</span><span class="p">};</span>
 </span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="n">converged</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h1 id="formal-equivalence-check">Formal Equivalence Check</h1>
-<p>Whenever you do logic transformations, it&rsquo;s not a bad idea to check that the pre- and
+</span></span></code></pre></div><h1 id="formal-equivalence-check">
+    <a href="#formal-equivalence-check" class="header-anchor">#</a>
+    Formal Equivalence Check
+</h1><p>Whenever you do logic transformations, it&rsquo;s not a bad idea to check that the pre- and
 post-transformation logic behaves exactly the same. Yosys has a basic built-in equivalence
 checker. It&rsquo;s not a performance monster, but it&rsquo;s good enough for this kind of use case.</p>
 <p>In the example below, I&rsquo;m verifying the <code>add_reduce</code> techmap on a design with an adder that
@@ -785,9 +931,27 @@ select top_unsigned
 techmap -map add_reduce.v -D Y_MIN_WIDTH=8 
 clean -purge
 </code></pre><p>So far, so good: Yosys now has 2 designs. <code>top_unsigned_gold</code> is the original one:</p>
-<p><img src="/static-2022/yosys_techmap/add10_gold.png" alt="top_unsigned10 golden"  /></p>
+<p><img src="/static-2022/yosys_techmap/add10_gold.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="top_unsigned10 golden"
+	
+	
+></p>
 <p>And <code>top_unsigned</code> has been transformed with the techmap:</p>
-<p><img src="/static-2022/yosys_techmap/add10_reduce.png" alt="top_unsigned10 reduce"  /></p>
+<p><img src="/static-2022/yosys_techmap/add10_reduce.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="top_unsigned10 reduce"
+	
+	
+></p>
 <p>Let&rsquo;s compare them:</p>
 <pre tabindex="0"><code>equiv_make top_unsigned_gold top_unsigned top_equiv
 select top_equiv
@@ -795,7 +959,16 @@ select top_equiv
 design with <code>$equiv</code> primitive cells inserted at the output of both designs. These cells
 will tell the equivalence checker which nets to check for formal equivalence. The
 new design <code>top_equiv</code> looks like this:</p>
-<p><a class="link" href="/static-2022/yosys_techmap/add10_equiv_make.png" ><img src="/static-2022/yosys_techmap/add10_equiv_make.png" alt="top_unsigned10 equiv_make"  /></a>
+<p><a class="link" href="/static-2022/yosys_techmap/add10_equiv_make.png" ><img src="/static-2022/yosys_techmap/add10_equiv_make.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="top_unsigned10 equiv_make"
+	
+	
+></a>
 <em>(Click to enlarge)</em></p>
 <p>As you can see, the new design has both the golden and the transformed logic on the left,
 driven by the same inputs. For there are 10 <code>$equiv</code> cells, one for each bit of the output.</p>
@@ -831,18 +1004,31 @@ signal sizes. To be absolutely sure, you&rsquo;d need more variety of test cases
 equivalence and logic proof features, most of which I don&rsquo;t know much about! You
 could start by checking out the help information for the <code>equiv_*</code>, <code>miter</code>, and <code>sat</code>
 commands to learn more.</p>
-<h1 id="cleaning-up">Cleaning Up</h1>
-<p>When Yosys creates new cells and reconnects wires, it won&rsquo;t immediately delete older cells and wires
+<h1 id="cleaning-up">
+    <a href="#cleaning-up" class="header-anchor">#</a>
+    Cleaning Up
+</h1><p>When Yosys creates new cells and reconnects wires, it won&rsquo;t immediately delete older cells and wires
 that aren&rsquo;t used anymore. You need to expliclity tell Yosys to do so with the <code>clean -purge</code>
 command that you can see in some of the command sequences above.</p>
 <p>Here&rsquo;s what the reduced adder looks like without first running a clean:</p>
-<p><img src="/static-2022/yosys_techmap/add_reduce_unclean.png" alt="top_unsigned after custom reduce without clean"  /></p>
+<p><img src="/static-2022/yosys_techmap/add_reduce_unclean.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="top_unsigned after custom reduce without clean"
+	
+	
+></p>
 <p>That&rsquo;s why you see a <code>clean -purge</code> statement all over the place
 <a class="link" href="https://github.com/tomverbeure/yosys_techmap_blog/blob/main/add_reduce.yosys"  target="_blank" rel="noopener"
     >in the script</a>
 generates all the pretty pictures of this blog post.</p>
-<h1 id="conclusion">Conclusion</h1>
-<p>Techmap is a very nice tool to have to transform single cells into something that better maps to
+<h1 id="conclusion">
+    <a href="#conclusion" class="header-anchor">#</a>
+    Conclusion
+</h1><p>Techmap is a very nice tool to have to transform single cells into something that better maps to
 your chosen target. The example that I&rsquo;ve given here is a bit dumb (I&rsquo;m not even sure if it would
 actually result in better compiled CXXRTL code!), but it shows some of the potential of what
 can be achieved.</p>
@@ -852,8 +1038,10 @@ instruct Yosys to run another  Yosys command after performing a <code>techmap</c
 so forth.</p>
 <p>If you want to go deeper, you should definitely start by checking out the help instructions, not
 only of <code>techmap</code> command, but also some of the other ones.</p>
-<h1 id="references">References</h1>
-<ul>
+<h1 id="references">
+    <a href="#references" class="header-anchor">#</a>
+    References
+</h1><ul>
 <li>
 <p><a class="link" href="https://github.com/YosysHQ/yosys"  target="_blank" rel="noopener"
     >Main Yosys repo on GitHub</a></p>
@@ -891,15 +1079,15 @@ only of <code>techmap</code> command, but also some of the other ones.</p>
     </section>
     </footer>
 
+
     
 </article>
 
-    <aside class="related-contents--wrapper">
     
+
     
-</aside>
 
-
+     
     
         
     
@@ -915,9 +1103,12 @@ only of <code>techmap</code> command, but also some of the other ones.</p>
     
     <section class="powerby">
         Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
-        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.2.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.25.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
     </section>
 </footer>
+
+
+    
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
 
     
@@ -981,24 +1172,25 @@ only of <code>techmap</code> command, but also some of the other ones.</p>
 
 </div><script 
                 src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
-                defer="true"
+                defer
                 >
             </script><script 
                 src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
-                defer="true"
+                defer
                 >
             </script><link 
                 rel="stylesheet" 
-                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
             ><link 
                 rel="stylesheet" 
-                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
             >
+
             </main>
         </div>
         <script 
-                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
-                defer="false"
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
                 >
             </script><script type="text/javascript" src="/ts/main.js" defer></script>
 <script>

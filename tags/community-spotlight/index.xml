@@ -1,54 +1,627 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Community Spotlight on YosysHQ Blog</title>
-    <link>http://blog.yosyshq.com/tags/community-spotlight/</link>
-    <description>Recent content in Community Spotlight on YosysHQ Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sun, 10 Mar 2024 20:30:31 +0100</lastBuildDate>
-    <atom:link href="http://blog.yosyshq.com/tags/community-spotlight/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Community Spotlight - FazyRV</title>
-      <link>http://blog.yosyshq.com/p/community-spotlight-fazyrv/</link>
-      <pubDate>Sun, 10 Mar 2024 20:30:31 +0100</pubDate>
-      <guid>http://blog.yosyshq.com/p/community-spotlight-fazyrv/</guid>
-      <description>FazyRV Welcome to another community spotlight article where we shine a light on open source EDA-related projects. If you want to submit a project, please do so here.&#xA;FazyRV is a minimal-area RISC-V core that scales with your needs. It allows you to adapt the data path width to process smaller 1, 2, 4, or 8-bit chunks of the 32-bit operands each clock cycle. In addition, each data path width can be combined with FazyRV&amp;rsquo;s manifold variants to trade area with performance and find the best-fitting configuration for your system requirements and used technology.</description>
-    </item>
-    <item>
-      <title>Community Spotlight - Surfer</title>
-      <link>http://blog.yosyshq.com/p/community-spotlight-surfer/</link>
-      <pubDate>Mon, 27 Nov 2023 13:26:31 +0100</pubDate>
-      <guid>http://blog.yosyshq.com/p/community-spotlight-surfer/</guid>
-      <description>Surfer Welcome to another community spotlight article where we shine a light on open source EDA projects. If you want to submit a project, please do so here.&#xA;Surfer is a new waveform viewer with a focus on extensibility and a snappy (optionally keyboard driven) UI. It runs both natively and in web-assembly, so you can try it out right here in the browser at https://app.surfer-project.org. The project is written in rust and while it is still in its early stages, it is usable as a day-to-day wave viewer.</description>
-    </item>
-    <item>
-      <title>Community Spotlight - WAL</title>
-      <link>http://blog.yosyshq.com/p/community-spotlight-wal/</link>
-      <pubDate>Mon, 25 Sep 2023 13:26:31 +0100</pubDate>
-      <guid>http://blog.yosyshq.com/p/community-spotlight-wal/</guid>
-      <description>WAL Welcome to another community spotlight article where we shine a light on open source EDA projects. If you want to submit a project, please do so here.&#xA;Waveform Analysis Language (WAL) is a programming language for complex waveform analysis and EDA tool development.&#xA;Lucas Klemmer&amp;rsquo;s Bio I&amp;rsquo;m a PhD student at the Institute for Complex Systems at the Johannes Kepler University in Linz, Austria. I received my Master’s degree in computer science from the University of Bremen in Germany.</description>
-    </item>
-    <item>
-      <title>Community Spotlight - AutoSVA</title>
-      <link>http://blog.yosyshq.com/p/community-spotlight-autosva/</link>
-      <pubDate>Wed, 10 May 2023 13:26:31 +0100</pubDate>
-      <guid>http://blog.yosyshq.com/p/community-spotlight-autosva/</guid>
-      <description>AutoSVA Welcome to another community spotlight article where we shine a light on open source EDA projects. If you want to submit a project, please do so here.&#xA;AutoSVA makes Formal Property Verification (FPV) more accesible for hardware designers.&#xA;Marcelo Vera&amp;rsquo;s Bio Marcelo is a PhD candidate in the Department of Computer Science at Princeton University advised by Margaret Martonosi and David Wentzlaff. He received his BSE from University of Murcia.</description>
-    </item>
-    <item>
-      <title>Community Spotlight - sv2v</title>
-      <link>http://blog.yosyshq.com/p/community-spotlight-sv2v/</link>
-      <pubDate>Mon, 13 Feb 2023 13:26:31 +0100</pubDate>
-      <guid>http://blog.yosyshq.com/p/community-spotlight-sv2v/</guid>
-      <description>sv2v Welcome to another community spotlight article where we shine a light on open source EDA projects. If you want to submit a project, please do so here.&#xA;sv2v converts SystemVerilog (IEEE 1800-2017) to Verilog (IEEE 1364-2005), with an emphasis on supporting synthesizable language constructs.&#xA;Zachary Snow&amp;rsquo;s Bio I received my B.S. in computer science from Carnegie Mellon University in 2019. After graduating, I began working full-time as a software engineer in systematic trading.</description>
-    </item>
-    <item>
-      <title>Community Spotlight - Tbengy</title>
-      <link>http://blog.yosyshq.com/p/community-spotlight-tbengy/</link>
-      <pubDate>Wed, 14 Dec 2022 10:23:57 +0100</pubDate>
-      <guid>http://blog.yosyshq.com/p/community-spotlight-tbengy/</guid>
-      <description>Tbengy Welcome to the first in a series of short articles where we shine the light on open source EDA projects. If you want to submit a project, please do so here.&#xA;Tbengy by Prasad Pandit is a Python Tool for SV/UVM Testbench Generation and RTL Synthesis. The tool uses newly available capability of the Vivado tool by Xilinx to compile and run SV/UVM Testbench and syntheize RTL for Digilent FPGA Boards.</description>
-    </item>
-  </channel>
+    <channel>
+        <title>Community Spotlight on YosysHQ Blog</title>
+        <link>http://blog.yosyshq.com/tags/community-spotlight/</link>
+        <description>Recent content in Community Spotlight on YosysHQ Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Tue, 30 Apr 2024 20:30:31 +0100</lastBuildDate><atom:link href="http://blog.yosyshq.com/tags/community-spotlight/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Community Spotlight - Manta</title>
+        <link>http://blog.yosyshq.com/p/community-spotlight-manta/</link>
+        <pubDate>Tue, 30 Apr 2024 20:30:31 +0100</pubDate>
+        
+        <guid>http://blog.yosyshq.com/p/community-spotlight-manta/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2024/spotlight/manta/logo.png" alt="Featured image of post Community Spotlight - Manta" /&gt;&lt;h1 id=&#34;manta&#34;&gt;
+    &lt;a href=&#34;#manta&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Manta
+&lt;/h1&gt;&lt;p&gt;Welcome to another &lt;a class=&#34;link&#34; href=&#34;http://blog.yosyshq.com/tags/community-spotlight/&#34; &gt;community spotlight&lt;/a&gt; article where we shine a light on open source EDA-related projects. If you want to &lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSdIEgu6FJZam0-V3PMTjw-eDebJdg_JuIlN4MkLNDr4vs-a5A/viewform?usp=sf_link&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;submit a project, please do so here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Manta is a configurable and approachable tool for FPGA debugging and rapid prototyping. It works by letting you configure cores that you instantiate in your FPGA design, and operate from a host machine connected over either UART or Ethernet. These cores can provide a logic analyzer, or direct access to registers or memory on the FPGA. Manta is written in Python, which allows its host-side to code to run on nearly any platform (including the web!). The code on the FPGA side is written in Amaranth HDL which exports to vendor-agnostic Verilog-2001, allowing it to run on nearly any FPGA.&lt;/p&gt;
+&lt;h1 id=&#34;fischer-moseleys-bio&#34;&gt;
+    &lt;a href=&#34;#fischer-moseleys-bio&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Fischer Moseley&amp;rsquo;s Bio
+&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2024/spotlight/manta/cart.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Fischer Moseley&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m a FPGA Engineer working at &lt;a class=&#34;link&#34; href=&#34;https://www.jpl.nasa.gov/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;NASA JPL&lt;/a&gt;, currently working on an orbital interferometer mission called &lt;a class=&#34;link&#34; href=&#34;https://grace.jpl.nasa.gov/news/154/us-germany-partnering-on-mission-to-track-earths-water-movement/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GRACE-C&lt;/a&gt;. I joined the lab right after getting my Master&amp;rsquo;s degree from EECS from MIT last year, where I helped teach the lab-based &lt;a class=&#34;link&#34; href=&#34;https://fpga.mit.edu/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;FPGA Design Course&lt;/a&gt; and wrote the original version of Manta for my thesis. Oh, and I built the (above) electric shopping cart there too. It&amp;rsquo;s awesome. And kinda dangerous.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;ve worked on Formula cars, quantum computers, robots, and spacecraft, but I have yet to see a field with as much complexity and momentum behind it as the FPGA/SoC/ASIC space. I think there&amp;rsquo;s a lot of work left to do with these devices, and I get a lot of joy from building the tools around them. Manta is one such tool, and I hope you find it useful!&lt;/p&gt;
+&lt;h1 id=&#34;what-motivated-you-to-make-manta&#34;&gt;
+    &lt;a href=&#34;#what-motivated-you-to-make-manta&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    What motivated you to make Manta?
+&lt;/h1&gt;&lt;p&gt;When we were preparing to teach the FPGA design class at MIT, we noticed that ARM platforms were gaining popularity with students, primarily in the form of Apple Silicon. This was a problem for our EDA tool (Vivado) which, despite our best tricks, was only usable on x86 platforms. To solve this, we developed a tool that ran Vivado remotely, allowing students to build their bitstreams without having the tools installed on their machine. This worked splendidly.&lt;/p&gt;
+&lt;p&gt;However, this meant that we couldn’t use Vivado’s built-in debugging tools such as the Integrated Logic Analyzer (ILA) or Virtual IO (VIO), as these tools require Vivado’s Hardware Manager to be running on the machine connected to the FPGA. This was a bit of a problem, as students would often connect their FPGAs to external devices for their &lt;a class=&#34;link&#34; href=&#34;https://mitadmissions.org/blogs/entry/6-2050-field-programmable-gate-awesomeness/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;final projects&lt;/a&gt;, and it was nearly impossible to guarantee that those were behaving exactly as they were modeled in simulation.&lt;/p&gt;
+&lt;p&gt;Manta was written to solve this problem. It provides the same functionality that the ILA and VIO cores provide (and more!) without requiring a specific architecture or OS.&lt;/p&gt;
+&lt;h1 id=&#34;what-makes-you-excited-about-manta&#34;&gt;
+    &lt;a href=&#34;#what-makes-you-excited-about-manta&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    What makes you excited about Manta?
+&lt;/h1&gt;&lt;p&gt;As I’ve been developing designs at JPL, hacking on personal projects, and engaging with the community, I’ve been amazed at how long Manta tends to stick inside a project. I thought that it would only be useful at the beginning of a project for getting a quick prototype done, or that it’d only be pulled out to hunt down the occasional bug. However, this hasn’t been the case from what I’ve seen. After it’s been included, it usually tends to stay in the design - either to quickly investigate a bug if it comes up again, or to serve as the permanent link between a FPGA and its host machine.&lt;/p&gt;
+&lt;p&gt;This makes me really excited about the need that Manta is fulfilling. But there’s two features that I’m also really excited about:&lt;/p&gt;
+&lt;h3 id=&#34;waveform-recordplayback&#34;&gt;
+    &lt;a href=&#34;#waveform-recordplayback&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Waveform Record/Playback
+&lt;/h3&gt;&lt;p&gt;Manta’s Logic Analyzer allows you to save a captured waveform as a &lt;code&gt;.vcd&lt;/code&gt; file, just like any other logic analyzer. However, unlike any other logic analyzer, it lets you save a captured waveform as a Verilog module. When included in a simulation testbench, this module will generate an exact replication of the captured waveform.&lt;/p&gt;
+&lt;p&gt;This is super handy for testing RTL when the exact sequence of inputs it’ll see on the FPGA isn’t well-known. For example, when testing a network stack deployed to a FPGA, I’ve found that some USB-Ethernet adapters aren’t entirely compliant with the RMII spec, and emit slightly malformed packets. This wasn’t modeled in my simulations, but by recording a few malformed packets and playing them in a testbench, I could quickly patch the network stack.&lt;/p&gt;
+&lt;p&gt;This is just one example, but it’s been extraordinarily useful for hunting down strange hardware bugs like these!&lt;/p&gt;
+&lt;h3 id=&#34;web-terminal&#34;&gt;
+    &lt;a href=&#34;#web-terminal&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Web Terminal
+&lt;/h3&gt;&lt;p&gt;Since Manta can communicate with a host machine over UART, it’s possible to use the Web Serial API to run Manta in the browser, directly from the documentation site:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2024/spotlight/manta/web_terminal.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Manta Web Terminal&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;And here’s a quick demo of an earlier version in action:&lt;/p&gt;
+&lt;div class=&#34;video-wrapper&#34;&gt;
+    &lt;iframe loading=&#34;lazy&#34; 
+            src=&#34;https://www.youtube.com/embed/fWI9ODbyA3w&#34; 
+            allowfullscreen 
+            title=&#34;YouTube Video&#34;
+    &gt;
+    &lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Everything here is run locally in your browser, no installation required! Nothing is sent to an external server either. I’m still putting this feature together and it’s not generally available just yet, but I’d love any feedback on it - especially if anyone can think of a proper use case for it. Right now I’m just building this feature to show that it’s possible, but I’m happy to direct development in a more productive direction if one exists.&lt;/p&gt;
+&lt;h1 id=&#34;what-are-some-of-the-challenges-you-face&#34;&gt;
+    &lt;a href=&#34;#what-are-some-of-the-challenges-you-face&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    What are some of the challenges you face?
+&lt;/h1&gt;&lt;p&gt;Getting the backend of the Web Terminal working was a huge challenge! Inside the Web Terminal Manta is being run in its native Python, which relies on blocking (synchronous) IO between the host and FPGA. Javascript in the browser typically uses non-blocking (asynchronous) IO, so this required some &lt;em&gt;gnarly&lt;/em&gt; tricks to get working. I had never written a line of Javascript prior to this, so getting this working has been extremely satisfying!&lt;/p&gt;
+&lt;h1 id=&#34;what-could-the-community-do-to-support-you&#34;&gt;
+    &lt;a href=&#34;#what-could-the-community-do-to-support-you&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    What could the community do to support you?
+&lt;/h1&gt;&lt;p&gt;Try Manta and talk about it! If there’s one thing the project needs right now, it’s a community around it. If folks are making cool projects with Manta, then that’ll grow organically. Even just starring the GitHub repo helps.&lt;/p&gt;
+&lt;p&gt;Financial contributions are also always appreciated and are possible by &lt;a class=&#34;link&#34; href=&#34;https://github.com/fischermoseley&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;sponsoring me&lt;/a&gt; on GitHub. Right now I’m looking to purchase some more FPGA development boards to run automated hardware-in-the-loop tests on. If anyone has any Altera, Microchip, ECP5, or Xilinx development boards handy that they’d consider donating, please reach out!&lt;/p&gt;
+&lt;p&gt;Lastly, contributions to the source code are extremely welcome. I’m looking to add cores for AXI, AHB3, Wishbone, and Avalon busses, and help contributing to those would be greatly appreciated.&lt;/p&gt;
+&lt;h1 id=&#34;what-is-the-best-link-for-the-project&#34;&gt;
+    &lt;a href=&#34;#what-is-the-best-link-for-the-project&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    What is the best link for the project?
+&lt;/h1&gt;&lt;p&gt;All of the source code is on &lt;a class=&#34;link&#34; href=&#34;https://github.com/fischermoseley/manta&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub&lt;/a&gt;, which also serves the &lt;a class=&#34;link&#34; href=&#34;https://fischermoseley.github.io/manta/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;documentation site&lt;/a&gt;.&lt;/p&gt;
+&lt;h1 id=&#34;what-is-the-best-way-for-people-to-contact-you&#34;&gt;
+    &lt;a href=&#34;#what-is-the-best-way-for-people-to-contact-you&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    What is the best way for people to contact you?
+&lt;/h1&gt;&lt;p&gt;If you have ideas about Manta, please open a GitHub issue on the repo! Otherwise you can reach me directly at fischer.moseley [at] gmail.com.&lt;/p&gt;
+&lt;p&gt;Also if you like motorized shopping carts and other silly projects, feel free to check out &lt;a class=&#34;link&#34; href=&#34;fischermoseley.com&#34; &gt;fischermoseley.com&lt;/a&gt; or my &lt;a class=&#34;link&#34; href=&#34;http://www.youtube.com/@fischerm&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;YouTube&lt;/a&gt; channel!&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Community Spotlight - FazyRV</title>
+        <link>http://blog.yosyshq.com/p/community-spotlight-fazyrv/</link>
+        <pubDate>Sun, 10 Mar 2024 20:30:31 +0100</pubDate>
+        
+        <guid>http://blog.yosyshq.com/p/community-spotlight-fazyrv/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2024/spotlight/fazyrv/fazyrv.png" alt="Featured image of post Community Spotlight - FazyRV" /&gt;&lt;h1 id=&#34;fazyrv&#34;&gt;
+    &lt;a href=&#34;#fazyrv&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    FazyRV
+&lt;/h1&gt;&lt;p&gt;Welcome to another &lt;a class=&#34;link&#34; href=&#34;http://blog.yosyshq.com/tags/community-spotlight/&#34; &gt;community spotlight&lt;/a&gt; article where we shine a light on open source EDA-related projects. If you want to &lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSdIEgu6FJZam0-V3PMTjw-eDebJdg_JuIlN4MkLNDr4vs-a5A/viewform?usp=sf_link&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;submit a project, please do so here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;FazyRV is a minimal-area RISC-V core that scales with your needs. It allows you to adapt the data path width to process smaller 1, 2, 4, or 8-bit &lt;em&gt;chunks&lt;/em&gt; of the 32-bit operands each clock cycle. In addition, each data path width can be combined with FazyRV&amp;rsquo;s manifold variants to trade area with performance and find the best-fitting configuration for your system requirements and used technology. FazyRV avoids hand optimizations at the gate level to increase readability and ease modifications, such as adding custom instruction extensions.&lt;/p&gt;
+&lt;h1 id=&#34;meinhard-kissichs-bio&#34;&gt;
+    &lt;a href=&#34;#meinhard-kissichs-bio&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Meinhard Kissich&amp;rsquo;s Bio
+&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2024/spotlight/fazyrv/meinhard.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Meinhard Kissich&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;I am a Ph.D. student at &lt;a class=&#34;link&#34; href=&#34;https://www.tugraz.at/home&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Graz University of Technology&lt;/a&gt; in Austria. After completing my Master&amp;rsquo;s degree in Information and Computer Engineering in 2022, I joined the &lt;a class=&#34;link&#34; href=&#34;https://iti.tugraz.at/eas&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Embedded Architectures &amp;amp; Systems&lt;/a&gt; (EAS) Group as a university assistant. My main interests and research areas are RISC-V architectures, FPGA CAD tools, and applied formal verification. I enjoy realizing unique ideas outside convention and evaluating these implementations. For me, it is not just about gathering knowledge but also about sharing it and contributing back to the community. I lead the Real-Time Operating Systems Laboratory course and am always up for discussions and exciting projects.&lt;/p&gt;
+&lt;h1 id=&#34;what-motivated-you-to-make-fazyrv&#34;&gt;
+    &lt;a href=&#34;#what-motivated-you-to-make-fazyrv&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    What motivated you to make FazyRV?
+&lt;/h1&gt;&lt;p&gt;The fascination of getting the most out of a constrained environment and using even small FPGAs for &amp;ldquo;big&amp;rdquo; projects &amp;ndash; it is like the digital design equivalent of &lt;em&gt;Can it run Doom?&lt;/em&gt;. I became captivated by &lt;a class=&#34;link&#34; href=&#34;https://github.com/olofk/serv&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;SERV&lt;/a&gt; and how small a system-on-chip design can be. However, there was a gap between the 1-bit bit-serial SERV and prevalent 32-bit cores.&lt;/p&gt;
+&lt;p&gt;That brings me to a second point: I wanted to explore how a sub-32-bit core scales between a 1-bit bit-serial and a 32-bit core in terms of area and performance. This is where FazyRV started as a scalable RISC-V core.&lt;/p&gt;
+&lt;h1 id=&#34;what-makes-you-excited-about-fazyrv&#34;&gt;
+    &lt;a href=&#34;#what-makes-you-excited-about-fazyrv&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    What makes you excited about FazyRV?
+&lt;/h1&gt;&lt;p&gt;FazyRV allows scaling the core to the project&amp;rsquo;s needs in a way that was not available to me before. The fine-grained options can be used to explore the design space and find the best area vs. performance trade-off for the system requirements and target technology. Assume the target technology does not have dual-read-port BRAM primitives available without some area overhead. In this case, you can choose an implementation that serially reads the operands at the expense of one additional clock cycle per instruction. Then, you can synthesize the data path to a width that fits your timing requirements. If it is on edge, you may also experiment with a variant that uses a bypass multiplexer and can save one clock cycle on operand loads. All that is done by just playing around with Verilog parameters.&lt;/p&gt;
+&lt;p&gt;Let us delve into a practical implementation by plotting the Mandelbrot set. The comparison below illustrates the performance disparity when using different chunk sizes. While the variant with an 8-bit chunk size delivers the highest performance, it also results in the largest design, as depicted in the plot at the top.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2024/spotlight/fazyrv/mandelbrot.gif&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Meinhard Kissich&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;But there is more to it: FazyRV avoids hand optimization at the gate level. I want to inspect more closely how synthesis tools optimize the current hardware description and map the patterns.&lt;/p&gt;
+&lt;h1 id=&#34;what-are-some-of-the-challenges-you-face&#34;&gt;
+    &lt;a href=&#34;#what-are-some-of-the-challenges-you-face&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    What are some of the challenges you face?
+&lt;/h1&gt;&lt;p&gt;One was undoubtedly the architecture of shift instructions. The considered designs significantly influence the resulting area and performance. Finding a suitable trade-off is more challenging when the area and performance overhead must fit all data path widths without getting out of balance.&lt;/p&gt;
+&lt;p&gt;Also, when designing a core highly optimized for area, there are some sacrifices to be made here and there. Of course, the area must be minimized, but likewise, the core must remain suitable for most users and applications when defining constraints in the feature set. One example is the decoder: Not all instruction bits are explicitly checked to reduce the area. Assumptions are made that some instructions cannot occur. The drawback, however, is that an illegal instruction may be interpreted as a different legal instruction instead of raising an illegal instruction exception. In this particular case, it was handled by providing the decoder logic in a table-like format that can be adapted by the user and synthesized to Verilog code by a tool. It eases modifications to detect illegal instructions when required or to add custom instructions to the core without digging into the decoder at a low level. However, many more decisions in the INT and CSR variants are yet to be made.&lt;/p&gt;
+&lt;h1 id=&#34;what-could-the-community-do-to-support-you&#34;&gt;
+    &lt;a href=&#34;#what-could-the-community-do-to-support-you&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    What could the community do to support you?
+&lt;/h1&gt;&lt;p&gt;Consider having a play with FazyRV in your next project, either by using the Verilog design directly or exploring FazyRV via LiteX. We are grateful for any opinions, reported issues, or suggestions.&lt;/p&gt;
+&lt;p&gt;If you want to get involved even more, we maintain a list of open topics in the repository. Feel free to use this as a starting point or bring in your own ideas for discussion or a concrete proposed implementation. Even if you are not involved in digital design, well-designed tooling, workflows, and software support are needed to make adopting FazyRV as convenient as possible and verify changes continuously.&lt;/p&gt;
+&lt;h1 id=&#34;what-is-the-best-link-for-the-project&#34;&gt;
+    &lt;a href=&#34;#what-is-the-best-link-for-the-project&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    What is the best link for the project?
+&lt;/h1&gt;&lt;p&gt;The &lt;a class=&#34;link&#34; href=&#34;https://github.com/meiniKi/FazyRV&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub repository&lt;/a&gt; is the best place to start. It is where everything comes together and you will find the latest changes and updates. For example, we will soon publish a research paper with many more evaluations and design insights, which we will reference in the repo.&lt;/p&gt;
+&lt;h1 id=&#34;what-is-the-best-way-for-people-to-contact-you&#34;&gt;
+    &lt;a href=&#34;#what-is-the-best-way-for-people-to-contact-you&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    What is the best way for people to contact you?
+&lt;/h1&gt;&lt;p&gt;You can find a list of up-to-date contact options on my website.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.meinhard-kissich.at&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;www.meinhard-kissich.at&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>Community Spotlight - Surfer</title>
+        <link>http://blog.yosyshq.com/p/community-spotlight-surfer/</link>
+        <pubDate>Mon, 27 Nov 2023 13:26:31 +0100</pubDate>
+        
+        <guid>http://blog.yosyshq.com/p/community-spotlight-surfer/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2023/spotlight/surfer/surfer.png" alt="Featured image of post Community Spotlight - Surfer" /&gt;&lt;h1 id=&#34;surfer&#34;&gt;
+    &lt;a href=&#34;#surfer&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Surfer
+&lt;/h1&gt;&lt;p&gt;Welcome to another &lt;a class=&#34;link&#34; href=&#34;http://blog.yosyshq.com/tags/community-spotlight/&#34; &gt;community spotlight&lt;/a&gt; article where we shine a light on open source EDA projects. If you want to &lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSdIEgu6FJZam0-V3PMTjw-eDebJdg_JuIlN4MkLNDr4vs-a5A/viewform?usp=sf_link&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;submit a project, please do so here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Surfer is a new waveform viewer with a focus on extensibility and a snappy
+(optionally keyboard driven) UI. It runs both natively and in web-assembly, so
+you can try it out right here in the browser at
+&lt;a class=&#34;link&#34; href=&#34;https://app.surfer-project.org/?load_url=https://app.surfer-project.org/picorv32.vcd&amp;amp;startup_commands=show_quick_start;module_add%20testbench.top&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://app.surfer-project.org&lt;/a&gt;.
+The project is written in rust and while it is still in its early stages, it is
+usable as a day-to-day wave viewer.&lt;/p&gt;
+&lt;h1 id=&#34;frans-skarmans-bio&#34;&gt;
+    &lt;a href=&#34;#frans-skarmans-bio&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Frans Skarman&amp;rsquo;s Bio
+&lt;/h1&gt;&lt;p&gt;I am a 5th year PhD student at the department of electrical engineering at
+Linköping university in Sweden. I&amp;rsquo;m originally a software person, who started
+off in game development and then descending lower and lower in the tech stack
+until I reached this wonderful world of hardware. The whole time, i&amp;rsquo;ve
+been most interested in writing tools; initially game engines instead of games,
+and now compilers instead of actual hardware design. My main project these days is
+&lt;a class=&#34;link&#34; href=&#34;https://spade-lang.org/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://spade-lang.org/&lt;/a&gt; a hardware description language inspired by modern
+software languages.&lt;/p&gt;
+&lt;p&gt;Outside of programming I enjoy some 3d printing, playing flight simulators, as
+well as sailing or skiing when the weather permits.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2023/spotlight/surfer/frans.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Frans Skarman&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;I also need to give credit to Lucas who was featured in the &lt;a class=&#34;link&#34; href=&#34;http://blog.yosyshq.com/p/community-spotlight-wal/&#34; &gt;last community
+spotlight&lt;/a&gt;, and my PhD advisor Oscar who have
+contributed a ton of features and fixes to the project.&lt;/p&gt;
+&lt;h1 id=&#34;what-motivated-you-to-make-surfer&#34;&gt;
+    &lt;a href=&#34;#what-motivated-you-to-make-surfer&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    What motivated you to make Surfer?
+&lt;/h1&gt;&lt;p&gt;When building my HDL, Spade, I ran into a problem. With a powerful type system,
+the bit representation of a signal is often hard to understand, so you need a
+way to automatically translate the values back into their human-readable
+representation to effectively debug your designs. While &lt;code&gt;gtkwave&lt;/code&gt; has support
+for custom translation via external programs, it turned out to be quite hard to
+get right and wasn&amp;rsquo;t as powerful as I wanted. For example, I found no way to
+translate a value into a list of expandable sub-fields to, for example, expand
+individual fields of a struct. I was also bothered by small things like how
+zooming and scrolling works in gtkwave.&lt;/p&gt;
+&lt;p&gt;Eventually, the question of &amp;ldquo;how hard can it be&amp;rdquo; made me start this project.
+Luckily, it turns out that with the right libraries, the answer to that
+question was that it is easier than I thought it would be.&lt;/p&gt;
+&lt;h1 id=&#34;what-makes-you-excited-about-surfer&#34;&gt;
+    &lt;a href=&#34;#what-makes-you-excited-about-surfer&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    What makes you excited about Surfer?
+&lt;/h1&gt;&lt;p&gt;Overall, I&amp;rsquo;m very excited about having a mostly solid waveform viewer where I
+and others can try out new things, both in terms of translations and interface.
+I do have some favorite features I can touch more on though:&lt;/p&gt;
+&lt;h2 id=&#34;web-assembly&#34;&gt;
+    &lt;a href=&#34;#web-assembly&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Web assembly
+&lt;/h2&gt;&lt;p&gt;Perhaps my favorite thing about Surfer right now is that it works almost
+flawlessly in web assembly. You can see a demo of that at
+&lt;a class=&#34;link&#34; href=&#34;https://app.surfer-project.org&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://app.surfer-project.org&lt;/a&gt;. If you
+have a VCD file to analyse, you can just append that to the URL along with some commands to run when the waveform is loaded, for example
+&lt;a class=&#34;link&#34; href=&#34;https://app.surfer-project.org/?load_url=https://app.surfer-project.org/picorv32.vcd&amp;amp;startup_commands=module_add%20testbench;divider_add%20.;divider_add%20top;module_add%20testbench.top;show_quick_start&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://app.surfer-project.org/?load_url=https://app.surfer-project.org/picorv32.vcd&amp;startup_commands=module_add%20testbench;divider_add%20.;divider_add%20top;module_add%20testbench.top;show_quick_start&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Apart from being a cool tech demo, this also enables some cool workflow in
+CI/CD. For example, we can augment the &lt;a class=&#34;link&#34; href=&#34;https://tinytapeout.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;tinytapeout&lt;/a&gt;
+test action to link to surfer with the
+resulting waveform. No longer will you have to re-run your tests locally, or
+manually download a VCD file to view it in a desktop viewer.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m also very happy that going from idea to implementation of the web version
+took less than a day thanks to the rich rust ecosystem around web assembly.&lt;/p&gt;
+&lt;h2 id=&#34;signal-translation&#34;&gt;
+    &lt;a href=&#34;#signal-translation&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Signal translation
+&lt;/h2&gt;&lt;p&gt;As I mentioned earlier, a big motivator for building surfer was being able to
+get richer translation of Spade types. Even though I had a hacky system for
+doing that in &lt;code&gt;gtkwave&lt;/code&gt;, the Surfer version where you can expand or collapse
+&lt;code&gt;struct&lt;/code&gt;s, view individual &lt;code&gt;enum&lt;/code&gt; variants and translate sub-fields as you please
+is a game changer.&lt;/p&gt;
+&lt;p&gt;Below is an image and a quick demo video showing it off
+&lt;img src=&#34;http://blog.yosyshq.com/static-2023/spotlight/surfer/surfer.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Picture showing surfer translating Spade structs opcodes&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;div class=&#34;video-wrapper&#34;&gt;
+    &lt;iframe loading=&#34;lazy&#34; 
+            src=&#34;https://www.youtube.com/embed/58AW1LpNaDM&#34; 
+            allowfullscreen 
+            title=&#34;YouTube Video&#34;
+    &gt;
+    &lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Another really cool translator is the RISC-V opcode translator shown below&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2023/spotlight/surfer/riscv_opcode_translation.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Picture showing surfer translating RISC-V opcodes&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;I have also done my best to build this translation system to be decoupled from
+Spade, meaning that anyone could add translation for their own HDLs constructs,
+or perhaps something completely different, like a translator that splits a stereo audio signal into left and right channels. All that
+is needed for that is to implement a &lt;a class=&#34;link&#34; href=&#34;https://gitlab.com/surfer-project/surfer/-/blob/main/src/translation/mod.rs?ref_type=heads#L290&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;few methods in a
+trait&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;keyboard-and-mouse-gesture-based-ui&#34;&gt;
+    &lt;a href=&#34;#keyboard-and-mouse-gesture-based-ui&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Keyboard and mouse gesture based UI
+&lt;/h2&gt;&lt;p&gt;As a vim user, I hate reaching for my mouse, so we&amp;rsquo;ve put quite a bit of effort
+into making surfer usable with just the keyboard. There are some keybindings
+for normal navigation of course, but most of the happens via a fuzzy matching
+based command palette, similar to ctrl-p in Visual Studio Code. For tasks where
+the mouse is more appropriate, like navigating the waveform there is also a mouse gesture based UI. You can see both in action in the video below.&lt;/p&gt;
+&lt;div class=&#34;video-wrapper&#34;&gt;
+    &lt;iframe loading=&#34;lazy&#34; 
+            src=&#34;https://www.youtube.com/embed/gASWElSl32k&#34; 
+            allowfullscreen 
+            title=&#34;YouTube Video&#34;
+    &gt;
+    &lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h1 id=&#34;why-do-you-make-open-source-tools&#34;&gt;
+    &lt;a href=&#34;#why-do-you-make-open-source-tools&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Why do you make open source tools?
+&lt;/h1&gt;&lt;p&gt;Every time I have to use non-open source software I get frustrated, sometimes
+because dealing with licenses but often just because the software is missing
+features or customization options that I want, or because features I rely on get removed in a new version. These frustrations happen less with open source software in my experience. Since I probably wouldn&amp;rsquo;t use a closed
+source tool myself, I&amp;rsquo;m certainly not going to build one.&lt;/p&gt;
+&lt;p&gt;For surfer in particular, one of the big advantages of open source is that
+everyone can add their favorite features, whether it is a translator for a new
+signal format, a new way to render waves or some new way to interact with the
+program, things that a closed source developer might not have the interest nor resources to implement.
+After a while, this makes an open source tool feel very complete, because all
+the small features and fixes have been added.&lt;/p&gt;
+&lt;h1 id=&#34;what-are-some-challenges&#34;&gt;
+    &lt;a href=&#34;#what-are-some-challenges&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    What are some challenges?
+&lt;/h1&gt;&lt;p&gt;The biggest challenge in my mind is in UI design. I&amp;rsquo;m not a UI designer, I only
+took a single course on it during my bachelor, so most of the time I&amp;rsquo;m just winging
+it. For features I use myself, I at least have some idea of what I want, for
+feature requests by others I might even have that.&lt;/p&gt;
+&lt;p&gt;There have also been some technical hurdles, primarily because we offload the
+parsing of wave files to external libraries. For now we only support VCD, but
+we are working on both decoupling surfer from the VCD library, as well as
+adding support for other formats, in particular FST.&lt;/p&gt;
+&lt;h1 id=&#34;what-could-the-community-do-to-support-you&#34;&gt;
+    &lt;a href=&#34;#what-could-the-community-do-to-support-you&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    What could the community do to support you?
+&lt;/h1&gt;&lt;p&gt;First, give surfer a try. Let us know what you find nice and what could use
+improvements. Especially as a non-UX person it is invaluable to get feedback
+from users!&lt;/p&gt;
+&lt;p&gt;If you want to do more, consider contributing the features you think are
+missing. In particular, small features like a translator for a new bit format, a
+fix for a small bug you find or perhaps some additional way to zoom or navigate the waveforms.
+As I said earlier, people contributing these small things are what gives open source software that
+warm feeling that someone has thought of your particular use case.&lt;/p&gt;
+&lt;p&gt;Of course, we&amp;rsquo;re also very happy to accept bigger contributions, like
+support for loading files from other wave formats or big translators for
+translating to the native format from some alt-HDL like Amaranth, Chisel or
+Clash.&lt;/p&gt;
+&lt;h1 id=&#34;what-is-the-best-link-to-give-for-the-project&#34;&gt;
+    &lt;a href=&#34;#what-is-the-best-link-to-give-for-the-project&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    What is the best link to give for the project?
+&lt;/h1&gt;&lt;p&gt;If you want to learn more, see the &lt;a class=&#34;link&#34; href=&#34;https://gitlab.com/surfer-project/surfer&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;git repo&lt;/a&gt;. You can also try Surfer right in your browser at &lt;a class=&#34;link&#34; href=&#34;https://app.surfer-project.org&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://app.surfer-project.org&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;what-is-the-best-way-for-people-to-contact-you&#34;&gt;
+    &lt;a href=&#34;#what-is-the-best-way-for-people-to-contact-you&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    What is the best way for people to contact you?
+&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;Email: &lt;a class=&#34;link&#34; href=&#34;mailto:frans.skarman@liu.se&#34; &gt;frans.skarman@liu.se&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Mastodon: &lt;a class=&#34;link&#34; href=&#34;https://mastodon.social/@thezoq2&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;TheZoq2@mastodon.social&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;The Spade discord (with a surfer channel): &lt;a class=&#34;link&#34; href=&#34;https://discord.gg/hdyGSn8ejw&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://discord.gg/hdyGSn8ejw&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>Community Spotlight - WAL</title>
+        <link>http://blog.yosyshq.com/p/community-spotlight-wal/</link>
+        <pubDate>Mon, 25 Sep 2023 13:26:31 +0100</pubDate>
+        
+        <guid>http://blog.yosyshq.com/p/community-spotlight-wal/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2023/spotlight/wal-pipeline.png" alt="Featured image of post Community Spotlight - WAL" /&gt;&lt;h1 id=&#34;wal&#34;&gt;
+    &lt;a href=&#34;#wal&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    WAL
+&lt;/h1&gt;&lt;p&gt;Welcome to another &lt;a class=&#34;link&#34; href=&#34;http://blog.yosyshq.com/tags/community-spotlight/&#34; &gt;community spotlight&lt;/a&gt; article where we shine a light on open source EDA projects. If you want to &lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSdIEgu6FJZam0-V3PMTjw-eDebJdg_JuIlN4MkLNDr4vs-a5A/viewform?usp=sf_link&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;submit a project, please do so here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Waveform Analysis Language (WAL) is a programming language for complex waveform analysis and EDA tool development.&lt;/p&gt;
+&lt;h1 id=&#34;lucas-klemmers-bio&#34;&gt;
+    &lt;a href=&#34;#lucas-klemmers-bio&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Lucas Klemmer&amp;rsquo;s Bio
+&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2023/spotlight/lucas.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;lucas_klemmer&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m a PhD student at the Institute for Complex Systems at the Johannes Kepler University in Linz, Austria. I received my Master’s degree in computer science from the University of Bremen in Germany. My interests include RISC-V, HW verification and analysis, kayaking, and learning (natural) languages.&lt;/p&gt;
+&lt;h1 id=&#34;what-motivated-you-to-make-wal&#34;&gt;
+    &lt;a href=&#34;#what-motivated-you-to-make-wal&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    What motivated you to make WAL?
+&lt;/h1&gt;&lt;p&gt;Waveforms contain so much interesting information; however, this information is “buried” in enormous amounts of data. Using general purpose languages can quickly become challenging to analyze waveforms because these languages have no concepts of time, design structure, and other things we in hardware care about. With WAL, we want to make it easy to analyze waveforms by integrating those concepts into the language to make it “hardware aware”. Simply speaking, a WAL program runs on your waveform, and you can use the waveform signals just like you use variables.&lt;/p&gt;
+&lt;h1 id=&#34;why-do-you-make-open-source-tools&#34;&gt;
+    &lt;a href=&#34;#why-do-you-make-open-source-tools&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Why do you make open source tools?
+&lt;/h1&gt;&lt;p&gt;As a computer scientist coming to the hardware world, it was quite a culture shock when I had to use closed-source toolchains. However, in the last few years, this feeling changed from being shocked to being amazed by all the open-source hardware and EDA projects that emerged.
+With WAL, I hope that I can add my small contribution to this change!&lt;/p&gt;
+&lt;h1 id=&#34;what-are-some-challenges&#34;&gt;
+    &lt;a href=&#34;#what-are-some-challenges&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    What are some challenges?
+&lt;/h1&gt;&lt;p&gt;Handling very large waveforms with WAL is possible, but more work on performance and optimizations is required.
+Moreover, the hardware domain requires a bit more work to win people for new ideas than in the software world.&lt;/p&gt;
+&lt;h1 id=&#34;what-could-the-community-do-to-support-you&#34;&gt;
+    &lt;a href=&#34;#what-could-the-community-do-to-support-you&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    What could the community do to support you?
+&lt;/h1&gt;&lt;p&gt;I&amp;rsquo;m constantly looking for interesting new applications. So if you have a waveform and would like to know more about it, then feel to contact me, I&amp;rsquo;m happy to help!&lt;/p&gt;
+&lt;h1 id=&#34;what-is-the-best-link-to-give-for-the-project&#34;&gt;
+    &lt;a href=&#34;#what-is-the-best-link-to-give-for-the-project&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    What is the best link to give for the project?
+&lt;/h1&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://wal-lang.org/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://wal-lang.org/&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;what-is-the-best-way-for-people-to-contact-you&#34;&gt;
+    &lt;a href=&#34;#what-is-the-best-way-for-people-to-contact-you&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    What is the best way for people to contact you?
+&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;Email: &lt;a class=&#34;link&#34; href=&#34;mailto:lucas.klemmer@jku.at&#34; &gt;lucas.klemmer@jku.at&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Mastodon: @lcsklmmr@fosstodon.org&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>Community Spotlight - AutoSVA</title>
+        <link>http://blog.yosyshq.com/p/community-spotlight-autosva/</link>
+        <pubDate>Wed, 10 May 2023 13:26:31 +0100</pubDate>
+        
+        <guid>http://blog.yosyshq.com/p/community-spotlight-autosva/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2022/spotlight/spotlight.png" alt="Featured image of post Community Spotlight - AutoSVA" /&gt;&lt;h1 id=&#34;autosva&#34;&gt;
+    &lt;a href=&#34;#autosva&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    AutoSVA
+&lt;/h1&gt;&lt;p&gt;Welcome to another &lt;a class=&#34;link&#34; href=&#34;http://blog.yosyshq.com/tags/community-spotlight/&#34; &gt;community spotlight&lt;/a&gt; article where we shine a light on open source EDA projects. If you want to &lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSdIEgu6FJZam0-V3PMTjw-eDebJdg_JuIlN4MkLNDr4vs-a5A/viewform?usp=sf_link&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;submit a project, please do so here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;AutoSVA makes Formal Property Verification (FPV) more accesible for hardware designers.&lt;/p&gt;
+&lt;h1 id=&#34;marcelo-veras-bio&#34;&gt;
+    &lt;a href=&#34;#marcelo-veras-bio&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Marcelo Vera&amp;rsquo;s Bio
+&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2023/spotlight/marcelo.jpeg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Marcelo Vera&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;Marcelo is a PhD candidate in the Department of Computer Science at Princeton University advised by Margaret Martonosi and David Wentzlaff. He received his BSE from University of Murcia. Marcelo is interested in hardware innovations that are modular, to make SoC integration practical. His research focuses on Computer Architecture, from hardware RTL design and verification to software programming models of novel architectures.
+He has previously worked in the hardware industry at Arm, contributing to the design and verification of three GPU projects, and at Cerebras Systems, creating High-Performance Computing kernels.
+At Princeton, he has contributed in two academic chip tapeouts that aims to improve the performance, power and programmability of several emerging workflows in the broad areas of Machine Learning and Graph Analytics.&lt;/p&gt;
+&lt;h1 id=&#34;what-was-your-motivation-in-making-autosva&#34;&gt;
+    &lt;a href=&#34;#what-was-your-motivation-in-making-autosva&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    What was your motivation in making AutoSVA?
+&lt;/h1&gt;&lt;p&gt;AutoSVA was build with the goal of making Formal Property Verification (FPV) more accesible for hardware designers. AutoSVA brings a simple language to make annotations in the signal declaration section of a module interface. This enables us to generate FPV testbenches that check that transactions between hardware RTL modules follow their interface specifications. It does not check full correctness of the design but it automatically generate liveness properties (prevent duplicated responses, prevent requests being dropped) and some safety-relate properties of transactions, like data integrity, transaction invariants, uniqueness, stability&amp;hellip;&lt;/p&gt;
+&lt;h1 id=&#34;why-do-you-develop-open-source-tools&#34;&gt;
+    &lt;a href=&#34;#why-do-you-develop-open-source-tools&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Why do you develop open source tools?
+&lt;/h1&gt;&lt;p&gt;As the title of our paper suggests &amp;ldquo;Democratizing Formal Verification of RTL Module Interactions”
+the motivation on making the tool was to make FPV more accesible for hardware designers without much prior knowledge in formal methods.
+Thus, open-sourcing makes the most sense when the goal is to get people to use your tool.&lt;/p&gt;
+&lt;h1 id=&#34;what-are-some-of-the-challenges-you-face&#34;&gt;
+    &lt;a href=&#34;#what-are-some-of-the-challenges-you-face&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    What are some of the challenges you face?
+&lt;/h1&gt;&lt;p&gt;Hardware RTL projects can be very heterogeneous, I made the language and tool pretty flexible to take any Verilog or SystemVerilog, but I wouldn’t be surprise it the tool complained about some syntax or some include files. The tool also has a way to set inlcude paths on the tool command line, but you never know!&lt;/p&gt;
+&lt;h1 id=&#34;what-could-the-community-do-to-support-you&#34;&gt;
+    &lt;a href=&#34;#what-could-the-community-do-to-support-you&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    What could the community do to support you?
+&lt;/h1&gt;&lt;p&gt;I would be happy if the community would keep using it, find limitations, and extend the tool. There are plenty of opportunities to add functionality. I’m working myself on an extension to automatically find timing channels via hardware state left unflushed between context switches. Stay tuned for updates, Use the tool and contribute back, I’m happy to take pull requests!&lt;/p&gt;
+&lt;h1 id=&#34;what-is-the-best-link-for-the-project&#34;&gt;
+    &lt;a href=&#34;#what-is-the-best-link-for-the-project&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    What is the best link for the project?
+&lt;/h1&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/PrincetonUniversity/AutoSVA&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/PrincetonUniversity/AutoSVA&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;what-is-the-best-way-for-people-to-contact-you&#34;&gt;
+    &lt;a href=&#34;#what-is-the-best-way-for-people-to-contact-you&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    What is the best way for people to contact you?
+&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;Email: &lt;a class=&#34;link&#34; href=&#34;mailto:movera@princeton.edu&#34; &gt;movera@princeton.edu&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;LinkedIn: &lt;a class=&#34;link&#34; href=&#34;https://www.linkedin.com/in/marcelo-orenes-vera-391390b8/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.linkedin.com/in/marcelo-orenes-vera-391390b8/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>Community Spotlight - sv2v</title>
+        <link>http://blog.yosyshq.com/p/community-spotlight-sv2v/</link>
+        <pubDate>Mon, 13 Feb 2023 13:26:31 +0100</pubDate>
+        
+        <guid>http://blog.yosyshq.com/p/community-spotlight-sv2v/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2022/spotlight/spotlight.png" alt="Featured image of post Community Spotlight - sv2v" /&gt;&lt;h1 id=&#34;sv2v&#34;&gt;
+    &lt;a href=&#34;#sv2v&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    sv2v
+&lt;/h1&gt;&lt;p&gt;Welcome to another &lt;a class=&#34;link&#34; href=&#34;http://blog.yosyshq.com/tags/community-spotlight/&#34; &gt;community spotlight&lt;/a&gt; article where we shine a light on open source EDA projects. If you want to &lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSdIEgu6FJZam0-V3PMTjw-eDebJdg_JuIlN4MkLNDr4vs-a5A/viewform?usp=sf_link&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;submit a project, please do so here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;sv2v converts SystemVerilog (IEEE 1800-2017) to Verilog (IEEE 1364-2005), with an emphasis on supporting synthesizable language constructs.&lt;/p&gt;
+&lt;h1 id=&#34;zachary-snows-bio&#34;&gt;
+    &lt;a href=&#34;#zachary-snows-bio&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Zachary Snow&amp;rsquo;s Bio
+&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2023/spotlight/zachary.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;zachary snow&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;I received my B.S. in computer science from Carnegie Mellon University in 2019. After graduating, I began working full-time as a software engineer in systematic trading. Since May, I have worked in systematic futures trading at the D. E. Shaw group.&lt;/p&gt;
+&lt;h1 id=&#34;what-was-your-motivation-in-making-sv2v&#34;&gt;
+    &lt;a href=&#34;#what-was-your-motivation-in-making-sv2v&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    What was your motivation in making sv2v?
+&lt;/h1&gt;&lt;p&gt;While working as an undergraduate teaching assistant, Professor &lt;a class=&#34;link&#34; href=&#34;https://www.cs.cmu.edu/~davide/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Dave Eckhardt&lt;/a&gt; introduced me to an open hardware research group that includes himself and Professor &lt;a class=&#34;link&#34; href=&#34;https://users.ece.cmu.edu/~kenmai/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Ken Mai&lt;/a&gt;. Leveraging my prior studies in compilers, I was tasked with developing a tool to convert a RISC-V core written in SystemVerilog to Yosys-compatible Verilog. With help from others on the research team, we accomplished this goal prior to my graduation. Since then, I have continued to develop sv2v on a volunteer basis with the support of CMU and the larger open hardware community.&lt;/p&gt;
+&lt;h1 id=&#34;why-do-you-develop-open-source-tools&#34;&gt;
+    &lt;a href=&#34;#why-do-you-develop-open-source-tools&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Why do you develop open source tools?
+&lt;/h1&gt;&lt;p&gt;While I enjoy programming projects in general, I find working on open source tools especially rewarding. I appreciate that each improvement can benefit many users. I hope that my contributions can expand the viability of completely free and open source development in a space that is dominated by proprietary tools.&lt;/p&gt;
+&lt;h1 id=&#34;what-are-some-of-the-challenges-you-face&#34;&gt;
+    &lt;a href=&#34;#what-are-some-of-the-challenges-you-face&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    What are some of the challenges you face?
+&lt;/h1&gt;&lt;p&gt;I have no formal training in electrical engineering or hardware development. Although I have gained experience since starting the project, I still depend on insight and advice from those who actually work on hardware and synthesis flows.&lt;/p&gt;
+&lt;p&gt;SystemVerilog is also a difficult language to work with due to its complexities and ambiguities. Even commercial toolchains vary in terms of feature support, strictness, and behavior. This can make it challenging to decide what language features to implement and how to translate them correctly.&lt;/p&gt;
+&lt;h1 id=&#34;what-could-the-community-do-to-support-you&#34;&gt;
+    &lt;a href=&#34;#what-could-the-community-do-to-support-you&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    What could the community do to support you?
+&lt;/h1&gt;&lt;p&gt;I am always eager to receive more feedback. It is difficult to gauge interest in features or discover issues without users sharing their thoughts. The feedback I’ve received to date has been essential in making sv2v what it is today.&lt;/p&gt;
+&lt;p&gt;For those with experience with functional programming or compilers and an interest in SystemVerilog, there are a number of features and improvements that may be suitable for an outside collaborator. If you’re interested, please reach out!&lt;/p&gt;
+&lt;h1 id=&#34;what-is-the-best-link-for-the-project&#34;&gt;
+    &lt;a href=&#34;#what-is-the-best-link-for-the-project&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    What is the best link for the project?
+&lt;/h1&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/zachjs/sv2v&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/zachjs/sv2v&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;what-is-the-best-way-for-people-to-contact-you&#34;&gt;
+    &lt;a href=&#34;#what-is-the-best-way-for-people-to-contact-you&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    What is the best way for people to contact you?
+&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;GitHub: &lt;a class=&#34;link&#34; href=&#34;https://github.com/zachjs&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/zachjs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Website: &lt;a class=&#34;link&#34; href=&#34;https://zachjs.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://zachjs.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>Community Spotlight - Tbengy</title>
+        <link>http://blog.yosyshq.com/p/community-spotlight-tbengy/</link>
+        <pubDate>Wed, 14 Dec 2022 10:23:57 +0100</pubDate>
+        
+        <guid>http://blog.yosyshq.com/p/community-spotlight-tbengy/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2022/spotlight/spotlight.png" alt="Featured image of post Community Spotlight - Tbengy" /&gt;&lt;h1 id=&#34;tbengy&#34;&gt;
+    &lt;a href=&#34;#tbengy&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Tbengy
+&lt;/h1&gt;&lt;p&gt;Welcome to the first in a series of short articles where we shine the light on open source EDA projects. If you want to &lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSdIEgu6FJZam0-V3PMTjw-eDebJdg_JuIlN4MkLNDr4vs-a5A/viewform?usp=sf_link&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;submit a project, please do so here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Tbengy by &lt;a class=&#34;link&#34; href=&#34;#connect-with-prasad-pandit&#34; &gt;Prasad Pandit&lt;/a&gt; is a Python Tool for SV/UVM Testbench Generation and RTL Synthesis. The tool uses newly available capability of the Vivado tool by Xilinx to compile and run SV/UVM Testbench and syntheize RTL for Digilent FPGA Boards.&lt;/p&gt;
+&lt;p&gt;The project is hosted on Github under an MIT License:&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/prasadp4009/tbengy&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/prasadp4009/tbengy&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;prasad-pandits-bio&#34;&gt;
+    &lt;a href=&#34;#prasad-pandits-bio&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Prasad Pandit&amp;rsquo;s Bio
+&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2022/spotlight/prasad.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;prasad&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;I am a Hardware Engineer by profession which is my hobby as well. I enjoy tinkering with FPGAs, Arduinos and building IoT devices to make my life more easy. My interest revolves around making chips and building things with 3D printers.&lt;/p&gt;
+&lt;h1 id=&#34;motivation-to-make-tbengy&#34;&gt;
+    &lt;a href=&#34;#motivation-to-make-tbengy&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Motivation to make tbengy:
+&lt;/h1&gt;&lt;p&gt;I have been developing and using small python scripts for personal use. During the pandemic, as we all know many people lost their jobs including engineers from the Semiconductor Industry. In the same time period, I got a chance to tinker with my FPGAs and was working on developing a tool that can help me create a project skeleton as well as scripts to test my design and verify them. When it comes to design compilation, whether it&amp;rsquo;s VHDL, Verilog or Systemverilog we have a lot of open-source as well as commercial tools, problem comes when we want to compile UVM for verification. There isn&amp;rsquo;t much scope for people other than using EDAPlayground or use Commercial tools which are not easily available. Also maintaining projects on EDAPlayground in a structured way is not supported.&lt;/p&gt;
+&lt;p&gt;While updating my Vivado, I read the release notes and found that the Webpack version (free version) now supports complete UVM 1.2 compilation and simulations. This gave me the idea to build a python tool &amp;ldquo;tbengy&amp;rdquo;, which can run on any OS (Windows or Linux) and generates an easily editable and compilable UVM testbench in a structured manner and scripts which will help engineers interested in UVM verification to hone their skills on their machine. I also added support for a Blinky project which generates design, DV and synthesis scripts for all Digilent boards.&lt;/p&gt;
+&lt;h1 id=&#34;why-open-source&#34;&gt;
+    &lt;a href=&#34;#why-open-source&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Why open source?
+&lt;/h1&gt;&lt;p&gt;I believe in open collaboration. Linux is the best example of what open source can bring to this world and that inspired me to be a part of this community. The Open source tools like MAGIC and OpenROAD which today makes it possible for anyone to design ASICs right from their own machine, this is another motivation for me to give more to this community.&lt;/p&gt;
+&lt;h1 id=&#34;what-are-the-challenges&#34;&gt;
+    &lt;a href=&#34;#what-are-the-challenges&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    What are the challenges?
+&lt;/h1&gt;&lt;p&gt;Being a hardware engineer, software is not my expertise. This became more evident to me when I created string templates in python where after some research I figured there are template libraries like Jinja2, which if used will help a lot in bringing the knowledge of hardware with use of more structured and efficient software in making better tools.&lt;/p&gt;
+&lt;h1 id=&#34;what-could-the-community-do-to-support-you&#34;&gt;
+    &lt;a href=&#34;#what-could-the-community-do-to-support-you&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    What could the community do to support you?
+&lt;/h1&gt;&lt;p&gt;I found out that it&amp;rsquo;s difficult to get your work reviewed in open source and tapping the right audience. I will be glad if experienced users both from hardware and software domain can review the tool and provide better direction as well as requirements will help in taking the tool to the next level.&lt;/p&gt;
+&lt;h1 id=&#34;connect-with-prasad-pandit&#34;&gt;
+    &lt;a href=&#34;#connect-with-prasad-pandit&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Connect with Prasad Pandit
+&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;LinkedIn: &lt;a class=&#34;link&#34; href=&#34;https://www.linkedin.com/in/panditprasad/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.linkedin.com/in/panditprasad/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;YouTube: &lt;a class=&#34;link&#34; href=&#34;https://www.youtube.com/@PrasadPandit&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.youtube.com/@PrasadPandit&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Twitter: &lt;a class=&#34;link&#34; href=&#34;https://twitter.com/@tonystark_hdl&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://twitter.com/@tonystark_hdl&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        
+    </channel>
 </rss>
