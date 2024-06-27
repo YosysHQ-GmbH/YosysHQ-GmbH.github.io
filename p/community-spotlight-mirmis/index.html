@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="# MIRMIS The Modular Infrared Molecules and Ices Sensor (MIRMIS) is a hyperspectral infrared imaging instrument set to launch on ESA&rsquo;s Comet Interceptor mission in 2029. Its development is led by the University of Oxford&rsquo;s Professor Neil Bowles (Instrument Lead Scientist) and it has three sensors—TIRI (University of Oxford), MIR, and NIR (VTT Finland)—that will image a pristine comet to measure its structure, chemical composition, and temperature, allowing researchers to gain insight into the formation of the Solar system.">
+<title>Community Spotlight - MIRMIS</title>
+
+<link rel='canonical' href='http://blog.yosyshq.com/p/community-spotlight-mirmis/'>
+
+<link rel="stylesheet" href="/scss/style.min.760e3dabc1e140d2e6abd27a8ca0aabb60e568829b29f67d2df12024136eff37.css"><meta property='og:title' content="Community Spotlight - MIRMIS">
+<meta property='og:description' content="# MIRMIS The Modular Infrared Molecules and Ices Sensor (MIRMIS) is a hyperspectral infrared imaging instrument set to launch on ESA&rsquo;s Comet Interceptor mission in 2029. Its development is led by the University of Oxford&rsquo;s Professor Neil Bowles (Instrument Lead Scientist) and it has three sensors—TIRI (University of Oxford), MIR, and NIR (VTT Finland)—that will image a pristine comet to measure its structure, chemical composition, and temperature, allowing researchers to gain insight into the formation of the Solar system.">
+<meta property='og:url' content='http://blog.yosyshq.com/p/community-spotlight-mirmis/'>
+<meta property='og:site_name' content='YosysHQ Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='community spotlight' /><meta property='article:published_time' content='2024-06-12T16:00:00&#43;01:00'/><meta property='article:modified_time' content='2024-06-12T16:00:00&#43;01:00'/><meta property='og:image' content='http://blog.yosyshq.com/static-2024/spotlight/mirmis/esa-hero.bmp' />
+<meta name="twitter:site" content="@@YosysHQ">
+    <meta name="twitter:creator" content="@@YosysHQ"><meta name="twitter:title" content="Community Spotlight - MIRMIS">
+<meta name="twitter:description" content="# MIRMIS The Modular Infrared Molecules and Ices Sensor (MIRMIS) is a hyperspectral infrared imaging instrument set to launch on ESA&rsquo;s Comet Interceptor mission in 2029. Its development is led by the University of Oxford&rsquo;s Professor Neil Bowles (Instrument Lead Scientist) and it has three sensors—TIRI (University of Oxford), MIR, and NIR (VTT Finland)—that will image a pristine comet to measure its structure, chemical composition, and temperature, allowing researchers to gain insight into the formation of the Solar system."><meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content='http://blog.yosyshq.com/static-2024/spotlight/mirmis/esa-hero.bmp' />
+    <link rel="shortcut icon" href="/favicon.png" />
+
+  
+
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/logos/YOS_mark_square_hu6bb8cbdbd2526742846cc00545eb2d90_33709_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">YosysHQ Blog</a></h1>
+            <h2 class="site-description"></h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/newsletter' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>Newsletter</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/yug' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>Yosys User&#39;s Group</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/community-spotlight-mirmis/">
+                
+                    <img src="/static-2024/spotlight/mirmis/esa-hero.bmp" loading="lazy" alt="Featured image of post Community Spotlight - MIRMIS" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/community-spotlight-mirmis/">Community Spotlight - MIRMIS</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Jun 12, 2024</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    6 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="mirmis">
+    <a href="#mirmis" class="header-anchor">#</a>
+    MIRMIS
+</h1><p>The Modular Infrared Molecules and Ices Sensor (<!-- raw HTML omitted -->MIRMIS<!-- raw HTML omitted -->) is a
+hyperspectral infrared imaging instrument set to launch on ESA&rsquo;s
+<a class="link" href="https://www.esa.int/Science_Exploration/Space_Science/Comet_Interceptor"  target="_blank" rel="noopener"
+    >Comet Interceptor</a> mission in 2029. Its development is led by the University
+of Oxford&rsquo;s <a class="link" href="https://www.space.ox.ac.uk/our-people/neil-bowles"  target="_blank" rel="noopener"
+    >Professor Neil Bowles</a> (Instrument Lead Scientist) and it has
+three sensors—<!-- raw HTML omitted -->TIRI<!-- raw HTML omitted -->
+(University of Oxford), <!-- raw HTML omitted -->MIR<!-- raw HTML omitted -->, and
+<!-- raw HTML omitted -->NIR<!-- raw HTML omitted --> (VTT Finland)—that will image a
+pristine comet to measure its structure, chemical composition, and temperature,
+allowing researchers to gain insight into the formation of the Solar system.</p>
+<blockquote>
+<p><img src="/static-2024/spotlight/mirmis/vibe.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="MIRMIS STM mounted for vibration testing"
+	
+	
+></p>
+<p>The MIRMIS structural–thermal model (STM) mounted for vibration testing
+at 35g in the Space Instrumentation group&rsquo;s vibration test facility.</p>
+</blockquote>
+<p>The <a class="link" href="https://www.physics.ox.ac.uk/research/group/space-instrumentation"  target="_blank" rel="noopener"
+    >Space Instrumentation group</a> at the University of Oxford is building the
+common structures and mechanisms for MIRMIS, building and calibrating the TIRI
+sensor, integrating the MIR/NIR sensors, and building MIRMIS&rsquo; command and
+data-handling unit (<!-- raw HTML omitted -->CDHU<!-- raw HTML omitted -->). The CDHU is the interface to the
+spacecraft and is based around a radiation-hard microcontroller and
+radiation-tolerant FPGA that together process commands from Earth, control
+pointing mirrors to track the target comet, operate the imaging sensors, and
+carry out housekeeping over the instrument&rsquo;s multi-year trip through deep space.</p>
+<p>YosysHQ support FPGA development on MIRMIS by providing formal verification
+tools, including SymbiYosys for <a class="link" href="https://en.wikipedia.org/wiki/Safety_and_liveness_properties"  target="_blank" rel="noopener"
+    >safety and liveness property</a> checking and
+reachability checking.</p>
+<blockquote>
+<p><img src="/static-2024/spotlight/mirmis/ltm.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Lunar Thermal Mapper"
+	
+	
+></p>
+<p>Lunar Thermal Mapper (launching November 2024 on NASA&rsquo;s Lunar Trailblazer),
+the previous-generation instrument on which MIRMIS/TIRI is based, shown
+without its protective covering.</p>
+</blockquote>
+<h1 id="space-instruments-at-oxford">
+    <a href="#space-instruments-at-oxford" class="header-anchor">#</a>
+    Space instruments at Oxford
+</h1><p>Part of the University of Oxford&rsquo;s Atmospheric, Oceanic, and Planetary Physics
+(<!-- raw HTML omitted -->AOPP<!-- raw HTML omitted -->) sub-department, the Space Instrumentation group and our
+sister <a class="link" href="https://www.physics.ox.ac.uk/about-us/our-facilities-and-services/infrared-multilayer-laboratory"  target="_blank" rel="noopener"
+    >Infrared Multilayer Laboratory</a> have a long history of building science
+instruments. Our contributions include, among many others:</p>
+<ul>
+<li>2029 — <a class="link" href="https://www.esa.int/Science_Exploration/Space_Science/Comet_Interceptor"  target="_blank" rel="noopener"
+    >Comet Interceptor</a>, MIRMIS, and <a class="link" href="https://arielmission.space/index.php/ariel-media/"  target="_blank" rel="noopener"
+    >ARIEL telescope</a> (Sun–Earth L<!-- raw HTML omitted -->2<!-- raw HTML omitted -->)</li>
+<li>2024 — <a class="link" href="https://science.nasa.gov/mission/prefire/"  target="_blank" rel="noopener"
+    >PREFIRE</a>, infrared filters (Earth)</li>
+<li>2021 — <a class="link" href="https://webb.nasa.gov/content/about/index.html"  target="_blank" rel="noopener"
+    >James Webb Space Telescope</a>, Mid-Infrared Instrument filters (Sun–Earth L<!-- raw HTML omitted -->2<!-- raw HTML omitted -->)</li>
+<li>2018 — <a class="link" href="https://science.nasa.gov/mission/insight/"  target="_blank" rel="noopener"
+    >InSight</a>, Short-period Seismometer (Mars)</li>
+<li>2010 — <a class="link" href="https://science.nasa.gov/mission/sofia/"  target="_blank" rel="noopener"
+    >Stratospheric Observatory for Infrared Astronomy</a>, filters (Earth)</li>
+<li>2005 — <a class="link" href="https://science.nasa.gov/mission/mars-reconnaissance-orbiter/"  target="_blank" rel="noopener"
+    >Mars Reconnaissance Orbiter</a>, Mars Climate Sounder optics (Mars)</li>
+<li>2004 — <a class="link" href="https://aura.gsfc.nasa.gov/about.html"  target="_blank" rel="noopener"
+    >Aura</a>, High-Resolution Dynamics Limb Sounder (Earth)</li>
+<li>1997 — <a class="link" href="https://science.nasa.gov/mission/cassini/"  target="_blank" rel="noopener"
+    >Cassini-Huygens</a>, Composite Infrared Spectrometer cooler and optics (Saturn)</li>
+<li>1989 — <a class="link" href="https://science.nasa.gov/mission/galileo/"  target="_blank" rel="noopener"
+    >Galileo</a>, Near-Infrared Mapping Spectrometer (Jupiter)</li>
+<li>1978 — <a class="link" href="https://en.wikipedia.org/wiki/Pioneer_Venus_Orbiter"  target="_blank" rel="noopener"
+    >Pioneer 12</a>, VORTEX (Venus)</li>
+<li>1970 — <a class="link" href="https://en.wikipedia.org/wiki/Nimbus_4"  target="_blank" rel="noopener"
+    >Nimbus 4</a>, Selective Chopper Radiometer (Earth)</li>
+</ul>
+<p>In addition to the work done by the Space Instrumentation group and the
+Infrared Multilayer Laboratory, the more than 100 members of AOPP research and
+contribute to the study of exoplanets and planetary physics, atmospheric,
+climate, and weather theory and modelling, Earth&rsquo;s oceans, and Earth&rsquo;s
+cryosphere. AOPP is based out of the Clarendon Laboratory in the centre of
+Oxford, where it has a range of space-related facilities including cleanrooms,
+a variety of vacuum chambers, metrology, spectroscopy, optics, and
+vibration-testing facilities, and electronics and mechanical workshops.</p>
+<blockquote>
+<p><img src="/static-2024/spotlight/mirmis/cirs-em.jpg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="CIRS engineering model"
+	
+	
+></p>
+<p>Engineering model (EM) of the focal plane assembly for the CIRS instrument on
+Cassini-Huygens, which operated in Saturn orbit from 2004 until 2017.</p>
+</blockquote>
+<h1 id="why-build-mirmis">
+    <a href="#why-build-mirmis" class="header-anchor">#</a>
+    Why build MIRMIS?
+</h1><p>Comets and other interstellar objects can tell us a lot about how our Solar
+system formed. As they were often ejected a long time ago, they act as a time
+capsule holding the chemicals and materials that were around in the early Solar
+system. This means that, if we can accurately measure their properties, we have
+a direct view into the past. One challenge with this is finding a &lsquo;pristine&rsquo;
+object—we tend to see these objects as they pass through the inner Solar
+system, where the heat and radiation from the Sun will change them. MIRMIS will
+be launched as part of Comet Interceptor to the Sun–Earth L<!-- raw HTML omitted -->2<!-- raw HTML omitted -->
+<a class="link" href="https://en.wikipedia.org/wiki/Lagrange_point"  target="_blank" rel="noopener"
+    >Lagrange point</a>, around 1.5 million kilometres away and where the James Webb
+Space Telescope is stationed, so that it can move quickly to intercept a
+pristine comet after it&rsquo;s detected but before it&rsquo;s spent too long transiting
+the Solar system.</p>
+<h1 id="what-makes-you-excited-about-mirmis">
+    <a href="#what-makes-you-excited-about-mirmis" class="header-anchor">#</a>
+    What makes you excited about MIRMIS?
+</h1><p>The MIRMIS instrument is exciting both because of the science data it will
+produce but also because of the engineering behind it. It continues a process
+of refining and improving our equipment—its CDHU and TIRI are evolutions
+of Lunar Thermal Mapper, while the infrared filters have heritage to Diviner
+and further back.</p>
+<p>The technology behind MIRMIS also has the potential to impact life on Earth
+more directly. One use we&rsquo;ve been exploring is launching a MIRMIS-like
+instrument to detect wildfires on Earth. The instrument itself is compact
+(around the size of a large briefcase), weighs around 9kg, and draws around
+11W peak. A small constellation could launch on a single rocket and provide
+multiple observations of the entire surface of the Earth per day, and with the
+Space Instrumentation group&rsquo;s extensive background in high-resolution infrared
+imaging the results could exceed current capabilities.</p>
+<h1 id="what-are-some-of-the-challenges-you-face">
+    <a href="#what-are-some-of-the-challenges-you-face" class="header-anchor">#</a>
+    What are some of the challenges you face?
+</h1><h2 id="there-are-no-debug-probes-in-space">
+    <a href="#there-are-no-debug-probes-in-space" class="header-anchor">#</a>
+    There are no debug probes in space
+</h2><p>Verification and validation are huge parts of building a space instrument. Not
+only is deep space a radiation-harsh environment but getting there on a rocket
+puts a lot of forces on the relatively delicate glassware in optical systems
+and, once you&rsquo;ve launched, there&rsquo;s no replacing a broken part. This is part of
+our reason for using Yosys and SymbiYosys in particular—formal
+verification of the FPGA components gives us a lot more confidence and
+functional coverage than plain unit tests and testbenches can provide.</p>
+<h2 id="space-hardware-lags-the-leading-edge">
+    <a href="#space-hardware-lags-the-leading-edge" class="header-anchor">#</a>
+    Space hardware lags the leading edge
+</h2><p>It takes a lot of time to qualify a part for space, and for integrated circuits
+they often need to be made with different processes from normal commercial
+parts. This means that the performance tends to be significantly lower, too.
+The FPGA in the MIRMIS CDHU, for example, requires more than a little effort to
+close timing at 100MHz and has no niceties like DSP blocks, large block RAMs,
+PLLs, high-density logic elements, or extensive IP core libraries. And that&rsquo;s
+before having to build in triple redundancy and other safeguards against
+radiation flipping a bit in a register or transiently changing the value on a
+signal line.</p>
+<blockquote>
+<p><img src="/static-2024/spotlight/mirmis/efm.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="MIRMIS EFM"
+	
+	
+></p>
+<p>Electrical functional model (EFM) of the MIRMIS command and data-handling
+unit.</p>
+</blockquote>
+<h1 id="what-could-the-community-do-to-support-you">
+    <a href="#what-could-the-community-do-to-support-you" class="header-anchor">#</a>
+    What could the community do to support you?
+</h1><p>Keep being interested in space and in planetary science. Science is a
+collaborative endeavour, and the more people we have contributing to and
+advancing the field the better the results can be for all humanity. And keep
+developing high-quality, open-source tools to support the science.</p>
+<h1 id="what-is-the-best-link-for-the-project">
+    <a href="#what-is-the-best-link-for-the-project" class="header-anchor">#</a>
+    What is the best link for the project?
+</h1><p>ESA&rsquo;s <a class="link" href="https://www.cosmos.esa.int/web/comet-interceptor/documentation"  target="_blank" rel="noopener"
+    >Comet Interceptor Red Book</a> is a great deep dive into the mission,
+including MIRMIS as well as the other instruments.</p>
+<p>If you&rsquo;re interested in postgraduate study, have a look at our
+<a class="link" href="https://www.physics.ox.ac.uk/study/postgraduates/dphil-atmospheric-oceanic-and-planetary-physics/planetary-and-exoplanetary"  target="_blank" rel="noopener"
+    >open DPhil projects</a>.</p>
+<h1 id="liam-mcsherrys-bio">
+    <a href="#liam-mcsherrys-bio" class="header-anchor">#</a>
+    Liam McSherry&rsquo;s bio
+</h1><p><img src="/static-2024/spotlight/mirmis/mcsherry.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Headshot of Liam McSherry"
+	
+	
+></p>
+<p>I&rsquo;m an engineer working across electronics, FPGA, and software disciplines. I
+split my time between the Space Instrumentation group at Oxford, as Principal
+Engineer currently leading FPGA development on the MIRMIS CDHU, and <a class="link" href="https://www.l3harris.com/en-gb/united-kingdom"  target="_blank" rel="noopener"
+    >L3Harris</a>,
+as a Principal Engineer architecting and helping build high-performance RF and
+signal-processing systems. In my work I&rsquo;ve had a hand in projects including
+radio direction-finding systems, control systems for ion-trap quantum
+computing, GNSS anti-jam/anti-spoof, and both ground and space sides of
+satellite payloads, as well as delivering talks and training courses on C++,
+software-defined radios, and FPGAs.</p>
+<p>Outside of work, I like to take a relaxed approach. I read a lot, I cook and
+bake, and occasionally badly play badminton. Being in Oxford, I like to take
+advantage of the many green spaces, too.</p>
+<h1 id="what-is-the-best-way-for-people-to-contact-you">
+    <a href="#what-is-the-best-way-for-people-to-contact-you" class="header-anchor">#</a>
+    What is the best way for people to contact you?
+</h1><ul>
+<li>Neil Bowles (Instrument Lead Scientist, MIRMIS): neil.bowles [at] physics.ox.ac.uk</li>
+<li>Liam McSherry: liam.mcsherry [at] physics.ox.ac.uk</li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/community-spotlight/">Community Spotlight</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2024 YosysHQ Blog
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.25.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

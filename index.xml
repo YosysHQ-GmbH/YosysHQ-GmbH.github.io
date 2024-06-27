@@ -6,7 +6,246 @@
         <description>Recent content on YosysHQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Tue, 30 Apr 2024 20:30:31 +0100</lastBuildDate><atom:link href="http://blog.yosyshq.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 12 Jun 2024 16:00:00 +0100</lastBuildDate><atom:link href="http://blog.yosyshq.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Community Spotlight - MIRMIS</title>
+        <link>http://blog.yosyshq.com/p/community-spotlight-mirmis/</link>
+        <pubDate>Wed, 12 Jun 2024 16:00:00 +0100</pubDate>
+        
+        <guid>http://blog.yosyshq.com/p/community-spotlight-mirmis/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2024/spotlight/mirmis/esa-hero.bmp" alt="Featured image of post Community Spotlight - MIRMIS" /&gt;&lt;h1 id=&#34;mirmis&#34;&gt;
+    &lt;a href=&#34;#mirmis&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    MIRMIS
+&lt;/h1&gt;&lt;p&gt;The Modular Infrared Molecules and Ices Sensor (&lt;!-- raw HTML omitted --&gt;MIRMIS&lt;!-- raw HTML omitted --&gt;) is a
+hyperspectral infrared imaging instrument set to launch on ESA&amp;rsquo;s
+&lt;a class=&#34;link&#34; href=&#34;https://www.esa.int/Science_Exploration/Space_Science/Comet_Interceptor&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Comet Interceptor&lt;/a&gt; mission in 2029. Its development is led by the University
+of Oxford&amp;rsquo;s &lt;a class=&#34;link&#34; href=&#34;https://www.space.ox.ac.uk/our-people/neil-bowles&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Professor Neil Bowles&lt;/a&gt; (Instrument Lead Scientist) and it has
+three sensors—&lt;!-- raw HTML omitted --&gt;TIRI&lt;!-- raw HTML omitted --&gt;
+(University of Oxford), &lt;!-- raw HTML omitted --&gt;MIR&lt;!-- raw HTML omitted --&gt;, and
+&lt;!-- raw HTML omitted --&gt;NIR&lt;!-- raw HTML omitted --&gt; (VTT Finland)—that will image a
+pristine comet to measure its structure, chemical composition, and temperature,
+allowing researchers to gain insight into the formation of the Solar system.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2024/spotlight/mirmis/vibe.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;MIRMIS STM mounted for vibration testing&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;The MIRMIS structural–thermal model (STM) mounted for vibration testing
+at 35g in the Space Instrumentation group&amp;rsquo;s vibration test facility.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The &lt;a class=&#34;link&#34; href=&#34;https://www.physics.ox.ac.uk/research/group/space-instrumentation&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Space Instrumentation group&lt;/a&gt; at the University of Oxford is building the
+common structures and mechanisms for MIRMIS, building and calibrating the TIRI
+sensor, integrating the MIR/NIR sensors, and building MIRMIS&amp;rsquo; command and
+data-handling unit (&lt;!-- raw HTML omitted --&gt;CDHU&lt;!-- raw HTML omitted --&gt;). The CDHU is the interface to the
+spacecraft and is based around a radiation-hard microcontroller and
+radiation-tolerant FPGA that together process commands from Earth, control
+pointing mirrors to track the target comet, operate the imaging sensors, and
+carry out housekeeping over the instrument&amp;rsquo;s multi-year trip through deep space.&lt;/p&gt;
+&lt;p&gt;YosysHQ support FPGA development on MIRMIS by providing formal verification
+tools, including SymbiYosys for &lt;a class=&#34;link&#34; href=&#34;https://en.wikipedia.org/wiki/Safety_and_liveness_properties&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;safety and liveness property&lt;/a&gt; checking and
+reachability checking.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2024/spotlight/mirmis/ltm.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Lunar Thermal Mapper&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;Lunar Thermal Mapper (launching November 2024 on NASA&amp;rsquo;s Lunar Trailblazer),
+the previous-generation instrument on which MIRMIS/TIRI is based, shown
+without its protective covering.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;space-instruments-at-oxford&#34;&gt;
+    &lt;a href=&#34;#space-instruments-at-oxford&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Space instruments at Oxford
+&lt;/h1&gt;&lt;p&gt;Part of the University of Oxford&amp;rsquo;s Atmospheric, Oceanic, and Planetary Physics
+(&lt;!-- raw HTML omitted --&gt;AOPP&lt;!-- raw HTML omitted --&gt;) sub-department, the Space Instrumentation group and our
+sister &lt;a class=&#34;link&#34; href=&#34;https://www.physics.ox.ac.uk/about-us/our-facilities-and-services/infrared-multilayer-laboratory&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Infrared Multilayer Laboratory&lt;/a&gt; have a long history of building science
+instruments. Our contributions include, among many others:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;2029 — &lt;a class=&#34;link&#34; href=&#34;https://www.esa.int/Science_Exploration/Space_Science/Comet_Interceptor&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Comet Interceptor&lt;/a&gt;, MIRMIS, and &lt;a class=&#34;link&#34; href=&#34;https://arielmission.space/index.php/ariel-media/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;ARIEL telescope&lt;/a&gt; (Sun–Earth L&lt;!-- raw HTML omitted --&gt;2&lt;!-- raw HTML omitted --&gt;)&lt;/li&gt;
+&lt;li&gt;2024 — &lt;a class=&#34;link&#34; href=&#34;https://science.nasa.gov/mission/prefire/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PREFIRE&lt;/a&gt;, infrared filters (Earth)&lt;/li&gt;
+&lt;li&gt;2021 — &lt;a class=&#34;link&#34; href=&#34;https://webb.nasa.gov/content/about/index.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;James Webb Space Telescope&lt;/a&gt;, Mid-Infrared Instrument filters (Sun–Earth L&lt;!-- raw HTML omitted --&gt;2&lt;!-- raw HTML omitted --&gt;)&lt;/li&gt;
+&lt;li&gt;2018 — &lt;a class=&#34;link&#34; href=&#34;https://science.nasa.gov/mission/insight/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;InSight&lt;/a&gt;, Short-period Seismometer (Mars)&lt;/li&gt;
+&lt;li&gt;2010 — &lt;a class=&#34;link&#34; href=&#34;https://science.nasa.gov/mission/sofia/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Stratospheric Observatory for Infrared Astronomy&lt;/a&gt;, filters (Earth)&lt;/li&gt;
+&lt;li&gt;2005 — &lt;a class=&#34;link&#34; href=&#34;https://science.nasa.gov/mission/mars-reconnaissance-orbiter/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Mars Reconnaissance Orbiter&lt;/a&gt;, Mars Climate Sounder optics (Mars)&lt;/li&gt;
+&lt;li&gt;2004 — &lt;a class=&#34;link&#34; href=&#34;https://aura.gsfc.nasa.gov/about.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Aura&lt;/a&gt;, High-Resolution Dynamics Limb Sounder (Earth)&lt;/li&gt;
+&lt;li&gt;1997 — &lt;a class=&#34;link&#34; href=&#34;https://science.nasa.gov/mission/cassini/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Cassini-Huygens&lt;/a&gt;, Composite Infrared Spectrometer cooler and optics (Saturn)&lt;/li&gt;
+&lt;li&gt;1989 — &lt;a class=&#34;link&#34; href=&#34;https://science.nasa.gov/mission/galileo/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Galileo&lt;/a&gt;, Near-Infrared Mapping Spectrometer (Jupiter)&lt;/li&gt;
+&lt;li&gt;1978 — &lt;a class=&#34;link&#34; href=&#34;https://en.wikipedia.org/wiki/Pioneer_Venus_Orbiter&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Pioneer 12&lt;/a&gt;, VORTEX (Venus)&lt;/li&gt;
+&lt;li&gt;1970 — &lt;a class=&#34;link&#34; href=&#34;https://en.wikipedia.org/wiki/Nimbus_4&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Nimbus 4&lt;/a&gt;, Selective Chopper Radiometer (Earth)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In addition to the work done by the Space Instrumentation group and the
+Infrared Multilayer Laboratory, the more than 100 members of AOPP research and
+contribute to the study of exoplanets and planetary physics, atmospheric,
+climate, and weather theory and modelling, Earth&amp;rsquo;s oceans, and Earth&amp;rsquo;s
+cryosphere. AOPP is based out of the Clarendon Laboratory in the centre of
+Oxford, where it has a range of space-related facilities including cleanrooms,
+a variety of vacuum chambers, metrology, spectroscopy, optics, and
+vibration-testing facilities, and electronics and mechanical workshops.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2024/spotlight/mirmis/cirs-em.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;CIRS engineering model&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;Engineering model (EM) of the focal plane assembly for the CIRS instrument on
+Cassini-Huygens, which operated in Saturn orbit from 2004 until 2017.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;why-build-mirmis&#34;&gt;
+    &lt;a href=&#34;#why-build-mirmis&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Why build MIRMIS?
+&lt;/h1&gt;&lt;p&gt;Comets and other interstellar objects can tell us a lot about how our Solar
+system formed. As they were often ejected a long time ago, they act as a time
+capsule holding the chemicals and materials that were around in the early Solar
+system. This means that, if we can accurately measure their properties, we have
+a direct view into the past. One challenge with this is finding a &amp;lsquo;pristine&amp;rsquo;
+object—we tend to see these objects as they pass through the inner Solar
+system, where the heat and radiation from the Sun will change them. MIRMIS will
+be launched as part of Comet Interceptor to the Sun–Earth L&lt;!-- raw HTML omitted --&gt;2&lt;!-- raw HTML omitted --&gt;
+&lt;a class=&#34;link&#34; href=&#34;https://en.wikipedia.org/wiki/Lagrange_point&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Lagrange point&lt;/a&gt;, around 1.5 million kilometres away and where the James Webb
+Space Telescope is stationed, so that it can move quickly to intercept a
+pristine comet after it&amp;rsquo;s detected but before it&amp;rsquo;s spent too long transiting
+the Solar system.&lt;/p&gt;
+&lt;h1 id=&#34;what-makes-you-excited-about-mirmis&#34;&gt;
+    &lt;a href=&#34;#what-makes-you-excited-about-mirmis&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    What makes you excited about MIRMIS?
+&lt;/h1&gt;&lt;p&gt;The MIRMIS instrument is exciting both because of the science data it will
+produce but also because of the engineering behind it. It continues a process
+of refining and improving our equipment—its CDHU and TIRI are evolutions
+of Lunar Thermal Mapper, while the infrared filters have heritage to Diviner
+and further back.&lt;/p&gt;
+&lt;p&gt;The technology behind MIRMIS also has the potential to impact life on Earth
+more directly. One use we&amp;rsquo;ve been exploring is launching a MIRMIS-like
+instrument to detect wildfires on Earth. The instrument itself is compact
+(around the size of a large briefcase), weighs around 9kg, and draws around
+11W peak. A small constellation could launch on a single rocket and provide
+multiple observations of the entire surface of the Earth per day, and with the
+Space Instrumentation group&amp;rsquo;s extensive background in high-resolution infrared
+imaging the results could exceed current capabilities.&lt;/p&gt;
+&lt;h1 id=&#34;what-are-some-of-the-challenges-you-face&#34;&gt;
+    &lt;a href=&#34;#what-are-some-of-the-challenges-you-face&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    What are some of the challenges you face?
+&lt;/h1&gt;&lt;h2 id=&#34;there-are-no-debug-probes-in-space&#34;&gt;
+    &lt;a href=&#34;#there-are-no-debug-probes-in-space&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    There are no debug probes in space
+&lt;/h2&gt;&lt;p&gt;Verification and validation are huge parts of building a space instrument. Not
+only is deep space a radiation-harsh environment but getting there on a rocket
+puts a lot of forces on the relatively delicate glassware in optical systems
+and, once you&amp;rsquo;ve launched, there&amp;rsquo;s no replacing a broken part. This is part of
+our reason for using Yosys and SymbiYosys in particular—formal
+verification of the FPGA components gives us a lot more confidence and
+functional coverage than plain unit tests and testbenches can provide.&lt;/p&gt;
+&lt;h2 id=&#34;space-hardware-lags-the-leading-edge&#34;&gt;
+    &lt;a href=&#34;#space-hardware-lags-the-leading-edge&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Space hardware lags the leading edge
+&lt;/h2&gt;&lt;p&gt;It takes a lot of time to qualify a part for space, and for integrated circuits
+they often need to be made with different processes from normal commercial
+parts. This means that the performance tends to be significantly lower, too.
+The FPGA in the MIRMIS CDHU, for example, requires more than a little effort to
+close timing at 100MHz and has no niceties like DSP blocks, large block RAMs,
+PLLs, high-density logic elements, or extensive IP core libraries. And that&amp;rsquo;s
+before having to build in triple redundancy and other safeguards against
+radiation flipping a bit in a register or transiently changing the value on a
+signal line.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2024/spotlight/mirmis/efm.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;MIRMIS EFM&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;Electrical functional model (EFM) of the MIRMIS command and data-handling
+unit.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;what-could-the-community-do-to-support-you&#34;&gt;
+    &lt;a href=&#34;#what-could-the-community-do-to-support-you&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    What could the community do to support you?
+&lt;/h1&gt;&lt;p&gt;Keep being interested in space and in planetary science. Science is a
+collaborative endeavour, and the more people we have contributing to and
+advancing the field the better the results can be for all humanity. And keep
+developing high-quality, open-source tools to support the science.&lt;/p&gt;
+&lt;h1 id=&#34;what-is-the-best-link-for-the-project&#34;&gt;
+    &lt;a href=&#34;#what-is-the-best-link-for-the-project&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    What is the best link for the project?
+&lt;/h1&gt;&lt;p&gt;ESA&amp;rsquo;s &lt;a class=&#34;link&#34; href=&#34;https://www.cosmos.esa.int/web/comet-interceptor/documentation&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Comet Interceptor Red Book&lt;/a&gt; is a great deep dive into the mission,
+including MIRMIS as well as the other instruments.&lt;/p&gt;
+&lt;p&gt;If you&amp;rsquo;re interested in postgraduate study, have a look at our
+&lt;a class=&#34;link&#34; href=&#34;https://www.physics.ox.ac.uk/study/postgraduates/dphil-atmospheric-oceanic-and-planetary-physics/planetary-and-exoplanetary&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;open DPhil projects&lt;/a&gt;.&lt;/p&gt;
+&lt;h1 id=&#34;liam-mcsherrys-bio&#34;&gt;
+    &lt;a href=&#34;#liam-mcsherrys-bio&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Liam McSherry&amp;rsquo;s bio
+&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2024/spotlight/mirmis/mcsherry.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Headshot of Liam McSherry&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m an engineer working across electronics, FPGA, and software disciplines. I
+split my time between the Space Instrumentation group at Oxford, as Principal
+Engineer currently leading FPGA development on the MIRMIS CDHU, and &lt;a class=&#34;link&#34; href=&#34;https://www.l3harris.com/en-gb/united-kingdom&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;L3Harris&lt;/a&gt;,
+as a Principal Engineer architecting and helping build high-performance RF and
+signal-processing systems. In my work I&amp;rsquo;ve had a hand in projects including
+radio direction-finding systems, control systems for ion-trap quantum
+computing, GNSS anti-jam/anti-spoof, and both ground and space sides of
+satellite payloads, as well as delivering talks and training courses on C++,
+software-defined radios, and FPGAs.&lt;/p&gt;
+&lt;p&gt;Outside of work, I like to take a relaxed approach. I read a lot, I cook and
+bake, and occasionally badly play badminton. Being in Oxford, I like to take
+advantage of the many green spaces, too.&lt;/p&gt;
+&lt;h1 id=&#34;what-is-the-best-way-for-people-to-contact-you&#34;&gt;
+    &lt;a href=&#34;#what-is-the-best-way-for-people-to-contact-you&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    What is the best way for people to contact you?
+&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;Neil Bowles (Instrument Lead Scientist, MIRMIS): neil.bowles [at] physics.ox.ac.uk&lt;/li&gt;
+&lt;li&gt;Liam McSherry: liam.mcsherry [at] physics.ox.ac.uk&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>Community Spotlight - Manta</title>
         <link>http://blog.yosyshq.com/p/community-spotlight-manta/</link>
         <pubDate>Tue, 30 Apr 2024 20:30:31 +0100</pubDate>
