@@ -6,7 +6,195 @@
         <description>Recent content in Community Spotlight on YosysHQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Wed, 12 Jun 2024 16:00:00 +0100</lastBuildDate><atom:link href="http://blog.yosyshq.com/tags/community-spotlight/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 17 Jul 2024 16:00:00 +0100</lastBuildDate><atom:link href="http://blog.yosyshq.com/tags/community-spotlight/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Community Spotlight - Teaching with Open Source Tools</title>
+        <link>http://blog.yosyshq.com/p/community-spotlight-teaching-with-open-source-tools/</link>
+        <pubDate>Wed, 17 Jul 2024 16:00:00 +0100</pubDate>
+        
+        <guid>http://blog.yosyshq.com/p/community-spotlight-teaching-with-open-source-tools/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2024/spotlight/hsc/hsc.png" alt="Featured image of post Community Spotlight - Teaching with Open Source Tools" /&gt;&lt;h1 id=&#34;teaching-with-open-source-tools&#34;&gt;
+    &lt;a href=&#34;#teaching-with-open-source-tools&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Teaching with Open Source Tools
+&lt;/h1&gt;&lt;p&gt;Welcome to another &lt;a class=&#34;link&#34; href=&#34;http://blog.yosyshq.com/tags/community-spotlight/&#34; &gt;community spotlight&lt;/a&gt; article where we shine a light on open source EDA-related projects. If you want to &lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSdIEgu6FJZam0-V3PMTjw-eDebJdg_JuIlN4MkLNDr4vs-a5A/viewform?usp=sf_link&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;submit a project, please do so here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This post recounts experiences from using the Open Source Tools for teaching! Many people have wondered how stable the tools are and whether they can be used in classes. Here is one experience, from UC Santa Cruz!&lt;/p&gt;
+&lt;h1 id=&#34;dustin-richmond-bio&#34;&gt;
+    &lt;a href=&#34;#dustin-richmond-bio&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Dustin Richmond Bio:
+&lt;/h1&gt;&lt;p&gt;I am an Assistant Professor of Computer Science and Engineering in the
+&lt;a class=&#34;link&#34; href=&#34;https://engineering.ucsc.edu/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Baskin School of Engineering&lt;/a&gt; at UC
+Santa Cruz. I did my postdoc in the &lt;a class=&#34;link&#34; href=&#34;https://github.com/bespoke-silicon-group&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Bespoke Silicon
+Group&lt;/a&gt; at the Paul Allen
+School of Computer Science at the University of Washington, and earned
+my Ph.D. with the &lt;a class=&#34;link&#34; href=&#34;https://kastner.ucsd.edu/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Kastner Research Group&lt;/a&gt;
+at the University of California, San Diego.&lt;/p&gt;
+&lt;p&gt;You can find more about my research and projects on &lt;a class=&#34;link&#34; href=&#34;https://www.dustinrichmond.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;my
+website&lt;/a&gt;.&lt;/p&gt;
+&lt;h1 id=&#34;what-motivated-you-to-use-the-open-source-tools-in-teaching&#34;&gt;
+    &lt;a href=&#34;#what-motivated-you-to-use-the-open-source-tools-in-teaching&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    What motivated you to use the open source tools in teaching?
+&lt;/h1&gt;&lt;p&gt;I’ve always been curious about reducing barriers in hardware
+education. One part of my PhD studied how to make hardware design
+easier for non-hardware engineers and laypeople. This is a critical
+challenge we’re facing today, as we face a workforce shortage in chip
+design.&lt;/p&gt;
+&lt;p&gt;When I started at UCSC I asked: “What is stopping us from
+training more hardware engineers?”. Or alternatively, ”How can we
+scale hardware design education?”&lt;/p&gt;
+&lt;p&gt;This is not a universal opinion, but I personally can’t imagine
+teaching hundreds of students per quarter (our goal) with vendor
+tools. They’re excellent when you’re an expert, but I like to compare
+them to a “Point and Click Adventure Game”. They’re complex! I’m not
+saying the vendor tools are bad, they’re just complex to install,
+maintain, use, and write tutorials. And when you’re trying to scale
+limited teaching resources, that complexity has an opportunity cost.&lt;/p&gt;
+&lt;p&gt;Logically, that led to the open source tools. They’re less complex –
+and more transparent.&lt;/p&gt;
+&lt;h1 id=&#34;describe-the-class-that-uses-these-tools&#34;&gt;
+    &lt;a href=&#34;#describe-the-class-that-uses-these-tools&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Describe the class that uses these tools.
+&lt;/h1&gt;&lt;p&gt;The class I teach is the third course in the Computer Engineering
+series, and the second in hardware design with Verilog. The first
+course focuses purely on logic design with structural Verilog. This
+course introduces behavioral Verilog, verification, and some advanced
+digital design concepts.&lt;/p&gt;
+&lt;p&gt;We review structural verilog and then move quickly through always
+blocks, memories, Look-up-Tables, DSPs, Synthesis, Place &amp;amp; Route,
+Clocking, functional/formal verification. All of the assignments have
+some sort of implementation demo on the FPGA we use.&lt;/p&gt;
+&lt;h1 id=&#34;what-tools-do-you-use-in-your-class&#34;&gt;
+    &lt;a href=&#34;#what-tools-do-you-use-in-your-class&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    What tools do you use in your class?
+&lt;/h1&gt;&lt;p&gt;Students use &lt;a class=&#34;link&#34; href=&#34;https://www.veripool.org/verilator/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Verilator&lt;/a&gt; and
+&lt;a class=&#34;link&#34; href=&#34;https://github.com/steveicarus/iverilog&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Icarus Verilog&lt;/a&gt; for
+simulation, &lt;a class=&#34;link&#34; href=&#34;https://yosyshq.net/yosys/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Yosys&lt;/a&gt; for synthesis, and
+&lt;a class=&#34;link&#34; href=&#34;https://github.com/YosysHQ/nextpnr&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;NextPNR&lt;/a&gt; for Placement, Route and
+STA. Students also use
+&lt;a class=&#34;link&#34; href=&#34;https://yosyshq.readthedocs.io/projects/sby/en/latest/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Symbiyosys&lt;/a&gt;
+for formal verification. Students can also use Verilator for linting –
+which I highly encourage. To view waveforms, we use
+&lt;a class=&#34;link&#34; href=&#34;https://surfer-project.org/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Surfer&lt;/a&gt;, or
+&lt;a class=&#34;link&#34; href=&#34;https://gtkwave.sourceforge.net/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GTKWave&lt;/a&gt;. To view schematics we use
+&lt;a class=&#34;link&#34; href=&#34;https://github.com/nturley/netlistsvg&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;netlistsvg&lt;/a&gt; or the dot files
+emitted by Yosys.&lt;/p&gt;
+&lt;p&gt;It’s not critical, but to eliminate tool installation overhead and
+misconfigurations, this is all distributed in a Dockerfile. The
+Dockerfile is ingested by &lt;a class=&#34;link&#34; href=&#34;https://github.com/features/codespaces&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub
+Codespaces&lt;/a&gt;, so students can
+run the tools in the cloud via VSCode. To view waveforms, we use the
+Surfer VSCode Plugin. The end result is an all-in-one interface using
+VSCode with zero installation overhead.&lt;/p&gt;
+&lt;p&gt;For implementation, we use the &lt;a class=&#34;link&#34; href=&#34;https://1bitsquared.com/products/icebreaker&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Icebreaker
+Board&lt;/a&gt; with various PMOD
+peripherals (HDMI, I2S2, Joystick, keypad, Seven-Segment, etc). Not a
+large board, but we can do streaming audio/video processing.&lt;/p&gt;
+&lt;p&gt;Finally, I use &lt;a class=&#34;link&#34; href=&#34;https://www.cocotb.org/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;cocotb&lt;/a&gt; for writing
+testbenches that test student code. To parameterize tests, I use
+&lt;a class=&#34;link&#34; href=&#34;https://github.com/themperek/cocotb-test&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;cocotb-test&lt;/a&gt;. This all
+feeds into an autograder, Gradescope, using a library called
+&lt;a class=&#34;link&#34; href=&#34;https://github.com/ucsb-gradescope-tools/pytest_utils&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;pytest_utils&lt;/a&gt;. We
+have an open-source autograder at UCSC that I intend to switch to long
+term.&lt;/p&gt;
+&lt;h1 id=&#34;what-is-the-most-surprising-thing-youve-learned&#34;&gt;
+    &lt;a href=&#34;#what-is-the-most-surprising-thing-youve-learned&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    What is the most surprising thing you’ve learned?
+&lt;/h1&gt;&lt;p&gt;The open source tools are stable, at least as stable as the vendor
+tools. I think this is the most common worry – “If I switch, will it
+explode?”. I can confidently say: &lt;strong&gt;No&lt;/strong&gt;. And even better, when they do
+explode, you (or a TA) can pretty quickly figure out why. We’ve even
+had a colleague push through a Verilator pull request mid-quarter.&lt;/p&gt;
+&lt;h1 id=&#34;what-are-some-of-the-benefits-of-switching&#34;&gt;
+    &lt;a href=&#34;#what-are-some-of-the-benefits-of-switching&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    What are some of the benefits of switching?
+&lt;/h1&gt;&lt;h2 id=&#34;verification&#34;&gt;
+    &lt;a href=&#34;#verification&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Verification
+&lt;/h2&gt;&lt;p&gt;How many people have written a testbench that breaks when they switch
+computers? Or versions? Or vendors? The downside of using one tool for
+simulation is that it is very easy to write testbenches in Verilog
+that are secretly dependent on an internal simulation model. By using
+two simulators we can highlight how Verilog is evaluated, and how a
+good, tool-agnostic testbench is constructed.&lt;/p&gt;
+&lt;p&gt;In the class, students spend two weeks writing testbenches. I give
+them working &amp;amp; buggy code that has been synthesized through Yosys
+(another benefit). Using testbenches they write, they have to find the
+working modules and assemble them into a working design.&lt;/p&gt;
+&lt;h2 id=&#34;speed&#34;&gt;
+    &lt;a href=&#34;#speed&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Speed
+&lt;/h2&gt;&lt;p&gt;It takes less time to Synthesize, Place, and Route a design than it
+takes to open some vendor tools. I think this is a critical aspect for
+exploration. Waiting 5-minutes just to see a light flash is a
+buzzkill.&lt;/p&gt;
+&lt;h2 id=&#34;introspection&#34;&gt;
+    &lt;a href=&#34;#introspection&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Introspection
+&lt;/h2&gt;&lt;p&gt;This is a pretty universal theme in the tools. Since they’re open
+source we can actually see what happens when we simulate, synthesize,
+place and route, etc. We can even open the algorithms in class and dissect them.&lt;/p&gt;
+&lt;p&gt;With the Lattice FPGAs, it is easier to explain the architecture and
+then extrapolate to more complex architectures like Intel and AMD.&lt;/p&gt;
+&lt;p&gt;This introspection extends to visualisation. We use yosys to generate
+schematics and view the .dot files, or use netlistsvg. We can do this
+at different steps in the flow to see the abstract circuit, and
+progressively optimize it. We also do this during lab check-off to
+ensure that students are synthesizing to memories instead of arrays of
+registers (or something worse).&lt;/p&gt;
+&lt;h1 id=&#34;what-are-some-of-the-drawbacks&#34;&gt;
+    &lt;a href=&#34;#what-are-some-of-the-drawbacks&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    What are some of the drawbacks?
+&lt;/h1&gt;&lt;h2 id=&#34;lack-of-legacy&#34;&gt;
+    &lt;a href=&#34;#lack-of-legacy&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Lack of Legacy
+&lt;/h2&gt;&lt;p&gt;The vendor tools have 40-odd years of legacy support. There are entire
+message boards dedicated to solving issues encountered in every tool
+vendor. When you do encounter an issue in the vendor tools, it is
+likely many other people have encountered it, if not solved it.&lt;/p&gt;
+&lt;p&gt;This is changing, and the open source community is great and strong,
+but 40 years is a lot of ground to make up.&lt;/p&gt;
+&lt;h2 id=&#34;student-resistance&#34;&gt;
+    &lt;a href=&#34;#student-resistance&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Student Resistance
+&lt;/h2&gt;&lt;p&gt;Students read job postings, and they want to learn the tools they see
+in job postings. Our class is titled “Logic Design with Verilog”, so
+we can focus on the language, not the tools. But where do we draw that
+line? We’re exploring ideas like using vendor tools in the final weeks
+of the quarter, after they’ve learned the language, or pushing vendor
+tools to a capstone.&lt;/p&gt;
+&lt;p&gt;This is an active area of discussion. Vendor tools should be part of a
+computer engineering curriculum. How much? And when?&lt;/p&gt;
+&lt;h1 id=&#34;how-can-the-community-support-you&#34;&gt;
+    &lt;a href=&#34;#how-can-the-community-support-you&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    How can the community support you?
+&lt;/h1&gt;&lt;p&gt;Come visit UC Santa Cruz! The &lt;a class=&#34;link&#34; href=&#34;https://hsc.ucsc.edu/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Hardware Systems
+Collective&lt;/a&gt; has a weekly seminar series and we
+love hearing about cool open source projects.&lt;/p&gt;
+&lt;h1 id=&#34;how-can-we-get-in-touch&#34;&gt;
+    &lt;a href=&#34;#how-can-we-get-in-touch&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    How can we get in touch?
+&lt;/h1&gt;&lt;p&gt;Feel free to email! I am happy to share teaching materials, but
+they&amp;rsquo;re in repositories, but not in a public form yet.&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Community Spotlight - MIRMIS</title>
         <link>http://blog.yosyshq.com/p/community-spotlight-mirmis/</link>
         <pubDate>Wed, 12 Jun 2024 16:00:00 +0100</pubDate>

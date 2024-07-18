@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="# Teaching with Open Source Tools Welcome to another community spotlight article where we shine a light on open source EDA-related projects. If you want to submit a project, please do so here. This post recounts experiences from using the Open Source Tools for teaching! Many people have wondered how stable the tools are and whether they can be used in classes. Here is one experience, from UC Santa Cruz!">
+<title>Community Spotlight - Teaching with Open Source Tools</title>
+
+<link rel='canonical' href='http://blog.yosyshq.com/p/community-spotlight-teaching-with-open-source-tools/'>
+
+<link rel="stylesheet" href="/scss/style.min.760e3dabc1e140d2e6abd27a8ca0aabb60e568829b29f67d2df12024136eff37.css"><meta property='og:title' content="Community Spotlight - Teaching with Open Source Tools">
+<meta property='og:description' content="# Teaching with Open Source Tools Welcome to another community spotlight article where we shine a light on open source EDA-related projects. If you want to submit a project, please do so here. This post recounts experiences from using the Open Source Tools for teaching! Many people have wondered how stable the tools are and whether they can be used in classes. Here is one experience, from UC Santa Cruz!">
+<meta property='og:url' content='http://blog.yosyshq.com/p/community-spotlight-teaching-with-open-source-tools/'>
+<meta property='og:site_name' content='YosysHQ Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='community spotlight' /><meta property='article:published_time' content='2024-07-17T16:00:00&#43;01:00'/><meta property='article:modified_time' content='2024-07-17T16:00:00&#43;01:00'/><meta property='og:image' content='http://blog.yosyshq.com/static-2024/spotlight/hsc/hsc.png' />
+<meta name="twitter:site" content="@@YosysHQ">
+    <meta name="twitter:creator" content="@@YosysHQ"><meta name="twitter:title" content="Community Spotlight - Teaching with Open Source Tools">
+<meta name="twitter:description" content="# Teaching with Open Source Tools Welcome to another community spotlight article where we shine a light on open source EDA-related projects. If you want to submit a project, please do so here. This post recounts experiences from using the Open Source Tools for teaching! Many people have wondered how stable the tools are and whether they can be used in classes. Here is one experience, from UC Santa Cruz!"><meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content='http://blog.yosyshq.com/static-2024/spotlight/hsc/hsc.png' />
+    <link rel="shortcut icon" href="/favicon.png" />
+
+  
+
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/logos/YOS_mark_square_hu6bb8cbdbd2526742846cc00545eb2d90_33709_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">YosysHQ Blog</a></h1>
+            <h2 class="site-description"></h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/newsletter' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>Newsletter</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/yug' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>Yosys User&#39;s Group</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/community-spotlight-teaching-with-open-source-tools/">
+                
+                    <img src="/static-2024/spotlight/hsc/hsc.png" loading="lazy" alt="Featured image of post Community Spotlight - Teaching with Open Source Tools" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/community-spotlight-teaching-with-open-source-tools/">Community Spotlight - Teaching with Open Source Tools</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Jul 17, 2024</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    6 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="teaching-with-open-source-tools">
+    <a href="#teaching-with-open-source-tools" class="header-anchor">#</a>
+    Teaching with Open Source Tools
+</h1><p>Welcome to another <a class="link" href="/tags/community-spotlight/" >community spotlight</a> article where we shine a light on open source EDA-related projects. If you want to <a class="link" href="https://docs.google.com/forms/d/e/1FAIpQLSdIEgu6FJZam0-V3PMTjw-eDebJdg_JuIlN4MkLNDr4vs-a5A/viewform?usp=sf_link"  target="_blank" rel="noopener"
+    >submit a project, please do so here</a>.</p>
+<p>This post recounts experiences from using the Open Source Tools for teaching! Many people have wondered how stable the tools are and whether they can be used in classes. Here is one experience, from UC Santa Cruz!</p>
+<h1 id="dustin-richmond-bio">
+    <a href="#dustin-richmond-bio" class="header-anchor">#</a>
+    Dustin Richmond Bio:
+</h1><p>I am an Assistant Professor of Computer Science and Engineering in the
+<a class="link" href="https://engineering.ucsc.edu/"  target="_blank" rel="noopener"
+    >Baskin School of Engineering</a> at UC
+Santa Cruz. I did my postdoc in the <a class="link" href="https://github.com/bespoke-silicon-group"  target="_blank" rel="noopener"
+    >Bespoke Silicon
+Group</a> at the Paul Allen
+School of Computer Science at the University of Washington, and earned
+my Ph.D. with the <a class="link" href="https://kastner.ucsd.edu/"  target="_blank" rel="noopener"
+    >Kastner Research Group</a>
+at the University of California, San Diego.</p>
+<p>You can find more about my research and projects on <a class="link" href="https://www.dustinrichmond.com/"  target="_blank" rel="noopener"
+    >my
+website</a>.</p>
+<h1 id="what-motivated-you-to-use-the-open-source-tools-in-teaching">
+    <a href="#what-motivated-you-to-use-the-open-source-tools-in-teaching" class="header-anchor">#</a>
+    What motivated you to use the open source tools in teaching?
+</h1><p>I’ve always been curious about reducing barriers in hardware
+education. One part of my PhD studied how to make hardware design
+easier for non-hardware engineers and laypeople. This is a critical
+challenge we’re facing today, as we face a workforce shortage in chip
+design.</p>
+<p>When I started at UCSC I asked: “What is stopping us from
+training more hardware engineers?”. Or alternatively, ”How can we
+scale hardware design education?”</p>
+<p>This is not a universal opinion, but I personally can’t imagine
+teaching hundreds of students per quarter (our goal) with vendor
+tools. They’re excellent when you’re an expert, but I like to compare
+them to a “Point and Click Adventure Game”. They’re complex! I’m not
+saying the vendor tools are bad, they’re just complex to install,
+maintain, use, and write tutorials. And when you’re trying to scale
+limited teaching resources, that complexity has an opportunity cost.</p>
+<p>Logically, that led to the open source tools. They’re less complex –
+and more transparent.</p>
+<h1 id="describe-the-class-that-uses-these-tools">
+    <a href="#describe-the-class-that-uses-these-tools" class="header-anchor">#</a>
+    Describe the class that uses these tools.
+</h1><p>The class I teach is the third course in the Computer Engineering
+series, and the second in hardware design with Verilog. The first
+course focuses purely on logic design with structural Verilog. This
+course introduces behavioral Verilog, verification, and some advanced
+digital design concepts.</p>
+<p>We review structural verilog and then move quickly through always
+blocks, memories, Look-up-Tables, DSPs, Synthesis, Place &amp; Route,
+Clocking, functional/formal verification. All of the assignments have
+some sort of implementation demo on the FPGA we use.</p>
+<h1 id="what-tools-do-you-use-in-your-class">
+    <a href="#what-tools-do-you-use-in-your-class" class="header-anchor">#</a>
+    What tools do you use in your class?
+</h1><p>Students use <a class="link" href="https://www.veripool.org/verilator/"  target="_blank" rel="noopener"
+    >Verilator</a> and
+<a class="link" href="https://github.com/steveicarus/iverilog"  target="_blank" rel="noopener"
+    >Icarus Verilog</a> for
+simulation, <a class="link" href="https://yosyshq.net/yosys/"  target="_blank" rel="noopener"
+    >Yosys</a> for synthesis, and
+<a class="link" href="https://github.com/YosysHQ/nextpnr"  target="_blank" rel="noopener"
+    >NextPNR</a> for Placement, Route and
+STA. Students also use
+<a class="link" href="https://yosyshq.readthedocs.io/projects/sby/en/latest/"  target="_blank" rel="noopener"
+    >Symbiyosys</a>
+for formal verification. Students can also use Verilator for linting –
+which I highly encourage. To view waveforms, we use
+<a class="link" href="https://surfer-project.org/"  target="_blank" rel="noopener"
+    >Surfer</a>, or
+<a class="link" href="https://gtkwave.sourceforge.net/"  target="_blank" rel="noopener"
+    >GTKWave</a>. To view schematics we use
+<a class="link" href="https://github.com/nturley/netlistsvg"  target="_blank" rel="noopener"
+    >netlistsvg</a> or the dot files
+emitted by Yosys.</p>
+<p>It’s not critical, but to eliminate tool installation overhead and
+misconfigurations, this is all distributed in a Dockerfile. The
+Dockerfile is ingested by <a class="link" href="https://github.com/features/codespaces"  target="_blank" rel="noopener"
+    >GitHub
+Codespaces</a>, so students can
+run the tools in the cloud via VSCode. To view waveforms, we use the
+Surfer VSCode Plugin. The end result is an all-in-one interface using
+VSCode with zero installation overhead.</p>
+<p>For implementation, we use the <a class="link" href="https://1bitsquared.com/products/icebreaker"  target="_blank" rel="noopener"
+    >Icebreaker
+Board</a> with various PMOD
+peripherals (HDMI, I2S2, Joystick, keypad, Seven-Segment, etc). Not a
+large board, but we can do streaming audio/video processing.</p>
+<p>Finally, I use <a class="link" href="https://www.cocotb.org/"  target="_blank" rel="noopener"
+    >cocotb</a> for writing
+testbenches that test student code. To parameterize tests, I use
+<a class="link" href="https://github.com/themperek/cocotb-test"  target="_blank" rel="noopener"
+    >cocotb-test</a>. This all
+feeds into an autograder, Gradescope, using a library called
+<a class="link" href="https://github.com/ucsb-gradescope-tools/pytest_utils"  target="_blank" rel="noopener"
+    >pytest_utils</a>. We
+have an open-source autograder at UCSC that I intend to switch to long
+term.</p>
+<h1 id="what-is-the-most-surprising-thing-youve-learned">
+    <a href="#what-is-the-most-surprising-thing-youve-learned" class="header-anchor">#</a>
+    What is the most surprising thing you’ve learned?
+</h1><p>The open source tools are stable, at least as stable as the vendor
+tools. I think this is the most common worry – “If I switch, will it
+explode?”. I can confidently say: <strong>No</strong>. And even better, when they do
+explode, you (or a TA) can pretty quickly figure out why. We’ve even
+had a colleague push through a Verilator pull request mid-quarter.</p>
+<h1 id="what-are-some-of-the-benefits-of-switching">
+    <a href="#what-are-some-of-the-benefits-of-switching" class="header-anchor">#</a>
+    What are some of the benefits of switching?
+</h1><h2 id="verification">
+    <a href="#verification" class="header-anchor">#</a>
+    Verification
+</h2><p>How many people have written a testbench that breaks when they switch
+computers? Or versions? Or vendors? The downside of using one tool for
+simulation is that it is very easy to write testbenches in Verilog
+that are secretly dependent on an internal simulation model. By using
+two simulators we can highlight how Verilog is evaluated, and how a
+good, tool-agnostic testbench is constructed.</p>
+<p>In the class, students spend two weeks writing testbenches. I give
+them working &amp; buggy code that has been synthesized through Yosys
+(another benefit). Using testbenches they write, they have to find the
+working modules and assemble them into a working design.</p>
+<h2 id="speed">
+    <a href="#speed" class="header-anchor">#</a>
+    Speed
+</h2><p>It takes less time to Synthesize, Place, and Route a design than it
+takes to open some vendor tools. I think this is a critical aspect for
+exploration. Waiting 5-minutes just to see a light flash is a
+buzzkill.</p>
+<h2 id="introspection">
+    <a href="#introspection" class="header-anchor">#</a>
+    Introspection
+</h2><p>This is a pretty universal theme in the tools. Since they’re open
+source we can actually see what happens when we simulate, synthesize,
+place and route, etc. We can even open the algorithms in class and dissect them.</p>
+<p>With the Lattice FPGAs, it is easier to explain the architecture and
+then extrapolate to more complex architectures like Intel and AMD.</p>
+<p>This introspection extends to visualisation. We use yosys to generate
+schematics and view the .dot files, or use netlistsvg. We can do this
+at different steps in the flow to see the abstract circuit, and
+progressively optimize it. We also do this during lab check-off to
+ensure that students are synthesizing to memories instead of arrays of
+registers (or something worse).</p>
+<h1 id="what-are-some-of-the-drawbacks">
+    <a href="#what-are-some-of-the-drawbacks" class="header-anchor">#</a>
+    What are some of the drawbacks?
+</h1><h2 id="lack-of-legacy">
+    <a href="#lack-of-legacy" class="header-anchor">#</a>
+    Lack of Legacy
+</h2><p>The vendor tools have 40-odd years of legacy support. There are entire
+message boards dedicated to solving issues encountered in every tool
+vendor. When you do encounter an issue in the vendor tools, it is
+likely many other people have encountered it, if not solved it.</p>
+<p>This is changing, and the open source community is great and strong,
+but 40 years is a lot of ground to make up.</p>
+<h2 id="student-resistance">
+    <a href="#student-resistance" class="header-anchor">#</a>
+    Student Resistance
+</h2><p>Students read job postings, and they want to learn the tools they see
+in job postings. Our class is titled “Logic Design with Verilog”, so
+we can focus on the language, not the tools. But where do we draw that
+line? We’re exploring ideas like using vendor tools in the final weeks
+of the quarter, after they’ve learned the language, or pushing vendor
+tools to a capstone.</p>
+<p>This is an active area of discussion. Vendor tools should be part of a
+computer engineering curriculum. How much? And when?</p>
+<h1 id="how-can-the-community-support-you">
+    <a href="#how-can-the-community-support-you" class="header-anchor">#</a>
+    How can the community support you?
+</h1><p>Come visit UC Santa Cruz! The <a class="link" href="https://hsc.ucsc.edu/"  target="_blank" rel="noopener"
+    >Hardware Systems
+Collective</a> has a weekly seminar series and we
+love hearing about cool open source projects.</p>
+<h1 id="how-can-we-get-in-touch">
+    <a href="#how-can-we-get-in-touch" class="header-anchor">#</a>
+    How can we get in touch?
+</h1><p>Feel free to email! I am happy to share teaching materials, but
+they&rsquo;re in repositories, but not in a public form yet.</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/community-spotlight/">Community Spotlight</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2024 YosysHQ Blog
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.25.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
