@@ -17,9 +17,6 @@
     <meta name="twitter:image" content='http://blog.yosyshq.com/static-2023/sphery.png' />
     <link rel="shortcut icon" href="/favicon.png" />
 
-  
-
-
     </head>
     <body class="
     article-page
@@ -63,7 +60,7 @@
                     
                     
                         
-                        <img src="/logos/YOS_mark_square_hu6bb8cbdbd2526742846cc00545eb2d90_33709_300x0_resize_box_3.png" width="300"
+                        <img src="/logos/YOS_mark_square_hu2222790448653795551.png" width="300"
                             height="300" class="site-logo" loading="lazy" alt="Avatar">
                     
                 
@@ -400,70 +397,70 @@
 ></p>
 <p>The above pipeline uses operations on custom floating and fixed point types.</p>
 <div class="table-wrapper"><table>
-<thead>
-<tr>
-<th>Operation</th>
-<th>Stages</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Fixed Compare</td>
-<td>1 stage</td>
-</tr>
-<tr>
-<td>Fixed Addition/Subtraction</td>
-<td>2 stages</td>
-</tr>
-<tr>
-<td>Fixed Multiplication</td>
-<td>2 stages</td>
-</tr>
-<tr>
-<td>Float Compare</td>
-<td>2 stages</td>
-</tr>
-<tr>
-<td>Float Multiplication</td>
-<td>2 stages</td>
-</tr>
-<tr>
-<td>Float Addition/Subtraction</td>
-<td>3 stages</td>
-</tr>
-<tr>
-<td>Float Fast Reciprocal</td>
-<td>3 stages</td>
-</tr>
-<tr>
-<td>Float Fast Reciprocal Square Root</td>
-<td>3 stages</td>
-</tr>
-<tr>
-<td>Float Fast Square Root</td>
-<td>3 stages</td>
-</tr>
-<tr>
-<td>Float Fast Division</td>
-<td>4 stages</td>
-</tr>
-<tr>
-<td>Float 3D Vector Dot Product</td>
-<td>5 stages</td>
-</tr>
-<tr>
-<td>Float 3D Vector Normalize</td>
-<td>7 stages</td>
-</tr>
-<tr>
-<td>Ray Plane Intersection</td>
-<td>10 stages</td>
-</tr>
-<tr>
-<td>Ray Sphere Intersection</td>
-<td>22 stages</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">Operation</th>
+          <th style="text-align: left">Stages</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Fixed Compare</td>
+          <td style="text-align: left">1 stage</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Fixed Addition/Subtraction</td>
+          <td style="text-align: left">2 stages</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Fixed Multiplication</td>
+          <td style="text-align: left">2 stages</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Float Compare</td>
+          <td style="text-align: left">2 stages</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Float Multiplication</td>
+          <td style="text-align: left">2 stages</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Float Addition/Subtraction</td>
+          <td style="text-align: left">3 stages</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Float Fast Reciprocal</td>
+          <td style="text-align: left">3 stages</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Float Fast Reciprocal Square Root</td>
+          <td style="text-align: left">3 stages</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Float Fast Square Root</td>
+          <td style="text-align: left">3 stages</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Float Fast Division</td>
+          <td style="text-align: left">4 stages</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Float 3D Vector Dot Product</td>
+          <td style="text-align: left">5 stages</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Float 3D Vector Normalize</td>
+          <td style="text-align: left">7 stages</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Ray Plane Intersection</td>
+          <td style="text-align: left">10 stages</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Ray Sphere Intersection</td>
+          <td style="text-align: left">22 stages</td>
+      </tr>
+  </tbody>
 </table></div>
 <p>Float types use a 14 bit mantissa instead of the typical 23 bits, and fixed point values are represented with a total of 22 bits: 12 for integer portion, 10 for the fractional bits. Those types are provided by CflexHDL types and the effects of reduced precision can be readily appreciated with the provided graphical simulation tool, so the optimal size is easy to determine by performing the fast simulations.</p>
 <p><img src="https://user-images.githubusercontent.com/8551129/215368154-a9abd122-1308-4c15-b39b-7b19be07082d.png"
@@ -479,34 +476,34 @@
 <em>Full precision vs. reduced precision in simulator window</em></p>
 <p>Typical times for development/test cycles are as follows:</p>
 <div class="table-wrapper"><table>
-<thead>
-<tr>
-<th></th>
-<th>Build command</th>
-<th>Build time</th>
-<th>Speed @1080p</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Fast CPU simulation</td>
-<td><code>make sim</code></td>
-<td>1s</td>
-<td>60-86 FPS</td>
-</tr>
-<tr>
-<td>Precise CPU simulation</td>
-<td><code>make gen</code></td>
-<td>5s</td>
-<td>40FPS</td>
-</tr>
-<tr>
-<td>Logic simulation</td>
-<td><code>make verilator</code></td>
-<td>1min 50s</td>
-<td>50s per frame</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left"></th>
+          <th style="text-align: left">Build command</th>
+          <th style="text-align: left">Build time</th>
+          <th style="text-align: left">Speed @1080p</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Fast CPU simulation</td>
+          <td style="text-align: left"><code>make sim</code></td>
+          <td style="text-align: left">1s</td>
+          <td style="text-align: left">60-86 FPS</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Precise CPU simulation</td>
+          <td style="text-align: left"><code>make gen</code></td>
+          <td style="text-align: left">5s</td>
+          <td style="text-align: left">40FPS</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Logic simulation</td>
+          <td style="text-align: left"><code>make verilator</code></td>
+          <td style="text-align: left">1min 50s</td>
+          <td style="text-align: left">50s per frame</td>
+      </tr>
+  </tbody>
 </table></div>
 <h2 id="software-architecture-and-components">
     <a href="#software-architecture-and-components" class="header-anchor">#</a>
