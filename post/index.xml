@@ -6,7 +6,90 @@
         <description>Recent content in Posts on YosysHQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Wed, 17 Jul 2024 16:00:00 +0100</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 05 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Tabby CAD Suite version 20241105 released!</title>
+        <link>http://localhost:1313/p/tabby-cad-suite-version-20241105-released/</link>
+        <pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/tabby-cad-suite-version-20241105-released/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2023/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20241105 released!" /&gt;&lt;p&gt;The November release of Tabby CAD Suite is now available for download. Notable changes in this version include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;String attributes are represented more efficiently in the in-memory RTLIL netlist, using a different implementation than bit vector attributes. We have observed reductions in peak memory usage of up to 30% for real world designs.&lt;/li&gt;
+&lt;li&gt;For plugin maintainers, this means some breaking changes if you were directly accessing the &lt;code&gt;bits&lt;/code&gt; member of an &lt;code&gt;RTLIL::Const&lt;/code&gt;. The &lt;code&gt;bits&lt;/code&gt; member has been removed. To access any attribute as a bit vector, use the &lt;code&gt;bits()&lt;/code&gt; method instead, which returns a const iterator. To modify a &lt;code&gt;Const&lt;/code&gt;, you can call &lt;code&gt;std::vector&amp;amp;lt;RTLIL::State&amp;gt;&amp;amp; get_bits()&lt;/code&gt; which forces the implementation to a bit vector. To get the number of bits, use the new &lt;code&gt;Const::size()&lt;/code&gt; method instead of &lt;code&gt;bits.size()&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In other YosysHQ news:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;After a long summer break, &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/yug&#34; &gt;Yosys Users Group&lt;/a&gt; meetings have resumed again. Our last meeting on October 29th had Katharina CeesaySeitz from ETH Zürich present her work on using special netlist transformations in a custom Yosys pass in combination with formal verification to detect microarchitectural information leakage via hardware timing side channels. If you&amp;rsquo;d like to be notified of our next YUG meeting, subscribe to our &lt;a class=&#34;link&#34; href=&#34;https://www.yosyshq.com/newsletter&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;newsletter&lt;/a&gt;! Watch her talk on our &lt;a class=&#34;link&#34; href=&#34;https://www.youtube.com/watch?v=Kxp-5kNMt40&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Youtube channel&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Happy November,&lt;/p&gt;
+&lt;p&gt;The YosysHQ Team&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Tabby CAD Suite version 20241017 released!</title>
+        <link>http://localhost:1313/p/tabby-cad-suite-version-20241017-released/</link>
+        <pubDate>Thu, 17 Oct 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/tabby-cad-suite-version-20241017-released/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2023/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20241017 released!" /&gt;&lt;p&gt;The October release of Tabby CAD Suite is now available for download. Notable changes in this version include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Fixed an issue in SBY that could lead to the wrong hierarchical path being printed for an assertion failure if multiple instances of the same module exist in the design.&lt;/li&gt;
+&lt;li&gt;Builds for &lt;a class=&#34;link&#34; href=&#34;https://drive.google.com/drive/folders/1IA4oTVJOsj1V2-Jp4qask-_ZUcBDcmZU?usp=drive_link&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Macs with Apple silicon&lt;/a&gt; will now be included in the releases.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In other YosysHQ news:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Our team will be gathering for our first in-person get-together in Vienna next week. Please excuse any delayed response times as folks zip across the globe!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Happy October,&lt;/p&gt;
+&lt;p&gt;The YosysHQ Team&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Tabby CAD Suite version 20240903 released!</title>
+        <link>http://localhost:1313/p/tabby-cad-suite-version-20240903-released/</link>
+        <pubDate>Tue, 03 Sep 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/tabby-cad-suite-version-20240903-released/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2023/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20240903 released!" /&gt;&lt;p&gt;The September release of Tabby CAD Suite is now available for download. Notable changes in this version include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;synth_nanoexplore&lt;/code&gt; adds experimental synthesis support for the NanoXplore NG-Ultra radiation-hardened FPGA family.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In other YosysHQ news:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Matt attended ORConf in Sweden and met with members of the community and YosysHQ customers. All the talks have been published already and we’re sure you’ll find something that interests you: &lt;a class=&#34;link&#34; href=&#34;https://fossi-foundation.org/orconf/2024&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://fossi-foundation.org/orconf/2024&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Happy September,&lt;/p&gt;
+&lt;p&gt;The YosysHQ Team&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Tabby CAD Suite version 20240806 released!</title>
+        <link>http://localhost:1313/p/tabby-cad-suite-version-20240806-released/</link>
+        <pubDate>Tue, 06 Aug 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/tabby-cad-suite-version-20240806-released/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2023/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20240806 released!" /&gt;&lt;p&gt;The August release of Tabby CAD Suite is now available for download in &lt;a class=&#34;link&#34; href=&#34;https://drive.google.com/drive/folders/1XfdX1XCn5qeBvtdxjWuo2cUyyqAC4PiA?usp=sharing&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Releases&lt;/a&gt;. Notable changes in this version include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Documentation in PDF format is now included with Tabby CAD Suite downloads, in case you are not able to access our &lt;a class=&#34;link&#34; href=&#34;https://yosyshq.readthedocs.io/en/latest/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;online documentation&lt;/a&gt; or need to look up an old version.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In other YosysHQ news:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Recordings of the talks at this year&amp;rsquo;s Free Silicon Conference are now &lt;a class=&#34;link&#34; href=&#34;https://peertube6.f-si.org/c/fsic2024/videos&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;online&lt;/a&gt;! Check out &lt;a class=&#34;link&#34; href=&#34;https://peertube6.f-si.org/w/nLjx998SVEuJPQRqbSVBbM&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;the opening day keynote from our CSO Matt&lt;/a&gt;, or &lt;a class=&#34;link&#34; href=&#34;https://peertube6.f-si.org/w/p1cAaHTZY39bpaQ9pVbaXk&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;this talk from researchers at ETH Zürich about how to get competitive performance out of the Yosys+OpenRoad ASIC flow&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Happy August,&lt;/p&gt;
+&lt;p&gt;The YosysHQ Team&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Community Spotlight - Teaching with Open Source Tools</title>
         <link>http://localhost:1313/p/community-spotlight-teaching-with-open-source-tools/</link>
         <pubDate>Wed, 17 Jul 2024 16:00:00 +0100</pubDate>
@@ -192,6 +275,27 @@ love hearing about cool open source projects.&lt;/p&gt;
     How can we get in touch?
 &lt;/h1&gt;&lt;p&gt;Feel free to email! I am happy to share teaching materials, but
 they&amp;rsquo;re in repositories, but not in a public form yet.&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Tabby CAD Suite version 20240709 released!</title>
+        <link>http://localhost:1313/p/tabby-cad-suite-version-20240709-released/</link>
+        <pubDate>Tue, 09 Jul 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/tabby-cad-suite-version-20240709-released/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2023/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20240709 released!" /&gt;&lt;p&gt;The July release of Tabby CAD Suite is now available for download. This month&amp;rsquo;s notable changes mainly affect the build process, so are not relevant if you download our binaries. For those of you subscribing to the YosysHQ Verific Patch and building from source:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;We have reorganized the build flags for compiling with Verific to try to support more flavors of Verific (more documentation to follow). We have tried to keep existing configurations working, but if you encounter any build issues when updating to the latest release, try a full clean (&lt;code&gt;make clean&lt;/code&gt; and &lt;code&gt;make clean-abc&lt;/code&gt;) and check if you need to set any of the new &lt;!-- raw HTML omitted --&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/YosysHQ/yosys/pull/4459&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;ENABLE_VERIFIC_*&lt;/a&gt;&lt;!-- raw HTML omitted --&gt; flags in your &lt;!-- raw HTML omitted --&gt;Makefile.conf&lt;!-- raw HTML omitted --&gt;.&lt;/li&gt;
+&lt;li&gt;The minimum supported C++ standard version has been updated to C++17. The compiler flags in the Makefile have been changed to reflect this, but if you are manually setting an older flag, you may need to update your configuration.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In other YosysHQ news:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The recordings of the FPGA Lightning talks from our last Yosys Users Group meeting are now online! Check them out on &lt;a class=&#34;link&#34; href=&#34;https://www.youtube.com/@YosysHQ/videos&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;our youtube channel&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Happy July,&lt;/p&gt;
+&lt;p&gt;The YosysHQ Team&lt;/p&gt;
 </description>
         </item>
         <item>
@@ -434,6 +538,52 @@ advantage of the many green spaces, too.&lt;/p&gt;
 </description>
         </item>
         <item>
+        <title>Tabby CAD Suite version 20240607 released!</title>
+        <link>http://localhost:1313/p/tabby-cad-suite-version-20240607-released/</link>
+        <pubDate>Fri, 07 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/tabby-cad-suite-version-20240607-released/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2023/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20240607 released!" /&gt;&lt;p&gt;The June release of Tabby CAD Suite is now available for download. There are no notable user-facing changes in this version, as our dev team has been mostly busy with a revamp of our CI infrastructure.&lt;/p&gt;
+&lt;p&gt;In other YosysHQ news:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Prof. Andrew Kahng&amp;rsquo;s keynote at the &lt;a class=&#34;link&#34; href=&#34;https://efcl.ethz.ch/efcl-summer-school.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;EFCL summer school&lt;/a&gt; was on accelerating innovation with open source tools. Of particular interest was using the results from open source tools as a proxy for the proprietary tools. For more info and links to Andrew’s slides - check &lt;a class=&#34;link&#34; href=&#34;https://www.linkedin.com/feed/update/urn:li:activity:7205509547061424128/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Matt’s report on linkedin&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;From the 11th to the 13th of June our CEO Nina will be at &lt;a class=&#34;link&#34; href=&#34;https://indico.cern.ch/event/1381060/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;CERN for the FPGA developers Forum&lt;/a&gt; - if you’re there please say hello.&lt;/li&gt;
+&lt;li&gt;Our CSO Matt will be in Paris at the &lt;a class=&#34;link&#34; href=&#34;https://wiki.f-si.org/index.php/FSiC2024&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Free Silicon Conference&lt;/a&gt; from the 19th to the 21st of June. If you’re there come and say hello!&lt;/li&gt;
+&lt;li&gt;For the Yosys User’s Group #7 we had FPGA lightning talks. Watch them all &lt;a class=&#34;link&#34; href=&#34;https://www.youtube.com/watch?v=wZiocG8DHfE&amp;amp;list=PL-ggbobZGIQuMGBkQgubVbJ1jffe2k18O&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;here&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Happy June,&lt;/p&gt;
+&lt;p&gt;The YosysHQ Team&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Tabby CAD Suite version 20240508 released!</title>
+        <link>http://localhost:1313/p/tabby-cad-suite-version-20240508-released/</link>
+        <pubDate>Wed, 08 May 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/tabby-cad-suite-version-20240508-released/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2023/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20240508 released!" /&gt;&lt;p&gt;The May release of Tabby CAD Suite is now available for download. Notable changes in this version include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The smtbmc engine can now output information on used assumptions in each step, to help debug failing cover properties. To enable this feature, add the &lt;code&gt;--track-assumes &lt;/code&gt;option in the &lt;code&gt;[engines]&lt;/code&gt; section like this: &lt;br&gt;
+&lt;code&gt;smtbmc yices -- --track-assumes&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In other YosysHQ news:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Our next Yosys Users Group meeting will be FPGA lightning talks! Join us on Monday, May 27th at 18:00 CEST &lt;a class=&#34;link&#34; href=&#34;https://meet.jit.si/yosys-users-group&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;at this link&lt;/a&gt;. It is also still possible to &lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/forms/d/1gKbUfBqs5eMpPQztjnyAxx75a8SGbjkXN-BR2Nn1XF0/edit&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;submit a talk&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Our latest &lt;a class=&#34;link&#34; href=&#34;https://blog.yosyshq.com/p/community-spotlight-manta/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;community spotlight is about Manta&lt;/a&gt;, a vendor-agnostic logic analyzer and virtual interface for FPGAs.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Happy May,&lt;/p&gt;
+&lt;p&gt;The YosysHQ Team&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Community Spotlight - Manta</title>
         <link>http://localhost:1313/p/community-spotlight-manta/</link>
         <pubDate>Tue, 30 Apr 2024 20:30:31 +0100</pubDate>
@@ -530,6 +680,25 @@ advantage of the many green spaces, too.&lt;/p&gt;
 &lt;p&gt;Also if you like motorized shopping carts and other silly projects, feel free to check out &lt;a class=&#34;link&#34; href=&#34;https://fischermoseley.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;fischermoseley.com&lt;/a&gt; or my &lt;a class=&#34;link&#34; href=&#34;http://www.youtube.com/@fischerm&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;YouTube&lt;/a&gt; channel!&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Tabby CAD Suite version 20240410 released!</title>
+        <link>http://localhost:1313/p/tabby-cad-suite-version-20240410-released/</link>
+        <pubDate>Wed, 10 Apr 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/tabby-cad-suite-version-20240410-released/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2023/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20240410 released!" /&gt;&lt;p&gt;The April release of Tabby CAD Suite is now available for download. Notable changes in this version include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;VHDL2019 mode is now available with &lt;code&gt;verific -vhdl2019.&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In other YosysHQ news:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A major rewrite of the &lt;a class=&#34;link&#34; href=&#34;https://yosyshq.readthedocs.io/projects/yosys/en/latest/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Yosys manual&lt;/a&gt; went live recently. Shoutout to our team member Krystine who has been working on this for months and is continuing to make improvements to our documentation!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Happy April,&lt;/p&gt;
+&lt;p&gt;The YosysHQ Team&lt;/p&gt;
 </description>
         </item>
         <item>

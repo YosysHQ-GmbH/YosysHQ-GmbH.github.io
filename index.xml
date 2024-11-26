@@ -4223,17 +4223,24 @@ get the best from our formal tools.&lt;/p&gt;
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/yug/</guid>
-        <description>&lt;img src="http://localhost:1313/static-2023/yug.jpg" alt="Featured image of post Yosys User&#39;s Group" /&gt;&lt;p&gt;We have recently started a Yosys User&amp;rsquo;s Group. You can see the &lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/document/d/13e8hERQ_eqLQrdtH1WXnGUXDtgyQ8oa_zZWXPHJCiN0/edit#heading=h.dqkvsnhcju2v&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;minutes of our first 5 calls here&lt;/a&gt;.&lt;/p&gt;
+        <description>&lt;img src="http://localhost:1313/static-2023/yug.jpg" alt="Featured image of post Yosys User&#39;s Group" /&gt;&lt;p&gt;The Yosys User&amp;rsquo;s Group is for anyone who uses Yosys. We present recent updates to the tools, showcase new features and invite our users to present their work.&lt;/p&gt;
+&lt;p&gt;You can see the &lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/document/d/13e8hERQ_eqLQrdtH1WXnGUXDtgyQ8oa_zZWXPHJCiN0/edit#heading=h.dqkvsnhcju2v&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;minutes of our calls here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;If you&amp;rsquo;d like to join, then please &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/newsletter&#34; &gt;sign up to the newsletter&lt;/a&gt; or follow us on:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.linkedin.com/company/yosyshq&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;linkedin&lt;/a&gt;,&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://bsky.app/profile/yosyshq.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;bluesky&lt;/a&gt;,&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://fosstodon.org/@yosyshq&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;mastodon&lt;/a&gt; or&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://twitter.com/YosysHQ&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;twitter&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h2 id=&#34;yug-8---using-formal-to-detect-information-leakage&#34;&gt;
+    &lt;a href=&#34;#yug-8---using-formal-to-detect-information-leakage&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    YUG 8 - Using formal to detect information leakage
+&lt;/h2&gt;&lt;p&gt;After a long summer break, our meetings have resumed again! Our last meeting on October 29th had &lt;a class=&#34;link&#34; href=&#34;https://www.linkedin.com/in/katharina-ceesay-seitz-ba521087&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Katharina CeesaySeitz&lt;/a&gt; from ETH Zürich present her work on using special netlist transformations in a custom Yosys pass in combination with formal verification to detect microarchitectural information leakage via hardware timing side channels. Watch her talk on our &lt;a class=&#34;link&#34; href=&#34;https://www.youtube.com/watch?v=Kxp-5kNMt40&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Youtube channel&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;yug-7---fpga-lightning-talks&#34;&gt;
     &lt;a href=&#34;#yug-7---fpga-lightning-talks&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     YUG 7 - FPGA lightning talks
