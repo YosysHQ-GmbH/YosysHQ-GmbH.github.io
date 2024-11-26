@@ -2,202 +2,205 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://blog.yosyshq.com/tags/community-spotlight/</loc>
+    <loc>http://localhost:1313/tags/community-spotlight/</loc>
     <lastmod>2024-07-17T16:00:00+01:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/p/community-spotlight-teaching-with-open-source-tools/</loc>
+    <loc>http://localhost:1313/p/community-spotlight-teaching-with-open-source-tools/</loc>
     <lastmod>2024-07-17T16:00:00+01:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/post/</loc>
+    <loc>http://localhost:1313/post/</loc>
     <lastmod>2024-07-17T16:00:00+01:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/tags/</loc>
+    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2024-07-17T16:00:00+01:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2024-07-17T16:00:00+01:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/p/community-spotlight-mirmis/</loc>
+    <loc>http://localhost:1313/p/community-spotlight-mirmis/</loc>
     <lastmod>2024-06-12T16:00:00+01:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/p/community-spotlight-manta/</loc>
+    <loc>http://localhost:1313/p/community-spotlight-manta/</loc>
     <lastmod>2024-04-30T20:30:31+01:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/p/community-spotlight-fazyrv/</loc>
+    <loc>http://localhost:1313/tags/release-notes/</loc>
+    <lastmod>2024-03-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/p/tabby-cad-suite-version-20240312-released/</loc>
+    <lastmod>2024-03-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/p/community-spotlight-fazyrv/</loc>
     <lastmod>2024-03-10T20:30:31+01:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/tags/blog/</loc>
+    <loc>http://localhost:1313/tags/blog/</loc>
     <lastmod>2024-02-12T19:09:55-08:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/p/sky130-kicad-spice/</loc>
+    <loc>http://localhost:1313/p/sky130-kicad-spice/</loc>
     <lastmod>2024-02-12T19:09:55-08:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/p/yosys-users-group/</loc>
+    <loc>http://localhost:1313/p/yosys-users-group/</loc>
     <lastmod>2024-02-04T12:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/tags/yug/</loc>
+    <loc>http://localhost:1313/tags/yug/</loc>
     <lastmod>2024-02-04T12:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/p/logic-locking-with-moosic/</loc>
+    <loc>http://localhost:1313/p/logic-locking-with-moosic/</loc>
     <lastmod>2024-01-30T12:00:00+02:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/tags/release-notes/</loc>
+    <loc>http://localhost:1313/p/tabby-cad-suite-version-20240116-released/</loc>
     <lastmod>2024-01-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/p/tabby-cad-suite-version-20240116-released/</loc>
-    <lastmod>2024-01-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://blog.yosyshq.com/p/community-spotlight-surfer/</loc>
+    <loc>http://localhost:1313/p/community-spotlight-surfer/</loc>
     <lastmod>2023-11-27T13:26:31+01:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/p/tabby-cad-suite-version-20231107-released/</loc>
+    <loc>http://localhost:1313/p/tabby-cad-suite-version-20231107-released/</loc>
     <lastmod>2023-11-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/p/solving-sudoku-with-sby/</loc>
+    <loc>http://localhost:1313/p/solving-sudoku-with-sby/</loc>
     <lastmod>2023-11-06T12:00:00+02:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/p/tabby-cad-suite-version-20231011-released/</loc>
+    <loc>http://localhost:1313/p/tabby-cad-suite-version-20231011-released/</loc>
     <lastmod>2023-10-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/p/community-spotlight-wal/</loc>
+    <loc>http://localhost:1313/p/community-spotlight-wal/</loc>
     <lastmod>2023-09-25T13:26:31+01:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230905-released/</loc>
+    <loc>http://localhost:1313/p/tabby-cad-suite-version-20230905-released/</loc>
     <lastmod>2023-09-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230807-released/</loc>
+    <loc>http://localhost:1313/p/tabby-cad-suite-version-20230807-released/</loc>
     <lastmod>2023-08-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/tags/one-liners/</loc>
+    <loc>http://localhost:1313/tags/one-liners/</loc>
     <lastmod>2023-06-12T16:52:39+02:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/p/yosys-one-liners-rename/</loc>
+    <loc>http://localhost:1313/p/yosys-one-liners-rename/</loc>
     <lastmod>2023-06-12T16:52:39+02:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230606-released/</loc>
+    <loc>http://localhost:1313/p/tabby-cad-suite-version-20230606-released/</loc>
     <lastmod>2023-06-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/p/blinker-to-risc-v/</loc>
+    <loc>http://localhost:1313/p/blinker-to-risc-v/</loc>
     <lastmod>2023-05-15T12:00:00+02:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/p/community-spotlight-autosva/</loc>
+    <loc>http://localhost:1313/p/community-spotlight-autosva/</loc>
     <lastmod>2023-05-10T13:26:31+01:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230509-released/</loc>
+    <loc>http://localhost:1313/p/tabby-cad-suite-version-20230509-released/</loc>
     <lastmod>2023-05-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/p/yosys-one-liners-axi/</loc>
+    <loc>http://localhost:1313/p/yosys-one-liners-axi/</loc>
     <lastmod>2023-04-17T13:25:38+02:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230414-released/</loc>
+    <loc>http://localhost:1313/p/tabby-cad-suite-version-20230414-released/</loc>
     <lastmod>2023-04-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/p/colorlight-part-2/</loc>
+    <loc>http://localhost:1313/p/colorlight-part-2/</loc>
     <lastmod>2023-03-28T18:17:00+02:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230306-released/</loc>
+    <loc>http://localhost:1313/p/tabby-cad-suite-version-20230306-released/</loc>
     <lastmod>2023-03-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/p/oss-cad-suite-github-action-update/</loc>
+    <loc>http://localhost:1313/p/oss-cad-suite-github-action-update/</loc>
     <lastmod>2023-02-20T11:48:40+01:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/p/community-spotlight-sv2v/</loc>
+    <loc>http://localhost:1313/p/community-spotlight-sv2v/</loc>
     <lastmod>2023-02-13T13:26:31+01:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230208-released/</loc>
+    <loc>http://localhost:1313/p/tabby-cad-suite-version-20230208-released/</loc>
     <lastmod>2023-02-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/p/tillitis-and-yosyshq/</loc>
+    <loc>http://localhost:1313/p/tillitis-and-yosyshq/</loc>
     <lastmod>2023-02-06T11:56:24+01:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/p/3d-raytracing/</loc>
+    <loc>http://localhost:1313/p/3d-raytracing/</loc>
     <lastmod>2023-02-03T12:00:00+02:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230104-released/</loc>
+    <loc>http://localhost:1313/p/tabby-cad-suite-version-20230104-released/</loc>
     <lastmod>2023-01-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/p/community-spotlight-tbengy/</loc>
+    <loc>http://localhost:1313/p/community-spotlight-tbengy/</loc>
     <lastmod>2022-12-14T10:23:57+01:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/p/tabby-cad-suite-version-20221205-released/</loc>
+    <loc>http://localhost:1313/p/tabby-cad-suite-version-20221205-released/</loc>
     <lastmod>2022-12-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/p/logic-primitive-transformations-with-yosys-techmap/</loc>
+    <loc>http://localhost:1313/p/logic-primitive-transformations-with-yosys-techmap/</loc>
     <lastmod>2022-11-24T09:38:52+02:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/p/tabby-cad-suite-version-20221108-released/</loc>
+    <loc>http://localhost:1313/p/tabby-cad-suite-version-20221108-released/</loc>
     <lastmod>2022-11-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/p/tabby-cad-suite-version-20221011-released/</loc>
+    <loc>http://localhost:1313/p/tabby-cad-suite-version-20221011-released/</loc>
     <lastmod>2022-10-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/p/colorlight-part-1/</loc>
+    <loc>http://localhost:1313/p/colorlight-part-1/</loc>
     <lastmod>2022-10-16T18:17:00+02:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220906-released/</loc>
+    <loc>http://localhost:1313/p/tabby-cad-suite-version-20220906-released/</loc>
     <lastmod>2022-09-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220805-released/</loc>
+    <loc>http://localhost:1313/p/tabby-cad-suite-version-20220805-released/</loc>
     <lastmod>2022-08-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/p/sby-autotune/</loc>
+    <loc>http://localhost:1313/p/sby-autotune/</loc>
     <lastmod>2022-07-27T14:41:35+02:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220706-released/</loc>
+    <loc>http://localhost:1313/p/tabby-cad-suite-version-20220706-released/</loc>
     <lastmod>2022-07-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/p/formal-trisate-support/</loc>
+    <loc>http://localhost:1313/p/formal-trisate-support/</loc>
     <lastmod>2022-06-17T17:28:17+02:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220610-released/</loc>
+    <loc>http://localhost:1313/p/tabby-cad-suite-version-20220610-released/</loc>
     <lastmod>2022-06-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220512-released/</loc>
+    <loc>http://localhost:1313/p/tabby-cad-suite-version-20220512-released/</loc>
     <lastmod>2022-05-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/p/optimising-adders/</loc>
+    <loc>http://localhost:1313/p/optimising-adders/</loc>
     <lastmod>2022-05-06T09:38:52+02:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220406-released/</loc>
+    <loc>http://localhost:1313/p/tabby-cad-suite-version-20220406-released/</loc>
     <lastmod>2022-04-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/p/open-source-silicon-with-yosys/</loc>
+    <loc>http://localhost:1313/p/open-source-silicon-with-yosys/</loc>
     <lastmod>2022-02-28T11:23:54+01:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/p/async-load-ff/</loc>
+    <loc>http://localhost:1313/p/async-load-ff/</loc>
     <lastmod>2021-11-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/p/pricing-for-small-companies/</loc>
+    <loc>http://localhost:1313/p/pricing-for-small-companies/</loc>
     <lastmod>2021-07-26T15:35:40+02:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/tags/app-note/</loc>
+    <loc>http://localhost:1313/tags/app-note/</loc>
     <lastmod>2021-07-07T12:37:04+02:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/p/ap109/</loc>
+    <loc>http://localhost:1313/p/ap109/</loc>
     <lastmod>2021-07-07T12:37:04+02:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/p/ap120/</loc>
+    <loc>http://localhost:1313/p/ap120/</loc>
     <lastmod>2021-05-20T14:04:45+02:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/about/</loc>
+    <loc>http://localhost:1313/about/</loc>
     <lastmod>2021-02-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/newsletter/</loc>
+    <loc>http://localhost:1313/newsletter/</loc>
     <lastmod>2021-02-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/page/</loc>
+    <loc>http://localhost:1313/page/</loc>
     <lastmod>2021-02-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/p/hello/</loc>
+    <loc>http://localhost:1313/p/hello/</loc>
     <lastmod>2021-02-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/archives/</loc>
+    <loc>http://localhost:1313/archives/</loc>
     <lastmod>2019-05-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://blog.yosyshq.com/categories/</loc>
+    <loc>http://localhost:1313/categories/</loc>
   </url><url>
-    <loc>http://blog.yosyshq.com/search/</loc>
+    <loc>http://localhost:1313/search/</loc>
   </url><url>
-    <loc>http://blog.yosyshq.com/yug/</loc>
+    <loc>http://localhost:1313/yug/</loc>
   </url>
 </urlset>

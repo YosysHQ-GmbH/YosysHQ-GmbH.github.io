@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Community Spotlight on YosysHQ Blog</title>
-        <link>http://blog.yosyshq.com/tags/community-spotlight/</link>
+        <link>http://localhost:1313/tags/community-spotlight/</link>
         <description>Recent content in Community Spotlight on YosysHQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Wed, 17 Jul 2024 16:00:00 +0100</lastBuildDate><atom:link href="http://blog.yosyshq.com/tags/community-spotlight/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 17 Jul 2024 16:00:00 +0100</lastBuildDate><atom:link href="http://localhost:1313/tags/community-spotlight/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Community Spotlight - Teaching with Open Source Tools</title>
-        <link>http://blog.yosyshq.com/p/community-spotlight-teaching-with-open-source-tools/</link>
+        <link>http://localhost:1313/p/community-spotlight-teaching-with-open-source-tools/</link>
         <pubDate>Wed, 17 Jul 2024 16:00:00 +0100</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/community-spotlight-teaching-with-open-source-tools/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2024/spotlight/hsc/hsc.png" alt="Featured image of post Community Spotlight - Teaching with Open Source Tools" /&gt;&lt;h1 id=&#34;teaching-with-open-source-tools&#34;&gt;
+        <guid>http://localhost:1313/p/community-spotlight-teaching-with-open-source-tools/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2024/spotlight/hsc/hsc.png" alt="Featured image of post Community Spotlight - Teaching with Open Source Tools" /&gt;&lt;h1 id=&#34;teaching-with-open-source-tools&#34;&gt;
     &lt;a href=&#34;#teaching-with-open-source-tools&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     Teaching with Open Source Tools
-&lt;/h1&gt;&lt;p&gt;Welcome to another &lt;a class=&#34;link&#34; href=&#34;http://blog.yosyshq.com/tags/community-spotlight/&#34; &gt;community spotlight&lt;/a&gt; article where we shine a light on open source EDA-related projects. If you want to &lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSdIEgu6FJZam0-V3PMTjw-eDebJdg_JuIlN4MkLNDr4vs-a5A/viewform?usp=sf_link&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&lt;/h1&gt;&lt;p&gt;Welcome to another &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/tags/community-spotlight/&#34; &gt;community spotlight&lt;/a&gt; article where we shine a light on open source EDA-related projects. If you want to &lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSdIEgu6FJZam0-V3PMTjw-eDebJdg_JuIlN4MkLNDr4vs-a5A/viewform?usp=sf_link&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;submit a project, please do so here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;This post recounts experiences from using the Open Source Tools for teaching! Many people have wondered how stable the tools are and whether they can be used in classes. Here is one experience, from UC Santa Cruz!&lt;/p&gt;
 &lt;h1 id=&#34;dustin-richmond-bio&#34;&gt;
@@ -196,11 +196,11 @@ they&amp;rsquo;re in repositories, but not in a public form yet.&lt;/p&gt;
         </item>
         <item>
         <title>Community Spotlight - MIRMIS</title>
-        <link>http://blog.yosyshq.com/p/community-spotlight-mirmis/</link>
+        <link>http://localhost:1313/p/community-spotlight-mirmis/</link>
         <pubDate>Wed, 12 Jun 2024 16:00:00 +0100</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/community-spotlight-mirmis/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2024/spotlight/mirmis/esa-hero.bmp" alt="Featured image of post Community Spotlight - MIRMIS" /&gt;&lt;h1 id=&#34;mirmis&#34;&gt;
+        <guid>http://localhost:1313/p/community-spotlight-mirmis/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2024/spotlight/mirmis/esa-hero.bmp" alt="Featured image of post Community Spotlight - MIRMIS" /&gt;&lt;h1 id=&#34;mirmis&#34;&gt;
     &lt;a href=&#34;#mirmis&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     MIRMIS
 &lt;/h1&gt;&lt;p&gt;The Modular Infrared Molecules and Ices Sensor (&lt;!-- raw HTML omitted --&gt;MIRMIS&lt;!-- raw HTML omitted --&gt;) is a
@@ -215,7 +215,7 @@ three sensors—&lt;!-- raw HTML omitted --&gt;TIRI&lt;!-- raw HTML omitted --&g
 pristine comet to measure its structure, chemical composition, and temperature,
 allowing researchers to gain insight into the formation of the Solar system.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2024/spotlight/mirmis/vibe.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2024/spotlight/mirmis/vibe.png&#34;
 	
 	
 	
@@ -242,7 +242,7 @@ tools, including SymbiYosys for &lt;a class=&#34;link&#34; href=&#34;https://en.
     &gt;safety and liveness property&lt;/a&gt; checking and
 reachability checking.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2024/spotlight/mirmis/ltm.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2024/spotlight/mirmis/ltm.png&#34;
 	
 	
 	
@@ -298,7 +298,7 @@ Oxford, where it has a range of space-related facilities including cleanrooms,
 a variety of vacuum chambers, metrology, spectroscopy, optics, and
 vibration-testing facilities, and electronics and mechanical workshops.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2024/spotlight/mirmis/cirs-em.jpg&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2024/spotlight/mirmis/cirs-em.jpg&#34;
 	
 	
 	
@@ -369,7 +369,7 @@ before having to build in triple redundancy and other safeguards against
 radiation flipping a bit in a register or transiently changing the value on a
 signal line.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2024/spotlight/mirmis/efm.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2024/spotlight/mirmis/efm.png&#34;
 	
 	
 	
@@ -401,7 +401,7 @@ including MIRMIS as well as the other instruments.&lt;/p&gt;
 &lt;h1 id=&#34;liam-mcsherrys-bio&#34;&gt;
     &lt;a href=&#34;#liam-mcsherrys-bio&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     Liam McSherry&amp;rsquo;s bio
-&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2024/spotlight/mirmis/mcsherry.png&#34;
+&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2024/spotlight/mirmis/mcsherry.png&#34;
 	
 	
 	
@@ -435,20 +435,20 @@ advantage of the many green spaces, too.&lt;/p&gt;
         </item>
         <item>
         <title>Community Spotlight - Manta</title>
-        <link>http://blog.yosyshq.com/p/community-spotlight-manta/</link>
+        <link>http://localhost:1313/p/community-spotlight-manta/</link>
         <pubDate>Tue, 30 Apr 2024 20:30:31 +0100</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/community-spotlight-manta/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2024/spotlight/manta/logo.png" alt="Featured image of post Community Spotlight - Manta" /&gt;&lt;h1 id=&#34;manta&#34;&gt;
+        <guid>http://localhost:1313/p/community-spotlight-manta/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2024/spotlight/manta/logo.png" alt="Featured image of post Community Spotlight - Manta" /&gt;&lt;h1 id=&#34;manta&#34;&gt;
     &lt;a href=&#34;#manta&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     Manta
-&lt;/h1&gt;&lt;p&gt;Welcome to another &lt;a class=&#34;link&#34; href=&#34;http://blog.yosyshq.com/tags/community-spotlight/&#34; &gt;community spotlight&lt;/a&gt; article where we shine a light on open source EDA-related projects. If you want to &lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSdIEgu6FJZam0-V3PMTjw-eDebJdg_JuIlN4MkLNDr4vs-a5A/viewform?usp=sf_link&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&lt;/h1&gt;&lt;p&gt;Welcome to another &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/tags/community-spotlight/&#34; &gt;community spotlight&lt;/a&gt; article where we shine a light on open source EDA-related projects. If you want to &lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSdIEgu6FJZam0-V3PMTjw-eDebJdg_JuIlN4MkLNDr4vs-a5A/viewform?usp=sf_link&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;submit a project, please do so here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Manta is a configurable and approachable tool for FPGA debugging and rapid prototyping. It works by letting you configure cores that you instantiate in your FPGA design, and operate from a host machine connected over either UART or Ethernet. These cores can provide a logic analyzer, or direct access to registers or memory on the FPGA. Manta is written in Python, which allows its host-side to code to run on nearly any platform (including the web!). The code on the FPGA side is written in Amaranth HDL which exports to vendor-agnostic Verilog-2001, allowing it to run on nearly any FPGA.&lt;/p&gt;
 &lt;h1 id=&#34;fischer-moseleys-bio&#34;&gt;
     &lt;a href=&#34;#fischer-moseleys-bio&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     Fischer Moseley&amp;rsquo;s Bio
-&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2024/spotlight/manta/cart.jpg&#34;
+&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2024/spotlight/manta/cart.jpg&#34;
 	
 	
 	
@@ -485,7 +485,7 @@ advantage of the many green spaces, too.&lt;/p&gt;
     &lt;a href=&#34;#web-terminal&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     Web Terminal
 &lt;/h3&gt;&lt;p&gt;Since Manta can communicate with a host machine over UART, it’s possible to use the Web Serial API to run Manta in the browser, directly from the documentation site:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2024/spotlight/manta/web_terminal.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2024/spotlight/manta/web_terminal.png&#34;
 	
 	
 	
@@ -534,20 +534,20 @@ advantage of the many green spaces, too.&lt;/p&gt;
         </item>
         <item>
         <title>Community Spotlight - FazyRV</title>
-        <link>http://blog.yosyshq.com/p/community-spotlight-fazyrv/</link>
+        <link>http://localhost:1313/p/community-spotlight-fazyrv/</link>
         <pubDate>Sun, 10 Mar 2024 20:30:31 +0100</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/community-spotlight-fazyrv/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2024/spotlight/fazyrv/fazyrv.png" alt="Featured image of post Community Spotlight - FazyRV" /&gt;&lt;h1 id=&#34;fazyrv&#34;&gt;
+        <guid>http://localhost:1313/p/community-spotlight-fazyrv/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2024/spotlight/fazyrv/fazyrv.png" alt="Featured image of post Community Spotlight - FazyRV" /&gt;&lt;h1 id=&#34;fazyrv&#34;&gt;
     &lt;a href=&#34;#fazyrv&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     FazyRV
-&lt;/h1&gt;&lt;p&gt;Welcome to another &lt;a class=&#34;link&#34; href=&#34;http://blog.yosyshq.com/tags/community-spotlight/&#34; &gt;community spotlight&lt;/a&gt; article where we shine a light on open source EDA-related projects. If you want to &lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSdIEgu6FJZam0-V3PMTjw-eDebJdg_JuIlN4MkLNDr4vs-a5A/viewform?usp=sf_link&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&lt;/h1&gt;&lt;p&gt;Welcome to another &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/tags/community-spotlight/&#34; &gt;community spotlight&lt;/a&gt; article where we shine a light on open source EDA-related projects. If you want to &lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSdIEgu6FJZam0-V3PMTjw-eDebJdg_JuIlN4MkLNDr4vs-a5A/viewform?usp=sf_link&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;submit a project, please do so here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;FazyRV is a minimal-area RISC-V core that scales with your needs. It allows you to adapt the data path width to process smaller 1, 2, 4, or 8-bit &lt;em&gt;chunks&lt;/em&gt; of the 32-bit operands each clock cycle. In addition, each data path width can be combined with FazyRV&amp;rsquo;s manifold variants to trade area with performance and find the best-fitting configuration for your system requirements and used technology. FazyRV avoids hand optimizations at the gate level to increase readability and ease modifications, such as adding custom instruction extensions.&lt;/p&gt;
 &lt;h1 id=&#34;meinhard-kissichs-bio&#34;&gt;
     &lt;a href=&#34;#meinhard-kissichs-bio&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     Meinhard Kissich&amp;rsquo;s Bio
-&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2024/spotlight/fazyrv/meinhard.jpg&#34;
+&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2024/spotlight/fazyrv/meinhard.jpg&#34;
 	
 	
 	
@@ -571,7 +571,7 @@ advantage of the many green spaces, too.&lt;/p&gt;
     What makes you excited about FazyRV?
 &lt;/h1&gt;&lt;p&gt;FazyRV allows scaling the core to the project&amp;rsquo;s needs in a way that was not available to me before. The fine-grained options can be used to explore the design space and find the best area vs. performance trade-off for the system requirements and target technology. Assume the target technology does not have dual-read-port BRAM primitives available without some area overhead. In this case, you can choose an implementation that serially reads the operands at the expense of one additional clock cycle per instruction. Then, you can synthesize the data path to a width that fits your timing requirements. If it is on edge, you may also experiment with a variant that uses a bypass multiplexer and can save one clock cycle on operand loads. All that is done by just playing around with Verilog parameters.&lt;/p&gt;
 &lt;p&gt;Let us delve into a practical implementation by plotting the Mandelbrot set. The comparison below illustrates the performance disparity when using different chunk sizes. While the variant with an 8-bit chunk size delivers the highest performance, it also results in the largest design, as depicted in the plot at the top.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2024/spotlight/fazyrv/mandelbrot.gif&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2024/spotlight/fazyrv/mandelbrot.gif&#34;
 	
 	
 	
@@ -609,14 +609,14 @@ advantage of the many green spaces, too.&lt;/p&gt;
         </item>
         <item>
         <title>Community Spotlight - Surfer</title>
-        <link>http://blog.yosyshq.com/p/community-spotlight-surfer/</link>
+        <link>http://localhost:1313/p/community-spotlight-surfer/</link>
         <pubDate>Mon, 27 Nov 2023 13:26:31 +0100</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/community-spotlight-surfer/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2023/spotlight/surfer/surfer.png" alt="Featured image of post Community Spotlight - Surfer" /&gt;&lt;h1 id=&#34;surfer&#34;&gt;
+        <guid>http://localhost:1313/p/community-spotlight-surfer/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2023/spotlight/surfer/surfer.png" alt="Featured image of post Community Spotlight - Surfer" /&gt;&lt;h1 id=&#34;surfer&#34;&gt;
     &lt;a href=&#34;#surfer&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     Surfer
-&lt;/h1&gt;&lt;p&gt;Welcome to another &lt;a class=&#34;link&#34; href=&#34;http://blog.yosyshq.com/tags/community-spotlight/&#34; &gt;community spotlight&lt;/a&gt; article where we shine a light on open source EDA projects. If you want to &lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSdIEgu6FJZam0-V3PMTjw-eDebJdg_JuIlN4MkLNDr4vs-a5A/viewform?usp=sf_link&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&lt;/h1&gt;&lt;p&gt;Welcome to another &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/tags/community-spotlight/&#34; &gt;community spotlight&lt;/a&gt; article where we shine a light on open source EDA projects. If you want to &lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSdIEgu6FJZam0-V3PMTjw-eDebJdg_JuIlN4MkLNDr4vs-a5A/viewform?usp=sf_link&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;submit a project, please do so here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Surfer is a new waveform viewer with a focus on extensibility and a snappy
 (optionally keyboard driven) UI. It runs both natively and in web-assembly, so
@@ -639,7 +639,7 @@ and now compilers instead of actual hardware design. My main project these days 
 software languages.&lt;/p&gt;
 &lt;p&gt;Outside of programming I enjoy some 3d printing, playing flight simulators, as
 well as sailing or skiing when the weather permits.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2023/spotlight/surfer/frans.jpg&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2023/spotlight/surfer/frans.jpg&#34;
 	
 	
 	
@@ -649,7 +649,7 @@ well as sailing or skiing when the weather permits.&lt;/p&gt;
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;I also need to give credit to Lucas who was featured in the &lt;a class=&#34;link&#34; href=&#34;http://blog.yosyshq.com/p/community-spotlight-wal/&#34; &gt;last community
+&lt;p&gt;I also need to give credit to Lucas who was featured in the &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/community-spotlight-wal/&#34; &gt;last community
 spotlight&lt;/a&gt;, and my PhD advisor Oscar who have
 contributed a ton of features and fixes to the project.&lt;/p&gt;
 &lt;h1 id=&#34;what-motivated-you-to-make-surfer&#34;&gt;
@@ -700,7 +700,7 @@ doing that in &lt;code&gt;gtkwave&lt;/code&gt;, the Surfer version where you can
 &lt;code&gt;struct&lt;/code&gt;s, view individual &lt;code&gt;enum&lt;/code&gt; variants and translate sub-fields as you please
 is a game changer.&lt;/p&gt;
 &lt;p&gt;Below is an image and a quick demo video showing it off
-&lt;img src=&#34;http://blog.yosyshq.com/static-2023/spotlight/surfer/surfer.png&#34;
+&lt;img src=&#34;http://localhost:1313/static-2023/spotlight/surfer/surfer.png&#34;
 	
 	
 	
@@ -720,7 +720,7 @@ is a game changer.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;p&gt;Another really cool translator is the RISC-V opcode translator shown below&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2023/spotlight/surfer/riscv_opcode_translation.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2023/spotlight/surfer/riscv_opcode_translation.png&#34;
 	
 	
 	
@@ -812,20 +812,20 @@ Clash.&lt;/p&gt;
         </item>
         <item>
         <title>Community Spotlight - WAL</title>
-        <link>http://blog.yosyshq.com/p/community-spotlight-wal/</link>
+        <link>http://localhost:1313/p/community-spotlight-wal/</link>
         <pubDate>Mon, 25 Sep 2023 13:26:31 +0100</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/community-spotlight-wal/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2023/spotlight/wal-pipeline.png" alt="Featured image of post Community Spotlight - WAL" /&gt;&lt;h1 id=&#34;wal&#34;&gt;
+        <guid>http://localhost:1313/p/community-spotlight-wal/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2023/spotlight/wal-pipeline.png" alt="Featured image of post Community Spotlight - WAL" /&gt;&lt;h1 id=&#34;wal&#34;&gt;
     &lt;a href=&#34;#wal&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     WAL
-&lt;/h1&gt;&lt;p&gt;Welcome to another &lt;a class=&#34;link&#34; href=&#34;http://blog.yosyshq.com/tags/community-spotlight/&#34; &gt;community spotlight&lt;/a&gt; article where we shine a light on open source EDA projects. If you want to &lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSdIEgu6FJZam0-V3PMTjw-eDebJdg_JuIlN4MkLNDr4vs-a5A/viewform?usp=sf_link&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&lt;/h1&gt;&lt;p&gt;Welcome to another &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/tags/community-spotlight/&#34; &gt;community spotlight&lt;/a&gt; article where we shine a light on open source EDA projects. If you want to &lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSdIEgu6FJZam0-V3PMTjw-eDebJdg_JuIlN4MkLNDr4vs-a5A/viewform?usp=sf_link&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;submit a project, please do so here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Waveform Analysis Language (WAL) is a programming language for complex waveform analysis and EDA tool development.&lt;/p&gt;
 &lt;h1 id=&#34;lucas-klemmers-bio&#34;&gt;
     &lt;a href=&#34;#lucas-klemmers-bio&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     Lucas Klemmer&amp;rsquo;s Bio
-&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2023/spotlight/lucas.png&#34;
+&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2023/spotlight/lucas.png&#34;
 	
 	
 	
@@ -870,20 +870,20 @@ Moreover, the hardware domain requires a bit more work to win people for new ide
         </item>
         <item>
         <title>Community Spotlight - AutoSVA</title>
-        <link>http://blog.yosyshq.com/p/community-spotlight-autosva/</link>
+        <link>http://localhost:1313/p/community-spotlight-autosva/</link>
         <pubDate>Wed, 10 May 2023 13:26:31 +0100</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/community-spotlight-autosva/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2022/spotlight/spotlight.png" alt="Featured image of post Community Spotlight - AutoSVA" /&gt;&lt;h1 id=&#34;autosva&#34;&gt;
+        <guid>http://localhost:1313/p/community-spotlight-autosva/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2022/spotlight/spotlight.png" alt="Featured image of post Community Spotlight - AutoSVA" /&gt;&lt;h1 id=&#34;autosva&#34;&gt;
     &lt;a href=&#34;#autosva&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     AutoSVA
-&lt;/h1&gt;&lt;p&gt;Welcome to another &lt;a class=&#34;link&#34; href=&#34;http://blog.yosyshq.com/tags/community-spotlight/&#34; &gt;community spotlight&lt;/a&gt; article where we shine a light on open source EDA projects. If you want to &lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSdIEgu6FJZam0-V3PMTjw-eDebJdg_JuIlN4MkLNDr4vs-a5A/viewform?usp=sf_link&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&lt;/h1&gt;&lt;p&gt;Welcome to another &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/tags/community-spotlight/&#34; &gt;community spotlight&lt;/a&gt; article where we shine a light on open source EDA projects. If you want to &lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSdIEgu6FJZam0-V3PMTjw-eDebJdg_JuIlN4MkLNDr4vs-a5A/viewform?usp=sf_link&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;submit a project, please do so here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;AutoSVA makes Formal Property Verification (FPV) more accesible for hardware designers.&lt;/p&gt;
 &lt;h1 id=&#34;marcelo-veras-bio&#34;&gt;
     &lt;a href=&#34;#marcelo-veras-bio&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     Marcelo Vera&amp;rsquo;s Bio
-&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2023/spotlight/marcelo.jpeg&#34;
+&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2023/spotlight/marcelo.jpeg&#34;
 	
 	
 	
@@ -931,20 +931,20 @@ Thus, open-sourcing makes the most sense when the goal is to get people to use y
         </item>
         <item>
         <title>Community Spotlight - sv2v</title>
-        <link>http://blog.yosyshq.com/p/community-spotlight-sv2v/</link>
+        <link>http://localhost:1313/p/community-spotlight-sv2v/</link>
         <pubDate>Mon, 13 Feb 2023 13:26:31 +0100</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/community-spotlight-sv2v/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2022/spotlight/spotlight.png" alt="Featured image of post Community Spotlight - sv2v" /&gt;&lt;h1 id=&#34;sv2v&#34;&gt;
+        <guid>http://localhost:1313/p/community-spotlight-sv2v/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2022/spotlight/spotlight.png" alt="Featured image of post Community Spotlight - sv2v" /&gt;&lt;h1 id=&#34;sv2v&#34;&gt;
     &lt;a href=&#34;#sv2v&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     sv2v
-&lt;/h1&gt;&lt;p&gt;Welcome to another &lt;a class=&#34;link&#34; href=&#34;http://blog.yosyshq.com/tags/community-spotlight/&#34; &gt;community spotlight&lt;/a&gt; article where we shine a light on open source EDA projects. If you want to &lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSdIEgu6FJZam0-V3PMTjw-eDebJdg_JuIlN4MkLNDr4vs-a5A/viewform?usp=sf_link&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&lt;/h1&gt;&lt;p&gt;Welcome to another &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/tags/community-spotlight/&#34; &gt;community spotlight&lt;/a&gt; article where we shine a light on open source EDA projects. If you want to &lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSdIEgu6FJZam0-V3PMTjw-eDebJdg_JuIlN4MkLNDr4vs-a5A/viewform?usp=sf_link&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;submit a project, please do so here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;sv2v converts SystemVerilog (IEEE 1800-2017) to Verilog (IEEE 1364-2005), with an emphasis on supporting synthesizable language constructs.&lt;/p&gt;
 &lt;h1 id=&#34;zachary-snows-bio&#34;&gt;
     &lt;a href=&#34;#zachary-snows-bio&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     Zachary Snow&amp;rsquo;s Bio
-&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2023/spotlight/zachary.png&#34;
+&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2023/spotlight/zachary.png&#34;
 	
 	
 	
@@ -993,11 +993,11 @@ Thus, open-sourcing makes the most sense when the goal is to get people to use y
         </item>
         <item>
         <title>Community Spotlight - Tbengy</title>
-        <link>http://blog.yosyshq.com/p/community-spotlight-tbengy/</link>
+        <link>http://localhost:1313/p/community-spotlight-tbengy/</link>
         <pubDate>Wed, 14 Dec 2022 10:23:57 +0100</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/community-spotlight-tbengy/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2022/spotlight/spotlight.png" alt="Featured image of post Community Spotlight - Tbengy" /&gt;&lt;h1 id=&#34;tbengy&#34;&gt;
+        <guid>http://localhost:1313/p/community-spotlight-tbengy/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2022/spotlight/spotlight.png" alt="Featured image of post Community Spotlight - Tbengy" /&gt;&lt;h1 id=&#34;tbengy&#34;&gt;
     &lt;a href=&#34;#tbengy&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     Tbengy
 &lt;/h1&gt;&lt;p&gt;Welcome to the first in a series of short articles where we shine the light on open source EDA projects. If you want to &lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSdIEgu6FJZam0-V3PMTjw-eDebJdg_JuIlN4MkLNDr4vs-a5A/viewform?usp=sf_link&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -1009,7 +1009,7 @@ Thus, open-sourcing makes the most sense when the goal is to get people to use y
 &lt;h1 id=&#34;prasad-pandits-bio&#34;&gt;
     &lt;a href=&#34;#prasad-pandits-bio&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     Prasad Pandit&amp;rsquo;s Bio
-&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2022/spotlight/prasad.jpg&#34;
+&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2022/spotlight/prasad.jpg&#34;
 	
 	
 	

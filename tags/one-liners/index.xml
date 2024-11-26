@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>One Liners on YosysHQ Blog</title>
-        <link>http://blog.yosyshq.com/tags/one-liners/</link>
+        <link>http://localhost:1313/tags/one-liners/</link>
         <description>Recent content in One Liners on YosysHQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Mon, 12 Jun 2023 16:52:39 +0200</lastBuildDate><atom:link href="http://blog.yosyshq.com/tags/one-liners/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 12 Jun 2023 16:52:39 +0200</lastBuildDate><atom:link href="http://localhost:1313/tags/one-liners/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Yosys One Liners - Rename</title>
-        <link>http://blog.yosyshq.com/p/yosys-one-liners-rename/</link>
+        <link>http://localhost:1313/p/yosys-one-liners-rename/</link>
         <pubDate>Mon, 12 Jun 2023 16:52:39 +0200</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/yosys-one-liners-rename/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2023/oneliners.jpeg" alt="Featured image of post Yosys One Liners - Rename" /&gt;&lt;p&gt;Scenario: you&amp;rsquo;re developing some Verilog RTL and after synthesis the ASIC tools you&amp;rsquo;re using fail on the design! It won&amp;rsquo;t accept square brackets in the input!&lt;/p&gt;
+        <guid>http://localhost:1313/p/yosys-one-liners-rename/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2023/oneliners.jpeg" alt="Featured image of post Yosys One Liners - Rename" /&gt;&lt;p&gt;Scenario: you&amp;rsquo;re developing some Verilog RTL and after synthesis the ASIC tools you&amp;rsquo;re using fail on the design! It won&amp;rsquo;t accept square brackets in the input!&lt;/p&gt;
 &lt;p&gt;Here&amp;rsquo;s the DUT:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;module test(
     input   wire [7:0] a,
@@ -64,11 +64,11 @@ grep test out.v
         </item>
         <item>
         <title>Yosys One Liners - AXI</title>
-        <link>http://blog.yosyshq.com/p/yosys-one-liners-axi/</link>
+        <link>http://localhost:1313/p/yosys-one-liners-axi/</link>
         <pubDate>Mon, 17 Apr 2023 13:25:38 +0200</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/yosys-one-liners-axi/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2023/oneliners.jpeg" alt="Featured image of post Yosys One Liners - AXI" /&gt;&lt;p&gt;The AXI spec says &amp;ldquo;On Manager and Subordinate interfaces, there must be no combinatorial paths between input and output signals.&amp;rdquo; If we have a design containing an AXI Manager or Subordinate as netlist (i.e. post &lt;code&gt;proc&lt;/code&gt;) and the AXI ports contain &lt;code&gt;axi_&lt;/code&gt; we can check this automatically using this Yosys one liner:&lt;/p&gt;
+        <guid>http://localhost:1313/p/yosys-one-liners-axi/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2023/oneliners.jpeg" alt="Featured image of post Yosys One Liners - AXI" /&gt;&lt;p&gt;The AXI spec says &amp;ldquo;On Manager and Subordinate interfaces, there must be no combinatorial paths between input and output signals.&amp;rdquo; If we have a design containing an AXI Manager or Subordinate as netlist (i.e. post &lt;code&gt;proc&lt;/code&gt;) and the AXI ports contain &lt;code&gt;axi_&lt;/code&gt; we can check this automatically using this Yosys one liner:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;flatten; select -assert-none i:*axi_* %coe* o:*axi_* %cie* %i
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;If that fails we can use &lt;code&gt;show i:*axi_* %coe* o:*axi_* %cie* %i&lt;/code&gt; to then see the combinational path (or using dump/printattrs/select -list instead of show when the design is too large for show).&lt;/p&gt;

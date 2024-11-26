@@ -2,20 +2,103 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>YosysHQ Blog</title>
-        <link>http://blog.yosyshq.com/</link>
+        <link>http://localhost:1313/</link>
         <description>Recent content on YosysHQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Wed, 17 Jul 2024 16:00:00 +0100</lastBuildDate><atom:link href="http://blog.yosyshq.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 05 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Tabby CAD Suite version 20241105 released!</title>
+        <link>http://localhost:1313/p/tabby-cad-suite-version-20241105-released/</link>
+        <pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/tabby-cad-suite-version-20241105-released/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2023/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20241105 released!" /&gt;&lt;p&gt;The November release of Tabby CAD Suite is now available for download. Notable changes in this version include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;String attributes are represented more efficiently in the in-memory RTLIL netlist, using a different implementation than bit vector attributes. We have observed reductions in peak memory usage of up to 30% for real world designs.&lt;/li&gt;
+&lt;li&gt;For plugin maintainers, this means some breaking changes if you were directly accessing the &lt;code&gt;bits&lt;/code&gt; member of an &lt;code&gt;RTLIL::Const&lt;/code&gt;. The &lt;code&gt;bits&lt;/code&gt; member has been removed. To access any attribute as a bit vector, use the &lt;code&gt;bits()&lt;/code&gt; method instead, which returns a const iterator. To modify a &lt;code&gt;Const&lt;/code&gt;, you can call &lt;code&gt;std::vector&amp;amp;lt;RTLIL::State&amp;gt;&amp;amp; get_bits()&lt;/code&gt; which forces the implementation to a bit vector. To get the number of bits, use the new &lt;code&gt;Const::size()&lt;/code&gt; method instead of &lt;code&gt;bits.size()&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In other YosysHQ news:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;After a long summer break, &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/yug&#34; &gt;Yosys Users Group&lt;/a&gt; meetings have resumed again. Our last meeting on October 29th had Katharina CeesaySeitz from ETH Zürich present her work on using special netlist transformations in a custom Yosys pass in combination with formal verification to detect microarchitectural information leakage via hardware timing side channels. If you&amp;rsquo;d like to be notified of our next YUG meeting, subscribe to our &lt;a class=&#34;link&#34; href=&#34;https://www.yosyshq.com/newsletter&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;newsletter&lt;/a&gt;! Watch her talk on our &lt;a class=&#34;link&#34; href=&#34;https://www.youtube.com/watch?v=Kxp-5kNMt40&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Youtube channel&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Happy November,&lt;/p&gt;
+&lt;p&gt;The YosysHQ Team&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Tabby CAD Suite version 20241017 released!</title>
+        <link>http://localhost:1313/p/tabby-cad-suite-version-20241017-released/</link>
+        <pubDate>Thu, 17 Oct 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/tabby-cad-suite-version-20241017-released/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2023/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20241017 released!" /&gt;&lt;p&gt;The October release of Tabby CAD Suite is now available for download. Notable changes in this version include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Fixed an issue in SBY that could lead to the wrong hierarchical path being printed for an assertion failure if multiple instances of the same module exist in the design.&lt;/li&gt;
+&lt;li&gt;Builds for &lt;a class=&#34;link&#34; href=&#34;https://drive.google.com/drive/folders/1IA4oTVJOsj1V2-Jp4qask-_ZUcBDcmZU?usp=drive_link&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Macs with Apple silicon&lt;/a&gt; will now be included in the releases.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In other YosysHQ news:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Our team will be gathering for our first in-person get-together in Vienna next week. Please excuse any delayed response times as folks zip across the globe!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Happy October,&lt;/p&gt;
+&lt;p&gt;The YosysHQ Team&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Tabby CAD Suite version 20240903 released!</title>
+        <link>http://localhost:1313/p/tabby-cad-suite-version-20240903-released/</link>
+        <pubDate>Tue, 03 Sep 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/tabby-cad-suite-version-20240903-released/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2023/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20240903 released!" /&gt;&lt;p&gt;The September release of Tabby CAD Suite is now available for download. Notable changes in this version include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;synth_nanoexplore&lt;/code&gt; adds experimental synthesis support for the NanoXplore NG-Ultra radiation-hardened FPGA family.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In other YosysHQ news:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Matt attended ORConf in Sweden and met with members of the community and YosysHQ customers. All the talks have been published already and we’re sure you’ll find something that interests you: &lt;a class=&#34;link&#34; href=&#34;https://fossi-foundation.org/orconf/2024&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://fossi-foundation.org/orconf/2024&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Happy September,&lt;/p&gt;
+&lt;p&gt;The YosysHQ Team&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Tabby CAD Suite version 20240806 released!</title>
+        <link>http://localhost:1313/p/tabby-cad-suite-version-20240806-released/</link>
+        <pubDate>Tue, 06 Aug 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/tabby-cad-suite-version-20240806-released/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2023/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20240806 released!" /&gt;&lt;p&gt;The August release of Tabby CAD Suite is now available for download in &lt;a class=&#34;link&#34; href=&#34;https://drive.google.com/drive/folders/1XfdX1XCn5qeBvtdxjWuo2cUyyqAC4PiA?usp=sharing&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Releases&lt;/a&gt;. Notable changes in this version include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Documentation in PDF format is now included with Tabby CAD Suite downloads, in case you are not able to access our &lt;a class=&#34;link&#34; href=&#34;https://yosyshq.readthedocs.io/en/latest/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;online documentation&lt;/a&gt; or need to look up an old version.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In other YosysHQ news:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Recordings of the talks at this year&amp;rsquo;s Free Silicon Conference are now &lt;a class=&#34;link&#34; href=&#34;https://peertube6.f-si.org/c/fsic2024/videos&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;online&lt;/a&gt;! Check out &lt;a class=&#34;link&#34; href=&#34;https://peertube6.f-si.org/w/nLjx998SVEuJPQRqbSVBbM&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;the opening day keynote from our CSO Matt&lt;/a&gt;, or &lt;a class=&#34;link&#34; href=&#34;https://peertube6.f-si.org/w/p1cAaHTZY39bpaQ9pVbaXk&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;this talk from researchers at ETH Zürich about how to get competitive performance out of the Yosys+OpenRoad ASIC flow&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Happy August,&lt;/p&gt;
+&lt;p&gt;The YosysHQ Team&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Community Spotlight - Teaching with Open Source Tools</title>
-        <link>http://blog.yosyshq.com/p/community-spotlight-teaching-with-open-source-tools/</link>
+        <link>http://localhost:1313/p/community-spotlight-teaching-with-open-source-tools/</link>
         <pubDate>Wed, 17 Jul 2024 16:00:00 +0100</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/community-spotlight-teaching-with-open-source-tools/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2024/spotlight/hsc/hsc.png" alt="Featured image of post Community Spotlight - Teaching with Open Source Tools" /&gt;&lt;h1 id=&#34;teaching-with-open-source-tools&#34;&gt;
+        <guid>http://localhost:1313/p/community-spotlight-teaching-with-open-source-tools/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2024/spotlight/hsc/hsc.png" alt="Featured image of post Community Spotlight - Teaching with Open Source Tools" /&gt;&lt;h1 id=&#34;teaching-with-open-source-tools&#34;&gt;
     &lt;a href=&#34;#teaching-with-open-source-tools&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     Teaching with Open Source Tools
-&lt;/h1&gt;&lt;p&gt;Welcome to another &lt;a class=&#34;link&#34; href=&#34;http://blog.yosyshq.com/tags/community-spotlight/&#34; &gt;community spotlight&lt;/a&gt; article where we shine a light on open source EDA-related projects. If you want to &lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSdIEgu6FJZam0-V3PMTjw-eDebJdg_JuIlN4MkLNDr4vs-a5A/viewform?usp=sf_link&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&lt;/h1&gt;&lt;p&gt;Welcome to another &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/tags/community-spotlight/&#34; &gt;community spotlight&lt;/a&gt; article where we shine a light on open source EDA-related projects. If you want to &lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSdIEgu6FJZam0-V3PMTjw-eDebJdg_JuIlN4MkLNDr4vs-a5A/viewform?usp=sf_link&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;submit a project, please do so here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;This post recounts experiences from using the Open Source Tools for teaching! Many people have wondered how stable the tools are and whether they can be used in classes. Here is one experience, from UC Santa Cruz!&lt;/p&gt;
 &lt;h1 id=&#34;dustin-richmond-bio&#34;&gt;
@@ -195,12 +278,33 @@ they&amp;rsquo;re in repositories, but not in a public form yet.&lt;/p&gt;
 </description>
         </item>
         <item>
+        <title>Tabby CAD Suite version 20240709 released!</title>
+        <link>http://localhost:1313/p/tabby-cad-suite-version-20240709-released/</link>
+        <pubDate>Tue, 09 Jul 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/tabby-cad-suite-version-20240709-released/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2023/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20240709 released!" /&gt;&lt;p&gt;The July release of Tabby CAD Suite is now available for download. This month&amp;rsquo;s notable changes mainly affect the build process, so are not relevant if you download our binaries. For those of you subscribing to the YosysHQ Verific Patch and building from source:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;We have reorganized the build flags for compiling with Verific to try to support more flavors of Verific (more documentation to follow). We have tried to keep existing configurations working, but if you encounter any build issues when updating to the latest release, try a full clean (&lt;code&gt;make clean&lt;/code&gt; and &lt;code&gt;make clean-abc&lt;/code&gt;) and check if you need to set any of the new &lt;!-- raw HTML omitted --&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/YosysHQ/yosys/pull/4459&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;ENABLE_VERIFIC_*&lt;/a&gt;&lt;!-- raw HTML omitted --&gt; flags in your &lt;!-- raw HTML omitted --&gt;Makefile.conf&lt;!-- raw HTML omitted --&gt;.&lt;/li&gt;
+&lt;li&gt;The minimum supported C++ standard version has been updated to C++17. The compiler flags in the Makefile have been changed to reflect this, but if you are manually setting an older flag, you may need to update your configuration.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In other YosysHQ news:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The recordings of the FPGA Lightning talks from our last Yosys Users Group meeting are now online! Check them out on &lt;a class=&#34;link&#34; href=&#34;https://www.youtube.com/@YosysHQ/videos&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;our youtube channel&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Happy July,&lt;/p&gt;
+&lt;p&gt;The YosysHQ Team&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Community Spotlight - MIRMIS</title>
-        <link>http://blog.yosyshq.com/p/community-spotlight-mirmis/</link>
+        <link>http://localhost:1313/p/community-spotlight-mirmis/</link>
         <pubDate>Wed, 12 Jun 2024 16:00:00 +0100</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/community-spotlight-mirmis/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2024/spotlight/mirmis/esa-hero.bmp" alt="Featured image of post Community Spotlight - MIRMIS" /&gt;&lt;h1 id=&#34;mirmis&#34;&gt;
+        <guid>http://localhost:1313/p/community-spotlight-mirmis/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2024/spotlight/mirmis/esa-hero.bmp" alt="Featured image of post Community Spotlight - MIRMIS" /&gt;&lt;h1 id=&#34;mirmis&#34;&gt;
     &lt;a href=&#34;#mirmis&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     MIRMIS
 &lt;/h1&gt;&lt;p&gt;The Modular Infrared Molecules and Ices Sensor (&lt;!-- raw HTML omitted --&gt;MIRMIS&lt;!-- raw HTML omitted --&gt;) is a
@@ -215,7 +319,7 @@ three sensors—&lt;!-- raw HTML omitted --&gt;TIRI&lt;!-- raw HTML omitted --&g
 pristine comet to measure its structure, chemical composition, and temperature,
 allowing researchers to gain insight into the formation of the Solar system.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2024/spotlight/mirmis/vibe.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2024/spotlight/mirmis/vibe.png&#34;
 	
 	
 	
@@ -242,7 +346,7 @@ tools, including SymbiYosys for &lt;a class=&#34;link&#34; href=&#34;https://en.
     &gt;safety and liveness property&lt;/a&gt; checking and
 reachability checking.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2024/spotlight/mirmis/ltm.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2024/spotlight/mirmis/ltm.png&#34;
 	
 	
 	
@@ -298,7 +402,7 @@ Oxford, where it has a range of space-related facilities including cleanrooms,
 a variety of vacuum chambers, metrology, spectroscopy, optics, and
 vibration-testing facilities, and electronics and mechanical workshops.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2024/spotlight/mirmis/cirs-em.jpg&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2024/spotlight/mirmis/cirs-em.jpg&#34;
 	
 	
 	
@@ -369,7 +473,7 @@ before having to build in triple redundancy and other safeguards against
 radiation flipping a bit in a register or transiently changing the value on a
 signal line.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2024/spotlight/mirmis/efm.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2024/spotlight/mirmis/efm.png&#34;
 	
 	
 	
@@ -401,7 +505,7 @@ including MIRMIS as well as the other instruments.&lt;/p&gt;
 &lt;h1 id=&#34;liam-mcsherrys-bio&#34;&gt;
     &lt;a href=&#34;#liam-mcsherrys-bio&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     Liam McSherry&amp;rsquo;s bio
-&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2024/spotlight/mirmis/mcsherry.png&#34;
+&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2024/spotlight/mirmis/mcsherry.png&#34;
 	
 	
 	
@@ -434,21 +538,67 @@ advantage of the many green spaces, too.&lt;/p&gt;
 </description>
         </item>
         <item>
+        <title>Tabby CAD Suite version 20240607 released!</title>
+        <link>http://localhost:1313/p/tabby-cad-suite-version-20240607-released/</link>
+        <pubDate>Fri, 07 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/tabby-cad-suite-version-20240607-released/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2023/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20240607 released!" /&gt;&lt;p&gt;The June release of Tabby CAD Suite is now available for download. There are no notable user-facing changes in this version, as our dev team has been mostly busy with a revamp of our CI infrastructure.&lt;/p&gt;
+&lt;p&gt;In other YosysHQ news:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Prof. Andrew Kahng&amp;rsquo;s keynote at the &lt;a class=&#34;link&#34; href=&#34;https://efcl.ethz.ch/efcl-summer-school.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;EFCL summer school&lt;/a&gt; was on accelerating innovation with open source tools. Of particular interest was using the results from open source tools as a proxy for the proprietary tools. For more info and links to Andrew’s slides - check &lt;a class=&#34;link&#34; href=&#34;https://www.linkedin.com/feed/update/urn:li:activity:7205509547061424128/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Matt’s report on linkedin&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;From the 11th to the 13th of June our CEO Nina will be at &lt;a class=&#34;link&#34; href=&#34;https://indico.cern.ch/event/1381060/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;CERN for the FPGA developers Forum&lt;/a&gt; - if you’re there please say hello.&lt;/li&gt;
+&lt;li&gt;Our CSO Matt will be in Paris at the &lt;a class=&#34;link&#34; href=&#34;https://wiki.f-si.org/index.php/FSiC2024&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Free Silicon Conference&lt;/a&gt; from the 19th to the 21st of June. If you’re there come and say hello!&lt;/li&gt;
+&lt;li&gt;For the Yosys User’s Group #7 we had FPGA lightning talks. Watch them all &lt;a class=&#34;link&#34; href=&#34;https://www.youtube.com/watch?v=wZiocG8DHfE&amp;amp;list=PL-ggbobZGIQuMGBkQgubVbJ1jffe2k18O&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;here&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Happy June,&lt;/p&gt;
+&lt;p&gt;The YosysHQ Team&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Tabby CAD Suite version 20240508 released!</title>
+        <link>http://localhost:1313/p/tabby-cad-suite-version-20240508-released/</link>
+        <pubDate>Wed, 08 May 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/tabby-cad-suite-version-20240508-released/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2023/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20240508 released!" /&gt;&lt;p&gt;The May release of Tabby CAD Suite is now available for download. Notable changes in this version include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The smtbmc engine can now output information on used assumptions in each step, to help debug failing cover properties. To enable this feature, add the &lt;code&gt;--track-assumes &lt;/code&gt;option in the &lt;code&gt;[engines]&lt;/code&gt; section like this: &lt;br&gt;
+&lt;code&gt;smtbmc yices -- --track-assumes&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In other YosysHQ news:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Our next Yosys Users Group meeting will be FPGA lightning talks! Join us on Monday, May 27th at 18:00 CEST &lt;a class=&#34;link&#34; href=&#34;https://meet.jit.si/yosys-users-group&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;at this link&lt;/a&gt;. It is also still possible to &lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/forms/d/1gKbUfBqs5eMpPQztjnyAxx75a8SGbjkXN-BR2Nn1XF0/edit&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;submit a talk&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Our latest &lt;a class=&#34;link&#34; href=&#34;https://blog.yosyshq.com/p/community-spotlight-manta/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;community spotlight is about Manta&lt;/a&gt;, a vendor-agnostic logic analyzer and virtual interface for FPGAs.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Happy May,&lt;/p&gt;
+&lt;p&gt;The YosysHQ Team&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Community Spotlight - Manta</title>
-        <link>http://blog.yosyshq.com/p/community-spotlight-manta/</link>
+        <link>http://localhost:1313/p/community-spotlight-manta/</link>
         <pubDate>Tue, 30 Apr 2024 20:30:31 +0100</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/community-spotlight-manta/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2024/spotlight/manta/logo.png" alt="Featured image of post Community Spotlight - Manta" /&gt;&lt;h1 id=&#34;manta&#34;&gt;
+        <guid>http://localhost:1313/p/community-spotlight-manta/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2024/spotlight/manta/logo.png" alt="Featured image of post Community Spotlight - Manta" /&gt;&lt;h1 id=&#34;manta&#34;&gt;
     &lt;a href=&#34;#manta&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     Manta
-&lt;/h1&gt;&lt;p&gt;Welcome to another &lt;a class=&#34;link&#34; href=&#34;http://blog.yosyshq.com/tags/community-spotlight/&#34; &gt;community spotlight&lt;/a&gt; article where we shine a light on open source EDA-related projects. If you want to &lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSdIEgu6FJZam0-V3PMTjw-eDebJdg_JuIlN4MkLNDr4vs-a5A/viewform?usp=sf_link&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&lt;/h1&gt;&lt;p&gt;Welcome to another &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/tags/community-spotlight/&#34; &gt;community spotlight&lt;/a&gt; article where we shine a light on open source EDA-related projects. If you want to &lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSdIEgu6FJZam0-V3PMTjw-eDebJdg_JuIlN4MkLNDr4vs-a5A/viewform?usp=sf_link&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;submit a project, please do so here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Manta is a configurable and approachable tool for FPGA debugging and rapid prototyping. It works by letting you configure cores that you instantiate in your FPGA design, and operate from a host machine connected over either UART or Ethernet. These cores can provide a logic analyzer, or direct access to registers or memory on the FPGA. Manta is written in Python, which allows its host-side to code to run on nearly any platform (including the web!). The code on the FPGA side is written in Amaranth HDL which exports to vendor-agnostic Verilog-2001, allowing it to run on nearly any FPGA.&lt;/p&gt;
 &lt;h1 id=&#34;fischer-moseleys-bio&#34;&gt;
     &lt;a href=&#34;#fischer-moseleys-bio&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     Fischer Moseley&amp;rsquo;s Bio
-&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2024/spotlight/manta/cart.jpg&#34;
+&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2024/spotlight/manta/cart.jpg&#34;
 	
 	
 	
@@ -485,7 +635,7 @@ advantage of the many green spaces, too.&lt;/p&gt;
     &lt;a href=&#34;#web-terminal&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     Web Terminal
 &lt;/h3&gt;&lt;p&gt;Since Manta can communicate with a host machine over UART, it’s possible to use the Web Serial API to run Manta in the browser, directly from the documentation site:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2024/spotlight/manta/web_terminal.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2024/spotlight/manta/web_terminal.png&#34;
 	
 	
 	
@@ -533,21 +683,59 @@ advantage of the many green spaces, too.&lt;/p&gt;
 </description>
         </item>
         <item>
+        <title>Tabby CAD Suite version 20240410 released!</title>
+        <link>http://localhost:1313/p/tabby-cad-suite-version-20240410-released/</link>
+        <pubDate>Wed, 10 Apr 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/tabby-cad-suite-version-20240410-released/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2023/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20240410 released!" /&gt;&lt;p&gt;The April release of Tabby CAD Suite is now available for download. Notable changes in this version include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;VHDL2019 mode is now available with &lt;code&gt;verific -vhdl2019.&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In other YosysHQ news:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A major rewrite of the &lt;a class=&#34;link&#34; href=&#34;https://yosyshq.readthedocs.io/projects/yosys/en/latest/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Yosys manual&lt;/a&gt; went live recently. Shoutout to our team member Krystine who has been working on this for months and is continuing to make improvements to our documentation!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Happy April,&lt;/p&gt;
+&lt;p&gt;The YosysHQ Team&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Tabby CAD Suite version 20240312 released!</title>
+        <link>http://localhost:1313/p/tabby-cad-suite-version-20240312-released/</link>
+        <pubDate>Sat, 16 Mar 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/tabby-cad-suite-version-20240312-released/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2023/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20240312 released!" /&gt;&lt;p&gt;The March release of Tabby CAD Suite is now available for download. Notable changes in this version include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;You can now query the proof status of properties in a design using &lt;code&gt;sby --status example.sby&lt;/code&gt;. This works as soon as any SBY task was launched, so you can use it to query progress while SBY is still running in another terminal.&lt;/li&gt;
+&lt;li&gt;The abc pdr solver now supports continuing to prove other properties after a counterexample is found using &lt;code&gt;abc --keep-going pdr&lt;/code&gt; in engines.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In other YosysHQ news:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Gabriel Gouvine contributed this &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/logic-locking-with-moosic/&#34; &gt;guest blog post on logic locking&lt;/a&gt; with his Moosic plugin.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Happy March,
+The YosysHQ Team&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Community Spotlight - FazyRV</title>
-        <link>http://blog.yosyshq.com/p/community-spotlight-fazyrv/</link>
+        <link>http://localhost:1313/p/community-spotlight-fazyrv/</link>
         <pubDate>Sun, 10 Mar 2024 20:30:31 +0100</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/community-spotlight-fazyrv/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2024/spotlight/fazyrv/fazyrv.png" alt="Featured image of post Community Spotlight - FazyRV" /&gt;&lt;h1 id=&#34;fazyrv&#34;&gt;
+        <guid>http://localhost:1313/p/community-spotlight-fazyrv/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2024/spotlight/fazyrv/fazyrv.png" alt="Featured image of post Community Spotlight - FazyRV" /&gt;&lt;h1 id=&#34;fazyrv&#34;&gt;
     &lt;a href=&#34;#fazyrv&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     FazyRV
-&lt;/h1&gt;&lt;p&gt;Welcome to another &lt;a class=&#34;link&#34; href=&#34;http://blog.yosyshq.com/tags/community-spotlight/&#34; &gt;community spotlight&lt;/a&gt; article where we shine a light on open source EDA-related projects. If you want to &lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSdIEgu6FJZam0-V3PMTjw-eDebJdg_JuIlN4MkLNDr4vs-a5A/viewform?usp=sf_link&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&lt;/h1&gt;&lt;p&gt;Welcome to another &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/tags/community-spotlight/&#34; &gt;community spotlight&lt;/a&gt; article where we shine a light on open source EDA-related projects. If you want to &lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSdIEgu6FJZam0-V3PMTjw-eDebJdg_JuIlN4MkLNDr4vs-a5A/viewform?usp=sf_link&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;submit a project, please do so here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;FazyRV is a minimal-area RISC-V core that scales with your needs. It allows you to adapt the data path width to process smaller 1, 2, 4, or 8-bit &lt;em&gt;chunks&lt;/em&gt; of the 32-bit operands each clock cycle. In addition, each data path width can be combined with FazyRV&amp;rsquo;s manifold variants to trade area with performance and find the best-fitting configuration for your system requirements and used technology. FazyRV avoids hand optimizations at the gate level to increase readability and ease modifications, such as adding custom instruction extensions.&lt;/p&gt;
 &lt;h1 id=&#34;meinhard-kissichs-bio&#34;&gt;
     &lt;a href=&#34;#meinhard-kissichs-bio&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     Meinhard Kissich&amp;rsquo;s Bio
-&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2024/spotlight/fazyrv/meinhard.jpg&#34;
+&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2024/spotlight/fazyrv/meinhard.jpg&#34;
 	
 	
 	
@@ -571,7 +759,7 @@ advantage of the many green spaces, too.&lt;/p&gt;
     What makes you excited about FazyRV?
 &lt;/h1&gt;&lt;p&gt;FazyRV allows scaling the core to the project&amp;rsquo;s needs in a way that was not available to me before. The fine-grained options can be used to explore the design space and find the best area vs. performance trade-off for the system requirements and target technology. Assume the target technology does not have dual-read-port BRAM primitives available without some area overhead. In this case, you can choose an implementation that serially reads the operands at the expense of one additional clock cycle per instruction. Then, you can synthesize the data path to a width that fits your timing requirements. If it is on edge, you may also experiment with a variant that uses a bypass multiplexer and can save one clock cycle on operand loads. All that is done by just playing around with Verilog parameters.&lt;/p&gt;
 &lt;p&gt;Let us delve into a practical implementation by plotting the Mandelbrot set. The comparison below illustrates the performance disparity when using different chunk sizes. While the variant with an 8-bit chunk size delivers the highest performance, it also results in the largest design, as depicted in the plot at the top.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2024/spotlight/fazyrv/mandelbrot.gif&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2024/spotlight/fazyrv/mandelbrot.gif&#34;
 	
 	
 	
@@ -609,11 +797,11 @@ advantage of the many green spaces, too.&lt;/p&gt;
         </item>
         <item>
         <title>Sky130 SPICE, the KiCad way</title>
-        <link>http://blog.yosyshq.com/p/sky130-kicad-spice/</link>
+        <link>http://localhost:1313/p/sky130-kicad-spice/</link>
         <pubDate>Mon, 12 Feb 2024 19:09:55 -0800</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/sky130-kicad-spice/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2024/sky130-kicad/banner.png" alt="Featured image of post Sky130 SPICE, the KiCad way" /&gt;&lt;p&gt;&lt;em&gt;This guest post is by &lt;a class=&#34;link&#34; href=&#34;https://chaos.social/@lethalbit&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+        <guid>http://localhost:1313/p/sky130-kicad-spice/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2024/sky130-kicad/banner.png" alt="Featured image of post Sky130 SPICE, the KiCad way" /&gt;&lt;p&gt;&lt;em&gt;This guest post is by &lt;a class=&#34;link&#34; href=&#34;https://chaos.social/@lethalbit&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Aki Van Ness&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 &lt;h1 id=&#34;sky130-spice-the-kicad-way&#34;&gt;
     &lt;a href=&#34;#sky130-spice-the-kicad-way&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
@@ -632,7 +820,7 @@ advantage of the many green spaces, too.&lt;/p&gt;
     &gt;kicad-pdk-libs&lt;/a&gt;, a KiCad symbol library that adds schematic symbols for not only the basic building blocks of the Sky130 &lt;a class=&#34;link&#34; href=&#34;https://www.zerotoasiccourse.com/terminology/pdk/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;PDK&lt;/a&gt;, but also SPICE library linkage.&lt;/p&gt;
 &lt;p&gt;With this you can do things as simple as just stubbing out a SPICE simulation for some of the primitive gates, or go down to the transistor level and build gates from scratch and simulate their characteristics!&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2024/sky130-kicad/kicad_nfet.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2024/sky130-kicad/kicad_nfet.png&#34;
 	
 	
 	
@@ -650,7 +838,7 @@ advantage of the many green spaces, too.&lt;/p&gt;
 &lt;/h2&gt;&lt;p&gt;The basic example that almost everyone uses as their first CMOS device is the trusty inverter. As such we will quickly go over it here, if you wish for a more step-by-step guide with additional details, see the kicad-pdk-libs &lt;a class=&#34;link&#34; href=&#34;https://github.com/lethalbit/kicad-pdk-libs/blob/main/docs/intro.md&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;intro&lt;/a&gt; in the docs.&lt;/p&gt;
 &lt;p&gt;All you need to do is to throw a &lt;code&gt;sky130_pfet_01v8&lt;/code&gt; and a &lt;code&gt;sky130_nfet_01v8&lt;/code&gt; on top of each other with their drains facing each other, hook up &lt;code&gt;VCC&lt;/code&gt; and &lt;code&gt;GND&lt;/code&gt; and then join the gates and drains, and just like that, you have an inverter using the primitive Sky130 FET models.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2024/sky130-kicad/inverter_sch.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2024/sky130-kicad/inverter_sch.png&#34;
 	
 	
 	
@@ -661,7 +849,7 @@ advantage of the many green spaces, too.&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;Next set up some way to drive the sim, in my case I did a VDC source and then a VPULSE to drive the inverter, these are built-in to the standard KiCad SPICE library, it should look something like this when done:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2024/sky130-kicad/schema.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2024/sky130-kicad/schema.png&#34;
 	
 	
 	
@@ -675,7 +863,7 @@ advantage of the many green spaces, too.&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-spice&#34; data-lang=&#34;spice&#34;&gt;.tran 100f 100n
 .lib ${PDK_ROOT}/sky130A/libs.tech/ngspice/sky130.lib.spice tt
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;And finally, we&amp;rsquo;re ready to run the sim! Open up KiCad&amp;rsquo;s simulation utility and simply click the &amp;ldquo;Run/Stop Simulation&amp;rdquo; button, if all goes well, the simulation will run and then we can plot the &lt;code&gt;A&lt;/code&gt; and &lt;code&gt;Y&lt;/code&gt; signals.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2024/sky130-kicad/sim_results.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2024/sky130-kicad/sim_results.png&#34;
 	
 	
 	
@@ -705,13 +893,13 @@ advantage of the many green spaces, too.&lt;/p&gt;
         </item>
         <item>
         <title>Yosys User&#39;s Group</title>
-        <link>http://blog.yosyshq.com/p/yosys-users-group/</link>
+        <link>http://localhost:1313/p/yosys-users-group/</link>
         <pubDate>Sun, 04 Feb 2024 12:00:00 +0000</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/yosys-users-group/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2023/yug.jpg" alt="Featured image of post Yosys User&#39;s Group" /&gt;&lt;p&gt;We have recently started a Yosys User&amp;rsquo;s Group. You can see the &lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/document/d/13e8hERQ_eqLQrdtH1WXnGUXDtgyQ8oa_zZWXPHJCiN0/edit#heading=h.dqkvsnhcju2v&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+        <guid>http://localhost:1313/p/yosys-users-group/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2023/yug.jpg" alt="Featured image of post Yosys User&#39;s Group" /&gt;&lt;p&gt;We have recently started a Yosys User&amp;rsquo;s Group. You can see the &lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/document/d/13e8hERQ_eqLQrdtH1WXnGUXDtgyQ8oa_zZWXPHJCiN0/edit#heading=h.dqkvsnhcju2v&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;minutes of our first 4 calls here&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;If you&amp;rsquo;d like to join, then please &lt;a class=&#34;link&#34; href=&#34;http://blog.yosyshq.com/newsletter&#34; &gt;sign up to the newsletter&lt;/a&gt; or follow us on:&lt;/p&gt;
+&lt;p&gt;If you&amp;rsquo;d like to join, then please &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/newsletter&#34; &gt;sign up to the newsletter&lt;/a&gt; or follow us on:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.linkedin.com/company/yosyshq&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;linkedin&lt;/a&gt;,&lt;/li&gt;
@@ -775,11 +963,11 @@ advantage of the many green spaces, too.&lt;/p&gt;
         </item>
         <item>
         <title>Logic Locking with Moosic</title>
-        <link>http://blog.yosyshq.com/p/logic-locking-with-moosic/</link>
+        <link>http://localhost:1313/p/logic-locking-with-moosic/</link>
         <pubDate>Tue, 30 Jan 2024 12:00:00 +0200</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/logic-locking-with-moosic/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2024/locking.png" alt="Featured image of post Logic Locking with Moosic" /&gt;&lt;p&gt;&lt;em&gt;This guest post is by Gabriel Gouvine.&lt;/em&gt;&lt;/p&gt;
+        <guid>http://localhost:1313/p/logic-locking-with-moosic/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2024/locking.png" alt="Featured image of post Logic Locking with Moosic" /&gt;&lt;p&gt;&lt;em&gt;This guest post is by Gabriel Gouvine.&lt;/em&gt;&lt;/p&gt;
 &lt;h1 id=&#34;applying-logic-locking-to-a-tinytapeout-design-with-moosic&#34;&gt;
     &lt;a href=&#34;#applying-logic-locking-to-a-tinytapeout-design-with-moosic&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     Applying logic locking to a TinyTapeout design with Moosic
@@ -789,7 +977,7 @@ For security-conscious designers, countermeasures are necessary.&lt;/p&gt;
 &lt;p&gt;One such countermeasure is logic locking: we are going to lock our design, so that it does not work without a secret key.
 We do it by adding or changing some gates in the design to use the key: if the key is incorrect, the design behaviour will be completely modified.
 This is going to make it harder to reuse the design without authorization (you have to find the key) or to introduce backdoors (you have to understand what it does).&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2024/locking.svg&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2024/locking.svg&#34;
 	
 	
 	
@@ -814,7 +1002,7 @@ Our tool does it by adding Xor and Xnor gates, as shown below, but you can imagi
 If a 0 is set for a Xor gate, or a 1 for a Xnor gate, the design works as before.
 It acts as a countermeasure rather than a cryptographic security.
 Much like software countermeasures it will not stop a determined attacker with unlimited resources, but it&amp;rsquo;s one more thing that an attacker will have to break.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2024/XOR_NXOR_insertion.svg&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2024/XOR_NXOR_insertion.svg&#34;
 	
 	
 	
@@ -831,7 +1019,7 @@ Ultimately, it&amp;rsquo;s a tradeoff between security and performance: for secu
 &lt;p&gt;Just a few percents of the gates locked is almost always enough to completely corrupt the design.
 We can explore the tradeoff with the plugin.
 For example, on this benchmark, locking just 13% of the signals breaks all outputs and all testcases:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2024/pareto_front.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2024/pareto_front.png&#34;
 	
 	
 	
@@ -899,11 +1087,11 @@ Logic locking is an active area of research, and we are happy to provide an open
         </item>
         <item>
         <title>Tabby CAD Suite version 20240116 released!</title>
-        <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20240116-released/</link>
+        <link>http://localhost:1313/p/tabby-cad-suite-version-20240116-released/</link>
         <pubDate>Tue, 16 Jan 2024 00:00:00 +0000</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20240116-released/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2023/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20240116 released!" /&gt;&lt;p&gt;The January release of Tabby CAD Suite is now available for download. Notable changes in this version include:&lt;/p&gt;
+        <guid>http://localhost:1313/p/tabby-cad-suite-version-20240116-released/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2023/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20240116 released!" /&gt;&lt;p&gt;The January release of Tabby CAD Suite is now available for download. Notable changes in this version include:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;You can now pass arguments to tcl scripts from the command line by appending them at the end of the command, separated from the yosys arguments by &amp;ldquo;&amp;ndash;&amp;rdquo;.&lt;/p&gt;
@@ -912,7 +1100,7 @@ Logic locking is an active area of research, and we are happy to provide an open
 &lt;/ul&gt;
 &lt;p&gt;In other YosysHQ news:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;We published a new &lt;a class=&#34;link&#34; href=&#34;http://blog.yosyshq.com/p/community-spotlight-surfer/&#34; &gt;community spotlight by Frans Skarman&lt;/a&gt;. Introducing us to Surfer, which is a new web-based waveform viewer with a focus on extensibility and a snappy user interface.&lt;/li&gt;
+&lt;li&gt;We published a new &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/community-spotlight-surfer/&#34; &gt;community spotlight by Frans Skarman&lt;/a&gt;. Introducing us to Surfer, which is a new web-based waveform viewer with a focus on extensibility and a snappy user interface.&lt;/li&gt;
 &lt;li&gt;We are hiring! If you know anyone currently looking for a job developing EDA tools, let them know about our &lt;a class=&#34;link&#34; href=&#34;https://www.yosyshq.com/jobs&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;jobs page&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
@@ -922,14 +1110,14 @@ The YosysHQ Team&lt;/p&gt;
         </item>
         <item>
         <title>Community Spotlight - Surfer</title>
-        <link>http://blog.yosyshq.com/p/community-spotlight-surfer/</link>
+        <link>http://localhost:1313/p/community-spotlight-surfer/</link>
         <pubDate>Mon, 27 Nov 2023 13:26:31 +0100</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/community-spotlight-surfer/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2023/spotlight/surfer/surfer.png" alt="Featured image of post Community Spotlight - Surfer" /&gt;&lt;h1 id=&#34;surfer&#34;&gt;
+        <guid>http://localhost:1313/p/community-spotlight-surfer/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2023/spotlight/surfer/surfer.png" alt="Featured image of post Community Spotlight - Surfer" /&gt;&lt;h1 id=&#34;surfer&#34;&gt;
     &lt;a href=&#34;#surfer&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     Surfer
-&lt;/h1&gt;&lt;p&gt;Welcome to another &lt;a class=&#34;link&#34; href=&#34;http://blog.yosyshq.com/tags/community-spotlight/&#34; &gt;community spotlight&lt;/a&gt; article where we shine a light on open source EDA projects. If you want to &lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSdIEgu6FJZam0-V3PMTjw-eDebJdg_JuIlN4MkLNDr4vs-a5A/viewform?usp=sf_link&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&lt;/h1&gt;&lt;p&gt;Welcome to another &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/tags/community-spotlight/&#34; &gt;community spotlight&lt;/a&gt; article where we shine a light on open source EDA projects. If you want to &lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSdIEgu6FJZam0-V3PMTjw-eDebJdg_JuIlN4MkLNDr4vs-a5A/viewform?usp=sf_link&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;submit a project, please do so here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Surfer is a new waveform viewer with a focus on extensibility and a snappy
 (optionally keyboard driven) UI. It runs both natively and in web-assembly, so
@@ -952,7 +1140,7 @@ and now compilers instead of actual hardware design. My main project these days 
 software languages.&lt;/p&gt;
 &lt;p&gt;Outside of programming I enjoy some 3d printing, playing flight simulators, as
 well as sailing or skiing when the weather permits.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2023/spotlight/surfer/frans.jpg&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2023/spotlight/surfer/frans.jpg&#34;
 	
 	
 	
@@ -962,7 +1150,7 @@ well as sailing or skiing when the weather permits.&lt;/p&gt;
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;I also need to give credit to Lucas who was featured in the &lt;a class=&#34;link&#34; href=&#34;http://blog.yosyshq.com/p/community-spotlight-wal/&#34; &gt;last community
+&lt;p&gt;I also need to give credit to Lucas who was featured in the &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/community-spotlight-wal/&#34; &gt;last community
 spotlight&lt;/a&gt;, and my PhD advisor Oscar who have
 contributed a ton of features and fixes to the project.&lt;/p&gt;
 &lt;h1 id=&#34;what-motivated-you-to-make-surfer&#34;&gt;
@@ -1013,7 +1201,7 @@ doing that in &lt;code&gt;gtkwave&lt;/code&gt;, the Surfer version where you can
 &lt;code&gt;struct&lt;/code&gt;s, view individual &lt;code&gt;enum&lt;/code&gt; variants and translate sub-fields as you please
 is a game changer.&lt;/p&gt;
 &lt;p&gt;Below is an image and a quick demo video showing it off
-&lt;img src=&#34;http://blog.yosyshq.com/static-2023/spotlight/surfer/surfer.png&#34;
+&lt;img src=&#34;http://localhost:1313/static-2023/spotlight/surfer/surfer.png&#34;
 	
 	
 	
@@ -1033,7 +1221,7 @@ is a game changer.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;p&gt;Another really cool translator is the RISC-V opcode translator shown below&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2023/spotlight/surfer/riscv_opcode_translation.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2023/spotlight/surfer/riscv_opcode_translation.png&#34;
 	
 	
 	
@@ -1125,18 +1313,18 @@ Clash.&lt;/p&gt;
         </item>
         <item>
         <title>Tabby CAD Suite version 20231107 released!</title>
-        <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20231107-released/</link>
+        <link>http://localhost:1313/p/tabby-cad-suite-version-20231107-released/</link>
         <pubDate>Tue, 07 Nov 2023 00:00:00 +0000</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20231107-released/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2023/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20231107 released!" /&gt;&lt;p&gt;The November release of Tabby CAD Suite is now available for download. Notable changes in this version include:&lt;/p&gt;
+        <guid>http://localhost:1313/p/tabby-cad-suite-version-20231107-released/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2023/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20231107 released!" /&gt;&lt;p&gt;The November release of Tabby CAD Suite is now available for download. Notable changes in this version include:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Fixed problems with verific elaboration in VHDL that were introduced in the last release - you should no longer see spurious multiple driver warnings.&lt;/li&gt;
 &lt;li&gt;Memory inference can now recognize (* rom_style = &amp;ldquo;&amp;hellip;&amp;rdquo; *) attributes on data output and address signals (attributes on the data storage register still take precedence, but this allows forcing a style e.g. when inferring ROM from a case statement).&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;In other YosysHQ news:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;We just published a new guest blog post by Theophile Loubiere. He wrote a fun introduction to formal by using SBY to &lt;a class=&#34;link&#34; href=&#34;http://blog.yosyshq.com/p/solving-sudoku-with-sby/&#34; &gt;solve a sudoku&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;We just published a new guest blog post by Theophile Loubiere. He wrote a fun introduction to formal by using SBY to &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/solving-sudoku-with-sby/&#34; &gt;solve a sudoku&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Happy November,
 The YosysHQ Team&lt;/p&gt;
@@ -1144,11 +1332,11 @@ The YosysHQ Team&lt;/p&gt;
         </item>
         <item>
         <title>Solving a Sudoku with SBY and Formal Verification</title>
-        <link>http://blog.yosyshq.com/p/solving-sudoku-with-sby/</link>
+        <link>http://localhost:1313/p/solving-sudoku-with-sby/</link>
         <pubDate>Mon, 06 Nov 2023 12:00:00 +0200</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/solving-sudoku-with-sby/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2023/cover_sby_sudoku.png" alt="Featured image of post Solving a Sudoku with SBY and Formal Verification" /&gt;&lt;p&gt;&lt;em&gt;This guest post is by Theophile Loubiere.&lt;/em&gt;&lt;/p&gt;
+        <guid>http://localhost:1313/p/solving-sudoku-with-sby/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2023/cover_sby_sudoku.png" alt="Featured image of post Solving a Sudoku with SBY and Formal Verification" /&gt;&lt;p&gt;&lt;em&gt;This guest post is by Theophile Loubiere.&lt;/em&gt;&lt;/p&gt;
 &lt;h1 id=&#34;solving-a-sudoku-with-sby-and-formal-verification&#34;&gt;
     &lt;a href=&#34;#solving-a-sudoku-with-sby-and-formal-verification&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     Solving a Sudoku with SBY and Formal Verification
@@ -1352,7 +1540,7 @@ sudoku.v
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;All we have to do is run the following command :&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sby -f sudoku.sby
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;And as you can see&amp;hellip; it fails&amp;hellip; WAIT! WHAT?&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2023/unreached_cover_statement.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2023/unreached_cover_statement.png&#34;
 	
 	
 	
@@ -1375,7 +1563,7 @@ assume(sudoku_grid[1][4]==3); // correct
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;When I visited my grandfather, I handed him the original and copied it onto a paper to solve it myself&amp;hellip; I made a copying error(deep breath)&amp;hellip; At least we stumble upon a unexpected feature : we now know how to identify an unfeasible grid !&lt;/p&gt;
 &lt;p&gt;Now, after correcting my mistake, it works as expected: SBY generates the solution for me!&lt;/p&gt;
 &lt;p&gt;Here&amp;rsquo;s the solution viewed through gtkwave (SBY give you the path of the vcd file):
-&lt;img src=&#34;http://blog.yosyshq.com/static-2023/unreadable_solution.png&#34;
+&lt;img src=&#34;http://localhost:1313/static-2023/unreadable_solution.png&#34;
 	
 	
 	
@@ -1411,11 +1599,11 @@ assume(sudoku_grid[1][4]==3); // correct
         </item>
         <item>
         <title>Tabby CAD Suite version 20231011 released!</title>
-        <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20231011-released/</link>
+        <link>http://localhost:1313/p/tabby-cad-suite-version-20231011-released/</link>
         <pubDate>Wed, 11 Oct 2023 00:00:00 +0000</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20231011-released/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2023/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20231011 released!" /&gt;&lt;p&gt;The October release of Tabby CAD Suite is now available for download. Notable changes in this version include:&lt;/p&gt;
+        <guid>http://localhost:1313/p/tabby-cad-suite-version-20231011-released/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2023/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20231011 released!" /&gt;&lt;p&gt;The October release of Tabby CAD Suite is now available for download. Notable changes in this version include:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Improved identifier resolution when using bind statements in mixed-language projects&lt;/li&gt;
 &lt;li&gt;Respect memory access order semantics when inferring memories with the verific frontend (for simultaneous read and write operations of the same memory location in the same clock cycle, on the same or a different port)&lt;/li&gt;
@@ -1423,7 +1611,7 @@ assume(sudoku_grid[1][4]==3); // correct
 &lt;/ul&gt;
 &lt;p&gt;In other YosysHQ news:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;We just published the 4th in our series of ‘community spotlight’ blog posts. This time we’re featuring &lt;a class=&#34;link&#34; href=&#34;http://blog.yosyshq.com/p/community-spotlight-wal/&#34; &gt;WAL by Lucas Klemmer&lt;/a&gt;. WAL aims to make it easier to analyze complex waveforms.&lt;/li&gt;
+&lt;li&gt;We just published the 4th in our series of ‘community spotlight’ blog posts. This time we’re featuring &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/community-spotlight-wal/&#34; &gt;WAL by Lucas Klemmer&lt;/a&gt;. WAL aims to make it easier to analyze complex waveforms.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Happy October,
 The YosysHQ Team&lt;/p&gt;
@@ -1431,20 +1619,20 @@ The YosysHQ Team&lt;/p&gt;
         </item>
         <item>
         <title>Community Spotlight - WAL</title>
-        <link>http://blog.yosyshq.com/p/community-spotlight-wal/</link>
+        <link>http://localhost:1313/p/community-spotlight-wal/</link>
         <pubDate>Mon, 25 Sep 2023 13:26:31 +0100</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/community-spotlight-wal/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2023/spotlight/wal-pipeline.png" alt="Featured image of post Community Spotlight - WAL" /&gt;&lt;h1 id=&#34;wal&#34;&gt;
+        <guid>http://localhost:1313/p/community-spotlight-wal/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2023/spotlight/wal-pipeline.png" alt="Featured image of post Community Spotlight - WAL" /&gt;&lt;h1 id=&#34;wal&#34;&gt;
     &lt;a href=&#34;#wal&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     WAL
-&lt;/h1&gt;&lt;p&gt;Welcome to another &lt;a class=&#34;link&#34; href=&#34;http://blog.yosyshq.com/tags/community-spotlight/&#34; &gt;community spotlight&lt;/a&gt; article where we shine a light on open source EDA projects. If you want to &lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSdIEgu6FJZam0-V3PMTjw-eDebJdg_JuIlN4MkLNDr4vs-a5A/viewform?usp=sf_link&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&lt;/h1&gt;&lt;p&gt;Welcome to another &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/tags/community-spotlight/&#34; &gt;community spotlight&lt;/a&gt; article where we shine a light on open source EDA projects. If you want to &lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSdIEgu6FJZam0-V3PMTjw-eDebJdg_JuIlN4MkLNDr4vs-a5A/viewform?usp=sf_link&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;submit a project, please do so here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Waveform Analysis Language (WAL) is a programming language for complex waveform analysis and EDA tool development.&lt;/p&gt;
 &lt;h1 id=&#34;lucas-klemmers-bio&#34;&gt;
     &lt;a href=&#34;#lucas-klemmers-bio&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     Lucas Klemmer&amp;rsquo;s Bio
-&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2023/spotlight/lucas.png&#34;
+&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2023/spotlight/lucas.png&#34;
 	
 	
 	
@@ -1489,11 +1677,11 @@ Moreover, the hardware domain requires a bit more work to win people for new ide
         </item>
         <item>
         <title>Tabby CAD Suite version 20230905 released!</title>
-        <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230905-released/</link>
+        <link>http://localhost:1313/p/tabby-cad-suite-version-20230905-released/</link>
         <pubDate>Tue, 05 Sep 2023 00:00:00 +0000</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230905-released/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2023/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20230905 released!" /&gt;&lt;p&gt;The September release of Tabby CAD Suite is now available for download. Notable changes in this version include:&lt;/p&gt;
+        <guid>http://localhost:1313/p/tabby-cad-suite-version-20230905-released/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2023/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20230905 released!" /&gt;&lt;p&gt;The September release of Tabby CAD Suite is now available for download. Notable changes in this version include:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Tabby CAD Suite now optionally supports floating licenses via FlexLM. Floating licenses are priced at 600€/month (double the price of node-locked licenses). Existing customers may exchange two node-locked licenses for one floating license - please contact us if this would be of interest to you.&lt;/li&gt;
 &lt;/ul&gt;
@@ -1508,11 +1696,11 @@ The YosysHQ Team&lt;/p&gt;
         </item>
         <item>
         <title>Tabby CAD Suite version 20230807 released!</title>
-        <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230807-released/</link>
+        <link>http://localhost:1313/p/tabby-cad-suite-version-20230807-released/</link>
         <pubDate>Mon, 07 Aug 2023 00:00:00 +0000</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230807-released/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2023/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20230807 released!" /&gt;&lt;p&gt;The August release of Tabby CAD Suite is now available for download. Notable changes in this version include:&lt;/p&gt;
+        <guid>http://localhost:1313/p/tabby-cad-suite-version-20230807-released/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2023/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20230807 released!" /&gt;&lt;p&gt;The August release of Tabby CAD Suite is now available for download. Notable changes in this version include:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;The verific command now has a new option -lib to load all modules from the specified files as blackbox modules, disregarding their contents. This is useful especially for loading primitives from a simulation library, e.g.:&lt;/li&gt;
 &lt;/ul&gt;
@@ -1521,7 +1709,7 @@ verific -work unisim -vhdl -lib unisim_VCOMP.vhd
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The files still need to be parseable by verific, so some limitations remain on the contents of the blackboxed modules, but it is possible to ignore some errors by first calling verific -set-warning VERI-XXXX for the corresponding error code.&lt;/p&gt;
 &lt;p&gt;In other YosysHQ news:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Our newest blog post explores another one-line yosys solution, this time for a problem with &lt;a class=&#34;link&#34; href=&#34;http://blog.yosyshq.com/p/yosys-one-liners-rename/&#34; &gt;non-alphanumeric characters in netnames&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Our newest blog post explores another one-line yosys solution, this time for a problem with &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/yosys-one-liners-rename/&#34; &gt;non-alphanumeric characters in netnames&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;YosysHQ was present at the Free Silicon Conference at Sorbonne University in Paris in July, check out the &lt;a class=&#34;link&#34; href=&#34;https://peertube.f-si.org/videos/watch/b6ccf0de-06c3-42d3-897a-1e81cbe04ac1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;recordings of Nina&amp;rsquo;s talk online&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -1531,11 +1719,11 @@ The YosysHQ Team&lt;/p&gt;
         </item>
         <item>
         <title>Yosys One Liners - Rename</title>
-        <link>http://blog.yosyshq.com/p/yosys-one-liners-rename/</link>
+        <link>http://localhost:1313/p/yosys-one-liners-rename/</link>
         <pubDate>Mon, 12 Jun 2023 16:52:39 +0200</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/yosys-one-liners-rename/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2023/oneliners.jpeg" alt="Featured image of post Yosys One Liners - Rename" /&gt;&lt;p&gt;Scenario: you&amp;rsquo;re developing some Verilog RTL and after synthesis the ASIC tools you&amp;rsquo;re using fail on the design! It won&amp;rsquo;t accept square brackets in the input!&lt;/p&gt;
+        <guid>http://localhost:1313/p/yosys-one-liners-rename/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2023/oneliners.jpeg" alt="Featured image of post Yosys One Liners - Rename" /&gt;&lt;p&gt;Scenario: you&amp;rsquo;re developing some Verilog RTL and after synthesis the ASIC tools you&amp;rsquo;re using fail on the design! It won&amp;rsquo;t accept square brackets in the input!&lt;/p&gt;
 &lt;p&gt;Here&amp;rsquo;s the DUT:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;module test(
     input   wire [7:0] a,
@@ -1587,17 +1775,17 @@ grep test out.v
         </item>
         <item>
         <title>Tabby CAD Suite version 20230606 released!</title>
-        <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230606-released/</link>
+        <link>http://localhost:1313/p/tabby-cad-suite-version-20230606-released/</link>
         <pubDate>Tue, 06 Jun 2023 00:00:00 +0000</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230606-released/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2023/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20230606 released!" /&gt;&lt;p&gt;The June release of Tabby CAD Suite is now available for download. Notable changes in this version include:&lt;/p&gt;
+        <guid>http://localhost:1313/p/tabby-cad-suite-version-20230606-released/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2023/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20230606 released!" /&gt;&lt;p&gt;The June release of Tabby CAD Suite is now available for download. Notable changes in this version include:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;The RISC-V Formal Verification Toolbox has gained a bus interface for checking that instructions relating to memory result in matching bus transactions, as well as some checks for the machine-mode CSRs required by the RISC-V privileged specification.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;In other YosysHQ news:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;You might have seen Bruno Levy’s excellent introduction to RISCV on an FPGA. In our most &lt;a class=&#34;link&#34; href=&#34;http://blog.yosyshq.com/p/blinker-to-risc-v/&#34; &gt;recent blog post&lt;/a&gt;, guest author Bastian Löher shows how he followed the tutorial using Amaranth instead of Verilog.&lt;/li&gt;
+&lt;li&gt;You might have seen Bruno Levy’s excellent introduction to RISCV on an FPGA. In our most &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/blinker-to-risc-v/&#34; &gt;recent blog post&lt;/a&gt;, guest author Bastian Löher shows how he followed the tutorial using Amaranth instead of Verilog.&lt;/li&gt;
 &lt;li&gt;Nina &amp;amp; Matt will be attending the Free Silicon Conference in July.&lt;/li&gt;
 &lt;li&gt;Matt will be attending the RISCV summit hardware track this Friday 9th June.&lt;/li&gt;
 &lt;/ul&gt;
@@ -1607,11 +1795,11 @@ The YosysHQ Team&lt;/p&gt;
         </item>
         <item>
         <title>How I went from blinker to RISC-V in 3 months</title>
-        <link>http://blog.yosyshq.com/p/blinker-to-risc-v/</link>
+        <link>http://localhost:1313/p/blinker-to-risc-v/</link>
         <pubDate>Mon, 15 May 2023 12:00:00 +0200</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/blinker-to-risc-v/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2023/blinker-to-riscv.jpg" alt="Featured image of post How I went from blinker to RISC-V in 3 months" /&gt;&lt;p&gt;&lt;em&gt;This guest post is by Bastian Löher.&lt;/em&gt;&lt;/p&gt;
+        <guid>http://localhost:1313/p/blinker-to-risc-v/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2023/blinker-to-riscv.jpg" alt="Featured image of post How I went from blinker to RISC-V in 3 months" /&gt;&lt;p&gt;&lt;em&gt;This guest post is by Bastian Löher.&lt;/em&gt;&lt;/p&gt;
 &lt;h1 id=&#34;how-i-went-from-blinker-to-risc-v-in-3-months&#34;&gt;
     &lt;a href=&#34;#how-i-went-from-blinker-to-risc-v-in-3-months&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     How I went from blinker to RISC-V in 3 months
@@ -1658,7 +1846,7 @@ The YosysHQ Team&lt;/p&gt;
     &gt;F4PGA&lt;/a&gt; (formerly Symbiflow) toolchain and an FPGA board that was not supported in the tutorial (&lt;a class=&#34;link&#34; href=&#34;https://digilent.com/reference/programmable-logic/cmod-a7&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Digilent CMOD A7&lt;/a&gt; with &lt;a class=&#34;link&#34; href=&#34;https://www.xilinx.com/products/silicon-devices/fpga/artix-7.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Xilinx Artix 7&lt;/a&gt;). I wanted to see how far I could go and was unaware of the obstacles that lay ahead.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2023/cmod_board.jpg&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2023/cmod_board.jpg&#34;
 	
 	
 	
@@ -1716,20 +1904,20 @@ The YosysHQ Team&lt;/p&gt;
         </item>
         <item>
         <title>Community Spotlight - AutoSVA</title>
-        <link>http://blog.yosyshq.com/p/community-spotlight-autosva/</link>
+        <link>http://localhost:1313/p/community-spotlight-autosva/</link>
         <pubDate>Wed, 10 May 2023 13:26:31 +0100</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/community-spotlight-autosva/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2022/spotlight/spotlight.png" alt="Featured image of post Community Spotlight - AutoSVA" /&gt;&lt;h1 id=&#34;autosva&#34;&gt;
+        <guid>http://localhost:1313/p/community-spotlight-autosva/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2022/spotlight/spotlight.png" alt="Featured image of post Community Spotlight - AutoSVA" /&gt;&lt;h1 id=&#34;autosva&#34;&gt;
     &lt;a href=&#34;#autosva&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     AutoSVA
-&lt;/h1&gt;&lt;p&gt;Welcome to another &lt;a class=&#34;link&#34; href=&#34;http://blog.yosyshq.com/tags/community-spotlight/&#34; &gt;community spotlight&lt;/a&gt; article where we shine a light on open source EDA projects. If you want to &lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSdIEgu6FJZam0-V3PMTjw-eDebJdg_JuIlN4MkLNDr4vs-a5A/viewform?usp=sf_link&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&lt;/h1&gt;&lt;p&gt;Welcome to another &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/tags/community-spotlight/&#34; &gt;community spotlight&lt;/a&gt; article where we shine a light on open source EDA projects. If you want to &lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSdIEgu6FJZam0-V3PMTjw-eDebJdg_JuIlN4MkLNDr4vs-a5A/viewform?usp=sf_link&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;submit a project, please do so here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;AutoSVA makes Formal Property Verification (FPV) more accesible for hardware designers.&lt;/p&gt;
 &lt;h1 id=&#34;marcelo-veras-bio&#34;&gt;
     &lt;a href=&#34;#marcelo-veras-bio&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     Marcelo Vera&amp;rsquo;s Bio
-&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2023/spotlight/marcelo.jpeg&#34;
+&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2023/spotlight/marcelo.jpeg&#34;
 	
 	
 	
@@ -1777,17 +1965,17 @@ Thus, open-sourcing makes the most sense when the goal is to get people to use y
         </item>
         <item>
         <title>Tabby CAD Suite version 20230509 released!</title>
-        <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230509-released/</link>
+        <link>http://localhost:1313/p/tabby-cad-suite-version-20230509-released/</link>
         <pubDate>Tue, 09 May 2023 00:00:00 +0000</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230509-released/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2023/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20230509 released!" /&gt;&lt;p&gt;The May release of Tabby CAD Suite is now available for download. Notable changes in this version include:&lt;/p&gt;
+        <guid>http://localhost:1313/p/tabby-cad-suite-version-20230509-released/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2023/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20230509 released!" /&gt;&lt;p&gt;The May release of Tabby CAD Suite is now available for download. Notable changes in this version include:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;The synthprop pass was added, which converts SVA assert properties into module outputs that flag assertion violations. See help synthprop for details!&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;In other YosysHQ news:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;We just published the 3rd in our series of ‘community spotlight’ blog posts. This time we’re featuring &lt;a class=&#34;link&#34; href=&#34;http://blog.yosyshq.com/p/community-spotlight-autosva/&#34; &gt;AutoSVA by Marcelo Vera&lt;/a&gt; which aims to make Formal Property Verification more accessible to hardware designers.&lt;/li&gt;
+&lt;li&gt;We just published the 3rd in our series of ‘community spotlight’ blog posts. This time we’re featuring &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/community-spotlight-autosva/&#34; &gt;AutoSVA by Marcelo Vera&lt;/a&gt; which aims to make Formal Property Verification more accessible to hardware designers.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Happy May,
 The YosysHQ Team&lt;/p&gt;
@@ -1795,11 +1983,11 @@ The YosysHQ Team&lt;/p&gt;
         </item>
         <item>
         <title>Yosys One Liners - AXI</title>
-        <link>http://blog.yosyshq.com/p/yosys-one-liners-axi/</link>
+        <link>http://localhost:1313/p/yosys-one-liners-axi/</link>
         <pubDate>Mon, 17 Apr 2023 13:25:38 +0200</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/yosys-one-liners-axi/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2023/oneliners.jpeg" alt="Featured image of post Yosys One Liners - AXI" /&gt;&lt;p&gt;The AXI spec says &amp;ldquo;On Manager and Subordinate interfaces, there must be no combinatorial paths between input and output signals.&amp;rdquo; If we have a design containing an AXI Manager or Subordinate as netlist (i.e. post &lt;code&gt;proc&lt;/code&gt;) and the AXI ports contain &lt;code&gt;axi_&lt;/code&gt; we can check this automatically using this Yosys one liner:&lt;/p&gt;
+        <guid>http://localhost:1313/p/yosys-one-liners-axi/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2023/oneliners.jpeg" alt="Featured image of post Yosys One Liners - AXI" /&gt;&lt;p&gt;The AXI spec says &amp;ldquo;On Manager and Subordinate interfaces, there must be no combinatorial paths between input and output signals.&amp;rdquo; If we have a design containing an AXI Manager or Subordinate as netlist (i.e. post &lt;code&gt;proc&lt;/code&gt;) and the AXI ports contain &lt;code&gt;axi_&lt;/code&gt; we can check this automatically using this Yosys one liner:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;flatten; select -assert-none i:*axi_* %coe* o:*axi_* %cie* %i
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;If that fails we can use &lt;code&gt;show i:*axi_* %coe* o:*axi_* %cie* %i&lt;/code&gt; to then see the combinational path (or using dump/printattrs/select -list instead of show when the design is too large for show).&lt;/p&gt;
@@ -1811,11 +1999,11 @@ The YosysHQ Team&lt;/p&gt;
         </item>
         <item>
         <title>Tabby CAD Suite version 20230414 released!</title>
-        <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230414-released/</link>
+        <link>http://localhost:1313/p/tabby-cad-suite-version-20230414-released/</link>
         <pubDate>Fri, 14 Apr 2023 00:00:00 +0000</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230414-released/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2023/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20230414 released!" /&gt;&lt;p&gt;Tabby CAD Suite version 20230414 released!&lt;/p&gt;
+        <guid>http://localhost:1313/p/tabby-cad-suite-version-20230414-released/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2023/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20230414 released!" /&gt;&lt;p&gt;Tabby CAD Suite version 20230414 released!&lt;/p&gt;
 &lt;p&gt;The April release of Tabby CAD Suite is now available for download. Notable changes in this version include:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;The initial release of our new equivalence checking tool EQY is now available. Try out some of the &lt;a class=&#34;link&#34; href=&#34;https://yosyshq.readthedocs.io/projects/eqy/en/latest/quickstart.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -1832,11 +2020,11 @@ The YosysHQ Team&lt;/p&gt;
         </item>
         <item>
         <title>First gateware on the Colorlight 5A-75B board </title>
-        <link>http://blog.yosyshq.com/p/colorlight-part-2/</link>
+        <link>http://localhost:1313/p/colorlight-part-2/</link>
         <pubDate>Tue, 28 Mar 2023 18:17:00 +0200</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/colorlight-part-2/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2022/colorlight_5a75b.jpg" alt="Featured image of post First gateware on the Colorlight 5A-75B board " /&gt;&lt;p&gt;&lt;em&gt;Welcome to the second part of the Colorlight 5A-75B article. You can find the &lt;a class=&#34;link&#34; href=&#34;http://blog.yosyshq.com/p/colorlight-part-1/&#34; &gt;first part here&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+        <guid>http://localhost:1313/p/colorlight-part-2/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2022/colorlight_5a75b.jpg" alt="Featured image of post First gateware on the Colorlight 5A-75B board " /&gt;&lt;p&gt;&lt;em&gt;Welcome to the second part of the Colorlight 5A-75B article. You can find the &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/colorlight-part-1/&#34; &gt;first part here&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;In this blogpost I will show you how to set up, synthesize and program your first Verilog program on the ECP5 FPGA using the Yosys suite.&lt;/p&gt;
 &lt;h2 id=&#34;the-fpga-toolchain&#34;&gt;
     &lt;a href=&#34;#the-fpga-toolchain&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
@@ -1956,11 +2144,11 @@ projects. He runs a blog at &lt;a class=&#34;link&#34; href=&#34;https://polprog
         </item>
         <item>
         <title>Tabby CAD Suite version 20230306 released!</title>
-        <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230306-released/</link>
+        <link>http://localhost:1313/p/tabby-cad-suite-version-20230306-released/</link>
         <pubDate>Mon, 06 Mar 2023 00:00:00 +0000</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230306-released/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2023/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20230306 released!" /&gt;&lt;p&gt;Tabby CAD Suite version 20230306 released!&lt;/p&gt;
+        <guid>http://localhost:1313/p/tabby-cad-suite-version-20230306-released/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2023/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20230306 released!" /&gt;&lt;p&gt;Tabby CAD Suite version 20230306 released!&lt;/p&gt;
 &lt;p&gt;The March release of Tabby CAD Suite is now available for download. Notable changes in this version include:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;There is now support for tying licenses to Google Cloud Instance ID and to GitLab groups or repositories.&lt;/li&gt;
@@ -1978,11 +2166,11 @@ The YosysHQ Team&lt;/p&gt;
         </item>
         <item>
         <title>OSS CAD Suite Github Action Update</title>
-        <link>http://blog.yosyshq.com/p/oss-cad-suite-github-action-update/</link>
+        <link>http://localhost:1313/p/oss-cad-suite-github-action-update/</link>
         <pubDate>Mon, 20 Feb 2023 11:48:40 +0100</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/oss-cad-suite-github-action-update/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2023/githubaction.png" alt="Featured image of post OSS CAD Suite Github Action Update" /&gt;&lt;p&gt;The OSS CAD suite setup GitHub action &lt;a class=&#34;link&#34; href=&#34;https://github.com/YosysHQ/setup-oss-cad-suite#use-github_token-to-prevent-api-rate-limiting&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+        <guid>http://localhost:1313/p/oss-cad-suite-github-action-update/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2023/githubaction.png" alt="Featured image of post OSS CAD Suite Github Action Update" /&gt;&lt;p&gt;The OSS CAD suite setup GitHub action &lt;a class=&#34;link&#34; href=&#34;https://github.com/YosysHQ/setup-oss-cad-suite#use-github_token-to-prevent-api-rate-limiting&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;just had an update&lt;/a&gt;, fixing an issue where sometimes the install would fail due to rate limiting.&lt;/p&gt;
 &lt;p&gt;The &lt;a class=&#34;link&#34; href=&#34;https://github.com/YosysHQ/oss-cad-suite-build&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;OSS CAD suite&lt;/a&gt; makes it simple to install a whole set of tools at once, and the GitHub action makes it just as simple to get the tools available for a CI job.&lt;/p&gt;
@@ -1998,20 +2186,20 @@ The YosysHQ Team&lt;/p&gt;
         </item>
         <item>
         <title>Community Spotlight - sv2v</title>
-        <link>http://blog.yosyshq.com/p/community-spotlight-sv2v/</link>
+        <link>http://localhost:1313/p/community-spotlight-sv2v/</link>
         <pubDate>Mon, 13 Feb 2023 13:26:31 +0100</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/community-spotlight-sv2v/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2022/spotlight/spotlight.png" alt="Featured image of post Community Spotlight - sv2v" /&gt;&lt;h1 id=&#34;sv2v&#34;&gt;
+        <guid>http://localhost:1313/p/community-spotlight-sv2v/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2022/spotlight/spotlight.png" alt="Featured image of post Community Spotlight - sv2v" /&gt;&lt;h1 id=&#34;sv2v&#34;&gt;
     &lt;a href=&#34;#sv2v&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     sv2v
-&lt;/h1&gt;&lt;p&gt;Welcome to another &lt;a class=&#34;link&#34; href=&#34;http://blog.yosyshq.com/tags/community-spotlight/&#34; &gt;community spotlight&lt;/a&gt; article where we shine a light on open source EDA projects. If you want to &lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSdIEgu6FJZam0-V3PMTjw-eDebJdg_JuIlN4MkLNDr4vs-a5A/viewform?usp=sf_link&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&lt;/h1&gt;&lt;p&gt;Welcome to another &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/tags/community-spotlight/&#34; &gt;community spotlight&lt;/a&gt; article where we shine a light on open source EDA projects. If you want to &lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSdIEgu6FJZam0-V3PMTjw-eDebJdg_JuIlN4MkLNDr4vs-a5A/viewform?usp=sf_link&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;submit a project, please do so here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;sv2v converts SystemVerilog (IEEE 1800-2017) to Verilog (IEEE 1364-2005), with an emphasis on supporting synthesizable language constructs.&lt;/p&gt;
 &lt;h1 id=&#34;zachary-snows-bio&#34;&gt;
     &lt;a href=&#34;#zachary-snows-bio&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     Zachary Snow&amp;rsquo;s Bio
-&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2023/spotlight/zachary.png&#34;
+&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2023/spotlight/zachary.png&#34;
 	
 	
 	
@@ -2060,11 +2248,11 @@ The YosysHQ Team&lt;/p&gt;
         </item>
         <item>
         <title>Tabby CAD Suite version 20230208 released!</title>
-        <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230208-released/</link>
+        <link>http://localhost:1313/p/tabby-cad-suite-version-20230208-released/</link>
         <pubDate>Wed, 08 Feb 2023 00:00:00 +0000</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230208-released/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2023/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20230208 released!" /&gt;&lt;p&gt;Tabby CAD Suite version 20230208 released!&lt;/p&gt;
+        <guid>http://localhost:1313/p/tabby-cad-suite-version-20230208-released/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2023/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20230208 released!" /&gt;&lt;p&gt;Tabby CAD Suite version 20230208 released!&lt;/p&gt;
 &lt;p&gt;The February release of Tabby CAD Suite is now available for download. Notable changes in this version include:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;SBY can now use Yosys’s builtin simulation command “sim” to generate counter-example traces. This can be enabled with the “vcd_sim on” option and will become the default in a later release.&lt;/li&gt;
@@ -2083,11 +2271,11 @@ The YosysHQ Team&lt;/p&gt;
         </item>
         <item>
         <title>Tillitis and YosysHQ</title>
-        <link>http://blog.yosyshq.com/p/tillitis-and-yosyshq/</link>
+        <link>http://localhost:1313/p/tillitis-and-yosyshq/</link>
         <pubDate>Mon, 06 Feb 2023 11:56:24 +0100</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/tillitis-and-yosyshq/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2023/tillitis.jpg" alt="Featured image of post Tillitis and YosysHQ" /&gt;&lt;p&gt;We are happy to announce that we are working with &lt;a class=&#34;link&#34; href=&#34;https://tillitis.se/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+        <guid>http://localhost:1313/p/tillitis-and-yosyshq/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2023/tillitis.jpg" alt="Featured image of post Tillitis and YosysHQ" /&gt;&lt;p&gt;We are happy to announce that we are working with &lt;a class=&#34;link&#34; href=&#34;https://tillitis.se/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Tillitis&lt;/a&gt; on their next generation of USB security key.&lt;/p&gt;
 &lt;p&gt;Their current model TKey™ is &lt;a class=&#34;link&#34; href=&#34;https://github.com/tillitis&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;open source hardware and software&lt;/a&gt;. It uses a Lattice iCE40, chosen due to it being supported by our open source FPGA tools.&lt;/p&gt;
@@ -2100,11 +2288,11 @@ The YosysHQ Team&lt;/p&gt;
         </item>
         <item>
         <title>3D raytraced game with open source C to FPGA toolchain</title>
-        <link>http://blog.yosyshq.com/p/3d-raytracing/</link>
+        <link>http://localhost:1313/p/3d-raytracing/</link>
         <pubDate>Fri, 03 Feb 2023 12:00:00 +0200</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/3d-raytracing/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2023/sphery.png" alt="Featured image of post 3D raytraced game with open source C to FPGA toolchain" /&gt;&lt;p&gt;&lt;em&gt;This guest post is by Victor Suarez Rovere and Julian Kemmerer.&lt;/em&gt;&lt;/p&gt;
+        <guid>http://localhost:1313/p/3d-raytracing/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2023/sphery.png" alt="Featured image of post 3D raytraced game with open source C to FPGA toolchain" /&gt;&lt;p&gt;&lt;em&gt;This guest post is by Victor Suarez Rovere and Julian Kemmerer.&lt;/em&gt;&lt;/p&gt;
 &lt;h1 id=&#34;3d-raytraced-game-using-fully-open-source-c-to-fpga-toolchain&#34;&gt;
     &lt;a href=&#34;#3d-raytraced-game-using-fully-open-source-c-to-fpga-toolchain&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     3D raytraced game using fully open source “C to FPGA” toolchain
@@ -2366,11 +2554,11 @@ The YosysHQ Team&lt;/p&gt;
         </item>
         <item>
         <title>Tabby CAD Suite version 20230104 released!</title>
-        <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230104-released/</link>
+        <link>http://localhost:1313/p/tabby-cad-suite-version-20230104-released/</link>
         <pubDate>Wed, 04 Jan 2023 00:00:00 +0000</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20230104-released/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2023/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20230104 released!" /&gt;&lt;p&gt;Tabby CAD Suite version 20230104 released!&lt;/p&gt;
+        <guid>http://localhost:1313/p/tabby-cad-suite-version-20230104-released/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2023/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20230104 released!" /&gt;&lt;p&gt;Tabby CAD Suite version 20230104 released!&lt;/p&gt;
 &lt;p&gt;The January release of Tabby CAD Suite is now available for download. With the holidays there have been only a few changes, of note:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;SBY output is now in color.&lt;/li&gt;
@@ -2380,7 +2568,7 @@ The YosysHQ Team&lt;/p&gt;
     In other YosysHQ news:
 &lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;We have reformatted our service table to clarify some points we&amp;rsquo;ve seen cause confusion. Don&amp;rsquo;t worry, our prices remain the same as they&amp;rsquo;ve always been!&lt;/li&gt;
-&lt;li&gt;Our first &lt;a class=&#34;link&#34; href=&#34;http://blog.yosyshq.com/p/community-spotlight-tbengy/&#34; &gt;community spotlight article is about Tbengy&lt;/a&gt;, which is a Python Tool for SV/UVM Testbench Generation and RTL Synthesis.&lt;/li&gt;
+&lt;li&gt;Our first &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/community-spotlight-tbengy/&#34; &gt;community spotlight article is about Tbengy&lt;/a&gt;, which is a Python Tool for SV/UVM Testbench Generation and RTL Synthesis.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Happy New Year!
 The YosysHQ Team&lt;/p&gt;
@@ -2388,11 +2576,11 @@ The YosysHQ Team&lt;/p&gt;
         </item>
         <item>
         <title>Community Spotlight - Tbengy</title>
-        <link>http://blog.yosyshq.com/p/community-spotlight-tbengy/</link>
+        <link>http://localhost:1313/p/community-spotlight-tbengy/</link>
         <pubDate>Wed, 14 Dec 2022 10:23:57 +0100</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/community-spotlight-tbengy/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2022/spotlight/spotlight.png" alt="Featured image of post Community Spotlight - Tbengy" /&gt;&lt;h1 id=&#34;tbengy&#34;&gt;
+        <guid>http://localhost:1313/p/community-spotlight-tbengy/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2022/spotlight/spotlight.png" alt="Featured image of post Community Spotlight - Tbengy" /&gt;&lt;h1 id=&#34;tbengy&#34;&gt;
     &lt;a href=&#34;#tbengy&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     Tbengy
 &lt;/h1&gt;&lt;p&gt;Welcome to the first in a series of short articles where we shine the light on open source EDA projects. If you want to &lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSdIEgu6FJZam0-V3PMTjw-eDebJdg_JuIlN4MkLNDr4vs-a5A/viewform?usp=sf_link&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -2404,7 +2592,7 @@ The YosysHQ Team&lt;/p&gt;
 &lt;h1 id=&#34;prasad-pandits-bio&#34;&gt;
     &lt;a href=&#34;#prasad-pandits-bio&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     Prasad Pandit&amp;rsquo;s Bio
-&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2022/spotlight/prasad.jpg&#34;
+&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2022/spotlight/prasad.jpg&#34;
 	
 	
 	
@@ -2447,11 +2635,11 @@ The YosysHQ Team&lt;/p&gt;
         </item>
         <item>
         <title>Tabby CAD Suite version 20221205 released!</title>
-        <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20221205-released/</link>
+        <link>http://localhost:1313/p/tabby-cad-suite-version-20221205-released/</link>
         <pubDate>Mon, 12 Dec 2022 00:00:00 +0000</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20221205-released/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2022/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20221205 released!" /&gt;&lt;p&gt;The December release of Tabby CAD Suite is now available for download. Notable changes in this version include:&lt;/p&gt;
+        <guid>http://localhost:1313/p/tabby-cad-suite-version-20221205-released/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2022/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20221205 released!" /&gt;&lt;p&gt;The December release of Tabby CAD Suite is now available for download. Notable changes in this version include:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;We have improved support for SystemVerilog &lt;code&gt;config&lt;/code&gt; elements. You can now have multiple configurations defined, and select which configuration to elaborate with &lt;code&gt;verific -import &amp;lt;configname&amp;gt;&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;We are working on improving the TCL integration in Yosys. There is now an interactive TCL shell mode: use &lt;code&gt;yosys -C&lt;/code&gt; to enter the TCL shell. You can now also use the following command to get the output of a command returned to TCL without the use of an intermediate file: &lt;code&gt;set command_output [yosys tee -s result.string &amp;lt;command&amp;gt;]&lt;/code&gt;&lt;/li&gt;
@@ -2472,11 +2660,11 @@ The YosysHQ Team&lt;/p&gt;
         </item>
         <item>
         <title>Logic Primitive Transformations with Yosys Techmap</title>
-        <link>http://blog.yosyshq.com/p/logic-primitive-transformations-with-yosys-techmap/</link>
+        <link>http://localhost:1313/p/logic-primitive-transformations-with-yosys-techmap/</link>
         <pubDate>Thu, 24 Nov 2022 09:38:52 +0200</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/logic-primitive-transformations-with-yosys-techmap/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2022/yosys_techmap/SB_MAC16_block_diagram.png" alt="Featured image of post Logic Primitive Transformations with Yosys Techmap" /&gt;&lt;p&gt;&lt;em&gt;This guest post is by &lt;a class=&#34;link&#34; href=&#34;https://tomverbeure.github.io/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+        <guid>http://localhost:1313/p/logic-primitive-transformations-with-yosys-techmap/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2022/yosys_techmap/SB_MAC16_block_diagram.png" alt="Featured image of post Logic Primitive Transformations with Yosys Techmap" /&gt;&lt;p&gt;&lt;em&gt;This guest post is by &lt;a class=&#34;link&#34; href=&#34;https://tomverbeure.github.io/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Tom Verbeure&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 &lt;h1 id=&#34;introduction&#34;&gt;
     &lt;a href=&#34;#introduction&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
@@ -2541,7 +2729,7 @@ and the whole design looks like this:&lt;/p&gt;
     &gt;&lt;code&gt;show&lt;/code&gt; command&lt;/a&gt;
 that renders an RTLIL representation as a graph. I usually add the &lt;code&gt;-width -signed&lt;/code&gt; options to
 annotate signals with their size and to show which cell ports are signed:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2022/yosys_techmap/mul_rtlil.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2022/yosys_techmap/mul_rtlil.png&#34;
 	
 	
 	
@@ -2555,7 +2743,7 @@ annotate signals with their size and to show which cell ports are signed:&lt;/p&
 iCE40 family have a handful of DSPs. When you synthesize this module to the iCE40 technology with
 &lt;code&gt;synth_ice40 -dsp&lt;/code&gt;, the &lt;code&gt;$mul&lt;/code&gt; primitive gets converted to an &lt;code&gt;SB_MAC16&lt;/code&gt; cell which is the DSP
 primitive of the iCE40 family.&lt;/p&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;http://blog.yosyshq.com/static-2022/yosys_techmap/SB_MAC16_block_diagram.png&#34; &gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2022/yosys_techmap/SB_MAC16_block_diagram.png&#34;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/static-2022/yosys_techmap/SB_MAC16_block_diagram.png&#34; &gt;&lt;img src=&#34;http://localhost:1313/static-2022/yosys_techmap/SB_MAC16_block_diagram.png&#34;
 	
 	
 	
@@ -2629,7 +2817,7 @@ output bits so that the DSP performs the desired 10-bit x 10-bit multiplication.
   end
 end
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;And here&amp;rsquo;s the equivalent graphical representation. (&lt;em&gt;Click to enlarge&lt;/em&gt;)&lt;/p&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;http://blog.yosyshq.com/static-2022/yosys_techmap/mul_ice40.png&#34; &gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2022/yosys_techmap/mul_ice40.png&#34;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/static-2022/yosys_techmap/mul_ice40.png&#34; &gt;&lt;img src=&#34;http://localhost:1313/static-2022/yosys_techmap/mul_ice40.png&#34;
 	
 	
 	
@@ -2707,7 +2895,7 @@ clean -purge
 techmap -map +/mul2dsp.v -D DSP_A_MAXWIDTH=16 -D DSP_B_MAXWIDTH=16 -D DSP_A_MINWIDTH=2 -D DSP_B_MINWIDTH=2 -D DSP_Y_MINWIDTH=11 -D DSP_NAME=$__MUL16X16
 clean -purge
 show -width -signed -format png -prefix mul_mul2dsp
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2022/yosys_techmap/mul_mul2dsp.png&#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2022/yosys_techmap/mul_mul2dsp.png&#34;
 	
 	
 	
@@ -2718,7 +2906,7 @@ show -width -signed -format png -prefix mul_mul2dsp
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;In case you were wondering, here&amp;rsquo;s what this first step looks like for a 20-bit x 20-bit to 40-bit multiplier:&lt;/p&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;http://blog.yosyshq.com/static-2022/yosys_techmap/large_mul_techmap.png&#34; &gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2022/yosys_techmap/large_mul_techmap.png&#34;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/static-2022/yosys_techmap/large_mul_techmap.png&#34; &gt;&lt;img src=&#34;http://localhost:1313/static-2022/yosys_techmap/large_mul_techmap.png&#34;
 	
 	
 	
@@ -2782,7 +2970,7 @@ multiplier.&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;assign&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sum&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;op0&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;op1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;endmodule&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The graphical representation is as expected:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2022/yosys_techmap/add_orig.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2022/yosys_techmap/add_orig.png&#34;
 	
 	
 	
@@ -2831,7 +3019,7 @@ operations to just the number of bits that are really needed.&lt;/p&gt;
 hierarchy -top top_unsigned
 wreduce
 clean -purge
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2022/yosys_techmap/add_wreduce.png&#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2022/yosys_techmap/add_wreduce.png&#34;
 	
 	
 	
@@ -3015,7 +3203,7 @@ to swap the inputs, and the second time for the actual reduction.&lt;/p&gt;
 be hard to debug. You can use the &lt;code&gt;-max_iter &amp;lt;number&amp;gt;&lt;/code&gt; option to limit
 the number of transformations.&lt;/p&gt;
 &lt;p&gt;For example, here&amp;rsquo;s what the design originally looked like:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2022/yosys_techmap/add_orig.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2022/yosys_techmap/add_orig.png&#34;
 	
 	
 	
@@ -3029,7 +3217,7 @@ the number of transformations.&lt;/p&gt;
 first iteration:&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;techmap -map add_reduce.v -max_iter 1
 clean -purge
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2022/yosys_techmap/add_swap_clean.png&#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2022/yosys_techmap/add_swap_clean.png&#34;
 	
 	
 	
@@ -3066,7 +3254,7 @@ We can run the whole thing with:&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;techmap -map add_reduce.v -D Y_MIN_WIDTH=32
 clean -purge
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The result is exactly what we wanted, as shown in the graphical diagram&amp;hellip;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2022/yosys_techmap/add_reduce.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2022/yosys_techmap/add_reduce.png&#34;
 	
 	
 	
@@ -3107,7 +3295,7 @@ select top_unsigned
 techmap -map add_reduce.v -D Y_MIN_WIDTH=8 
 clean -purge
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;So far, so good: Yosys now has 2 designs. &lt;code&gt;top_unsigned_gold&lt;/code&gt; is the original one:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2022/yosys_techmap/add10_gold.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2022/yosys_techmap/add10_gold.png&#34;
 	
 	
 	
@@ -3118,7 +3306,7 @@ clean -purge
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;And &lt;code&gt;top_unsigned&lt;/code&gt; has been transformed with the techmap:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2022/yosys_techmap/add10_reduce.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2022/yosys_techmap/add10_reduce.png&#34;
 	
 	
 	
@@ -3135,7 +3323,7 @@ select top_equiv
 design with &lt;code&gt;$equiv&lt;/code&gt; primitive cells inserted at the output of both designs. These cells
 will tell the equivalence checker which nets to check for formal equivalence. The
 new design &lt;code&gt;top_equiv&lt;/code&gt; looks like this:&lt;/p&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;http://blog.yosyshq.com/static-2022/yosys_techmap/add10_equiv_make.png&#34; &gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2022/yosys_techmap/add10_equiv_make.png&#34;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/static-2022/yosys_techmap/add10_equiv_make.png&#34; &gt;&lt;img src=&#34;http://localhost:1313/static-2022/yosys_techmap/add10_equiv_make.png&#34;
 	
 	
 	
@@ -3187,7 +3375,7 @@ commands to learn more.&lt;/p&gt;
 that aren&amp;rsquo;t used anymore. You need to expliclity tell Yosys to do so with the &lt;code&gt;clean -purge&lt;/code&gt;
 command that you can see in some of the command sequences above.&lt;/p&gt;
 &lt;p&gt;Here&amp;rsquo;s what the reduced adder looks like without first running a clean:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2022/yosys_techmap/add_reduce_unclean.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2022/yosys_techmap/add_reduce_unclean.png&#34;
 	
 	
 	
@@ -3232,11 +3420,11 @@ only of &lt;code&gt;techmap&lt;/code&gt; command, but also some of the other one
         </item>
         <item>
         <title>Tabby CAD Suite version 20221108 released!</title>
-        <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20221108-released/</link>
+        <link>http://localhost:1313/p/tabby-cad-suite-version-20221108-released/</link>
         <pubDate>Thu, 24 Nov 2022 00:00:00 +0000</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20221108-released/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2022/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20221108 released!" /&gt;&lt;p&gt;The November release of Tabby CAD Suite is now available for download. Notable changes in this version include:&lt;/p&gt;
+        <guid>http://localhost:1313/p/tabby-cad-suite-version-20221108-released/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2022/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20221108 released!" /&gt;&lt;p&gt;The November release of Tabby CAD Suite is now available for download. Notable changes in this version include:&lt;/p&gt;
 &lt;p&gt;We have experimentally added support for EDIF and Liberty verific parsers. They can be used either with the verific [-liberty|-edif] or the read [-liberty|-edif] command. We are evaluating whether it is of interest for us to keep these long-term, so please let us know if you use them and what your experience is!&lt;/p&gt;
 &lt;h2 id=&#34;in-other-yosyshq-news&#34;&gt;
     &lt;a href=&#34;#in-other-yosyshq-news&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
@@ -3247,11 +3435,11 @@ only of &lt;code&gt;techmap&lt;/code&gt; command, but also some of the other one
         </item>
         <item>
         <title>Tabby CAD Suite version 20221011 released!</title>
-        <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20221011-released/</link>
+        <link>http://localhost:1313/p/tabby-cad-suite-version-20221011-released/</link>
         <pubDate>Mon, 17 Oct 2022 00:00:00 +0000</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20221011-released/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2022/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20221011 released!" /&gt;&lt;p&gt;The October release of Tabby CAD Suite is now available for download.&lt;/p&gt;
+        <guid>http://localhost:1313/p/tabby-cad-suite-version-20221011-released/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2022/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20221011 released!" /&gt;&lt;p&gt;The October release of Tabby CAD Suite is now available for download.&lt;/p&gt;
 &lt;p&gt;The read and verific commands now support here-documents in scripts, the same way as read_verilog. This is useful e.g. to have small self-contained tests in a single file such as:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;read -sv &amp;lt;&amp;lt;EOT
 module top(input clk, output reg [1:0] q);
@@ -3268,12 +3456,12 @@ select -assert-count 1 a:init=2&#39;b10 top/q %i
         </item>
         <item>
         <title>Introducing the Colorlight 5A-75B board</title>
-        <link>http://blog.yosyshq.com/p/colorlight-part-1/</link>
+        <link>http://localhost:1313/p/colorlight-part-1/</link>
         <pubDate>Sun, 16 Oct 2022 18:17:00 +0200</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/colorlight-part-1/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2022/colorlight_5a75b.jpg" alt="Featured image of post Introducing the Colorlight 5A-75B board" /&gt;&lt;p&gt;&lt;em&gt;This guest post is the first in a two part series by Chris Lasocki.
-Part 2 is &lt;a class=&#34;link&#34; href=&#34;http://blog.yosyshq.com/p/colorlight-part-2/&#34; &gt;now available here&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+        <guid>http://localhost:1313/p/colorlight-part-1/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2022/colorlight_5a75b.jpg" alt="Featured image of post Introducing the Colorlight 5A-75B board" /&gt;&lt;p&gt;&lt;em&gt;This guest post is the first in a two part series by Chris Lasocki.
+Part 2 is &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/colorlight-part-2/&#34; &gt;now available here&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;It seems that it was an accident - a generic part of a LED display has
 become a low cost FPGA development board. The board in question is the
 Colorlight 5A-75B, which is a so-called receiver card. Featuring a
@@ -3350,11 +3538,11 @@ projects. He runs a blog at &lt;a class=&#34;link&#34; href=&#34;https://polprog
         </item>
         <item>
         <title>Tabby CAD Suite version 20220906 released!</title>
-        <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220906-released/</link>
+        <link>http://localhost:1313/p/tabby-cad-suite-version-20220906-released/</link>
         <pubDate>Tue, 06 Sep 2022 00:00:00 +0000</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220906-released/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2022/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20220906 released!" /&gt;&lt;p&gt;The September release of Tabby CAD Suite is now available for download.&lt;/p&gt;
+        <guid>http://localhost:1313/p/tabby-cad-suite-version-20220906-released/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2022/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20220906 released!" /&gt;&lt;p&gt;The September release of Tabby CAD Suite is now available for download.&lt;/p&gt;
 &lt;h2 id=&#34;sby&#34;&gt;
     &lt;a href=&#34;#sby&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     SBY
@@ -3373,11 +3561,11 @@ projects. He runs a blog at &lt;a class=&#34;link&#34; href=&#34;https://polprog
         </item>
         <item>
         <title>Tabby CAD Suite version 20220805 released!</title>
-        <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220805-released/</link>
+        <link>http://localhost:1313/p/tabby-cad-suite-version-20220805-released/</link>
         <pubDate>Fri, 05 Aug 2022 00:00:00 +0000</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220805-released/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2022/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20220805 released!" /&gt;&lt;p&gt;The August release of Tabby CAD Suite is now available for download.&lt;/p&gt;
+        <guid>http://localhost:1313/p/tabby-cad-suite-version-20220805-released/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2022/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20220805 released!" /&gt;&lt;p&gt;The August release of Tabby CAD Suite is now available for download.&lt;/p&gt;
 &lt;h2 id=&#34;sby&#34;&gt;
     &lt;a href=&#34;#sby&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     SBY
@@ -3395,11 +3583,11 @@ projects. He runs a blog at &lt;a class=&#34;link&#34; href=&#34;https://polprog
         </item>
         <item>
         <title>Autotune</title>
-        <link>http://blog.yosyshq.com/p/sby-autotune/</link>
+        <link>http://localhost:1313/p/sby-autotune/</link>
         <pubDate>Wed, 27 Jul 2022 14:41:35 +0200</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/sby-autotune/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2022/autotune.png" alt="Featured image of post Autotune" /&gt;&lt;p&gt;Sby, our frontend for formal verification, makes it easy to use Yosys with the various open source verification tools that are included in our CAD suites. Sby integrates these tools as engines and provides a unified interface. Additionally, many of the verification tools internally use lower-level tools like SAT and SMT solvers and allow the user to select between different supported solvers.&lt;/p&gt;
+        <guid>http://localhost:1313/p/sby-autotune/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2022/autotune.png" alt="Featured image of post Autotune" /&gt;&lt;p&gt;Sby, our frontend for formal verification, makes it easy to use Yosys with the various open source verification tools that are included in our CAD suites. Sby integrates these tools as engines and provides a unified interface. Additionally, many of the verification tools internally use lower-level tools like SAT and SMT solvers and allow the user to select between different supported solvers.&lt;/p&gt;
 &lt;p&gt;Most verification tasks can be performed by several of the supported engines and solvers. Depending on the specific verification task at hand, there can be large performance differences between them. Thus, it makes sense to try several engines and solvers to pick the best performing one.&lt;/p&gt;
 &lt;p&gt;With Sby, switching the engine or solver only requires changing a single line in the “[engines]” section of the .sby file. Still, the large number of engine and solver configurations made it impractical to manually try all of them for every verification task, so it was easy to leave performance on the table by sticking with a worse performing configuration.&lt;/p&gt;
 &lt;p&gt;To help you get the best performance out of Sby, we now introduced the &amp;ndash;autotune option. If you add this option to your usual Sby invocation, it will go ahead and automatically try all recommended engine and solver combinations, producing a report that lists the best performing configurations. You can then copy a configuration from this report into your .sby file to use a faster engine for future sby invocations. From time to time, when updating the CAD suite, or making significant changes to your design, you can run autotune again to see if you are still using the best performing engine.&lt;/p&gt;
@@ -3413,11 +3601,11 @@ projects. He runs a blog at &lt;a class=&#34;link&#34; href=&#34;https://polprog
         </item>
         <item>
         <title>Tabby CAD Suite version 20220706 released!</title>
-        <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220706-released/</link>
+        <link>http://localhost:1313/p/tabby-cad-suite-version-20220706-released/</link>
         <pubDate>Wed, 06 Jul 2022 00:00:00 +0000</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220706-released/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2022/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20220706 released!" /&gt;&lt;p&gt;The July release of Tabby CAD Suite is now available for download.&lt;/p&gt;
+        <guid>http://localhost:1313/p/tabby-cad-suite-version-20220706-released/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2022/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20220706 released!" /&gt;&lt;p&gt;The July release of Tabby CAD Suite is now available for download.&lt;/p&gt;
 &lt;h2 id=&#34;sby&#34;&gt;
     &lt;a href=&#34;#sby&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     SBY
@@ -3437,11 +3625,11 @@ projects. He runs a blog at &lt;a class=&#34;link&#34; href=&#34;https://polprog
         </item>
         <item>
         <title>Formal Tristate Support</title>
-        <link>http://blog.yosyshq.com/p/formal-trisate-support/</link>
+        <link>http://localhost:1313/p/formal-trisate-support/</link>
         <pubDate>Fri, 17 Jun 2022 17:28:17 +0200</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/formal-trisate-support/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2022/tristate.png" alt="Featured image of post Formal Tristate Support" /&gt;&lt;p&gt;Sby, our formal verification tool has recently got better support for tristate circuits. A tristate output is one that can either drive the connected wire to a high or low logic level or be in a high impedance state where it does not drive the output. This allows directly connecting multiple tristate outputs as long as no two are driving the output simultaneously. With tribuf (tristate buffer) support turned on, sby will automatically create assertions for any tristate signals that can be driven via multiples outputs. If more than one tristate output can drive the same wire, such an  assertion will fail. For example:&lt;/p&gt;
+        <guid>http://localhost:1313/p/formal-trisate-support/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2022/tristate.png" alt="Featured image of post Formal Tristate Support" /&gt;&lt;p&gt;Sby, our formal verification tool has recently got better support for tristate circuits. A tristate output is one that can either drive the connected wire to a high or low logic level or be in a high impedance state where it does not drive the output. This allows directly connecting multiple tristate outputs as long as no two are driving the output simultaneously. With tribuf (tristate buffer) support turned on, sby will automatically create assertions for any tristate signals that can be driven via multiples outputs. If more than one tristate output can drive the same wire, such an  assertion will fail. For example:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;module module1 (input wire active, output wire tri_out);
     assign tri_out = active ? 1&#39;b0 : 1&#39;bz;
 endmodule
@@ -3483,11 +3671,11 @@ The sby file makes use of 2 different task sections.&lt;/p&gt;
         </item>
         <item>
         <title>Tabby CAD Suite version 20220610 released!</title>
-        <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220610-released/</link>
+        <link>http://localhost:1313/p/tabby-cad-suite-version-20220610-released/</link>
         <pubDate>Fri, 10 Jun 2022 00:00:00 +0000</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220610-released/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2022/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20220610 released!" /&gt;&lt;p&gt;The June release of Tabby CAD Suite is now available for download.&lt;/p&gt;
+        <guid>http://localhost:1313/p/tabby-cad-suite-version-20220610-released/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2022/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20220610 released!" /&gt;&lt;p&gt;The June release of Tabby CAD Suite is now available for download.&lt;/p&gt;
 &lt;h2 id=&#34;yosys&#34;&gt;
     &lt;a href=&#34;#yosys&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     Yosys
@@ -3499,11 +3687,11 @@ The sby file makes use of 2 different task sections.&lt;/p&gt;
         </item>
         <item>
         <title>Tabby CAD Suite version 20220512 released!</title>
-        <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220512-released/</link>
+        <link>http://localhost:1313/p/tabby-cad-suite-version-20220512-released/</link>
         <pubDate>Thu, 12 May 2022 00:00:00 +0000</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220512-released/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2022/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20220512 released!" /&gt;&lt;p&gt;The May release of Tabby CAD Suite is now available for download.&lt;/p&gt;
+        <guid>http://localhost:1313/p/tabby-cad-suite-version-20220512-released/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2022/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20220512 released!" /&gt;&lt;p&gt;The May release of Tabby CAD Suite is now available for download.&lt;/p&gt;
 &lt;h2 id=&#34;sby&#34;&gt;
     &lt;a href=&#34;#sby&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     SBY
@@ -3524,11 +3712,11 @@ The sby file makes use of 2 different task sections.&lt;/p&gt;
         </item>
         <item>
         <title>Teodor-Dumitru and the Complexity of Adder Implementations in Hardware</title>
-        <link>http://blog.yosyshq.com/p/optimising-adders/</link>
+        <link>http://localhost:1313/p/optimising-adders/</link>
         <pubDate>Fri, 06 May 2022 09:38:52 +0200</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/optimising-adders/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2022/adders.jpg" alt="Featured image of post Teodor-Dumitru and the Complexity of Adder Implementations in Hardware" /&gt;&lt;p&gt;Teodor-Dumitru Ene will be presenting his work on adder optimisations, he&amp;rsquo;ll be covering:&lt;/p&gt;
+        <guid>http://localhost:1313/p/optimising-adders/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2022/adders.jpg" alt="Featured image of post Teodor-Dumitru and the Complexity of Adder Implementations in Hardware" /&gt;&lt;p&gt;Teodor-Dumitru Ene will be presenting his work on adder optimisations, he&amp;rsquo;ll be covering:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Prefix sums&lt;/li&gt;
 &lt;li&gt;His research&lt;/li&gt;
@@ -3546,11 +3734,11 @@ The sby file makes use of 2 different task sections.&lt;/p&gt;
         </item>
         <item>
         <title>Tabby CAD Suite version 20220406 released!</title>
-        <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220406-released/</link>
+        <link>http://localhost:1313/p/tabby-cad-suite-version-20220406-released/</link>
         <pubDate>Wed, 06 Apr 2022 00:00:00 +0000</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20220406-released/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2022/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20220406 released!" /&gt;&lt;p&gt;The April release of Tabby CAD Suite is now available for download.&lt;/p&gt;
+        <guid>http://localhost:1313/p/tabby-cad-suite-version-20220406-released/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2022/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20220406 released!" /&gt;&lt;p&gt;The April release of Tabby CAD Suite is now available for download.&lt;/p&gt;
 &lt;h2 id=&#34;yosys&#34;&gt;
     &lt;a href=&#34;#yosys&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     Yosys
@@ -3586,10 +3774,10 @@ The sby file makes use of 2 different task sections.&lt;/p&gt;
         </item>
         <item>
         <title>Open Source Silicon with Yosys</title>
-        <link>http://blog.yosyshq.com/p/open-source-silicon-with-yosys/</link>
+        <link>http://localhost:1313/p/open-source-silicon-with-yosys/</link>
         <pubDate>Mon, 28 Feb 2022 11:23:54 +0100</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/open-source-silicon-with-yosys/</guid>
+        <guid>http://localhost:1313/p/open-source-silicon-with-yosys/</guid>
         <description>&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;&#34; &gt;Yosys&lt;/a&gt; is probably best known for providing synthesis for FPGA targets, but it&amp;rsquo;s a very flexible tool capable of a lot more.&lt;/p&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://openlane-docs.readthedocs.io/en/rtd-develop/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;OpenLane&lt;/a&gt;, &lt;a class=&#34;link&#34; href=&#34;https://www.siliconcompiler.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -3610,11 +3798,11 @@ The sby file makes use of 2 different task sections.&lt;/p&gt;
         </item>
         <item>
         <title>Why Asynchronous Load Flip-Flops Should Be Avoided</title>
-        <link>http://blog.yosyshq.com/p/async-load-ff/</link>
+        <link>http://localhost:1313/p/async-load-ff/</link>
         <pubDate>Tue, 30 Nov 2021 00:00:00 +0000</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/async-load-ff/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2021/asyncff.png" alt="Featured image of post Why Asynchronous Load Flip-Flops Should Be Avoided" /&gt;&lt;p&gt;Code: &lt;a class=&#34;link&#34; href=&#34;https://github.com/YosysHQ-Docs/Blog-Async-Load-FFs&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+        <guid>http://localhost:1313/p/async-load-ff/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2021/asyncff.png" alt="Featured image of post Why Asynchronous Load Flip-Flops Should Be Avoided" /&gt;&lt;p&gt;Code: &lt;a class=&#34;link&#34; href=&#34;https://github.com/YosysHQ-Docs/Blog-Async-Load-FFs&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://github.com/YosysHQ-Docs/Blog-Async-Load-FFs&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;part-1-the-bad-news&#34;&gt;
     &lt;a href=&#34;#part-1-the-bad-news&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
@@ -3712,7 +3900,7 @@ iverilog -g2012 -o sim1 -s tb -DDOUBLE_ARST tb.sv dut.sv
   0  0
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;In the first case with a single pulse on arst, the second counter is reset to the non-zero value of the first counter from before the reset pulse.&lt;/p&gt;
 &lt;p&gt;But a real-world asynchronous load flip-flop would of course behave like a transparent latch while the reset pulse is high, propagating the new (zero) value of the first counter to the second counter register. But this only happens in simulation when we pulse the reset signal a second time.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2021/asyncff.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2021/asyncff.png&#34;
 	
 	
 	
@@ -3885,10 +4073,10 @@ iverilog -g2012 -o sim2 -s tb tb.sv dut_myff.sv myff_udp.sv
         </item>
         <item>
         <title>New pricing for small companies</title>
-        <link>http://blog.yosyshq.com/p/pricing-for-small-companies/</link>
+        <link>http://localhost:1313/p/pricing-for-small-companies/</link>
         <pubDate>Mon, 26 Jul 2021 15:35:40 +0200</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/pricing-for-small-companies/</guid>
+        <guid>http://localhost:1313/p/pricing-for-small-companies/</guid>
         <description>&lt;p&gt;YosysHQ are pleased to announce a new pricing option for small companies with one full time engineer.&lt;/p&gt;
 &lt;p&gt;For just €500 per month (excl. VAT), you can get our ‘Solo bundle’:&lt;/p&gt;
 &lt;ul&gt;
@@ -3904,10 +4092,10 @@ iverilog -g2012 -o sim2 -s tb tb.sv dut_myff.sv myff_udp.sv
         </item>
         <item>
         <title>App Note 109</title>
-        <link>http://blog.yosyshq.com/p/ap109/</link>
+        <link>http://localhost:1313/p/ap109/</link>
         <pubDate>Wed, 07 Jul 2021 12:37:04 +0200</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/ap109/</guid>
+        <guid>http://localhost:1313/p/ap109/</guid>
         <description>&lt;p&gt;This Application Note was written with the intention of showing a brief introduction to SVA, and is definitely not a substitute for extensive training. To learn more about formal verification and SVA, it is recommended to book the course given by the FPV specialists at YosysHQ.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;A brief history of SystemVerilog Assertions&lt;/li&gt;
@@ -3923,10 +4111,10 @@ iverilog -g2012 -o sim2 -s tb tb.sv dut_myff.sv myff_udp.sv
         </item>
         <item>
         <title>App Note 120</title>
-        <link>http://blog.yosyshq.com/p/ap120/</link>
+        <link>http://localhost:1313/p/ap120/</link>
         <pubDate>Thu, 20 May 2021 14:04:45 +0200</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/ap120/</guid>
+        <guid>http://localhost:1313/p/ap120/</guid>
         <description>&lt;p&gt;For a long time people have asked us for quality long form content that shows how to
 get the best from our formal tools.&lt;/p&gt;
 &lt;p&gt;We have started a series of app notes, with the first being about cover and witness for SVA properties. Otherwise known as &amp;lsquo;Am I testing what I think I&amp;rsquo;m testing&amp;rsquo;!&lt;/p&gt;
@@ -3945,20 +4133,20 @@ get the best from our formal tools.&lt;/p&gt;
         </item>
         <item>
         <title>About</title>
-        <link>http://blog.yosyshq.com/about/</link>
+        <link>http://localhost:1313/about/</link>
         <pubDate>Fri, 26 Feb 2021 00:00:00 +0000</pubDate>
         
-        <guid>http://blog.yosyshq.com/about/</guid>
+        <guid>http://localhost:1313/about/</guid>
         <description>&lt;p&gt;YosysHQ Blog site. For more information about YosysHQ, see our &lt;a class=&#34;link&#34; href=&#34;https://www.yosyshq.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;website&lt;/a&gt;.&lt;/p&gt;
 </description>
         </item>
         <item>
         <title>Newsletter</title>
-        <link>http://blog.yosyshq.com/newsletter/</link>
+        <link>http://localhost:1313/newsletter/</link>
         <pubDate>Fri, 26 Feb 2021 00:00:00 +0000</pubDate>
         
-        <guid>http://blog.yosyshq.com/newsletter/</guid>
+        <guid>http://localhost:1313/newsletter/</guid>
         <description>
 &lt;link href=&#34;//cdn-images.mailchimp.com/embedcode/classic-071822.css&#34; rel=&#34;stylesheet&#34; type=&#34;text/css&#34;&gt;
 &lt;style type=&#34;text/css&#34;&gt;
@@ -3997,10 +4185,10 @@ get the best from our formal tools.&lt;/p&gt;
         </item>
         <item>
         <title>Hello World!</title>
-        <link>http://blog.yosyshq.com/p/hello/</link>
+        <link>http://localhost:1313/p/hello/</link>
         <pubDate>Mon, 08 Feb 2021 00:00:00 +0000</pubDate>
         
-        <guid>http://blog.yosyshq.com/p/hello/</guid>
+        <guid>http://localhost:1313/p/hello/</guid>
         <description>&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.yosyshq.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;YosysHQ.com&lt;/a&gt; is the new home for the team maintaining Yosys and the related Open Source EDA projects, and the commercial products and services we offer.&lt;/p&gt;
 &lt;p&gt;Our team is led by N. Engelhardt as CEO, Claire Wolf as CTO, and Matt Venn as CSO. We are looking to work with more people, so feel free to contact us: &lt;a class=&#34;link&#34; href=&#34;mailto:contact@yosyshq.com&#34; &gt;contact@yosyshq.com&lt;/a&gt;&lt;/p&gt;
@@ -4015,29 +4203,29 @@ get the best from our formal tools.&lt;/p&gt;
         </item>
         <item>
         <title>Archives</title>
-        <link>http://blog.yosyshq.com/archives/</link>
+        <link>http://localhost:1313/archives/</link>
         <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
         
-        <guid>http://blog.yosyshq.com/archives/</guid>
+        <guid>http://localhost:1313/archives/</guid>
         <description></description>
         </item>
         <item>
         <title>Search</title>
-        <link>http://blog.yosyshq.com/search/</link>
+        <link>http://localhost:1313/search/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://blog.yosyshq.com/search/</guid>
+        <guid>http://localhost:1313/search/</guid>
         <description></description>
         </item>
         <item>
         <title>Yosys User&#39;s Group</title>
-        <link>http://blog.yosyshq.com/yug/</link>
+        <link>http://localhost:1313/yug/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://blog.yosyshq.com/yug/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2023/yug.jpg" alt="Featured image of post Yosys User&#39;s Group" /&gt;&lt;p&gt;We have recently started a Yosys User&amp;rsquo;s Group. You can see the &lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/document/d/13e8hERQ_eqLQrdtH1WXnGUXDtgyQ8oa_zZWXPHJCiN0/edit#heading=h.dqkvsnhcju2v&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+        <guid>http://localhost:1313/yug/</guid>
+        <description>&lt;img src="http://localhost:1313/static-2023/yug.jpg" alt="Featured image of post Yosys User&#39;s Group" /&gt;&lt;p&gt;We have recently started a Yosys User&amp;rsquo;s Group. You can see the &lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/document/d/13e8hERQ_eqLQrdtH1WXnGUXDtgyQ8oa_zZWXPHJCiN0/edit#heading=h.dqkvsnhcju2v&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;minutes of our first 5 calls here&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;If you&amp;rsquo;d like to join, then please &lt;a class=&#34;link&#34; href=&#34;http://blog.yosyshq.com/newsletter&#34; &gt;sign up to the newsletter&lt;/a&gt; or follow us on:&lt;/p&gt;
+&lt;p&gt;If you&amp;rsquo;d like to join, then please &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/newsletter&#34; &gt;sign up to the newsletter&lt;/a&gt; or follow us on:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.linkedin.com/company/yosyshq&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;linkedin&lt;/a&gt;,&lt;/li&gt;
