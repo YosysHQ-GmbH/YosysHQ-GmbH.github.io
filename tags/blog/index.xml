@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Blog on YosysHQ Blog</title>
-        <link>http://localhost:1313/tags/blog/</link>
+        <link>http://blog.yosyshq.com/tags/blog/</link>
         <description>Recent content in Blog on YosysHQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Mon, 12 Feb 2024 19:09:55 -0800</lastBuildDate><atom:link href="http://localhost:1313/tags/blog/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 12 Feb 2024 19:09:55 -0800</lastBuildDate><atom:link href="http://blog.yosyshq.com/tags/blog/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Sky130 SPICE, the KiCad way</title>
-        <link>http://localhost:1313/p/sky130-kicad-spice/</link>
+        <link>http://blog.yosyshq.com/p/sky130-kicad-spice/</link>
         <pubDate>Mon, 12 Feb 2024 19:09:55 -0800</pubDate>
         
-        <guid>http://localhost:1313/p/sky130-kicad-spice/</guid>
-        <description>&lt;img src="http://localhost:1313/static-2024/sky130-kicad/banner.png" alt="Featured image of post Sky130 SPICE, the KiCad way" /&gt;&lt;p&gt;&lt;em&gt;This guest post is by &lt;a class=&#34;link&#34; href=&#34;https://chaos.social/@lethalbit&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+        <guid>http://blog.yosyshq.com/p/sky130-kicad-spice/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2024/sky130-kicad/banner.png" alt="Featured image of post Sky130 SPICE, the KiCad way" /&gt;&lt;p&gt;&lt;em&gt;This guest post is by &lt;a class=&#34;link&#34; href=&#34;https://chaos.social/@lethalbit&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Aki Van Ness&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 &lt;h1 id=&#34;sky130-spice-the-kicad-way&#34;&gt;
     &lt;a href=&#34;#sky130-spice-the-kicad-way&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
@@ -31,7 +31,7 @@
     &gt;kicad-pdk-libs&lt;/a&gt;, a KiCad symbol library that adds schematic symbols for not only the basic building blocks of the Sky130 &lt;a class=&#34;link&#34; href=&#34;https://www.zerotoasiccourse.com/terminology/pdk/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;PDK&lt;/a&gt;, but also SPICE library linkage.&lt;/p&gt;
 &lt;p&gt;With this you can do things as simple as just stubbing out a SPICE simulation for some of the primitive gates, or go down to the transistor level and build gates from scratch and simulate their characteristics!&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2024/sky130-kicad/kicad_nfet.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2024/sky130-kicad/kicad_nfet.png&#34;
 	
 	
 	
@@ -49,7 +49,7 @@
 &lt;/h2&gt;&lt;p&gt;The basic example that almost everyone uses as their first CMOS device is the trusty inverter. As such we will quickly go over it here, if you wish for a more step-by-step guide with additional details, see the kicad-pdk-libs &lt;a class=&#34;link&#34; href=&#34;https://github.com/lethalbit/kicad-pdk-libs/blob/main/docs/intro.md&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;intro&lt;/a&gt; in the docs.&lt;/p&gt;
 &lt;p&gt;All you need to do is to throw a &lt;code&gt;sky130_pfet_01v8&lt;/code&gt; and a &lt;code&gt;sky130_nfet_01v8&lt;/code&gt; on top of each other with their drains facing each other, hook up &lt;code&gt;VCC&lt;/code&gt; and &lt;code&gt;GND&lt;/code&gt; and then join the gates and drains, and just like that, you have an inverter using the primitive Sky130 FET models.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2024/sky130-kicad/inverter_sch.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2024/sky130-kicad/inverter_sch.png&#34;
 	
 	
 	
@@ -60,7 +60,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;Next set up some way to drive the sim, in my case I did a VDC source and then a VPULSE to drive the inverter, these are built-in to the standard KiCad SPICE library, it should look something like this when done:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2024/sky130-kicad/schema.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2024/sky130-kicad/schema.png&#34;
 	
 	
 	
@@ -74,7 +74,7 @@
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-spice&#34; data-lang=&#34;spice&#34;&gt;.tran 100f 100n
 .lib ${PDK_ROOT}/sky130A/libs.tech/ngspice/sky130.lib.spice tt
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;And finally, we&amp;rsquo;re ready to run the sim! Open up KiCad&amp;rsquo;s simulation utility and simply click the &amp;ldquo;Run/Stop Simulation&amp;rdquo; button, if all goes well, the simulation will run and then we can plot the &lt;code&gt;A&lt;/code&gt; and &lt;code&gt;Y&lt;/code&gt; signals.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2024/sky130-kicad/sim_results.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2024/sky130-kicad/sim_results.png&#34;
 	
 	
 	
@@ -104,11 +104,11 @@
         </item>
         <item>
         <title>Logic Locking with Moosic</title>
-        <link>http://localhost:1313/p/logic-locking-with-moosic/</link>
+        <link>http://blog.yosyshq.com/p/logic-locking-with-moosic/</link>
         <pubDate>Tue, 30 Jan 2024 12:00:00 +0200</pubDate>
         
-        <guid>http://localhost:1313/p/logic-locking-with-moosic/</guid>
-        <description>&lt;img src="http://localhost:1313/static-2024/locking.png" alt="Featured image of post Logic Locking with Moosic" /&gt;&lt;p&gt;&lt;em&gt;This guest post is by Gabriel Gouvine.&lt;/em&gt;&lt;/p&gt;
+        <guid>http://blog.yosyshq.com/p/logic-locking-with-moosic/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2024/locking.png" alt="Featured image of post Logic Locking with Moosic" /&gt;&lt;p&gt;&lt;em&gt;This guest post is by Gabriel Gouvine.&lt;/em&gt;&lt;/p&gt;
 &lt;h1 id=&#34;applying-logic-locking-to-a-tinytapeout-design-with-moosic&#34;&gt;
     &lt;a href=&#34;#applying-logic-locking-to-a-tinytapeout-design-with-moosic&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     Applying logic locking to a TinyTapeout design with Moosic
@@ -118,7 +118,7 @@ For security-conscious designers, countermeasures are necessary.&lt;/p&gt;
 &lt;p&gt;One such countermeasure is logic locking: we are going to lock our design, so that it does not work without a secret key.
 We do it by adding or changing some gates in the design to use the key: if the key is incorrect, the design behaviour will be completely modified.
 This is going to make it harder to reuse the design without authorization (you have to find the key) or to introduce backdoors (you have to understand what it does).&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2024/locking.svg&#34;
+&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2024/locking.svg&#34;
 	
 	
 	
@@ -143,7 +143,7 @@ Our tool does it by adding Xor and Xnor gates, as shown below, but you can imagi
 If a 0 is set for a Xor gate, or a 1 for a Xnor gate, the design works as before.
 It acts as a countermeasure rather than a cryptographic security.
 Much like software countermeasures it will not stop a determined attacker with unlimited resources, but it&amp;rsquo;s one more thing that an attacker will have to break.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2024/XOR_NXOR_insertion.svg&#34;
+&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2024/XOR_NXOR_insertion.svg&#34;
 	
 	
 	
@@ -160,7 +160,7 @@ Ultimately, it&amp;rsquo;s a tradeoff between security and performance: for secu
 &lt;p&gt;Just a few percents of the gates locked is almost always enough to completely corrupt the design.
 We can explore the tradeoff with the plugin.
 For example, on this benchmark, locking just 13% of the signals breaks all outputs and all testcases:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2024/pareto_front.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2024/pareto_front.png&#34;
 	
 	
 	
@@ -228,11 +228,11 @@ Logic locking is an active area of research, and we are happy to provide an open
         </item>
         <item>
         <title>Solving a Sudoku with SBY and Formal Verification</title>
-        <link>http://localhost:1313/p/solving-sudoku-with-sby/</link>
+        <link>http://blog.yosyshq.com/p/solving-sudoku-with-sby/</link>
         <pubDate>Mon, 06 Nov 2023 12:00:00 +0200</pubDate>
         
-        <guid>http://localhost:1313/p/solving-sudoku-with-sby/</guid>
-        <description>&lt;img src="http://localhost:1313/static-2023/cover_sby_sudoku.png" alt="Featured image of post Solving a Sudoku with SBY and Formal Verification" /&gt;&lt;p&gt;&lt;em&gt;This guest post is by Theophile Loubiere.&lt;/em&gt;&lt;/p&gt;
+        <guid>http://blog.yosyshq.com/p/solving-sudoku-with-sby/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2023/cover_sby_sudoku.png" alt="Featured image of post Solving a Sudoku with SBY and Formal Verification" /&gt;&lt;p&gt;&lt;em&gt;This guest post is by Theophile Loubiere.&lt;/em&gt;&lt;/p&gt;
 &lt;h1 id=&#34;solving-a-sudoku-with-sby-and-formal-verification&#34;&gt;
     &lt;a href=&#34;#solving-a-sudoku-with-sby-and-formal-verification&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     Solving a Sudoku with SBY and Formal Verification
@@ -436,7 +436,7 @@ sudoku.v
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;All we have to do is run the following command :&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sby -f sudoku.sby
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;And as you can see&amp;hellip; it fails&amp;hellip; WAIT! WHAT?&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2023/unreached_cover_statement.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2023/unreached_cover_statement.png&#34;
 	
 	
 	
@@ -459,7 +459,7 @@ assume(sudoku_grid[1][4]==3); // correct
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;When I visited my grandfather, I handed him the original and copied it onto a paper to solve it myself&amp;hellip; I made a copying error(deep breath)&amp;hellip; At least we stumble upon a unexpected feature : we now know how to identify an unfeasible grid !&lt;/p&gt;
 &lt;p&gt;Now, after correcting my mistake, it works as expected: SBY generates the solution for me!&lt;/p&gt;
 &lt;p&gt;Here&amp;rsquo;s the solution viewed through gtkwave (SBY give you the path of the vcd file):
-&lt;img src=&#34;http://localhost:1313/static-2023/unreadable_solution.png&#34;
+&lt;img src=&#34;http://blog.yosyshq.com/static-2023/unreadable_solution.png&#34;
 	
 	
 	
@@ -495,11 +495,11 @@ assume(sudoku_grid[1][4]==3); // correct
         </item>
         <item>
         <title>How I went from blinker to RISC-V in 3 months</title>
-        <link>http://localhost:1313/p/blinker-to-risc-v/</link>
+        <link>http://blog.yosyshq.com/p/blinker-to-risc-v/</link>
         <pubDate>Mon, 15 May 2023 12:00:00 +0200</pubDate>
         
-        <guid>http://localhost:1313/p/blinker-to-risc-v/</guid>
-        <description>&lt;img src="http://localhost:1313/static-2023/blinker-to-riscv.jpg" alt="Featured image of post How I went from blinker to RISC-V in 3 months" /&gt;&lt;p&gt;&lt;em&gt;This guest post is by Bastian Löher.&lt;/em&gt;&lt;/p&gt;
+        <guid>http://blog.yosyshq.com/p/blinker-to-risc-v/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2023/blinker-to-riscv.jpg" alt="Featured image of post How I went from blinker to RISC-V in 3 months" /&gt;&lt;p&gt;&lt;em&gt;This guest post is by Bastian Löher.&lt;/em&gt;&lt;/p&gt;
 &lt;h1 id=&#34;how-i-went-from-blinker-to-risc-v-in-3-months&#34;&gt;
     &lt;a href=&#34;#how-i-went-from-blinker-to-risc-v-in-3-months&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     How I went from blinker to RISC-V in 3 months
@@ -546,7 +546,7 @@ assume(sudoku_grid[1][4]==3); // correct
     &gt;F4PGA&lt;/a&gt; (formerly Symbiflow) toolchain and an FPGA board that was not supported in the tutorial (&lt;a class=&#34;link&#34; href=&#34;https://digilent.com/reference/programmable-logic/cmod-a7&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Digilent CMOD A7&lt;/a&gt; with &lt;a class=&#34;link&#34; href=&#34;https://www.xilinx.com/products/silicon-devices/fpga/artix-7.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Xilinx Artix 7&lt;/a&gt;). I wanted to see how far I could go and was unaware of the obstacles that lay ahead.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2023/cmod_board.jpg&#34;
+&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2023/cmod_board.jpg&#34;
 	
 	
 	
@@ -604,11 +604,11 @@ assume(sudoku_grid[1][4]==3); // correct
         </item>
         <item>
         <title>First gateware on the Colorlight 5A-75B board </title>
-        <link>http://localhost:1313/p/colorlight-part-2/</link>
+        <link>http://blog.yosyshq.com/p/colorlight-part-2/</link>
         <pubDate>Tue, 28 Mar 2023 18:17:00 +0200</pubDate>
         
-        <guid>http://localhost:1313/p/colorlight-part-2/</guid>
-        <description>&lt;img src="http://localhost:1313/static-2022/colorlight_5a75b.jpg" alt="Featured image of post First gateware on the Colorlight 5A-75B board " /&gt;&lt;p&gt;&lt;em&gt;Welcome to the second part of the Colorlight 5A-75B article. You can find the &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/colorlight-part-1/&#34; &gt;first part here&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+        <guid>http://blog.yosyshq.com/p/colorlight-part-2/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2022/colorlight_5a75b.jpg" alt="Featured image of post First gateware on the Colorlight 5A-75B board " /&gt;&lt;p&gt;&lt;em&gt;Welcome to the second part of the Colorlight 5A-75B article. You can find the &lt;a class=&#34;link&#34; href=&#34;http://blog.yosyshq.com/p/colorlight-part-1/&#34; &gt;first part here&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;In this blogpost I will show you how to set up, synthesize and program your first Verilog program on the ECP5 FPGA using the Yosys suite.&lt;/p&gt;
 &lt;h2 id=&#34;the-fpga-toolchain&#34;&gt;
     &lt;a href=&#34;#the-fpga-toolchain&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
@@ -728,11 +728,11 @@ projects. He runs a blog at &lt;a class=&#34;link&#34; href=&#34;https://polprog
         </item>
         <item>
         <title>Tillitis and YosysHQ</title>
-        <link>http://localhost:1313/p/tillitis-and-yosyshq/</link>
+        <link>http://blog.yosyshq.com/p/tillitis-and-yosyshq/</link>
         <pubDate>Mon, 06 Feb 2023 11:56:24 +0100</pubDate>
         
-        <guid>http://localhost:1313/p/tillitis-and-yosyshq/</guid>
-        <description>&lt;img src="http://localhost:1313/static-2023/tillitis.jpg" alt="Featured image of post Tillitis and YosysHQ" /&gt;&lt;p&gt;We are happy to announce that we are working with &lt;a class=&#34;link&#34; href=&#34;https://tillitis.se/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+        <guid>http://blog.yosyshq.com/p/tillitis-and-yosyshq/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2023/tillitis.jpg" alt="Featured image of post Tillitis and YosysHQ" /&gt;&lt;p&gt;We are happy to announce that we are working with &lt;a class=&#34;link&#34; href=&#34;https://tillitis.se/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Tillitis&lt;/a&gt; on their next generation of USB security key.&lt;/p&gt;
 &lt;p&gt;Their current model TKey™ is &lt;a class=&#34;link&#34; href=&#34;https://github.com/tillitis&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;open source hardware and software&lt;/a&gt;. It uses a Lattice iCE40, chosen due to it being supported by our open source FPGA tools.&lt;/p&gt;
@@ -745,11 +745,11 @@ projects. He runs a blog at &lt;a class=&#34;link&#34; href=&#34;https://polprog
         </item>
         <item>
         <title>3D raytraced game with open source C to FPGA toolchain</title>
-        <link>http://localhost:1313/p/3d-raytracing/</link>
+        <link>http://blog.yosyshq.com/p/3d-raytracing/</link>
         <pubDate>Fri, 03 Feb 2023 12:00:00 +0200</pubDate>
         
-        <guid>http://localhost:1313/p/3d-raytracing/</guid>
-        <description>&lt;img src="http://localhost:1313/static-2023/sphery.png" alt="Featured image of post 3D raytraced game with open source C to FPGA toolchain" /&gt;&lt;p&gt;&lt;em&gt;This guest post is by Victor Suarez Rovere and Julian Kemmerer.&lt;/em&gt;&lt;/p&gt;
+        <guid>http://blog.yosyshq.com/p/3d-raytracing/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2023/sphery.png" alt="Featured image of post 3D raytraced game with open source C to FPGA toolchain" /&gt;&lt;p&gt;&lt;em&gt;This guest post is by Victor Suarez Rovere and Julian Kemmerer.&lt;/em&gt;&lt;/p&gt;
 &lt;h1 id=&#34;3d-raytraced-game-using-fully-open-source-c-to-fpga-toolchain&#34;&gt;
     &lt;a href=&#34;#3d-raytraced-game-using-fully-open-source-c-to-fpga-toolchain&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     3D raytraced game using fully open source “C to FPGA” toolchain
@@ -1011,11 +1011,11 @@ projects. He runs a blog at &lt;a class=&#34;link&#34; href=&#34;https://polprog
         </item>
         <item>
         <title>Logic Primitive Transformations with Yosys Techmap</title>
-        <link>http://localhost:1313/p/logic-primitive-transformations-with-yosys-techmap/</link>
+        <link>http://blog.yosyshq.com/p/logic-primitive-transformations-with-yosys-techmap/</link>
         <pubDate>Thu, 24 Nov 2022 09:38:52 +0200</pubDate>
         
-        <guid>http://localhost:1313/p/logic-primitive-transformations-with-yosys-techmap/</guid>
-        <description>&lt;img src="http://localhost:1313/static-2022/yosys_techmap/SB_MAC16_block_diagram.png" alt="Featured image of post Logic Primitive Transformations with Yosys Techmap" /&gt;&lt;p&gt;&lt;em&gt;This guest post is by &lt;a class=&#34;link&#34; href=&#34;https://tomverbeure.github.io/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+        <guid>http://blog.yosyshq.com/p/logic-primitive-transformations-with-yosys-techmap/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2022/yosys_techmap/SB_MAC16_block_diagram.png" alt="Featured image of post Logic Primitive Transformations with Yosys Techmap" /&gt;&lt;p&gt;&lt;em&gt;This guest post is by &lt;a class=&#34;link&#34; href=&#34;https://tomverbeure.github.io/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Tom Verbeure&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 &lt;h1 id=&#34;introduction&#34;&gt;
     &lt;a href=&#34;#introduction&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
@@ -1080,7 +1080,7 @@ and the whole design looks like this:&lt;/p&gt;
     &gt;&lt;code&gt;show&lt;/code&gt; command&lt;/a&gt;
 that renders an RTLIL representation as a graph. I usually add the &lt;code&gt;-width -signed&lt;/code&gt; options to
 annotate signals with their size and to show which cell ports are signed:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2022/yosys_techmap/mul_rtlil.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2022/yosys_techmap/mul_rtlil.png&#34;
 	
 	
 	
@@ -1094,7 +1094,7 @@ annotate signals with their size and to show which cell ports are signed:&lt;/p&
 iCE40 family have a handful of DSPs. When you synthesize this module to the iCE40 technology with
 &lt;code&gt;synth_ice40 -dsp&lt;/code&gt;, the &lt;code&gt;$mul&lt;/code&gt; primitive gets converted to an &lt;code&gt;SB_MAC16&lt;/code&gt; cell which is the DSP
 primitive of the iCE40 family.&lt;/p&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/static-2022/yosys_techmap/SB_MAC16_block_diagram.png&#34; &gt;&lt;img src=&#34;http://localhost:1313/static-2022/yosys_techmap/SB_MAC16_block_diagram.png&#34;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;http://blog.yosyshq.com/static-2022/yosys_techmap/SB_MAC16_block_diagram.png&#34; &gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2022/yosys_techmap/SB_MAC16_block_diagram.png&#34;
 	
 	
 	
@@ -1168,7 +1168,7 @@ output bits so that the DSP performs the desired 10-bit x 10-bit multiplication.
   end
 end
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;And here&amp;rsquo;s the equivalent graphical representation. (&lt;em&gt;Click to enlarge&lt;/em&gt;)&lt;/p&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/static-2022/yosys_techmap/mul_ice40.png&#34; &gt;&lt;img src=&#34;http://localhost:1313/static-2022/yosys_techmap/mul_ice40.png&#34;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;http://blog.yosyshq.com/static-2022/yosys_techmap/mul_ice40.png&#34; &gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2022/yosys_techmap/mul_ice40.png&#34;
 	
 	
 	
@@ -1246,7 +1246,7 @@ clean -purge
 techmap -map +/mul2dsp.v -D DSP_A_MAXWIDTH=16 -D DSP_B_MAXWIDTH=16 -D DSP_A_MINWIDTH=2 -D DSP_B_MINWIDTH=2 -D DSP_Y_MINWIDTH=11 -D DSP_NAME=$__MUL16X16
 clean -purge
 show -width -signed -format png -prefix mul_mul2dsp
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2022/yosys_techmap/mul_mul2dsp.png&#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2022/yosys_techmap/mul_mul2dsp.png&#34;
 	
 	
 	
@@ -1257,7 +1257,7 @@ show -width -signed -format png -prefix mul_mul2dsp
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;In case you were wondering, here&amp;rsquo;s what this first step looks like for a 20-bit x 20-bit to 40-bit multiplier:&lt;/p&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/static-2022/yosys_techmap/large_mul_techmap.png&#34; &gt;&lt;img src=&#34;http://localhost:1313/static-2022/yosys_techmap/large_mul_techmap.png&#34;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;http://blog.yosyshq.com/static-2022/yosys_techmap/large_mul_techmap.png&#34; &gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2022/yosys_techmap/large_mul_techmap.png&#34;
 	
 	
 	
@@ -1321,7 +1321,7 @@ multiplier.&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;assign&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sum&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;op0&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;op1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;endmodule&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The graphical representation is as expected:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2022/yosys_techmap/add_orig.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2022/yosys_techmap/add_orig.png&#34;
 	
 	
 	
@@ -1370,7 +1370,7 @@ operations to just the number of bits that are really needed.&lt;/p&gt;
 hierarchy -top top_unsigned
 wreduce
 clean -purge
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2022/yosys_techmap/add_wreduce.png&#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2022/yosys_techmap/add_wreduce.png&#34;
 	
 	
 	
@@ -1554,7 +1554,7 @@ to swap the inputs, and the second time for the actual reduction.&lt;/p&gt;
 be hard to debug. You can use the &lt;code&gt;-max_iter &amp;lt;number&amp;gt;&lt;/code&gt; option to limit
 the number of transformations.&lt;/p&gt;
 &lt;p&gt;For example, here&amp;rsquo;s what the design originally looked like:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2022/yosys_techmap/add_orig.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2022/yosys_techmap/add_orig.png&#34;
 	
 	
 	
@@ -1568,7 +1568,7 @@ the number of transformations.&lt;/p&gt;
 first iteration:&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;techmap -map add_reduce.v -max_iter 1
 clean -purge
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2022/yosys_techmap/add_swap_clean.png&#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2022/yosys_techmap/add_swap_clean.png&#34;
 	
 	
 	
@@ -1605,7 +1605,7 @@ We can run the whole thing with:&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;techmap -map add_reduce.v -D Y_MIN_WIDTH=32
 clean -purge
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The result is exactly what we wanted, as shown in the graphical diagram&amp;hellip;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2022/yosys_techmap/add_reduce.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2022/yosys_techmap/add_reduce.png&#34;
 	
 	
 	
@@ -1646,7 +1646,7 @@ select top_unsigned
 techmap -map add_reduce.v -D Y_MIN_WIDTH=8 
 clean -purge
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;So far, so good: Yosys now has 2 designs. &lt;code&gt;top_unsigned_gold&lt;/code&gt; is the original one:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2022/yosys_techmap/add10_gold.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2022/yosys_techmap/add10_gold.png&#34;
 	
 	
 	
@@ -1657,7 +1657,7 @@ clean -purge
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;And &lt;code&gt;top_unsigned&lt;/code&gt; has been transformed with the techmap:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2022/yosys_techmap/add10_reduce.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2022/yosys_techmap/add10_reduce.png&#34;
 	
 	
 	
@@ -1674,7 +1674,7 @@ select top_equiv
 design with &lt;code&gt;$equiv&lt;/code&gt; primitive cells inserted at the output of both designs. These cells
 will tell the equivalence checker which nets to check for formal equivalence. The
 new design &lt;code&gt;top_equiv&lt;/code&gt; looks like this:&lt;/p&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/static-2022/yosys_techmap/add10_equiv_make.png&#34; &gt;&lt;img src=&#34;http://localhost:1313/static-2022/yosys_techmap/add10_equiv_make.png&#34;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;http://blog.yosyshq.com/static-2022/yosys_techmap/add10_equiv_make.png&#34; &gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2022/yosys_techmap/add10_equiv_make.png&#34;
 	
 	
 	
@@ -1726,7 +1726,7 @@ commands to learn more.&lt;/p&gt;
 that aren&amp;rsquo;t used anymore. You need to expliclity tell Yosys to do so with the &lt;code&gt;clean -purge&lt;/code&gt;
 command that you can see in some of the command sequences above.&lt;/p&gt;
 &lt;p&gt;Here&amp;rsquo;s what the reduced adder looks like without first running a clean:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/static-2022/yosys_techmap/add_reduce_unclean.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2022/yosys_techmap/add_reduce_unclean.png&#34;
 	
 	
 	
@@ -1771,12 +1771,12 @@ only of &lt;code&gt;techmap&lt;/code&gt; command, but also some of the other one
         </item>
         <item>
         <title>Introducing the Colorlight 5A-75B board</title>
-        <link>http://localhost:1313/p/colorlight-part-1/</link>
+        <link>http://blog.yosyshq.com/p/colorlight-part-1/</link>
         <pubDate>Sun, 16 Oct 2022 18:17:00 +0200</pubDate>
         
-        <guid>http://localhost:1313/p/colorlight-part-1/</guid>
-        <description>&lt;img src="http://localhost:1313/static-2022/colorlight_5a75b.jpg" alt="Featured image of post Introducing the Colorlight 5A-75B board" /&gt;&lt;p&gt;&lt;em&gt;This guest post is the first in a two part series by Chris Lasocki.
-Part 2 is &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/colorlight-part-2/&#34; &gt;now available here&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+        <guid>http://blog.yosyshq.com/p/colorlight-part-1/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2022/colorlight_5a75b.jpg" alt="Featured image of post Introducing the Colorlight 5A-75B board" /&gt;&lt;p&gt;&lt;em&gt;This guest post is the first in a two part series by Chris Lasocki.
+Part 2 is &lt;a class=&#34;link&#34; href=&#34;http://blog.yosyshq.com/p/colorlight-part-2/&#34; &gt;now available here&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;It seems that it was an accident - a generic part of a LED display has
 become a low cost FPGA development board. The board in question is the
 Colorlight 5A-75B, which is a so-called receiver card. Featuring a
@@ -1853,11 +1853,11 @@ projects. He runs a blog at &lt;a class=&#34;link&#34; href=&#34;https://polprog
         </item>
         <item>
         <title>Autotune</title>
-        <link>http://localhost:1313/p/sby-autotune/</link>
+        <link>http://blog.yosyshq.com/p/sby-autotune/</link>
         <pubDate>Wed, 27 Jul 2022 14:41:35 +0200</pubDate>
         
-        <guid>http://localhost:1313/p/sby-autotune/</guid>
-        <description>&lt;img src="http://localhost:1313/static-2022/autotune.png" alt="Featured image of post Autotune" /&gt;&lt;p&gt;Sby, our frontend for formal verification, makes it easy to use Yosys with the various open source verification tools that are included in our CAD suites. Sby integrates these tools as engines and provides a unified interface. Additionally, many of the verification tools internally use lower-level tools like SAT and SMT solvers and allow the user to select between different supported solvers.&lt;/p&gt;
+        <guid>http://blog.yosyshq.com/p/sby-autotune/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2022/autotune.png" alt="Featured image of post Autotune" /&gt;&lt;p&gt;Sby, our frontend for formal verification, makes it easy to use Yosys with the various open source verification tools that are included in our CAD suites. Sby integrates these tools as engines and provides a unified interface. Additionally, many of the verification tools internally use lower-level tools like SAT and SMT solvers and allow the user to select between different supported solvers.&lt;/p&gt;
 &lt;p&gt;Most verification tasks can be performed by several of the supported engines and solvers. Depending on the specific verification task at hand, there can be large performance differences between them. Thus, it makes sense to try several engines and solvers to pick the best performing one.&lt;/p&gt;
 &lt;p&gt;With Sby, switching the engine or solver only requires changing a single line in the “[engines]” section of the .sby file. Still, the large number of engine and solver configurations made it impractical to manually try all of them for every verification task, so it was easy to leave performance on the table by sticking with a worse performing configuration.&lt;/p&gt;
 &lt;p&gt;To help you get the best performance out of Sby, we now introduced the &amp;ndash;autotune option. If you add this option to your usual Sby invocation, it will go ahead and automatically try all recommended engine and solver combinations, producing a report that lists the best performing configurations. You can then copy a configuration from this report into your .sby file to use a faster engine for future sby invocations. From time to time, when updating the CAD suite, or making significant changes to your design, you can run autotune again to see if you are still using the best performing engine.&lt;/p&gt;
@@ -1871,11 +1871,11 @@ projects. He runs a blog at &lt;a class=&#34;link&#34; href=&#34;https://polprog
         </item>
         <item>
         <title>Formal Tristate Support</title>
-        <link>http://localhost:1313/p/formal-trisate-support/</link>
+        <link>http://blog.yosyshq.com/p/formal-trisate-support/</link>
         <pubDate>Fri, 17 Jun 2022 17:28:17 +0200</pubDate>
         
-        <guid>http://localhost:1313/p/formal-trisate-support/</guid>
-        <description>&lt;img src="http://localhost:1313/static-2022/tristate.png" alt="Featured image of post Formal Tristate Support" /&gt;&lt;p&gt;Sby, our formal verification tool has recently got better support for tristate circuits. A tristate output is one that can either drive the connected wire to a high or low logic level or be in a high impedance state where it does not drive the output. This allows directly connecting multiple tristate outputs as long as no two are driving the output simultaneously. With tribuf (tristate buffer) support turned on, sby will automatically create assertions for any tristate signals that can be driven via multiples outputs. If more than one tristate output can drive the same wire, such an  assertion will fail. For example:&lt;/p&gt;
+        <guid>http://blog.yosyshq.com/p/formal-trisate-support/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2022/tristate.png" alt="Featured image of post Formal Tristate Support" /&gt;&lt;p&gt;Sby, our formal verification tool has recently got better support for tristate circuits. A tristate output is one that can either drive the connected wire to a high or low logic level or be in a high impedance state where it does not drive the output. This allows directly connecting multiple tristate outputs as long as no two are driving the output simultaneously. With tribuf (tristate buffer) support turned on, sby will automatically create assertions for any tristate signals that can be driven via multiples outputs. If more than one tristate output can drive the same wire, such an  assertion will fail. For example:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;module module1 (input wire active, output wire tri_out);
     assign tri_out = active ? 1&#39;b0 : 1&#39;bz;
 endmodule
@@ -1917,11 +1917,11 @@ The sby file makes use of 2 different task sections.&lt;/p&gt;
         </item>
         <item>
         <title>Teodor-Dumitru and the Complexity of Adder Implementations in Hardware</title>
-        <link>http://localhost:1313/p/optimising-adders/</link>
+        <link>http://blog.yosyshq.com/p/optimising-adders/</link>
         <pubDate>Fri, 06 May 2022 09:38:52 +0200</pubDate>
         
-        <guid>http://localhost:1313/p/optimising-adders/</guid>
-        <description>&lt;img src="http://localhost:1313/static-2022/adders.jpg" alt="Featured image of post Teodor-Dumitru and the Complexity of Adder Implementations in Hardware" /&gt;&lt;p&gt;Teodor-Dumitru Ene will be presenting his work on adder optimisations, he&amp;rsquo;ll be covering:&lt;/p&gt;
+        <guid>http://blog.yosyshq.com/p/optimising-adders/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2022/adders.jpg" alt="Featured image of post Teodor-Dumitru and the Complexity of Adder Implementations in Hardware" /&gt;&lt;p&gt;Teodor-Dumitru Ene will be presenting his work on adder optimisations, he&amp;rsquo;ll be covering:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Prefix sums&lt;/li&gt;
 &lt;li&gt;His research&lt;/li&gt;
@@ -1939,10 +1939,10 @@ The sby file makes use of 2 different task sections.&lt;/p&gt;
         </item>
         <item>
         <title>Open Source Silicon with Yosys</title>
-        <link>http://localhost:1313/p/open-source-silicon-with-yosys/</link>
+        <link>http://blog.yosyshq.com/p/open-source-silicon-with-yosys/</link>
         <pubDate>Mon, 28 Feb 2022 11:23:54 +0100</pubDate>
         
-        <guid>http://localhost:1313/p/open-source-silicon-with-yosys/</guid>
+        <guid>http://blog.yosyshq.com/p/open-source-silicon-with-yosys/</guid>
         <description>&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;&#34; &gt;Yosys&lt;/a&gt; is probably best known for providing synthesis for FPGA targets, but it&amp;rsquo;s a very flexible tool capable of a lot more.&lt;/p&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://openlane-docs.readthedocs.io/en/rtd-develop/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;OpenLane&lt;/a&gt;, &lt;a class=&#34;link&#34; href=&#34;https://www.siliconcompiler.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -1963,10 +1963,10 @@ The sby file makes use of 2 different task sections.&lt;/p&gt;
         </item>
         <item>
         <title>Hello World!</title>
-        <link>http://localhost:1313/p/hello/</link>
+        <link>http://blog.yosyshq.com/p/hello/</link>
         <pubDate>Mon, 08 Feb 2021 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/hello/</guid>
+        <guid>http://blog.yosyshq.com/p/hello/</guid>
         <description>&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.yosyshq.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;YosysHQ.com&lt;/a&gt; is the new home for the team maintaining Yosys and the related Open Source EDA projects, and the commercial products and services we offer.&lt;/p&gt;
 &lt;p&gt;Our team is led by N. Engelhardt as CEO, Claire Wolf as CTO, and Matt Venn as CSO. We are looking to work with more people, so feel free to contact us: &lt;a class=&#34;link&#34; href=&#34;mailto:contact@yosyshq.com&#34; &gt;contact@yosyshq.com&lt;/a&gt;&lt;/p&gt;

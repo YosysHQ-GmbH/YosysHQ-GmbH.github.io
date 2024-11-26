@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Yug on YosysHQ Blog</title>
-        <link>http://localhost:1313/tags/yug/</link>
+        <link>http://blog.yosyshq.com/tags/yug/</link>
         <description>Recent content in Yug on YosysHQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Sun, 04 Feb 2024 12:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/yug/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 04 Feb 2024 12:00:00 +0000</lastBuildDate><atom:link href="http://blog.yosyshq.com/tags/yug/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Yosys User&#39;s Group</title>
-        <link>http://localhost:1313/p/yosys-users-group/</link>
+        <link>http://blog.yosyshq.com/p/yosys-users-group/</link>
         <pubDate>Sun, 04 Feb 2024 12:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/yosys-users-group/</guid>
-        <description>&lt;img src="http://localhost:1313/static-2023/yug.jpg" alt="Featured image of post Yosys User&#39;s Group" /&gt;&lt;p&gt;We have recently started a Yosys User&amp;rsquo;s Group. You can see the &lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/document/d/13e8hERQ_eqLQrdtH1WXnGUXDtgyQ8oa_zZWXPHJCiN0/edit#heading=h.dqkvsnhcju2v&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+        <guid>http://blog.yosyshq.com/p/yosys-users-group/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2023/yug.jpg" alt="Featured image of post Yosys User&#39;s Group" /&gt;&lt;p&gt;We have recently started a Yosys User&amp;rsquo;s Group. You can see the &lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/document/d/13e8hERQ_eqLQrdtH1WXnGUXDtgyQ8oa_zZWXPHJCiN0/edit#heading=h.dqkvsnhcju2v&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;minutes of our first 4 calls here&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;If you&amp;rsquo;d like to join, then please &lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/newsletter&#34; &gt;sign up to the newsletter&lt;/a&gt; or follow us on:&lt;/p&gt;
+&lt;p&gt;If you&amp;rsquo;d like to join, then please &lt;a class=&#34;link&#34; href=&#34;http://blog.yosyshq.com/newsletter&#34; &gt;sign up to the newsletter&lt;/a&gt; or follow us on:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.linkedin.com/company/yosyshq&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;linkedin&lt;/a&gt;,&lt;/li&gt;

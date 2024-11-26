@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>App Note on YosysHQ Blog</title>
-        <link>http://localhost:1313/tags/app-note/</link>
+        <link>http://blog.yosyshq.com/tags/app-note/</link>
         <description>Recent content in App Note on YosysHQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Wed, 07 Jul 2021 12:37:04 +0200</lastBuildDate><atom:link href="http://localhost:1313/tags/app-note/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 07 Jul 2021 12:37:04 +0200</lastBuildDate><atom:link href="http://blog.yosyshq.com/tags/app-note/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>App Note 109</title>
-        <link>http://localhost:1313/p/ap109/</link>
+        <link>http://blog.yosyshq.com/p/ap109/</link>
         <pubDate>Wed, 07 Jul 2021 12:37:04 +0200</pubDate>
         
-        <guid>http://localhost:1313/p/ap109/</guid>
+        <guid>http://blog.yosyshq.com/p/ap109/</guid>
         <description>&lt;p&gt;This Application Note was written with the intention of showing a brief introduction to SVA, and is definitely not a substitute for extensive training. To learn more about formal verification and SVA, it is recommended to book the course given by the FPV specialists at YosysHQ.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;A brief history of SystemVerilog Assertions&lt;/li&gt;
@@ -27,10 +27,10 @@
         </item>
         <item>
         <title>App Note 120</title>
-        <link>http://localhost:1313/p/ap120/</link>
+        <link>http://blog.yosyshq.com/p/ap120/</link>
         <pubDate>Thu, 20 May 2021 14:04:45 +0200</pubDate>
         
-        <guid>http://localhost:1313/p/ap120/</guid>
+        <guid>http://blog.yosyshq.com/p/ap120/</guid>
         <description>&lt;p&gt;For a long time people have asked us for quality long form content that shows how to
 get the best from our formal tools.&lt;/p&gt;
 &lt;p&gt;We have started a series of app notes, with the first being about cover and witness for SVA properties. Otherwise known as &amp;lsquo;Am I testing what I think I&amp;rsquo;m testing&amp;rsquo;!&lt;/p&gt;
