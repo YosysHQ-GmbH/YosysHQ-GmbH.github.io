@@ -81,7 +81,7 @@
         
         <guid>http://blog.yosyshq.com/yug/</guid>
         <description>&lt;img src="http://blog.yosyshq.com/static-2023/yug.jpg" alt="Featured image of post Yosys User&#39;s Group" /&gt;&lt;p&gt;The Yosys User&amp;rsquo;s Group is for anyone who uses Yosys. We present recent updates to the tools, showcase new features and invite our users to present their work.&lt;/p&gt;
-&lt;p&gt;You can see the &lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/document/d/13e8hERQ_eqLQrdtH1WXnGUXDtgyQ8oa_zZWXPHJCiN0/edit#heading=h.dqkvsnhcju2v&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&lt;p&gt;You can see the &lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/document/d/13e8hERQ_eqLQrdtH1WXnGUXDtgyQ8oa_zZWXPHJCiN0&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;minutes of our calls here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;If you&amp;rsquo;d like to join, then please &lt;a class=&#34;link&#34; href=&#34;http://blog.yosyshq.com/newsletter&#34; &gt;sign up to the newsletter&lt;/a&gt; or follow us on:&lt;/p&gt;
 &lt;ul&gt;
@@ -91,6 +91,16 @@
     &gt;bluesky&lt;/a&gt;,&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://fosstodon.org/@yosyshq&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;mastodon&lt;/a&gt; or&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;yug-9---understanding-the-yosys-synth_ice40-flow&#34;&gt;
+    &lt;a href=&#34;#yug-9---understanding-the-yosys-synth_ice40-flow&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    YUG 9 - Understanding the Yosys synth_ice40 flow
+&lt;/h2&gt;&lt;p&gt;In this meetup, Krystine explores and explains the synthesis flow for ice40 FPGAs. Covering elaboration, flattening, and mapping the various blocks, this presentation will answer all your questions about the FPGA synthesis flow!&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Watch the recording here: &lt;a class=&#34;link&#34; href=&#34;https://www.youtube.com/watch?v=s7KLNb8G_sI&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.youtube.com/watch?v=s7KLNb8G_sI&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Try the demo: &lt;a class=&#34;link&#34; href=&#34;https://gist.github.com/KrystalDelusion/b62e42905198b9c8a0917a5804ea3573&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://gist.github.com/KrystalDelusion/b62e42905198b9c8a0917a5804ea3573&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;yug-8---using-formal-to-detect-information-leakage&#34;&gt;
     &lt;a href=&#34;#yug-8---using-formal-to-detect-information-leakage&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
