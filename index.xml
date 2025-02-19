@@ -6,7 +6,25 @@
         <description>Recent content on YosysHQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Wed, 11 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://blog.yosyshq.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 19 Feb 2025 16:00:00 +0100</lastBuildDate><atom:link href="http://blog.yosyshq.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>An open source FPGA toolchain for a large European space-grade FPGA </title>
+        <link>http://blog.yosyshq.com/p/an-open-source-fpga-toolchain-for-a-large-european-space-grade-fpga/</link>
+        <pubDate>Wed, 19 Feb 2025 16:00:00 +0100</pubDate>
+        
+        <guid>http://blog.yosyshq.com/p/an-open-source-fpga-toolchain-for-a-large-european-space-grade-fpga/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2025/esa.png" alt="Featured image of post An open source FPGA toolchain for a large European space-grade FPGA " /&gt;&lt;p&gt;In what was a major achievement in open source FPGA development, &lt;a class=&#34;link&#34; href=&#34;https://nebula.esa.int/4000141380&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;we have now added support for the largest FPGA&lt;/a&gt; so far supported by open source tooling! 500,000 LUTs!&lt;/p&gt;
+&lt;p&gt;In November 2024 we successfully concluded the European Space Agency funded &lt;a class=&#34;link&#34; href=&#34;https://activities.esa.int/4000141380&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;project&lt;/a&gt; in collaboration with &lt;a class=&#34;link&#34; href=&#34;https://nanoxplore.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;NanoExplore&lt;/a&gt;, known for their space rated FPGAs.&lt;/p&gt;
+&lt;p&gt;The tool provides developers with a flexible and customizable option for designing for NG-Ultra FPGAs, offering increased reliability through the ability to cross-verify designs using two independent tools.&lt;/p&gt;
+&lt;p&gt;Future work could focus on expanding support within nextpnr to cover additional FPGA primitives, such as high-speed I/O blocks and SoC integration making it more useful for high complexity designs.&lt;/p&gt;
+&lt;p&gt;For more information about the project’s results you can read the official report here:&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://nebula.esa.int/4000141380&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;An open source FPGA toolchain for a European space-grade FPGA | Nebula Public Library&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Tabby CAD Suite version 20241211 released!</title>
         <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20241211-released/</link>
         <pubDate>Wed, 11 Dec 2024 00:00:00 +0000</pubDate>
