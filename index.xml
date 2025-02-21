@@ -16,7 +16,7 @@
     &gt;we have now added support for the largest FPGA&lt;/a&gt; so far supported by open source tooling! 500,000 LUTs!&lt;/p&gt;
 &lt;p&gt;In November 2024 we successfully concluded the European Space Agency funded &lt;a class=&#34;link&#34; href=&#34;https://activities.esa.int/4000141380&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;project&lt;/a&gt; in collaboration with &lt;a class=&#34;link&#34; href=&#34;https://nanoxplore.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;NanoExplore&lt;/a&gt;, known for their space rated FPGAs.&lt;/p&gt;
+    &gt;NanoXplore&lt;/a&gt;, known for their space rated FPGAs.&lt;/p&gt;
 &lt;p&gt;The tool provides developers with a flexible and customizable option for designing for NG-Ultra FPGAs, offering increased reliability through the ability to cross-verify designs using two independent tools.&lt;/p&gt;
 &lt;p&gt;Future work could focus on expanding support within nextpnr to cover additional FPGA primitives, such as high-speed I/O blocks and SoC integration making it more useful for high complexity designs.&lt;/p&gt;
 &lt;p&gt;For more information about the project’s results you can read the official report here:&lt;/p&gt;
