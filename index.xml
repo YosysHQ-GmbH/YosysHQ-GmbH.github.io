@@ -25,6 +25,23 @@
 </description>
         </item>
         <item>
+        <title>Tabby CAD Suite version 20250211 released!</title>
+        <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20250211-released/</link>
+        <pubDate>Tue, 11 Feb 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20250211-released/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2023/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20250211 released!" /&gt;&lt;p&gt;The February release of Tabby CAD Suite is now available for download.
+No user-facing updates in this release—only internal optimizations and bug fixes.&lt;/p&gt;
+&lt;p&gt;In other YosysHQ news:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;We just &lt;a class=&#34;link&#34; href=&#34;https://blog.yosyshq.com/p/an-open-source-fpga-toolchain-for-a-large-european-space-grade-fpga/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;published news&lt;/a&gt; on our successful fulfillment of an ESA funded project to add open source support for NanoXplore’s space rated FPGAs.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Happy February,
+The YosysHQ Team&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Tabby CAD Suite version 20241211 released!</title>
         <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20241211-released/</link>
         <pubDate>Wed, 11 Dec 2024 00:00:00 +0000</pubDate>
