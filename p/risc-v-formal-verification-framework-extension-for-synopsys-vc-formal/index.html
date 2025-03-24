@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="riscv-formal extension for proprietary tools">
+<title>RISC-V Formal Verification Framework Extension for Synopsys VC Formal</title>
+
+<link rel='canonical' href='http://localhost:1313/p/risc-v-formal-verification-framework-extension-for-synopsys-vc-formal/'>
+
+<link rel="stylesheet" href="/scss/style.min.760e3dabc1e140d2e6abd27a8ca0aabb60e568829b29f67d2df12024136eff37.css"><meta property='og:title' content="RISC-V Formal Verification Framework Extension for Synopsys VC Formal">
+<meta property='og:description' content="riscv-formal extension for proprietary tools">
+<meta property='og:url' content='http://localhost:1313/p/risc-v-formal-verification-framework-extension-for-synopsys-vc-formal/'>
+<meta property='og:site_name' content='YosysHQ Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='blog' /><meta property='article:published_time' content='2025-02-27T15:00:00&#43;05:30'/><meta property='article:modified_time' content='2025-02-27T15:00:00&#43;05:30'/><meta property='og:image' content='http://localhost:1313/static-2025/Sby.png' />
+<meta name="twitter:site" content="@@YosysHQ">
+    <meta name="twitter:creator" content="@@YosysHQ"><meta name="twitter:title" content="RISC-V Formal Verification Framework Extension for Synopsys VC Formal">
+<meta name="twitter:description" content="riscv-formal extension for proprietary tools"><meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content='http://localhost:1313/static-2025/Sby.png' />
+    <link rel="shortcut icon" href="/favicon.png" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/logos/YOS_mark_square_hu2222790448653795551.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">YosysHQ Blog</a></h1>
+            <h2 class="site-description"></h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/newsletter' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>Newsletter</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/yug' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>Yosys User&#39;s Group</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/risc-v-formal-verification-framework-extension-for-synopsys-vc-formal/">
+                
+                    <img src="/static-2025/Sby.png" loading="lazy" alt="Featured image of post RISC-V Formal Verification Framework Extension for Synopsys VC Formal" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/risc-v-formal-verification-framework-extension-for-synopsys-vc-formal/">RISC-V Formal Verification Framework Extension for Synopsys VC Formal</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            riscv-formal extension for proprietary tools
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Feb 27, 2025</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    11 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p><em>This blog post is by Rohith V.</em></p>
+<h1 id="risc-v-formal-verification-framework-extension-for-synopsys-vc-formal">
+    <a href="#risc-v-formal-verification-framework-extension-for-synopsys-vc-formal" class="header-anchor">#</a>
+    RISC-V Formal Verification Framework Extension for Synopsys VC Formal
+</h1><p>Imagine deploying a RISC-V processor in an embedded system, only to discover an instruction-level bug after manufacturing—this could be a costly mistake. Formal verification ensures that such issues never make it past the design phase, and tools like <strong><a class="link" href="https://github.com/YosysHQ/riscv-formal"  target="_blank" rel="noopener"
+    >riscv-formal</a></strong> help automate this process. However, many engineers rely on proprietary tools like <strong>Synopsys VC Formal</strong>, making integration with open-source solutions a challenge—until now.</p>
+<p>The <code>riscv-formal</code> framework has been a game-changer, providing an open-source solution for verifying RISC-V cores against the official ISA specification. While powerful, its integration with industry-grade proprietary tools has remained complex. This project bridges that gap by extending <code>riscv-formal</code> to seamlessly interface with <strong>Synopsys VC Formal</strong>, enabling engineers to harness its advanced capabilities while maintaining a structured and efficient verification approach.</p>
+<p>In this post, we’ll explore the role of formal verification in RISC-V core validation, the motivation behind this integration, and the methodology that makes it possible. Ultimately, this extension enhances accessibility and usability, providing the broader verification community with a streamlined, industry-compatible solution.</p>
+<h2 id="about-the-framework">
+    <a href="#about-the-framework" class="header-anchor">#</a>
+    About the Framework
+</h2><h3 id="before-we-dive-in">
+    <a href="#before-we-dive-in" class="header-anchor">#</a>
+    Before We Dive In&hellip;
+</h3><p>Before diving into the project, let&rsquo;s take a quick look at the <code>riscv-formal</code> framework and understand why it plays a crucial role in RISC-V core verification.</p>
+<h3 id="what-is-riscv-formal">
+    <a href="#what-is-riscv-formal" class="header-anchor">#</a>
+    What is <code>riscv-formal</code>?
+</h3><p><code>riscv-formal</code> is an <strong>open-source formal verification framework</strong> designed to rigorously verify RISC-V processors against the RISC-V ISA specification. Built on the <strong>FOSS SymbiYosys Formal Verification Flow</strong>, it ensures that a processor implementation behaves correctly at the instruction and architectural levels.</p>
+<h3 id="why-is-riscv-formal-important">
+    <a href="#why-is-riscv-formal-important" class="header-anchor">#</a>
+    Why is <code>riscv-formal</code> Important?
+</h3><ul>
+<li><strong>Automated Property Checking:</strong> Ensures compliance with the RISC-V ISA without requiring manual testbenches.</li>
+<li><strong>Minimal Setup, Maximum Coverage:</strong> Works with any RISC-V design using an RISC-V Formal Interface (RVFI) wrapper.</li>
+</ul>
+<h3 id="how-it-works">
+    <a href="#how-it-works" class="header-anchor">#</a>
+    How it Works
+</h3><ol>
+<li><strong>RVFI Wrapper</strong>: Wraps the core-under-test with an RVFI-compliant interface for compatibility.</li>
+<li><strong>Formal Checkers</strong>: A set of predefined checkers checks the whole core thoroughly.</li>
+<li><strong>Verification Engines</strong>: Uses predefined assertions and constraints to validate core behavior.</li>
+<li><strong>Counterexample Analysis</strong>: If a check fails, it generates a trace of execution (CEX) to debug violations.</li>
+</ol>
+<h3 id="limitations--extending-to-proprietary-tools">
+    <a href="#limitations--extending-to-proprietary-tools" class="header-anchor">#</a>
+    Limitations &amp; Extending to Proprietary Tools
+</h3><p>While <code>riscv-formal</code> is highly effective for open-source formal verification, its native tooling (SBY/Yosys) <strong>does not support proprietary EDA tools</strong>. This is where our <strong>extension</strong> comes in—adapting <code>riscv-formal</code> for <strong>Synopsys VC Formal</strong>, bridging the gap between open-source and commercial verification flows.</p>
+<h2 id="project-goals">
+    <a href="#project-goals" class="header-anchor">#</a>
+    Project Goals
+</h2><p>By adapting the <code>riscv-formal</code> framework (originally built for SymbiYosys) to work with <strong>Synopsys VC Formal</strong>, this project aims to:</p>
+<ul>
+<li><strong>Seamless Integration with VC Formal</strong> – Ensure that <code>riscv-formal</code> works effortlessly with <strong>Synopsys VC Formal</strong>, simplifying the verification process without requiring extensive modifications.</li>
+<li><strong>Improve Usability</strong> – Deliver clear documentation and practical examples to help engineers effectively apply the framework.</li>
+<li><strong>Enable Easy <code>.sby → .tcl</code> Conversion</strong> – Support straightforward translation of <code>.sby</code> configurations into <code>.tcl</code> scripts, even outside the framework.</li>
+</ul>
+<p>By achieving these goals, the project enhances the <strong>efficiency, accessibility, and adoption</strong> of formal verification for RISC-V cores, fostering wider collaboration in the verification community.</p>
+<h2 id="key-challenges-in-transitioning-to-vc-formal">
+    <a href="#key-challenges-in-transitioning-to-vc-formal" class="header-anchor">#</a>
+    Key Challenges in Transitioning to VC Formal
+</h2><ul>
+<li><strong>Conversion from SymbiYosys Flow:</strong> The <code>.sby</code> configuration files used in riscv-formal are specific to SymbiYosys. VC Formal, on the other hand, operates using <code>Tcl-based</code> scripts, requiring a structured translation mechanism to adapt the verification flow.</li>
+<li><strong>Environment Setup &amp; Automation:</strong> Automating the process—so that users can easily set up VC Formal verification with minimal manual intervention—was a key goal in this adaptation.</li>
+</ul>
+<h2 id="verification-process">
+    <a href="#verification-process" class="header-anchor">#</a>
+    Verification Process
+</h2><h3 id="i-foss-symbiyosys-formal-verification-flow">
+    <a href="#i-foss-symbiyosys-formal-verification-flow" class="header-anchor">#</a>
+    i. FOSS SymbiYosys Formal Verification Flow
+</h3><p>This flow demonstrates the formal verification process using the riscv-formal framework with the open-source SymbiYosys tool. It consists of components like RVFI, the wrapper, and <code>checks.cfg</code>. These components are used to generate <code>.sby</code> files, which are then processed by SymbiYosys to run verification checks and produce the results, ensuring that the RISC-V implementation adheres to formal specifications. This flow represents a streamlined, FOSS-based approach to formal verification.</p>
+<p><img src="/static-2025/Sby.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="FOSS SymbiYosys formal verification flow"
+	
+	
+></p>
+<h3 id="ii-synopsys-vc-formal-verification-flow">
+    <a href="#ii-synopsys-vc-formal-verification-flow" class="header-anchor">#</a>
+    ii. Synopsys VC Formal Verification Flow
+</h3><p>This flow illustrates the modified process, where the riscv-formal framework is used with Synopsys VC Formal. The <code>.sby</code> files from the riscv-formal framework are first converted to <code>.tcl</code> scripts using a custom <code>sby to tcl</code> converter before being processed by VC Formal to generate verification results.</p>
+<p><img src="/static-2025/VCF.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Synopsys VC Formal verification flow"
+	
+	
+></p>
+<p>The framework consists of <strong>three key stages</strong>, each automated for smooth verification:</p>
+<ol>
+<li><strong>Pre-Processing:</strong> Converts <code>.sby</code> files into <code>.tcl</code> scripts for VC Formal compatibility.</li>
+<li><strong>Processing:</strong> Runs the formal checks, collects logs, and categorizes warnings &amp; errors.</li>
+<li><strong>Post-Processing:</strong> Summarizes verification results, helping users quickly identify pass/fail conditions.</li>
+</ol>
+<p>To achieve this, we’ve extended the framework with four core components:</p>
+<h3 id="1-sby_to_tclpy--automating-test-setup-pre-processing">
+    <a href="#1-sby_to_tclpy--automating-test-setup-pre-processing" class="header-anchor">#</a>
+    1️⃣ sby_to_tcl.py – Automating Test Setup (Pre-Processing)
+</h3><p>The <code>sby_to_tcl.py</code> script automates the <strong>conversion of SymbiYosys <code>.sby</code> files</strong> into <strong>VC Formal-compatible <code>.tcl</code> scripts</strong>. It also <strong>creates a Makefile</strong> that organizes multiple verification tasks, allowing batch execution with a single command.</p>
+<h4 id="-why-is-this-important">
+    <a href="#-why-is-this-important" class="header-anchor">#</a>
+    🔹 Why is this important?
+</h4><ul>
+<li>Eliminates manual effort in handling <code>.tcl</code> files.</li>
+<li>Enables batch verification by processing multiple <code>.sby</code> files at once.</li>
+<li>Organizes output systematically in a dedicated <code>vcf</code> directory.</li>
+</ul>
+<h3 id="2-vcf_cexdatash--error--warning-processing-processing-stage">
+    <a href="#2-vcf_cexdatash--error--warning-processing-processing-stage" class="header-anchor">#</a>
+    2️⃣ vcf_cexdata.sh – Error &amp; Warning Processing (Processing Stage)
+</h3><p>During the verification execution, the <code>vcf_cexdata.sh</code> script ensures <strong>structured handling of warnings and errors</strong>. Instead of overwriting logs, it captures and organizes logs for all checks, ensuring every warning/error is properly recorded.</p>
+<h4 id="-key-features">
+    <a href="#-key-features" class="header-anchor">#</a>
+    🔹 Key Features:
+</h4><ul>
+<li>Prevents loss of information by storing logs separately.</li>
+<li>Formats errors in an easy-to-read structure (<code>warnings.txt</code>, <code>errors.txt</code>).</li>
+<li>Provides a quick summary of issues across multiple checks.</li>
+</ul>
+<h3 id="3-vcf_res_processpy--summarizing-verification-results-post-processing">
+    <a href="#3-vcf_res_processpy--summarizing-verification-results-post-processing" class="header-anchor">#</a>
+    3️⃣ vcf_res_process.py – Summarizing Verification Results (Post-Processing)
+</h3><p>After verification, <code>vcf_res_process.py</code> extracts key results from each check, categorizing assertions as <strong>PASS, FAIL, or INCONCLUSIVE</strong> and consolidating everything into a <strong>single summary file (<code>results.txt</code>)</strong>.</p>
+<h4 id="-why-does-this-matter">
+    <a href="#-why-does-this-matter" class="header-anchor">#</a>
+    🔹 Why does this matter?
+</h4><ul>
+<li>Saves time—no need to inspect multiple files manually.</li>
+<li>Provides a high-level overview of all formal verification checks.</li>
+<li>Helps users quickly identify issues that need further debugging.</li>
+</ul>
+<h3 id="4-makefile--automating-the-entire-workflow">
+    <a href="#4-makefile--automating-the-entire-workflow" class="header-anchor">#</a>
+    4️⃣ Makefile – Automating the Entire Workflow
+</h3><p>The <strong>Makefile</strong> serves as the backbone of automation, orchestrating all three stages. With simple commands like <code>make vcf_check</code>, users can run all checks, collect results, and review summaries <strong>without manually executing scripts</strong>.</p>
+<h4 id="-key-features-1">
+    <a href="#-key-features-1" class="header-anchor">#</a>
+    🔹 Key Features:
+</h4><ul>
+<li>One-command execution of all verification steps.</li>
+<li>Automated log collection &amp; clean-up for an organized workflow.</li>
+<li>Results displayed directly in the terminal for quick review.</li>
+</ul>
+<p>For a <strong>more detailed breakdown</strong> on each file/process, check out the <a class="link" href="https://github.com/Chaotic-VRBlue/riscv-formal-vc-formal-extension?tab=readme-ov-file#file-descriptions"  target="_blank" rel="noopener"
+    >complete repository on GitHub</a>! 🚀</p>
+<h3 id="general-applicability">
+    <a href="#general-applicability" class="header-anchor">#</a>
+    General Applicability
+</h3><p>An interesting aspect of this process is that it is <strong>not exclusive to <code>riscv-formal</code></strong>. In fact, this approach can be adapted for any <code>.sby</code> file(s). The automation framework we&rsquo;ve built for converting <code>.sby</code> files to <code>.tcl</code> scripts, handling formal verification results, and structuring the workflow can be applied to a wide range of formal verification tasks beyond RISC-V.</p>
+<p>This flexibility makes it a powerful solution for integrating SymbiYosys-based verification flows with commercial formal tools like Synopsys VC Formal, streamlining the entire process across different projects.</p>
+<h2 id="going-the-other-way-from-vc-formal-to-sby">
+    <a href="#going-the-other-way-from-vc-formal-to-sby" class="header-anchor">#</a>
+    Going the Other Way: From VC Formal to SBY
+</h2><p>Let&rsquo;s go the other way for a bit—what if we want to take <code>.tcl</code> files from VC Formal and convert them back into <code>.sby</code> files for SymbiYosys?</p>
+<h3 id="initial-challenges-faced-with-symbiyosys">
+    <a href="#initial-challenges-faced-with-symbiyosys" class="header-anchor">#</a>
+    Initial Challenges Faced with SymbiYosys
+</h3><p>When I first started using SymbiYosys (SBY) for formal verification, I encountered several challenges:</p>
+<ul>
+<li><strong>Toolchain Dependencies</strong>: SBY relies on open-source tools like Yosys, Boolector, and ABC. Ensuring proper installation and configuration was time-consuming.</li>
+<li><strong>Assertion Language Differences</strong>: SystemVerilog Assertions (SVA) supported in VC Formal required workarounds in SBY due to syntax or feature limitations.</li>
+</ul>
+<p>Despite these hurdles, open-source formal verification tools have improved significantly and can handle complex verification tasks.</p>
+<h3 id="automating-the-conversion-from-tcl-to-sby">
+    <a href="#automating-the-conversion-from-tcl-to-sby" class="header-anchor">#</a>
+    Automating the Conversion: From <code>.tcl</code> to <code>.sby</code>
+</h3><p>The scripting ideas used in our Python automation can serve as a foundation for reversing the process. Just like <code>sby_to_tcl.py</code> converts <code>.sby</code> to <code>.tcl</code>, a similar script could parse <code>.tcl</code> files and generate <code>.sby</code> files, but key challenges remain:</p>
+<ul>
+<li><strong>Lack of Direct Equivalence</strong>: VC Formal scripts contain proprietary directives that do not have an exact counterpart in SymbiYosys.</li>
+<li><strong>Complex Conversions</strong>: While a fully automated VC Formal-to-SBY conversion may not be feasible, structured scripting can reduce manual effort significantly.</li>
+</ul>
+<p>Fortunately, once the <code>.sby</code> files are reconstructed, the existing <strong>riscv-formal automation</strong>—Makefile execution, error handling, and result processing—remains intact.</p>
+<p>A structured conversion process would enable <strong>bidirectional compatibility</strong> between open-source and proprietary formal verification tools.</p>
+<h3 id="symbiyosys-flow-vs-vc-formal-flow">
+    <a href="#symbiyosys-flow-vs-vc-formal-flow" class="header-anchor">#</a>
+    SymbiYosys Flow vs. VC Formal Flow
+</h3><p>Comparison of <strong>SymbiYosys Flow</strong> and <strong>Synopsys VC Formal (VCF)</strong> flows:</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th style="text-align: left"><strong>Flow</strong></th>
+          <th style="text-align: left"><strong>SymbiYosys (SBY) Flow</strong></th>
+          <th style="text-align: left"><strong>VC Formal (VCF) Flow</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Configuration File</strong></td>
+          <td style="text-align: left"><code>.sby</code> file (SBY-based)</td>
+          <td style="text-align: left"><code>.tcl</code> file (Tcl-based)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Tool Used</strong></td>
+          <td style="text-align: left">SymbiYosys + Yosys</td>
+          <td style="text-align: left">Synopsys VC Formal</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Solver Backend</strong></td>
+          <td style="text-align: left">Boolector, Yices2, etc.,</td>
+          <td style="text-align: left">Synopsys’ internal solvers</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Counterexample Debugging</strong></td>
+          <td style="text-align: left">GUI-based + logs</td>
+          <td style="text-align: left">GUI-based + logs</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Execution Automation</strong></td>
+          <td style="text-align: left">Python, Shell &amp; Makefile</td>
+          <td style="text-align: left">Python, Shell &amp; Makefile</td>
+      </tr>
+  </tbody>
+</table></div>
+<h2 id="future-scope">
+    <a href="#future-scope" class="header-anchor">#</a>
+    Future Scope
+</h2><ol>
+<li>
+<p><strong>Extending to Other Proprietary Tools</strong><br>
+While this extension integrates Synopsys VC Formal with riscv-formal, the approach can be further extended to other commercial formal verification tools. Automating <code>.sby</code> file conversion and structured result handling can help streamline workflows across multiple environments.</p>
+</li>
+<li>
+<p><strong>Maintaining Compatibility with File Format Changes</strong><br>
+This extension relies on the <code>.sby</code> file structure from riscv-formal and the <code>.tcl</code> scripting format used by VC Formal. If either of these formats evolve, updates will be needed to ensure compatibility. Keeping the automation scripts adaptable to such modifications will be crucial for long-term usability.</p>
+</li>
+</ol>
+<p>By continuously adapting, this extension can remain a valuable tool for formal verification, extending its reach to new tools and maintaining alignment with updates in the riscv-formal ecosystem.</p>
+<h2 id="results">
+    <a href="#results" class="header-anchor">#</a>
+    Results
+</h2><p>We have successfully developed a complete extension that seamlessly integrates the <strong>riscv-formal framework</strong> with <strong>Synopsys VC Formal (VCF)</strong>, ensuring an efficient, automated, and user-friendly verification experience.</p>
+<p>Using this <strong>extended framework</strong>, we formally verified our <strong>Single Cycle RISC-V core (SCRV32I)</strong> and cross-checked results with <strong>SymbiYosys</strong>. The verification confirms that our core adheres to the <strong>RISC-V ISA specifications</strong>, ensuring correctness and compliance.</p>
+<h3 id="-practical-example">
+    <a href="#-practical-example" class="header-anchor">#</a>
+    🔍 Practical Example
+</h3><p>For a detailed walkthrough, refer to this section of the <a class="link" href="https://github.com/Chaotic-VRBlue/riscv-formal-vc-formal-extension?tab=readme-ov-file#running-the-example-scrv32i-processor-for-understanding-the-workflow"  target="_blank" rel="noopener"
+    >complete repository on GitHub</a>, where we provide a step-by-step guide to implementing this extension on the example SCRV32I processor.</p>
+<p>The below section is dedicated to guiding you through the process of configuring custom RISC-V designs.</p>
+<p>This practical approach ensures that users can replicate adapt, and extend the verification flow to their own processor designs.</p>
+<h2 id="configuring-a-new-risc-v-processor">
+    <a href="#configuring-a-new-risc-v-processor" class="header-anchor">#</a>
+    Configuring a New RISC-V Processor
+</h2><ol>
+<li>
+<p>First, refer to the <code>riscv-formal</code> repository and follow the steps outlined in the <a class="link" href="https://github.com/YosysHQ/riscv-formal?tab=readme-ov-file#configuring-a-new-risc-v-processor"  target="_blank" rel="noopener"
+    >riscv-formal guide</a>. Complete everything up to step 5. You don&rsquo;t need to run step 5, as it involves using an open-source tool. For our purpose, we will run it using the VC Formal tool, so step 5 can be skipped. If you&rsquo;re interested, you can explore it, but it&rsquo;s not required for this process.</p>
+</li>
+<li>
+<p>Once the <code>RVFI</code> (RISC-V Formal Interface), <code>wrapper.sv</code> file, and <code>checks.cfg</code> file are implemented for your RISC-V processor as per the steps in the <code>riscv-formal</code> repository, you can proceed with running the RISC-V formal framework for your core on the Synopsys VC Formal Tool.</p>
+<p><em>(Note: You may need to refer to the entire repository to complete this part, not just the section linked here.)</em></p>
+</li>
+<li>
+<p>Copy the <code>vcf_cexdata.sh</code> and <code>Makefile</code> files from the <code>cores/scrv32i</code> folder into your core folder. (Remember to copy the <code>vc_formal</code> folder to the root directory if you have cloned the official <code>riscv-formal</code> repository.)</p>
+<p><em>(Note: Only the vc_formal folder in the root directory, the vcf_cexdata.sh file in the scrv32i folder, and a few additions to the Makefile inside the scrv32i directory were created to implement this extension. - So copy these files/folder to the right location and it should work with no hassle)</em></p>
+</li>
+<li>
+<p>Navigate to your core directory and run:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> cores/<span class="o">{</span>core<span class="o">}</span>
+</span></span><span class="line"><span class="cl">make vcf_clean
+</span></span><span class="line"><span class="cl">make vcf_check
+</span></span></code></pre></div><p>Once the process is complete, the terminal will display results in the following order:</p>
+<ul>
+<li>Warnings</li>
+<li>Errors</li>
+<li>Verification results (PASS/FAIL/INCONCLUSIVE/UNKNOWN - If failed to run)</li>
+</ul>
+</li>
+<li>
+<p>Then you can utilize features such as running specific checks (including in GUI mode), launching the GUI, and customizing checks to run or skip, as shown in the &lsquo;Running the Example SCRV32I Processor (For Understanding the Workflow)&rsquo; section above.</p>
+</li>
+</ol>
+<h2 id="conclusion">
+    <a href="#conclusion" class="header-anchor">#</a>
+    Conclusion
+</h2><h3 id="bridging-the-gap-risc-v-formal-meets-synopsys-vc-formal">
+    <a href="#bridging-the-gap-risc-v-formal-meets-synopsys-vc-formal" class="header-anchor">#</a>
+    Bridging the Gap: RISC-V Formal Meets Synopsys VC Formal
+</h3><p>The <strong>RISC-V Formal Verification Framework Extension</strong> for <strong>Synopsys VC Formal</strong> bridges the gap between open-source and industry-grade proprietary tools, making formal verification more <strong>accessible, efficient, and scalable</strong>.</p>
+<p>With <strong>automated .sby to .tcl conversion</strong>, <strong>structured result handling</strong>, and <strong>batch execution support</strong>, this extension simplifies the entire verification process for RISC-V cores—and beyond.</p>
+<h3 id="but-this-is-just-the-beginning">
+    <a href="#but-this-is-just-the-beginning" class="header-anchor">#</a>
+    But This Is Just the Beginning&hellip;
+</h3><p>The methodologies introduced here can be extended to other formal verification tasks, making it easier to integrate open-source flows with commercial EDA tools. Whether you’re using <strong>SymbiYosys</strong>, <strong>VC Formal</strong>, or exploring <strong>bidirectional compatibility</strong>, this framework lays the foundation for a more automated, scalable, and interoperable verification ecosystem.</p>
+<p>🔎 Want to dive deeper? Explore the <strong>full implementation</strong> in the GitHub repository: <a class="link" href="https://github.com/Chaotic-VRBlue/riscv-formal-vc-formal-extension/"  target="_blank" rel="noopener"
+    >riscv-formal-vc-formal-extension</a> 🚀</p>
+<p>By embracing <strong>automation, interoperability, and scalability</strong>, we can push the boundaries of formal verification—ensuring that RISC-V processors and other designs are functionally correct and future-proof.</p>
+<p>Let’s build smarter, faster, and more robust verification flows—together! 🔬💡</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/blog/">Blog</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2025 YosysHQ Blog
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.25.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
