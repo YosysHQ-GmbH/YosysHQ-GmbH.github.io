@@ -6,30 +6,10 @@
         <description>Recent content in Posts on YosysHQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Wed, 12 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://blog.yosyshq.com/post/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Tabby CAD Suite version 20250312 released!</title>
-        <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20250312-released/</link>
-        <pubDate>Wed, 12 Mar 2025 00:00:00 +0000</pubDate>
-        
-        <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20250312-released/</guid>
-        <description>&lt;img src="http://blog.yosyshq.com/static-2023/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20250312 released!" /&gt;&lt;p&gt;The March release of Tabby CAD Suite is now available for download. Notable changes in this version include:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;We&amp;rsquo;ve added a new command &lt;code&gt;abstract&lt;/code&gt; that can be used to replace concrete signal values with unconstrained abstract values during formal verification. See the &lt;a class=&#34;link&#34; href=&#34;https://yosyshq.readthedocs.io/projects/yosys/en/latest/cmd/abstract.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;documentation&lt;/a&gt; for more details.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;In other YosysHQ news:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;In our most recent Yosys User’s Group, Emil presented “ASIC synthesis with Yosys”. He covered ASIC synthesis, Yosys scripts, abc scripts and new Yosys features for ASIC. The talk was recorded and you can watch it here: &lt;a class=&#34;link&#34; href=&#34;https://youtu.be/PlS4e5S5bCA&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://youtu.be/PlS4e5S5bCA&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Happy March,
-The YosysHQ Team&lt;/p&gt;
-</description>
-        </item>
-        <item>
+        <lastBuildDate>Tue, 25 Mar 2025 15:00:00 +0530</lastBuildDate><atom:link href="http://blog.yosyshq.com/post/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>RISC-V Formal Verification Framework Extension for Synopsys VC Formal</title>
         <link>http://blog.yosyshq.com/p/risc-v-formal-verification-framework-extension-for-synopsys-vc-formal/</link>
-        <pubDate>Thu, 27 Feb 2025 15:00:00 +0530</pubDate>
+        <pubDate>Tue, 25 Mar 2025 15:00:00 +0530</pubDate>
         
         <guid>http://blog.yosyshq.com/p/risc-v-formal-verification-framework-extension-for-synopsys-vc-formal/</guid>
         <description>&lt;img src="http://blog.yosyshq.com/static-2025/Sby.png" alt="Featured image of post RISC-V Formal Verification Framework Extension for Synopsys VC Formal" /&gt;&lt;p&gt;This guest blog post was written by &lt;a class=&#34;link&#34; href=&#34;https://www.linkedin.com/in/v-rohith-km/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -319,6 +299,26 @@ This extension relies on the &lt;code&gt;.sby&lt;/code&gt; file structure from r
     &gt;riscv-formal-vc-formal-extension&lt;/a&gt; 🚀&lt;/p&gt;
 &lt;p&gt;By embracing &lt;strong&gt;automation, interoperability, and scalability&lt;/strong&gt;, we can push the boundaries of formal verification—ensuring that RISC-V processors and other designs are functionally correct and future-proof.&lt;/p&gt;
 &lt;p&gt;Let’s build smarter, faster, and more robust verification flows—together! 🔬💡&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Tabby CAD Suite version 20250312 released!</title>
+        <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20250312-released/</link>
+        <pubDate>Wed, 12 Mar 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20250312-released/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2023/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20250312 released!" /&gt;&lt;p&gt;The March release of Tabby CAD Suite is now available for download. Notable changes in this version include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;We&amp;rsquo;ve added a new command &lt;code&gt;abstract&lt;/code&gt; that can be used to replace concrete signal values with unconstrained abstract values during formal verification. See the &lt;a class=&#34;link&#34; href=&#34;https://yosyshq.readthedocs.io/projects/yosys/en/latest/cmd/abstract.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;documentation&lt;/a&gt; for more details.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In other YosysHQ news:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;In our most recent Yosys User’s Group, Emil presented “ASIC synthesis with Yosys”. He covered ASIC synthesis, Yosys scripts, abc scripts and new Yosys features for ASIC. The talk was recorded and you can watch it here: &lt;a class=&#34;link&#34; href=&#34;https://youtu.be/PlS4e5S5bCA&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://youtu.be/PlS4e5S5bCA&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Happy March,
+The YosysHQ Team&lt;/p&gt;
 </description>
         </item>
         <item>
