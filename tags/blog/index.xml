@@ -6,7 +6,302 @@
         <description>Recent content in Blog on YosysHQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Mon, 12 Feb 2024 19:09:55 -0800</lastBuildDate><atom:link href="http://blog.yosyshq.com/tags/blog/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 27 Feb 2025 15:00:00 +0530</lastBuildDate><atom:link href="http://blog.yosyshq.com/tags/blog/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>RISC-V Formal Verification Framework Extension for Synopsys VC Formal</title>
+        <link>http://blog.yosyshq.com/p/risc-v-formal-verification-framework-extension-for-synopsys-vc-formal/</link>
+        <pubDate>Thu, 27 Feb 2025 15:00:00 +0530</pubDate>
+        
+        <guid>http://blog.yosyshq.com/p/risc-v-formal-verification-framework-extension-for-synopsys-vc-formal/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2025/Sby.png" alt="Featured image of post RISC-V Formal Verification Framework Extension for Synopsys VC Formal" /&gt;&lt;p&gt;This guest blog post was written by &lt;a class=&#34;link&#34; href=&#34;https://www.linkedin.com/in/v-rohith-km/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Rohith V.&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;risc-v-formal-verification-framework-extension-for-synopsys-vc-formal&#34;&gt;
+    &lt;a href=&#34;#risc-v-formal-verification-framework-extension-for-synopsys-vc-formal&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    RISC-V Formal Verification Framework Extension for Synopsys VC Formal
+&lt;/h1&gt;&lt;p&gt;Imagine deploying a RISC-V processor in an embedded system, only to discover an instruction-level bug after manufacturing—this could be a costly mistake. Formal verification ensures that such issues never make it past the design phase, and tools like &lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/YosysHQ/riscv-formal&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;riscv-formal&lt;/a&gt;&lt;/strong&gt; help automate this process. However, many engineers rely on proprietary tools like &lt;strong&gt;Synopsys VC Formal&lt;/strong&gt;, making integration with open-source solutions a challenge—until now.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;riscv-formal&lt;/code&gt; framework has been a game-changer, providing an open-source solution for verifying RISC-V cores against the official ISA specification. While powerful, its integration with industry-grade proprietary tools has remained complex. This project bridges that gap by extending &lt;code&gt;riscv-formal&lt;/code&gt; to seamlessly interface with &lt;strong&gt;Synopsys VC Formal&lt;/strong&gt;, enabling engineers to harness its advanced capabilities while maintaining a structured and efficient verification approach.&lt;/p&gt;
+&lt;p&gt;In this post, we’ll explore the role of formal verification in RISC-V core validation, the motivation behind this integration, and the methodology that makes it possible. Ultimately, this extension enhances accessibility and usability, providing the broader verification community with a streamlined, industry-compatible solution.&lt;/p&gt;
+&lt;h2 id=&#34;about-the-framework&#34;&gt;
+    &lt;a href=&#34;#about-the-framework&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    About the Framework
+&lt;/h2&gt;&lt;h3 id=&#34;before-we-dive-in&#34;&gt;
+    &lt;a href=&#34;#before-we-dive-in&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Before We Dive In&amp;hellip;
+&lt;/h3&gt;&lt;p&gt;Before diving into the project, let&amp;rsquo;s take a quick look at the &lt;code&gt;riscv-formal&lt;/code&gt; framework and understand why it plays a crucial role in RISC-V core verification.&lt;/p&gt;
+&lt;h3 id=&#34;what-is-riscv-formal&#34;&gt;
+    &lt;a href=&#34;#what-is-riscv-formal&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    What is &lt;code&gt;riscv-formal&lt;/code&gt;?
+&lt;/h3&gt;&lt;p&gt;&lt;code&gt;riscv-formal&lt;/code&gt; is an &lt;strong&gt;open-source formal verification framework&lt;/strong&gt; designed to rigorously verify RISC-V processors against the RISC-V ISA specification. Built on the &lt;strong&gt;FOSS SymbiYosys Formal Verification Flow&lt;/strong&gt;, it ensures that a processor implementation behaves correctly at the instruction and architectural levels.&lt;/p&gt;
+&lt;h3 id=&#34;why-is-riscv-formal-important&#34;&gt;
+    &lt;a href=&#34;#why-is-riscv-formal-important&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Why is &lt;code&gt;riscv-formal&lt;/code&gt; Important?
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Automated Property Checking:&lt;/strong&gt; Ensures compliance with the RISC-V ISA without requiring manual testbenches.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Minimal Setup, Maximum Coverage:&lt;/strong&gt; Works with any RISC-V design using an RISC-V Formal Interface (RVFI) wrapper.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;how-it-works&#34;&gt;
+    &lt;a href=&#34;#how-it-works&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    How it Works
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;RVFI Wrapper&lt;/strong&gt;: Wraps the core-under-test with an RVFI-compliant interface for compatibility.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Formal Checkers&lt;/strong&gt;: A set of predefined checkers checks the whole core thoroughly.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Verification Engines&lt;/strong&gt;: Uses predefined assertions and constraints to validate core behavior.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Counterexample Analysis&lt;/strong&gt;: If a check fails, it generates a trace of execution (CEX) to debug violations.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;limitations--extending-to-proprietary-tools&#34;&gt;
+    &lt;a href=&#34;#limitations--extending-to-proprietary-tools&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Limitations &amp;amp; Extending to Proprietary Tools
+&lt;/h3&gt;&lt;p&gt;While &lt;code&gt;riscv-formal&lt;/code&gt; is highly effective for open-source formal verification, its native tooling (SBY/Yosys) &lt;strong&gt;does not support proprietary EDA tools&lt;/strong&gt;. This is where our &lt;strong&gt;extension&lt;/strong&gt; comes in—adapting &lt;code&gt;riscv-formal&lt;/code&gt; for &lt;strong&gt;Synopsys VC Formal&lt;/strong&gt;, bridging the gap between open-source and commercial verification flows.&lt;/p&gt;
+&lt;h2 id=&#34;project-goals&#34;&gt;
+    &lt;a href=&#34;#project-goals&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Project Goals
+&lt;/h2&gt;&lt;p&gt;By adapting the &lt;code&gt;riscv-formal&lt;/code&gt; framework (originally built for SymbiYosys) to work with &lt;strong&gt;Synopsys VC Formal&lt;/strong&gt;, this project aims to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Seamless Integration with VC Formal&lt;/strong&gt; – Ensure that &lt;code&gt;riscv-formal&lt;/code&gt; works effortlessly with &lt;strong&gt;Synopsys VC Formal&lt;/strong&gt;, simplifying the verification process without requiring extensive modifications.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Improve Usability&lt;/strong&gt; – Deliver clear documentation and practical examples to help engineers effectively apply the framework.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Enable Easy &lt;code&gt;.sby → .tcl&lt;/code&gt; Conversion&lt;/strong&gt; – Support straightforward translation of &lt;code&gt;.sby&lt;/code&gt; configurations into &lt;code&gt;.tcl&lt;/code&gt; scripts, even outside the framework.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;By achieving these goals, the project enhances the &lt;strong&gt;efficiency, accessibility, and adoption&lt;/strong&gt; of formal verification for RISC-V cores, fostering wider collaboration in the verification community.&lt;/p&gt;
+&lt;h2 id=&#34;key-challenges-in-transitioning-to-vc-formal&#34;&gt;
+    &lt;a href=&#34;#key-challenges-in-transitioning-to-vc-formal&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Key Challenges in Transitioning to VC Formal
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Conversion from SymbiYosys Flow:&lt;/strong&gt; The &lt;code&gt;.sby&lt;/code&gt; configuration files used in riscv-formal are specific to SymbiYosys. VC Formal, on the other hand, operates using &lt;code&gt;Tcl-based&lt;/code&gt; scripts, requiring a structured translation mechanism to adapt the verification flow.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Environment Setup &amp;amp; Automation:&lt;/strong&gt; Automating the process—so that users can easily set up VC Formal verification with minimal manual intervention—was a key goal in this adaptation.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;verification-process&#34;&gt;
+    &lt;a href=&#34;#verification-process&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Verification Process
+&lt;/h2&gt;&lt;h3 id=&#34;i-foss-symbiyosys-formal-verification-flow&#34;&gt;
+    &lt;a href=&#34;#i-foss-symbiyosys-formal-verification-flow&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    i. FOSS SymbiYosys Formal Verification Flow
+&lt;/h3&gt;&lt;p&gt;This flow demonstrates the formal verification process using the riscv-formal framework with the open-source SymbiYosys tool. It consists of components like RVFI, the wrapper, and &lt;code&gt;checks.cfg&lt;/code&gt;. These components are used to generate &lt;code&gt;.sby&lt;/code&gt; files, which are then processed by SymbiYosys to run verification checks and produce the results, ensuring that the RISC-V implementation adheres to formal specifications. This flow represents a streamlined, FOSS-based approach to formal verification.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2025/Sby.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;FOSS SymbiYosys formal verification flow&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;ii-synopsys-vc-formal-verification-flow&#34;&gt;
+    &lt;a href=&#34;#ii-synopsys-vc-formal-verification-flow&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    ii. Synopsys VC Formal Verification Flow
+&lt;/h3&gt;&lt;p&gt;This flow illustrates the modified process, where the riscv-formal framework is used with Synopsys VC Formal. The &lt;code&gt;.sby&lt;/code&gt; files from the riscv-formal framework are first converted to &lt;code&gt;.tcl&lt;/code&gt; scripts using a custom &lt;code&gt;sby to tcl&lt;/code&gt; converter before being processed by VC Formal to generate verification results.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2025/VCF.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Synopsys VC Formal verification flow&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;The framework consists of &lt;strong&gt;three key stages&lt;/strong&gt;, each automated for smooth verification:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Pre-Processing:&lt;/strong&gt; Converts &lt;code&gt;.sby&lt;/code&gt; files into &lt;code&gt;.tcl&lt;/code&gt; scripts for VC Formal compatibility.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Processing:&lt;/strong&gt; Runs the formal checks, collects logs, and categorizes warnings &amp;amp; errors.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Post-Processing:&lt;/strong&gt; Summarizes verification results, helping users quickly identify pass/fail conditions.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;To achieve this, we’ve extended the framework with four core components:&lt;/p&gt;
+&lt;h3 id=&#34;1-sby_to_tclpy--automating-test-setup-pre-processing&#34;&gt;
+    &lt;a href=&#34;#1-sby_to_tclpy--automating-test-setup-pre-processing&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    1️⃣ sby_to_tcl.py – Automating Test Setup (Pre-Processing)
+&lt;/h3&gt;&lt;p&gt;The &lt;code&gt;sby_to_tcl.py&lt;/code&gt; script automates the &lt;strong&gt;conversion of SymbiYosys &lt;code&gt;.sby&lt;/code&gt; files&lt;/strong&gt; into &lt;strong&gt;VC Formal-compatible &lt;code&gt;.tcl&lt;/code&gt; scripts&lt;/strong&gt;. It also &lt;strong&gt;creates a Makefile&lt;/strong&gt; that organizes multiple verification tasks, allowing batch execution with a single command.&lt;/p&gt;
+&lt;h4 id=&#34;-why-is-this-important&#34;&gt;
+    &lt;a href=&#34;#-why-is-this-important&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    🔹 Why is this important?
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;Eliminates manual effort in handling &lt;code&gt;.tcl&lt;/code&gt; files.&lt;/li&gt;
+&lt;li&gt;Enables batch verification by processing multiple &lt;code&gt;.sby&lt;/code&gt; files at once.&lt;/li&gt;
+&lt;li&gt;Organizes output systematically in a dedicated &lt;code&gt;vcf&lt;/code&gt; directory.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2-vcf_cexdatash--error--warning-processing-processing-stage&#34;&gt;
+    &lt;a href=&#34;#2-vcf_cexdatash--error--warning-processing-processing-stage&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    2️⃣ vcf_cexdata.sh – Error &amp;amp; Warning Processing (Processing Stage)
+&lt;/h3&gt;&lt;p&gt;During the verification execution, the &lt;code&gt;vcf_cexdata.sh&lt;/code&gt; script ensures &lt;strong&gt;structured handling of warnings and errors&lt;/strong&gt;. Instead of overwriting logs, it captures and organizes logs for all checks, ensuring every warning/error is properly recorded.&lt;/p&gt;
+&lt;h4 id=&#34;-key-features&#34;&gt;
+    &lt;a href=&#34;#-key-features&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    🔹 Key Features:
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;Prevents loss of information by storing logs separately.&lt;/li&gt;
+&lt;li&gt;Formats errors in an easy-to-read structure (&lt;code&gt;warnings.txt&lt;/code&gt;, &lt;code&gt;errors.txt&lt;/code&gt;).&lt;/li&gt;
+&lt;li&gt;Provides a quick summary of issues across multiple checks.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;3-vcf_res_processpy--summarizing-verification-results-post-processing&#34;&gt;
+    &lt;a href=&#34;#3-vcf_res_processpy--summarizing-verification-results-post-processing&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    3️⃣ vcf_res_process.py – Summarizing Verification Results (Post-Processing)
+&lt;/h3&gt;&lt;p&gt;After verification, &lt;code&gt;vcf_res_process.py&lt;/code&gt; extracts key results from each check, categorizing assertions as &lt;strong&gt;PASS, FAIL, or INCONCLUSIVE&lt;/strong&gt; and consolidating everything into a &lt;strong&gt;single summary file (&lt;code&gt;results.txt&lt;/code&gt;)&lt;/strong&gt;.&lt;/p&gt;
+&lt;h4 id=&#34;-why-does-this-matter&#34;&gt;
+    &lt;a href=&#34;#-why-does-this-matter&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    🔹 Why does this matter?
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;Saves time—no need to inspect multiple files manually.&lt;/li&gt;
+&lt;li&gt;Provides a high-level overview of all formal verification checks.&lt;/li&gt;
+&lt;li&gt;Helps users quickly identify issues that need further debugging.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;4-makefile--automating-the-entire-workflow&#34;&gt;
+    &lt;a href=&#34;#4-makefile--automating-the-entire-workflow&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    4️⃣ Makefile – Automating the Entire Workflow
+&lt;/h3&gt;&lt;p&gt;The &lt;strong&gt;Makefile&lt;/strong&gt; serves as the backbone of automation, orchestrating all three stages. With simple commands like &lt;code&gt;make vcf_check&lt;/code&gt;, users can run all checks, collect results, and review summaries &lt;strong&gt;without manually executing scripts&lt;/strong&gt;.&lt;/p&gt;
+&lt;h4 id=&#34;-key-features-1&#34;&gt;
+    &lt;a href=&#34;#-key-features-1&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    🔹 Key Features:
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;One-command execution of all verification steps.&lt;/li&gt;
+&lt;li&gt;Automated log collection &amp;amp; clean-up for an organized workflow.&lt;/li&gt;
+&lt;li&gt;Results displayed directly in the terminal for quick review.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For a &lt;strong&gt;more detailed breakdown&lt;/strong&gt; on each file/process, check out the &lt;a class=&#34;link&#34; href=&#34;https://github.com/Chaotic-VRBlue/riscv-formal-vc-formal-extension?tab=readme-ov-file#file-descriptions&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;complete repository on GitHub&lt;/a&gt;! 🚀&lt;/p&gt;
+&lt;h3 id=&#34;general-applicability&#34;&gt;
+    &lt;a href=&#34;#general-applicability&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    General Applicability
+&lt;/h3&gt;&lt;p&gt;An interesting aspect of this process is that it is &lt;strong&gt;not exclusive to &lt;code&gt;riscv-formal&lt;/code&gt;&lt;/strong&gt;. In fact, this approach can be adapted for any &lt;code&gt;.sby&lt;/code&gt; file(s). The automation framework we&amp;rsquo;ve built for converting &lt;code&gt;.sby&lt;/code&gt; files to &lt;code&gt;.tcl&lt;/code&gt; scripts, handling formal verification results, and structuring the workflow can be applied to a wide range of formal verification tasks beyond RISC-V.&lt;/p&gt;
+&lt;p&gt;This flexibility makes it a powerful solution for integrating SymbiYosys-based verification flows with commercial formal tools like Synopsys VC Formal, streamlining the entire process across different projects.&lt;/p&gt;
+&lt;h2 id=&#34;going-the-other-way-from-vc-formal-to-sby&#34;&gt;
+    &lt;a href=&#34;#going-the-other-way-from-vc-formal-to-sby&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Going the Other Way: From VC Formal to SBY
+&lt;/h2&gt;&lt;p&gt;Let&amp;rsquo;s go the other way for a bit—what if we want to take &lt;code&gt;.tcl&lt;/code&gt; files from VC Formal and convert them back into &lt;code&gt;.sby&lt;/code&gt; files for SymbiYosys?&lt;/p&gt;
+&lt;h3 id=&#34;initial-challenges-faced-with-symbiyosys&#34;&gt;
+    &lt;a href=&#34;#initial-challenges-faced-with-symbiyosys&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Initial Challenges Faced with SymbiYosys
+&lt;/h3&gt;&lt;p&gt;When I first started using SymbiYosys (SBY) for formal verification, I encountered several challenges:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Toolchain Dependencies&lt;/strong&gt;: SBY relies on open-source tools like Yosys, Boolector, and ABC. Ensuring proper installation and configuration was time-consuming.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Assertion Language Differences&lt;/strong&gt;: SystemVerilog Assertions (SVA) supported in VC Formal required workarounds in SBY due to syntax or feature limitations.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Despite these hurdles, open-source formal verification tools have improved significantly and can handle complex verification tasks.&lt;/p&gt;
+&lt;h3 id=&#34;automating-the-conversion-from-tcl-to-sby&#34;&gt;
+    &lt;a href=&#34;#automating-the-conversion-from-tcl-to-sby&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Automating the Conversion: From &lt;code&gt;.tcl&lt;/code&gt; to &lt;code&gt;.sby&lt;/code&gt;
+&lt;/h3&gt;&lt;p&gt;The scripting ideas used in our Python automation can serve as a foundation for reversing the process. Just like &lt;code&gt;sby_to_tcl.py&lt;/code&gt; converts &lt;code&gt;.sby&lt;/code&gt; to &lt;code&gt;.tcl&lt;/code&gt;, a similar script could parse &lt;code&gt;.tcl&lt;/code&gt; files and generate &lt;code&gt;.sby&lt;/code&gt; files, but key challenges remain:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Lack of Direct Equivalence&lt;/strong&gt;: VC Formal scripts contain proprietary directives that do not have an exact counterpart in SymbiYosys.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Complex Conversions&lt;/strong&gt;: While a fully automated VC Formal-to-SBY conversion may not be feasible, structured scripting can reduce manual effort significantly.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Fortunately, once the &lt;code&gt;.sby&lt;/code&gt; files are reconstructed, the existing &lt;strong&gt;riscv-formal automation&lt;/strong&gt;—Makefile execution, error handling, and result processing—remains intact.&lt;/p&gt;
+&lt;p&gt;A structured conversion process would enable &lt;strong&gt;bidirectional compatibility&lt;/strong&gt; between open-source and proprietary formal verification tools.&lt;/p&gt;
+&lt;h3 id=&#34;symbiyosys-flow-vs-vc-formal-flow&#34;&gt;
+    &lt;a href=&#34;#symbiyosys-flow-vs-vc-formal-flow&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    SymbiYosys Flow vs. VC Formal Flow
+&lt;/h3&gt;&lt;p&gt;Comparison of &lt;strong&gt;SymbiYosys Flow&lt;/strong&gt; and &lt;strong&gt;Synopsys VC Formal (VCF)&lt;/strong&gt; flows:&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Flow&lt;/strong&gt;&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;&lt;strong&gt;SymbiYosys (SBY) Flow&lt;/strong&gt;&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;&lt;strong&gt;VC Formal (VCF) Flow&lt;/strong&gt;&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Configuration File&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;.sby&lt;/code&gt; file (SBY-based)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;.tcl&lt;/code&gt; file (Tcl-based)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Tool Used&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;SymbiYosys + Yosys&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Synopsys VC Formal&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Solver Backend&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Boolector, Yices2, etc.,&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Synopsys’ internal solvers&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Counterexample Debugging&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;GUI-based + logs&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;GUI-based + logs&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Execution Automation&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Python, Shell &amp;amp; Makefile&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Python, Shell &amp;amp; Makefile&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;future-scope&#34;&gt;
+    &lt;a href=&#34;#future-scope&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Future Scope
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Extending to Other Proprietary Tools&lt;/strong&gt;&lt;br&gt;
+While this extension integrates Synopsys VC Formal with riscv-formal, the approach can be further extended to other commercial formal verification tools. Automating &lt;code&gt;.sby&lt;/code&gt; file conversion and structured result handling can help streamline workflows across multiple environments.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Maintaining Compatibility with File Format Changes&lt;/strong&gt;&lt;br&gt;
+This extension relies on the &lt;code&gt;.sby&lt;/code&gt; file structure from riscv-formal and the &lt;code&gt;.tcl&lt;/code&gt; scripting format used by VC Formal. If either of these formats evolve, updates will be needed to ensure compatibility. Keeping the automation scripts adaptable to such modifications will be crucial for long-term usability.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;By continuously adapting, this extension can remain a valuable tool for formal verification, extending its reach to new tools and maintaining alignment with updates in the riscv-formal ecosystem.&lt;/p&gt;
+&lt;h2 id=&#34;results&#34;&gt;
+    &lt;a href=&#34;#results&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Results
+&lt;/h2&gt;&lt;p&gt;We have successfully developed a complete extension that seamlessly integrates the &lt;strong&gt;riscv-formal framework&lt;/strong&gt; with &lt;strong&gt;Synopsys VC Formal (VCF)&lt;/strong&gt;, ensuring an efficient, automated, and user-friendly verification experience.&lt;/p&gt;
+&lt;p&gt;Using this &lt;strong&gt;extended framework&lt;/strong&gt;, we formally verified our &lt;strong&gt;Single Cycle RISC-V core (SCRV32I)&lt;/strong&gt; and cross-checked results with &lt;strong&gt;SymbiYosys&lt;/strong&gt;. The verification confirms that our core adheres to the &lt;strong&gt;RISC-V ISA specifications&lt;/strong&gt;, ensuring correctness and compliance.&lt;/p&gt;
+&lt;h3 id=&#34;-practical-example&#34;&gt;
+    &lt;a href=&#34;#-practical-example&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    🔍 Practical Example
+&lt;/h3&gt;&lt;p&gt;For a detailed walkthrough, refer to this section of the &lt;a class=&#34;link&#34; href=&#34;https://github.com/Chaotic-VRBlue/riscv-formal-vc-formal-extension?tab=readme-ov-file#running-the-example-scrv32i-processor-for-understanding-the-workflow&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;complete repository on GitHub&lt;/a&gt;, where we provide a step-by-step guide to implementing this extension on the example SCRV32I processor.&lt;/p&gt;
+&lt;p&gt;The below section is dedicated to guiding you through the process of configuring custom RISC-V designs.&lt;/p&gt;
+&lt;p&gt;This practical approach ensures that users can replicate adapt, and extend the verification flow to their own processor designs.&lt;/p&gt;
+&lt;h2 id=&#34;configuring-a-new-risc-v-processor&#34;&gt;
+    &lt;a href=&#34;#configuring-a-new-risc-v-processor&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Configuring a New RISC-V Processor
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;First, refer to the &lt;code&gt;riscv-formal&lt;/code&gt; repository and follow the steps outlined in the &lt;a class=&#34;link&#34; href=&#34;https://github.com/YosysHQ/riscv-formal?tab=readme-ov-file#configuring-a-new-risc-v-processor&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;riscv-formal guide&lt;/a&gt;. Complete everything up to step 5. You don&amp;rsquo;t need to run step 5, as it involves using an open-source tool. For our purpose, we will run it using the VC Formal tool, so step 5 can be skipped. If you&amp;rsquo;re interested, you can explore it, but it&amp;rsquo;s not required for this process.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Once the &lt;code&gt;RVFI&lt;/code&gt; (RISC-V Formal Interface), &lt;code&gt;wrapper.sv&lt;/code&gt; file, and &lt;code&gt;checks.cfg&lt;/code&gt; file are implemented for your RISC-V processor as per the steps in the &lt;code&gt;riscv-formal&lt;/code&gt; repository, you can proceed with running the RISC-V formal framework for your core on the Synopsys VC Formal Tool.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;(Note: You may need to refer to the entire repository to complete this part, not just the section linked here.)&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Copy the &lt;code&gt;vcf_cexdata.sh&lt;/code&gt; and &lt;code&gt;Makefile&lt;/code&gt; files from the &lt;code&gt;cores/scrv32i&lt;/code&gt; folder into your core folder. (Remember to copy the &lt;code&gt;vc_formal&lt;/code&gt; folder to the root directory if you have cloned the official &lt;code&gt;riscv-formal&lt;/code&gt; repository.)&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;(Note: Only the vc_formal folder in the root directory, the vcf_cexdata.sh file in the scrv32i folder, and a few additions to the Makefile inside the scrv32i directory were created to implement this extension. - So copy these files/folder to the right location and it should work with no hassle)&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Navigate to your core directory and run:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; cores/&lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;core&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;make vcf_clean
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;make vcf_check
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Once the process is complete, the terminal will display results in the following order:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Warnings&lt;/li&gt;
+&lt;li&gt;Errors&lt;/li&gt;
+&lt;li&gt;Verification results (PASS/FAIL/INCONCLUSIVE/UNKNOWN - If failed to run)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Then you can utilize features such as running specific checks (including in GUI mode), launching the GUI, and customizing checks to run or skip, as shown in the &amp;lsquo;Running the Example SCRV32I Processor (For Understanding the Workflow)&amp;rsquo; section above.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;conclusion&#34;&gt;
+    &lt;a href=&#34;#conclusion&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Conclusion
+&lt;/h2&gt;&lt;h3 id=&#34;bridging-the-gap-risc-v-formal-meets-synopsys-vc-formal&#34;&gt;
+    &lt;a href=&#34;#bridging-the-gap-risc-v-formal-meets-synopsys-vc-formal&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Bridging the Gap: RISC-V Formal Meets Synopsys VC Formal
+&lt;/h3&gt;&lt;p&gt;The &lt;strong&gt;RISC-V Formal Verification Framework Extension&lt;/strong&gt; for &lt;strong&gt;Synopsys VC Formal&lt;/strong&gt; bridges the gap between open-source and industry-grade proprietary tools, making formal verification more &lt;strong&gt;accessible, efficient, and scalable&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;With &lt;strong&gt;automated .sby to .tcl conversion&lt;/strong&gt;, &lt;strong&gt;structured result handling&lt;/strong&gt;, and &lt;strong&gt;batch execution support&lt;/strong&gt;, this extension simplifies the entire verification process for RISC-V cores—and beyond.&lt;/p&gt;
+&lt;h3 id=&#34;but-this-is-just-the-beginning&#34;&gt;
+    &lt;a href=&#34;#but-this-is-just-the-beginning&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    But This Is Just the Beginning&amp;hellip;
+&lt;/h3&gt;&lt;p&gt;The methodologies introduced here can be extended to other formal verification tasks, making it easier to integrate open-source flows with commercial EDA tools. Whether you’re using &lt;strong&gt;SymbiYosys&lt;/strong&gt;, &lt;strong&gt;VC Formal&lt;/strong&gt;, or exploring &lt;strong&gt;bidirectional compatibility&lt;/strong&gt;, this framework lays the foundation for a more automated, scalable, and interoperable verification ecosystem.&lt;/p&gt;
+&lt;p&gt;🔎 Want to dive deeper? Explore the &lt;strong&gt;full implementation&lt;/strong&gt; in the GitHub repository: &lt;a class=&#34;link&#34; href=&#34;https://github.com/Chaotic-VRBlue/riscv-formal-vc-formal-extension/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;riscv-formal-vc-formal-extension&lt;/a&gt; 🚀&lt;/p&gt;
+&lt;p&gt;By embracing &lt;strong&gt;automation, interoperability, and scalability&lt;/strong&gt;, we can push the boundaries of formal verification—ensuring that RISC-V processors and other designs are functionally correct and future-proof.&lt;/p&gt;
+&lt;p&gt;Let’s build smarter, faster, and more robust verification flows—together! 🔬💡&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Sky130 SPICE, the KiCad way</title>
         <link>http://blog.yosyshq.com/p/sky130-kicad-spice/</link>
         <pubDate>Mon, 12 Feb 2024 19:09:55 -0800</pubDate>
