@@ -6,7 +6,28 @@
         <description>Recent content in Release Notes on YosysHQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Wed, 12 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://blog.yosyshq.com/tags/release-notes/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 09 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://blog.yosyshq.com/tags/release-notes/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Tabby CAD Suite version 20250409 released!</title>
+        <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20250409-released/</link>
+        <pubDate>Wed, 09 Apr 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20250409-released/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2023/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20250409 released!" /&gt;&lt;p&gt;The April release of Tabby CAD Suite is now available for download. Notable changes in this version include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Various improvements for speedier handling of liberty files: all passes that take liberty input files can now directly read compressed files; liberty parsing speed was improved; added the &lt;!-- raw HTML omitted --&gt;&lt;a class=&#34;link&#34; href=&#34;https://yosyshq.readthedocs.io/projects/yosys/en/latest/cmd/libcache.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;libcache&lt;/a&gt;&lt;!-- raw HTML omitted --&gt; command to enable caching parsed liberty files for repeat use in the same process.&lt;/li&gt;
+&lt;li&gt;Fixed a bug that suppressed errors about use of unknown modules/entities when reading in files with &lt;code&gt;verific&lt;/code&gt; after using &lt;code&gt;-lib&lt;/code&gt; to load blackbox definitions.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In other YosysHQ news:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A &lt;a class=&#34;link&#34; href=&#34;http://blog.yosyshq.com/p/risc-v-formal-verification-framework-extension-for-synopsys-vc-formal/&#34; &gt;new guest post by Rohith&lt;/a&gt; presents his work to adapt our RISC-V Formal Verification IP for Synopsys VC Formal.&lt;/li&gt;
+&lt;li&gt;Nina and Matt attended SEFUW and DATE respectively. It was good to see some of our customers and colleagues there.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Happy April,
+The YosysHQ Team&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Tabby CAD Suite version 20250312 released!</title>
         <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20250312-released/</link>
         <pubDate>Wed, 12 Mar 2025 00:00:00 +0000</pubDate>
