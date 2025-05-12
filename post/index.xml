@@ -6,7 +6,26 @@
         <description>Recent content in Posts on YosysHQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Wed, 09 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://blog.yosyshq.com/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 06 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://blog.yosyshq.com/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Tabby CAD Suite version 20250506 released!</title>
+        <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20250506-released/</link>
+        <pubDate>Tue, 06 May 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20250506-released/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2023/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20250506 released!" /&gt;&lt;p&gt;The May release of Tabby CAD Suite is now available for download. Notable changes in this version include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;SBY now supports verification of designs containing blackboxes. Add &lt;code&gt;cutpoint -blackbox&lt;/code&gt; at the end of your &lt;code&gt;[script]&lt;/code&gt; section and all outputs of blackbox instances will be considered unconstrained.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In other YosysHQ news:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The LatchUp open source silicon conference happened in Santa Barbara last weekend. Catch up on the many interesting talks with &lt;a class=&#34;link&#34; href=&#34;https://fossi-foundation.org/latch-up/2025&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;the video recordings&lt;/a&gt;!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Happy May,&lt;/p&gt;
+&lt;p&gt;The YosysHQ Team&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Tabby CAD Suite version 20250409 released!</title>
         <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20250409-released/</link>
         <pubDate>Wed, 09 Apr 2025 00:00:00 +0000</pubDate>
