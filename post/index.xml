@@ -6,7 +6,54 @@
         <description>Recent content in Posts on YosysHQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Tue, 06 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://blog.yosyshq.com/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 09 Jul 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://blog.yosyshq.com/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Tabby CAD Suite version 20250709 released!</title>
+        <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20250709-released/</link>
+        <pubDate>Wed, 09 Jul 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20250709-released/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2023/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20250709 released!" /&gt;&lt;p&gt;The July release of Tabby CAD Suite is now available for download. Notable changes in this version include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;SBY: The handling of assertions in cover mode was changed; now by default it will not consider assertions at all, and in particular it will no longer fail the cover task if any assertions were violated during the cover traces. You can restore the original behavior by adding the option &lt;code&gt;cover_assert on&lt;/code&gt; to the &lt;code&gt;[options]&lt;/code&gt; section.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In other YosysHQ news:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Matt and Nico will be attending ORConf in Valencia, September 12 to 14th. It would be great to see you there, and even better if you wanted to do a presentation on how you use open source tools for chip development. &lt;a class=&#34;link&#34; href=&#34;https://fossi-foundation.org/orconf/2025&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://fossi-foundation.org/orconf/2025&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Happy July,&lt;/p&gt;
+&lt;p&gt;The YosysHQ Team&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Tabby CAD Suite version 20250609 released!</title>
+        <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20250609-released/</link>
+        <pubDate>Mon, 09 Jun 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20250609-released/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2023/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20250609 released!" /&gt;&lt;p&gt;The June release of Tabby CAD Suite is now available for download. Notable changes in this version include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;The default severity for several verific warnings has been downgraded to INFO, as they are commonly seen in projects and usually do not indicate a problem with the design:&lt;/p&gt;
+&lt;p&gt;[VERI-1209] foo.sv:98: expression size 7 truncated to fit in target size 6 &lt;br&gt;
+[VERI-1142] foo.sv:55: system task &amp;lsquo;display&amp;rsquo; is ignored for synthesis &lt;br&gt;
+[VERI-2418] foo.svh:503: parameter &amp;lsquo;foo&amp;rsquo; declared inside package &amp;lsquo;bar_pkg&amp;rsquo; shall be treated as localparam \&lt;/p&gt;
+&lt;p&gt;If you would like to continue receiving any of these warnings, you can run the command &lt;code&gt;verific -set-warning VERI-XXXX&lt;/code&gt; at the beginning of your script to change the severity level back to WARNING.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In other YosysHQ news:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;We have a new home for community discussion around Yosys - &lt;a class=&#34;link&#34; href=&#34;https://yosyshq.discourse.group/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://yosyshq.discourse.group/&lt;/a&gt; Join us there for questions, support and discussion about our open source EDA tools.&lt;/li&gt;
+&lt;li&gt;Our partner Linty has recently released &lt;a class=&#34;link&#34; href=&#34;https://doc.linty-services.com/doc/release_notes.html#id3&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;a new version&lt;/a&gt; of their linting platform that adds several new yosys-based rules and reports, mainly around clock and reset usage. Also check out their &lt;a class=&#34;link&#34; href=&#34;https://marketplace.visualstudio.com/items?itemName=LintyServices.linty-hdl-designer&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;free VSCode plugin&lt;/a&gt;!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Happy June,&lt;/p&gt;
+&lt;p&gt;The YosysHQ Team&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Tabby CAD Suite version 20250506 released!</title>
         <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20250506-released/</link>
         <pubDate>Tue, 06 May 2025 00:00:00 +0000</pubDate>
