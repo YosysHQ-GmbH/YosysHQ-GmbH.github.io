@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="This is a guest blog post by Matt Young\n# Foreword Although I&rsquo;m a computer scientist by education, I&rsquo;ve always been interested in space since I was a kid. For a long time, I had simply forgotten about this interest, as I got more in-depth into FPGAs, then ASICs, and eventually EDA. I had no idea that eventually, an incredible opportunity would come to combine these two together, thanks to Yosys!\n">
+<title>TaMaRa: Towards a Triple Modular Redundancy Pass for Yosys</title>
+
+<link rel='canonical' href='http://blog.yosyshq.com/p/tamara-towards-a-triple-modular-redundancy-pass-for-yosys/'>
+
+<link rel="stylesheet" href="/scss/style.min.760e3dabc1e140d2e6abd27a8ca0aabb60e568829b29f67d2df12024136eff37.css"><meta property='og:title' content="TaMaRa: Towards a Triple Modular Redundancy Pass for Yosys">
+<meta property='og:description' content="This is a guest blog post by Matt Young\n# Foreword Although I&rsquo;m a computer scientist by education, I&rsquo;ve always been interested in space since I was a kid. For a long time, I had simply forgotten about this interest, as I got more in-depth into FPGAs, then ASICs, and eventually EDA. I had no idea that eventually, an incredible opportunity would come to combine these two together, thanks to Yosys!\n">
+<meta property='og:url' content='http://blog.yosyshq.com/p/tamara-towards-a-triple-modular-redundancy-pass-for-yosys/'>
+<meta property='og:site_name' content='YosysHQ Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='blog' /><meta property='article:published_time' content='2025-07-31T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-07-31T00:00:00&#43;00:00'/><meta property='og:image' content='http://blog.yosyshq.com/static-2025/tamara/tamara_header.jpg' />
+<meta name="twitter:site" content="@@YosysHQ">
+    <meta name="twitter:creator" content="@@YosysHQ"><meta name="twitter:title" content="TaMaRa: Towards a Triple Modular Redundancy Pass for Yosys">
+<meta name="twitter:description" content="This is a guest blog post by Matt Young\n# Foreword Although I&rsquo;m a computer scientist by education, I&rsquo;ve always been interested in space since I was a kid. For a long time, I had simply forgotten about this interest, as I got more in-depth into FPGAs, then ASICs, and eventually EDA. I had no idea that eventually, an incredible opportunity would come to combine these two together, thanks to Yosys!\n"><meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content='http://blog.yosyshq.com/static-2025/tamara/tamara_header.jpg' />
+    <link rel="shortcut icon" href="/favicon.png" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/logos/YOS_mark_square_hu2222790448653795551.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">YosysHQ Blog</a></h1>
+            <h2 class="site-description"></h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/newsletter' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>Newsletter</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/yug' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>Yosys User&#39;s Group</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/tamara-towards-a-triple-modular-redundancy-pass-for-yosys/">
+                
+                    <img src="/static-2025/tamara/tamara_header.jpg" loading="lazy" alt="Featured image of post TaMaRa: Towards a Triple Modular Redundancy Pass for Yosys" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/tamara-towards-a-triple-modular-redundancy-pass-for-yosys/">TaMaRa: Towards a Triple Modular Redundancy Pass for Yosys</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Jul 31, 2025</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    12 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>This is a guest blog post by <a class="link" href="https://mlyoung.cool/"  target="_blank" rel="noopener"
+    >Matt Young</a></p>
+<h2 id="foreword">
+    <a href="#foreword" class="header-anchor">#</a>
+    Foreword
+</h2><p>Although I&rsquo;m a computer scientist by education, I&rsquo;ve always been interested in space since I was a kid. For a
+long time, I had simply forgotten about this interest, as I got more in-depth into FPGAs, then ASICs, and
+eventually EDA. I had no idea that eventually, an incredible opportunity would come to combine these two
+together, thanks to Yosys!</p>
+<p>In late 2023, I pitched a research project to my academic supervisor at the University of Queensland in
+Australia. Here, we have a degree &ldquo;Bachelor of Computer Science (Honours)&rdquo; that is somewhat similar to a
+Master&rsquo;s degree as it involves a one-year research thesis. At the time, I had simply pitched the design and
+implementation of a simple RISC-V microcontroller. As my supervisor pointed out, this is a fun project, but
+has little to no research potential.</p>
+<p>As we brainstormed ways to improve the project, I recalled hearing about a <em>Super Mario 64</em> speedrun that was
+allegedly disrupted by a random bit flip caused by a stray cosmic ray. As I did more serious research into
+this topic, I found a very interesting research field with all sorts of interesting trade-offs, on top of the
+ones you get in normal FPGA/ASIC design.</p>
+<p>I quickly realised that far more than just designing <em>one</em> fault-tolerant processor, it could be possible to
+design a generalised EDA flow that could make <em>any</em> processor fault-tolerant.</p>
+<p>Thankfully, I was already familiar with Yosys. In Australia, unlike Europe and the US, we do not currently
+have a very large or well-resourced domestic FPGA/ASIC research community. This means that, as university
+students and researchers, we don&rsquo;t often (or ever) have access to industry tools like Cadence and
+Synopsys, so I had started my FPGA work using purely open-source tools. This, in fact, turns out to be a
+blessing in disguise. I&rsquo;m passionate about FOSS tools, and Yosys - being open-source - allows you to peel back
+the hood and deeply understand <em>how</em> it does certain synthesis passes, which allows for really deep learning,
+plus the opportunity to improve the tool yourself. Very importantly, it also means that custom passes can
+easily be added, which is not at all possible with restrictive commercial tools. This makes it a very
+important tool in academia, and indeed, Yosys is coming up in more and more publications.</p>
+<p>The project I ended up pitching, and had approved, was titled, &ldquo;An Automated Triple Modular Redundancy EDA
+Flow for Yosys&rdquo;.</p>
+<h2 id="background---what-is-triple-modular-redundancy">
+    <a href="#background---what-is-triple-modular-redundancy" class="header-anchor">#</a>
+    Background - What is Triple Modular Redundancy?
+</h2><p>For safety-critical sectors such as aerospace, defence, and medicine, ASICs and FPGAs need to be designed to
+be fault tolerant to prevent catastrophic malfunctions. In the context of digital electronics, fault tolerant
+means that the design is able to gracefully recover and continue operating in the event of a fault, or upset.</p>
+<p>For systems that operate in space - whether that be low-Earth orbit (LEO) or deep space - we care most about
+Single-Event Upsets (SEUs). SEUs are caused when ionising radiation strikes a transistor, causing it to
+transition from a 1 to a 0, or vice versa.</p>
+<p>In space, the Earth&rsquo;s atmosphere is absent, and thus chips are completely unprotected from the ever-present
+threat of radiation. This radiation can come from many sources: stray cosmic rays, violent bursts from the Sun, or even
+extremely powerful extragalactic gamma-ray bursts. On an unprotected system, an unlucky SEU may corrupt the system’s
+state to such a severe degree that it may cause destruction or loss of life - particularly important given the
+safety-critical nature of a number of space-faring systems (satellites, crew capsules, etc).</p>
+<p>One way we can protect against SEUs is a design technique called Triple Modular Redundancy (TMR), which
+mitigates SEUs by triplicating key parts of the design and using voter circuits to select a non-corrupted
+result if an SEU occurs. Typically, TMR is manually designed by HDL designers, for example, by
+manually instantiating three copies of the target module, designing a voter circuit, and linking them all
+together. However, this approach is an additional time-consuming and potentially error-prone step in the
+already complex design pipeline.</p>
+<p>Wouldn&rsquo;t it be nice if, instead, we could just have our synthesis tool do this for us? You input a design, and
+a simple <code>tmr</code> command makes it reliable enough to run in space, with barely any extra effort?</p>
+<p>This may still be a pipe-dream, but was the goal of my thesis to explore.</p>
+<h2 id="introducing-tamara">
+    <a href="#introducing-tamara" class="header-anchor">#</a>
+    Introducing TaMaRa
+</h2><p><em>TaMaRa</em> is the name for my implementation of this as a pass in Yosys. Once compiled, it introduces one new
+command: <code>tamara_tmr</code>, which aims to introduce TMR into the circuit. It also automatically calculates an <code>err</code>
+signal that is set high when a fault occurs, which can be used to, for example, re-configure an FPGA or reboot
+an ASIC.</p>
+<p>Designers should only need to make one change to the design, which is to introduce the <code>(* tamara_error_sink *)</code>
+annotation on the signal they would like to use as the error signal. This will indicate to the tool which port
+should be wired up to the automatically generated error signal logic.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-verilog" data-lang="verilog"><span class="line"><span class="cl"><span class="k">module</span> <span class="n">my_module</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="k">input</span> <span class="n">a</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="k">input</span> <span class="n">b</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="o">*</span> <span class="n">tamara_error_sink</span> <span class="o">*</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">input</span> <span class="n">err</span>
+</span></span><span class="line"><span class="cl"><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">endmodule</span>
+</span></span></code></pre></div><p>If you are hoping to use TaMaRa on an existing project - there is some bad news. Unfortunately, we have very
+little time in Honours, and <strong>TaMaRa is absolutely not suitable for any real-world designs</strong> yet. In fact, it
+was only able to process a small number of simple test circuits and has a number of documented bugs on
+moderately complex designs. Think of it more as a proof of concept.</p>
+<h2 id="tamara---under-the-hood">
+    <a href="#tamara---under-the-hood" class="header-anchor">#</a>
+    TaMaRa - Under the hood
+</h2><p>TaMaRa operates on Yosys&rsquo; powerful RTLIL or RTL Intermediate Language. All Yosys frontends emit this
+intermediate representation after pre-processing, lexing, parsing and elaboration. This is a very powerful
+feature of Yosys - it means that the same underlying plugin can operate on any design, from Verilog, to
+SystemVerilog, to VHDL.</p>
+<p>From a high-level perspective, the TaMaRa algorithm can be summarised as follows:</p>
+<ol>
+<li>Analyse the RTLIL netlist to generate <code>tamara::RTLILWireConnections</code> mapping; which is a mapping between an
+RTLIL Cell or Wire and the other Cells or Wires it may be connected to</li>
+<li>For each output port in the top module:
+<ol>
+<li>Perform a backwards breadth-first search through the RTLIL netlist to form a logic cone</li>
+<li>Replicate all combinational RTLIL primitives inside the logic cone</li>
+<li>Generate and insert the necessary voter(s) for each bit</li>
+<li>Wire up the newly formed netlist, including connected the voters</li>
+</ol>
+</li>
+<li>Perform any necessary fixes to the wiring, if required</li>
+<li>With the initial search complete, compute any follow on/successor logic cones from the initial terminals</li>
+<li>Repeat step 2 but for each successor logic cone</li>
+<li>Continue until no more successors remain</li>
+</ol>
+<p>This is also summarised by this diagram:</p>
+<p><img src="/static-2025/tamara/algorithm.svg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="TaMaRa TMR algorithm"
+	
+	
+></p>
+<p>From an implementation perspective, the TaMaRa plugin consists of just over 2,300 lines of C++20. The class
+diagram of the implementation looks (mostly) like this:</p>
+<p><img src="/static-2025/tamara/classdiagram.svg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="TaMaRa TMR class diagram"
+	
+	
+></p>
+<p>TaMaRa works by first lifting the RTLIL into a higher-level, more abstract representation: an abstract
+<code>TMRGraphNode</code> with <code>CellNode</code>, <code>IONode</code>, <code>WireNode</code> and <code>FFNode</code> specialisations. These in turn abstractly
+represent the key parts of an RTLIL circuit we care about for TMR. With this, we can more easily build a
+data structure mapping between these higher-level constructs and what other higher-level constructs they
+connect to. Essentially, we&rsquo;re building an abstracted view of the netlist for the purposes of TMR.</p>
+<p>One of the more important aspects is this algorithm is the concept of a <em>backwards breadth-first search</em>.
+Working backwards from the output ports of a module, <em>towards</em> the input ports, we look to perform a data
+structure known as a &ldquo;logic cone&rdquo; through a BFS.</p>
+<p>Essentially, the logic cone encapsulates all of the combinatorial RTLIL primitives between a sequential
+primitive (i.e. a DFF) or an IO (i.e. the edge of the circuit, the inputs). This diagram helps to better
+illustrate a logic cone:</p>
+<p><img src="/static-2025/tamara/logic_cone.svg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Logic cone"
+	
+	
+></p>
+<p>Once we have these logic cones, we can treat them independently to perform TMR. All of the primitives <em>within</em>
+a single logic cone can be triplicated, and a voter circuit can be inserted on the output side of the logic
+cone.</p>
+<p>Insertion is no easy task - in the thesis, I refer to this as <em>splicing</em> or <em>wiring</em> and it remained one of
+the most complex tasks of the project. RTLIL&rsquo;s power is a bit of a drawback here. As it&rsquo;s capable of
+representing any RTL schematic at all, there are a number of edge cases to consider, and not all were able to
+be considered in time.</p>
+<p>There&rsquo;s a lot more nuance here than can realistically fit in a blog post, so if you&rsquo;re interested, I highly
+encourage you to read my thesis and/or code. This goes into more detail about:</p>
+<ul>
+<li>Specifics about the backwards BFS including search termination conditions</li>
+<li>Specifically <em>how</em> splicing is done</li>
+<li>How the voter circuit was generated using a Karnaugh map of an expression then translated into C++ macros</li>
+<li>The general purpose <code>FixWalker</code> and <code>FixWalkerManager</code> classes for post-algorithm netlist repair</li>
+</ul>
+<h2 id="verification">
+    <a href="#verification" class="header-anchor">#</a>
+    Verification
+</h2><p>For the safety critical sectors that this tool (ideally) targets, verification is extremely important. It&rsquo;s
+clear that the Yosys team has put a lot of effort into its verification tooling, and it shows. I was able to
+use a number of Yosys tools during the thesis: SymbiYosys, eqy, mcy, Yosys&rsquo; built-in SAT solver, the <code>mutate</code>
+command, and external SMT solvers.</p>
+<p>I performed equivalence checking between circuits, before and after TMR, to ensure that TaMaRa does not change
+the underlying behaviour of the circuit. In addition, I used Herklotz&rsquo;s
+<a class="link" href="https://github.com/ymherklotz/verismith"  target="_blank" rel="noopener"
+    >Verismith</a> tool to generate random Verilog RTL in large batches,
+over 10,000 files per run, and run the equivalence check. This enabled me to verify the integrity of the
+algorithm at scale.</p>
+<p>By using Yosys&rsquo; built-in <code>mutate</code> command, I was also able to use the SAT-based equivalence checker to ensure
+that faults were correctly mitigated. If, after injecting a fault and applying TMR, the circuit is
+equivalent to its non-fault-injected counterpart, then the TMR has worked. Likewise, we can use the SAT solver
+to ensure that the <code>err</code> signal is set high when a fault is actually injected.</p>
+<p><img src="/static-2025/tamara/verification.svg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Verification flow"
+	
+	
+></p>
+<p>This shows that formal verification is a powerful technique to use when designing EDA algorithms, not just for
+IC design itself. There&rsquo;s certainly more work I&rsquo;d like to perform in this area in future - perhaps fuzzing
+Yosys optimisation passes at scale to verify their correctness.</p>
+<h2 id="results">
+    <a href="#results" class="header-anchor">#</a>
+    Results
+</h2><p>In the end, due to time constraints (and I must admit, poor project planning), TaMaRa was only able to handle
+simple circuits. This <em>does</em> include some circuits using sequential primitives, but again, only simple ones.</p>
+<p>To have a look at what the algorithm is capable of, here is a very simple circuit displayed with Yosys&rsquo; <code>show</code>
+command. This particular circuit uses a 2-bit bus, feeding into a simple NOT gate.</p>
+<p><img src="/static-2025/tamara/not_2bit.svg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="not_2bit schematic"
+	
+	
+></p>
+<p>Now, after applying <code>tamara_tmr</code>, you can see that the NOT gate has been replicated, and the TMR voter and error
+calculation logic has been inserted:</p>
+<p><img src="/static-2025/tamara/not_2bit_tmr.svg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="not_2bit schematic after TMR"
+	
+	
+></p>
+<p>Because of the 2-bit bus, two voters are required, which is the reason this schematic has dramatically
+inflated in size from the original. You&rsquo;ll also be able to see the <code>$reduce_or</code> cell that has been inserted
+to combine the individual <code>err</code> signals of both the voters.</p>
+<p>With the algorithm applied, we can also use the formal verification methodology above to analyse, at a larger
+scale, how these protected circuits respond to injected faults. In the following graph, an
+&ldquo;Unmitigated circuit&rdquo; refers to a pre-TMR circuit; and an &ldquo;Unprotected voter&rdquo; circuit refers to a circuit with
+a voter, subject to fault injection, where the voter may also be hit with faults as well. For each of the
+samples on the X axis, 100 randomised trials were used and the outputs formally verified.</p>
+<p><img src="/static-2025/tamara/graphs.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="TaMaRa graphs"
+	
+	
+></p>
+<p>This result shows that while the algorithm isn&rsquo;t <em>perfect</em> in close-to-real-world scenarios, it <em>does</em> improve
+the reliability of the circuit somewhat. Unprotected circuits are almost always affected by simulated SEUs,
+whereas after being processed with TaMaRa TMR, mitigated circuits have above a 50% chance of mitigating the
+SEU.</p>
+<p>All circuits tested generally perform the same, regardless of topology:</p>
+<p><img src="/static-2025/tamara/all_comb_unprot.svg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="All unprotected voters"
+	
+	
+></p>
+<p>Individual circuits also appear to respond identically regardless of bit width:</p>
+<p><img src="/static-2025/tamara/mux_bit_sweep_unprot.svg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Individual circuit comparison"
+	
+	
+></p>
+<h2 id="whats-next">
+    <a href="#whats-next" class="header-anchor">#</a>
+    What&rsquo;s next?
+</h2><p>In 2026, I&rsquo;m moving to start a PhD at Macquarie University&rsquo;s
+<a class="link" href="https://www.mq.edu.au/faculty-of-science-and-engineering/our-research/silicon-platforms-lab"  target="_blank" rel="noopener"
+    >Silicon Platforms Lab</a>,
+one of the very few computer engineering focused research groups in Australia.</p>
+<p>I&rsquo;m planning to continue my work on domain-specific EDA, but focus more heavily on Yosys&rsquo; sister project,
+<a class="link" href="https://github.com/The-OpenROAD-Project/OpenROAD"  target="_blank" rel="noopener"
+    >OpenROAD</a>, an RTL-GDS tool for ASICs. In the case of
+radiation-hardening, performing this mitigation lower-down in the stack (i.e. during physical design/PnR) has
+the advantage of being able to more accurately consider the physical effects of radiation on the circuit. This
+type of information can be approximated, but is hard to accurately predict, at a synthesis pre-PnR level.</p>
+<p>There are many fields that don&rsquo;t suit typical, commercial EDA flows that focus on power, performance and area
+(PPA) exclusively, from radiation-hardened designs to high-security processors. Proprietary tools barricade
+research into this area by making them impossible to modify. Conversely, FOSS tools like Yosys and OpenROAD
+give us a unique opportunity, as researchers, to customise these tools to our specific areas of interest and
+improve the tool in the process. For example, during my PhD, I&rsquo;m hoping to improve both Yosys and OpenROAD,
+focusing on Layout Versus Schematic (LVS) and other verification techniques. My research, and increasingly
+others&rsquo; as well, uses Yosys and OpenROAD for high-security and/or safety critical environments. Given this,
+it&rsquo;s important that when we modify a tool, we know we haven&rsquo;t regressed its behaviour.</p>
+<p>My hope is that if more academics and small companies become interested in FOSS EDA tools and contribute to
+them, we will eventually be able to have a powerful, community-led chip design pipeline that could rival
+commercial tools across a number of domains. This, I believe, would make IC design an endeavour more suitable
+for hobbyists and academics without access to expensive proprietary tools; and unlock opportunities for
+interesting new innovations in the EDA sector.</p>
+<h2 id="further-reading">
+    <a href="#further-reading" class="header-anchor">#</a>
+    Further reading
+</h2><p>The TaMaRa thesis (22k words) is available to read <a class="link" href="https://mlyoung.cool/publications/An_Automated_TMR_Flow_for_Yosys.pdf"  target="_blank" rel="noopener"
+    >on my
+website</a>, and is available under the
+permissive CC-BY licence.</p>
+<p>The code is available on <a class="link" href="https://github.com/mattyoung101/tamara"  target="_blank" rel="noopener"
+    >my GitHub</a>, and is available under the MPL 2.0.</p>
+<p><strong>A reminder again that TaMaRa is absolutely <em>not</em> suitable for anything but simple test circuits.</strong> You are more
+than welcome to give it a spin, or even contribute, though!</p>
+<hr>
+<p>Matt Young is a Bachelor of Computer Science (Honours) student at the University of Queensland in Australia,
+researching the application of novel EDA techniques to design specialised microprocessors for challenging
+environments.</p>
+<p>Matt can be reached <a class="link" href="https://www.linkedin.com/in/mattyoung101/"  target="_blank" rel="noopener"
+    >via LinkedIn</a> or by emailing matt (at)
+mlyoung (dot) cool. Matt&rsquo;s <a class="link" href="https://mlyoung.cool/"  target="_blank" rel="noopener"
+    >website</a> has more information on TaMaRa and other projects.</p>
+<hr>
+<p><em>Header image attributon: <a class="link" href="https://esahubble.org/images/heic1509a/"  target="_blank" rel="noopener"
+    >https://esahubble.org/images/heic1509a/</a> © ESA/Hubble (CC-BY 4.0)</em></p>
+<p><em>As a special exemption to the copyright notice at the end of the page, the author (Matt Young) hereby
+releases this article text and diagrams under <a class="link" href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1"  target="_blank" rel="noopener"
+    >CC-BY 4.0</a></em></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/blog/">Blog</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2025 YosysHQ Blog
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.25.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

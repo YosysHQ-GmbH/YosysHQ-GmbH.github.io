@@ -6,7 +6,327 @@
         <description>Recent content in Posts on YosysHQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Wed, 09 Jul 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://blog.yosyshq.com/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 31 Jul 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://blog.yosyshq.com/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>TaMaRa: Towards a Triple Modular Redundancy Pass for Yosys</title>
+        <link>http://blog.yosyshq.com/p/tamara-towards-a-triple-modular-redundancy-pass-for-yosys/</link>
+        <pubDate>Thu, 31 Jul 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://blog.yosyshq.com/p/tamara-towards-a-triple-modular-redundancy-pass-for-yosys/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2025/tamara/tamara_header.jpg" alt="Featured image of post TaMaRa: Towards a Triple Modular Redundancy Pass for Yosys" /&gt;&lt;p&gt;This is a guest blog post by &lt;a class=&#34;link&#34; href=&#34;https://mlyoung.cool/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Matt Young&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;foreword&#34;&gt;
+    &lt;a href=&#34;#foreword&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Foreword
+&lt;/h2&gt;&lt;p&gt;Although I&amp;rsquo;m a computer scientist by education, I&amp;rsquo;ve always been interested in space since I was a kid. For a
+long time, I had simply forgotten about this interest, as I got more in-depth into FPGAs, then ASICs, and
+eventually EDA. I had no idea that eventually, an incredible opportunity would come to combine these two
+together, thanks to Yosys!&lt;/p&gt;
+&lt;p&gt;In late 2023, I pitched a research project to my academic supervisor at the University of Queensland in
+Australia. Here, we have a degree &amp;ldquo;Bachelor of Computer Science (Honours)&amp;rdquo; that is somewhat similar to a
+Master&amp;rsquo;s degree as it involves a one-year research thesis. At the time, I had simply pitched the design and
+implementation of a simple RISC-V microcontroller. As my supervisor pointed out, this is a fun project, but
+has little to no research potential.&lt;/p&gt;
+&lt;p&gt;As we brainstormed ways to improve the project, I recalled hearing about a &lt;em&gt;Super Mario 64&lt;/em&gt; speedrun that was
+allegedly disrupted by a random bit flip caused by a stray cosmic ray. As I did more serious research into
+this topic, I found a very interesting research field with all sorts of interesting trade-offs, on top of the
+ones you get in normal FPGA/ASIC design.&lt;/p&gt;
+&lt;p&gt;I quickly realised that far more than just designing &lt;em&gt;one&lt;/em&gt; fault-tolerant processor, it could be possible to
+design a generalised EDA flow that could make &lt;em&gt;any&lt;/em&gt; processor fault-tolerant.&lt;/p&gt;
+&lt;p&gt;Thankfully, I was already familiar with Yosys. In Australia, unlike Europe and the US, we do not currently
+have a very large or well-resourced domestic FPGA/ASIC research community. This means that, as university
+students and researchers, we don&amp;rsquo;t often (or ever) have access to industry tools like Cadence and
+Synopsys, so I had started my FPGA work using purely open-source tools. This, in fact, turns out to be a
+blessing in disguise. I&amp;rsquo;m passionate about FOSS tools, and Yosys - being open-source - allows you to peel back
+the hood and deeply understand &lt;em&gt;how&lt;/em&gt; it does certain synthesis passes, which allows for really deep learning,
+plus the opportunity to improve the tool yourself. Very importantly, it also means that custom passes can
+easily be added, which is not at all possible with restrictive commercial tools. This makes it a very
+important tool in academia, and indeed, Yosys is coming up in more and more publications.&lt;/p&gt;
+&lt;p&gt;The project I ended up pitching, and had approved, was titled, &amp;ldquo;An Automated Triple Modular Redundancy EDA
+Flow for Yosys&amp;rdquo;.&lt;/p&gt;
+&lt;h2 id=&#34;background---what-is-triple-modular-redundancy&#34;&gt;
+    &lt;a href=&#34;#background---what-is-triple-modular-redundancy&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Background - What is Triple Modular Redundancy?
+&lt;/h2&gt;&lt;p&gt;For safety-critical sectors such as aerospace, defence, and medicine, ASICs and FPGAs need to be designed to
+be fault tolerant to prevent catastrophic malfunctions. In the context of digital electronics, fault tolerant
+means that the design is able to gracefully recover and continue operating in the event of a fault, or upset.&lt;/p&gt;
+&lt;p&gt;For systems that operate in space - whether that be low-Earth orbit (LEO) or deep space - we care most about
+Single-Event Upsets (SEUs). SEUs are caused when ionising radiation strikes a transistor, causing it to
+transition from a 1 to a 0, or vice versa.&lt;/p&gt;
+&lt;p&gt;In space, the Earth&amp;rsquo;s atmosphere is absent, and thus chips are completely unprotected from the ever-present
+threat of radiation. This radiation can come from many sources: stray cosmic rays, violent bursts from the Sun, or even
+extremely powerful extragalactic gamma-ray bursts. On an unprotected system, an unlucky SEU may corrupt the system’s
+state to such a severe degree that it may cause destruction or loss of life - particularly important given the
+safety-critical nature of a number of space-faring systems (satellites, crew capsules, etc).&lt;/p&gt;
+&lt;p&gt;One way we can protect against SEUs is a design technique called Triple Modular Redundancy (TMR), which
+mitigates SEUs by triplicating key parts of the design and using voter circuits to select a non-corrupted
+result if an SEU occurs. Typically, TMR is manually designed by HDL designers, for example, by
+manually instantiating three copies of the target module, designing a voter circuit, and linking them all
+together. However, this approach is an additional time-consuming and potentially error-prone step in the
+already complex design pipeline.&lt;/p&gt;
+&lt;p&gt;Wouldn&amp;rsquo;t it be nice if, instead, we could just have our synthesis tool do this for us? You input a design, and
+a simple &lt;code&gt;tmr&lt;/code&gt; command makes it reliable enough to run in space, with barely any extra effort?&lt;/p&gt;
+&lt;p&gt;This may still be a pipe-dream, but was the goal of my thesis to explore.&lt;/p&gt;
+&lt;h2 id=&#34;introducing-tamara&#34;&gt;
+    &lt;a href=&#34;#introducing-tamara&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Introducing TaMaRa
+&lt;/h2&gt;&lt;p&gt;&lt;em&gt;TaMaRa&lt;/em&gt; is the name for my implementation of this as a pass in Yosys. Once compiled, it introduces one new
+command: &lt;code&gt;tamara_tmr&lt;/code&gt;, which aims to introduce TMR into the circuit. It also automatically calculates an &lt;code&gt;err&lt;/code&gt;
+signal that is set high when a fault occurs, which can be used to, for example, re-configure an FPGA or reboot
+an ASIC.&lt;/p&gt;
+&lt;p&gt;Designers should only need to make one change to the design, which is to introduce the &lt;code&gt;(* tamara_error_sink *)&lt;/code&gt;
+annotation on the signal they would like to use as the error signal. This will indicate to the tool which port
+should be wired up to the automatically generated error signal logic.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-verilog&#34; data-lang=&#34;verilog&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;module&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;my_module&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;input&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;input&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;tamara_error_sink&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;input&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;err&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;endmodule&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If you are hoping to use TaMaRa on an existing project - there is some bad news. Unfortunately, we have very
+little time in Honours, and &lt;strong&gt;TaMaRa is absolutely not suitable for any real-world designs&lt;/strong&gt; yet. In fact, it
+was only able to process a small number of simple test circuits and has a number of documented bugs on
+moderately complex designs. Think of it more as a proof of concept.&lt;/p&gt;
+&lt;h2 id=&#34;tamara---under-the-hood&#34;&gt;
+    &lt;a href=&#34;#tamara---under-the-hood&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    TaMaRa - Under the hood
+&lt;/h2&gt;&lt;p&gt;TaMaRa operates on Yosys&amp;rsquo; powerful RTLIL or RTL Intermediate Language. All Yosys frontends emit this
+intermediate representation after pre-processing, lexing, parsing and elaboration. This is a very powerful
+feature of Yosys - it means that the same underlying plugin can operate on any design, from Verilog, to
+SystemVerilog, to VHDL.&lt;/p&gt;
+&lt;p&gt;From a high-level perspective, the TaMaRa algorithm can be summarised as follows:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Analyse the RTLIL netlist to generate &lt;code&gt;tamara::RTLILWireConnections&lt;/code&gt; mapping; which is a mapping between an
+RTLIL Cell or Wire and the other Cells or Wires it may be connected to&lt;/li&gt;
+&lt;li&gt;For each output port in the top module:
+&lt;ol&gt;
+&lt;li&gt;Perform a backwards breadth-first search through the RTLIL netlist to form a logic cone&lt;/li&gt;
+&lt;li&gt;Replicate all combinational RTLIL primitives inside the logic cone&lt;/li&gt;
+&lt;li&gt;Generate and insert the necessary voter(s) for each bit&lt;/li&gt;
+&lt;li&gt;Wire up the newly formed netlist, including connected the voters&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;Perform any necessary fixes to the wiring, if required&lt;/li&gt;
+&lt;li&gt;With the initial search complete, compute any follow on/successor logic cones from the initial terminals&lt;/li&gt;
+&lt;li&gt;Repeat step 2 but for each successor logic cone&lt;/li&gt;
+&lt;li&gt;Continue until no more successors remain&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;This is also summarised by this diagram:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2025/tamara/algorithm.svg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;TaMaRa TMR algorithm&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;From an implementation perspective, the TaMaRa plugin consists of just over 2,300 lines of C++20. The class
+diagram of the implementation looks (mostly) like this:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2025/tamara/classdiagram.svg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;TaMaRa TMR class diagram&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;TaMaRa works by first lifting the RTLIL into a higher-level, more abstract representation: an abstract
+&lt;code&gt;TMRGraphNode&lt;/code&gt; with &lt;code&gt;CellNode&lt;/code&gt;, &lt;code&gt;IONode&lt;/code&gt;, &lt;code&gt;WireNode&lt;/code&gt; and &lt;code&gt;FFNode&lt;/code&gt; specialisations. These in turn abstractly
+represent the key parts of an RTLIL circuit we care about for TMR. With this, we can more easily build a
+data structure mapping between these higher-level constructs and what other higher-level constructs they
+connect to. Essentially, we&amp;rsquo;re building an abstracted view of the netlist for the purposes of TMR.&lt;/p&gt;
+&lt;p&gt;One of the more important aspects is this algorithm is the concept of a &lt;em&gt;backwards breadth-first search&lt;/em&gt;.
+Working backwards from the output ports of a module, &lt;em&gt;towards&lt;/em&gt; the input ports, we look to perform a data
+structure known as a &amp;ldquo;logic cone&amp;rdquo; through a BFS.&lt;/p&gt;
+&lt;p&gt;Essentially, the logic cone encapsulates all of the combinatorial RTLIL primitives between a sequential
+primitive (i.e. a DFF) or an IO (i.e. the edge of the circuit, the inputs). This diagram helps to better
+illustrate a logic cone:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2025/tamara/logic_cone.svg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Logic cone&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;Once we have these logic cones, we can treat them independently to perform TMR. All of the primitives &lt;em&gt;within&lt;/em&gt;
+a single logic cone can be triplicated, and a voter circuit can be inserted on the output side of the logic
+cone.&lt;/p&gt;
+&lt;p&gt;Insertion is no easy task - in the thesis, I refer to this as &lt;em&gt;splicing&lt;/em&gt; or &lt;em&gt;wiring&lt;/em&gt; and it remained one of
+the most complex tasks of the project. RTLIL&amp;rsquo;s power is a bit of a drawback here. As it&amp;rsquo;s capable of
+representing any RTL schematic at all, there are a number of edge cases to consider, and not all were able to
+be considered in time.&lt;/p&gt;
+&lt;p&gt;There&amp;rsquo;s a lot more nuance here than can realistically fit in a blog post, so if you&amp;rsquo;re interested, I highly
+encourage you to read my thesis and/or code. This goes into more detail about:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Specifics about the backwards BFS including search termination conditions&lt;/li&gt;
+&lt;li&gt;Specifically &lt;em&gt;how&lt;/em&gt; splicing is done&lt;/li&gt;
+&lt;li&gt;How the voter circuit was generated using a Karnaugh map of an expression then translated into C++ macros&lt;/li&gt;
+&lt;li&gt;The general purpose &lt;code&gt;FixWalker&lt;/code&gt; and &lt;code&gt;FixWalkerManager&lt;/code&gt; classes for post-algorithm netlist repair&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;verification&#34;&gt;
+    &lt;a href=&#34;#verification&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Verification
+&lt;/h2&gt;&lt;p&gt;For the safety critical sectors that this tool (ideally) targets, verification is extremely important. It&amp;rsquo;s
+clear that the Yosys team has put a lot of effort into its verification tooling, and it shows. I was able to
+use a number of Yosys tools during the thesis: SymbiYosys, eqy, mcy, Yosys&amp;rsquo; built-in SAT solver, the &lt;code&gt;mutate&lt;/code&gt;
+command, and external SMT solvers.&lt;/p&gt;
+&lt;p&gt;I performed equivalence checking between circuits, before and after TMR, to ensure that TaMaRa does not change
+the underlying behaviour of the circuit. In addition, I used Herklotz&amp;rsquo;s
+&lt;a class=&#34;link&#34; href=&#34;https://github.com/ymherklotz/verismith&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Verismith&lt;/a&gt; tool to generate random Verilog RTL in large batches,
+over 10,000 files per run, and run the equivalence check. This enabled me to verify the integrity of the
+algorithm at scale.&lt;/p&gt;
+&lt;p&gt;By using Yosys&amp;rsquo; built-in &lt;code&gt;mutate&lt;/code&gt; command, I was also able to use the SAT-based equivalence checker to ensure
+that faults were correctly mitigated. If, after injecting a fault and applying TMR, the circuit is
+equivalent to its non-fault-injected counterpart, then the TMR has worked. Likewise, we can use the SAT solver
+to ensure that the &lt;code&gt;err&lt;/code&gt; signal is set high when a fault is actually injected.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2025/tamara/verification.svg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Verification flow&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;This shows that formal verification is a powerful technique to use when designing EDA algorithms, not just for
+IC design itself. There&amp;rsquo;s certainly more work I&amp;rsquo;d like to perform in this area in future - perhaps fuzzing
+Yosys optimisation passes at scale to verify their correctness.&lt;/p&gt;
+&lt;h2 id=&#34;results&#34;&gt;
+    &lt;a href=&#34;#results&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Results
+&lt;/h2&gt;&lt;p&gt;In the end, due to time constraints (and I must admit, poor project planning), TaMaRa was only able to handle
+simple circuits. This &lt;em&gt;does&lt;/em&gt; include some circuits using sequential primitives, but again, only simple ones.&lt;/p&gt;
+&lt;p&gt;To have a look at what the algorithm is capable of, here is a very simple circuit displayed with Yosys&amp;rsquo; &lt;code&gt;show&lt;/code&gt;
+command. This particular circuit uses a 2-bit bus, feeding into a simple NOT gate.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2025/tamara/not_2bit.svg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;not_2bit schematic&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;Now, after applying &lt;code&gt;tamara_tmr&lt;/code&gt;, you can see that the NOT gate has been replicated, and the TMR voter and error
+calculation logic has been inserted:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2025/tamara/not_2bit_tmr.svg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;not_2bit schematic after TMR&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;Because of the 2-bit bus, two voters are required, which is the reason this schematic has dramatically
+inflated in size from the original. You&amp;rsquo;ll also be able to see the &lt;code&gt;$reduce_or&lt;/code&gt; cell that has been inserted
+to combine the individual &lt;code&gt;err&lt;/code&gt; signals of both the voters.&lt;/p&gt;
+&lt;p&gt;With the algorithm applied, we can also use the formal verification methodology above to analyse, at a larger
+scale, how these protected circuits respond to injected faults. In the following graph, an
+&amp;ldquo;Unmitigated circuit&amp;rdquo; refers to a pre-TMR circuit; and an &amp;ldquo;Unprotected voter&amp;rdquo; circuit refers to a circuit with
+a voter, subject to fault injection, where the voter may also be hit with faults as well. For each of the
+samples on the X axis, 100 randomised trials were used and the outputs formally verified.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2025/tamara/graphs.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;TaMaRa graphs&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;This result shows that while the algorithm isn&amp;rsquo;t &lt;em&gt;perfect&lt;/em&gt; in close-to-real-world scenarios, it &lt;em&gt;does&lt;/em&gt; improve
+the reliability of the circuit somewhat. Unprotected circuits are almost always affected by simulated SEUs,
+whereas after being processed with TaMaRa TMR, mitigated circuits have above a 50% chance of mitigating the
+SEU.&lt;/p&gt;
+&lt;p&gt;All circuits tested generally perform the same, regardless of topology:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2025/tamara/all_comb_unprot.svg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;All unprotected voters&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;Individual circuits also appear to respond identically regardless of bit width:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2025/tamara/mux_bit_sweep_unprot.svg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Individual circuit comparison&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;whats-next&#34;&gt;
+    &lt;a href=&#34;#whats-next&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    What&amp;rsquo;s next?
+&lt;/h2&gt;&lt;p&gt;In 2026, I&amp;rsquo;m moving to start a PhD at Macquarie University&amp;rsquo;s
+&lt;a class=&#34;link&#34; href=&#34;https://www.mq.edu.au/faculty-of-science-and-engineering/our-research/silicon-platforms-lab&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Silicon Platforms Lab&lt;/a&gt;,
+one of the very few computer engineering focused research groups in Australia.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m planning to continue my work on domain-specific EDA, but focus more heavily on Yosys&amp;rsquo; sister project,
+&lt;a class=&#34;link&#34; href=&#34;https://github.com/The-OpenROAD-Project/OpenROAD&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;OpenROAD&lt;/a&gt;, an RTL-GDS tool for ASICs. In the case of
+radiation-hardening, performing this mitigation lower-down in the stack (i.e. during physical design/PnR) has
+the advantage of being able to more accurately consider the physical effects of radiation on the circuit. This
+type of information can be approximated, but is hard to accurately predict, at a synthesis pre-PnR level.&lt;/p&gt;
+&lt;p&gt;There are many fields that don&amp;rsquo;t suit typical, commercial EDA flows that focus on power, performance and area
+(PPA) exclusively, from radiation-hardened designs to high-security processors. Proprietary tools barricade
+research into this area by making them impossible to modify. Conversely, FOSS tools like Yosys and OpenROAD
+give us a unique opportunity, as researchers, to customise these tools to our specific areas of interest and
+improve the tool in the process. For example, during my PhD, I&amp;rsquo;m hoping to improve both Yosys and OpenROAD,
+focusing on Layout Versus Schematic (LVS) and other verification techniques. My research, and increasingly
+others&amp;rsquo; as well, uses Yosys and OpenROAD for high-security and/or safety critical environments. Given this,
+it&amp;rsquo;s important that when we modify a tool, we know we haven&amp;rsquo;t regressed its behaviour.&lt;/p&gt;
+&lt;p&gt;My hope is that if more academics and small companies become interested in FOSS EDA tools and contribute to
+them, we will eventually be able to have a powerful, community-led chip design pipeline that could rival
+commercial tools across a number of domains. This, I believe, would make IC design an endeavour more suitable
+for hobbyists and academics without access to expensive proprietary tools; and unlock opportunities for
+interesting new innovations in the EDA sector.&lt;/p&gt;
+&lt;h2 id=&#34;further-reading&#34;&gt;
+    &lt;a href=&#34;#further-reading&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Further reading
+&lt;/h2&gt;&lt;p&gt;The TaMaRa thesis (22k words) is available to read &lt;a class=&#34;link&#34; href=&#34;https://mlyoung.cool/publications/An_Automated_TMR_Flow_for_Yosys.pdf&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;on my
+website&lt;/a&gt;, and is available under the
+permissive CC-BY licence.&lt;/p&gt;
+&lt;p&gt;The code is available on &lt;a class=&#34;link&#34; href=&#34;https://github.com/mattyoung101/tamara&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;my GitHub&lt;/a&gt;, and is available under the MPL 2.0.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;A reminder again that TaMaRa is absolutely &lt;em&gt;not&lt;/em&gt; suitable for anything but simple test circuits.&lt;/strong&gt; You are more
+than welcome to give it a spin, or even contribute, though!&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Matt Young is a Bachelor of Computer Science (Honours) student at the University of Queensland in Australia,
+researching the application of novel EDA techniques to design specialised microprocessors for challenging
+environments.&lt;/p&gt;
+&lt;p&gt;Matt can be reached &lt;a class=&#34;link&#34; href=&#34;https://www.linkedin.com/in/mattyoung101/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;via LinkedIn&lt;/a&gt; or by emailing matt (at)
+mlyoung (dot) cool. Matt&amp;rsquo;s &lt;a class=&#34;link&#34; href=&#34;https://mlyoung.cool/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;website&lt;/a&gt; has more information on TaMaRa and other projects.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;Header image attributon: &lt;a class=&#34;link&#34; href=&#34;https://esahubble.org/images/heic1509a/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://esahubble.org/images/heic1509a/&lt;/a&gt; © ESA/Hubble (CC-BY 4.0)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;As a special exemption to the copyright notice at the end of the page, the author (Matt Young) hereby
+releases this article text and diagrams under &lt;a class=&#34;link&#34; href=&#34;https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;CC-BY 4.0&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Tabby CAD Suite version 20250709 released!</title>
         <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20250709-released/</link>
         <pubDate>Wed, 09 Jul 2025 00:00:00 +0000</pubDate>
