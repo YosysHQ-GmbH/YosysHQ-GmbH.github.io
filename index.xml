@@ -5044,6 +5044,13 @@ get the best from our formal tools.&lt;/p&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://fosstodon.org/@yosyshq&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;mastodon&lt;/a&gt; or&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h2 id=&#34;yug-11---triple-modular-redundancy---1800-cest-thursday-9th-october&#34;&gt;
+    &lt;a href=&#34;#yug-11---triple-modular-redundancy---1800-cest-thursday-9th-october&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    YUG 11 - Triple modular redundancy - 18:00 CEST Thursday 9th October
+&lt;/h2&gt;&lt;p&gt;In this YUG, Matt Young, an Australian Bachelor of Computer Science (Honours) student, will explain how they worked towards an automated &lt;a class=&#34;link&#34; href=&#34;https://blog.yosyshq.com/p/tamara-towards-a-triple-modular-redundancy-pass-for-yosys/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;TMR EDA flow&lt;/a&gt;, with their thesis &amp;ldquo;TaMaRa: Towards an Automated TMR EDA Flow for Yosys&amp;rdquo;. This seminar will cover both the design and formal verification, of the algorithm and its application to Yosys; whilst addressing notable limitations and future improvements.&lt;/p&gt;
+&lt;p&gt;Watch the recording here: &lt;a class=&#34;link&#34; href=&#34;https://youtu.be/ZiIUKr-2IAE&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://youtu.be/ZiIUKr-2IAE&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;yug-10---asic-synthesis-with-yosys---1800-cet-thursday-20th-february&#34;&gt;
     &lt;a href=&#34;#yug-10---asic-synthesis-with-yosys---1800-cet-thursday-20th-february&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     YUG 10 - ASIC synthesis with Yosys - 18:00 CET Thursday 20th February
