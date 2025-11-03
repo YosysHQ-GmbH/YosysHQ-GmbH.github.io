@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='http://blog.yosyshq.com/p/3d-raytracing/'>
 
-<link rel="stylesheet" href="/scss/style.min.760e3dabc1e140d2e6abd27a8ca0aabb60e568829b29f67d2df12024136eff37.css"><meta property='og:title' content="3D raytraced game with open source C to FPGA toolchain">
+<link rel="stylesheet" href="/scss/style.min.72b224ca5d0d8d0eb7d05d59a02d1c8e1ddf48097e454ae0e17cfdda55d28898.css"><meta property='og:title' content="3D raytraced game with open source C to FPGA toolchain">
 <meta property='og:description' content="A look at CFlexHDL and PipelineC">
 <meta property='og:url' content='http://blog.yosyshq.com/p/3d-raytracing/'>
 <meta property='og:site_name' content='YosysHQ Blog'>
@@ -60,7 +60,7 @@
                     
                     
                         
-                        <img src="/logos/YOS_mark_square_hu2222790448653795551.png" width="300"
+                        <img src="/logos/YOS_mark_square_hu_cb25c74ea4b8613b.png" width="300"
                             height="300" class="site-logo" loading="lazy" alt="Avatar">
                     
                 
@@ -399,66 +399,66 @@
 <div class="table-wrapper"><table>
   <thead>
       <tr>
-          <th style="text-align: left">Operation</th>
-          <th style="text-align: left">Stages</th>
+          <th>Operation</th>
+          <th>Stages</th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td style="text-align: left">Fixed Compare</td>
-          <td style="text-align: left">1 stage</td>
+          <td>Fixed Compare</td>
+          <td>1 stage</td>
       </tr>
       <tr>
-          <td style="text-align: left">Fixed Addition/Subtraction</td>
-          <td style="text-align: left">2 stages</td>
+          <td>Fixed Addition/Subtraction</td>
+          <td>2 stages</td>
       </tr>
       <tr>
-          <td style="text-align: left">Fixed Multiplication</td>
-          <td style="text-align: left">2 stages</td>
+          <td>Fixed Multiplication</td>
+          <td>2 stages</td>
       </tr>
       <tr>
-          <td style="text-align: left">Float Compare</td>
-          <td style="text-align: left">2 stages</td>
+          <td>Float Compare</td>
+          <td>2 stages</td>
       </tr>
       <tr>
-          <td style="text-align: left">Float Multiplication</td>
-          <td style="text-align: left">2 stages</td>
+          <td>Float Multiplication</td>
+          <td>2 stages</td>
       </tr>
       <tr>
-          <td style="text-align: left">Float Addition/Subtraction</td>
-          <td style="text-align: left">3 stages</td>
+          <td>Float Addition/Subtraction</td>
+          <td>3 stages</td>
       </tr>
       <tr>
-          <td style="text-align: left">Float Fast Reciprocal</td>
-          <td style="text-align: left">3 stages</td>
+          <td>Float Fast Reciprocal</td>
+          <td>3 stages</td>
       </tr>
       <tr>
-          <td style="text-align: left">Float Fast Reciprocal Square Root</td>
-          <td style="text-align: left">3 stages</td>
+          <td>Float Fast Reciprocal Square Root</td>
+          <td>3 stages</td>
       </tr>
       <tr>
-          <td style="text-align: left">Float Fast Square Root</td>
-          <td style="text-align: left">3 stages</td>
+          <td>Float Fast Square Root</td>
+          <td>3 stages</td>
       </tr>
       <tr>
-          <td style="text-align: left">Float Fast Division</td>
-          <td style="text-align: left">4 stages</td>
+          <td>Float Fast Division</td>
+          <td>4 stages</td>
       </tr>
       <tr>
-          <td style="text-align: left">Float 3D Vector Dot Product</td>
-          <td style="text-align: left">5 stages</td>
+          <td>Float 3D Vector Dot Product</td>
+          <td>5 stages</td>
       </tr>
       <tr>
-          <td style="text-align: left">Float 3D Vector Normalize</td>
-          <td style="text-align: left">7 stages</td>
+          <td>Float 3D Vector Normalize</td>
+          <td>7 stages</td>
       </tr>
       <tr>
-          <td style="text-align: left">Ray Plane Intersection</td>
-          <td style="text-align: left">10 stages</td>
+          <td>Ray Plane Intersection</td>
+          <td>10 stages</td>
       </tr>
       <tr>
-          <td style="text-align: left">Ray Sphere Intersection</td>
-          <td style="text-align: left">22 stages</td>
+          <td>Ray Sphere Intersection</td>
+          <td>22 stages</td>
       </tr>
   </tbody>
 </table></div>
@@ -478,30 +478,30 @@
 <div class="table-wrapper"><table>
   <thead>
       <tr>
-          <th style="text-align: left"></th>
-          <th style="text-align: left">Build command</th>
-          <th style="text-align: left">Build time</th>
-          <th style="text-align: left">Speed @1080p</th>
+          <th></th>
+          <th>Build command</th>
+          <th>Build time</th>
+          <th>Speed @1080p</th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td style="text-align: left">Fast CPU simulation</td>
-          <td style="text-align: left"><code>make sim</code></td>
-          <td style="text-align: left">1s</td>
-          <td style="text-align: left">60-86 FPS</td>
+          <td>Fast CPU simulation</td>
+          <td><code>make sim</code></td>
+          <td>1s</td>
+          <td>60-86 FPS</td>
       </tr>
       <tr>
-          <td style="text-align: left">Precise CPU simulation</td>
-          <td style="text-align: left"><code>make gen</code></td>
-          <td style="text-align: left">5s</td>
-          <td style="text-align: left">40FPS</td>
+          <td>Precise CPU simulation</td>
+          <td><code>make gen</code></td>
+          <td>5s</td>
+          <td>40FPS</td>
       </tr>
       <tr>
-          <td style="text-align: left">Logic simulation</td>
-          <td style="text-align: left"><code>make verilator</code></td>
-          <td style="text-align: left">1min 50s</td>
-          <td style="text-align: left">50s per frame</td>
+          <td>Logic simulation</td>
+          <td><code>make verilator</code></td>
+          <td>1min 50s</td>
+          <td>50s per frame</td>
       </tr>
   </tbody>
 </table></div>

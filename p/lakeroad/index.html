@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=" # Better Technology Mapping with Lakeroad The Lakeroad paper is published here. The Lakeroad repo is available here.\nTechnology mapping is the process of mapping a high-level design to the library of hardware primitives actually available on the underlying hardware platform. For example, when targeting an FPGA, the technology mapping stage determines how to implement each portion of the design using LUTs, MUXes, DSPs, memories, and the other available primitives.\n">
+<title>Lakeroad</title>
+
+<link rel='canonical' href='http://localhost:1313/p/lakeroad/'>
+
+<link rel="stylesheet" href="/scss/style.min.72b224ca5d0d8d0eb7d05d59a02d1c8e1ddf48097e454ae0e17cfdda55d28898.css"><meta property='og:title' content="Lakeroad">
+<meta property='og:description' content=" # Better Technology Mapping with Lakeroad The Lakeroad paper is published here. The Lakeroad repo is available here.\nTechnology mapping is the process of mapping a high-level design to the library of hardware primitives actually available on the underlying hardware platform. For example, when targeting an FPGA, the technology mapping stage determines how to implement each portion of the design using LUTs, MUXes, DSPs, memories, and the other available primitives.\n">
+<meta property='og:url' content='http://localhost:1313/p/lakeroad/'>
+<meta property='og:site_name' content='YosysHQ Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='blog' />
+<meta name="twitter:site" content="@@YosysHQ">
+    <meta name="twitter:creator" content="@@YosysHQ"><meta name="twitter:title" content="Lakeroad">
+<meta name="twitter:description" content=" # Better Technology Mapping with Lakeroad The Lakeroad paper is published here. The Lakeroad repo is available here.\nTechnology mapping is the process of mapping a high-level design to the library of hardware primitives actually available on the underlying hardware platform. For example, when targeting an FPGA, the technology mapping stage determines how to implement each portion of the design using LUTs, MUXes, DSPs, memories, and the other available primitives.\n">
+    <link rel="shortcut icon" href="/favicon.png" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/logos/YOS_mark_square_hu_cb25c74ea4b8613b.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">YosysHQ Blog</a></h1>
+            <h2 class="site-description"></h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/newsletter' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>Newsletter</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/yug' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>Yosys User&#39;s Group</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/lakeroad/">Lakeroad</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    10 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="better-technology-mapping-with-lakeroad">
+    <a href="#better-technology-mapping-with-lakeroad" class="header-anchor">#</a>
+    Better Technology Mapping with Lakeroad
+</h1><p><em>The Lakeroad paper is published <a class="link" href="https://arxiv.org/abs/2401.16526"  target="_blank" rel="noopener"
+    >here.</a>
+The Lakeroad repo is available <a class="link" href="https://github.com/gussmith23/lakeroad"  target="_blank" rel="noopener"
+    >here.</a></em></p>
+<p><em>Technology mapping</em>
+is the process of mapping a high-level design
+to the library of hardware primitives actually available
+on the underlying hardware platform.
+For example, when targeting an FPGA,
+the technology mapping stage determines
+how to implement each portion of the design using
+LUTs, MUXes, DSPs, memories, and the other available primitives.</p>
+<p>Modern FPGAs
+are increasingly heterogeneous,
+exposing more and more specialized primitives
+like DSPs (digital signal processors).
+These primitives are highly configurable,
+with many possible valid (and invalid)
+configurations.</p>
+<p>State of the art technology mappers
+are often implemented using
+pattern matching algorithms,
+which search for patterns in the hardware design
+which can be implemented using
+specific configurations of primtives.
+For example,
+<a class="link" href="https://github.com/YosysHQ/yosys/blob/7ebd9721656ba88f3cc25ef10882ed3e82e3c182/techlibs/xilinx/xilinx_dsp.pmg"  target="_blank" rel="noopener"
+    >this file</a>
+implements some of Yosys&rsquo;s technology mapping logic
+for Xilinx DSPs.
+The logic is written in pmgen:
+Yosys&rsquo;s pattern matcher generator language.
+While we do not have access
+to the source code of proprietary tools
+like Vivado and Quartus,
+engineers
+at these companies
+have implied to us that similar strategies are used
+within these tools.
+One engineer mentioned
+that their pattern matchers are implemented in
+&ldquo;millions of lines of C code,&rdquo;
+comprised mostly of complex, nested
+<code>if</code> statements.</p>
+<p>As hardware primitives get more complex,
+pattern matching simply will not scale.
+The DSP48E2&mdash;the DSP on the Xilinx UltraScale+ architecture&mdash;has nearly 100 ports and parameters.
+Each separate configuration of ports and parameters
+corresponds to a different functioning of the<br>
+enable support for a large
+variety of computations. The manual for the DSP48E2 alone
+is 75 pages long, where considerable text details the complex
+restrictions between the settings of the nearly 100 ports and
+parameters.</p>
+<p>TODO end note:</p>
+<p>Note that,
+while we have so far mostly applied Lakeroad
+to FPGA DSPs,
+the technology underlying Lakeroad
+is not FPGA or DSP specific.
+If you have interesting primitives
+on your FPGA or in your ASIC
+which pose a challenge to
+current technology mappers,
+we woul love to see if Lakeroad can help you.
+Feel free to reach out
+by posting on the <a class="link" href="https://github.com/gussmith23/lakeroad/discussions"  target="_blank" rel="noopener"
+    >discussions page</a>,
+or by opening an <a class="link" href="https://github.com/gussmith23/lakeroad/issues/new"  target="_blank" rel="noopener"
+    >issue</a>
+if you have a concrete problem.</p>
+<p>TODO merge this in as a running example:</p>
+<h1 id="lakeroad-and-churchroad-latch-up-2025-demo">
+    <a href="#lakeroad-and-churchroad-latch-up-2025-demo" class="header-anchor">#</a>
+    Lakeroad and Churchroad Latch-Up 2025 Demo
+</h1><p><strong>Lakeroad issues: <a class="link" href="https://github.com/gussmith23/lakeroad/issues/new"  target="_blank" rel="noopener"
+    >https://github.com/gussmith23/lakeroad/issues/new</a></strong><br>
+<strong>Churchroad issues: <a class="link" href="https://github.com/gussmith23/churchroad/issues/new"  target="_blank" rel="noopener"
+    >https://github.com/gussmith23/churchroad/issues/new</a></strong></p>
+<p><strong>Lakeroad</strong> and <strong>Churchroad</strong> are open-source FPGA technology mappers which are competitive with proprietary technology mappers within tools like Vivado, especially when mapping to programmable primitives like DSPs. They are easily extensible to new FPGA architectures.</p>
+<p><strong>Lakeroad</strong> can map small designs to one or two DSPs. It is intended for use on small submodules within a larger design.</p>
+<p>Lakeroad was first described in <a class="link" href="https://arxiv.org/abs/2401.16526"  target="_blank" rel="noopener"
+    >this paper</a>, and was <a class="link" href="https://www.youtube.com/watch?v=2XgOWAtJ8vs"  target="_blank" rel="noopener"
+    >presented at ASPLOS 2024.</a></p>
+<p><strong>Churchroad</strong> is a more general technology mapper and can handle larger designs than Lakeroad. Churchroad uses multiple calls to Lakeroad under the hood, and in the future, will also incorporate other technology mapping methods.</p>
+<p>Churchroad was first described in <a class="link" href="https://arxiv.org/abs/2411.11036"  target="_blank" rel="noopener"
+    >this workshop paper</a>, and was <a class="link" href="https://www.youtube.com/watch?v=m8AwSktZeFE"  target="_blank" rel="noopener"
+    >presented at WOSET 2024</a>.</p>
+<p>Lakeroad is currently more stable than Churchroad. Eventually, Churchroad will completely subsume Lakeroad.</p>
+<p>This demo first describes the issue with existing technology mappers, and then demonstrates how Lakeroad fills those holes.</p>
+<p>Before following the demo, be sure to clone it:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">git clone https://github.com/gussmith23/2025-latchup-demo
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> 2025-latchup-demo
+</span></span></code></pre></div><h2 id="whats-the-problem">
+    <a href="#whats-the-problem" class="header-anchor">#</a>
+    What&rsquo;s the Problem?
+</h2><p>Imagine you&rsquo;re building a hardware design targeting Xilinx UltraScale+ FPGAs. Your design includes the following hardware module:</p>
+<p><a class="link" href="./sub_mul.sv" ><code>./sub_mul.sv</code></a>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sv" data-lang="sv"><span class="line"><span class="cl"><span class="k">module</span> <span class="n">sub_mul</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">  <span class="k">input</span> <span class="n">clk</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="k">input</span>  <span class="p">[</span><span class="mh">15</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="k">output</span> <span class="p">[</span><span class="mh">15</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">out</span>
+</span></span><span class="line"><span class="cl"><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">logic</span> <span class="p">[</span><span class="mh">31</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">stage0</span><span class="p">,</span> <span class="n">stage1</span><span class="p">,</span> <span class="n">stage2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">always</span> <span class="p">@(</span><span class="k">posedge</span> <span class="n">clk</span><span class="p">)</span> <span class="k">begin</span>
+</span></span><span class="line"><span class="cl">    <span class="n">stage0</span> <span class="o">&lt;=</span> <span class="p">(</span><span class="n">d</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">*</span> <span class="n">b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">stage1</span> <span class="o">&lt;=</span> <span class="n">stage0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">stage2</span> <span class="o">&lt;=</span> <span class="n">stage1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">assign</span> <span class="n">out</span> <span class="o">=</span> <span class="n">stage2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">endmodule</span>
+</span></span></code></pre></div><p>You&rsquo;d like to map this module to the UltraScale+ DSP:</p>
+<p><img src="/assets/DSP48E2.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="DSP48E2"
+	
+	
+></p>
+<p>Rather than configuring the DSP yourself, you&rsquo;d like to use Vivado to configure it automatically (a process often called &ldquo;inference&rdquo;). Thus, you run Vivado:</p>
+<p>(see <a class="link" href="./using_vivado/synth_script.tcl" ><code>./using_vivado/synth_script.tcl</code></a>)</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">vivado -mode batch -source using_vivado/synth_script.tcl
+</span></span></code></pre></div><p>However, when you go to map this design using Vivado, you find that it uses more than just a single DSP. See this table from the utilization report:</p>
+<pre tabindex="0"><code>+----------+------+---------------------+
+| Ref Name | Used | Functional Category |
++----------+------+---------------------+
+| DSP48E2  |    2 |          Arithmetic |
++----------+------+---------------------+
+</code></pre><p>An example of the full synthesized output can be seen at <a class="link" href="./vivado/vivado_out.sv" ><code>./vivado/vivado.out</code></a>.</p>
+<p>Now what? Well, we could attempt synthesis with another tool, for example, the open-source compiler Yosys.</p>
+<p>You can install Yosys on Ubuntu with:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo apt-get install yosys-dev
+</span></span></code></pre></div><p>or on Mac:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">brew install yosys
+</span></span></code></pre></div><p>If you need to build it from source, you can do so fairly quickly:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">git clone --recurse-submodules https://github.com/YosysHQ/yosys.git
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> yosys
+</span></span><span class="line"><span class="cl"><span class="c1"># You can change this to wherever you&#39;d like Yosys to be installed. Just note</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># that the location should be on your PATH.</span>
+</span></span><span class="line"><span class="cl"><span class="nv">INSTALL_DIR</span><span class="o">=</span><span class="nv">$HOME</span>/.local
+</span></span><span class="line"><span class="cl">mkdir -p <span class="nv">$INSTALL_DIR</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Remove or change the -j argument to not build in parallel.</span>
+</span></span><span class="line"><span class="cl"><span class="nv">PREFIX</span><span class="o">=</span><span class="nv">$INSTALL_DIR</span> make -j<span class="sb">`</span>nproc<span class="sb">`</span> install
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$INSTALL_DIR</span><span class="s2">/bin:</span><span class="nv">$PATH</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> ..
+</span></span><span class="line"><span class="cl">which yosys
+</span></span><span class="line"><span class="cl">which yosys-config
+</span></span></code></pre></div><p>We can now attempt synthesis with Yosys:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">yosys -p <span class="s2">&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">  read_verilog -sv sub_mul.sv
+</span></span></span><span class="line"><span class="cl"><span class="s2">  hierarchy -top sub_mul
+</span></span></span><span class="line"><span class="cl"><span class="s2">  synth_xilinx -top sub_mul -family xcup
+</span></span></span><span class="line"><span class="cl"><span class="s2">  xilinx_dsp
+</span></span></span><span class="line"><span class="cl"><span class="s2">  write_verilog using_yosys/yosys_out.sv
+</span></span></span><span class="line"><span class="cl"><span class="s2">  stat
+</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;</span>
+</span></span></code></pre></div><p>While Yosys is able to use just one DSP, it also uses extra logic resources like CARRY4 and LUT2:</p>
+<pre tabindex="0"><code>=== sub_mul ===
+
+   Number of wires:                 33
+   Number of wire bits:            334
+   Number of public wires:           7
+   Number of public wire bits:     129
+   Number of ports:                  5
+   Number of port bits:             65
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                104
+     BUFG                            1
+     CARRY4                          5
+     DSP48E2                         1
+     IBUF                           49
+     LUT2                           16
+     OBUF                           16
+     SRL16E                         16
+</code></pre><p>Without Lakeroad and Churchroad, the only option at this point would be to attempt to configure the DSP ourselves. Looking at <a class="link" href="./using_vivado/vivado_out.sv" ><code>./using_vivado/vivado_out.sv</code></a> and <a class="link" href="./using_yosys/yosys_out.sv" ><code>./using_yosys/yosys_out.sv</code></a>, however, it should be clear that this would be very unpleasant!</p>
+<p>And for an added bonus, these tools have other issues as well, beyond the mapping gaps shown above.</p>
+<ul>
+<li><strong>Lack of correctness guarantees:</strong> tools like Vivado and Yosys do not provide any formal correctness guarantees.</li>
+<li><strong>Lack of extensibility:</strong> while Yosys is extensible, tools like Vivado are closed-source and thus non-extensible.</li>
+</ul>
+<h2 id="lakeroad-to-the-rescue">
+    <a href="#lakeroad-to-the-rescue" class="header-anchor">#</a>
+    Lakeroad to the Rescue
+</h2><p>Lakeroad is a technology mapper for programmable hardware primitives, meant more completely use all features of primitives like DSPs.</p>
+<p>To use Lakeroad, download a release from its releases page:
+<a class="link" href="https://github.com/gussmith23/lakeroad/releases/tag/v0.1.5"  target="_blank" rel="noopener"
+    >https://github.com/gussmith23/lakeroad/releases/tag/v0.1.5</a></p>
+<p>Unzip the release, and for convenience, set the following variable:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">LAKEROAD_RELEASE_DIR</span><span class="o">=</span><span class="s2">&#34;&lt;path to extracted lakeroad&gt;&#34;</span>
+</span></span></code></pre></div><p>Then, add Lakeroad to your PATH:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$LAKEROAD_RELEASE_DIR</span><span class="s2">/bin:</span><span class="nv">$PATH</span><span class="s2">&#34;</span>
+</span></span></code></pre></div><p>Mac users: run the <code>activate</code> script to un-quarantine the binaries.</p>
+<p>Now, you should have Lakeroad available for use:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">which lakeroad
+</span></span><span class="line"><span class="cl">lakeroad --help
+</span></span></code></pre></div><p>Lakeroad releases come with a few examples in <code>$LAKEROAD_DIR/examples</code>.</p>
+<h3 id="using-lakeroad-from-the-command-line">
+    <a href="#using-lakeroad-from-the-command-line" class="header-anchor">#</a>
+    Using Lakeroad from the Command Line
+</h3><p>To map our design using Lakeroad, we can use the following command:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">lakeroad <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span> --verilog-module-filepath sub_mul.sv <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span> --top-module-name sub_mul <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span> --architecture xilinx-ultrascale-plus <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span> --template dsp <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span> --pipeline-depth <span class="m">3</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span> --verilog-module-out-signal out:16 <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span> --clock-name clk <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span> --input-signal <span class="s1">&#39;a:(port a 16):16&#39;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span> --input-signal <span class="s1">&#39;b:(port b 16):16&#39;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span> --input-signal <span class="s1">&#39;d:(port d 16):16&#39;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span> --bitwuzla --stp --yices --cvc5 <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span> --timeout <span class="m">90</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span> --extra-cycles <span class="m">2</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span> --out-format verilog <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span> --module-name sub_mul <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>&gt; using_lakeroad/lakeroad_out.sv
+</span></span></code></pre></div><p>And then, viewing the resource usage statistics with Yosys:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">yosys -p <span class="s2">&#34;read_verilog -sv using_lakeroad/lakeroad_out.sv; stat&#34;</span> 
+</span></span></code></pre></div><pre tabindex="0"><code>=== sub_mul ===
+
+   Number of wires:                  6
+   Number of wire bits:            113
+   Number of public wires:           6
+   Number of public wire bits:     113
+   Number of ports:                  5
+   Number of port bits:             65
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  1
+     DSP48E2                         1
+</code></pre><p>Woohoo! Lakeroad is able to use just a single DSP and no other resources.</p>
+<h3 id="using-lakeroad-via-yosys">
+    <a href="#using-lakeroad-via-yosys" class="header-anchor">#</a>
+    Using Lakeroad via Yosys
+</h3><p>Lakeroad can integrate directly into Yosys-based flows&mdash;no need for calling an external command-line tool!</p>
+<p>This step requires a correctly-installed Yosys, including the Yosys headers. You can check if Yosys is installed on your system with</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">which yosys-config
+</span></span></code></pre></div><p>Lakeroad integrates into Yosys via a plugin. To build the Yosys plugin:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">make -C <span class="nv">$LAKEROAD_RELEASE_DIR</span>/yosys-plugin
+</span></span></code></pre></div><p>Instead of needing to call Lakeroad using the cumbersome command line interface, we can instead add a few simple annotations directly to our module:</p>
+<p><a class="link" href="./sub_mul.sv" ><code>./sub_mul.sv</code>:</a></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sv" data-lang="sv"><span class="line"><span class="cl"><span class="p">(</span><span class="o">*</span> <span class="n">template</span> <span class="o">=</span> <span class="s">&#34;dsp&#34;</span> <span class="o">*</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="o">*</span> <span class="n">architecture</span> <span class="o">=</span> <span class="s">&#34;xilinx-ultrascale-plus&#34;</span> <span class="o">*</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="o">*</span> <span class="n">pipeline_depth</span> <span class="o">=</span> <span class="mh">3</span> <span class="o">*</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">module</span> <span class="n">sub_mul</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="o">*</span> <span class="n">clk</span> <span class="o">*</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="k">input</span> <span class="n">clk</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="o">*</span> <span class="n">data</span> <span class="o">*</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="k">input</span>  <span class="p">[</span><span class="mh">15</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">a</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="o">*</span> <span class="n">data</span> <span class="o">*</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="k">input</span>  <span class="p">[</span><span class="mh">15</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">b</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="o">*</span> <span class="n">data</span> <span class="o">*</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="k">input</span>  <span class="p">[</span><span class="mh">15</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">d</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="o">*</span> <span class="n">out</span> <span class="o">*</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="k">output</span> <span class="p">[</span><span class="mh">15</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">out</span>
+</span></span><span class="line"><span class="cl"><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">logic</span> <span class="p">[</span><span class="mh">31</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">stage0</span><span class="p">,</span> <span class="n">stage1</span><span class="p">,</span> <span class="n">stage2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">always</span> <span class="p">@(</span><span class="k">posedge</span> <span class="n">clk</span><span class="p">)</span> <span class="k">begin</span>
+</span></span><span class="line"><span class="cl">    <span class="n">stage0</span> <span class="o">&lt;=</span> <span class="p">(</span><span class="n">d</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">*</span> <span class="n">b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">stage1</span> <span class="o">&lt;=</span> <span class="n">stage0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">stage2</span> <span class="o">&lt;=</span> <span class="n">stage1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">assign</span> <span class="n">out</span> <span class="o">=</span> <span class="n">stage2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">endmodule</span>
+</span></span></code></pre></div><p>Now, we can simply utilize the <code>lakeroad</code> pass within Yosys itself, making sure we first load the plugin:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">yosys -m <span class="s2">&#34;</span><span class="nv">$LAKEROAD_RELEASE_DIR</span><span class="s2">/yosys-plugin/lakeroad.so&#34;</span> -p <span class="s2">&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">  read_verilog -sv sub_mul.sv
+</span></span></span><span class="line"><span class="cl"><span class="s2">  hierarchy -top sub_mul
+</span></span></span><span class="line"><span class="cl"><span class="s2">  lakeroad -top sub_mul
+</span></span></span><span class="line"><span class="cl"><span class="s2">  write_verilog using_lakeroad/lakeroad_via_yosys_out.sv
+</span></span></span><span class="line"><span class="cl"><span class="s2">  stat
+</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;</span>
+</span></span></code></pre></div><p>The results are the same as running Lakeroad from the command line:</p>
+<pre tabindex="0"><code>=== sub_mul ===
+
+   Number of wires:                  6
+   Number of wire bits:            113
+   Number of public wires:           6
+   Number of public wire bits:     113
+   Number of ports:                  5
+   Number of port bits:             65
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  1
+     DSP48E2                         1
+</code></pre><p>This makes Lakeroad even more convenient to use within existing flows.</p>
+<h2 id="churchroad">
+    <a href="#churchroad" class="header-anchor">#</a>
+    Churchroad
+</h2><p>Currently, Lakeroad only supports very small modules&mdash;mostly modules mapping to a single DSP. To make Lakeroad more generally useful, we are building Churchroad, a tool which uses multiple calls to Lakeroad to synthesize a larger design.</p>
+<p>Consider this simple multiply:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sv" data-lang="sv"><span class="line"><span class="cl"><span class="k">module</span> <span class="n">mul</span><span class="p">(</span><span class="k">input</span> <span class="p">[</span><span class="mh">15</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">a</span><span class="p">,</span> <span class="k">input</span> <span class="p">[</span><span class="mh">31</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">b</span><span class="p">,</span> <span class="k">output</span> <span class="p">[</span><span class="mh">31</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">out</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">assign</span> <span class="n">out</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">endmodule</span>
+</span></span></code></pre></div><p>This design is too large to fit on a single DSP on Xilinx UltraScale+, and thus Lakeroad will struggle to map it.</p>
+<p>We can synthesize the design with Yosys:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">yosys -p <span class="s2">&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">  read_verilog -sv wide_mul.sv
+</span></span></span><span class="line"><span class="cl"><span class="s2">  hierarchy -top mul
+</span></span></span><span class="line"><span class="cl"><span class="s2">  synth_xilinx -top mul -family xcup
+</span></span></span><span class="line"><span class="cl"><span class="s2">  xilinx_dsp
+</span></span></span><span class="line"><span class="cl"><span class="s2">  stat
+</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;</span>
+</span></span></code></pre></div><p>We&rsquo;ll see that Yosys again uses extra logic in the form of CARRY4 and LUT2:</p>
+<pre tabindex="0"><code>=== mul ===
+
+   Number of wires:                 15
+   Number of wire bits:            381
+   Number of public wires:           3
+   Number of public wire bits:      80
+   Number of ports:                  3
+   Number of port bits:             80
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                101
+     CARRY4                          4
+     DSP48E2                         2
+     IBUF                           48
+     LUT2                           15
+     OBUF                           32
+</code></pre><p>Instead, let&rsquo;s use Churchroad to map the design.</p>
+<p>You need Rust installed for this to work. You can install Rust with:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">curl --proto <span class="s1">&#39;=https&#39;</span> --tlsv1.2 -sSf https://sh.rustup.rs <span class="p">|</span> sh
+</span></span></code></pre></div><p>Now we can clone and build Churchroad. For future readers of this demo, you can check out Churchroad at <a class="link" href="https://github.com/gussmith23/churchroad/releases/tag/2025-latch-up"  target="_blank" rel="noopener"
+    >this tag</a>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">git clone https://github.com/gussmith23/churchroad
+</span></span><span class="line"><span class="cl">make -C churchroad/yosys-plugin
+</span></span><span class="line"><span class="cl">cargo build --manifest-path churchroad/Cargo.toml
+</span></span></code></pre></div><p>Note that, like Lakeroad, Churchroad is also integrated as a plugin in Yosys.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nv">RUST_LOG</span><span class="o">=</span><span class="nv">churchroad</span><span class="o">=</span>debug <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span><span class="nv">CHURCHROAD</span><span class="o">=</span><span class="s2">&#34;cargo run --manifest-path churchroad/Cargo.toml -- &#34;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$LAKEROAD_RELEASE_DIR</span><span class="s2">/deps/cvc5/bin/:</span><span class="nv">$LAKEROAD_RELEASE_DIR</span><span class="s2">/deps/bitwuzla/bin/:</span><span class="nv">$PATH</span><span class="s2">&#34;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>yosys -m <span class="s2">&#34;churchroad/yosys-plugin/churchroad.so&#34;</span> -p <span class="s2">&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2"> read_verilog wide_mul.sv
+</span></span></span><span class="line"><span class="cl"><span class="s2"> hierarchy -top mul
+</span></span></span><span class="line"><span class="cl"><span class="s2"> churchroad mul
+</span></span></span><span class="line"><span class="cl"><span class="s2"> proc
+</span></span></span><span class="line"><span class="cl"><span class="s2"> write_verilog using_churchroad/churchroad_out.sv
+</span></span></span><span class="line"><span class="cl"><span class="s2"> stat&#34;</span>
+</span></span></code></pre></div><p>Viewing the results, we see that Churchroad maps the design to two DSPs, producing a more efficient mapping than Yosys alone:</p>
+<pre tabindex="0"><code>=== mul ===
+
+   Number of wires:                 30
+   Number of wire bits:            842
+   Number of public wires:          17
+   Number of public wire bits:     493
+   Number of ports:                  3
+   Number of port bits:             80
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  2
+     DSP48E2                         2
+</code></pre><h2 id="in-conclusion">
+    <a href="#in-conclusion" class="header-anchor">#</a>
+    In Conclusion
+</h2><p>Lakeroad is a new FPGA technology mapper designed for programmable primitives like DSPs. Please use it on your design and submit GitHub issues when it breaks.</p>
+<p>Churchroad is the successor to Lakeroad, and though it is currently only a prototype, it is showing early promise towards mapping larger designs needing many DSPs.</p>
+<p>I plan to continue developing Lakeroad and Churchroad. Some future goals:</p>
+<ul>
+<li><strong>Support for more FPGA backends.</strong> Lakeroad currently supports Xilinx 7-series and UltraScale+, Lattice ECP5, and some Intel FPGAs. If you have an interesting FPGA backend you&rsquo;d like to map to, please contact me!</li>
+<li><strong>Support for ASIC/standard cell library mapping.</strong></li>
+<li><strong>Integrating other synthesis tools.</strong> Ideally, Churchroad would combine new tools like Lakeroad with traditional tools like ABC, which are better for e.g. LUT mapping.</li>
+</ul>
+<p>Thank you for trying Lakeroad and Churchroad!</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/blog/">Blog</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2025 YosysHQ Blog
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.25.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
