@@ -6,7 +6,51 @@
         <description>Recent content in Release Notes on YosysHQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Thu, 07 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://blog.yosyshq.com/tags/release-notes/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 08 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://blog.yosyshq.com/tags/release-notes/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Tabby CAD Suite version 20251008 released!</title>
+        <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20251008-released/</link>
+        <pubDate>Wed, 08 Oct 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20251008-released/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2023/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20251008 released!" /&gt;&lt;p&gt;The October release of Tabby CAD Suite is now available for download. Notable changes in this version include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;We have added the option &lt;code&gt;verific -import -sva-continue-on-err&lt;/code&gt; to ignore properties that contain unsupported SVA statements during import with a warning instead of an error.&lt;/li&gt;
+&lt;li&gt;Fixed a bug in the SBY engine abc when handling proofs with zero assertions.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In other YosysHQ news:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Our last Yosys Users Group meeting featured M.L. Young from the University of Queensland presenting their Honors thesis work, exploring how to automate insertion of triple modular redundancy with Yosys. If you missed it, you can watch the &lt;a class=&#34;link&#34; href=&#34;https://www.youtube.com/watch?v=ZiIUKr-2IAE&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;recording&lt;/a&gt; on the YosysHQ youtube channel!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Happy October,&lt;/p&gt;
+&lt;p&gt;The YosysHQ Team&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Tabby CAD Suite version 20250904 released!</title>
+        <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20250904-released/</link>
+        <pubDate>Thu, 04 Sep 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20250904-released/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2023/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20250904 released!" /&gt;&lt;p&gt;The September release of Tabby CAD Suite is now available for download. Notable changes in this version include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The SBY option &lt;code&gt;skip&lt;/code&gt; now works in cover mode.&lt;/li&gt;
+&lt;li&gt;Added the option &lt;!-- raw HTML omitted --&gt;&lt;a class=&#34;link&#34; href=&#34;https://yosyshq.readthedocs.io/projects/yosys/en/latest/cmd/index_passes_cmds.html#abstract-replace-signals-with-abstract-values-during-formal-verification&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;abstract -state -initstates N&lt;/a&gt;&lt;!-- raw HTML omitted --&gt; that allows activating initial value abstraction on a register for the first &lt;code&gt;N&lt;/code&gt; steps in a trace.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In other YosysHQ news:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;We’re growing the team and &lt;a class=&#34;link&#34; href=&#34;https://www.yosyshq.com/jobs/#h.4f46096041059354_3&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;looking for a COO&lt;/a&gt;. If you can recommend someone, please let us know.&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://fossi-foundation.org/orconf/2025&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;ORConf&lt;/a&gt; happened in Valencia last weekend! If you missed it, you can catch up on the &lt;a class=&#34;link&#34; href=&#34;https://www.youtube.com/playlist?list=PLUg3wIOWD8yqNPXlOrzqeEoO52koaqVhR&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;recorded talks on youtube&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Happy September,&lt;/p&gt;
+&lt;p&gt;The YosysHQ Team&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Tabby CAD Suite version 20250807 released!</title>
         <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20250807-released/</link>
         <pubDate>Thu, 07 Aug 2025 00:00:00 +0000</pubDate>
@@ -150,6 +194,29 @@ No user-facing updates in this release—only internal optimizations and bug fix
 &lt;/ul&gt;
 &lt;p&gt;Happy February,
 The YosysHQ Team&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Tabby CAD Suite version 20250121 released!</title>
+        <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20250121-released/</link>
+        <pubDate>Tue, 21 Jan 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20250121-released/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2023/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20250121 released!" /&gt;&lt;p&gt;The January release of Tabby CAD Suite is now available for download. Notable changes in this version include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The interface for generating hashes for objects stored in &lt;code&gt;pool&lt;/code&gt; and &lt;code&gt;dict&lt;/code&gt; containers has been rewritten to allow for greater abstraction and simpler use. For plugin authors that have implemented types with a &lt;code&gt;hash()&lt;/code&gt; method, please check &lt;a class=&#34;link&#34; href=&#34;https://yosyshq.readthedocs.io/projects/yosys/en/latest/yosys_internals/hashing.html#porting-plugins-from-the-legacy-interface&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;this documentation page&lt;/a&gt; for how to update your code.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In other YosysHQ news:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;We have a new social media account over on &lt;a class=&#34;link&#34; href=&#34;https://bsky.app/profile/yosyshq.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Bluesky&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;At our last &lt;a class=&#34;link&#34; href=&#34;https://blog.yosyshq.com/p/yosys-users-group/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;YUG&lt;/a&gt;, Krystine explained how &lt;code&gt;synth_ice40&lt;/code&gt; works. You can watch the &lt;a class=&#34;link&#34; href=&#34;https://www.youtube.com/watch?v=s7KLNb8G_sI&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;recording here&lt;/a&gt;!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Happy new year!&lt;/p&gt;
+&lt;p&gt;The YosysHQ Team&lt;/p&gt;
 </description>
         </item>
         <item>
