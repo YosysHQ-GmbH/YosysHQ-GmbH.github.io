@@ -60,7 +60,7 @@
                     
                     
                         
-                        <img src="/logos/YOS_mark_square_hu_cb25c74ea4b8613b.png" width="300"
+                        <img src="/logos/YOS_mark_square_hu_d758b52bb04a278e.png" width="300"
                             height="300" class="site-logo" loading="lazy" alt="Avatar">
                     
                 
@@ -477,7 +477,7 @@ Yosys commands strung together into a recipe.</p>
 </code></pre><p>It&rsquo;s easy to see <a class="link" href="https://github.com/YosysHQ/yosys/blob/853f4bb3c695d9f5183ef5064ec4cf9cdd8b5300/techlibs/ice40/synth_ice40.cc#L329-L341"  target="_blank" rel="noopener"
     >which steps are activated in the source code</a> when DSP mapping is enabled:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="nf">run</span><span class="p">(</span><span class="s">&#34;memory_dff&#34;</span> <span class="o">+</span> <span class="n">no_rw_check_opt</span><span class="p">);</span> <span class="c1">// ice40_dsp will merge registers, reserve memory port registers first
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nf">run</span><span class="p">(</span><span class="s">&#34;wreduce t:$mul&#34;</span><span class="p">);</span>
+</span></span></span><span class="line"><span class="cl"><span class="nf">run</span><span class="p">(</span><span class="s">&#34;wreduce t:$mul&#34;</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="nf">run</span><span class="p">(</span><span class="s">&#34;techmap -map +/mul2dsp.v -map +/ice40/dsp_map.v -D DSP_A_MAXWIDTH=16 -D DSP_B_MAXWIDTH=16 &#34;</span>
 </span></span><span class="line"><span class="cl">    <span class="s">&#34;-D DSP_A_MINWIDTH=2 -D DSP_B_MINWIDTH=2 -D DSP_Y_MINWIDTH=11 &#34;</span>
 </span></span><span class="line"><span class="cl">    <span class="s">&#34;-D DSP_NAME=$__MUL16X16&#34;</span><span class="p">,</span> <span class="s">&#34;(if -dsp)&#34;</span><span class="p">);</span>
@@ -877,9 +877,9 @@ code is pretty straightfoward:</p>
 </span></span><span class="line"><span class="cl">        <span class="p">.</span><span class="n">A</span><span class="p">(</span><span class="n">A</span><span class="p">),</span> 
 </span></span><span class="line"><span class="cl">        <span class="p">.</span><span class="n">B</span><span class="p">(</span><span class="n">B</span><span class="p">),</span> 
 </span></span><span class="line"><span class="cl">        <span class="p">.</span><span class="n">Y</span><span class="p">(</span><span class="n">Y</span><span class="p">[</span><span class="n">ADDER_WIDTH</span><span class="o">-</span><span class="mh">1</span><span class="o">:</span><span class="mh">0</span><span class="p">])</span> 	<span class="c1">// Reduced output size
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">);</span>
+</span></span></span><span class="line"><span class="cl">    <span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">// Higher bits are 0 or sign extension
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">assign</span> <span class="n">Y</span><span class="p">[</span><span class="n">Y_WIDTH</span><span class="o">-</span><span class="mh">1</span><span class="o">:</span><span class="n">ADDER_WIDTH</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="p">(</span><span class="n">Y_WIDTH</span><span class="o">-</span><span class="n">ADDER_WIDTH</span><span class="p">){</span><span class="n">SIGNED_ADDER</span> <span class="o">?</span> <span class="n">Y</span><span class="p">[</span><span class="n">ADDER_WIDTH</span><span class="o">-</span><span class="mh">1</span><span class="p">]</span> <span class="o">:</span> <span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">}</span> <span class="p">};</span>
+</span></span></span><span class="line"><span class="cl">    <span class="k">assign</span> <span class="n">Y</span><span class="p">[</span><span class="n">Y_WIDTH</span><span class="o">-</span><span class="mh">1</span><span class="o">:</span><span class="n">ADDER_WIDTH</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="p">(</span><span class="n">Y_WIDTH</span><span class="o">-</span><span class="n">ADDER_WIDTH</span><span class="p">){</span><span class="n">SIGNED_ADDER</span> <span class="o">?</span> <span class="n">Y</span><span class="p">[</span><span class="n">ADDER_WIDTH</span><span class="o">-</span><span class="mh">1</span><span class="p">]</span> <span class="o">:</span> <span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">}</span> <span class="p">};</span>
 </span></span><span class="line"><span class="cl"><span class="k">end</span>
 </span></span></code></pre></div><p>The final <code>add_reduce.v</code> code can be found <a class="link" href="https://github.com/tomverbeure/yosys_techmap_blog/blob/main/add_reduce.v"  target="_blank" rel="noopener"
     >here</a>.

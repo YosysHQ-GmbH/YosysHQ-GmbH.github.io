@@ -6,7 +6,52 @@
         <description>Recent content in Release Notes on YosysHQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Tue, 11 Nov 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://blog.yosyshq.com/tags/release-notes/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 04 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://blog.yosyshq.com/tags/release-notes/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Tabby CAD Suite version 20260204 released!</title>
+        <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20260204-released/</link>
+        <pubDate>Wed, 04 Feb 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20260204-released/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2023/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20260204 released!" /&gt;&lt;p&gt;The February release of Tabby CAD Suite is now available for download. Notable changes in this version include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Added an explicit &lt;code&gt;verific -sv2017&lt;/code&gt; option. Previously SystemVerilog 2017 was only accessible via the &lt;code&gt;-sv&lt;/code&gt; option, which always refers to the latest SystemVerilog standard available (currently still 2017).&lt;/li&gt;
+&lt;li&gt;File lists can now contain VHDL files, and allow mixing of SystemVerilog and VHDL files. You can optionally specify the standard version to use for both languages in the command: &lt;code&gt;verific -f -vhdl2008 -sv2017 list.f&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;As there can be only one work library specified per verific command, if your design declares multiple libraries, you need to create a separate file list for each library.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In other YosysHQ news:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ESA’s Comet Interceptor will be the first mission to visit a pristine comet arriving from the outer reaches of the Solar System -carrying material untouched since its formation. And the MIRMIS sensor has been &lt;a class=&#34;link&#34; href=&#34;https://www.linkedin.com/feed/update/urn:li:activity:7421548719919157248&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;formally proven with our tools&lt;/a&gt;!&lt;/li&gt;
+&lt;li&gt;Join the &lt;a class=&#34;link&#34; href=&#34;https://docs.google.com/document/d/13e8hERQ_eqLQrdtH1WXnGUXDtgyQ8oa_zZWXPHJCiN0/edit?tab=t.0#heading=h.gzmgo2cq3dws&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Yosys User’s Group today at 18:00 CET&lt;/a&gt; to ask us questions about formal, roadmap or anything else!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Happy February,&lt;/p&gt;
+&lt;p&gt;The YosysHQ Team&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Tabby CAD Suite version 20260113 released!</title>
+        <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20260113-released/</link>
+        <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20260113-released/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2023/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20260113 released!" /&gt;&lt;p&gt;The January release of Tabby CAD Suite is now available for download. Notable changes in this version include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;SBY: fixed a bug that could lead to disappearing properties when there are multiple properties in the design that can be statically determined at elaboration time to always have the same truth value.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In other YosysHQ news:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Our next Yosys User’s Group meeting will be a Q&amp;amp;A format. Current suggested categories are: formal verification, synthesis, plugins / internals, how to contribute and roadmap. It’s scheduled for Thursday the 12th February at 18:00 CET and you can find information on how to join and previous events here: &lt;a class=&#34;link&#34; href=&#34;https://blog.yosyshq.com/yug/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://blog.yosyshq.com/yug/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.linty-services.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Linty&lt;/a&gt; have just released an extension for VSCode that makes it much easier to interactively explore your design. Free for Yosys users, check it out here: &lt;a class=&#34;link&#34; href=&#34;https://marketplace.visualstudio.com/items?itemName=LintyServices.linty-graphviz&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://marketplace.visualstudio.com/items?itemName=LintyServices.linty-graphviz&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Happy new year!&lt;/p&gt;
+&lt;p&gt;The YosysHQ Team&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Tabby CAD Suite version 20251111 released!</title>
         <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20251111-released/</link>
         <pubDate>Tue, 11 Nov 2025 00:00:00 +0000</pubDate>

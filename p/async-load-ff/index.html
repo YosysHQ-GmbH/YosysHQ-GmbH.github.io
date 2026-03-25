@@ -60,7 +60,7 @@
                     
                     
                         
-                        <img src="/logos/YOS_mark_square_hu_cb25c74ea4b8613b.png" width="300"
+                        <img src="/logos/YOS_mark_square_hu_d758b52bb04a278e.png" width="300"
                             height="300" class="site-logo" loading="lazy" alt="Avatar">
                     
                 
@@ -334,13 +334,13 @@
 </span></span><span class="line"><span class="cl">    <span class="k">always_ff</span> <span class="p">@(</span><span class="k">posedge</span> <span class="n">clk1</span> <span class="k">or</span> <span class="k">posedge</span> <span class="n">arst</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">arst</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">            <span class="n">cnt1</span> <span class="o">&lt;=</span> <span class="mh">0</span><span class="p">;</span>  <span class="c1">// constant expression (async reset)
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">else</span>
+</span></span></span><span class="line"><span class="cl">        <span class="k">else</span>
 </span></span><span class="line"><span class="cl">            <span class="n">cnt1</span> <span class="o">&lt;=</span> <span class="n">cnt1</span> <span class="o">+</span> <span class="mh">7</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    
 </span></span><span class="line"><span class="cl">    <span class="k">always_ff</span> <span class="p">@(</span><span class="k">posedge</span> <span class="n">clk2</span> <span class="k">or</span> <span class="k">posedge</span> <span class="n">arst</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">arst</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">            <span class="n">cnt2</span> <span class="o">&lt;=</span> <span class="n">cnt1</span><span class="p">;</span>  <span class="c1">// dynamic expression (async load)
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">else</span>
+</span></span></span><span class="line"><span class="cl">        <span class="k">else</span>
 </span></span><span class="line"><span class="cl">            <span class="n">cnt2</span> <span class="o">&lt;=</span> <span class="n">cnt2</span> <span class="o">+</span> <span class="mh">11</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="k">endmodule</span>
 </span></span></code></pre></div><p>And the following test bench (<a class="link" href="https://github.com/YosysHQ-Docs/Blog-Async-Load-FFs/blob/main/tb.sv"  target="_blank" rel="noopener"
@@ -456,15 +456,15 @@ iverilog -g2012 -o sim1 -s tb -DDOUBLE_ARST tb.sv dut.sv
 </span></span><span class="line"><span class="cl">        <span class="k">output</span> <span class="n">q</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">        <span class="k">table</span>
 </span></span><span class="line"><span class="cl">        <span class="c1">// D C R V : Q : Q&#39;
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>           <span class="o">?</span> <span class="o">?</span> <span class="mh">1</span> <span class="mh">0</span> <span class="o">:</span> <span class="o">?</span> <span class="o">:</span> <span class="mh">0</span> <span class="p">;</span> <span class="c1">// async reset
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>           <span class="o">?</span> <span class="o">?</span> <span class="mh">1</span> <span class="mh">1</span> <span class="o">:</span> <span class="o">?</span> <span class="o">:</span> <span class="mh">1</span> <span class="p">;</span> <span class="c1">// async set
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>           <span class="mh">0</span> <span class="n">p</span> <span class="mh">0</span> <span class="o">?</span> <span class="o">:</span> <span class="o">?</span> <span class="o">:</span> <span class="mh">0</span> <span class="p">;</span> <span class="c1">// posedge clock, d=0
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>           <span class="mh">1</span> <span class="n">p</span> <span class="mh">0</span> <span class="o">?</span> <span class="o">:</span> <span class="o">?</span> <span class="o">:</span> <span class="mh">1</span> <span class="p">;</span> <span class="c1">// posedge clock, d=1
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>           <span class="o">?</span> <span class="n">n</span> <span class="mh">0</span> <span class="o">?</span> <span class="o">:</span> <span class="o">?</span> <span class="o">:</span> <span class="o">-</span> <span class="p">;</span> <span class="c1">// negedge clock
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>           <span class="o">*</span> <span class="o">?</span> <span class="o">?</span> <span class="o">?</span> <span class="o">:</span> <span class="o">?</span> <span class="o">:</span> <span class="o">-</span> <span class="p">;</span> <span class="c1">// any data edge
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>           <span class="o">?</span> <span class="o">?</span> <span class="o">*</span> <span class="o">?</span> <span class="o">:</span> <span class="o">?</span> <span class="o">:</span> <span class="o">-</span> <span class="p">;</span> <span class="c1">// any arst edge
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>           <span class="o">?</span> <span class="o">?</span> <span class="o">?</span> <span class="o">*</span> <span class="o">:</span> <span class="o">?</span> <span class="o">:</span> <span class="o">-</span> <span class="p">;</span> <span class="c1">// any rval edge
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">endtable</span>
+</span></span></span><span class="line"><span class="cl">           <span class="o">?</span> <span class="o">?</span> <span class="mh">1</span> <span class="mh">0</span> <span class="o">:</span> <span class="o">?</span> <span class="o">:</span> <span class="mh">0</span> <span class="p">;</span> <span class="c1">// async reset
+</span></span></span><span class="line"><span class="cl">           <span class="o">?</span> <span class="o">?</span> <span class="mh">1</span> <span class="mh">1</span> <span class="o">:</span> <span class="o">?</span> <span class="o">:</span> <span class="mh">1</span> <span class="p">;</span> <span class="c1">// async set
+</span></span></span><span class="line"><span class="cl">           <span class="mh">0</span> <span class="n">p</span> <span class="mh">0</span> <span class="o">?</span> <span class="o">:</span> <span class="o">?</span> <span class="o">:</span> <span class="mh">0</span> <span class="p">;</span> <span class="c1">// posedge clock, d=0
+</span></span></span><span class="line"><span class="cl">           <span class="mh">1</span> <span class="n">p</span> <span class="mh">0</span> <span class="o">?</span> <span class="o">:</span> <span class="o">?</span> <span class="o">:</span> <span class="mh">1</span> <span class="p">;</span> <span class="c1">// posedge clock, d=1
+</span></span></span><span class="line"><span class="cl">           <span class="o">?</span> <span class="n">n</span> <span class="mh">0</span> <span class="o">?</span> <span class="o">:</span> <span class="o">?</span> <span class="o">:</span> <span class="o">-</span> <span class="p">;</span> <span class="c1">// negedge clock
+</span></span></span><span class="line"><span class="cl">           <span class="o">*</span> <span class="o">?</span> <span class="o">?</span> <span class="o">?</span> <span class="o">:</span> <span class="o">?</span> <span class="o">:</span> <span class="o">-</span> <span class="p">;</span> <span class="c1">// any data edge
+</span></span></span><span class="line"><span class="cl">           <span class="o">?</span> <span class="o">?</span> <span class="o">*</span> <span class="o">?</span> <span class="o">:</span> <span class="o">?</span> <span class="o">:</span> <span class="o">-</span> <span class="p">;</span> <span class="c1">// any arst edge
+</span></span></span><span class="line"><span class="cl">           <span class="o">?</span> <span class="o">?</span> <span class="o">?</span> <span class="o">*</span> <span class="o">:</span> <span class="o">?</span> <span class="o">:</span> <span class="o">-</span> <span class="p">;</span> <span class="c1">// any rval edge
+</span></span></span><span class="line"><span class="cl">        <span class="k">endtable</span>
 </span></span><span class="line"><span class="cl">    <span class="k">endprimitive</span>
 </span></span><span class="line"><span class="cl"><span class="no">`endif</span>
 </span></span></code></pre></div><p>Running our test-bench now yields the expected result, even when we pulse the asynchronous load signal only once:</p>
@@ -537,23 +537,23 @@ iverilog -g2012 -o sim2 -s tb tb.sv dut_myff.sv myff_udp.sv
 </span></span><span class="line"><span class="cl">    <span class="k">input</span> <span class="n">d</span><span class="p">,</span> <span class="n">clk</span><span class="p">,</span> <span class="n">arst</span><span class="p">,</span> <span class="n">rval</span>
 </span></span><span class="line"><span class="cl"><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">// a latch to store the async-load value
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">reg</span> <span class="n">latched_rval</span><span class="p">;</span>
+</span></span></span><span class="line"><span class="cl">    <span class="k">reg</span> <span class="n">latched_rval</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="k">always</span> <span class="p">@</span><span class="o">*</span>
 </span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">arst</span><span class="p">)</span> <span class="n">latched_rval</span> <span class="o">=</span> <span class="n">rval</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">// a regular FF to store the clocked data value
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">reg</span> <span class="n">q_without_reset</span><span class="p">;</span>
+</span></span></span><span class="line"><span class="cl">    <span class="k">reg</span> <span class="n">q_without_reset</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="k">always</span> <span class="p">@(</span><span class="k">posedge</span> <span class="n">clk</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">        <span class="n">q_without_reset</span> <span class="o">&lt;=</span> <span class="n">d</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">// an asynchronous-reset flip-flop to remember last event
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">reg</span> <span class="n">last_event_was_clock</span><span class="p">;</span>
+</span></span></span><span class="line"><span class="cl">    <span class="k">reg</span> <span class="n">last_event_was_clock</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="k">always</span> <span class="p">@(</span><span class="k">posedge</span> <span class="n">clk</span> <span class="k">or</span> <span class="k">posedge</span> <span class="n">arst</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">arst</span><span class="p">)</span> <span class="n">last_event_was_clock</span> <span class="o">&lt;=</span> <span class="mh">0</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">        <span class="k">else</span>      <span class="n">last_event_was_clock</span> <span class="o">&lt;=</span> <span class="mh">1</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    
 </span></span><span class="line"><span class="cl">    <span class="c1">// output either the latched reset value or clocked data value
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">assign</span> <span class="n">q</span> <span class="o">=</span> <span class="n">last_event_was_clock</span> <span class="o">?</span> <span class="n">q_without_reset</span> <span class="o">:</span> <span class="n">latched_rval</span><span class="p">;</span>
+</span></span></span><span class="line"><span class="cl">    <span class="k">assign</span> <span class="n">q</span> <span class="o">=</span> <span class="n">last_event_was_clock</span> <span class="o">?</span> <span class="n">q_without_reset</span> <span class="o">:</span> <span class="n">latched_rval</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="k">endmodule</span>
 </span></span></code></pre></div><p>Running our test-bench a last time gives the expected result for this solution as well:</p>
 <pre tabindex="0"><code>iverilog -g2012 -o sim5 -s tb tb.sv dut_myff.sv myff_hack.sv
