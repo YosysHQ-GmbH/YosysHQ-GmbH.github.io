@@ -6,7 +6,30 @@
         <description>Recent content in Posts on YosysHQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Wed, 04 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://blog.yosyshq.com/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 09 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://blog.yosyshq.com/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Tabby CAD Suite version 20260409 released!</title>
+        <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20260409-released/</link>
+        <pubDate>Thu, 09 Apr 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20260409-released/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2023/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20260409 released!" /&gt;&lt;p&gt;The April release of Tabby CAD Suite is now available for download. Notable changes in this version include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Added initial synthesis support for AnalogDevices FPGAs.&lt;/li&gt;
+&lt;li&gt;Removed rarely-used options from ABC/ABC9 passes.&lt;/li&gt;
+&lt;li&gt;Calls to &amp;ldquo;abc -g AND -fast&amp;rdquo; to map logic to AND-Inverter Graph form should be replaced with &amp;ldquo;aigmap&amp;rdquo;.&lt;/li&gt;
+&lt;li&gt;Please check your custom scripts and update accordingly.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In other YosysHQ news:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;CSO Matt Venn will be attending DATE for a panel discussion on Wednesday 22nd April. If you’re attending, make sure to say hi!&lt;/li&gt;
+&lt;li&gt;Applications for the Tiny Tapeout demoscene competition are now open! Learn more and apply &lt;a class=&#34;link&#34; href=&#34;https://tinytapeout.com/competitions/demoscene-ttsky26a-announce/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;here&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Happy April,
+The YosysHQ Team&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Tabby CAD Suite version 20260204 released!</title>
         <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20260204-released/</link>
         <pubDate>Wed, 04 Feb 2026 00:00:00 +0000</pubDate>
