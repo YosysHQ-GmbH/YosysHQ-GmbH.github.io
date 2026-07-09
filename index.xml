@@ -6,7 +6,31 @@
         <description>Recent content on YosysHQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Tue, 02 Jun 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://blog.yosyshq.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 09 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://blog.yosyshq.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Tabby CAD Suite version 20260709 released!</title>
+        <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20260709-released/</link>
+        <pubDate>Thu, 09 Jul 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://blog.yosyshq.com/p/tabby-cad-suite-version-20260709-released/</guid>
+        <description>&lt;img src="http://blog.yosyshq.com/static-2023/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20260709 released!" /&gt;&lt;p&gt;The July release of Tabby CAD Suite is now available for download. This version includes under-the-hood improvements to performance and bugfixes. Some notable changes affecting customers that maintain their own custom plugins or compile on their own:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The project is now requiring CMake 3.28 or later as build system.&lt;/li&gt;
+&lt;li&gt;The minimum supported C++ standard version has been updated to C++20 in the previous release.&lt;/li&gt;
+&lt;li&gt;We now support compilers from GCC-13 and Clang-16, but we recommend later versions for stability (like GCC-15 and Clang-21).&lt;/li&gt;
+&lt;li&gt;This release includes &lt;a class=&#34;link&#34; href=&#34;https://github.com/povik/sv-elab&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;sv-elab&lt;/a&gt; built on top of the &lt;a class=&#34;link&#34; href=&#34;https://github.com/MikePopoloski/slang&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;slang&lt;/a&gt; library to provide fully open source SystemVerilog (but not yet SVA) support.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In other YosysHQ news:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Come and meet us at ORConf - a weekend of presentations and networking dedicated to free and open source silicon. Register &lt;a class=&#34;link&#34; href=&#34;https://fossi-foundation.org/orconf/2026&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;here&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Happy July,
+The YosysHQ Team&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Tabby CAD Suite version 20260602 released!</title>
         <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20260602-released/</link>
         <pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
