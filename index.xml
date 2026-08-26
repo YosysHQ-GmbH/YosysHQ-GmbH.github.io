@@ -6,7 +6,47 @@
         <description>Recent content on YosysHQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Wed, 05 Aug 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://blog.yosyshq.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 26 Aug 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://blog.yosyshq.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Interim YosysHQ LLM Policy</title>
+        <link>http://blog.yosyshq.com/p/interim-yosyshq-llm-policy/</link>
+        <pubDate>Wed, 26 Aug 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://blog.yosyshq.com/p/interim-yosyshq-llm-policy/</guid>
+        <description>&lt;h3 id=&#34;foreword&#34;&gt;
+    &lt;a href=&#34;#foreword&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Foreword
+&lt;/h3&gt;&lt;p&gt;As the maintainers of OSS CAD suite and Tabby CAD suite, we’ve seen an increasing number of pull requests containing LLM generated code. Developing a consistent and unanimously accepted approach on how we intend to handle these, requires time. In the meantime, pending a more holistic policy, we are announcing the following interim YosysHQ LLM Policy/FAQ:&lt;/p&gt;
+&lt;h1 id=&#34;interim-yosyshq-llm-policy&#34;&gt;
+    &lt;a href=&#34;#interim-yosyshq-llm-policy&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Interim YosysHQ LLM Policy
+&lt;/h1&gt;&lt;p&gt;As a general rule: &lt;strong&gt;Please do not file pull requests to our GitHub projects containing LLM generated code.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;YosysHQ does not currently support the use of LLMs. LLMs do not have a mind and are incapable of original thought. Time spent on reviewing contributions authored by humans is time invested in building a stronger community by spreading our shared understanding of the project. We view our projects as critical infrastructure and thus deem it important that we, the engineers at YosysHQ as well as the wider developer community, stay in control of our code base, maintain our shared understanding of it, and keep providing software that is trustworthy and can easily be understood and extended by human beings.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;PRs for “vibe-coded” features or extensions&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;We now live in a new world where it is easy to use an AI to patch arbitrary features into a codebase we do not understand. However, these patches, even when they yield the intended effect for the user who created them, and thus have value to them personally, are effectively spam when turned into upstream pull requests. &lt;strong&gt;We ask users to instead create an issue if they request a feature in our products.&lt;/strong&gt; That issue may contain a statement such as “I used this or that LLM with the following prompt and it produced a working prototype”, but please refrain from sending us the LLM generated code changes.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;PRs for LLM-generated bugfixes&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;In case of a bugfix or other small change we will, if the code appears to be LLM generated, fix the bug using either another equivalent or better code change. Or, if the proposed change turns out to be the one and only reasonable way to do it, copyright does not apply due to lack of room for creativity, and we will independently apply that change without attribution. &lt;strong&gt;Therefore we also ask users to refrain from sending us LLM generated bugfixes and instead use LLMs to produce a minimal failing test case and submit a regular issue instead.&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Attribution means responsibility&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Every code change in our projects should be attributed to a human being that authored the code change and can explain it and answer questions about it, both during review and also later. We generally do allow “AI assisted” code. However, we understand “AI assisted” as implying the commitment to defend the choices made in that code as &lt;em&gt;your&lt;/em&gt; choices, even if an AI suggested those choices to you.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Exceptions on a case-by-case basis&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Exceptions can be made on a case-by-case basis, especially when the prompt is specific enough so that different models will yield identical or almost identical code, and the task is simple enough so that a student would be expected to be able to produce the same (identical or almost identical) code. In such cases the commit message should contain all relevant information, including the full prompt that yielded the code.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Complete ban of LLM-generated code comments and commit messages&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Just. Don&amp;rsquo;t.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This policy is not set in stone and we will revise it over time as we deem necessary.&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Tabby CAD Suite version 20260805 released!</title>
         <link>http://blog.yosyshq.com/p/tabby-cad-suite-version-20260805-released/</link>
         <pubDate>Wed, 05 Aug 2026 00:00:00 +0000</pubDate>
