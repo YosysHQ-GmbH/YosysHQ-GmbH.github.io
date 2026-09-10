@@ -53,7 +53,7 @@
         
         <guid>http://blog.yosyshq.com/p/tamara-towards-a-triple-modular-redundancy-pass-for-yosys/</guid>
         <description>&lt;img src="http://blog.yosyshq.com/static-2025/tamara/tamara_header.jpg" alt="Featured image of post TaMaRa: Towards a Triple Modular Redundancy Pass for Yosys" /&gt;&lt;p&gt;This is a guest blog post by &lt;a class=&#34;link&#34; href=&#34;https://mlyoung.cool/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Matt Young&lt;/a&gt;&lt;/p&gt;
+    &gt;Mel Young&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;foreword&#34;&gt;
     &lt;a href=&#34;#foreword&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     Foreword
@@ -346,22 +346,22 @@ interesting new innovations in the EDA sector.&lt;/p&gt;
     &gt;on my
 website&lt;/a&gt;, and is available under the
 permissive CC-BY licence.&lt;/p&gt;
-&lt;p&gt;The code is available on &lt;a class=&#34;link&#34; href=&#34;https://github.com/mattyoung101/tamara&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&lt;p&gt;The code is available on &lt;a class=&#34;link&#34; href=&#34;https://github.com/mlyoung101/tamara&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;my GitHub&lt;/a&gt;, and is available under the MPL 2.0.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;A reminder again that TaMaRa is absolutely &lt;em&gt;not&lt;/em&gt; suitable for anything but simple test circuits.&lt;/strong&gt; You are more
 than welcome to give it a spin, or even contribute, though!&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;Matt Young is a Bachelor of Computer Science (Honours) student at the University of Queensland in Australia,
+&lt;p&gt;Mel Young is a Bachelor of Computer Science (Honours) student at the University of Queensland in Australia,
 researching the application of novel EDA techniques to design specialised microprocessors for challenging
 environments.&lt;/p&gt;
-&lt;p&gt;Matt can be reached &lt;a class=&#34;link&#34; href=&#34;https://www.linkedin.com/in/mattyoung101/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;via LinkedIn&lt;/a&gt; or by emailing matt (at)
-mlyoung (dot) cool. Matt&amp;rsquo;s &lt;a class=&#34;link&#34; href=&#34;https://mlyoung.cool/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&lt;p&gt;Mel can be reached &lt;a class=&#34;link&#34; href=&#34;https://www.linkedin.com/in/mattyoung101/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;via LinkedIn&lt;/a&gt; or by emailing mel (at)
+mlyoung (dot) cool. Mel&amp;rsquo;s &lt;a class=&#34;link&#34; href=&#34;https://mlyoung.cool/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;website&lt;/a&gt; has more information on TaMaRa and other projects.&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;em&gt;Header image attributon: &lt;a class=&#34;link&#34; href=&#34;https://esahubble.org/images/heic1509a/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://esahubble.org/images/heic1509a/&lt;/a&gt; © ESA/Hubble (CC-BY 4.0)&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;As a special exemption to the copyright notice at the end of the page, the author (Matt Young) hereby
+&lt;p&gt;&lt;em&gt;As a special exemption to the copyright notice at the end of the page, the author (Mel Young) hereby
 releases this article text and diagrams under &lt;a class=&#34;link&#34; href=&#34;https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;CC-BY 4.0&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 </description>

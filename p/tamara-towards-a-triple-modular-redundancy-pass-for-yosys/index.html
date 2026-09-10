@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="This is a guest blog post by Matt Young\n# Foreword Although I&rsquo;m a computer scientist by education, I&rsquo;ve always been interested in space since I was a kid. For a long time, I had simply forgotten about this interest, as I got more in-depth into FPGAs, then ASICs, and eventually EDA. I had no idea that eventually, an incredible opportunity would come to combine these two together, thanks to Yosys!\n">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="This is a guest blog post by Mel Young\n# Foreword Although I&rsquo;m a computer scientist by education, I&rsquo;ve always been interested in space since I was a kid. For a long time, I had simply forgotten about this interest, as I got more in-depth into FPGAs, then ASICs, and eventually EDA. I had no idea that eventually, an incredible opportunity would come to combine these two together, thanks to Yosys!\n">
 <title>TaMaRa: Towards a Triple Modular Redundancy Pass for Yosys</title>
 
 <link rel='canonical' href='http://blog.yosyshq.com/p/tamara-towards-a-triple-modular-redundancy-pass-for-yosys/'>
 
 <link rel="stylesheet" href="/scss/style.min.72b224ca5d0d8d0eb7d05d59a02d1c8e1ddf48097e454ae0e17cfdda55d28898.css"><meta property='og:title' content="TaMaRa: Towards a Triple Modular Redundancy Pass for Yosys">
-<meta property='og:description' content="This is a guest blog post by Matt Young\n# Foreword Although I&rsquo;m a computer scientist by education, I&rsquo;ve always been interested in space since I was a kid. For a long time, I had simply forgotten about this interest, as I got more in-depth into FPGAs, then ASICs, and eventually EDA. I had no idea that eventually, an incredible opportunity would come to combine these two together, thanks to Yosys!\n">
+<meta property='og:description' content="This is a guest blog post by Mel Young\n# Foreword Although I&rsquo;m a computer scientist by education, I&rsquo;ve always been interested in space since I was a kid. For a long time, I had simply forgotten about this interest, as I got more in-depth into FPGAs, then ASICs, and eventually EDA. I had no idea that eventually, an incredible opportunity would come to combine these two together, thanks to Yosys!\n">
 <meta property='og:url' content='http://blog.yosyshq.com/p/tamara-towards-a-triple-modular-redundancy-pass-for-yosys/'>
 <meta property='og:site_name' content='YosysHQ Blog'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='blog' /><meta property='article:published_time' content='2025-07-31T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-07-31T00:00:00&#43;00:00'/><meta property='og:image' content='http://blog.yosyshq.com/static-2025/tamara/tamara_header.jpg' />
 <meta name="twitter:site" content="@@YosysHQ">
     <meta name="twitter:creator" content="@@YosysHQ"><meta name="twitter:title" content="TaMaRa: Towards a Triple Modular Redundancy Pass for Yosys">
-<meta name="twitter:description" content="This is a guest blog post by Matt Young\n# Foreword Although I&rsquo;m a computer scientist by education, I&rsquo;ve always been interested in space since I was a kid. For a long time, I had simply forgotten about this interest, as I got more in-depth into FPGAs, then ASICs, and eventually EDA. I had no idea that eventually, an incredible opportunity would come to combine these two together, thanks to Yosys!\n"><meta name="twitter:card" content="summary">
+<meta name="twitter:description" content="This is a guest blog post by Mel Young\n# Foreword Although I&rsquo;m a computer scientist by education, I&rsquo;ve always been interested in space since I was a kid. For a long time, I had simply forgotten about this interest, as I got more in-depth into FPGAs, then ASICs, and eventually EDA. I had no idea that eventually, an incredible opportunity would come to combine these two together, thanks to Yosys!\n"><meta name="twitter:card" content="summary">
     <meta name="twitter:image" content='http://blog.yosyshq.com/static-2025/tamara/tamara_header.jpg' />
     <link rel="shortcut icon" href="/favicon.png" />
 
@@ -294,7 +294,7 @@
     
     
     <p>This is a guest blog post by <a class="link" href="https://mlyoung.cool/"  target="_blank" rel="noopener"
-    >Matt Young</a></p>
+    >Mel Young</a></p>
 <h2 id="foreword">
     <a href="#foreword" class="header-anchor">#</a>
     Foreword
@@ -587,22 +587,22 @@ interesting new innovations in the EDA sector.</p>
     >on my
 website</a>, and is available under the
 permissive CC-BY licence.</p>
-<p>The code is available on <a class="link" href="https://github.com/mattyoung101/tamara"  target="_blank" rel="noopener"
+<p>The code is available on <a class="link" href="https://github.com/mlyoung101/tamara"  target="_blank" rel="noopener"
     >my GitHub</a>, and is available under the MPL 2.0.</p>
 <p><strong>A reminder again that TaMaRa is absolutely <em>not</em> suitable for anything but simple test circuits.</strong> You are more
 than welcome to give it a spin, or even contribute, though!</p>
 <hr>
-<p>Matt Young is a Bachelor of Computer Science (Honours) student at the University of Queensland in Australia,
+<p>Mel Young is a Bachelor of Computer Science (Honours) student at the University of Queensland in Australia,
 researching the application of novel EDA techniques to design specialised microprocessors for challenging
 environments.</p>
-<p>Matt can be reached <a class="link" href="https://www.linkedin.com/in/mattyoung101/"  target="_blank" rel="noopener"
-    >via LinkedIn</a> or by emailing matt (at)
-mlyoung (dot) cool. Matt&rsquo;s <a class="link" href="https://mlyoung.cool/"  target="_blank" rel="noopener"
+<p>Mel can be reached <a class="link" href="https://www.linkedin.com/in/mattyoung101/"  target="_blank" rel="noopener"
+    >via LinkedIn</a> or by emailing mel (at)
+mlyoung (dot) cool. Mel&rsquo;s <a class="link" href="https://mlyoung.cool/"  target="_blank" rel="noopener"
     >website</a> has more information on TaMaRa and other projects.</p>
 <hr>
 <p><em>Header image attributon: <a class="link" href="https://esahubble.org/images/heic1509a/"  target="_blank" rel="noopener"
     >https://esahubble.org/images/heic1509a/</a> © ESA/Hubble (CC-BY 4.0)</em></p>
-<p><em>As a special exemption to the copyright notice at the end of the page, the author (Matt Young) hereby
+<p><em>As a special exemption to the copyright notice at the end of the page, the author (Mel Young) hereby
 releases this article text and diagrams under <a class="link" href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1"  target="_blank" rel="noopener"
     >CC-BY 4.0</a></em></p>
 
