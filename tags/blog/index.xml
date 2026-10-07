@@ -6,7 +6,59 @@
         <description>Recent content in Blog on YosysHQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Wed, 26 Aug 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://blog.yosyshq.com/tags/blog/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 07 Oct 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://blog.yosyshq.com/tags/blog/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Meet the Devs - Nick</title>
+        <link>http://blog.yosyshq.com/p/meet-the-devs-nick/</link>
+        <pubDate>Wed, 07 Oct 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://blog.yosyshq.com/p/meet-the-devs-nick/</guid>
+        <description>&lt;p&gt;There’s no denying that the whole world is moving towards instant gratification, solving hard problems quickly, and optimizing for efficiency.&lt;/p&gt;
+&lt;p&gt;Sure - that’s great and all, but that mindset won’t get you far if you want to become a strong and competent engineer.&lt;/p&gt;
+&lt;h3 id=&#34;meet-nick&#34;&gt;
+    &lt;a href=&#34;#meet-nick&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Meet Nick.
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;http://blog.yosyshq.com/static-2026/nick.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Nick&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;He’s an electrical engineer at &lt;a class=&#34;link&#34; href=&#34;https://www.yosyshq.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;YosysHQ&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;When he’s not busy doing his 9-5, you’ll find him bouldering or listening to audiobooks on his couch.&lt;/p&gt;
+&lt;p&gt;Nick started coding in high-school, teaching himself to program &lt;a class=&#34;link&#34; href=&#34;https://en.wikipedia.org/wiki/TI-BASIC&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;TI-BASIC&lt;/a&gt; on his calculator.&lt;/p&gt;
+&lt;p&gt;When he reached uni, he started making personal projects based on ideas he saw online. He even made a program to solve &lt;a class=&#34;link&#34; href=&#34;https://www.nytimes.com/games/wordle/index.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Wordle&lt;/a&gt;! Cheeky.&lt;/p&gt;
+&lt;p&gt;From there, his interest shifted towards more of what he does today, projects focused on &lt;a class=&#34;link&#34; href=&#34;https://en.wikipedia.org/wiki/Verilog&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Verilog&lt;/a&gt; and code analysis.&lt;/p&gt;
+&lt;p&gt;Like many other engineers, Nick found his way to &lt;a class=&#34;link&#34; href=&#34;https://www.yosyshq.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;YosysHQ&lt;/a&gt; after his internship. In his final years of school, he completed his capstone project where he created a set of hardware designs built using only open-source tooling, which included &lt;a class=&#34;link&#34; href=&#34;https://github.com/yosyshq/yosys&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Yosys&lt;/a&gt;. He then completed his honors thesis by creating a static analysis tool for Verilog.&lt;/p&gt;
+&lt;p&gt;Undoubtedly, he’s in the right field!&lt;/p&gt;
+&lt;p&gt;The industry is more active than ever. There are many changes happening both in the hardware space as well as the tooling used for hardware design.&lt;/p&gt;
+&lt;p&gt;In our interview with Nick, he mentioned the potential of &lt;a class=&#34;link&#34; href=&#34;https://tenstorrent.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Tenstorrent&lt;/a&gt;. Its focus on scalable distributed systems for deep learning networks and their application to a much wider range of problems is very impressive.&lt;/p&gt;
+&lt;p&gt;The exciting chip startup &lt;a class=&#34;link&#34; href=&#34;https://taalas.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Taalas&lt;/a&gt; was also brought up. Its idea of hardcoding a machine learning network into silicon to enable more efficient inference, is worth keeping an eye on!&lt;/p&gt;
+&lt;p&gt;On the tooling side, languages like &lt;a class=&#34;link&#34; href=&#34;https://github.com/chipsalliance/chisel&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Chisel&lt;/a&gt; are always improving the development of high-level synthesis tools. There is now a lot of potential for greater abstraction in hardware design with relatively low overhead cost.&lt;/p&gt;
+&lt;p&gt;What’s even more interesting is the current research into fuzzers and formal verification, especially the idea of bringing software fuzzing techniques into the hardware ecosystem.&lt;/p&gt;
+&lt;p&gt;Nick’s interests in the industry go beyond the tech, though!&lt;/p&gt;
+&lt;p&gt;When asked why he enjoys working at YosysHQ, he described the company as full of smart, patient people who are genuinely happy to help you understand anything 😊&lt;/p&gt;
+&lt;p&gt;Everyone is very humble and willing to listen to anyone&amp;rsquo;s suggestions for improvement.&lt;/p&gt;
+&lt;p&gt;(And that’s exactly the kind of culture we are proud of!)&lt;/p&gt;
+&lt;p&gt;His advice for young aspiring devs is simple. First, you need to build a strong foundation! Not just through university lectures, but also through watching or listening to other content online: be it lectures, conference talks, or podcasts by people who have done interesting and technical work.&lt;/p&gt;
+&lt;p&gt;This will give you a wider breadth of knowledge of different fields and how they fit together.
+But the most important step to becoming a strong engineer is working on hard problems, getting stuck, and actually spending time thinking about how to resolve that issue.&lt;/p&gt;
+&lt;p&gt;According to Nick, that discomfort of being stuck and the process of thinking your way out is the most important part of becoming a more capable engineer and problem solver.&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Interim YosysHQ LLM Policy</title>
         <link>http://blog.yosyshq.com/p/interim-yosyshq-llm-policy/</link>
         <pubDate>Wed, 26 Aug 2026 00:00:00 +0000</pubDate>

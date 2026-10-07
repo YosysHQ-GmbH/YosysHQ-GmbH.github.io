@@ -6,20 +6,28 @@
         <description>Recent content in Tags on YosysHQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Wed, 09 Sep 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://blog.yosyshq.com/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 07 Oct 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://blog.yosyshq.com/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Blog</title>
+        <link>http://blog.yosyshq.com/tags/blog/</link>
+        <pubDate>Wed, 07 Oct 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://blog.yosyshq.com/tags/blog/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Meet the Devs</title>
+        <link>http://blog.yosyshq.com/tags/meet-the-devs/</link>
+        <pubDate>Wed, 07 Oct 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://blog.yosyshq.com/tags/meet-the-devs/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Release Notes</title>
         <link>http://blog.yosyshq.com/tags/release-notes/</link>
         <pubDate>Wed, 09 Sep 2026 00:00:00 +0000</pubDate>
         
         <guid>http://blog.yosyshq.com/tags/release-notes/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Blog</title>
-        <link>http://blog.yosyshq.com/tags/blog/</link>
-        <pubDate>Wed, 26 Aug 2026 00:00:00 +0000</pubDate>
-        
-        <guid>http://blog.yosyshq.com/tags/blog/</guid>
         <description></description>
         </item>
         <item>
