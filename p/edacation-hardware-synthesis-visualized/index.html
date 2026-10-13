@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="This is a guest blog post by Hendrik Folmer\n# The FPGA &ldquo;Hello World&rdquo; Imagine you&rsquo;re a first-year engineering student. Today is your very first FPGA development lecture.\nThe professor starts with an inspiring introduction: &ldquo;Unlike CPUs, FPGAs don&rsquo;t execute instructions one after another. You design hardware itself. Thousands of operations can happen in parallel. You describe logic, and the FPGA becomes the circuit you designed.&rdquo;\nAmazing.\nYou&rsquo;re told about lookup tables, routing, timing, placement, and the incredible flexibility of programmable hardware. It feels like digital LEGO with millions of pieces.\n">
+<title>EDAcation: Hardware synthesis visualized</title>
+
+<link rel='canonical' href='http://blog.yosyshq.com/p/edacation-hardware-synthesis-visualized/'>
+
+<link rel="stylesheet" href="/scss/style.min.760e3dabc1e140d2e6abd27a8ca0aabb60e568829b29f67d2df12024136eff37.css"><meta property='og:title' content="EDAcation: Hardware synthesis visualized">
+<meta property='og:description' content="This is a guest blog post by Hendrik Folmer\n# The FPGA &ldquo;Hello World&rdquo; Imagine you&rsquo;re a first-year engineering student. Today is your very first FPGA development lecture.\nThe professor starts with an inspiring introduction: &ldquo;Unlike CPUs, FPGAs don&rsquo;t execute instructions one after another. You design hardware itself. Thousands of operations can happen in parallel. You describe logic, and the FPGA becomes the circuit you designed.&rdquo;\nAmazing.\nYou&rsquo;re told about lookup tables, routing, timing, placement, and the incredible flexibility of programmable hardware. It feels like digital LEGO with millions of pieces.\n">
+<meta property='og:url' content='http://blog.yosyshq.com/p/edacation-hardware-synthesis-visualized/'>
+<meta property='og:site_name' content='YosysHQ Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='blog' /><meta property='article:published_time' content='2026-10-09T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-10-09T00:00:00&#43;00:00'/>
+<meta name="twitter:site" content="@@YosysHQ">
+    <meta name="twitter:creator" content="@@YosysHQ"><meta name="twitter:title" content="EDAcation: Hardware synthesis visualized">
+<meta name="twitter:description" content="This is a guest blog post by Hendrik Folmer\n# The FPGA &ldquo;Hello World&rdquo; Imagine you&rsquo;re a first-year engineering student. Today is your very first FPGA development lecture.\nThe professor starts with an inspiring introduction: &ldquo;Unlike CPUs, FPGAs don&rsquo;t execute instructions one after another. You design hardware itself. Thousands of operations can happen in parallel. You describe logic, and the FPGA becomes the circuit you designed.&rdquo;\nAmazing.\nYou&rsquo;re told about lookup tables, routing, timing, placement, and the incredible flexibility of programmable hardware. It feels like digital LEGO with millions of pieces.\n">
+    <link rel="shortcut icon" href="/favicon.png" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/logos/YOS_mark_square_hu_d758b52bb04a278e.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">YosysHQ Blog</a></h1>
+            <h2 class="site-description"></h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/newsletter' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>Newsletter</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/yug' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>Yosys User&#39;s Group</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/edacation-hardware-synthesis-visualized/">EDAcation: Hardware synthesis visualized</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Oct 09, 2026</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    8 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>This is a guest blog post by Hendrik Folmer</p>
+<h2 id="the-fpga-hello-world">
+    <a href="#the-fpga-hello-world" class="header-anchor">#</a>
+    The FPGA &ldquo;Hello World&rdquo;
+</h2><p>Imagine you&rsquo;re a first-year engineering student. Today is your very first FPGA development lecture.</p>
+<p>The professor starts with an inspiring introduction: &ldquo;Unlike CPUs, FPGAs don&rsquo;t execute instructions one after another. You design hardware itself. Thousands of operations can happen in parallel. You describe logic, and the FPGA becomes the circuit you designed.&rdquo;</p>
+<p>Amazing.</p>
+<p>You&rsquo;re told about lookup tables, routing, timing, placement, and the incredible flexibility of programmable hardware. It feels like digital LEGO with millions of pieces.</p>
+<p>You can&rsquo;t wait to build something.</p>
+<p>At the end of the lecture, the assignment seems refreshingly simple. &ldquo;Before next week&rsquo;s lab, synthesize a blinking LED. It&rsquo;s the FPGA equivalent of Hello World.&rdquo;</p>
+<p>Perfect. How hard can one blinking LED be?</p>
+<p>You get home, open your laptop, and Google:</p>
+<p>&ldquo;Download Quartus.&rdquo;</p>
+<p>The first result looks right.</p>
+<p>Download size?</p>
+<p>80 GB.</p>
+<p>That&rsquo;s&hellip; larger than some games.</p>
+<p>Fortunately, your university recommended an expensive laptop with plenty of storage, so after a while the download finally completes.</p>
+<p>You click Install.</p>
+<p>Disk space required:</p>
+<p>299.44 GB.</p>
+<p>Well&hellip; that&rsquo;s almost your SSD.</p>
+<p>After another long wait, Quartus finally launches.</p>
+<p>A popup immediately appears.</p>
+<p>License required.</p>
+<p>License?</p>
+<p>Nobody mentioned a license.</p>
+<p>You ask your classmates.</p>
+<p>Nobody knows.</p>
+<p>You message the teaching assistant.</p>
+<p>&ldquo;Oh&hellip; you installed Quartus Pro.&rdquo;</p>
+<p>&ldquo;You only need Quartus Lite.&rdquo;</p>
+<p>Right.</p>
+<p>So you uninstall the 300 GB installation.</p>
+<p>Delete the 80 GB installer.</p>
+<p>And start over.</p>
+<p>Back to Google.</p>
+<p>&ldquo;Download Quartus Lite.&rdquo;</p>
+<p>Much better.</p>
+<p>Only a 1.6 GB download.</p>
+<p>Installation finishes.</p>
+<p>Only 8.8 GB installed.</p>
+<p>Progress.</p>
+<p>You create your first project.</p>
+<p>The wizard asks you to select your target FPGA.</p>
+<p>The device list is empty.</p>
+<p>Empty.</p>
+<p>You ask another student.</p>
+<p>&ldquo;Oh yeah, you also need the device files.&rdquo;</p>
+<p>Of course you do.</p>
+<p>Back to Google.</p>
+<p>You find the Cyclone V device package.</p>
+<p>Only 500 MB.</p>
+<p>Easy.</p>
+<p>You install it.</p>
+<p>Version mismatch.</p>
+<p>Wait&hellip;</p>
+<p>Device files have versions?</p>
+<p>Apparently yes.</p>
+<p>Not only do they have versions, they must exactly match the Quartus version.</p>
+<p>Down to the last digit.</p>
+<p>Fine.</p>
+<p>You finally locate the correct version.</p>
+<p>Just before pressing Download, you notice another dropdown.</p>
+<p>Lite / Standard / Pro</p>
+<p>That would have been the wrong download. Again.</p>
+<p>The correct device package?</p>
+<p>Another 1.3 GB.</p>
+<p>Several hours after starting this adventure, you finally have a working FPGA development environment.</p>
+<p>Now the real learning can begin.</p>
+<p>Right?</p>
+<p>You launch Quartus.</p>
+<p>Create a project.</p>
+<p>Select the correct device.</p>
+<p>Add a VHDL file called blinky.vhd that you found somewhere online.</p>
+<p>You look for the Compile button.</p>
+<p>Eventually you find a promising green triangle.</p>
+<p>Click.</p>
+<p>Error: Top-level entity not specified.</p>
+<p>Top-level entity?</p>
+<p>What&rsquo;s a top-level entity?</p>
+<p>Why do I need one?</p>
+<p>After some searching, you discover the setting.</p>
+<p>Compile again.</p>
+<p>Success!</p>
+<p>Well&hellip;</p>
+<p>Almost.</p>
+<p>183 warnings.</p>
+<p>Is that good?</p>
+<p>Bad?</p>
+<p>Normal?</p>
+<p>Did anything actually work?</p>
+<p>The software mentions timing analysis.</p>
+<p>Clock domains, Latch inference, Constraints, Pin assignments, Clock frequencies.</p>
+<p>None of those words were in today&rsquo;s lecture.</p>
+<p>You spend another hour trying to figure out where to tell the compiler your clock frequency.</p>
+<p>Eventually you stop and ask yourself: Wasn&rsquo;t today&rsquo;s assignment just to blink an LED?</p>
+<p>This isn&rsquo;t an unusual story.</p>
+<p>In fact, it&rsquo;s the most common story.</p>
+<p>When I ask students about their first FPGA course, the answer is remarkably consistent.</p>
+<p>&ldquo;Hardware design is fascinating&hellip; but the tooling was awful.&rdquo;</p>
+<p>That&rsquo;s unfortunate.</p>
+<p>Because students don&rsquo;t remember the excitement of designing digital hardware.</p>
+<p>They remember spending an evening downloading software, installing device packages, fighting version mismatches, and deciphering hundreds of warnings before writing ten lines of code.</p>
+<p>The tooling became the course.</p>
+<p>It doesn&rsquo;t have to be this way.</p>
+<p>As educators, we can lower the barrier without lowering the standard.</p>
+<p>Students should spend their first hours learning hardware concepts, not wrestling with installers.</p>
+<p>That&rsquo;s why we built EDAcation. Because the first lesson in digital design shouldn&rsquo;t be how to download 300 GB of tools to blink an LED.</p>
+<h2 id="the-synthesis-path-introduced-and-visualized">
+    <a href="#the-synthesis-path-introduced-and-visualized" class="header-anchor">#</a>
+    The synthesis path introduced and visualized
+</h2><p><a class="link" href="https://github.com/EDAcation"  target="_blank" rel="noopener"
+    >EDAcation</a> is a Visual Studio Code extension that brings an open source FPGA toolchain into a single, student-friendly environment.
+It combines synthesis, place-and-route, and visualization in a straightforward workflow.
+The goal is to make the underlying hardware design process visible and understandable, while hiding much of the complexity of the traditional toolchain.
+One click to generate an RTL schematic. One click to synthesize. One click to place and route.
+Instead of hiding intermediate results in lengthy reports, EDAcation visualizes them, helping students understand how their hardware description is transformed into a physical FPGA implementation.</p>
+<h2 id="getting-started">
+    <a href="#getting-started" class="header-anchor">#</a>
+    Getting started
+</h2><p>Installing EDAcation is straightforward.
+Open the Visual Studio Code Marketplace, search for EDAcation, and click Install.
+Once you open a project folder in VS Code, the EDAcation interface becomes available through the EDA button in the sidebar.</p>
+<p>From there, you can create a new project, add your source files, and start exploring your design by clicking RTL.</p>
+<p><img src="/static-2026/edacation/newProject.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="NewProject"
+	
+	
+></p>
+<p><img src="/static-2026/edacation/addingInput.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="AddInput"
+	
+	
+></p>
+<p><img src="/static-2026/edacation/buttonRTL.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="RTLButton"
+	
+	
+></p>
+<p>An RTL schematic is generated and displayed immediately.
+Different hardware elements are represented by different colors, while modules in the design hierarchy are shown in blue boxes.
+The schematic viewer also supports simulation. Although the simulator is not particularly fast, it is sufficient for small designs and serves its educational purpose: helping students connect their HDL code to the behavior of the hardware they have described.</p>
+<p><img src="/static-2026/edacation/rtlSchematic.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="RTL"
+	
+	
+></p>
+<p>An overview of the design&rsquo;s components is available in the Stats Viewer.
+It uses the same color scheme as the RTL schematic, making it easier to connect the visual representation of the design to the resources it contains.</p>
+<p><img src="/static-2026/edacation/statistics.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Stats"
+	
+	
+></p>
+<p>If you add a testbench to the project, you can also generate a waveform.
+With a single click, the waveform is displayed, allowing students to inspect signal behavior over time and compare it with their expectations.</p>
+<p><img src="/static-2026/edacation/waveform.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Waveform"
+	
+	
+></p>
+<h2 id="from-rtl-to-luts">
+    <a href="#from-rtl-to-luts" class="header-anchor">#</a>
+    From RTL to LUTs
+</h2><p>The next step is Synthesis.
+During logic synthesis, the design is transformed into a representation suitable for implementation on the target FPGA.
+EDAcation visualizes the resulting lookup table (LUT) structure, giving students a closer look at how their original RTL description becomes hardware.</p>
+<p>This is an important step in understanding digital design.
+Students can see how the schematic is mapped to LUTs and begin to develop an intuition for the size and complexity of their designs.</p>
+<p>Rather than treating synthesis as a mysterious process that produces a success message or an error report, EDAcation makes the result tangible.</p>
+<p><img src="/static-2026/edacation/luts.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Luts"
+	
+	
+></p>
+<h2 id="placing-and-routing-the-design">
+    <a href="#placing-and-routing-the-design" class="header-anchor">#</a>
+    Placing and routing the design
+</h2><p>The fourth step in the workflow is Place and Route.
+At this stage, the synthesized design is mapped onto the FPGA&rsquo;s available resources.
+Nextpnr determine where the logic elements should be placed and how they should be connected.
+EDAcation then visualizes the resulting implementation.</p>
+<p><img src="/static-2026/edacation/pnr.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="PnR"
+	
+	
+></p>
+<p>The visualization uses the same colors as the RTL schematic, helping students follow the transformation from their original design to its implementation on the FPGA.
+They can see where resources such as DSP blocks, registers, and LUTs are placed, making the relationship between the logical design and the physical device more apparent.</p>
+<p>The longest combinational path is highlighted in red.
+This provides a visual starting point for exploring timing behavior and understanding why the arrangement and connections of logic matter, not just the logic itself.</p>
+<p>EDAcation also provides a visual interface for working with pin constraints.
+When a pin constraint file is available, students can inspect and modify the assignments in a graphical environment rather than editing the file by hand.</p>
+<p>Once the design is ready, the FlashToFPGA button provides a direct route to programming the device.
+If the FPGA is recognized by the operating system and VS Code has the necessary permissions, programming the device is as simple as clicking the button.</p>
+<p>This completes the workflow, taking students from an HDL description to a design that can run on real hardware, all within the same environment.</p>
+<h2 id="configuration-and-flexibility">
+    <a href="#configuration-and-flexibility" class="header-anchor">#</a>
+    Configuration and flexibility
+</h2><p>Of course, not every user has the same requirements.
+EDAcation therefore provides several configuration options, ranging from the target FPGA type to manually specifying arguments for Yosys and nextpnr.</p>
+<p>Users can choose between WebAssembly-based tools, binaries bundled with the extension, or their own locally installed binaries.
+This flexibility makes EDAcation accessible to beginners while still providing options for more advanced users who want greater control over their toolchain.</p>
+<p>There is, however, a balance to strike.
+Feature creep is always a risk, especially for a project intended to make complex tools easier to understand.</p>
+<p>The primary goal of EDAcation is not to replace every feature of established FPGA development environments.
+It is to provide an educational alternative that emphasizes clarity through visualization.</p>
+<p>By making intermediate synthesis results and implementation details visible, EDAcation aims to help students understand what the tools are doing, rather than simply teaching them which buttons to press.</p>
+<h2 id="built-on-the-shoulders-of-the-open-source-community">
+    <a href="#built-on-the-shoulders-of-the-open-source-community" class="header-anchor">#</a>
+    Built on the shoulders of the open source community
+</h2><p>EDAcation would not be possible without the open source projects on which it builds.
+We have not reinvented the FPGA toolchain; instead, we bring existing tools together and focus on making their results easier to explore and understand.</p>
+<p>A big thank-you goes to the developers and communities behind these projects.
+Their work makes tools like EDAcation possible.</p>
+<p>At the moment, further development of EDAcation is on hold.
+However, the project remains open source, and we have tried to document its architecture and design decisions to make it easier for others to understand how it works and contribute.</p>
+<p>We welcome anyone interested in educational hardware design, FPGA tooling, or visualization to explore the project and help take it further.</p>
+<p>After all, the goal is simple: students should spend less time fighting their tools and more time understanding the hardware they build.</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/blog/">Blog</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2026 YosysHQ Blog
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.25.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
