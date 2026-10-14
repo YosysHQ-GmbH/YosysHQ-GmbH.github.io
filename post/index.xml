@@ -16,111 +16,103 @@
 &lt;h2 id=&#34;the-fpga-hello-world&#34;&gt;
     &lt;a href=&#34;#the-fpga-hello-world&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     The FPGA &amp;ldquo;Hello World&amp;rdquo;
-&lt;/h2&gt;&lt;p&gt;Imagine you&amp;rsquo;re a first-year engineering student. Today is your very first FPGA development lecture.&lt;/p&gt;
-&lt;p&gt;The professor starts with an inspiring introduction: &amp;ldquo;Unlike CPUs, FPGAs don&amp;rsquo;t execute instructions one after another. You design hardware itself. Thousands of operations can happen in parallel. You describe logic, and the FPGA becomes the circuit you designed.&amp;rdquo;&lt;/p&gt;
-&lt;p&gt;Amazing.&lt;/p&gt;
-&lt;p&gt;You&amp;rsquo;re told about lookup tables, routing, timing, placement, and the incredible flexibility of programmable hardware. It feels like digital LEGO with millions of pieces.&lt;/p&gt;
-&lt;p&gt;You can&amp;rsquo;t wait to build something.&lt;/p&gt;
-&lt;p&gt;At the end of the lecture, the assignment seems refreshingly simple. &amp;ldquo;Before next week&amp;rsquo;s lab, synthesize a blinking LED. It&amp;rsquo;s the FPGA equivalent of Hello World.&amp;rdquo;&lt;/p&gt;
-&lt;p&gt;Perfect. How hard can one blinking LED be?&lt;/p&gt;
-&lt;p&gt;You get home, open your laptop, and Google:&lt;/p&gt;
-&lt;p&gt;&amp;ldquo;Download Quartus.&amp;rdquo;&lt;/p&gt;
-&lt;p&gt;The first result looks right.&lt;/p&gt;
-&lt;p&gt;Download size?&lt;/p&gt;
-&lt;p&gt;80 GB.&lt;/p&gt;
-&lt;p&gt;That&amp;rsquo;s&amp;hellip; larger than some games.&lt;/p&gt;
-&lt;p&gt;Fortunately, your university recommended an expensive laptop with plenty of storage, so after a while the download finally completes.&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;Imagine you&amp;rsquo;re a first-year engineering student.
+Today is your very first FPGA development lecture.&lt;/p&gt;
+&lt;p&gt;The professor starts with an inspiring introduction:
+&amp;ldquo;Unlike CPUs, FPGAs don&amp;rsquo;t execute instructions one after another.
+You design hardware itself.
+Thousands of operations can happen in parallel.
+You describe logic, and the FPGA becomes the circuit you designed.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;You&amp;rsquo;re told about lookup tables, routing, timing, placement, and the incredible flexibility of programmable hardware.
+It feels like digital LEGO with millions of pieces.
+You can&amp;rsquo;t wait to build something.
+At the end of the lecture, the assignment seems refreshingly simple.
+&amp;ldquo;Before next week&amp;rsquo;s lab, synthesize a blinking LED.
+It&amp;rsquo;s the FPGA equivalent of Hello World.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;Perfect.
+How hard can one blinking LED be?&lt;/p&gt;
+&lt;p&gt;You get home, open your laptop, and Google: &amp;ldquo;Download Quartus&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;The first result looks right.
+Download size? 80 GB.&lt;/p&gt;
+&lt;p&gt;That&amp;rsquo;s&amp;hellip;
+larger than some games.
+Fortunately, your university recommended an expensive laptop with plenty of storage, so after a while the download finally completes.&lt;/p&gt;
 &lt;p&gt;You click Install.&lt;/p&gt;
-&lt;p&gt;Disk space required:&lt;/p&gt;
-&lt;p&gt;299.44 GB.&lt;/p&gt;
-&lt;p&gt;Well&amp;hellip; that&amp;rsquo;s almost your SSD.&lt;/p&gt;
-&lt;p&gt;After another long wait, Quartus finally launches.&lt;/p&gt;
-&lt;p&gt;A popup immediately appears.&lt;/p&gt;
+&lt;p&gt;Disk space required: 299.44 GB.
+Well&amp;hellip;
+that&amp;rsquo;s almost your SSD.&lt;/p&gt;
+&lt;p&gt;After another long wait, Quartus finally launches.
+A popup immediately appears.&lt;/p&gt;
 &lt;p&gt;License required.&lt;/p&gt;
-&lt;p&gt;License?&lt;/p&gt;
-&lt;p&gt;Nobody mentioned a license.&lt;/p&gt;
-&lt;p&gt;You ask your classmates.&lt;/p&gt;
-&lt;p&gt;Nobody knows.&lt;/p&gt;
-&lt;p&gt;You message the teaching assistant.&lt;/p&gt;
-&lt;p&gt;&amp;ldquo;Oh&amp;hellip; you installed Quartus Pro.&amp;rdquo;&lt;/p&gt;
-&lt;p&gt;&amp;ldquo;You only need Quartus Lite.&amp;rdquo;&lt;/p&gt;
-&lt;p&gt;Right.&lt;/p&gt;
-&lt;p&gt;So you uninstall the 300 GB installation.&lt;/p&gt;
-&lt;p&gt;Delete the 80 GB installer.&lt;/p&gt;
-&lt;p&gt;And start over.&lt;/p&gt;
-&lt;p&gt;Back to Google.&lt;/p&gt;
-&lt;p&gt;&amp;ldquo;Download Quartus Lite.&amp;rdquo;&lt;/p&gt;
-&lt;p&gt;Much better.&lt;/p&gt;
-&lt;p&gt;Only a 1.6 GB download.&lt;/p&gt;
-&lt;p&gt;Installation finishes.&lt;/p&gt;
-&lt;p&gt;Only 8.8 GB installed.&lt;/p&gt;
-&lt;p&gt;Progress.&lt;/p&gt;
-&lt;p&gt;You create your first project.&lt;/p&gt;
-&lt;p&gt;The wizard asks you to select your target FPGA.&lt;/p&gt;
-&lt;p&gt;The device list is empty.&lt;/p&gt;
+&lt;p&gt;License? Nobody mentioned a license.
+You ask your classmates.
+Nobody knows.&lt;/p&gt;
+&lt;p&gt;You message the teaching assistant.
+&amp;ldquo;Oh&amp;hellip;
+you installed Quartus Pro.&amp;rdquo; &amp;ldquo;You only need Quartus Lite.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;Right&amp;hellip;
+So you uninstall the 300 GB installation.
+Delete the 80 GB installer.
+And start over.&lt;/p&gt;
+&lt;p&gt;Back to Google: &amp;ldquo;Download Quartus Lite&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;Only a 1.6 GB download.
+Much better.&lt;/p&gt;
+&lt;p&gt;Installation finishes.
+Only 8.8 GB installed.&lt;/p&gt;
+&lt;p&gt;Progress&amp;hellip;
+You create your first project.&lt;/p&gt;
+&lt;p&gt;The wizard asks you to select your target FPGA.
+The device list is empty.&lt;/p&gt;
 &lt;p&gt;Empty.&lt;/p&gt;
 &lt;p&gt;You ask another student.&lt;/p&gt;
-&lt;p&gt;&amp;ldquo;Oh yeah, you also need the device files.&amp;rdquo;&lt;/p&gt;
-&lt;p&gt;Of course you do.&lt;/p&gt;
-&lt;p&gt;Back to Google.&lt;/p&gt;
-&lt;p&gt;You find the Cyclone V device package.&lt;/p&gt;
-&lt;p&gt;Only 500 MB.&lt;/p&gt;
-&lt;p&gt;Easy.&lt;/p&gt;
-&lt;p&gt;You install it.&lt;/p&gt;
+&lt;p&gt;&amp;ldquo;Oh yeah, you also need the device files.&amp;rdquo; Of course you do.&lt;/p&gt;
+&lt;p&gt;Back to Google.
+You find the Cyclone V device package.
+Only 500 MB.&lt;/p&gt;
+&lt;p&gt;Easy&amp;hellip;
+You install it.&lt;/p&gt;
 &lt;p&gt;Version mismatch.&lt;/p&gt;
-&lt;p&gt;Wait&amp;hellip;&lt;/p&gt;
-&lt;p&gt;Device files have versions?&lt;/p&gt;
-&lt;p&gt;Apparently yes.&lt;/p&gt;
-&lt;p&gt;Not only do they have versions, they must exactly match the Quartus version.&lt;/p&gt;
-&lt;p&gt;Down to the last digit.&lt;/p&gt;
-&lt;p&gt;Fine.&lt;/p&gt;
-&lt;p&gt;You finally locate the correct version.&lt;/p&gt;
-&lt;p&gt;Just before pressing Download, you notice another dropdown.&lt;/p&gt;
-&lt;p&gt;Lite / Standard / Pro&lt;/p&gt;
-&lt;p&gt;That would have been the wrong download. Again.&lt;/p&gt;
-&lt;p&gt;The correct device package?&lt;/p&gt;
-&lt;p&gt;Another 1.3 GB.&lt;/p&gt;
-&lt;p&gt;Several hours after starting this adventure, you finally have a working FPGA development environment.&lt;/p&gt;
-&lt;p&gt;Now the real learning can begin.&lt;/p&gt;
-&lt;p&gt;Right?&lt;/p&gt;
-&lt;p&gt;You launch Quartus.&lt;/p&gt;
-&lt;p&gt;Create a project.&lt;/p&gt;
-&lt;p&gt;Select the correct device.&lt;/p&gt;
-&lt;p&gt;Add a VHDL file called blinky.vhd that you found somewhere online.&lt;/p&gt;
-&lt;p&gt;You look for the Compile button.&lt;/p&gt;
+&lt;p&gt;Wait&amp;hellip;
+Device files have versions?&lt;/p&gt;
+&lt;p&gt;Apparently yes.
+Not only do they have versions, they must exactly match the Quartus version.
+Down to the last digit.&lt;/p&gt;
+&lt;p&gt;Fine&amp;hellip;
+You finally locate the correct version.
+Just before pressing Download, you notice another dropdown: &amp;ldquo;Lite / Standard / Pro&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;That would have been the wrong download.
+Again.
+The correct device package? Another 1.3 GB.&lt;/p&gt;
+&lt;p&gt;Several hours after starting this adventure, you finally have a working FPGA development environment.
+Now the real learning can begin.
+Right?&lt;/p&gt;
+&lt;p&gt;You launch Quartus.
+Create a project.
+Select the correct device.
+Add a VHDL file called blinky.vhd that you found somewhere online.
+You look for the Compile button.&lt;/p&gt;
 &lt;p&gt;Eventually you find a promising green triangle.&lt;/p&gt;
 &lt;p&gt;Click.&lt;/p&gt;
 &lt;p&gt;Error: Top-level entity not specified.&lt;/p&gt;
-&lt;p&gt;Top-level entity?&lt;/p&gt;
-&lt;p&gt;What&amp;rsquo;s a top-level entity?&lt;/p&gt;
-&lt;p&gt;Why do I need one?&lt;/p&gt;
-&lt;p&gt;After some searching, you discover the setting.&lt;/p&gt;
-&lt;p&gt;Compile again.&lt;/p&gt;
+&lt;p&gt;Top-level entity? What&amp;rsquo;s a top-level entity? Why do I need one?&lt;/p&gt;
+&lt;p&gt;After some searching, you discover the setting.
+Compile again.&lt;/p&gt;
 &lt;p&gt;Success!&lt;/p&gt;
-&lt;p&gt;Well&amp;hellip;&lt;/p&gt;
-&lt;p&gt;Almost.&lt;/p&gt;
-&lt;p&gt;183 warnings.&lt;/p&gt;
-&lt;p&gt;Is that good?&lt;/p&gt;
-&lt;p&gt;Bad?&lt;/p&gt;
-&lt;p&gt;Normal?&lt;/p&gt;
-&lt;p&gt;Did anything actually work?&lt;/p&gt;
-&lt;p&gt;The software mentions timing analysis.&lt;/p&gt;
-&lt;p&gt;Clock domains, Latch inference, Constraints, Pin assignments, Clock frequencies.&lt;/p&gt;
-&lt;p&gt;None of those words were in today&amp;rsquo;s lecture.&lt;/p&gt;
-&lt;p&gt;You spend another hour trying to figure out where to tell the compiler your clock frequency.&lt;/p&gt;
-&lt;p&gt;Eventually you stop and ask yourself: Wasn&amp;rsquo;t today&amp;rsquo;s assignment just to blink an LED?&lt;/p&gt;
+&lt;p&gt;Well&amp;hellip;
+Almost.
+183 warnings.
+Is that good? Bad? Normal? Did anything actually work?&lt;/p&gt;
+&lt;p&gt;The software mentions timing analysis, Clock domains, Latch inference, Constraints, Pin assignments, Clock frequencies.
+None of those words were in today&amp;rsquo;s lecture.&lt;/p&gt;
+&lt;p&gt;You spend another hour trying to figure out where to tell the compiler your clock frequency.
+Eventually you stop and ask yourself: Wasn&amp;rsquo;t today&amp;rsquo;s assignment just to blink an LED?&lt;/p&gt;
 &lt;p&gt;This isn&amp;rsquo;t an unusual story.&lt;/p&gt;
-&lt;p&gt;In fact, it&amp;rsquo;s the most common story.&lt;/p&gt;
-&lt;p&gt;When I ask students about their first FPGA course, the answer is remarkably consistent.&lt;/p&gt;
-&lt;p&gt;&amp;ldquo;Hardware design is fascinating&amp;hellip; but the tooling was awful.&amp;rdquo;&lt;/p&gt;
-&lt;p&gt;That&amp;rsquo;s unfortunate.&lt;/p&gt;
-&lt;p&gt;Because students don&amp;rsquo;t remember the excitement of designing digital hardware.&lt;/p&gt;
-&lt;p&gt;They remember spending an evening downloading software, installing device packages, fighting version mismatches, and deciphering hundreds of warnings before writing ten lines of code.&lt;/p&gt;
-&lt;p&gt;The tooling became the course.&lt;/p&gt;
-&lt;p&gt;It doesn&amp;rsquo;t have to be this way.&lt;/p&gt;
-&lt;p&gt;As educators, we can lower the barrier without lowering the standard.&lt;/p&gt;
-&lt;p&gt;Students should spend their first hours learning hardware concepts, not wrestling with installers.&lt;/p&gt;
-&lt;p&gt;That&amp;rsquo;s why we built EDAcation. Because the first lesson in digital design shouldn&amp;rsquo;t be how to download 300 GB of tools to blink an LED.&lt;/p&gt;
+&lt;p&gt;In fact, it&amp;rsquo;s the most common story.
+When I ask students about their first FPGA course, the answer is remarkably consistent.&lt;/p&gt;
+&lt;p&gt;&amp;ldquo;Hardware design is fascinating&amp;hellip;
+but the tooling was awful.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;That&amp;rsquo;s why we built EDAcation.
+Because the first lesson in digital design shouldn&amp;rsquo;t be how to download 300 GB of tools to blink an LED.&lt;/p&gt;
 &lt;h2 id=&#34;the-synthesis-path-introduced-and-visualized&#34;&gt;
     &lt;a href=&#34;#the-synthesis-path-introduced-and-visualized&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     The synthesis path introduced and visualized

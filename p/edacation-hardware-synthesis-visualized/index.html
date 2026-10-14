@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="This is a guest blog post by Hendrik Folmer\n# The FPGA &ldquo;Hello World&rdquo; Imagine you&rsquo;re a first-year engineering student. Today is your very first FPGA development lecture.\nThe professor starts with an inspiring introduction: &ldquo;Unlike CPUs, FPGAs don&rsquo;t execute instructions one after another. You design hardware itself. Thousands of operations can happen in parallel. You describe logic, and the FPGA becomes the circuit you designed.&rdquo;\nAmazing.\nYou&rsquo;re told about lookup tables, routing, timing, placement, and the incredible flexibility of programmable hardware. It feels like digital LEGO with millions of pieces.\n">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="This is a guest blog post by Hendrik Folmer\n# The FPGA &ldquo;Hello World&rdquo; Imagine you&rsquo;re a first-year engineering student. Today is your very first FPGA development lecture.\nThe professor starts with an inspiring introduction: &ldquo;Unlike CPUs, FPGAs don&rsquo;t execute instructions one after another. You design hardware itself. Thousands of operations can happen in parallel. You describe logic, and the FPGA becomes the circuit you designed.&rdquo;\nYou&rsquo;re told about lookup tables, routing, timing, placement, and the incredible flexibility of programmable hardware. It feels like digital LEGO with millions of pieces. You can&rsquo;t wait to build something. At the end of the lecture, the assignment seems refreshingly simple. &ldquo;Before next week&rsquo;s lab, synthesize a blinking LED. It&rsquo;s the FPGA equivalent of Hello World.&rdquo;\n">
 <title>EDAcation: Hardware synthesis visualized</title>
 
 <link rel='canonical' href='http://blog.yosyshq.com/p/edacation-hardware-synthesis-visualized/'>
 
 <link rel="stylesheet" href="/scss/style.min.760e3dabc1e140d2e6abd27a8ca0aabb60e568829b29f67d2df12024136eff37.css"><meta property='og:title' content="EDAcation: Hardware synthesis visualized">
-<meta property='og:description' content="This is a guest blog post by Hendrik Folmer\n# The FPGA &ldquo;Hello World&rdquo; Imagine you&rsquo;re a first-year engineering student. Today is your very first FPGA development lecture.\nThe professor starts with an inspiring introduction: &ldquo;Unlike CPUs, FPGAs don&rsquo;t execute instructions one after another. You design hardware itself. Thousands of operations can happen in parallel. You describe logic, and the FPGA becomes the circuit you designed.&rdquo;\nAmazing.\nYou&rsquo;re told about lookup tables, routing, timing, placement, and the incredible flexibility of programmable hardware. It feels like digital LEGO with millions of pieces.\n">
+<meta property='og:description' content="This is a guest blog post by Hendrik Folmer\n# The FPGA &ldquo;Hello World&rdquo; Imagine you&rsquo;re a first-year engineering student. Today is your very first FPGA development lecture.\nThe professor starts with an inspiring introduction: &ldquo;Unlike CPUs, FPGAs don&rsquo;t execute instructions one after another. You design hardware itself. Thousands of operations can happen in parallel. You describe logic, and the FPGA becomes the circuit you designed.&rdquo;\nYou&rsquo;re told about lookup tables, routing, timing, placement, and the incredible flexibility of programmable hardware. It feels like digital LEGO with millions of pieces. You can&rsquo;t wait to build something. At the end of the lecture, the assignment seems refreshingly simple. &ldquo;Before next week&rsquo;s lab, synthesize a blinking LED. It&rsquo;s the FPGA equivalent of Hello World.&rdquo;\n">
 <meta property='og:url' content='http://blog.yosyshq.com/p/edacation-hardware-synthesis-visualized/'>
 <meta property='og:site_name' content='YosysHQ Blog'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='blog' /><meta property='article:published_time' content='2026-10-09T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-10-09T00:00:00&#43;00:00'/>
 <meta name="twitter:site" content="@@YosysHQ">
     <meta name="twitter:creator" content="@@YosysHQ"><meta name="twitter:title" content="EDAcation: Hardware synthesis visualized">
-<meta name="twitter:description" content="This is a guest blog post by Hendrik Folmer\n# The FPGA &ldquo;Hello World&rdquo; Imagine you&rsquo;re a first-year engineering student. Today is your very first FPGA development lecture.\nThe professor starts with an inspiring introduction: &ldquo;Unlike CPUs, FPGAs don&rsquo;t execute instructions one after another. You design hardware itself. Thousands of operations can happen in parallel. You describe logic, and the FPGA becomes the circuit you designed.&rdquo;\nAmazing.\nYou&rsquo;re told about lookup tables, routing, timing, placement, and the incredible flexibility of programmable hardware. It feels like digital LEGO with millions of pieces.\n">
+<meta name="twitter:description" content="This is a guest blog post by Hendrik Folmer\n# The FPGA &ldquo;Hello World&rdquo; Imagine you&rsquo;re a first-year engineering student. Today is your very first FPGA development lecture.\nThe professor starts with an inspiring introduction: &ldquo;Unlike CPUs, FPGAs don&rsquo;t execute instructions one after another. You design hardware itself. Thousands of operations can happen in parallel. You describe logic, and the FPGA becomes the circuit you designed.&rdquo;\nYou&rsquo;re told about lookup tables, routing, timing, placement, and the incredible flexibility of programmable hardware. It feels like digital LEGO with millions of pieces. You can&rsquo;t wait to build something. At the end of the lecture, the assignment seems refreshingly simple. &ldquo;Before next week&rsquo;s lab, synthesize a blinking LED. It&rsquo;s the FPGA equivalent of Hello World.&rdquo;\n">
     <link rel="shortcut icon" href="/favicon.png" />
 
     </head>
@@ -288,111 +288,103 @@
 <h2 id="the-fpga-hello-world">
     <a href="#the-fpga-hello-world" class="header-anchor">#</a>
     The FPGA &ldquo;Hello World&rdquo;
-</h2><p>Imagine you&rsquo;re a first-year engineering student. Today is your very first FPGA development lecture.</p>
-<p>The professor starts with an inspiring introduction: &ldquo;Unlike CPUs, FPGAs don&rsquo;t execute instructions one after another. You design hardware itself. Thousands of operations can happen in parallel. You describe logic, and the FPGA becomes the circuit you designed.&rdquo;</p>
-<p>Amazing.</p>
-<p>You&rsquo;re told about lookup tables, routing, timing, placement, and the incredible flexibility of programmable hardware. It feels like digital LEGO with millions of pieces.</p>
-<p>You can&rsquo;t wait to build something.</p>
-<p>At the end of the lecture, the assignment seems refreshingly simple. &ldquo;Before next week&rsquo;s lab, synthesize a blinking LED. It&rsquo;s the FPGA equivalent of Hello World.&rdquo;</p>
-<p>Perfect. How hard can one blinking LED be?</p>
-<p>You get home, open your laptop, and Google:</p>
-<p>&ldquo;Download Quartus.&rdquo;</p>
-<p>The first result looks right.</p>
-<p>Download size?</p>
-<p>80 GB.</p>
-<p>That&rsquo;s&hellip; larger than some games.</p>
-<p>Fortunately, your university recommended an expensive laptop with plenty of storage, so after a while the download finally completes.</p>
+</h2><p>Imagine you&rsquo;re a first-year engineering student.
+Today is your very first FPGA development lecture.</p>
+<p>The professor starts with an inspiring introduction:
+&ldquo;Unlike CPUs, FPGAs don&rsquo;t execute instructions one after another.
+You design hardware itself.
+Thousands of operations can happen in parallel.
+You describe logic, and the FPGA becomes the circuit you designed.&rdquo;</p>
+<p>You&rsquo;re told about lookup tables, routing, timing, placement, and the incredible flexibility of programmable hardware.
+It feels like digital LEGO with millions of pieces.
+You can&rsquo;t wait to build something.
+At the end of the lecture, the assignment seems refreshingly simple.
+&ldquo;Before next week&rsquo;s lab, synthesize a blinking LED.
+It&rsquo;s the FPGA equivalent of Hello World.&rdquo;</p>
+<p>Perfect.
+How hard can one blinking LED be?</p>
+<p>You get home, open your laptop, and Google: &ldquo;Download Quartus&rdquo;</p>
+<p>The first result looks right.
+Download size? 80 GB.</p>
+<p>That&rsquo;s&hellip;
+larger than some games.
+Fortunately, your university recommended an expensive laptop with plenty of storage, so after a while the download finally completes.</p>
 <p>You click Install.</p>
-<p>Disk space required:</p>
-<p>299.44 GB.</p>
-<p>Well&hellip; that&rsquo;s almost your SSD.</p>
-<p>After another long wait, Quartus finally launches.</p>
-<p>A popup immediately appears.</p>
+<p>Disk space required: 299.44 GB.
+Well&hellip;
+that&rsquo;s almost your SSD.</p>
+<p>After another long wait, Quartus finally launches.
+A popup immediately appears.</p>
 <p>License required.</p>
-<p>License?</p>
-<p>Nobody mentioned a license.</p>
-<p>You ask your classmates.</p>
-<p>Nobody knows.</p>
-<p>You message the teaching assistant.</p>
-<p>&ldquo;Oh&hellip; you installed Quartus Pro.&rdquo;</p>
-<p>&ldquo;You only need Quartus Lite.&rdquo;</p>
-<p>Right.</p>
-<p>So you uninstall the 300 GB installation.</p>
-<p>Delete the 80 GB installer.</p>
-<p>And start over.</p>
-<p>Back to Google.</p>
-<p>&ldquo;Download Quartus Lite.&rdquo;</p>
-<p>Much better.</p>
-<p>Only a 1.6 GB download.</p>
-<p>Installation finishes.</p>
-<p>Only 8.8 GB installed.</p>
-<p>Progress.</p>
-<p>You create your first project.</p>
-<p>The wizard asks you to select your target FPGA.</p>
-<p>The device list is empty.</p>
+<p>License? Nobody mentioned a license.
+You ask your classmates.
+Nobody knows.</p>
+<p>You message the teaching assistant.
+&ldquo;Oh&hellip;
+you installed Quartus Pro.&rdquo; &ldquo;You only need Quartus Lite.&rdquo;</p>
+<p>Right&hellip;
+So you uninstall the 300 GB installation.
+Delete the 80 GB installer.
+And start over.</p>
+<p>Back to Google: &ldquo;Download Quartus Lite&rdquo;</p>
+<p>Only a 1.6 GB download.
+Much better.</p>
+<p>Installation finishes.
+Only 8.8 GB installed.</p>
+<p>Progress&hellip;
+You create your first project.</p>
+<p>The wizard asks you to select your target FPGA.
+The device list is empty.</p>
 <p>Empty.</p>
 <p>You ask another student.</p>
-<p>&ldquo;Oh yeah, you also need the device files.&rdquo;</p>
-<p>Of course you do.</p>
-<p>Back to Google.</p>
-<p>You find the Cyclone V device package.</p>
-<p>Only 500 MB.</p>
-<p>Easy.</p>
-<p>You install it.</p>
+<p>&ldquo;Oh yeah, you also need the device files.&rdquo; Of course you do.</p>
+<p>Back to Google.
+You find the Cyclone V device package.
+Only 500 MB.</p>
+<p>Easy&hellip;
+You install it.</p>
 <p>Version mismatch.</p>
-<p>Wait&hellip;</p>
-<p>Device files have versions?</p>
-<p>Apparently yes.</p>
-<p>Not only do they have versions, they must exactly match the Quartus version.</p>
-<p>Down to the last digit.</p>
-<p>Fine.</p>
-<p>You finally locate the correct version.</p>
-<p>Just before pressing Download, you notice another dropdown.</p>
-<p>Lite / Standard / Pro</p>
-<p>That would have been the wrong download. Again.</p>
-<p>The correct device package?</p>
-<p>Another 1.3 GB.</p>
-<p>Several hours after starting this adventure, you finally have a working FPGA development environment.</p>
-<p>Now the real learning can begin.</p>
-<p>Right?</p>
-<p>You launch Quartus.</p>
-<p>Create a project.</p>
-<p>Select the correct device.</p>
-<p>Add a VHDL file called blinky.vhd that you found somewhere online.</p>
-<p>You look for the Compile button.</p>
+<p>Wait&hellip;
+Device files have versions?</p>
+<p>Apparently yes.
+Not only do they have versions, they must exactly match the Quartus version.
+Down to the last digit.</p>
+<p>Fine&hellip;
+You finally locate the correct version.
+Just before pressing Download, you notice another dropdown: &ldquo;Lite / Standard / Pro&rdquo;</p>
+<p>That would have been the wrong download.
+Again.
+The correct device package? Another 1.3 GB.</p>
+<p>Several hours after starting this adventure, you finally have a working FPGA development environment.
+Now the real learning can begin.
+Right?</p>
+<p>You launch Quartus.
+Create a project.
+Select the correct device.
+Add a VHDL file called blinky.vhd that you found somewhere online.
+You look for the Compile button.</p>
 <p>Eventually you find a promising green triangle.</p>
 <p>Click.</p>
 <p>Error: Top-level entity not specified.</p>
-<p>Top-level entity?</p>
-<p>What&rsquo;s a top-level entity?</p>
-<p>Why do I need one?</p>
-<p>After some searching, you discover the setting.</p>
-<p>Compile again.</p>
+<p>Top-level entity? What&rsquo;s a top-level entity? Why do I need one?</p>
+<p>After some searching, you discover the setting.
+Compile again.</p>
 <p>Success!</p>
-<p>Well&hellip;</p>
-<p>Almost.</p>
-<p>183 warnings.</p>
-<p>Is that good?</p>
-<p>Bad?</p>
-<p>Normal?</p>
-<p>Did anything actually work?</p>
-<p>The software mentions timing analysis.</p>
-<p>Clock domains, Latch inference, Constraints, Pin assignments, Clock frequencies.</p>
-<p>None of those words were in today&rsquo;s lecture.</p>
-<p>You spend another hour trying to figure out where to tell the compiler your clock frequency.</p>
-<p>Eventually you stop and ask yourself: Wasn&rsquo;t today&rsquo;s assignment just to blink an LED?</p>
+<p>Well&hellip;
+Almost.
+183 warnings.
+Is that good? Bad? Normal? Did anything actually work?</p>
+<p>The software mentions timing analysis, Clock domains, Latch inference, Constraints, Pin assignments, Clock frequencies.
+None of those words were in today&rsquo;s lecture.</p>
+<p>You spend another hour trying to figure out where to tell the compiler your clock frequency.
+Eventually you stop and ask yourself: Wasn&rsquo;t today&rsquo;s assignment just to blink an LED?</p>
 <p>This isn&rsquo;t an unusual story.</p>
-<p>In fact, it&rsquo;s the most common story.</p>
-<p>When I ask students about their first FPGA course, the answer is remarkably consistent.</p>
-<p>&ldquo;Hardware design is fascinating&hellip; but the tooling was awful.&rdquo;</p>
-<p>That&rsquo;s unfortunate.</p>
-<p>Because students don&rsquo;t remember the excitement of designing digital hardware.</p>
-<p>They remember spending an evening downloading software, installing device packages, fighting version mismatches, and deciphering hundreds of warnings before writing ten lines of code.</p>
-<p>The tooling became the course.</p>
-<p>It doesn&rsquo;t have to be this way.</p>
-<p>As educators, we can lower the barrier without lowering the standard.</p>
-<p>Students should spend their first hours learning hardware concepts, not wrestling with installers.</p>
-<p>That&rsquo;s why we built EDAcation. Because the first lesson in digital design shouldn&rsquo;t be how to download 300 GB of tools to blink an LED.</p>
+<p>In fact, it&rsquo;s the most common story.
+When I ask students about their first FPGA course, the answer is remarkably consistent.</p>
+<p>&ldquo;Hardware design is fascinating&hellip;
+but the tooling was awful.&rdquo;</p>
+<p>That&rsquo;s why we built EDAcation.
+Because the first lesson in digital design shouldn&rsquo;t be how to download 300 GB of tools to blink an LED.</p>
 <h2 id="the-synthesis-path-introduced-and-visualized">
     <a href="#the-synthesis-path-introduced-and-visualized" class="header-anchor">#</a>
     The synthesis path introduced and visualized
