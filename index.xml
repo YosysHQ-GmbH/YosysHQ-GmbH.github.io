@@ -15,11 +15,14 @@
         <description>&lt;img src="http://blog.yosyshq.com/static-2023/YOS_horiz.png" alt="Featured image of post Tabby CAD Suite version 20261013 released!" /&gt;&lt;p&gt;The October release of Tabby CAD Suite is now available for download. This version includes under-the-hood improvements to performance and bugfixes.&lt;/p&gt;
 &lt;p&gt;In other YosysHQ news:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;At our next Yosys Users&amp;rsquo; Group meeting, Hendrik will be presenting EDAcation&lt;/li&gt;
+&lt;li&gt;At our next Yosys Users&amp;rsquo; Group meeting, Hendrik will be presenting EDAcation
+&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://meet.jit.si/yosys-users-group&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Thursday, 29 October⋅18:00 – 19:00&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://edacation.github.io/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://edacation.github.io/&lt;/a&gt; is a Visual Studio Code extension that brings an open source FPGA toolchain into a single, student-friendly environment.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Happy October,
 The YosysHQ Team&lt;/p&gt;
